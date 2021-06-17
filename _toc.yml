@@ -1,0 +1,44 @@
+# Table of content
+# Learn more at https://jupyterbook.org/customize/toc.html
+#
+format: jb-book
+root: index
+parts:
+  - caption: Course (CSS 1 summer 1)
+    chapters:
+      - file: course/syllabus
+      - file: course/schedule
+      - file: course/mechanics
+      - file: course/expectations
+      - file: course/debugging
+      - file: course/resources
+  - caption: Week 1
+    chapters:
+      - file: lectures/week-01
+      - file: lectures/P01
+        sections:
+          - file: lectures/P01-css
+          - file: lectures/P01-programming
+          - file: lectures/P01-jupyter
+          - file: lectures/P01-python
+      - file: lectures/P02
+  - caption: Week 2
+    chapters:
+      - file: lectures/week-02
+      - file: lectures/P03
+      - file: lectures/P04
+  - caption: Week 3
+    chapters:
+      - file: lectures/week-03
+      - file: lectures/P05
+      - file: lectures/P06
+  - caption: Week 4
+    chapters:
+      - file: lectures/week-04
+      - file: lectures/P07
+      - file: lectures/P08
+  - caption: Week 2
+    chapters:
+      - file: lectures/week-05
+      - file: lectures/P09
+      - file: lectures/P10

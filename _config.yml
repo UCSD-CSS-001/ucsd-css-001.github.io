@@ -1,0 +1,33 @@
+# Book settings
+# Learn more at https://jupyterbook.org/customize/config.html
+
+title: UCSD CSS 1
+author: Ed Vul
+logo: logo.png
+
+parse:
+  myst_substitutions:
+    url_website:   'https://ucsd-css-001.github.io'
+    url_lecture:   https://ucsd.zoom.us/j/93765261371
+    url_lab:       https://ucsd.zoom.us/j/97219605542
+    url_canvas:    https://canvas.ucsd.edu/courses/28075/
+    url_campuswire: hhttps://campuswire.com/c/G956AC5EB/feed
+    url_deepnote: https://deepnote.com/dashboard/UCSD-CSS-1-summer-session-1/
+    url_datahub: https://datahub.ucsd.edu
+    url_feedback: http://
+
+# Force re-execution of notebooks on each build.
+# See https://jupyterbook.org/content/execute.html
+execute:
+  execute_notebooks: force
+
+# Information about where the book exists on the web
+repository:
+  url: https://github.com/UCSD-CSS-001/ucsd-css-001.github.io  # Online location of your book
+  branch: master  # Which branch of the repository should be used when creating links (optional)
+
+# Add GitHub buttons to your book
+# See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
+html:
+  use_issues_button: true
+  use_repository_button: true
