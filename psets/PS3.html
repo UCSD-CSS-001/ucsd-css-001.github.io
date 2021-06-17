@@ -1,0 +1,674 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agent based simulations &#8212; UCSD CSS 1</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">UCSD CSS 1</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Welcome to CSS 1
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Course (CSS 1 summer 1)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/syllabus.html">
+   Syllabus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/expectations.html">
+   Expectations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/schedule.html">
+   Schedule
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/mechanics.html">
+   Course Mechanics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/resources.html">
+   Extracurricular Resources
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Week 1
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/week-01.html">
+   W1 problem
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/P01.html">
+   P01: Crash Landing
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Labs
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../labs/tmp.html">
+   temporary lab file.
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/psets/PS3.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/UCSD-CSS-001/ucsd-css-001.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/UCSD-CSS-001/ucsd-css-001.github.io/issues/new?title=Issue%20on%20page%20%2Fpsets/PS3.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/UCSD-CSS-001/ucsd-css-001.github.io/master?urlpath=tree/psets/PS3.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ugly-solution">
+   ugly solution
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#better-no-class-solution">
+   better no class solution
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="agent-based-simulations">
+<h1>Agent based simulations<a class="headerlink" href="#agent-based-simulations" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="ugly-solution">
+<h2>ugly solution<a class="headerlink" href="#ugly-solution" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">clear_output</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">80</span>
+<span class="n">types</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">]</span>
+<span class="n">K</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">threshold</span> <span class="o">=</span> <span class="mf">0.6</span>
+<span class="n">positions</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;.&#39;</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">K</span><span class="p">)]</span> <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">K</span><span class="p">)]</span>
+
+<span class="k">def</span> <span class="nf">display</span><span class="p">(</span><span class="n">positions</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">positions</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">cell</span> <span class="ow">in</span> <span class="n">row</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">cell</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">get_available</span><span class="p">(</span><span class="n">positions</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">[(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">K</span><span class="p">)</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">K</span><span class="p">)</span> <span class="k">if</span> <span class="n">positions</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;.&#39;</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">get_neighbors</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">positions</span><span class="p">[</span><span class="n">a</span><span class="p">][</span><span class="n">b</span><span class="p">]</span>
+     <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="nb">min</span><span class="p">(</span><span class="n">K</span><span class="p">,</span> <span class="n">i</span><span class="o">+</span><span class="mi">2</span><span class="p">))</span>
+     <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="nb">min</span><span class="p">(</span><span class="n">K</span><span class="p">,</span> <span class="n">j</span><span class="o">+</span><span class="mi">2</span><span class="p">))</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">a</span><span class="o">==</span><span class="n">i</span> <span class="ow">and</span> <span class="n">b</span><span class="o">==</span><span class="n">j</span><span class="p">)</span> <span class="ow">and</span> <span class="n">positions</span><span class="p">[</span><span class="n">a</span><span class="p">][</span><span class="n">b</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;.&#39;</span><span class="p">]</span>
+
+
+<span class="n">free</span> <span class="o">=</span> <span class="n">get_available</span><span class="p">(</span><span class="n">positions</span><span class="p">)</span>
+<span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">free</span><span class="p">)</span>
+<span class="n">agent_positions</span> <span class="o">=</span> <span class="n">free</span><span class="p">[:</span><span class="n">N</span><span class="p">]</span>
+<span class="n">agent_types</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choices</span><span class="p">(</span><span class="n">types</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="n">N</span><span class="p">)</span>
+<span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">),</span><span class="n">c</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">agent_positions</span><span class="p">,</span> <span class="n">agent_types</span><span class="p">):</span>
+    <span class="n">positions</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">c</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">positions</span><span class="p">)</span>
+
+<span class="c1"># update agents</span>
+<span class="k">def</span> <span class="nf">p_same</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">neighbors</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">neighbors</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mf">0.5</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">similar</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">neighbors</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="n">c</span><span class="p">:</span>
+                <span class="n">similar</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="n">similar</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">neighbors</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">choose</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">neighbors</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">p_same</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">neighbors</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">threshold</span>
+
+<span class="k">def</span> <span class="nf">calc_segregation</span><span class="p">(</span><span class="n">positions</span><span class="p">):</span>
+    <span class="n">agents</span> <span class="o">=</span> <span class="p">[(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">positions</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">])</span>
+     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">K</span><span class="p">)</span>
+     <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">K</span><span class="p">)</span>
+     <span class="k">if</span> <span class="n">positions</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;.&#39;</span><span class="p">]</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">agents</span><span class="p">)</span>
+    <span class="n">tot</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">c</span> <span class="ow">in</span> <span class="n">agents</span><span class="p">:</span>
+        <span class="n">tot</span> <span class="o">+=</span> <span class="n">p_same</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">get_neighbors</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">tot</span><span class="o">/</span><span class="n">n</span>
+
+<span class="n">timesteps</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="n">record</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">timesteps</span>
+<span class="k">for</span> <span class="n">timestep</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">timesteps</span><span class="p">):</span>
+    <span class="n">moved</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">record</span><span class="p">[</span><span class="n">timestep</span><span class="p">]</span> <span class="o">=</span> <span class="n">calc_segregation</span><span class="p">(</span><span class="n">positions</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">agent_types</span><span class="p">)):</span>
+        <span class="n">prior_pos</span> <span class="o">=</span> <span class="n">agent_positions</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">choose</span><span class="p">(</span><span class="n">agent_types</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">get_neighbors</span><span class="p">(</span><span class="o">*</span><span class="n">prior_pos</span><span class="p">)):</span>
+            <span class="n">free</span> <span class="o">=</span> <span class="n">get_available</span><span class="p">(</span><span class="n">positions</span><span class="p">)</span>
+            <span class="n">pos</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">free</span><span class="p">)</span>
+            <span class="n">agent_positions</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">pos</span>
+            <span class="n">positions</span><span class="p">[</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="n">pos</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span> <span class="o">=</span> <span class="n">agent_types</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">positions</span><span class="p">[</span><span class="n">prior_pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="n">prior_pos</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span> <span class="o">=</span> <span class="s1">&#39;.&#39;</span>
+            <span class="n">moved</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="n">clear_output</span><span class="p">(</span><span class="n">wait</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="n">display</span><span class="p">(</span><span class="n">positions</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>o o o o o o o . x x 
+o o o o o o . x x x 
+o o o o o . x . x x 
+. o o o o . x x x x 
+o o o o o . x x x x 
+o o o o o . x x x x 
+o o o o o x x x x x 
+o o . . . . x x x x 
+o . x x . . x x x x 
+. . x x . . x . x x 
+[0.4986607142857141, 0.6470238095238096, 0.7198809523809523, 0.7839880952380949, 0.8056398809523809, 0.8411011904761905, 0.8601339285714286, 0.8779315476190475, 0.8804464285714285, 0.8752678571428572, 0.8656696428571428, 0.9081845238095239, 0.9108035714285716, 0.9229166666666668, 0.9084821428571429, 0.9402976190476192, 0.9346726190476193, 0.9385416666666669, 0.9203869047619048, 0.9274255952380953, 0.9192559523809525, 0.9135119047619048, 0.9141071428571428, 0.9216220238095236, 0.9475, 0.9614583333333334, 0.9513392857142857, 0.9727083333333335, 0.9727083333333335, 0.9727083333333335]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Why is it ugly?</p>
+<p>well, the agent_position and agent_types lists are totally superfluous.  In effect they just create two places where we need to keep track of stuff.</p>
+<p>Second, we have no need to ever look at a list of free positions, so why not just make one method that picks a free position, and use it when needed.</p>
+</div>
+<div class="section" id="better-no-class-solution">
+<h2>better no class solution<a class="headerlink" href="#better-no-class-solution" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">clear_output</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">80</span>
+<span class="n">types</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">]</span>
+<span class="n">K</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">threshold</span> <span class="o">=</span> <span class="mf">0.6</span>
+<span class="n">positions</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;.&#39;</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">K</span><span class="p">)]</span> <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">K</span><span class="p">)]</span>
+
+<span class="k">def</span> <span class="nf">display</span><span class="p">(</span><span class="n">positions</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">positions</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">cell</span> <span class="ow">in</span> <span class="n">row</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">cell</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">get_rand_available</span><span class="p">(</span><span class="n">positions</span><span class="p">):</span>
+    <span class="n">free_positions</span> <span class="o">=</span> <span class="p">[(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)</span>
+     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">K</span><span class="p">)</span>
+     <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">K</span><span class="p">)</span>
+     <span class="k">if</span> <span class="n">positions</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;.&#39;</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">free_positions</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">get_neighbors</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">positions</span><span class="p">[</span><span class="n">a</span><span class="p">][</span><span class="n">b</span><span class="p">]</span>
+     <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="nb">min</span><span class="p">(</span><span class="n">K</span><span class="p">,</span> <span class="n">i</span><span class="o">+</span><span class="mi">2</span><span class="p">))</span>
+     <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="nb">min</span><span class="p">(</span><span class="n">K</span><span class="p">,</span> <span class="n">j</span><span class="o">+</span><span class="mi">2</span><span class="p">))</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">a</span><span class="o">==</span><span class="n">i</span> <span class="ow">and</span> <span class="n">b</span><span class="o">==</span><span class="n">j</span><span class="p">)</span> <span class="ow">and</span> <span class="n">positions</span><span class="p">[</span><span class="n">a</span><span class="p">][</span><span class="n">b</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;.&#39;</span><span class="p">]</span>
+
+<span class="c1"># initialize</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">types</span><span class="p">)</span>
+    <span class="n">i</span><span class="p">,</span><span class="n">j</span> <span class="o">=</span> <span class="n">get_rand_available</span><span class="p">(</span><span class="n">positions</span><span class="p">)</span>
+    <span class="n">positions</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">c</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">positions</span><span class="p">)</span>
+
+<span class="c1"># update agents</span>
+<span class="k">def</span> <span class="nf">p_same</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">neighbors</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">neighbors</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mf">0.5</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">neighbors</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">neighbors</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">choose</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">neighbors</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">p_same</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">neighbors</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">threshold</span>
+
+<span class="k">def</span> <span class="nf">get_agents</span><span class="p">(</span><span class="n">positions</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">[(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">positions</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">])</span>
+     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">K</span><span class="p">)</span>
+     <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">K</span><span class="p">)</span>
+     <span class="k">if</span> <span class="n">positions</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;.&#39;</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">calc_segregation</span><span class="p">(</span><span class="n">positions</span><span class="p">):</span>
+    <span class="n">agents</span> <span class="o">=</span> <span class="n">get_agents</span><span class="p">(</span><span class="n">positions</span><span class="p">)</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">agents</span><span class="p">)</span>
+    <span class="n">tot</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">c</span> <span class="ow">in</span> <span class="n">agents</span><span class="p">:</span>
+        <span class="n">tot</span> <span class="o">+=</span> <span class="n">p_same</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">get_neighbors</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">tot</span><span class="o">/</span><span class="n">n</span>
+
+<span class="n">timesteps</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="n">record</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">moved</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="k">while</span> <span class="n">moved</span><span class="p">:</span>
+    <span class="n">moved</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">record</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">calc_segregation</span><span class="p">(</span><span class="n">positions</span><span class="p">))</span>
+    <span class="n">agents</span> <span class="o">=</span> <span class="n">get_agents</span><span class="p">(</span><span class="n">positions</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">c</span> <span class="ow">in</span> <span class="n">agents</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">choose</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">get_neighbors</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)):</span>
+            <span class="n">new_i</span><span class="p">,</span> <span class="n">new_j</span> <span class="o">=</span> <span class="n">get_rand_available</span><span class="p">(</span><span class="n">positions</span><span class="p">)</span>
+            <span class="n">positions</span><span class="p">[</span><span class="n">new_i</span><span class="p">][</span><span class="n">new_j</span><span class="p">]</span> <span class="o">=</span> <span class="n">c</span>
+            <span class="n">positions</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;.&#39;</span>
+            <span class="n">moved</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="n">clear_output</span><span class="p">(</span><span class="n">wait</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="n">display</span><span class="p">(</span><span class="n">positions</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">record</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>. o . x x x x x x x 
+o o . x x x x x x x 
+o o . . x x x x x x 
+o o o . . . x x x x 
+o o o o . . . x x x 
+. o o . o . x x x x 
+o o o o o . x x x . 
+o o o o o x . x x x 
+o o o o . x x 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x x x 
+o o o . . x x x x x 
+[0.5087053571428573, 0.641279761904762, 0.7902380952380954, 0.8675446428571426, 0.8676488095238094, 0.9247470238095238, 0.9247172619047618, 0.9486309523809522, 0.9858333333333332]
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is still a bit suboptimal.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">agent</span><span class="p">():</span>
+    <span class="n">types</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">]</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">min_same</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">max_same</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pos</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">types</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">min_same</span> <span class="o">=</span> <span class="n">min_same</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">max_same</span> <span class="o">=</span> <span class="n">max_same</span>
+
+    <span class="k">def</span> <span class="nf">choice</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">neighbors</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">neighbors</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">p_same</span> <span class="o">=</span> <span class="p">(</span><span class="n">neighbors</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">neighbors</span><span class="p">))</span>
+            <span class="k">return</span> <span class="n">p_same</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">min_same</span> <span class="ow">or</span> <span class="n">p_same</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_same</span>
+
+<span class="k">class</span> <span class="nc">environment</span><span class="p">():</span>
+    <span class="n">agents</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">min_same</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">max_same</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">K</span> <span class="o">=</span> <span class="n">K</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">positions</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">K</span><span class="p">)</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">K</span><span class="p">)])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">agents</span> <span class="o">=</span> <span class="p">[</span><span class="n">agent</span><span class="p">(</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">get_position</span><span class="p">(),</span> <span class="n">min_same</span><span class="p">,</span> <span class="n">max_same</span><span class="p">)</span>
+                       <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">)]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">record</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">summary</span><span class="p">()]</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">string</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+        <span class="n">a_tuple</span> <span class="o">=</span> <span class="p">{</span><span class="n">a</span><span class="o">.</span><span class="n">pos</span><span class="p">:</span><span class="n">a</span><span class="o">.</span><span class="n">type</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">agents</span><span class="p">}</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">K</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">K</span><span class="p">):</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">string</span> <span class="o">+=</span> <span class="n">a_tuple</span><span class="p">[(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)]</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span>
+                <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+                    <span class="n">string</span> <span class="o">+=</span> <span class="s1">&#39;. &#39;</span>
+            <span class="n">string</span> <span class="o">+=</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span>
+        <span class="k">return</span> <span class="n">string</span>
+
+    <span class="k">def</span> <span class="nf">get_position</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">used_positions</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="n">a</span><span class="o">.</span><span class="n">pos</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">agents</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">positions</span> <span class="o">-</span> <span class="n">used_positions</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">get_neighbors</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">):</span>
+        <span class="n">neighborhood</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+                             <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="nb">min</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">K</span><span class="p">,</span> <span class="n">i</span><span class="o">+</span><span class="mi">2</span><span class="p">))</span>
+                             <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="nb">min</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">K</span><span class="p">,</span> <span class="n">j</span><span class="o">+</span><span class="mi">2</span><span class="p">))</span>
+                             <span class="k">if</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span> <span class="o">!=</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)])</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">agent</span><span class="o">.</span><span class="n">type</span> <span class="k">for</span> <span class="n">agent</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">agents</span> <span class="k">if</span> <span class="n">agent</span><span class="o">.</span><span class="n">pos</span> <span class="ow">in</span> <span class="n">neighborhood</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">summary</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return average (across agents) proportion of neighbors of the same type.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">agent</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">agents</span><span class="p">:</span>
+            <span class="n">neighbors</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_neighbors</span><span class="p">(</span><span class="o">*</span><span class="n">agent</span><span class="o">.</span><span class="n">pos</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">neighbors</span><span class="p">:</span>
+                <span class="n">t</span> <span class="o">+=</span> <span class="n">neighbors</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">agent</span><span class="o">.</span><span class="n">type</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">neighbors</span><span class="p">)</span>
+                <span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="n">t</span><span class="o">/</span><span class="n">n</span>
+
+    <span class="k">def</span> <span class="nf">step</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        simulate one timestep by looping through all agents and moving if they so choose.</span>
+<span class="sd">        :return: True if any agent moved</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">moved</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">for</span> <span class="n">agent</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">agents</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">agent</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_neighbors</span><span class="p">(</span><span class="o">*</span><span class="n">agent</span><span class="o">.</span><span class="n">pos</span><span class="p">)):</span>
+                <span class="n">agent</span><span class="o">.</span><span class="n">pos</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_position</span><span class="p">()</span>
+                <span class="n">moved</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">return</span> <span class="n">moved</span>
+
+    <span class="k">def</span> <span class="nf">simulate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fps</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">fps</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="k">while</span> <span class="bp">self</span><span class="o">.</span><span class="n">step</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">record</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
+            <span class="k">if</span> <span class="n">fps</span><span class="p">:</span>
+                <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">fps</span><span class="p">)</span>
+                <span class="n">clear_output</span><span class="p">(</span><span class="n">wait</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+<span class="n">e</span> <span class="o">=</span> <span class="n">environment</span><span class="p">(</span><span class="n">K</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span><span class="n">N</span><span class="o">=</span><span class="mi">380</span><span class="p">,</span> <span class="n">min_same</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">max_same</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">e</span><span class="o">.</span><span class="n">simulate</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+<span class="n">e</span><span class="o">.</span><span class="n">record</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>. o o o o o . . o o o x x x . o o o o o 
+. . o o o . x x . o . x x x x . o o . o 
+o o o o o x x x x x x x . x x x x o o o 
+o . o o o x x x x x x o o o x x . x . . 
+o o o o . . x x x x o o o o . x x x x x 
+o o o o o o o o o o o o o o x x . . x x 
+o . o o o o o o o o o o o . . x x . o o 
+x x x o o o . o o o o o x x x x x x o o 
+x x x x o . o o o o o x x x x x x . o o 
+x . x . x . o o o o o x x x x x x x o o 
+. x x x x . o o o o o x x . x x x x o o 
+x . x x x x . . o o o o x x x x x x o o 
+x x x x x . o o o o o . o x x x x x o o 
+. . x . o o o o o o o o o . x . . o . o 
+. o o o o o . . o . o o . . . x o o o o 
+o o o . o o . x x x x x x x x x o o o o 
+o x x x x x . x x x x x x x x x . . o o 
+. x x x . x x . x x . o o x x x x . o o 
+x x . x x x x x x x o o o o x x . o o o 
+x x x x x x x x x x o o o o . x x o o o 
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.47918783986423225,
+ 0.6348465861623768,
+ 0.712678951165793,
+ 0.7839133819396974,
+ 0.814857313738893,
+ 0.837250797448166,
+ 0.8424374382927017,
+ 0.862108775727197,
+ 0.8582864357864359,
+ 0.86663230044809,
+ 0.8640278727120829,
+ 0.8654324257613732,
+ 0.8675000949343056]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./psets"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Ed Vul<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
