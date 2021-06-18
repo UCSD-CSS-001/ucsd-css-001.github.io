@@ -1,6 +1,17 @@
+---
+substitutions:
+  url_website: "[Class Website](https://ucsd-css-001.github.io)"
+  url_lecture: "[Lecture zoom (UCSD)](https://ucsd.zoom.us/j/93765261371)"
+  url_lab: "[Lab zoom (UCSD)](https://ucsd.zoom.us/j/97219605542)"
+  url_canvas: "[Canvas (UCSD)](https://canvas.ucsd.edu/courses/28075/)"
+  url_campuswire: "[Campuswire](https://campuswire.com/c/G956AC5EB/feed)"
+  url_deepnote: "[Deepnote](https://deepnote.com/dashboard/UCSD-CSS-1-summer-session-1/)"
+  url_datahub: "[Datahub (UCSD)](https://datahub.ucsd.edu)"
+  url_feedback: "[Feedback Form](https://)"
+---
 
+# Syllabus  
 
-# Syllabus
 
 ## Course overview and goals
 
@@ -32,15 +43,15 @@ This course is structured to help you get there.  The basic premise we start fro
 
 ### All the links
 
-- Main [class website (you are here)]({{ url_website }}): contains all the materials and links    
+- Main {{ url_website }}: contains all the materials and links    
 - Zoom (Note: lectures & labs use different zoom rooms):   
-    - [Lectures (Tu/Th 11am - 1pm PST)]({{ url_lectures }}): conducted live, recordings posted on canvas      
-    - [Labs (Tu/Th 1pm - 3pm PST)]({{ url_labs }}): conducted live, recordings posted on canvas  
-- [Canvas]({{ url_canvas }}): used to post grades and recordings of lectures/labs   
-- [Campuswire]({{ url_campuswire }}): used for all discussion, Q&A, announcement, communications    
-- [Datahub]({{ url_datahub }}): used to submit comleted labs and problem sets  
-- [Deepnote]({{ url_deepnote }}): used for live, interactive coding in lecture and labs   
-- [Feedback]({{ url_feedback }}): to provide anonymous feedback to instructors.  :   
+    - {{ url_lecture }}: Tu/Th 11am - 1pm PST - conducted live, recordings posted on canvas      
+    - {{ url_lab }}: Tu/Th 1pm - 3pm PST - conducted live, recordings posted on canvas  
+- {{ url_canvas }}: used to post grades and recordings of lectures/labs   
+- {{ url_campuswire }}: used for all discussion, Q&A, announcement, communications    
+- {{ url_datahub }}: used to submit comleted labs and problem sets  
+- {{ url_deepnote }}: used for live, interactive coding in lecture and labs   
+- {{ url_feedback }}: to provide anonymous feedback to instructors.  :   
 
 ### Lectures and labs
 

@@ -98,7 +98,10 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="course/syllabus.html">
-   Syllabus
+   Syllabus  I’m a
+   <strong>
+    substitution
+   </strong>
   </a>
  </li>
  <li class="toctree-l1">
@@ -355,6 +358,11 @@
    Building / updating
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#todo">
+   TODO
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -377,14 +385,23 @@
 <code class="docutils literal notranslate"><span class="pre">./lectures/</span></code> mostly <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> files with lecture content.<br />
 <code class="docutils literal notranslate"><span class="pre">./labs/</span></code> mostly <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> files for interactive labs.
 <code class="docutils literal notranslate"><span class="pre">./datasets/</span></code> various datasets we might use or refer to.<br />
-<code class="docutils literal notranslate"><span class="pre">./build</span></code> contains the files built by jupyter-book</p>
+<code class="docutils literal notranslate"><span class="pre">./_build</span></code> contains the files built by jupyter-book</p>
 </div>
 <div class="section" id="building-updating">
 <h2>Building / updating<a class="headerlink" href="#building-updating" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>book files, and their order, are listed in <code class="docutils literal notranslate"><span class="pre">./_toc.yml</span></code></p></li>
-<li><p>Build by running  <code class="docutils literal notranslate"><span class="pre">jupyter-book</span> <span class="pre">.</span></code></p></li>
-<li><p>Use <a class="reference external" href="https://jupyterbook.org/publish/gh-pages.html">ghp-import</a> to move <code class="docutils literal notranslate"><span class="pre">build/html</span></code> to <code class="docutils literal notranslate"><span class="pre">docs</span></code></p></li>
+<li><p>Build by running  <code class="docutils literal notranslate"><span class="pre">jupyter-book</span> <span class="pre">build</span> <span class="pre">.</span></code></p></li>
+<li><p>Add changes to main, push.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ghp-import</span> <span class="pre">-n</span> <span class="pre">-p</span> <span class="pre">-f</span> <span class="pre">_build/html</span></code> to export built book to gh-pages branch.  <a class="reference external" href="https://jupyterbook.org/publish/gh-pages.html">more here</a></p></li>
+</ul>
+</div>
+<div class="section" id="todo">
+<h2>TODO<a class="headerlink" href="#todo" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>[ ] fix myst substitutions <a class="reference external" href="https://myst-parser.readthedocs.io/en/latest/syntax/optional.html?highlight=substitution#substitutions-and-urls">myst</a>  or <span class="xref myst">jb</span></p></li>
+<li><p>[ ] datahub login as grader?</p></li>
+<li><p>[ ] datahub login as student?</p></li>
 </ul>
 </div>
 </div>
