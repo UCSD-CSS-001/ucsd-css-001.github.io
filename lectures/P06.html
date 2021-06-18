@@ -98,17 +98,10 @@
  </span>
 </p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1">
   <a class="reference internal" href="../course/syllabus.html">
    Syllabus
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="simple">
-  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../course/schedule.html">
@@ -119,24 +112,44 @@
   <a class="reference internal" href="../course/expectations.html">
    Expectations
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="simple">
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../course/expectations-class.html">
+     Class structure
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../course/expectations-programming.html">
+     Learning to program
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../course/how-to.html">
    Mechanics / How-To
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="simple">
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../course/datahub.html">
+     Datahub assignments
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../course/debugging.html">
+     How to debug and ask debugging questions
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1">
@@ -160,8 +173,8 @@
   <a class="reference internal" href="P01.html">
    P01: Whirlwind intro
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -381,38 +394,75 @@
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#week-4-data-and-visualization">
-   Week 4: data and visualization
+  <a class="reference internal nav-link" href="#concepts">
+   Concepts
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#p-7-data-frames">
-     p. 7: data frames
+    <a class="reference internal nav-link" href="#classes">
+     Classes
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#p-8-plotting">
-     p. 8: plotting
+    <a class="reference internal nav-link" href="#objects">
+     Objects
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#week-5-some-data-complexities">
-   Week 5: some data complexities
+  <a class="reference internal nav-link" href="#python">
+   Python
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#p-9-joins-file-types">
-     p. 9: joins, file types
+    <a class="reference internal nav-link" href="#classes-and-objects">
+     Classes and objects
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#attributes">
+       attributes
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#methods">
+       methods
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#class-definitions">
+     Class definitions
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#init">
+       <strong>
+        init
+       </strong>
+       ()
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#self">
+       self
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#double-underscore-methods-duck-typing">
+     double underscore methods, duck-typing
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#inheritance-and-extending-existing-classes">
+     Inheritance and extending existing classes.
     </a>
    </li>
   </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#p-10-beyond">
-   p. 10: beyond
-  </a>
  </li>
 </ul>
 
@@ -427,45 +477,41 @@
                 
   <div class="section" id="p06-classes-and-objects">
 <h1>P06: classes and objects<a class="headerlink" href="#p06-classes-and-objects" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li><p><strong>Concepts</strong>: classes, objects, OO</p></li>
-<li><p><strong>Python classes/objects</strong>: writing, attributes, methods, self, dunder (<strong>str</strong>())</p></li>
-</ul>
-<div class="section" id="week-4-data-and-visualization">
-<h2>Week 4: data and visualization<a class="headerlink" href="#week-4-data-and-visualization" title="Permalink to this headline">¶</a></h2>
-<p><strong>Problem Set</strong>: summarize and plot data</p>
-<div class="section" id="p-7-data-frames">
-<h3>p. 7: data frames<a class="headerlink" href="#p-7-data-frames" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p><strong>Concepts</strong>: data frame/table, filtering</p></li>
-<li><p><strong>Python libraries</strong>: import, as, from .. import .. as ..</p></li>
-<li><p><strong>Python pandas</strong>: basics, slicing/indexing: [], .loc[,], .iloc[,],</p></li>
-</ul>
+<div class="section" id="concepts">
+<h2>Concepts<a class="headerlink" href="#concepts" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="classes">
+<h3>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h3>
 </div>
-<div class="section" id="p-8-plotting">
-<h3>p. 8: plotting<a class="headerlink" href="#p-8-plotting" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p><strong>Concepts</strong>: visualization, informative scientific graphics,</p></li>
-<li><p><strong>Python matplotlib</strong></p></li>
-</ul>
+<div class="section" id="objects">
+<h3>Objects<a class="headerlink" href="#objects" title="Permalink to this headline">¶</a></h3>
 </div>
 </div>
-<div class="section" id="week-5-some-data-complexities">
-<h2>Week 5: some data complexities<a class="headerlink" href="#week-5-some-data-complexities" title="Permalink to this headline">¶</a></h2>
-<p><strong>Problem Set</strong>: Merge, filter, sort, visualize data of different types.</p>
-<div class="section" id="p-9-joins-file-types">
-<h3>p. 9: joins, file types<a class="headerlink" href="#p-9-joins-file-types" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p><strong>Concepts</strong>: File format</p></li>
-<li><p><strong>Python pandas</strong>: joins, csv, json</p></li>
-</ul>
+<div class="section" id="python">
+<h2>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="classes-and-objects">
+<h3>Classes and objects<a class="headerlink" href="#classes-and-objects" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="attributes">
+<h4>attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="methods">
+<h4>methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h4>
 </div>
 </div>
-<div class="section" id="p-10-beyond">
-<h2>p. 10: beyond<a class="headerlink" href="#p-10-beyond" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>this day is used as slack in the event that</p></li>
-</ul>
+<div class="section" id="class-definitions">
+<h3>Class definitions<a class="headerlink" href="#class-definitions" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="init">
+<h4><strong>init</strong>()<a class="headerlink" href="#init" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="self">
+<h4>self<a class="headerlink" href="#self" title="Permalink to this headline">¶</a></h4>
+</div>
+</div>
+<div class="section" id="double-underscore-methods-duck-typing">
+<h3>double underscore methods, duck-typing<a class="headerlink" href="#double-underscore-methods-duck-typing" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="inheritance-and-extending-existing-classes">
+<h3>Inheritance and extending existing classes.<a class="headerlink" href="#inheritance-and-extending-existing-classes" title="Permalink to this headline">¶</a></h3>
+</div>
 </div>
 </div>
 
