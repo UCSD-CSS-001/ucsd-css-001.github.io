@@ -1,17 +1,4 @@
----
-substitutions:
-  url_website: "[Class Website](https://ucsd-css-001.github.io)"
-  url_lecture: "[Lecture zoom (UCSD)](https://ucsd.zoom.us/j/93765261371)"
-  url_lab: "[Lab zoom (UCSD)](https://ucsd.zoom.us/j/97219605542)"
-  url_canvas: "[Canvas (UCSD)](https://canvas.ucsd.edu/courses/28075/)"
-  url_campuswire: "[Campuswire](https://campuswire.com/c/G956AC5EB/feed)"
-  url_deepnote: "[Deepnote](https://deepnote.com/dashboard/UCSD-CSS-1-summer-session-1/)"
-  url_datahub: "[Datahub (UCSD)](https://datahub.ucsd.edu)"
-  url_feedback: "[Feedback Form](https://)"
----
-
 # Syllabus  
-
 
 ## Course overview and goals
 
@@ -48,7 +35,7 @@ This course is structured to help you get there.  The basic premise we start fro
     - {{ url_lecture }}: Tu/Th 11am - 1pm PST - conducted live, recordings posted on canvas      
     - {{ url_lab }}: Tu/Th 1pm - 3pm PST - conducted live, recordings posted on canvas  
 - {{ url_canvas }}: used to post grades and recordings of lectures/labs   
-- {{ url_campuswire }}: used for all discussion, Q&A, announcement, communications    
+- {{ url_campuswire }}: used for all communication: discussion, Q&A, announcements etc.  Email the instructor if you cannot access.    
 - {{ url_datahub }}: used to submit comleted labs and problem sets  
 - {{ url_deepnote }}: used for live, interactive coding in lecture and labs   
 - {{ url_feedback }}: to provide anonymous feedback to instructors.  :   
@@ -135,23 +122,51 @@ We will work hard to grade everyone fairly and return assignments quickly. And, 
 
 Note that points will not be rewarded if you fail to follow instructions. For example, if the instructions say to name the variable `orange` and you name it `ornage` (misspelled), you will not be rewarded credit upon regrade. This is because (1) following instructions and being detail-oriented in general, (2) referring to things by their correct names, and getting other minor technicalitieis right is *essential* to programming.
 
-## Asking questions and providing feedback.
+## Questions, feedback, and communication
 
-All communication should happen over Campuswire, [here]({{ url-campuswire }}).  If campuswire is down, or you cannot access it, [email the instructor](mailto:evul@ucsd.edu).  Otherwise, all other communication should happen over Campuswire.  
+The instructors can be reached in the following ways:   
 
-- **questions about course content** - these are awesome! We want everyone to see them and have their questions answered too, so post these to Campuswire with an appropriate tag!  
+- Drop in during scheduled **office hours** (see [syllabus](syllabus.md) for links and schedule).  
+
+- Public message on {{ url_campuswire }}.   
+
+- Private "Instructors & TAs" message on {{ url_campuswire }}  
+
+- Direct message to specific instructor on {{ url_campuswire }}  
+
+Outside of office hours, all communication should happen over {{ url-campuswire }}.  Email is reserved for the unanticipated circumstances when campuswire is down, or you cannot access it.  In that case, [email the instructor](mailto:evul@ucsd.edu) about in inability to access Campuswire.
+
+### Specific types of questions / comments
+
+- **questions about course logistics:** First, check the syllabus and the detailed how-to pages on the {{ url_website }}. If you can't find the answer there, first ask a classmate. If still unsure, post on Campuswire in the General tag.
   
-- **a technical assignment question** - come to office hours (or post to Campuswire). Answering technical questions is often best accomplished 'in person' where we can discuss the question and talk through ideas. However, if that is not possible, post your question to Campuswire. Be as specific as you can in the question you ask. And, for those answering, help your classmates as much as you can without just giving the answer. Help guide them, point them in a direction, provide pseudo code, but do not provide code that answers assignment questions.
+- **questions about course content:** these are awesome! We want everyone to see them, be able to answer them, and have their questions answered too, so post these to Campuswire with an appropriate tag!  
+
+- **my code produces an error that I cannot fix:** follow the [debugging instructions](debugging.md) to find a minimal reproducible example and fill out the debugging question checklist, then post on Campuswire in the "Python" category or the relevant "Problem Set" category.
+
+- **assignment clarification question:** Ask in the appropriate "Problem Set" or "Labs" category.  
+  
+- **a technical assignment question:** Come to office hours (or post to Campuswire). Answering technical questions is often best accomplished 'in person' where we can discuss the question and talk through ideas. However, if that is not possible, post your question to Campuswire. Be as specific as you can in the question you ask. And, for those answering, help your classmates as much as you can without just giving the answer. Help guide them, point them in a direction, provide pseudo code, but do not provide code that answers assignment questions.  
   
 - **been stuck on something for a while (>30min) and aren't even really sure where to start** - Programming can be frustrating and it may not always be obvious what is going wrong or why something isn't working. That's OK - we've all been there! IF you are stuck, you can and should reach out for help, even if you aren't exactly sure what your specific question is. To determine when to reach out, consider the 2-hour rule. This rule states that if you are stuck, work on that problem for an hour. Then, take a 30 minute break and do something else. When you come back after your break, try for another 30 minutes or so to solve your problem while working through our [debugging](debugging.md) checklist. If you are still completely stuck, stop and contact us (office hours, post on Campuswire). If you don't have a specific question, include the information you have (what you're stuck on, the [debugging checklist](debugging.md)).
-  
-- **questions about course logistics** - first, check the syllabus. If you can't find the answer there, first ask a classmate. If still unsure, post on Campuswire.
   
 - **questions about a grade** - Post on Campuswire with the "Regrades" tag in a private post to "Instructors & TAs".
   
 - **something super cool to share related to class or want to talk about a topic in further depth** - come to office hours, post in General, or send in a DM to the instructors!
   
-- **some feedback about the course you want to share anonymously** - If you've been offended by an example in class, really liked or disliked a lesson, or wish there were something covered in class that wasn't but would rather not share this publicly, etc., please fill out the [anonymous Google Form]({{ url-feedback }}).
+- **feedback about the course you want to share anonymously:** - If you've been offended by an example in class, really liked or disliked a lesson, or wish there were something covered in class that wasn't but would rather not share this publicly, etc., please fill out the {{ url_feedback }}.  While UCSD login is required to access the form, your email is not associated with your responses -- your responses are anonymous.
+
+### Campuswire Rules
+
+Campuswire is an incredible resource for technical classes. It gives you a place to post questions and an opportunity to answer others' questions. We do our very best as an instructional staff to make sure each and every question is answered in a timely manner. We also want to make sure this platform is being used to learn and not thwarting anyone's education. To make all of this possible, there are a few rules for this course's campuswire:  
+
+1. Before posting your question, look at questions that have already been posted to avoid duplicates.   
+2. If posting about an assignment, note title should have assignment number, question number, and 1-2 words about the question. (i.e. PS01 Q1 Variable Naming)    
+3. Never post an answer to or code for an assignment on a public post. Pseudocode is encouraged for public posts. If you must include code for an assignment, make this post private (to "Instructors & TAs" only) on Campuswire.   
+   
+4. Your post must include not only your question/where you're stuck, but also what you've already done to try to solve it so far and what resources (class notes, online URLs, etc.) you used to try to answer the question up to this point.  See how to ask [debugging questions](debugging.md).
+
+
 
 ## Remote learning
 
@@ -166,17 +181,18 @@ Please take care of yourselves and one another, and I'll work as hard as needed 
 If you do not have consistent access to the technology needed to fully access remote instruction options, please use the form below to request a loaner laptop for the period during which you will be learning remotely due to the COVID-19 pandemic: [https://eforms.ucsd.edu/view.php?id=490887](https://eforms.ucsd.edu/view.php?id=490887). (For any issues that you may have, please email [vcsa@ucsd.edu](mailto:vcsa@ucsd.edu) and they will work to assist you.)
 
 
-### Remote Lectures
+### Remote Lectures and Labs
 
 Attendance will be neither required nor incentivized for any part of the course this quarter. This policy is in place because we do not want to disadvantage students working in different time zones. While lectures and coding labs will take place during their scheduled times, there *will* be options for students to complete all work asynchronously.
 
-Lectures will take place at their scheduled time for those who are able to attend. As typically occurs in COGS 18, students will be encouraged to follow along with the notes, will be given time to complete small coding challenges during lecture on their own, and will have the opportunity to see their classmates thoughts (via zoom polls, rather than with iclickers) during lecture.
+Lectures will take place at their scheduled time for those who are able to attend. As typically occurs in CSS 1, students will be encouraged to follow along with the notes, will be given time to complete small coding challenges during lecture on their own, and will have the opportunity to see their classmates thoughts during lecture.
 
-However, every lecture will also be recorded and shared so that students who are not able to or choose not to watch during the scheduled class time are still able to receive and digest all class materials. If a lecture recording ever fails during class, Prof Ellis will re-record a lecture, ensuring all students have access to the material. Lecture recordings will be available on Canvas in the Media Gallery by 2PM after the live lecture is delivered.
+However, every lecture will also be recorded and shared so that students who are not able to or choose not to watch during the scheduled class time are still able to receive and digest all class materials. If a lecture recording ever fails during class, instructors will re-record a lecture, ensuring all students have access to the material. Lecture and Lab recordings will be available on {{ url_canvas }} in the Media Gallery.
 
-### Remote Labs
 
-## UCSD policies, resources, and expectations as applied to this class
+
+
+## UCSD policies & resources
 
 ### Academic Integrity
 
@@ -191,18 +207,6 @@ You are encouraged to work together and help one another for *labs*. However, yo
 **You must work independently on the problem sets and the final.**  You may ask and answer [debugging questions](debugging.md) on campuswire, but doing work for another student or providing assistance outside of public questions on campuswire on the problem sets or final project will be treated as a violation of academic integrity and you will be referred for disciplinary action. Similarly, emailing with or otherwise communicating with other students or anyone else during a quiz or exam will be treated as a violation and also referred for disciplinary action.   Cheating and plagiarism have been and will be strongly penalized. Please review academic integrity policies [here](http://academicintegrity.ucsd.edu).
 
 You are responsible for ensuring that the correct file has been submitted and that the submission is uncorrupted. If, for whatever reason, Canvas or DataHub is down or something else prohibits you from being able to turn in an assignment on time, immediately contact the instructor by emailing the assignment, otherwise the assignment will be graded as late.
-
-
-### Campuswire Rules
-
-Campuswire is an incredible resource for technical classes. It gives you a place to post questions and an opportunity to answer others' questions. We do our very best as an instructional staff to make sure each and every question is answered in a timely manner. We also want to make sure this platform is being used to learn and not thwarting anyone's education. To make all of this possible, there are a few rules for this course's campuswire:  
-
-1. Before posting your question, look at questions that have already been posted to avoid duplicates.   
-2. If posting about an assignment, note title should have assignment number, question number, and 1-2 words about the question. (i.e. PS01 Q1 Variable Naming)    
-3. Never post an answer to or code for an assignment on a public post. Pseudocode is encouraged for public posts. If you must include code for an assignment, make this post private (to "Instructors & TAs" only) on Campuswire.   
-   
-4. Your post must include not only your question/where you're stuck, but also what you've already done to try to solve it so far and what resources (class notes, online URLs, etc.) you used to try to answer the question up to this point.  See how to ask [debugging questions](debugging.md).
-
 
 
 ### Class Conduct
@@ -225,7 +229,7 @@ Contacting the OSD can help you further:
 osd@ucsd.edu (email)  
 http://disabilities.ucsd.edu  
 
-## Important Resources for Students
+### Important Resources for Students
 
 * [UCSD’s principles of community](https://ucsd.edu/about/principles.html)
 
@@ -236,4 +240,3 @@ http://disabilities.ucsd.edu
 * [Office for the Prevention of Harassment & Discrimination (OPHD)](https://ophd.ucsd.edu/).  OPHD "works to resolve complaints of discrimination and harassment through formal investigation or alternative resolution."
   
 
-otified should that happen. ” 

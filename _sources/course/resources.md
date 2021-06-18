@@ -9,8 +9,6 @@ further resources, including:
 3. more CSS-relevant python exploration
 4. more guided applications of python in other domains   
 
-
-
 ## 0. Tools for improving your understanding
 - [Python Tutor](http://www.pythontutor.com/): An interactive online system for understanding how python commands are being interpreted and executed, from Phil Guo.
 

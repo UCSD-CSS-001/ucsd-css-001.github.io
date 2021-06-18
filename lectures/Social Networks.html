@@ -96,30 +96,46 @@
  </span>
 </p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../course/syllabus.html">
    Syllabus
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../course/schedule.html">
    Schedule
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../course/mechanics.html">
-   Course Mechanics
-  </a>
- </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../course/expectations.html">
    Expectations
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../course/debugging.html">
-   How to debug and ask debugging questions
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/how-to.html">
+   Mechanics / How-To
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../course/resources.html">
@@ -142,8 +158,8 @@
   <a class="reference internal" href="P01.html">
    P01: Whirlwind intro
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -489,7 +505,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Adeel&#39;, &#39;Clark&#39;, &#39;Earnest&#39;, &#39;Jaslynn&#39;, &#39;Kris&#39;, &#39;Manya&#39;, &#39;Resha&#39;, &#39;Ruy&#39;, &#39;Sima&#39;, &#39;Skip&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Adon&#39;, &#39;Brielle&#39;, &#39;Demont&#39;, &#39;Eliane&#39;, &#39;Jaime&#39;, &#39;Kensey&#39;, &#39;Maria&#39;, &#39;Nichalos&#39;, &#39;Susanne&#39;, &#39;Talbot&#39;]
 </pre></div>
 </div>
 </div>
@@ -520,16 +536,16 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Adeel      [&#39;Earnest&#39;, &#39;Manya&#39;, &#39;Resha&#39;]
-Clark      [&#39;Earnest&#39;, &#39;Jaslynn&#39;, &#39;Manya&#39;]
-Earnest    [&#39;Adeel&#39;, &#39;Clark&#39;, &#39;Sima&#39;, &#39;Skip&#39;]
-Jaslynn    [&#39;Clark&#39;, &#39;Kris&#39;, &#39;Ruy&#39;]
-Kris       [&#39;Jaslynn&#39;]
-Manya      [&#39;Adeel&#39;, &#39;Clark&#39;]
-Resha      [&#39;Adeel&#39;, &#39;Skip&#39;]
-Ruy        [&#39;Jaslynn&#39;]
-Sima       [&#39;Earnest&#39;, &#39;Skip&#39;]
-Skip       [&#39;Earnest&#39;, &#39;Resha&#39;, &#39;Sima&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Adon       [&#39;Brielle&#39;, &#39;Eliane&#39;]
+Brielle    [&#39;Adon&#39;, &#39;Eliane&#39;, &#39;Nichalos&#39;, &#39;Susanne&#39;, &#39;Talbot&#39;]
+Demont     [&#39;Nichalos&#39;]
+Eliane     [&#39;Adon&#39;, &#39;Brielle&#39;, &#39;Nichalos&#39;, &#39;Susanne&#39;, &#39;Talbot&#39;]
+Jaime      [&#39;Nichalos&#39;, &#39;Talbot&#39;]
+Kensey     [&#39;Nichalos&#39;, &#39;Susanne&#39;]
+Maria      [&#39;Susanne&#39;, &#39;Talbot&#39;]
+Nichalos   [&#39;Brielle&#39;, &#39;Demont&#39;, &#39;Eliane&#39;, &#39;Jaime&#39;, &#39;Kensey&#39;, &#39;Susanne&#39;, &#39;Talbot&#39;]
+Susanne    [&#39;Brielle&#39;, &#39;Eliane&#39;, &#39;Kensey&#39;, &#39;Maria&#39;, &#39;Nichalos&#39;]
+Talbot     [&#39;Brielle&#39;, &#39;Eliane&#39;, &#39;Jaime&#39;, &#39;Maria&#39;, &#39;Nichalos&#39;]
 </pre></div>
 </div>
 </div>
@@ -561,18 +577,18 @@ Skip       [&#39;Earnest&#39;, &#39;Resha&#39;, &#39;Sima&#39;]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Adeel      has 3 friends with an average of 2.67 friends each
-Clark      has 3 friends with an average of 3.00 friends each
-Earnest    has 4 friends with an average of 2.75 friends each
-Jaslynn    has 3 friends with an average of 1.67 friends each
-Kris       has 1 friends with an average of 3.00 friends each
-Manya      has 2 friends with an average of 3.00 friends each
-Resha      has 2 friends with an average of 3.00 friends each
-Ruy        has 1 friends with an average of 3.00 friends each
-Sima       has 2 friends with an average of 3.50 friends each
-Skip       has 3 friends with an average of 2.67 friends each
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Adon       has 2 friends with an average of 5.00 friends each
+Brielle    has 5 friends with an average of 4.80 friends each
+Demont     has 1 friends with an average of 7.00 friends each
+Eliane     has 5 friends with an average of 4.80 friends each
+Jaime      has 2 friends with an average of 6.00 friends each
+Kensey     has 2 friends with an average of 6.00 friends each
+Maria      has 2 friends with an average of 5.00 friends each
+Nichalos   has 7 friends with an average of 3.57 friends each
+Susanne    has 5 friends with an average of 4.20 friends each
+Talbot     has 5 friends with an average of 4.20 friends each
 
-People have 0.42 fewer friends than the average number of friends their friends have
+People have 1.46 fewer friends than the average number of friends their friends have
 </pre></div>
 </div>
 </div>
@@ -611,16 +627,16 @@ People have 0.42 fewer friends than the average number of friends their friends 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Adeel      can reach 10/10
-Clark      can reach 10/10
-Earnest    can reach 10/10
-Jaslynn    can reach 10/10
-Kris       can reach 10/10
-Manya      can reach 10/10
-Resha      can reach 10/10
-Ruy        can reach 10/10
-Sima       can reach 10/10
-Skip       can reach 10/10
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Adon       can reach 10/10
+Brielle    can reach 10/10
+Demont     can reach 10/10
+Eliane     can reach 10/10
+Jaime      can reach 10/10
+Kensey     can reach 10/10
+Maria      can reach 10/10
+Nichalos   can reach 10/10
+Susanne    can reach 10/10
+Talbot     can reach 10/10
 </pre></div>
 </div>
 </div>
@@ -633,16 +649,16 @@ Skip       can reach 10/10
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Adeel      {&#39;Adeel&#39;: 0, &#39;Resha&#39;: 1, &#39;Manya&#39;: 1, &#39;Earnest&#39;: 1, &#39;Skip&#39;: 2, &#39;Clark&#39;: 2, &#39;Sima&#39;: 2, &#39;Jaslynn&#39;: 3, &#39;Ruy&#39;: 4, &#39;Kris&#39;: 4}
-Clark      {&#39;Clark&#39;: 0, &#39;Manya&#39;: 1, &#39;Earnest&#39;: 1, &#39;Jaslynn&#39;: 1, &#39;Adeel&#39;: 2, &#39;Sima&#39;: 2, &#39;Skip&#39;: 2, &#39;Ruy&#39;: 2, &#39;Kris&#39;: 2, &#39;Resha&#39;: 3}
-Earnest    {&#39;Earnest&#39;: 0, &#39;Sima&#39;: 1, &#39;Clark&#39;: 1, &#39;Adeel&#39;: 1, &#39;Skip&#39;: 1, &#39;Manya&#39;: 2, &#39;Jaslynn&#39;: 2, &#39;Resha&#39;: 2, &#39;Ruy&#39;: 3, &#39;Kris&#39;: 3}
-Jaslynn    {&#39;Jaslynn&#39;: 0, &#39;Clark&#39;: 1, &#39;Ruy&#39;: 1, &#39;Kris&#39;: 1, &#39;Manya&#39;: 2, &#39;Earnest&#39;: 2, &#39;Adeel&#39;: 3, &#39;Sima&#39;: 3, &#39;Skip&#39;: 3, &#39;Resha&#39;: 4}
-Kris       {&#39;Kris&#39;: 0, &#39;Jaslynn&#39;: 1, &#39;Clark&#39;: 2, &#39;Ruy&#39;: 2, &#39;Manya&#39;: 3, &#39;Earnest&#39;: 3, &#39;Adeel&#39;: 4, &#39;Sima&#39;: 4, &#39;Skip&#39;: 4, &#39;Resha&#39;: 5}
-Manya      {&#39;Manya&#39;: 0, &#39;Clark&#39;: 1, &#39;Adeel&#39;: 1, &#39;Earnest&#39;: 2, &#39;Jaslynn&#39;: 2, &#39;Resha&#39;: 2, &#39;Sima&#39;: 3, &#39;Skip&#39;: 3, &#39;Ruy&#39;: 3, &#39;Kris&#39;: 3}
-Resha      {&#39;Resha&#39;: 0, &#39;Adeel&#39;: 1, &#39;Skip&#39;: 1, &#39;Manya&#39;: 2, &#39;Earnest&#39;: 2, &#39;Sima&#39;: 2, &#39;Clark&#39;: 3, &#39;Jaslynn&#39;: 4, &#39;Ruy&#39;: 5, &#39;Kris&#39;: 5}
-Ruy        {&#39;Ruy&#39;: 0, &#39;Jaslynn&#39;: 1, &#39;Clark&#39;: 2, &#39;Kris&#39;: 2, &#39;Manya&#39;: 3, &#39;Earnest&#39;: 3, &#39;Adeel&#39;: 4, &#39;Sima&#39;: 4, &#39;Skip&#39;: 4, &#39;Resha&#39;: 5}
-Sima       {&#39;Sima&#39;: 0, &#39;Skip&#39;: 1, &#39;Earnest&#39;: 1, &#39;Resha&#39;: 2, &#39;Clark&#39;: 2, &#39;Adeel&#39;: 2, &#39;Manya&#39;: 3, &#39;Jaslynn&#39;: 3, &#39;Ruy&#39;: 4, &#39;Kris&#39;: 4}
-Skip       {&#39;Skip&#39;: 0, &#39;Resha&#39;: 1, &#39;Sima&#39;: 1, &#39;Earnest&#39;: 1, &#39;Adeel&#39;: 2, &#39;Clark&#39;: 2, &#39;Manya&#39;: 3, &#39;Jaslynn&#39;: 3, &#39;Ruy&#39;: 4, &#39;Kris&#39;: 4}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Adon       {&#39;Adon&#39;: 0, &#39;Brielle&#39;: 1, &#39;Eliane&#39;: 1, &#39;Susanne&#39;: 2, &#39;Nichalos&#39;: 2, &#39;Talbot&#39;: 2, &#39;Maria&#39;: 3, &#39;Kensey&#39;: 3, &#39;Jaime&#39;: 3, &#39;Demont&#39;: 3}
+Brielle    {&#39;Brielle&#39;: 0, &#39;Susanne&#39;: 1, &#39;Eliane&#39;: 1, &#39;Nichalos&#39;: 1, &#39;Talbot&#39;: 1, &#39;Adon&#39;: 1, &#39;Maria&#39;: 2, &#39;Kensey&#39;: 2, &#39;Jaime&#39;: 2, &#39;Demont&#39;: 2}
+Demont     {&#39;Demont&#39;: 0, &#39;Nichalos&#39;: 1, &#39;Jaime&#39;: 2, &#39;Kensey&#39;: 2, &#39;Susanne&#39;: 2, &#39;Eliane&#39;: 2, &#39;Brielle&#39;: 2, &#39;Talbot&#39;: 2, &#39;Maria&#39;: 3, &#39;Adon&#39;: 3}
+Eliane     {&#39;Eliane&#39;: 0, &#39;Susanne&#39;: 1, &#39;Nichalos&#39;: 1, &#39;Brielle&#39;: 1, &#39;Talbot&#39;: 1, &#39;Adon&#39;: 1, &#39;Maria&#39;: 2, &#39;Kensey&#39;: 2, &#39;Jaime&#39;: 2, &#39;Demont&#39;: 2}
+Jaime      {&#39;Jaime&#39;: 0, &#39;Nichalos&#39;: 1, &#39;Talbot&#39;: 1, &#39;Kensey&#39;: 2, &#39;Susanne&#39;: 2, &#39;Eliane&#39;: 2, &#39;Brielle&#39;: 2, &#39;Demont&#39;: 2, &#39;Maria&#39;: 2, &#39;Adon&#39;: 3}
+Kensey     {&#39;Kensey&#39;: 0, &#39;Nichalos&#39;: 1, &#39;Susanne&#39;: 1, &#39;Jaime&#39;: 2, &#39;Eliane&#39;: 2, &#39;Demont&#39;: 2, &#39;Brielle&#39;: 2, &#39;Talbot&#39;: 2, &#39;Maria&#39;: 2, &#39;Adon&#39;: 3}
+Maria      {&#39;Maria&#39;: 0, &#39;Susanne&#39;: 1, &#39;Talbot&#39;: 1, &#39;Nichalos&#39;: 2, &#39;Brielle&#39;: 2, &#39;Kensey&#39;: 2, &#39;Eliane&#39;: 2, &#39;Jaime&#39;: 2, &#39;Demont&#39;: 3, &#39;Adon&#39;: 3}
+Nichalos   {&#39;Nichalos&#39;: 0, &#39;Jaime&#39;: 1, &#39;Kensey&#39;: 1, &#39;Susanne&#39;: 1, &#39;Eliane&#39;: 1, &#39;Demont&#39;: 1, &#39;Brielle&#39;: 1, &#39;Talbot&#39;: 1, &#39;Maria&#39;: 2, &#39;Adon&#39;: 2}
+Susanne    {&#39;Susanne&#39;: 0, &#39;Kensey&#39;: 1, &#39;Maria&#39;: 1, &#39;Eliane&#39;: 1, &#39;Nichalos&#39;: 1, &#39;Brielle&#39;: 1, &#39;Talbot&#39;: 2, &#39;Adon&#39;: 2, &#39;Jaime&#39;: 2, &#39;Demont&#39;: 2}
+Talbot     {&#39;Talbot&#39;: 0, &#39;Jaime&#39;: 1, &#39;Maria&#39;: 1, &#39;Eliane&#39;: 1, &#39;Nichalos&#39;: 1, &#39;Brielle&#39;: 1, &#39;Susanne&#39;: 2, &#39;Adon&#39;: 2, &#39;Demont&#39;: 2, &#39;Kensey&#39;: 2}
 </pre></div>
 </div>
 </div>
@@ -672,7 +688,7 @@ Skip       {&#39;Skip&#39;: 0, &#39;Resha&#39;: 1, &#39;Sima&#39;: 1, &#39;Earne
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.4
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.711111111111111
 </pre></div>
 </div>
 </div>
@@ -704,7 +720,7 @@ Skip       {&#39;Skip&#39;: 0, &#39;Resha&#39;: 1, &#39;Sima&#39;: 1, &#39;Earne
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>p=0.2532843602293451 mean=0.1875
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>p=0.2532843602293451 mean=0.5925925925925927
 </pre></div>
 </div>
 </div>
@@ -740,16 +756,16 @@ Skip       {&#39;Skip&#39;: 0, &#39;Resha&#39;: 1, &#39;Sima&#39;: 1, &#39;Earne
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Adeel      [&#39;Clark&#39;, &#39;Earnest&#39;, &#39;Sima&#39;, &#39;Skip&#39;]
-Clark      [&#39;Adeel&#39;, &#39;Earnest&#39;, &#39;Jaslynn&#39;, &#39;Skip&#39;]
-Earnest    [&#39;Adeel&#39;, &#39;Clark&#39;, &#39;Jaslynn&#39;, &#39;Kris&#39;]
-Jaslynn    [&#39;Clark&#39;, &#39;Earnest&#39;, &#39;Kris&#39;, &#39;Manya&#39;]
-Kris       [&#39;Earnest&#39;, &#39;Jaslynn&#39;, &#39;Manya&#39;, &#39;Resha&#39;]
-Manya      [&#39;Jaslynn&#39;, &#39;Kris&#39;, &#39;Resha&#39;, &#39;Ruy&#39;]
-Resha      [&#39;Kris&#39;, &#39;Manya&#39;, &#39;Ruy&#39;, &#39;Sima&#39;]
-Ruy        [&#39;Manya&#39;, &#39;Resha&#39;, &#39;Sima&#39;, &#39;Skip&#39;]
-Sima       [&#39;Adeel&#39;, &#39;Resha&#39;, &#39;Ruy&#39;, &#39;Skip&#39;]
-Skip       [&#39;Adeel&#39;, &#39;Clark&#39;, &#39;Ruy&#39;, &#39;Sima&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Adon       [&#39;Brielle&#39;, &#39;Demont&#39;, &#39;Susanne&#39;, &#39;Talbot&#39;]
+Brielle    [&#39;Adon&#39;, &#39;Demont&#39;, &#39;Eliane&#39;, &#39;Talbot&#39;]
+Demont     [&#39;Adon&#39;, &#39;Brielle&#39;, &#39;Eliane&#39;, &#39;Jaime&#39;]
+Eliane     [&#39;Brielle&#39;, &#39;Demont&#39;, &#39;Jaime&#39;, &#39;Kensey&#39;]
+Jaime      [&#39;Demont&#39;, &#39;Eliane&#39;, &#39;Kensey&#39;, &#39;Maria&#39;]
+Kensey     [&#39;Eliane&#39;, &#39;Jaime&#39;, &#39;Maria&#39;, &#39;Nichalos&#39;]
+Maria      [&#39;Jaime&#39;, &#39;Kensey&#39;, &#39;Nichalos&#39;, &#39;Susanne&#39;]
+Nichalos   [&#39;Kensey&#39;, &#39;Maria&#39;, &#39;Susanne&#39;, &#39;Talbot&#39;]
+Susanne    [&#39;Adon&#39;, &#39;Maria&#39;, &#39;Nichalos&#39;, &#39;Talbot&#39;]
+Talbot     [&#39;Adon&#39;, &#39;Brielle&#39;, &#39;Nichalos&#39;, &#39;Susanne&#39;]
 </pre></div>
 </div>
 </div>
@@ -812,16 +828,16 @@ Skip       [&#39;Adeel&#39;, &#39;Clark&#39;, &#39;Ruy&#39;, &#39;Sima&#39;]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   Jaslynn 6
-   Earnest 4
-     Manya 4
-     Clark 3
-     Resha 3
-     Adeel 2
-      Kris 2
-       Ruy 2
-      Sima 2
-      Skip 2
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      Adon 5
+    Demont 5
+   Brielle 4
+    Eliane 3
+     Maria 3
+     Jaime 2
+    Kensey 2
+  Nichalos 2
+   Susanne 2
+    Talbot 2
 </pre></div>
 </div>
 </div>
@@ -833,7 +849,7 @@ Skip       [&#39;Adeel&#39;, &#39;Clark&#39;, &#39;Ruy&#39;, &#39;Sima&#39;]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_keys([&#39;Adeel&#39;, &#39;Clark&#39;, &#39;Earnest&#39;, &#39;Kris&#39;, &#39;Resha&#39;, &#39;Ruy&#39;, &#39;Sima&#39;])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_keys([&#39;Brielle&#39;, &#39;Eliane&#39;, &#39;Jaime&#39;, &#39;Kensey&#39;, &#39;Maria&#39;, &#39;Nichalos&#39;, &#39;Susanne&#39;])
 </pre></div>
 </div>
 </div>

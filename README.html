@@ -96,33 +96,46 @@
  </span>
 </p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="course/syllabus.html">
-   Syllabus  I’m a
-   <strong>
-    substitution
-   </strong>
+   Syllabus
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="course/schedule.html">
    Schedule
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="course/mechanics.html">
-   Course Mechanics
-  </a>
- </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="course/expectations.html">
    Expectations
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="course/debugging.html">
-   How to debug and ask debugging questions
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="course/how-to.html">
+   Mechanics / How-To
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="course/resources.html">
@@ -145,8 +158,8 @@
   <a class="reference internal" href="lectures/P01.html">
    P01: Whirlwind intro
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -354,14 +367,26 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#building-updating">
-   Building / updating
+  <a class="reference internal nav-link" href="#updating">
+   Updating
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#build-and-deploy">
+   Build and deploy
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#todo">
    TODO
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#content">
+     Content
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -385,24 +410,40 @@
 <code class="docutils literal notranslate"><span class="pre">./lectures/</span></code> mostly <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> files with lecture content.<br />
 <code class="docutils literal notranslate"><span class="pre">./labs/</span></code> mostly <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> files for interactive labs.
 <code class="docutils literal notranslate"><span class="pre">./datasets/</span></code> various datasets we might use or refer to.<br />
-<code class="docutils literal notranslate"><span class="pre">./_build</span></code> contains the files built by jupyter-book</p>
+<code class="docutils literal notranslate"><span class="pre">./_build</span></code> contains the files built by jupyter-book (ignored for repo)</p>
 </div>
-<div class="section" id="building-updating">
-<h2>Building / updating<a class="headerlink" href="#building-updating" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="updating">
+<h2>Updating<a class="headerlink" href="#updating" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>book files, and their order, are listed in <code class="docutils literal notranslate"><span class="pre">./_toc.yml</span></code></p></li>
-<li><p>Build by running  <code class="docutils literal notranslate"><span class="pre">jupyter-book</span> <span class="pre">build</span> <span class="pre">.</span></code></p></li>
 <li><p>Add changes to main, push.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ghp-import</span> <span class="pre">-n</span> <span class="pre">-p</span> <span class="pre">-f</span> <span class="pre">_build/html</span></code> to export built book to gh-pages branch.  <a class="reference external" href="https://jupyterbook.org/publish/gh-pages.html">more here</a></p></li>
+</ul>
+</div>
+<div class="section" id="build-and-deploy">
+<h2>Build and deploy<a class="headerlink" href="#build-and-deploy" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Build by running  <code class="docutils literal notranslate"><span class="pre">jupyter-book</span> <span class="pre">build</span> <span class="pre">.</span></code></p></li>
+<li><p>check local copy by opening <code class="docutils literal notranslate"><span class="pre">./_build/html/index.html</span></code></p></li>
+<li><p>deploy <code class="docutils literal notranslate"><span class="pre">_build/html</span></code> directory to github pages with <code class="docutils literal notranslate"><span class="pre">ghp-import</span> <span class="pre">-n</span> <span class="pre">-p</span> <span class="pre">-f</span> <span class="pre">_build/html</span></code> to export built book to gh-pages branch.  <a class="reference external" href="https://jupyterbook.org/publish/gh-pages.html">more here</a></p></li>
 </ul>
 </div>
 <div class="section" id="todo">
 <h2>TODO<a class="headerlink" href="#todo" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>[ ] fix myst substitutions <a class="reference external" href="https://myst-parser.readthedocs.io/en/latest/syntax/optional.html?highlight=substitution#substitutions-and-urls">myst</a>  or <span class="xref myst">jb</span></p></li>
-<li><p>[ ] datahub login as grader?</p></li>
+<li><p>[x] fix myst substitutions <a class="reference external" href="https://myst-parser.readthedocs.io/en/latest/syntax/optional.html?highlight=substitution#substitutions-and-urls">myst</a>  or <span class="xref myst">jb</span></p></li>
+<li><p>[x] datahub login as grader?</p>
+<ul>
+<li><p>[x] pull from github</p></li>
+</ul>
+</li>
 <li><p>[ ] datahub login as student?</p></li>
 </ul>
+<div class="section" id="content">
+<h3>Content<a class="headerlink" href="#content" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>[ ] complete datahub instructions</p></li>
+</ul>
+</div>
 </div>
 </div>
 
