@@ -22,20 +22,22 @@ from math import log
 # In[2]:
 
 
-n = 100
+n = 10
 p = 1.1*(log(n)/n)
 
 
 # In[3]:
 
 
-with open("datasets/first_names.txt", "r") as f:
+import random
+
+with open("../datasets/first_names.txt", "r") as f:
     names = f.read().splitlines()
 
 names = sorted(random.sample(names, k=n))
 
 
-# In[207]:
+# In[4]:
 
 
 print(names)
@@ -45,7 +47,7 @@ print(names)
 # 
 # Here we will define an Erdős-Rényi graph (ER graph) random graph, where each pair of people has some probability $p$ of having a connection.
 
-# In[210]:
+# In[5]:
 
 
 edges = dict(zip(names, [[] for i in range(n)]))
@@ -58,7 +60,7 @@ for i in range(n-1):
             edges[names[j]] += [names[i]]
 
 
-# In[211]:
+# In[6]:
 
 
 for k,v in edges.items():
@@ -70,7 +72,7 @@ for k,v in edges.items():
 # ### Your friends have more friends than you.
 # 
 
-# In[212]:
+# In[7]:
 
 
 def mean(lst):  # could also `from statistics import mean`, but this is a bit faster, and thats all we need
@@ -94,7 +96,7 @@ print(f'\nPeople have {mean(nff_m_nf):.2f} fewer friends than the average number
 # 
 # One basic property of graphs is connectivity: is everyone in the graph connected to everyone else?  Let's figure out if our social graph is connected.  (This is Dijkstra's algorithm)
 
-# In[215]:
+# In[8]:
 
 
 can_reach = dict()
@@ -115,14 +117,14 @@ for person in names:
         can_reach[person].update({f:steps for f in new_friends})
 
 
-# In[216]:
+# In[9]:
 
 
 for k,v in can_reach.items():
     print(f'{k:10} can reach {len(v)}/{n}')
 
 
-# In[217]:
+# In[10]:
 
 
 for k,v in can_reach.items():
@@ -139,7 +141,7 @@ for k,v in can_reach.items():
 # 
 # Let's calculate our average shortest path.
 
-# In[218]:
+# In[11]:
 
 
 n_connected = 0
@@ -162,7 +164,7 @@ sum_min_path / n_connected
 # The degree of clustering or cliquishness of a social network amounts to asking whether friends of friends are likely to be friends.  We will calculate this as the proportion of triads that are close.
 # 
 
-# In[222]:
+# In[12]:
 
 
 person_clustering = []
@@ -191,7 +193,7 @@ print(f'{p=} mean={mean([c for c in person_clustering if c is not None])}')
 # 
 # The premise of lattice networks is that all people have an underlying location, and people are connected only to those people they are close to.  There are many subtle variations of this: What is the location on?  Most simply, it would be a ring, but it could be a 2d space, or something more complicated.  How does the presence of edges decrease with distance?  Perhaps each node is connected to the closest k nodes?  Perhaps the probability of connection decreases with distance?  etc.  While these are important distinctions, lets not worry about it.
 
-# In[243]:
+# In[13]:
 
 
 max_dist = 2  # degree = max_dist*2
@@ -206,7 +208,7 @@ for i in range(n-1):
             edges[names[j]] += [names[i]]
 
 
-# In[246]:
+# In[14]:
 
 
 for k,v in edges.items():
@@ -217,7 +219,7 @@ for k,v in edges.items():
 # 
 # Watts & Strogatz showed that lattice networks (of the sort we defined above) can gain small world properties with a very small number of randomly rewired edges, which create long-distance ties:
 
-# In[247]:
+# In[15]:
 
 
 n_perturbations = 4
@@ -241,7 +243,7 @@ for name in random.sample(names, n_perturbations):
 # 
 # This is a preferential attachment model
 
-# In[270]:
+# In[16]:
 
 
 edges = dict(zip(names, [[] for i in range(n)]))
@@ -271,7 +273,7 @@ for k,v in sorted(edges.items(), key=lambda item: -len(item[1])):
     print(f'{k:>10} {len(v)}')
 
 
-# In[256]:
+# In[17]:
 
 
 degree.keys()
