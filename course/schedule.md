@@ -1,8 +1,13 @@
 # Schedule
 
-This class is divided into 10 parts, corresponding to the normal 10 weeks of the academic year.
-During summer session, we cover two parts per week (one per day).  
-Each week has a problem set motivating (and testing) the material that we cover that week.
+This class is divided into 10 parts, corresponding to the normal 10 weeks of the academic year. Each part has associated lectures and labs.  
+
+**During summer session:**
+- we cover two parts per week (one per day).  
+  
+- each week has a problem set motivating (and testing) the material that we cover that week.  
+
+- each day contains lecture (introducing the concepts and methods), and lab (hands on, group practice culminating in a submitted notebook graded for completion)  
 
 ## Week 1.  Basics
 **Problem Set**: convert list of heights in different units into a common representation.
@@ -17,7 +22,7 @@ Each week has a problem set motivating (and testing) the material that we cover 
 - **Python basics**: comparison operators (==, !=, <, >, <=, >=), logical operators (and, not, or), conditionals (if..elif..else), while loops, lists (len, index), for loop
 
 ## Week 2: compound data types
-**Problem Set**: identifying important words in text documents.
+**Problem Set**: identify important words in text documents.
 
 ### p. 3: sequence types
 
@@ -31,7 +36,7 @@ Each week has a problem set motivating (and testing) the material that we cover 
 - **Python files**: open, close, with open as fp
 
 ## Week 3: structuring programs
-**Problem Set**: simulating interacting agents
+**Problem Set**: simulate interacting agents
 
 ### p. 5: functions
 - **Concepts**: abstraction, functions, scope, mutable/immutable
@@ -60,6 +65,6 @@ Each week has a problem set motivating (and testing) the material that we cover 
 - **Concepts**: File format
 - **Python pandas**: joins, csv, json
 
-## p. 10: beyond
-- this day is used as slack in the event that 
+### p. 10: beyond
+- more
 
