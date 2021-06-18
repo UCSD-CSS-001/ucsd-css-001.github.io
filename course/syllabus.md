@@ -1,17 +1,4 @@
----
-substitutions:
-  url_website: "[Class Website](https://ucsd-css-001.github.io)"
-  url_lecture: "[Lecture zoom (UCSD)](https://ucsd.zoom.us/j/93765261371)"
-  url_lab: "[Lab zoom (UCSD)](https://ucsd.zoom.us/j/97219605542)"
-  url_canvas: "[Canvas (UCSD)](https://canvas.ucsd.edu/courses/28075/)"
-  url_campuswire: "[Campuswire](https://campuswire.com/c/G956AC5EB/feed)"
-  url_deepnote: "[Deepnote](https://deepnote.com/dashboard/UCSD-CSS-1-summer-session-1/)"
-  url_datahub: "[Datahub (UCSD)](https://datahub.ucsd.edu)"
-  url_feedback: "[Feedback Form](https://)"
----
-
 # Syllabus  
-
 
 ## Course overview and goals
 

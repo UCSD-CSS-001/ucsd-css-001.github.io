@@ -23,8 +23,10 @@ This website is written as a [jupyter book](https://jupyterbook.org/intro.html).
 
 ## TODO
 
-- [ ] fix myst substitutions [myst](https://myst-parser.readthedocs.io/en/latest/syntax/optional.html?highlight=substitution#substitutions-and-urls)  or [jb]()
+- [x] fix myst substitutions [myst](https://myst-parser.readthedocs.io/en/latest/syntax/optional.html?highlight=substitution#substitutions-and-urls)  or [jb]()
 
-- [ ] datahub login as grader? 
+- [x] datahub login as grader? 
+    - [ ] and link with github?  maybe gitpuller (but need authentication for private repo!)
+    - [ ] at the very least can upload files.  I don't want to override gradebook.db.
   
 - [ ] datahub login as student?

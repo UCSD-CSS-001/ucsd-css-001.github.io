@@ -1,7 +1,5 @@
 # Course Mechanics
 
-## TL; DR:
-
 We will be using the following external resources, please make sure that you are connected to the class in each of these services.  
 
 - zoom (live remote lectures / labs)
