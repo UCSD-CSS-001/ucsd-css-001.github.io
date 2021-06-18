@@ -98,17 +98,10 @@
  </span>
 </p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1">
   <a class="reference internal" href="syllabus.html">
    Syllabus
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="simple">
-  </ul>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
@@ -119,24 +112,44 @@
   <a class="reference internal" href="expectations.html">
    Expectations
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="simple">
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="expectations-class.html">
+     Class structure
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="expectations-programming.html">
+     Learning to program
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="how-to.html">
    Mechanics / How-To
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="simple">
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="datahub.html">
+     Datahub assignments
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="debugging.html">
+     How to debug and ask debugging questions
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1">
@@ -160,8 +173,8 @@
   <a class="reference internal" href="../lectures/P01.html">
    P01: Whirlwind intro
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -441,12 +454,12 @@
      p. 9: joins, file types
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#p-10-beyond">
+     p. 10: beyond
+    </a>
+   </li>
   </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#p-10-beyond">
-   p. 10: beyond
-  </a>
  </li>
 </ul>
 
@@ -461,9 +474,13 @@
                 
   <div class="section" id="schedule">
 <h1>Schedule<a class="headerlink" href="#schedule" title="Permalink to this headline">¶</a></h1>
-<p>This class is divided into 10 parts, corresponding to the normal 10 weeks of the academic year.
-During summer session, we cover two parts per week (one per day).<br />
-Each week has a problem set motivating (and testing) the material that we cover that week.</p>
+<p>This class is divided into 10 parts, corresponding to the normal 10 weeks of the academic year. Each part has associated lectures and labs.</p>
+<p><strong>During summer session:</strong></p>
+<ul class="simple">
+<li><p>we cover two parts per week (one per day).</p></li>
+<li><p>each week has a problem set motivating (and testing) the material that we cover that week.</p></li>
+<li><p>each day contains lecture (introducing the concepts and methods), and lab (hands on, group practice culminating in a submitted notebook graded for completion)</p></li>
+</ul>
 <div class="section" id="week-1-basics">
 <h2>Week 1.  Basics<a class="headerlink" href="#week-1-basics" title="Permalink to this headline">¶</a></h2>
 <p><strong>Problem Set</strong>: convert list of heights in different units into a common representation.</p>
@@ -485,7 +502,7 @@ Each week has a problem set motivating (and testing) the material that we cover 
 </div>
 <div class="section" id="week-2-compound-data-types">
 <h2>Week 2: compound data types<a class="headerlink" href="#week-2-compound-data-types" title="Permalink to this headline">¶</a></h2>
-<p><strong>Problem Set</strong>: identifying important words in text documents.</p>
+<p><strong>Problem Set</strong>: identify important words in text documents.</p>
 <div class="section" id="p-3-sequence-types">
 <h3>p. 3: sequence types<a class="headerlink" href="#p-3-sequence-types" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
@@ -505,7 +522,7 @@ Each week has a problem set motivating (and testing) the material that we cover 
 </div>
 <div class="section" id="week-3-structuring-programs">
 <h2>Week 3: structuring programs<a class="headerlink" href="#week-3-structuring-programs" title="Permalink to this headline">¶</a></h2>
-<p><strong>Problem Set</strong>: simulating interacting agents</p>
+<p><strong>Problem Set</strong>: simulate interacting agents</p>
 <div class="section" id="p-5-functions">
 <h3>p. 5: functions<a class="headerlink" href="#p-5-functions" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
@@ -550,12 +567,12 @@ Each week has a problem set motivating (and testing) the material that we cover 
 <li><p><strong>Python pandas</strong>: joins, csv, json</p></li>
 </ul>
 </div>
-</div>
 <div class="section" id="p-10-beyond">
-<h2>p. 10: beyond<a class="headerlink" href="#p-10-beyond" title="Permalink to this headline">¶</a></h2>
+<h3>p. 10: beyond<a class="headerlink" href="#p-10-beyond" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p>this day is used as slack in the event that</p></li>
+<li><p>more</p></li>
 </ul>
+</div>
 </div>
 </div>
 
