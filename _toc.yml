@@ -8,9 +8,14 @@ parts:
     chapters:
       - file: course/syllabus
       - file: course/schedule
-      - file: course/mechanics
       - file: course/expectations
-      - file: course/debugging
+        sections:
+          - file: course/expectations-class
+          - file: course/expectations-programming
+      - file: course/how-to
+        sections:
+          - file: course/datahub
+          - file: course/debugging
       - file: course/resources
   - caption: Week 1
     chapters:

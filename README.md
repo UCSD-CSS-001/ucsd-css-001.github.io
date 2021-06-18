@@ -11,14 +11,18 @@ This website is written as a [jupyter book](https://jupyterbook.org/intro.html).
 `./lectures/` mostly `.ipynb` files with lecture content.   
 `./labs/` mostly `.ipynb` files for interactive labs.
 `./datasets/` various datasets we might use or refer to.  
-`./_build` contains the files built by jupyter-book
+`./_build` contains the files built by jupyter-book (ignored for repo)  
 
-
-## Building / updating
+## Updating  
 - book files, and their order, are listed in `./_toc.yml`  
-- Build by running  `jupyter-book build .`  
 - Add changes to main, push.    
-- `ghp-import -n -p -f _build/html` to export built book to gh-pages branch.  [more here](https://jupyterbook.org/publish/gh-pages.html)  
+  
+## Build and deploy  
+- Build by running  `jupyter-book build .`
+  
+- check local copy by opening `./_build/html/index.html`  
+  
+- deploy `_build/html` directory to github pages with `ghp-import -n -p -f _build/html` to export built book to gh-pages branch.  [more here](https://jupyterbook.org/publish/gh-pages.html)  
 
 
 ## TODO
@@ -26,7 +30,10 @@ This website is written as a [jupyter book](https://jupyterbook.org/intro.html).
 - [x] fix myst substitutions [myst](https://myst-parser.readthedocs.io/en/latest/syntax/optional.html?highlight=substitution#substitutions-and-urls)  or [jb]()
 
 - [x] datahub login as grader? 
-    - [ ] and link with github?  maybe gitpuller (but need authentication for private repo!)
-    - [ ] at the very least can upload files.  I don't want to override gradebook.db.
+    - [x] pull from github    
   
 - [ ] datahub login as student?
+
+### Content
+
+- [ ] complete datahub instructions   
