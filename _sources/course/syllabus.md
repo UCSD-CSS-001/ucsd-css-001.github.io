@@ -15,7 +15,7 @@ At the end of the course you should have a working understanding of the Python l
 
 ### Strategy
 
-This course is structured to help you get there.  The basic premise we start from is that programming is a skill, and to acquire a skill you need lots and lots of practice (see [expectations](expectations.md)).  In lecture, we will introduce new basic elements, and will try them together as a class.  In labs, we will work in groups to combine these elements into small programs with instructor help.  In problem sets, you will apply these skills on your own to solve specific problems.  As much as possible, we will use interesting Computational Social Science problems as motivating problems, but we are constrained first and foremost by finding problems appropriate for your skill level.
+This course is structured to help you get there.  The basic premise we start from is that programming is a skill, and to acquire a skill you need lots and lots of practice (see [expectations](expectations.md)).  In lecture, we will introduce new basic elements, and will try them together as a class.  In labs, we will work in groups to combine these elements into small programs with instructor help.  In problem sets, you will apply these skills on your own to solve specific problems.  As much as possible, we will use interesting Computational Social Science problems as motivating problems, but we are constrained first and foremost by finding problems appropriate for your developing Python skills.
 
 ## Course Information
 
@@ -44,16 +44,17 @@ This course is structured to help you get there.  The basic premise we start fro
 
 Lectures and labs take place at their scheduled time over zoom, at the following links.
 
-- Lectures (Tu/Th 11am - 1pm PST): [link]({{ url_lectures }})    
+- Lectures (Tu/Th 11am - 1pm PST): {{ url_lectures }}    
 - Labs (Tu/Th 1pm - 3pm PST):  {{ url_labs }}  
 
-Recordings of these will be made available on  [canvas]({{ url_canvas }})      
+Recordings of these will be made available on  {{ url_canvas }}      
 
 ### Materials
 
 - All materials will be provided via this website and the links above.
   
 - No textbook is required atop the lectures notes here, but we provide recommendations for some paid and free [extracurricular resources](resources.md)     
+  
 - No local software is required (as we will use remotely hosted jupyter notebooks).  If you want to install a local copy, we recommend the bundled [anaconda distribution](https://www.anaconda.com/products/individual) of Python 3  
 
 
@@ -62,9 +63,9 @@ Recordings of these will be made available on  [canvas]({{ url_canvas }})
 ### Basis
 
 You are evaluated based on:   
-- 50% 4 weekly problem sets (weeks 1-4)   
-- 20% final (week 5)   
-- 20% 10 labs  (2 per week)
+- 35% 4 weekly problem sets (weeks 1-4)   
+- 15% final (week 5)   
+- 40% 10 labs  (2 per week)
 - 10% pro-social behavior 
 
 **Labs:** Labs are short, simple exercises designed to be completed during the scheduled lab time (Tu/Th 1-3 PST), with interactive help from the TA and other students.  Labs are completed by turning them in on datahub.  Labs are due by the end of the day following lab (e.g., a Tuesday lab is due by end of day Wednesday).  This window is wide so that people who cannot attend lab, or otherwise do not complete the work during lab, can submit on their own schedule.  That said, *it is very much advised that you attend lab to complete the activities and get interactive help!*
@@ -83,7 +84,7 @@ Letter grades will be based on the percentage of total points earned across the 
 if percent >= 90: 
     letter = 'A'   
     remainder = percent - 90
-
+    
 if 90 > percent >= 80:
     letter = 'B'
     remainder = percent - 80
@@ -100,12 +101,12 @@ if 60 > percent:
     letter = 'F'
     remainder = 5
 
-modifier = ''
 if remainder >= 7:
     modifier = '+'
-
-if remainder < 3:
+elif remainder < 3:
     modifier = '-'
+else:
+    modifier = ''
 
 grade = letter + modifier
 ```
@@ -116,7 +117,7 @@ Assignment scores will be posted on Canvas.
 
 ### Manual Regrades
 
-Problem sets and labs are scored using [nbgrader](https://nbgrader.readthedocs.io/en/stable/) on [UCSD datahub](https://datahub.ucsd.edu/hub/login).  Some parts are graded by computer program, and some parts are graded by a human.
+Problem sets and labs are scored using [nbgrader](https://nbgrader.readthedocs.io/en/stable/) on [UCSD datahub](https://datahub.ucsd.edu/hub/login).  Some parts are graded automatically by computer, and some parts are graded manually by a human.
 
 We will work hard to grade everyone fairly and return assignments quickly. And, we know you also work hard and want you to receive the grade you’ve earned. Occasionally, grading mistakes do happen, and it’s important to us to correct them. If you think there is a mistake in your grade on an assignment, post privately on Campuswire to “Instructors & TAs” using the “regrades” tag within 72 hours. This post should include evidence of why you think your answer was correct and should point to the specific part of the assignment in question.
 

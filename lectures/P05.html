@@ -171,7 +171,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="P01.html">
-   P01: Whirlwind intro
+   P01: Getting oriented
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
@@ -388,80 +388,6 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#concepts">
-   Concepts
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#abstraction-into-procedures">
-     Abstraction into procedures
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#variable-scope-in-functions">
-     Variable scope in functions
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#python-functions">
-   Python functions
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#reading-through-function-calls">
-     reading through function calls
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#arguments">
-     arguments
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#position-vs-keyword">
-       position vs keyword
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#default-values">
-       default values
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#variable-arguments">
-       variable arguments
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#required-arguments">
-       required arguments
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#return">
-     return
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#variable-scope-call-by-assignment">
-     variable scope, call by assignment
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -472,203 +398,14 @@
                 
   <div class="section" id="p05-functions">
 <h1>P05: functions<a class="headerlink" href="#p05-functions" title="Permalink to this headline">¶</a></h1>
+<p>In which we cover functions:</p>
 <ul class="simple">
-<li><p><strong>Concepts</strong>: abstraction, functions, scope, mutable/immutable</p></li>
-<li><p><strong>Python functions</strong>: writing, scope, pass by reference implications</p></li>
+<li><p>defining functions</p></li>
+<li><p>calling functions</p></li>
+<li><p>positional and named arguments</p></li>
+<li><p>default argument values</p></li>
+<li><p>variable arguments</p></li>
 </ul>
-<div class="section" id="concepts">
-<h2>Concepts<a class="headerlink" href="#concepts" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="abstraction-into-procedures">
-<h3>Abstraction into procedures<a class="headerlink" href="#abstraction-into-procedures" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="variable-scope-in-functions">
-<h3>Variable scope in functions<a class="headerlink" href="#variable-scope-in-functions" title="Permalink to this headline">¶</a></h3>
-</div>
-</div>
-<div class="section" id="python-functions">
-<h2>Python functions<a class="headerlink" href="#python-functions" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="reading-through-function-calls">
-<h3>reading through function calls<a class="headerlink" href="#reading-through-function-calls" title="Permalink to this headline">¶</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_einstein</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;                               mMNM&amp;%w&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;                         mkMH$MUMFPM,NM#Z</span><span class="si">%%</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;                     :!.:x )!!X)$MMWWMM$**$$Nx~~`&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;                    !&lt;!*R@@MNR$$$B$WWXXtdn.</span><span class="se">\&quot;</span><span class="s2">?XT!:&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;                   :~` tH!~!!MBT5$$$$$$$WRHb!</span><span class="se">\&quot;</span><span class="s2">! !.&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;                    .&lt;.$f &lt;!!HR$$$$$$$$$$$X?`&gt;!)X?~(&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;                   ~-!#@\~/!!!@$$$$$$$$$$$R! `&lt;!M&gt;-!%.&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;                    .!!</span><span class="se">\&quot;</span><span class="s2">X  !XXM$$$$$$$$$$$R!! !X!!i</span><span class="se">\&quot;</span><span class="s2">~ `:&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;                   :!t! &lt;: !?X***$$$$$$$***~!  ??&gt;X    `&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;                  &#39;  `!~~:  ~x.  !R$$$$* . x   W`   - &gt;&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;                        ~! ::</span><span class="se">\&quot;</span><span class="s2"> `L?X#$F.uC</span><span class="se">\&quot;</span><span class="s2">L</span><span class="se">\&quot;</span><span class="s2"> . $      `n&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;                     %   ~&lt;%!.#mT$</span><span class="se">\&quot;</span><span class="s2">&lt;$k</span><span class="se">\&quot;</span><span class="s2">$$Q?:xW </span><span class="se">\&quot;</span><span class="s2">      &#39;&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;                      ~   4BhU@$W$?!$$ </span><span class="se">\&quot;</span><span class="s2">$$WdN</span><span class="se">\&quot;</span><span class="s2">&#39;.&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;                           R$$$$$$* $$k&#39;$$$$$ !&amp;!x&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;      Albert               !T$$$$6n&#39;$$$ $$$(T  .?</span><span class="se">\&quot;</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;     Einstein              @!M$$$$ec.</span><span class="se">\&quot;</span><span class="s2">)d$$$$!   `.&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;                           !!8$f</span><span class="se">\&quot;</span><span class="s2">` </span><span class="se">\&quot;</span><span class="s2">   `^T$!~&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;                           !!R$  :xxox..o:d</span><span class="se">\&quot;</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;                            </span><span class="se">\&quot;</span><span class="s2"> #@!$WN@W$$$~</span><span class="se">\&quot;</span><span class="s2">  </span><span class="se">\\</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;                               </span><span class="se">\&quot;</span><span class="s2">~R$$$$$$</span><span class="se">\&quot;</span><span class="s2">     N.&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;                    .             </span><span class="se">\&quot;</span><span class="s2">#</span><span class="se">\&quot;\&quot;\&quot;\&quot;</span><span class="s2"> :X   `Wmu.&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;               &#39;&lt;:&lt;!!                  .u$M    $!$$$bou.&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;            .:!!!~!!?         .     :ud$$$!   ~@XR$$$$$$$eu.&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;           &lt;!!!!RnL`</span><span class="se">\&quot;</span><span class="s2">% ~\    X~ti   `$RM$R~ :`  #W$$$R$$$T$$$c&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;         &lt;!!!!XX?*&gt; ~    .-`  `</span><span class="si">% X</span><span class="s2">xU@$R~  ~: . ^*$M</span><span class="se">\&quot;</span><span class="s2">$$B$$$</span><span class="se">\&quot;</span><span class="s2">$!:Mm&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;        m!!!!!M8X!   :`.:L      ~UT?8$F .!-.x!:  </span><span class="se">\&quot;</span><span class="s2">N `9$$$</span><span class="se">\&quot;</span><span class="s2">:</span><span class="se">\&quot;</span><span class="s2">$LFDSA&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;       HDFB&lt;FLOYDXM  ~:X. `</span><span class="se">\&quot;</span><span class="s2">X:.   &#39;*$$</span><span class="se">\&quot;</span><span class="s2"> :?ud$RW:~&lt;x %&#39;$$$# $s$EYNRBx&quot;</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">print_greeting</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hello there!&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Glad to make your acquaintance.&quot;</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">send_pic</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Let me show you a picture of myself (SFW, I promise!)&quot;</span><span class="p">)</span>
-    <span class="n">print_einstein</span><span class="p">()</span>
-
-
-<span class="n">picture</span> <span class="o">=</span> <span class="kc">False</span>
-<span class="n">print_greeting</span><span class="p">()</span>
-<span class="k">if</span> <span class="n">picture</span><span class="p">:</span>
-    <span class="n">send_pic</span><span class="p">()</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I will show you a picture anyway, I like it so much:&quot;</span><span class="p">)</span>
-    <span class="n">print_einstein</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hello there!
-Glad to make your acquaintance.
-I will show you a picture anyway, I like it so much:
-                               mMNM&amp;%w
-                         mkMH$MUMFPM,NM#Z%%
-                     :!.:x )!!X)$MMWWMM$**$$Nx~~`
-                    !&lt;!*R@@MNR$$$B$WWXXtdn.&quot;?XT!:
-                   :~` tH!~!!MBT5$$$$$$$WRHb!&quot;! !.
-                    .&lt;.$f &lt;!!HR$$$$$$$$$$$X?`&gt;!)X?~(
-                   ~-!#@\~/!!!@$$$$$$$$$$$R! `&lt;!M&gt;-!%.
-                    .!!&quot;X  !XXM$$$$$$$$$$$R!! !X!!i&quot;~ `:
-                   :!t! &lt;: !?X***$$$$$$$***~!  ??&gt;X    `
-                  &#39;  `!~~:  ~x.  !R$$$$* . x   W`   - &gt;
-                        ~! ::&quot; `L?X#$F.uC&quot;L&quot; . $      `n
-                     %   ~&lt;%!.#mT$&quot;&lt;$k&quot;$$Q?:xW &quot;      &#39;
-                      ~   4BhU@$W$?!$$ &quot;$$WdN&quot;&#39;.
-                           R$$$$$$* $$k&#39;$$$$$ !&amp;!x
-      Albert               !T$$$$6n&#39;$$$ $$$(T  .?&quot;
-     Einstein              @!M$$$$ec.&quot;)d$$$$!   `.
-                           !!8$f&quot;` &quot;   `^T$!~
-                           !!R$  :xxox..o:d&quot;
-                            &quot; #@!$WN@W$$$~&quot;  \
-                               &quot;~R$$$$$$&quot;     N.
-                    .             &quot;#&quot;&quot;&quot;&quot; :X   `Wmu.
-               &#39;&lt;:&lt;!!                  .u$M    $!$$$bou.
-            .:!!!~!!?         .     :ud$$$!   ~@XR$$$$$$$eu.
-           &lt;!!!!RnL`&quot;% ~\    X~ti   `$RM$R~ :`  #W$$$R$$$T$$$c
-         &lt;!!!!XX?*&gt; ~    .-`  `% XxU@$R~  ~: . ^*$M&quot;$$B$$$&quot;$!:Mm
-        m!!!!!M8X!   :`.:L      ~UT?8$F .!-.x!:  &quot;N `9$$$&quot;:&quot;$LFDSA
-       HDFB&lt;FLOYDXM  ~:X. `&quot;X:.   &#39;*$$&quot; :?ud$RW:~&lt;x %&#39;$$$# $s$EYNRBx
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="arguments">
-<h3>arguments<a class="headerlink" href="#arguments" title="Permalink to this headline">¶</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">double</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">x</span><span class="o">*</span><span class="mi">2</span>
-
-<span class="n">double</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
-</pre></div>
-</div>
-</div>
-</div>
-<div class="section" id="position-vs-keyword">
-<h4>position vs keyword<a class="headerlink" href="#position-vs-keyword" title="Permalink to this headline">¶</a></h4>
-</div>
-<div class="section" id="default-values">
-<h4>default values<a class="headerlink" href="#default-values" title="Permalink to this headline">¶</a></h4>
-</div>
-<div class="section" id="variable-arguments">
-<h4>variable arguments<a class="headerlink" href="#variable-arguments" title="Permalink to this headline">¶</a></h4>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">everything</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">arg</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s1">:</span><span class="si">{</span><span class="n">v</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-
-<span class="n">everything</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;abra&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="p">],</span> <span class="n">falafel</span> <span class="o">=</span> <span class="s1">&#39;large&#39;</span><span class="p">,</span> <span class="n">fries</span> <span class="o">=</span> <span class="s1">&#39;small&#39;</span><span class="p">,</span> <span class="n">soda</span><span class="o">=</span><span class="s1">&#39;diet&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a
-abra
-[1, 2, 3]
-falafel:large
-fries:small
-soda:diet
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="required-arguments">
-<h4>required arguments<a class="headerlink" href="#required-arguments" title="Permalink to this headline">¶</a></h4>
-</div>
-</div>
-<div class="section" id="return">
-<h3>return<a class="headerlink" href="#return" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="variable-scope-call-by-assignment">
-<h3>variable scope, call by assignment<a class="headerlink" href="#variable-scope-call-by-assignment" title="Permalink to this headline">¶</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dostuff</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
-    <span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="s1">&#39; addition&#39;</span>  <span class="c1"># immutable string, therefore assign, therefore local</span>
-    <span class="n">b</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;addition&#39;</span><span class="p">)</span> <span class="c1"># mutable list, being mutated.  change is global</span>
-    <span class="n">c</span> <span class="o">=</span> <span class="n">c</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;addition&#39;</span><span class="p">]</span> <span class="c1"># mutable list, but being assigned, so change is local.</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Inside function: &quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
-
-<span class="n">a</span> <span class="o">=</span> <span class="s1">&#39;string &#39;</span>
-<span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;string in list&#39;</span><span class="p">,</span> <span class="p">]</span>
-<span class="n">c</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;string in list&#39;</span><span class="p">,</span> <span class="p">]</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Before function call: &quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
-
-<span class="n">dostuff</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;After function call: &quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Before function call: 
-string  [&#39;string in list&#39;] [&#39;string in list&#39;]
-Inside function: 
-string  addition [&#39;string in list&#39;, &#39;addition&#39;] [&#39;string in list&#39;, &#39;addition&#39;]
-After function call: 
-string  [&#39;string in list&#39;, &#39;addition&#39;] [&#39;string in list&#39;]
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
 </div>
 
     <script type="text/x-thebe-config">

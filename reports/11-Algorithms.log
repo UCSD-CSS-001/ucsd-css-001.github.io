@@ -1,0 +1,39 @@
+Traceback (most recent call last):
+  File "/opt/homebrew/anaconda3/lib/python3.8/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
+    executenb(
+  File "/opt/homebrew/anaconda3/lib/python3.8/site-packages/nbclient/client.py", line 1087, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/opt/homebrew/anaconda3/lib/python3.8/site-packages/nbclient/util.py", line 74, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/opt/homebrew/anaconda3/lib/python3.8/site-packages/nbclient/util.py", line 53, in just_run
+    return loop.run_until_complete(coro)
+  File "/opt/homebrew/anaconda3/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/opt/homebrew/anaconda3/lib/python3.8/site-packages/nbclient/client.py", line 540, in async_execute
+    await self.async_execute_cell(
+  File "/opt/homebrew/anaconda3/lib/python3.8/site-packages/nbclient/client.py", line 832, in async_execute_cell
+    self._check_raise_for_error(cell, exec_reply)
+  File "/opt/homebrew/anaconda3/lib/python3.8/site-packages/nbclient/client.py", line 740, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply['content'])
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+# raise error instead of print message
+string_manipulator(5)
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mValueError[0m                                Traceback (most recent call last)
+[0;32m<ipython-input-23-3a9e147048ec>[0m in [0;36m<module>[0;34m[0m
+[1;32m      1[0m [0;31m# raise error instead of print message[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
+[0;32m----> 2[0;31m [0mstring_manipulator[0m[0;34m([0m[0;36m5[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m
+[0;32m<ipython-input-22-f85e5d0c7021>[0m in [0;36mstring_manipulator[0;34m(string)[0m
+[1;32m      2[0m [0;34m[0m[0m
+[1;32m      3[0m     [0;32mif[0m [0;32mnot[0m [0misinstance[0m[0;34m([0m[0mstring[0m[0;34m,[0m [0mstr[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m----> 4[0;31m         [0;32mraise[0m [0mValueError[0m[0;34m([0m[0;34m"Please provide a string as input"[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      5[0m     [0;32melse[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      6[0m         [0moutput[0m [0;34m=[0m [0;34m''[0m[0;34m[0m[0;34m[0m[0m
+
+[0;31mValueError[0m: Please provide a string as input
+ValueError: Please provide a string as input
+

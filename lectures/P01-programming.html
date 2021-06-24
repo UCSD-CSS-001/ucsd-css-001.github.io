@@ -98,17 +98,10 @@
  </span>
 </p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1">
   <a class="reference internal" href="../course/syllabus.html">
    Syllabus
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="simple">
-  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../course/schedule.html">
@@ -119,24 +112,44 @@
   <a class="reference internal" href="../course/expectations.html">
    Expectations
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="simple">
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../course/expectations-class.html">
+     Class structure
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../course/expectations-programming.html">
+     Learning to program
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../course/how-to.html">
    Mechanics / How-To
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="simple">
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../course/datahub.html">
+     Datahub assignments
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../course/debugging.html">
+     How to debug and ask debugging questions
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1">
@@ -158,10 +171,10 @@
  </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="P01.html">
-   P01: Whirlwind intro
+   P01: Getting oriented
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -364,11 +377,6 @@
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#procedural-vs-declarative-knowledge">
-   Procedural vs Declarative knowledge
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#what-s-hard-about-programming">
    What’s hard about programming?
   </a>
@@ -377,60 +385,13 @@
   <a class="reference internal nav-link" href="#learning-to-program">
    Learning to program
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-a-computer-does">
-   What a computer does
-  </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#basic-operations">
-     Basic operations
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#input">
-       Input:
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#store-data">
-       Store data
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#meta-learning">
-     meta learning
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#eight-main-concepts">
-     eight main concepts
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#how-a-computer-reads-interprets-a-program">
-     how a computer reads / interprets a program
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#important-computer-programming-concepts">
-     important computer programming concepts:
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#basics-of-a-computer-system">
-     basics of a computer system
+    <a class="reference internal nav-link" href="#example">
+     Example:
     </a>
    </li>
   </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#types-of-programming-languages">
-   Types of programming languages
-  </a>
  </li>
 </ul>
 
@@ -445,9 +406,6 @@
                 
   <div class="section" id="p01-programming-concepts">
 <h1>P01: programming concepts<a class="headerlink" href="#p01-programming-concepts" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="procedural-vs-declarative-knowledge">
-<h2>Procedural vs Declarative knowledge<a class="headerlink" href="#procedural-vs-declarative-knowledge" title="Permalink to this headline">¶</a></h2>
-</div>
 <div class="section" id="what-s-hard-about-programming">
 <h2>What’s hard about programming?<a class="headerlink" href="#what-s-hard-about-programming" title="Permalink to this headline">¶</a></h2>
 <p>If you have never written a computer program before, you will find computer programming to be difficult.  Programming a computer requires</p>
@@ -456,12 +414,9 @@
 <li><p>specifying what steps to follow to perform that computation, and</p></li>
 <li><p>explaining those steps to a computer.</p></li>
 </ol>
-<p>When you write your first program, 1. will be solved for you, 2. will be trivial, and 3. will seem quite hard.<br />
-As you get better at programming and the programs you write become more complicated, 3. will become fairly easy, while 2. will prove to be quite difficult.</p>
-<p>beginners think they dont know what code to write, but really dont know what they are trying to do, what problem they are trying to solve.</p>
-<!---
-For some technical domains limited by the speed or capacity of computers, 2. continues to be hard, because success is limited by the efficiency of the algorithms.  But in many applied settings, eventually it turns out that the primary challenge is in 1: figuring out what you want to do at all.
---->
+<p>When you write your first program, 1 will be solved for you, 2 will be trivial, and 3 will seem quite hard.<br />
+As you get better at programming, and the programs you write become more complicated, 3 will become fairly easy, while 2 will prove to be quite difficult.
+Eventually, most of the difficulty will end up in 1.</p>
 </div>
 <div class="section" id="learning-to-program">
 <h2>Learning to program<a class="headerlink" href="#learning-to-program" title="Permalink to this headline">¶</a></h2>
@@ -471,89 +426,23 @@ For some technical domains limited by the speed or capacity of computers, 2. con
 <li><p>If a computer does something wrong, it is because you told it to do the wrong thing.</p></li>
 <li><p>Learning to program means learning to be as stupid as a computer.  It’s about figuring out what calculation to do to solve the problem you are interested in, and then explaining those steps to the idiot computer.</p></li>
 </ul>
-</div>
-<div class="section" id="what-a-computer-does">
-<h2>What a computer does<a class="headerlink" href="#what-a-computer-does" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="example">
+<h3>Example:<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
+<p>You want to instruct me to send a new post to the class with the message “hi” using the campuswire website.  The trick is that (1) you have to write all the instructions out ahead of time, and (2) I only understand a limited set of commands:</p>
 <ul class="simple">
-<li><p>get some input data (from a file? a prompt? variables?)</p></li>
-<li><p>stores the data in memory</p></li>
-<li><p>changes and combines the data in various ways</p></li>
-<li><p>outputs the contents somehow</p></li>
+<li><p>move mouse {left, right, up, down} (distance in cm, on my screen)</p></li>
+<li><p>click mouse</p></li>
+<li><p>press (keyboard button)</p></li>
 </ul>
-<div class="section" id="basic-operations">
-<h3>Basic operations<a class="headerlink" href="#basic-operations" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="input">
-<h4>Input:<a class="headerlink" href="#input" title="Permalink to this headline">¶</a></h4>
+<p>Some observations about what makes this hard:</p>
 <ul class="simple">
-<li><p>ask user for input</p></li>
-<li><p>read data from file on disk</p></li>
-<li><p>download data from URL</p></li>
+<li><p>cannot observe intermediate state.</p></li>
+<li><p>my representation differs from yours, and you have to give me instructions in my representation.</p></li>
+<li><p>a priori unknown state model.</p></li>
+<li><p>tedious level of precision required because I don’t understand more sophisticated commands.</p></li>
 </ul>
+<p>Computer programming presents the same challenges: we need to write out very detailed instructions, using a very limited, literal, set of commands.  We need to write the instructions out in advance.</p>
 </div>
-<div class="section" id="store-data">
-<h4>Store data<a class="headerlink" href="#store-data" title="Permalink to this headline">¶</a></h4>
-<ul class="simple">
-<li><p>create a new variable named ?,</p></li>
-</ul>
-</div>
-</div>
-<div class="section" id="meta-learning">
-<h3>meta learning<a class="headerlink" href="#meta-learning" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>secret is algorithms and data</p></li>
-<li><p>concepts first, code later.</p></li>
-<li></li>
-<li><p>comments are code… code explains comments to computer.</p></li>
-</ul>
-</div>
-<div class="section" id="eight-main-concepts">
-<h3>eight main concepts<a class="headerlink" href="#eight-main-concepts" title="Permalink to this headline">¶</a></h3>
-<p>phrase as active sentence.</p>
-<ul class="simple">
-<li><p>new variable: name? type? initial value?</p></li>
-<li><p>output: message?</p></li>
-<li><p>input: variable (to store)?, message (to prompt)?
-…discover…</p></li>
-<li><p>convert…</p></li>
-<li><p>while loop (requires more logic!)</p></li>
-<li><p>for loop (sentry, start, finish, change)</p></li>
-<li><p>lists and tuples</p></li>
-<li><p>string manipulation</p></li>
-<li><p>built in help</p></li>
-<li><p>list iteration</p></li>
-<li><p>functions and scope, and paramters, and return</p></li>
-<li><p>objects….</p></li>
-<li><p>eventually…</p></li>
-</ul>
-</div>
-<div class="section" id="how-a-computer-reads-interprets-a-program">
-<h3>how a computer reads / interprets a program<a class="headerlink" href="#how-a-computer-reads-interprets-a-program" title="Permalink to this headline">¶</a></h3>
-<p>parts:
-variables: declaration &amp; asignment (types?)
-control flow: conditionals, loops, exceptions.<br />
-functions:
-connection to outside world:</p>
-</div>
-<div class="section" id="important-computer-programming-concepts">
-<h3>important computer programming concepts:<a class="headerlink" href="#important-computer-programming-concepts" title="Permalink to this headline">¶</a></h3>
-<p>declarative vs imperative knowledge
-variable
-function
-operator
-object
-data types</p>
-</div>
-<div class="section" id="basics-of-a-computer-system">
-<h3>basics of a computer system<a class="headerlink" href="#basics-of-a-computer-system" title="Permalink to this headline">¶</a></h3>
-<p>data structures
-algorithms</p>
-</div>
-</div>
-<div class="section" id="types-of-programming-languages">
-<h2>Types of programming languages<a class="headerlink" href="#types-of-programming-languages" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>python is: a programming language</p></li>
-</ul>
 </div>
 </div>
 

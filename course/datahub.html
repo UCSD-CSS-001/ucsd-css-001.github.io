@@ -171,7 +171,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../lectures/P01.html">
-   P01: Whirlwind intro
+   P01: Getting oriented
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
@@ -376,40 +376,76 @@
             </div>
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#overview">
-   Overview
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Datahub assignments
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#overview">
+     Overview
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#log-in-to-datahub">
+     Log in to datahub.
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#launch-the-class-environment">
+     Launch the class environment
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#open-the-assignment">
+     Open the assignment
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#complete-the-assignment">
+     Complete the assignment
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#check-your-work">
+     Check your work
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#save-and-submit">
+     Save and submit
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tips-tricks">
+     Tips &amp; Tricks
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#printing-variables">
+       Printing Variables
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#define-a-variable">
+   Define a variable
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#log-in-to-datahub">
-   Log in to datahub.
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#print-out-the-value-s-of-a-variable">
+   Print out the value(s) of a variable.
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#launch-the-class-environment">
-   Launch the class environment
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#open-the-assignment">
-   Open the assignment
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#complete-the-assignment">
-   Complete the assignment
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#check-your-work">
-   Check your work
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#save-and-submit">
-   Save and submit
-  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#restarting-the-kernel">
+     Restarting the Kernel
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -456,6 +492,32 @@
 </div>
 <div class="section" id="save-and-submit">
 <h2>Save and submit<a class="headerlink" href="#save-and-submit" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="tips-tricks">
+<h2>Tips &amp; Tricks<a class="headerlink" href="#tips-tricks" title="Permalink to this headline">¶</a></h2>
+<p>The following are a couple tips &amp; tricks that may help you if you get stuck on anything.</p>
+<p>#%% md</p>
+<div class="section" id="printing-variables">
+<h3>Printing Variables<a class="headerlink" href="#printing-variables" title="Permalink to this headline">¶</a></h3>
+<p>A reminder that you can (and should) print and check variables as you go.</p>
+<p>This allows you to check what values they hold, and fix things if anything unexpected happens.</p>
+<p>#%%</p>
+</div>
+</div>
+</div>
+<div class="section" id="define-a-variable">
+<h1>Define a variable<a class="headerlink" href="#define-a-variable" title="Permalink to this headline">¶</a></h1>
+<p>math_result = 2 * 4</p>
+</div>
+<div class="section" id="print-out-the-value-s-of-a-variable">
+<h1>Print out the value(s) of a variable.<a class="headerlink" href="#print-out-the-value-s-of-a-variable" title="Permalink to this headline">¶</a></h1>
+<p>print(math_result)</p>
+<p>#%% md</p>
+<div class="section" id="restarting-the-kernel">
+<h2>Restarting the Kernel<a class="headerlink" href="#restarting-the-kernel" title="Permalink to this headline">¶</a></h2>
+<p>A reminder that sometimes if you run cells out of order, you can end up overwriting things in your namespace.</p>
+<p>If things seem to go weird, a good first step is to restart the kernel, which you can do from the kernel menu above.</p>
+<p>Even if everything seems to be working, it’s a nice check to ‘Restart &amp; Run All’ to make sure everything runs properly in order.</p>
 </div>
 </div>
 

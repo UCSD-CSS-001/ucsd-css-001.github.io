@@ -29,3 +29,35 @@ Below we write this steps out in more detail.
 ## Check your work
 
 ## Save and submit
+
+
+## Tips & Tricks
+
+The following are a couple tips & tricks that may help you if you get stuck on anything.
+
+#%% md
+
+### Printing Variables
+
+A reminder that you can (and should) print and check variables as you go.
+
+This allows you to check what values they hold, and fix things if anything unexpected happens.
+
+#%%
+
+# Define a variable
+math_result = 2 * 4
+
+# Print out the value(s) of a variable.
+print(math_result)
+
+#%% md
+
+### Restarting the Kernel
+
+A reminder that sometimes if you run cells out of order, you can end up overwriting things in your namespace.
+
+If things seem to go weird, a good first step is to restart the kernel, which you can do from the kernel menu above.
+
+Even if everything seems to be working, it's a nice check to 'Restart & Run All' to make sure everything runs properly in order.
+

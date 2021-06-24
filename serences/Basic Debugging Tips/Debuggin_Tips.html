@@ -1,0 +1,882 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Basic debugging tips &#8212; UCSD CSS 1</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">UCSD CSS 1</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../index.html">
+   Welcome to CSS 1
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Course (CSS 1 summer 1)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/syllabus.html">
+   Syllabus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/schedule.html">
+   Schedule
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/expectations.html">
+   Expectations
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../course/expectations-class.html">
+     Class structure
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../course/expectations-programming.html">
+     Learning to program
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/how-to.html">
+   Mechanics / How-To
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../course/datahub.html">
+     Datahub assignments
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../course/debugging.html">
+     How to debug and ask debugging questions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/resources.html">
+   Extracurricular Resources
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Week 1
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/week-01.html">
+   W1 problem
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../lectures/P01.html">
+   P01: Getting oriented
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../lectures/P01-programming.html">
+     P01: programming concepts
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../lectures/P01-jupyter.html">
+     P01: Crash Landing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../lectures/P01-python.html">
+     P01:  Python syntax, variables, types
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/P02.html">
+   P02: Control flow and logic
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Week 2
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/week-02.html">
+   W2 problem
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/P03.html">
+   P03: Sequence types
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/P04.html">
+   P04: dictionaries, sets, and files
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Week 3
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/week-03.html">
+   W3 problem
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/P05.html">
+   P05: functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/P06.html">
+   P06: classes and objects
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Week 4
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/week-04.html">
+   W4 problem
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/P07.html">
+   P07: data tables and pandas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/P08.html">
+   P08: plotting with matplotlib
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Week 2
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/week-05.html">
+   W5 problem
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/P09.html">
+   P09: more data: joins and file types
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/P10.html">
+   P10: beyond
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/serences/Basic Debugging Tips/Debuggin_Tips.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/UCSD-CSS-001/ucsd-css-001.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/UCSD-CSS-001/ucsd-css-001.github.io/issues/new?title=Issue%20on%20page%20%2Fserences/Basic Debugging Tips/Debuggin_Tips.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/UCSD-CSS-001/ucsd-css-001.github.io/master?urlpath=tree/serences/Basic Debugging Tips/Debuggin_Tips.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#printing-things-out">
+   printing things out…
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#use-the-pdb-line-magic-more-on-line-magics-next-week-but-they-basically-add-functionality-in-the-ipython-notebook-environment">
+   use the %pdb “line magic” [more on line magics next week, but they basically add functionality in the ipython notebook environment]
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#one-built-in-debugger-using-pdb-set-trace">
+   One built in debugger using: pdb.set_trace()
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="basic-debugging-tips">
+<h1>Basic debugging tips<a class="headerlink" href="#basic-debugging-tips" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>If your functions aren’t working as expected, use the following debugging techniques:</p>
+<ul>
+<li><p>Print each of the inputs and their types to make sure your inputs are correct. Use the type() function to get a variables type.</p></li>
+<li><p>Come up with test cases whose answers you can calculate manually and then check if your function outputs the same answers.</p></li>
+<li><p>Make sure you are returning the output of your function.
+To debug loops, print the variables that are changing in your loop and do so by formatting them in well written print statements.</p></li>
+<li><p>Use good variable names. Long variable names are any day better than short and uninformative ones.</p></li>
+<li><p>When you google, make sure you are searching for Python 3 stuff, not Python 2!</p></li>
+<li><p>At the end, Restart and Run all cells to make sure everything is working as expected.</p></li>
+</ul>
+</li>
+</ul>
+<div class="section" id="printing-things-out">
+<h2>printing things out…<a class="headerlink" href="#printing-things-out" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>easiest way to debug, and super useful for simple applications</p></li>
+<li><p>e.g. here we want to square a list of numbers, but we make a mistake. Instead of for i in nums (which is what we want), we loop over the length of nums (for i in range(len(nums))). So instead of squaring the actual list of numbers, we are squaring 0,1,2…N, where N is the length of the list of numbers</p></li>
+<li><p>inserting a simple print statement to show us what ‘i’ is each time we go through the loop is super helpful…</p>
+<ul>
+<li><p>allows us to see that i is 0,1 instead of 10,12…</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># write a function to square a variable length list of numbers</span>
+<span class="k">def</span> <span class="nf">sqr_list</span><span class="p">(</span><span class="o">*</span><span class="n">nums</span><span class="p">):</span>
+  <span class="n">out</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;i is:&quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+    <span class="n">out</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    
+  <span class="k">return</span> <span class="n">out</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sqr_list</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">12</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>i is: 0
+i is: 1
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 1]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="use-the-pdb-line-magic-more-on-line-magics-next-week-but-they-basically-add-functionality-in-the-ipython-notebook-environment">
+<h2>use the %pdb “line magic” [more on line magics next week, but they basically add functionality in the ipython notebook environment]<a class="headerlink" href="#use-the-pdb-line-magic-more-on-line-magics-next-week-but-they-basically-add-functionality-in-the-ipython-notebook-environment" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>good for when you’re getting an error and not sure why</p></li>
+<li></li>
+<li></li>
+<li><p>will stop execution at the error and enter “debug” mode</p>
+<ul>
+<li><p>this will launch a ‘command line’, and at the command line you can type in variable names and do other operations to test your code</p></li>
+</ul>
+</li>
+<li><p>type ‘q’ at the command line to exit debugging mode</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">pdb</span> 1
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Automatic pdb calling has been turned ON
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># write a function to square a variable length list of numbers</span>
+<span class="k">def</span> <span class="nf">sqr_list</span><span class="p">(</span><span class="o">*</span><span class="n">nums</span><span class="p">):</span>
+  <span class="n">out</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)):</span>
+    <span class="c1"># name error!</span>
+    <span class="n">outl</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+  <span class="k">return</span> <span class="n">out</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sqr_list</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">12</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">5</span><span class="o">-</span><span class="mi">6</span><span class="n">c71e230652a</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">sqr_list</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">12</span><span class="p">)</span>
+
+<span class="nn">&lt;ipython-input-4-f9f67b990594&gt;</span> in <span class="ni">sqr_list</span><span class="nt">(*nums)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>   <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)):</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="c1"># name error!</span>
+<span class="ne">----&gt; </span><span class="mi">6</span>     <span class="n">outl</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> 
+<span class="g g-Whitespace">      </span><span class="mi">8</span>   <span class="k">return</span> <span class="n">out</span>
+
+<span class="ne">NameError</span>: name &#39;outl&#39; is not defined
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt; <span class=" -Color -Color-Green">&lt;ipython-input-4-f9f67b990594&gt;</span>(6)<span class=" -Color -Color-Cyan">sqr_list</span><span class=" -Color -Color-Blue">()</span>
+<span class=" -Color -Color-Green">      4 </span><span class=" -Color -Color-Red">  </span><span class=" -Color -Color-Green">for</span> i <span class=" -Color -Color-Green">in</span> range<span class=" -Color -Color-Blue">(</span>len<span class=" -Color -Color-Blue">(</span>nums<span class=" -Color -Color-Blue">)):</span>
+<span class=" -Color -Color-Green">      5 </span><span class=" -Color -Color-Red">    # name error!</span>
+<span class=" -Color -Color-Green">----&gt; 6 </span><span class=" -Color -Color-Red">    </span>outl<span class=" -Color -Color-Blue">.</span>append<span class=" -Color -Color-Blue">(</span>i<span class=" -Color -Color-Blue">**</span><span class=" -Color -Color-Cyan">2</span><span class=" -Color -Color-Blue">)</span>
+<span class=" -Color -Color-Green">      7 </span>
+<span class=" -Color -Color-Green">      8 </span><span class=" -Color -Color-Red">  </span><span class=" -Color -Color-Green">return</span> out
+
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+    <span class="p">[</span><span class="o">...</span> <span class="n">skipping</span> <span class="n">hidden</span> <span class="mi">1</span> <span class="n">frame</span><span class="p">]</span>
+
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">5</span><span class="o">-</span><span class="mi">6</span><span class="n">c71e230652a</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">sqr_list</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">12</span><span class="p">)</span>
+
+<span class="nn">&lt;ipython-input-4-f9f67b990594&gt;</span> in <span class="ni">sqr_list</span><span class="nt">(*nums)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="c1"># name error!</span>
+<span class="ne">----&gt; </span><span class="mi">6</span>     <span class="n">outl</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> 
+
+<span class="ne">NameError</span>: name &#39;outl&#39; is not defined
+
+<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
+
+<span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
+    <span class="p">[</span><span class="o">...</span> <span class="n">skipping</span> <span class="n">hidden</span> <span class="mi">1</span> <span class="n">frame</span><span class="p">]</span>
+
+<span class="nn">/opt/homebrew/anaconda3/lib/python3.8/site-packages/IPython/core/interactiveshell.py</span> in <span class="ni">showtraceback</span><span class="nt">(self, exc_tuple, filename, tb_offset, exception_only, running_compiled_code)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2051</span>                     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">call_pdb</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">2052</span>                         <span class="c1"># drop into debugger</span>
+<span class="ne">-&gt; </span><span class="mi">2053</span>                         <span class="bp">self</span><span class="o">.</span><span class="n">debugger</span><span class="p">(</span><span class="n">force</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2054</span>                     <span class="k">return</span>
+<span class="g g-Whitespace">   </span><span class="mi">2055</span> 
+
+<span class="nn">/opt/homebrew/anaconda3/lib/python3.8/site-packages/IPython/core/interactiveshell.py</span> in <span class="ni">debugger</span><span class="nt">(self, force)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1190</span>             <span class="k">return</span>
+<span class="g g-Whitespace">   </span><span class="mi">1191</span> 
+<span class="ne">-&gt; </span><span class="mi">1192</span>         <span class="bp">self</span><span class="o">.</span><span class="n">InteractiveTB</span><span class="o">.</span><span class="n">debugger</span><span class="p">(</span><span class="n">force</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1193</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1194</span>     <span class="c1">#-------------------------------------------------------------------------</span>
+
+<span class="nn">/opt/homebrew/anaconda3/lib/python3.8/site-packages/IPython/core/ultratb.py</span> in <span class="ni">debugger</span><span class="nt">(self, force)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1265</span>                     <span class="n">etb</span> <span class="o">=</span> <span class="n">etb</span><span class="o">.</span><span class="n">tb_next</span>
+<span class="g g-Whitespace">   </span><span class="mi">1266</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">pdb</span><span class="o">.</span><span class="n">botframe</span> <span class="o">=</span> <span class="n">etb</span><span class="o">.</span><span class="n">tb_frame</span>
+<span class="ne">-&gt; </span><span class="mi">1267</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">pdb</span><span class="o">.</span><span class="n">interaction</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">etb</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1268</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1269</span>         <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;tb&#39;</span><span class="p">):</span>
+
+<span class="nn">/opt/homebrew/anaconda3/lib/python3.8/site-packages/IPython/core/debugger.py</span> in <span class="ni">interaction</span><span class="nt">(self, frame, traceback)</span>
+<span class="g g-Whitespace">    </span><span class="mi">317</span>     <span class="k">def</span> <span class="nf">interaction</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">frame</span><span class="p">,</span> <span class="n">traceback</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">318</span>         <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">319</span>             <span class="n">OldPdb</span><span class="o">.</span><span class="n">interaction</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">frame</span><span class="p">,</span> <span class="n">traceback</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">320</span>         <span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">321</span>             <span class="bp">self</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">shell</span><span class="o">.</span><span class="n">get_exception_only</span><span class="p">())</span>
+
+<span class="nn">/opt/homebrew/anaconda3/lib/python3.8/pdb.py</span> in <span class="ni">interaction</span><span class="nt">(self, frame, traceback)</span>
+<span class="g g-Whitespace">    </span><span class="mi">355</span>             <span class="k">return</span>
+<span class="g g-Whitespace">    </span><span class="mi">356</span>         <span class="bp">self</span><span class="o">.</span><span class="n">print_stack_entry</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">stack</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">curindex</span><span class="p">])</span>
+<span class="ne">--&gt; </span><span class="mi">357</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_cmdloop</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">358</span>         <span class="bp">self</span><span class="o">.</span><span class="n">forget</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">359</span> 
+
+<span class="nn">/opt/homebrew/anaconda3/lib/python3.8/pdb.py</span> in <span class="ni">_cmdloop</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">320</span>                 <span class="c1"># the current command, so allow them during interactive input</span>
+<span class="g g-Whitespace">    </span><span class="mi">321</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">allow_kbdint</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="ne">--&gt; </span><span class="mi">322</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">cmdloop</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">323</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">allow_kbdint</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="g g-Whitespace">    </span><span class="mi">324</span>                 <span class="k">break</span>
+
+<span class="nn">/opt/homebrew/anaconda3/lib/python3.8/cmd.py</span> in <span class="ni">cmdloop</span><span class="nt">(self, intro)</span>
+<span class="g g-Whitespace">    </span><span class="mi">124</span>                     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">use_rawinput</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">125</span>                         <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">126</span>                             <span class="n">line</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">prompt</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">127</span>                         <span class="k">except</span> <span class="ne">EOFError</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">128</span>                             <span class="n">line</span> <span class="o">=</span> <span class="s1">&#39;EOF&#39;</span>
+
+<span class="nn">/opt/homebrew/anaconda3/lib/python3.8/site-packages/ipykernel/kernelbase.py</span> in <span class="ni">raw_input</span><span class="nt">(self, prompt)</span>
+<span class="g g-Whitespace">    </span><span class="mi">855</span>         <span class="s2">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">856</span><span class="s2">         if not self._allow_stdin:</span>
+<span class="ne">--&gt; </span><span class="mi">857</span><span class="s2">             raise StdinNotImplementedError(</span>
+<span class="g g-Whitespace">    </span><span class="mi">858</span><span class="s2">                 &quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">859</span><span class="s2">             )</span>
+
+<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt; <span class=" -Color -Color-Green">/opt/homebrew/anaconda3/lib/python3.8/site-packages/ipykernel/kernelbase.py</span>(857)<span class=" -Color -Color-Cyan">raw_input</span><span class=" -Color -Color-Blue">()</span>
+<span class=" -Color -Color-Green">    855 </span><span class=" -Color -Color-Red">        &quot;&quot;&quot;</span>
+<span class=" -Color -Color-Green">    856 </span><span class=" -Color -Color-Red">        </span><span class=" -Color -Color-Green">if</span> <span class=" -Color -Color-Green">not</span> self<span class=" -Color -Color-Blue">.</span>_allow_stdin<span class=" -Color -Color-Blue">:</span>
+<span class=" -Color -Color-Green">--&gt; 857 </span><span class=" -Color -Color-Red">            raise StdinNotImplementedError(</span>
+<span class=" -Color -Color-Green">    858 </span><span class=" -Color -Color-Red">                </span><span class=" -Color -Color-Blue">&quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
+<span class=" -Color -Color-Green">    859 </span><span class=" -Color -Color-Red">            )</span>
+
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+    <span class="p">[</span><span class="o">...</span> <span class="n">skipping</span> <span class="n">hidden</span> <span class="mi">1</span> <span class="n">frame</span><span class="p">]</span>
+
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">5</span><span class="o">-</span><span class="mi">6</span><span class="n">c71e230652a</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">sqr_list</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">12</span><span class="p">)</span>
+
+<span class="nn">&lt;ipython-input-4-f9f67b990594&gt;</span> in <span class="ni">sqr_list</span><span class="nt">(*nums)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="c1"># name error!</span>
+<span class="ne">----&gt; </span><span class="mi">6</span>     <span class="n">outl</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> 
+
+<span class="ne">NameError</span>: name &#39;outl&#39; is not defined
+
+<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
+
+<span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
+<span class="nn">/opt/homebrew/anaconda3/lib/python3.8/site-packages/IPython/core/interactiveshell.py</span> in <span class="ni">run_ast_nodes</span><span class="nt">(self, nodelist, cell_name, interactivity, compiler, result)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3337</span>                         <span class="n">asy</span> <span class="o">=</span> <span class="n">compare</span><span class="p">(</span><span class="n">code</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">3338</span>                     <span class="k">if</span> <span class="p">(</span><span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">run_code</span><span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span>  <span class="n">async_</span><span class="o">=</span><span class="n">asy</span><span class="p">)):</span>
+<span class="g g-Whitespace">   </span><span class="mi">3339</span>                         <span class="k">return</span> <span class="kc">True</span>
+
+    <span class="p">[</span><span class="o">...</span> <span class="n">skipping</span> <span class="n">hidden</span> <span class="mi">1</span> <span class="n">frame</span><span class="p">]</span>
+
+<span class="nn">/opt/homebrew/anaconda3/lib/python3.8/site-packages/IPython/core/interactiveshell.py</span> in <span class="ni">showtraceback</span><span class="nt">(self, exc_tuple, filename, tb_offset, exception_only, running_compiled_code)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2052</span>                         <span class="c1"># drop into debugger</span>
+<span class="ne">-&gt; </span><span class="mi">2053</span>                         <span class="bp">self</span><span class="o">.</span><span class="n">debugger</span><span class="p">(</span><span class="n">force</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2054</span>                     <span class="k">return</span>
+
+<span class="nn">/opt/homebrew/anaconda3/lib/python3.8/site-packages/IPython/core/interactiveshell.py</span> in <span class="ni">debugger</span><span class="nt">(self, force)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1191</span> 
+<span class="ne">-&gt; </span><span class="mi">1192</span>         <span class="bp">self</span><span class="o">.</span><span class="n">InteractiveTB</span><span class="o">.</span><span class="n">debugger</span><span class="p">(</span><span class="n">force</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1193</span> 
+
+<span class="nn">/opt/homebrew/anaconda3/lib/python3.8/site-packages/IPython/core/ultratb.py</span> in <span class="ni">debugger</span><span class="nt">(self, force)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1266</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">pdb</span><span class="o">.</span><span class="n">botframe</span> <span class="o">=</span> <span class="n">etb</span><span class="o">.</span><span class="n">tb_frame</span>
+<span class="ne">-&gt; </span><span class="mi">1267</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">pdb</span><span class="o">.</span><span class="n">interaction</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">etb</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1268</span> 
+
+<span class="nn">/opt/homebrew/anaconda3/lib/python3.8/site-packages/IPython/core/debugger.py</span> in <span class="ni">interaction</span><span class="nt">(self, frame, traceback)</span>
+<span class="g g-Whitespace">    </span><span class="mi">318</span>         <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">319</span>             <span class="n">OldPdb</span><span class="o">.</span><span class="n">interaction</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">frame</span><span class="p">,</span> <span class="n">traceback</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">320</span>         <span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
+
+<span class="nn">/opt/homebrew/anaconda3/lib/python3.8/pdb.py</span> in <span class="ni">interaction</span><span class="nt">(self, frame, traceback)</span>
+<span class="g g-Whitespace">    </span><span class="mi">356</span>         <span class="bp">self</span><span class="o">.</span><span class="n">print_stack_entry</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">stack</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">curindex</span><span class="p">])</span>
+<span class="ne">--&gt; </span><span class="mi">357</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_cmdloop</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">358</span>         <span class="bp">self</span><span class="o">.</span><span class="n">forget</span><span class="p">()</span>
+
+<span class="nn">/opt/homebrew/anaconda3/lib/python3.8/pdb.py</span> in <span class="ni">_cmdloop</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">321</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">allow_kbdint</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="ne">--&gt; </span><span class="mi">322</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">cmdloop</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">323</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">allow_kbdint</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="nn">/opt/homebrew/anaconda3/lib/python3.8/cmd.py</span> in <span class="ni">cmdloop</span><span class="nt">(self, intro)</span>
+<span class="g g-Whitespace">    </span><span class="mi">125</span>                         <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">126</span>                             <span class="n">line</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">prompt</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">127</span>                         <span class="k">except</span> <span class="ne">EOFError</span><span class="p">:</span>
+
+<span class="nn">/opt/homebrew/anaconda3/lib/python3.8/site-packages/ipykernel/kernelbase.py</span> in <span class="ni">raw_input</span><span class="nt">(self, prompt)</span>
+<span class="g g-Whitespace">    </span><span class="mi">856</span>         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_allow_stdin</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">857</span>             <span class="k">raise</span> <span class="n">StdinNotImplementedError</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">858</span>                 <span class="s2">&quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
+
+<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
+
+<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
+
+<span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
+<span class="nn">/opt/homebrew/anaconda3/lib/python3.8/site-packages/IPython/core/async_helpers.py</span> in <span class="ni">_pseudo_sync_runner</span><span class="nt">(coro)</span>
+<span class="g g-Whitespace">     </span><span class="mi">66</span>     <span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">67</span><span class="sd">     try:</span>
+<span class="ne">---&gt; </span><span class="mi">68</span><span class="sd">         coro.send(None)</span>
+<span class="g g-Whitespace">     </span><span class="mi">69</span><span class="sd">     except StopIteration as exc:</span>
+<span class="g g-Whitespace">     </span><span class="mi">70</span><span class="sd">         return exc.value</span>
+
+<span class="nn">/opt/homebrew/anaconda3/lib/python3.8/site-packages/IPython/core/interactiveshell.py</span> in <span class="ni">run_cell_async</span><span class="nt">(self, raw_cell, store_history, silent, shell_futures, transformed_cell, preprocessing_exc_tuple)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3144</span><span class="sd">                     interactivity = &#39;async&#39;</span>
+<span class="g g-Whitespace">   </span><span class="mi">3145</span><span class="sd"> </span>
+<span class="ne">-&gt; </span><span class="mi">3146</span><span class="sd">                 has_raised = await self.run_ast_nodes(code_ast.body, cell_name,</span>
+<span class="g g-Whitespace">   </span><span class="mi">3147</span><span class="sd">                        interactivity=interactivity, compiler=compiler, result=result)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3148</span><span class="sd"> </span>
+
+<span class="nn">/opt/homebrew/anaconda3/lib/python3.8/site-packages/IPython/core/interactiveshell.py</span> in <span class="ni">run_ast_nodes</span><span class="nt">(self, nodelist, cell_name, interactivity, compiler, result)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3355</span><span class="sd">             if result:</span>
+<span class="g g-Whitespace">   </span><span class="mi">3356</span><span class="sd">                 result.error_before_exec = sys.exc_info()[1]</span>
+<span class="ne">-&gt; </span><span class="mi">3357</span><span class="sd">             self.showtraceback()</span>
+<span class="g g-Whitespace">   </span><span class="mi">3358</span><span class="sd">             return True</span>
+<span class="g g-Whitespace">   </span><span class="mi">3359</span><span class="sd"> </span>
+
+<span class="nn">/opt/homebrew/anaconda3/lib/python3.8/site-packages/IPython/core/interactiveshell.py</span> in <span class="ni">showtraceback</span><span class="nt">(self, exc_tuple, filename, tb_offset, exception_only, running_compiled_code)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2051</span><span class="sd">                     if self.call_pdb:</span>
+<span class="g g-Whitespace">   </span><span class="mi">2052</span><span class="sd">                         # drop into debugger</span>
+<span class="ne">-&gt; </span><span class="mi">2053</span><span class="sd">                         self.debugger(force=True)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2054</span><span class="sd">                     return</span>
+<span class="g g-Whitespace">   </span><span class="mi">2055</span><span class="sd"> </span>
+
+<span class="nn">/opt/homebrew/anaconda3/lib/python3.8/site-packages/IPython/core/interactiveshell.py</span> in <span class="ni">debugger</span><span class="nt">(self, force)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1190</span><span class="sd">             return</span>
+<span class="g g-Whitespace">   </span><span class="mi">1191</span><span class="sd"> </span>
+<span class="ne">-&gt; </span><span class="mi">1192</span><span class="sd">         self.InteractiveTB.debugger(force=True)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1193</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1194</span><span class="sd">     #-------------------------------------------------------------------------</span>
+
+<span class="nn">/opt/homebrew/anaconda3/lib/python3.8/site-packages/IPython/core/ultratb.py</span> in <span class="ni">debugger</span><span class="nt">(self, force)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1265</span><span class="sd">                     etb = etb.tb_next</span>
+<span class="g g-Whitespace">   </span><span class="mi">1266</span><span class="sd">                 self.pdb.botframe = etb.tb_frame</span>
+<span class="ne">-&gt; </span><span class="mi">1267</span><span class="sd">                 self.pdb.interaction(None, etb)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1268</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1269</span><span class="sd">         if hasattr(self, &#39;tb&#39;):</span>
+
+<span class="nn">/opt/homebrew/anaconda3/lib/python3.8/site-packages/IPython/core/debugger.py</span> in <span class="ni">interaction</span><span class="nt">(self, frame, traceback)</span>
+<span class="g g-Whitespace">    </span><span class="mi">317</span><span class="sd">     def interaction(self, frame, traceback):</span>
+<span class="g g-Whitespace">    </span><span class="mi">318</span><span class="sd">         try:</span>
+<span class="ne">--&gt; </span><span class="mi">319</span><span class="sd">             OldPdb.interaction(self, frame, traceback)</span>
+<span class="g g-Whitespace">    </span><span class="mi">320</span><span class="sd">         except KeyboardInterrupt:</span>
+<span class="g g-Whitespace">    </span><span class="mi">321</span><span class="sd">             self.stdout.write(&quot;\n&quot; + self.shell.get_exception_only())</span>
+
+<span class="nn">/opt/homebrew/anaconda3/lib/python3.8/pdb.py</span> in <span class="ni">interaction</span><span class="nt">(self, frame, traceback)</span>
+<span class="g g-Whitespace">    </span><span class="mi">355</span><span class="sd">             return</span>
+<span class="g g-Whitespace">    </span><span class="mi">356</span><span class="sd">         self.print_stack_entry(self.stack[self.curindex])</span>
+<span class="ne">--&gt; </span><span class="mi">357</span><span class="sd">         self._cmdloop()</span>
+<span class="g g-Whitespace">    </span><span class="mi">358</span><span class="sd">         self.forget()</span>
+<span class="g g-Whitespace">    </span><span class="mi">359</span><span class="sd"> </span>
+
+<span class="nn">/opt/homebrew/anaconda3/lib/python3.8/pdb.py</span> in <span class="ni">_cmdloop</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">320</span><span class="sd">                 # the current command, so allow them during interactive input</span>
+<span class="g g-Whitespace">    </span><span class="mi">321</span><span class="sd">                 self.allow_kbdint = True</span>
+<span class="ne">--&gt; </span><span class="mi">322</span><span class="sd">                 self.cmdloop()</span>
+<span class="g g-Whitespace">    </span><span class="mi">323</span><span class="sd">                 self.allow_kbdint = False</span>
+<span class="g g-Whitespace">    </span><span class="mi">324</span><span class="sd">                 break</span>
+
+<span class="nn">/opt/homebrew/anaconda3/lib/python3.8/cmd.py</span> in <span class="ni">cmdloop</span><span class="nt">(self, intro)</span>
+<span class="g g-Whitespace">    </span><span class="mi">124</span><span class="sd">                     if self.use_rawinput:</span>
+<span class="g g-Whitespace">    </span><span class="mi">125</span><span class="sd">                         try:</span>
+<span class="ne">--&gt; </span><span class="mi">126</span><span class="sd">                             line = input(self.prompt)</span>
+<span class="g g-Whitespace">    </span><span class="mi">127</span><span class="sd">                         except EOFError:</span>
+<span class="g g-Whitespace">    </span><span class="mi">128</span><span class="sd">                             line = &#39;EOF&#39;</span>
+
+<span class="nn">/opt/homebrew/anaconda3/lib/python3.8/site-packages/ipykernel/kernelbase.py</span> in <span class="ni">raw_input</span><span class="nt">(self, prompt)</span>
+<span class="g g-Whitespace">    </span><span class="mi">855</span><span class="sd">         &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">856</span>         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_allow_stdin</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">857</span>             <span class="k">raise</span> <span class="n">StdinNotImplementedError</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">858</span>                 <span class="s2">&quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">859</span>             <span class="p">)</span>
+
+<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&gt; <span class=" -Color -Color-Green">/opt/homebrew/anaconda3/lib/python3.8/site-packages/ipykernel/kernelbase.py</span>(857)<span class=" -Color -Color-Cyan">raw_input</span><span class=" -Color -Color-Blue">()</span>
+<span class=" -Color -Color-Green">    855 </span><span class=" -Color -Color-Red">        &quot;&quot;&quot;</span>
+<span class=" -Color -Color-Green">    856 </span><span class=" -Color -Color-Red">        </span><span class=" -Color -Color-Green">if</span> <span class=" -Color -Color-Green">not</span> self<span class=" -Color -Color-Blue">.</span>_allow_stdin<span class=" -Color -Color-Blue">:</span>
+<span class=" -Color -Color-Green">--&gt; 857 </span><span class=" -Color -Color-Red">            raise StdinNotImplementedError(</span>
+<span class=" -Color -Color-Green">    858 </span><span class=" -Color -Color-Red">                </span><span class=" -Color -Color-Blue">&quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
+<span class=" -Color -Color-Green">    859 </span><span class=" -Color -Color-Red">            )</span>
+
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="one-built-in-debugger-using-pdb-set-trace">
+<h2>One built in debugger using: pdb.set_trace()<a class="headerlink" href="#one-built-in-debugger-using-pdb-set-trace" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>will set a breakpoint at a fixed location</p></li>
+<li><p>when breakpoint reached, you will enter debug mode and a command line will pop up similar to the one you get with %pdb 1 line magic</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pdb</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># write a function to square a variable length list of numbers</span>
+<span class="k">def</span> <span class="nf">sqr_list</span><span class="p">(</span><span class="o">*</span><span class="n">nums</span><span class="p">):</span>
+  <span class="n">out</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)):</span>
+    <span class="n">pdb</span><span class="o">.</span><span class="n">set_trace</span><span class="p">()</span>
+    <span class="n">out</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+  <span class="k">return</span> <span class="n">out</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sqr_list</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./serences/Basic Debugging Tips"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Ed Vul<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

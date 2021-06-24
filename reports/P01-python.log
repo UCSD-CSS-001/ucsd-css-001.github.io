@@ -22,7 +22,7 @@ abc
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mNameError[0m                                 Traceback (most recent call last)
-[0;32m<ipython-input-5-03cfd743661f>[0m in [0;36m<module>[0;34m[0m
+[0;32m<ipython-input-6-03cfd743661f>[0m in [0;36m<module>[0;34m[0m
 [0;32m----> 1[0;31m [0mabc[0m[0;34m[0m[0;34m[0m[0m
 [0m
 [0;31mNameError[0m: name 'abc' is not defined

@@ -1,0 +1,1301 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>P04: dictionaries, sets, and files &#8212; UCSD CSS 1</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">UCSD CSS 1</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Welcome to CSS 1
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Course (CSS 1 summer 1)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/syllabus.html">
+   Syllabus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/schedule.html">
+   Schedule
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/expectations.html">
+   Expectations
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../course/expectations-class.html">
+     Class structure
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../course/expectations-programming.html">
+     Learning to program
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course/how-to.html">
+   Mechanics / How-To
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../course/datahub.html">
+     Datahub assignments
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../course/debugging.html">
+     How to debug and ask debugging questions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/resources.html">
+   Extracurricular Resources
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Week 1
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="week-01.html">
+   W1 problem
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="P01.html">
+   P01: Getting oriented
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P01-programming.html">
+     P01: programming concepts
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P01-jupyter.html">
+     P01: Crash Landing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P01-python.html">
+     P01:  Python syntax, variables, types
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="P02.html">
+   P02: Control flow and logic
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Week 2
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="week-02.html">
+   W2 problem
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="P03.html">
+   P03: Sequence types
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="P04.html">
+   P04: dictionaries, sets, and files
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Week 3
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="week-03.html">
+   W3 problem
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="P05.html">
+   P05: functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="P06.html">
+   P06: classes and objects
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Week 4
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="week-04.html">
+   W4 problem
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="P07.html">
+   P07: data tables and pandas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="P08.html">
+   P08: plotting with matplotlib
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Week 2
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="week-05.html">
+   W5 problem
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="P09.html">
+   P09: more data: joins and file types
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="P10.html">
+   P10: beyond
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/lectures/P04-dictionaries.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/UCSD-CSS-001/ucsd-css-001.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/UCSD-CSS-001/ucsd-css-001.github.io/issues/new?title=Issue%20on%20page%20%2Flectures/P04-dictionaries.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/UCSD-CSS-001/ucsd-css-001.github.io/master?urlpath=tree/lectures/P04-dictionaries.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#concepts">
+   Concepts
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hashable-immutable">
+     Hashable, immutable
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sets">
+     Sets
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dictionary-hash-table-mapping">
+     Dictionary: Hash-table / mapping
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#files">
+     Files
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#paths">
+       Paths
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#formats">
+       Formats
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#python">
+   Python
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dictionaries">
+     Dictionaries
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#keys-values-items">
+       Keys, Values, Items
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#sorting">
+       Sorting
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   Dictionaries
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dictionaries-as-key-value-collections">
+     Dictionaries as Key-Value Collections
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dictionaries-indexing-looping">
+     Dictionaries: Indexing &amp; Looping
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#clicker-question-1">
+       Clicker Question #1
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#clicker-question-2">
+       Clicker Question #2
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-dictionaries">
+     Example Dictionaries
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#clicker-question-3">
+       Clicker Question #3
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dictionaries-are-mutable">
+     Dictionaries are mutable
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dictionaries-and-operators">
+     Dictionaries and operators
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#additional-dictionary-properties">
+     Additional Dictionary Properties
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#clicker-question-4">
+       Clicker Question #4
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="p04-dictionaries-sets-and-files">
+<h1>P04: dictionaries, sets, and files<a class="headerlink" href="#p04-dictionaries-sets-and-files" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><strong>Concepts</strong>: ordered vs not, hash</p></li>
+<li><p><strong>Python dict, set</strong>: hashable, set, dict, .update(), del</p></li>
+<li><p><strong>Python files</strong>: open, close, with open as fp</p></li>
+</ul>
+<div class="section" id="concepts">
+<h2>Concepts<a class="headerlink" href="#concepts" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="hashable-immutable">
+<h3>Hashable, immutable<a class="headerlink" href="#hashable-immutable" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Immutable_object"><strong>Immutable</strong></a> variables/objects cannot be changed after they are created.  For instance, in Python, a string cannot be modified, it can just be replaced with a new string.  In contrast, a list can be modified: you can add new items to it without creating a new list object.</p></li>
+<li><p><strong>Hashable</strong> variables/objects are immutable, and can support the calculation of a <a class="reference external" href="https://en.wikipedia.org/wiki/Hash_function">hash</a>.  This includes integers, floats, strings, tuples, booleans.</p></li>
+</ul>
+</div>
+<div class="section" id="sets">
+<h3>Sets<a class="headerlink" href="#sets" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="dictionary-hash-table-mapping">
+<h3>Dictionary: Hash-table / mapping<a class="headerlink" href="#dictionary-hash-table-mapping" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="files">
+<h3>Files<a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="paths">
+<h4>Paths<a class="headerlink" href="#paths" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="formats">
+<h4>Formats<a class="headerlink" href="#formats" title="Permalink to this headline">¶</a></h4>
+</div>
+</div>
+</div>
+<div class="section" id="python">
+<h2>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="dictionaries">
+<h3>Dictionaries<a class="headerlink" href="#dictionaries" title="Permalink to this headline">¶</a></h3>
+<p>Dictionaries are <em>unordered</em>, <em>mutable</em>, <em>collections</em>, of <em>key</em>-<em>value</em> pairs.  They are a mapping from <em>distinct</em>, <em>hashable</em> keys, onto values.</p>
+<p>In Python dictionaries are like lists in that they:</p>
+<ul class="simple">
+<li><p>are <em>mutable</em> (so you can change them),</p></li>
+<li><p>are <em>collections</em> of other objects (so you can iterate over them, get their <code class="docutils literal notranslate"><span class="pre">len()</span></code>, check membership with <code class="docutils literal notranslate"><span class="pre">in</span></code>).</p></li>
+<li><p>you can get items with square brackets <code class="docutils literal notranslate"><span class="pre">[]</span></code> (but not with integer index)</p></li>
+</ul>
+<p>However, they are unlike lists in that:</p>
+<ul class="simple">
+<li><p>they are <em>unordered</em> so they cannot be indexed with integers or sliced.</p></li>
+<li><p>the are <em>mappings</em> between <em>distinct</em>, <em>hashable</em> keys, and values.</p></li>
+</ul>
+<p>Dictionaries are created with <code class="docutils literal notranslate"><span class="pre">dict()</span></code>, or with <code class="docutils literal notranslate"><span class="pre">{key:value}</span></code> notation.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">courses</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="n">courses</span><span class="p">[</span><span class="s1">&#39;CSS2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Data/Model Python&#39;</span>
+<span class="n">courses</span><span class="p">[</span><span class="s1">&#39;CSS1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Intro Python&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">courses</span><span class="p">)</span>
+
+<span class="n">courses</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;CSS2&#39;</span><span class="p">:</span> <span class="s1">&#39;Data/Model Python&#39;</span><span class="p">,</span> <span class="s1">&#39;CSS1&#39;</span><span class="p">:</span> <span class="s1">&#39;Intro Python&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;CSS2&#39;: &#39;Data/Model Python&#39;, &#39;CSS1&#39;: &#39;Intro Python&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Dictionary elements can be accessed via their keys.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">courses</span><span class="p">[</span><span class="s1">&#39;CSS1&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Intro Python
+</pre></div>
+</div>
+</div>
+</div>
+<p>Items can be added to dictionaries by assigning to new keys,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">courses</span><span class="p">[</span><span class="s1">&#39;ABB&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Is this a course?&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">courses</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;CSS2&#39;: &#39;Data/Model Python&#39;, &#39;CSS1&#39;: &#39;Intro Python&#39;, &#39;ABB&#39;: &#39;Is this a course?&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Dictionaries can be updated with <code class="docutils literal notranslate"><span class="pre">.update()</span></code>, which will add new keys, and update the values of existing keys.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">new_courses</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;ABB&#39;</span><span class="p">:</span> <span class="s1">&#39;this is not a course&#39;</span><span class="p">,</span> <span class="s1">&#39;CSS100&#39;</span><span class="p">:</span><span class="s1">&#39;Analytic Programming&#39;</span><span class="p">}</span>
+<span class="n">courses</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">new_courses</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">courses</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;CSS2&#39;: &#39;Data/Model Python&#39;, &#39;CSS1&#39;: &#39;Intro Python&#39;, &#39;ABB&#39;: &#39;this is not a course&#39;, &#39;CSS100&#39;: &#39;Analytic Programming&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Elements of dictionaries can be deleted with the <code class="docutils literal notranslate"><span class="pre">del</span></code> keyword:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">del</span> <span class="n">courses</span><span class="p">[</span><span class="s1">&#39;ABB&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">courses</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;CSS2&#39;: &#39;Data/Model Python&#39;, &#39;CSS1&#39;: &#39;Intro Python&#39;, &#39;CSS100&#39;: &#39;Analytic Programming&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can check if a key exists in a dictionary with <code class="docutils literal notranslate"><span class="pre">in</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;CSS1&#39;</span> <span class="ow">in</span> <span class="n">courses</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ABB&#39;</span> <span class="ow">in</span> <span class="n">courses</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="keys-values-items">
+<h4>Keys, Values, Items<a class="headerlink" href="#keys-values-items" title="Permalink to this headline">¶</a></h4>
+<p>You can get (or iterate over) just the keys with <code class="docutils literal notranslate"><span class="pre">.keys()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">courses</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">courses</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_keys([&#39;CSS2&#39;, &#39;CSS1&#39;, &#39;CSS100&#39;])
+
+CSS2
+CSS1
+CSS100
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can get just the values with <code class="docutils literal notranslate"><span class="pre">.values()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">courses</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">courses</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_values([&#39;Data/Model Python&#39;, &#39;Intro Python&#39;, &#39;Analytic Programming&#39;])
+
+Data/Model Python
+Intro Python
+Analytic Programming
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can get key-value pairs (as tuples) with <code class="docutils literal notranslate"><span class="pre">.items()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">courses</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">pair</span> <span class="ow">in</span> <span class="n">courses</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">pair</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_items([(&#39;CSS2&#39;, &#39;Data/Model Python&#39;), (&#39;CSS1&#39;, &#39;Intro Python&#39;), (&#39;CSS100&#39;, &#39;Analytic Programming&#39;)])
+
+(&#39;CSS2&#39;, &#39;Data/Model Python&#39;)
+(&#39;CSS1&#39;, &#39;Intro Python&#39;)
+(&#39;CSS100&#39;, &#39;Analytic Programming&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>It is often useful to do assignment unpacking, to unpack the (key,value) tuple into two variables:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">courses</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Course number </span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s1"> is titled </span><span class="si">{</span><span class="n">v</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Course number CSS2 is titled Data/Model Python
+Course number CSS1 is titled Intro Python
+Course number CSS100 is titled Analytic Programming
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="sorting">
+<h4>Sorting<a class="headerlink" href="#sorting" title="Permalink to this headline">¶</a></h4>
+<p>As you saw above, the order of key-value pairs in a dictionary is determined by when they were added.  Often we want to sort the contents either by the keys, or by the values.   In either case, to get a sorted dictionary, we will end up making a new dictionary by inserting key-value pairs in a sorted order.</p>
+<p><strong>By keys</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sorted_courses</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">courses</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
+    <span class="n">sorted_courses</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">courses</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">courses</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sorted_courses</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;CSS2&#39;: &#39;Data/Model Python&#39;, &#39;CSS1&#39;: &#39;Intro Python&#39;, &#39;CSS100&#39;: &#39;Analytic Programming&#39;}
+{&#39;CSS1&#39;: &#39;Intro Python&#39;, &#39;CSS100&#39;: &#39;Analytic Programming&#39;, &#39;CSS2&#39;: &#39;Data/Model Python&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>By values</strong></p>
+<p>Sorting by values is a bit tricky – we can sort the values, but we have no reliable way to figure out which keys were associated with the sorted values.  Consequently, we have to sort the key-value items.  But doing so requires that we can tell the <code class="docutils literal notranslate"><span class="pre">sorted</span></code> function to use the second element of the pair to sort.  This is all doable, but involves either writing an anonymous function (not hard, we just havent covered it yet), or importing a library that creates that anonymous function for us.</p>
+<p>We will show you how to do this using the <code class="docutils literal notranslate"><span class="pre">itemgetter</span></code> function from the <code class="docutils literal notranslate"><span class="pre">operator</span></code> library</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">operator</span> <span class="kn">import</span> <span class="n">itemgetter</span> <span class="c1"># this imports the itemgetter function</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;before sorting, items in order of insertion:  &quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">courses</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;default sorting sorts by first element of pair (key):  &quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">courses</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;sorting by the second element (index=1) of the pair with key=itemgetter(1):  &quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">courses</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="n">itemgetter</span><span class="p">(</span><span class="mi">1</span><span class="p">)):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>before sorting, items in order of insertion:  
+(&#39;CSS2&#39;, &#39;Data/Model Python&#39;)
+(&#39;CSS1&#39;, &#39;Intro Python&#39;)
+(&#39;CSS100&#39;, &#39;Analytic Programming&#39;)
+default sorting sorts by first element of pair (key):  
+(&#39;CSS1&#39;, &#39;Intro Python&#39;)
+(&#39;CSS100&#39;, &#39;Analytic Programming&#39;)
+(&#39;CSS2&#39;, &#39;Data/Model Python&#39;)
+sorting by the second element (index=1) of the pair with key=itemgetter(1):  
+(&#39;CSS100&#39;, &#39;Analytic Programming&#39;)
+(&#39;CSS2&#39;, &#39;Data/Model Python&#39;)
+(&#39;CSS1&#39;, &#39;Intro Python&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Making a new sorted dictionary:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">courses_by_title</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">number</span><span class="p">,</span><span class="n">title</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">courses</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="n">itemgetter</span><span class="p">(</span><span class="mi">1</span><span class="p">)):</span>
+    <span class="n">courses_by_title</span><span class="p">[</span><span class="n">number</span><span class="p">]</span> <span class="o">=</span> <span class="n">title</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">courses_by_title</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;CSS100&#39;: &#39;Analytic Programming&#39;, &#39;CSS2&#39;: &#39;Data/Model Python&#39;, &#39;CSS1&#39;: &#39;Intro Python&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Finally, for a very pithy, advanced syntax, we could do it with dictionary comprehension:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">courses_by_title</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span><span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">courses</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="n">itemgetter</span><span class="p">(</span><span class="mi">1</span><span class="p">))}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">courses_by_title</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;CSS100&#39;: &#39;Analytic Programming&#39;, &#39;CSS2&#39;: &#39;Data/Model Python&#39;, &#39;CSS1&#39;: &#39;Intro Python&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>Dictionaries<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="alert alert-success">
+A dictionary is mutable collection of items, that can be of mixed-type, that are stored as key-value pairs.
+</div><div class="section" id="dictionaries-as-key-value-collections">
+<h3>Dictionaries as Key-Value Collections<a class="headerlink" href="#dictionaries-as-key-value-collections" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a dictionary</span>
+<span class="n">dictionary</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;key_1&#39;</span> <span class="p">:</span> <span class="s1">&#39;value_1&#39;</span><span class="p">,</span> <span class="s1">&#39;key_2&#39;</span> <span class="p">:</span> <span class="s1">&#39;value_2&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check the contents of the dictionary</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dictionary</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;key_1&#39;: &#39;value_1&#39;, &#39;key_2&#39;: &#39;value_2&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check the type of the dictionary</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">dictionary</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Dictionaries also have a length</span>
+<span class="c1"># length refers to how many pairs there are</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">dictionary</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="dictionaries-indexing-looping">
+<h3>Dictionaries: Indexing &amp; Looping<a class="headerlink" href="#dictionaries-indexing-looping" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Dictionaries are indexed using their keys</span>
+<span class="n">dictionary</span><span class="p">[</span><span class="s1">&#39;key_1&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;value_1&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Loop over a dictionary loops across the keys</span>
+<span class="c1">#   Inside the loop, you can use the key to access the associated value</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">dictionary</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Loop Iteration&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">Key:</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">Value:</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">dictionary</span><span class="p">[</span><span class="n">item</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loop Iteration
+	Key:	 key_1
+	Value:	 value_1
+Loop Iteration
+	Key:	 key_2
+	Value:	 value_2
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># another approach that you will find if you Google</span>
+<span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">dictionary</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Loop Iteration&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">Key:</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">Value:</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loop Iteration
+	Key:	 key_1
+	Value:	 value_1
+Loop Iteration
+	Key:	 key_2
+	Value:	 value_2
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="clicker-question-1">
+<h4>Clicker Question #1<a class="headerlink" href="#clicker-question-1" title="Permalink to this headline">¶</a></h4>
+<p>Which of the following would create a dictionary of length 3?</p>
+<ul class="simple">
+<li><p>A) <code class="docutils literal notranslate"><span class="pre">{'Student_1'</span> <span class="pre">:</span> <span class="pre">97,</span> <span class="pre">'Student_2'}</span></code></p></li>
+<li><p>B) <code class="docutils literal notranslate"><span class="pre">{'Student_1',</span> <span class="pre">'Student_2',</span> <span class="pre">'Student_3'}</span></code></p></li>
+<li><p>C) <code class="docutils literal notranslate"><span class="pre">['Student_1'</span> <span class="pre">:</span> <span class="pre">97,</span> <span class="pre">'Student_2':</span> <span class="pre">88,</span> <span class="pre">'Student_3'</span> <span class="pre">:</span> <span class="pre">91]</span></code></p></li>
+<li><p>D) <code class="docutils literal notranslate"><span class="pre">{'Student_1'</span> <span class="pre">:</span> <span class="pre">97,</span> <span class="pre">'Student_2':</span> <span class="pre">88,</span> <span class="pre">'Student_3'</span> <span class="pre">:</span> <span class="pre">91}</span></code></p></li>
+<li><p>E) <code class="docutils literal notranslate"><span class="pre">('Student_1'</span> <span class="pre">:</span> <span class="pre">97,</span> <span class="pre">'Student_2':</span> <span class="pre">88,</span> <span class="pre">'Student_3'</span> <span class="pre">:</span> <span class="pre">91)</span></code></p></li>
+</ul>
+</div>
+<div class="section" id="clicker-question-2">
+<h4>Clicker Question #2<a class="headerlink" href="#clicker-question-2" title="Permalink to this headline">¶</a></h4>
+<p>Fill in the ‘—’ in the code below to return the value stored in the second key.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">height_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;height_1&#39;</span> <span class="p">:</span> <span class="mi">60</span><span class="p">,</span> <span class="s1">&#39;height_2&#39;</span><span class="p">:</span> <span class="mi">68</span><span class="p">,</span> <span class="s1">&#39;height_3&#39;</span> <span class="p">:</span> <span class="mi">65</span><span class="p">,</span> <span class="s1">&#39;height_4&#39;</span> <span class="p">:</span> <span class="mi">72</span><span class="p">}</span>
+<span class="n">height_dict</span><span class="p">[</span><span class="s1">&#39;height_2&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>68
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>A) I did it</p></li>
+<li><p>B) I think I did it…</p></li>
+<li><p>C) I tried and am stuck</p></li>
+<li><p>D) No clue where to start…</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="example-dictionaries">
+<h3>Example Dictionaries<a class="headerlink" href="#example-dictionaries" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">student_emails</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;Betty Jennings&#39;</span> <span class="p">:</span> <span class="s1">&#39;bjennings@eniac.org&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Ada Lovelace&#39;</span> <span class="p">:</span> <span class="s1">&#39;ada@analyticengine.com&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Alan Turing&#39;</span> <span class="p">:</span> <span class="s1">&#39;aturing@thebomb.gov&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Grace Hopper&#39;</span> <span class="p">:</span> <span class="s1">&#39;ghopper@navy.usa&#39;</span>
+<span class="p">}</span>
+
+<span class="n">student_emails</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Betty Jennings&#39;: &#39;bjennings@eniac.org&#39;,
+ &#39;Ada Lovelace&#39;: &#39;ada@analyticengine.com&#39;,
+ &#39;Alan Turing&#39;: &#39;aturing@thebomb.gov&#39;,
+ &#39;Grace Hopper&#39;: &#39;ghopper@navy.usa&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">completed_coding_lab</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;A1234&#39;</span> <span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s1">&#39;A5678&#39;</span> <span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="s1">&#39;A9123&#39;</span> <span class="p">:</span> <span class="kc">True</span>
+<span class="p">}</span>
+
+<span class="n">completed_coding_lab</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;A1234&#39;: True, &#39;A5678&#39;: False, &#39;A9123&#39;: True}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mixed_types</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="kc">True</span>  <span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+    <span class="kc">False</span> <span class="p">:</span> <span class="kc">None</span>
+<span class="p">}</span>
+
+<span class="n">mixed_types</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{True: [1, 2, 3], False: None}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="clicker-question-3">
+<h4>Clicker Question #3<a class="headerlink" href="#clicker-question-3" title="Permalink to this headline">¶</a></h4>
+<p>Write the code that would create a dictionary <code class="docutils literal notranslate"><span class="pre">car</span></code> that stores values about your dream car’s <code class="docutils literal notranslate"><span class="pre">make</span></code>, <code class="docutils literal notranslate"><span class="pre">model</span></code>, and <code class="docutils literal notranslate"><span class="pre">year</span></code>.</p>
+<ul class="simple">
+<li><p>A) I did it</p></li>
+<li><p>B) I think I did it…</p></li>
+<li><p>C) I tried and am stuck</p></li>
+<li><p>D) No clue where to start…</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># YOUR CODE HERE</span>
+<span class="n">car</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;make&#39;</span><span class="p">:</span><span class="s1">&#39;Hyundai&#39;</span><span class="p">,</span>
+       <span class="s1">&#39;model&#39;</span><span class="p">:</span><span class="s1">&#39;Santa Fe&#39;</span><span class="p">,</span>
+       <span class="s1">&#39;year&#39;</span><span class="p">:</span><span class="mi">2017</span><span class="p">}</span>
+<span class="n">car</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;make&#39;: &#39;Hyundai&#39;, &#39;model&#39;: &#39;Santa Fe&#39;, &#39;year&#39;: 2017}
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="dictionaries-are-mutable">
+<h3>Dictionaries are mutable<a class="headerlink" href="#dictionaries-are-mutable" title="Permalink to this headline">¶</a></h3>
+<p>This means that dictionaries, once created, values <em>can</em> be updated.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># remember what dictionary we created above</span>
+<span class="n">completed_coding_lab</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;A1234&#39;: True, &#39;A5678&#39;: False, &#39;A9123&#39;: True}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># change value of specified key</span>
+<span class="n">completed_coding_lab</span><span class="p">[</span><span class="s1">&#39;A5678&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">completed_coding_lab</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;A1234&#39;: True, &#39;A5678&#39;: True, &#39;A9123&#39;: True}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Because dictionaries are mutable, key-value pairs can also be removed from the dictionary using <code class="docutils literal notranslate"><span class="pre">del</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">completed_coding_lab</span><span class="p">)</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">completed_coding_lab</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;A1234&#39;: True, &#39;A5678&#39;: True, &#39;A9123&#39;: True}
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## remove key-value pair using del</span>
+<span class="k">del</span> <span class="n">completed_coding_lab</span><span class="p">[</span><span class="s1">&#39;A5678&#39;</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">completed_coding_lab</span><span class="p">)</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">completed_coding_lab</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;A1234&#39;: True, &#39;A9123&#39;: True}
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="dictionaries-and-operators">
+<h3>Dictionaries and operators<a class="headerlink" href="#dictionaries-and-operators" title="Permalink to this headline">¶</a></h3>
+<p>The operators we’ve discussed previously can be used when working with dictionaries.</p>
+<p>To determine if a specified key is present in a dictionary we can use the <code class="docutils literal notranslate"><span class="pre">in</span></code> operator:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="s1">&#39;A1234&#39;</span> <span class="ow">in</span> <span class="n">completed_coding_lab</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Yes, that student is in this class&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Yes, that student is in this class
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="additional-dictionary-properties">
+<h3>Additional Dictionary Properties<a class="headerlink" href="#additional-dictionary-properties" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Only one value per key. No duplicate keys allowed.</p>
+<ul>
+<li><p>If duplicate keys specified during assignment, the last assignment wins.</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Last duplicate key assigned wins</span>
+<span class="p">{</span><span class="s1">&#39;Student&#39;</span> <span class="p">:</span> <span class="mi">97</span><span class="p">,</span> <span class="s1">&#39;Student&#39;</span><span class="p">:</span> <span class="mi">88</span><span class="p">,</span> <span class="s1">&#39;Student&#39;</span> <span class="p">:</span> <span class="mi">91</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Student&#39;: 91}
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p><strong>keys</strong> must be of an immutable type (string, tuple, integer, float, etc)</p></li>
+<li><p>Note: <strong>values</strong> can be of any type</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># lists are not allowed as key types</span>
+<span class="c1"># this code will produce an error</span>
+<span class="p">{[</span><span class="s1">&#39;Student&#39;</span><span class="p">]</span> <span class="p">:</span> <span class="mi">97</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">33</span><span class="o">-</span><span class="mi">27</span><span class="n">b11708f095</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># lists are not allowed as key types</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="c1"># this code will produce an error</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="p">{[</span><span class="s1">&#39;Student&#39;</span><span class="p">]</span> <span class="p">:</span> <span class="mi">97</span><span class="p">}</span>
+
+<span class="ne">TypeError</span>: unhashable type: &#39;list&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Dictionary keys are case sensitive.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">&#39;Student&#39;</span> <span class="p">:</span> <span class="mi">97</span><span class="p">,</span> <span class="s1">&#39;student&#39;</span><span class="p">:</span> <span class="mi">88</span><span class="p">,</span> <span class="s1">&#39;STUDENT&#39;</span> <span class="p">:</span> <span class="mi">91</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="clicker-question-4">
+<h4>Clicker Question #4<a class="headerlink" href="#clicker-question-4" title="Permalink to this headline">¶</a></h4>
+<p>Why does the following code produce an error?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">student_emails</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;Betty Jennings&#39;</span> <span class="p">:</span> <span class="s1">&#39;bjennings@eniac.org&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Ada Lovelace&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="s1">&#39;ada@analyticengine.com&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;Ada Lovelace&#39;</span> <span class="p">:</span> <span class="s1">&#39;aturing@thebomb.gov&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Grace Hopper&#39;</span> <span class="p">:</span> <span class="s1">&#39;ghopper@navy.usa&#39;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">student_emails</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>A) duplicate keys</p></li>
+<li><p>B) mutable key specified</p></li>
+<li><p>C) keys are case sensitive</p></li>
+<li><p>D) mutable value specified</p></li>
+<li><p>E) ¯\_(ツ)_/¯</p></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./lectures"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Ed Vul<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
