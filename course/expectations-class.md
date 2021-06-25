@@ -18,9 +18,3 @@ Programming requires practice, and this class is structured to give you lots of 
 
 - Transparent and predictable grades.  Assignments are mostly auto-graded.  You should have a very good sense whether your solutions work for a given assignment before you turn that assignment in.
 
-## How to succeed in this class.
-- course is hard.
-- read homework early, write pseudocode early, revise often
-- code a lot, type, do examples form scratch, etc.
-- learn to debug (read errors, print statements, pythontutor, rubber duck debugging)
-

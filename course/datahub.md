@@ -34,7 +34,7 @@ The following are a couple tips & tricks that may help you if you get stuck on a
 
 - run cells and test cell asserts to check your answers (if a test fails, read the error for clues about how to fix it).
   
-- consult our [debugging guide](https://ucsd-css-001.github.io/course/debugging.html)  
+- consult our [debugging guide](debugging.md)  
 
 - **Print variables:** you can (and should) print and check variables as you go.  This allows you to check what values they hold, what types they are, and fix things if anything unexpected happens.
 
