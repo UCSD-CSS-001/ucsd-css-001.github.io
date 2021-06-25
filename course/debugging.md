@@ -1,4 +1,4 @@
-# How to debug and ask debugging questions
+# Debugging
 
 Your first attempt at writing a computer program will contain errors (bugs).  It's not about you, this is true for everyone, including your instructors and professional programmers.  Learning to program requires learning how to fix errors in your code.  This process is called "debugging".  Here we provide some accumulated wisdom about debugging.  Fortunately, the steps to fixing the bug yourself, searching the internet for help, or asking someone else for help are the same.  
 
@@ -111,7 +111,7 @@ Successfully googling requires some basic strategies, a bit of understanding of 
 
 - Use "Find in page" (usually command-f or control-f) to look for keywords on long pages.
 
-## Checklist
+## Checklist to debug and to ask debugging questions
 
 Here is a checklist for asking a debugging question.  Provide answers to each of these questions:
 
