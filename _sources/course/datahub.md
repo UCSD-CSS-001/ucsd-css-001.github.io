@@ -4,60 +4,39 @@ This is a guide to submitting assignments on datahub.
 
 ## Overview  
 
-**Technical overview:**  Assignments are [jupyter notebooks](https://jupyter-notebook.readthedocs.io/en/stable/) served from a class-specific [container](https://docs.docker.com/) on UCSD's [datahub](https://datahub.ucsd.edu), and automatically graded by [nbgrader](https://nbgrader.readthedocs.io/en/stable/).     
+**Technical overview:**  Assignments are [jupyter notebooks](https://jupyter-notebook.readthedocs.io/en/stable/) served from UCSD's [datahub](https://datahub.ucsd.edu), and automatically graded by [nbgrader](https://nbgrader.readthedocs.io/en/stable/).     
 
 **Practical overview:**  To complete an assigment you will need to:    
 1. **log in to [datahub](https://datahub.ucsd.edu):**  If you are enrolled in the class, you should be able to log in using your UCSD credentials (username@ucsd.edu, and your password)    
-1. **launch this class environment:** select...   
-1. **open the assignment:** click on x. then y.     
-1. **complete the assignment:** by following instructions in the notebook (more below), save regularly.  
-1. **check your work:** re-read questions and instructions; restart kernel and rerun all cells; look over results; validate notebook.
-1. **save your work and submit:**  step step step.
+1. **launch this class environment:** select "CSS 1 - Prog Computational Social Sci..." and click "Launch Environment".   
+1. **fetch assignment:** click on "Assignments" and click "Fetch" to download to your account space.
+1. **open assignment:**  Click on assignment name in downloaded list, to expand assignment files, then click on the main file in the assignment to open the assignment notebook.    
+   
+1. **complete assignment** follow instructions in the notebook, remove `raise NotImplementedError()`, save regularly.  
+1. **check your work:** re-read questions and instructions; restart kernel and rerun all cells; look over results; save.
+1. **submit:**  Back in the assignment list, click "validate"  to check that you are passing all visible tests.  Once validated, click "Submit"!  You can submit multiple times (see cutionary note below).   
 
-Below we write this steps out in more detail.
+## Cautionary points:  
 
-## Log in to datahub.   
+- **DO NOT**: change the name of this file, try to change or delete test/`assert` cells, try to change other read only cells, copy/paste or delete cells (but you can make new cells as you like).
 
-## Launch the class environment   
+- **You MUST submit the notebook to receive assignment credit. We cannot grade assignments that have not been submitted.**
 
-## Open the assignment
+- You can submit at any time, but **we grade your most recent submission**. This means that **if you submit an updated notebook after the submission deadline, it will be marked as late**.
 
-## Complete the assignment
+- We may have *hidden* tests for answers that will only run during official grading -- so make sure your code does what it is supposed to: passing visible assert tests is not sufficient for getting the right answer.
 
-
-
-## Check your work
-
-## Save and submit
-
+- Remember to **remove the `raise NotImplementedError()` line** in code cells you answer!
 
 ## Tips & Tricks
 
 The following are a couple tips & tricks that may help you if you get stuck on anything.
 
-#%% md
+- run cells and test cell asserts to check your answers (if a test fails, read the error for clues about how to fix it).
+  
+- consult our [debugging guide](https://ucsd-css-001.github.io/course/debugging.html)  
 
-### Printing Variables
+- **Print variables:** you can (and should) print and check variables as you go.  This allows you to check what values they hold, what types they are, and fix things if anything unexpected happens.
 
-A reminder that you can (and should) print and check variables as you go.
-
-This allows you to check what values they hold, and fix things if anything unexpected happens.
-
-#%%
-
-# Define a variable
-math_result = 2 * 4
-
-# Print out the value(s) of a variable.
-print(math_result)
-
-#%% md
-
-### Restarting the Kernel
-
-A reminder that sometimes if you run cells out of order, you can end up overwriting things in your namespace.
-
-If things seem to go weird, a good first step is to restart the kernel, which you can do from the kernel menu above.
-
-Even if everything seems to be working, it's a nice check to 'Restart & Run All' to make sure everything runs properly in order.
+- **Restart the Kernel:** If you run cells out of order, you can end up overwriting things in your namespace. If things seem to go weird, a good first step is to restart the kernel, which you can do from the kernel menu above. (also 'Restart & Run All' before submitting, to make everything runs properly in order).
 
