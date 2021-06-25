@@ -25,8 +25,8 @@ This course is structured to help you get there.  The basic premise we start fro
 
 | Role     | Name                | email    | Office hours  |
 | ----------------: | :---------| -----------| ------------ |   
-| **Instructor** | Ed Vul  | [evul@ucsd.edu](mailto:evul@ucsd.edu) | [Fridays 2-3PM](https://ucsd.zoom.us/) |   
-| **TA** | Jiaying Xu  | [jix030@ucsd.edu](jix030@ucsd.edu) | TBD |
+| **Instructor** | Ed Vul  | [evul@ucsd.edu](mailto:evul@ucsd.edu) | [Fridays 3:30-4:30PM](https://ucsd.zoom.us/my/edvul) |   
+| **TA** | Jiaying Xu  | [jix030@ucsd.edu](mailto:jix030@ucsd.edu) | [Wednesday 9-10AM]() |
 
 ### All the links
 
@@ -37,15 +37,14 @@ This course is structured to help you get there.  The basic premise we start fro
 - {{ url_canvas }}: used to post grades and recordings of lectures/labs   
 - {{ url_campuswire }}: used for all communication: discussion, Q&A, announcements etc.  Email the instructor if you cannot access.    
 - {{ url_datahub }}: used to submit comleted labs and problem sets  
-- {{ url_deepnote }}: used for live, interactive coding in lecture and labs   
 - {{ url_feedback }}: to provide anonymous feedback to instructors.  :   
 
 ### Lectures and labs
 
 Lectures and labs take place at their scheduled time over zoom, at the following links.
 
-- Lectures (Tu/Th 11am - 1pm PST): {{ url_lectures }}    
-- Labs (Tu/Th 1pm - 3pm PST):  {{ url_labs }}  
+- Lectures (Tu/Th 11am - 1pm PST): {{ url_lecture }}    
+- Labs (Tu/Th 1pm - 3pm PST):  {{ url_lab }}  
 
 Recordings of these will be made available on  {{ url_canvas }}      
 
