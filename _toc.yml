@@ -28,6 +28,10 @@ parts:
           - file: lectures/P01-jupyter
           - file: lectures/P01-python
       - file: lectures/P02
+        sections:
+          - file: lectures/P02-conditionals
+          - file: lectures/P02-loops
+          - file: lectures/P02-while
   - caption: Week 2
     chapters:
       - file: lectures/week-02

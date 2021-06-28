@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Announcements (2021-06-29) &#8212; UCSD CSS 1</title>
+    <title>P02: While loops &#8212; UCSD CSS 1</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -54,8 +54,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="&lt;no title&gt;" href="P01-css.html" />
-    <link rel="prev" title="P01: Getting oriented" href="P01.html" />
+    <link rel="next" title="W2 problem" href="week-02.html" />
+    <link rel="prev" title="P02: Loops!" href="P02-loops.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -169,18 +169,18 @@
    W1 problem
   </a>
  </li>
- <li class="toctree-l1 current active has-children">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="P01.html">
    P01: Getting oriented
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P01-announcements.html">
      Announcements (2021-06-29)
     </a>
    </li>
@@ -201,10 +201,32 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="P02.html">
    P02: Control flow and logic
   </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="P02-conditionals.html">
+     P02: Branching via conditional statement: if..elif..else..
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P02-loops.html">
+     P02: Loops!
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     P02: While loops
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 <p class="caption">
@@ -335,9 +357,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/lectures/P01-announcements.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/lectures/P02-while.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -355,7 +377,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/UCSD-CSS-001/ucsd-css-001.github.io/issues/new?title=Issue%20on%20page%20%2Flectures/P01-announcements.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/UCSD-CSS-001/ucsd-css-001.github.io/issues/new?title=Issue%20on%20page%20%2Flectures/P02-while.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -371,6 +393,23 @@
 
             <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/UCSD-CSS-001/ucsd-css-001.github.io/master?urlpath=tree/lectures/P02-while.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
         </div>
 
         <!-- Table of contents -->
@@ -382,9 +421,21 @@
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#programming-help">
-   Programming help!
+  <a class="reference internal nav-link" href="#while-loops">
+   While Loops
   </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   While Loops
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#infinite-loops">
+     Infinite loops
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -397,23 +448,72 @@
         
               <div>
                 
-  <div class="section" id="announcements-2021-06-29">
-<h1>Announcements (2021-06-29)<a class="headerlink" href="#announcements-2021-06-29" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="programming-help">
-<h2>Programming help!<a class="headerlink" href="#programming-help" title="Permalink to this headline">¶</a></h2>
-<p>(I do not know anything about this, but from the provided description it seems potentially very useful!  If you attend, please report back what you have learned!)</p>
-<p><a class="reference external" href="https://aah.ucsd.edu">https://aah.ucsd.edu</a></p>
-<p><img alt="aah" src="../_images/aah-workshop.jpg" /></p>
-<blockquote>
-<div><p>Dear Professor Vul,</p>
-<p>My name is Yvonne Ngo, Tutor Coordinator with the Academic Achievement Hub. We are offering a “How to Learn” workshop for your students this Summer. The workshop provides students study skills and strategies for learning how to program.</p>
-<p>These workshops also provide your students another space to build a community with their peers in the course. We have designed these sessions to be highly engaging for students to build their skills with the guidance of our experienced content tutors.</p>
-<p>Attached are flyers with information for upcoming workshop. We would greatly appreciate your support to advocate for students to attend our workshops through announcements in class or Canvas. Students can sign up for as many sessions as they would like. More information can be found at <a class="reference external" href="http://aah.ucsd.edu">aah.ucsd.edu</a>.</p>
-<p>Copied in this message is the Assistant Tutor Coordinator, Maggie Mastrolorenzo. Both of us are happy to answer any questions you may have regarding the workshops.</p>
-<p>Thank you in advance for your consideration.</p>
-<p>Sincerely,
-Yvonne Ngo</p>
-</div></blockquote>
+  <div class="section" id="p02-while-loops">
+<h1>P02: While loops<a class="headerlink" href="#p02-while-loops" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="while-loops">
+<h2>While Loops<a class="headerlink" href="#while-loops" title="Permalink to this headline">¶</a></h2>
+<p>A <strong>while loop</strong> is a procedure to repeat a piece of code while some condition is still met.</p>
+<p><code class="docutils literal notranslate"><span class="pre">while</span></code> loops always have the structure:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">condition</span><span class="p">:</span>
+    <span class="c1"># Loop contents</span>
+</pre></div>
+</div>
+<p>While condition is true, execute the code contents.</p>
+<p>Repeat until condition is no longer True.</p>
+</div>
+<div class="section" id="id1">
+<h2>While Loops<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="k">while</span> <span class="n">number</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+    <span class="n">number</span> <span class="o">=</span> <span class="n">number</span> <span class="o">-</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
+9
+8
+7
+6
+5
+4
+3
+2
+1
+0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="infinite-loops">
+<h3>Infinite loops<a class="headerlink" href="#infinite-loops" title="Permalink to this headline">¶</a></h3>
+<p>While loops are a great way for beginners to shoot themselves in the foot:
+it is very easy to introduce a slight bug that causes the while condition to always evaluate to true, and thus the while loop will never stop.  When this happens, you have to stop the python kernel/interpreter, and start over.  For this reason, you should not use while loops unless you have a very good reason to do so.  For-loops are preferable!</p>
+<p>Examples of while loops that never end:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="k">while</span> <span class="n">number</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+
+<span class="n">number</span> <span class="o">=</span> <span class="n">number</span> <span class="o">-</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="k">while</span> <span class="n">number</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+    <span class="n">number</span> <span class="o">=</span> <span class="n">number</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">number</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+    <span class="n">number</span> <span class="o">=</span> <span class="n">number</span> <span class="o">-</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 
@@ -442,8 +542,8 @@ Yvonne Ngo</p>
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="P01.html" title="previous page">P01: Getting oriented</a>
-    <a class='right-next' id="next-link" href="P01-css.html" title="next page">&lt;no title&gt;</a>
+    <a class='left-prev' id="prev-link" href="P02-loops.html" title="previous page">P02: Loops!</a>
+    <a class='right-next' id="next-link" href="week-02.html" title="next page">W2 problem</a>
 
         </div>
         

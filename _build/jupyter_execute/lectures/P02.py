@@ -3,7 +3,11 @@
 
 # # P02: Control flow and logic
 # 
-# In which we cover program control flow:
+# Computer programs become very powerful once we can command their flow of execution.  This is done via two primary control structures:
+# 
+# - Conditionals (`if...elif...else`) statements that allow the program execution to *branch*, and
+# - Loops (`for` and `while`) that allow the program execution to *repeat*.
+# 
 # 
 # - conditionals (`if`, `elif`, `else`)
 # - comparison operators

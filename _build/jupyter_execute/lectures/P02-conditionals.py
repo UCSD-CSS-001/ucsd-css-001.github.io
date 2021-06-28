@@ -1,16 +1,11 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # P02: Control flow and logic
+# # P02: Branching via conditional statement: if..elif..else..
 # 
-# Computer programs become very powerful once we can command their flow of execution.  This is done via two primary control structures:
+# ## Conditional statement
 # 
-# - Conditionals (`if...elif...else`) statements that allow the program execution to *branch*, and
-# - Loops (`for` and `while`) that allow the program execution to *repeat*.
-
-# ## Conditional Control: if..else
-# 
-# The basic control structure allows branching: do something only if a condition is met.
+# The basic control structure that allows branching is a conditional: do something only if a condition is met.
 
 # In[1]:
 
@@ -172,12 +167,12 @@ if not A and not B and not C:
 
 # ## Comparison operators
 # 
-# So far we have written if..else statements to evaluate based on pre-defined boolean variables, but a much more common scenario is to compare values, and define new boolean variables that way.  To this end, Python has a number of comparison operators:
+# So far we have written if..else statements to evaluate based on pre-defined boolean variables, but a much more common scenario is to compare values, and define new boolean values that way.  To this end, Python has a number of comparison operators:
 # 
 # `A == B`: returns True if A and B are equal   
 # `A != B`: returns True if A and B are not equal   
-# `A < B` (or  `A > B`): return True is A is less than B (or greater than B)   
-# `A <= B` (or `A >= B`): return True is A is less than or equal to B (or greater than or equal to B)    
+# `A < B` (or  `A > B`): return True if A is less than B (or greater than B)
+# `A <= B` (or `A >= B`): return True if A is less than or equal to B (or greater than or equal to B)
 
 # In[10]:
 
@@ -257,7 +252,9 @@ if not A and not B and not C:
 'Z' < '['
 
 
-# Comparison of characters is underpinned by comparing the [UTF-8 integer code of each character](https://www.utf8-chartable.de/unicode-utf8-table.pl?utf8=dec).  Which can be obtained for a given character via the `ord()` function.
+# Comparison of characters is underpinned by comparing the [UTF-8 integer code of each character](https://www.utf8-chartable.de/unicode-utf8-table.pl?utf8=dec).  Generally, we won't worry about the mechanics of character encoding, or the peculiarities of sorting strings by their unicode integers, but we can get a glimpse as to what is going on via the `ord()` function, which returns the unicode integer point for a given character.
+# 
+# 
 
 # In[22]:
 
@@ -265,277 +262,22 @@ if not A and not B and not C:
 ord('a')
 
 
-# ## Logical operators
+# ## Putting it together
 # 
-# Let's combine comparisons and logical operators.  Let's say we want to see if someone's age (in years) is an odd number and greater than 20, we are looking for a conjunction of two comparisons.
-# 
-# These kinds of boolean operations can be done with 
-# 
-# `A and B`: returns True if both A and B are true.    
-# `A or B`: returns True if either A or B are true.    
-# `not A`: returns True if A is False.   
+# We can combine all of these things together.  For instance, let's say we want to evaluate whether someone's age is odd and between the numbers 17 and 39 (inclusive).
 
 # In[23]:
 
 
 age = 37
 
-if (age % 2) == 1 and age > 20:
-    print('age is odd and greater than 20')
+if (age % 2) == 1 and age >= 17 and age <= 39:
+    print('age is odd and between 17 and 39')
 
 
-# **Note 1**: Here we are using the `%` "modulus" operator.  `A % B` returns the remainder after dividing A by B (and taking only a whole quotient).    
-# e.g., `17 % 3` returns 2.  The closest multiple of 3 closest to, but smaller than, 17 is $3 \cdot 5 = 15$, and 17-15 = 2).    
-# e.g., `15 % 3` will return 0.    
-# We have to be careful with negative numbers: (`-17 % 3` = 1 because $3 \cdot -6 = -18$ is the closest multiple of 3 less than -17.   
-# Even weirder things happen with negative divisors: `17 % -3 = -1` because the smallest quotient that is closest to 17 is -6 ($-3 \cdot -6 = 18$).  Generally, I try to avoid negative divisors in the modulus operator, as that always creates confusion and I have never seen it be worthwhile.
+# How would we modify this if we wanted to consider only ages *outside* this interval?
 # 
-# **Note 2** What will happen if `age=37.6`?  What *should* happen in that case?
 # 
-
-# # Conditionals
-# 
-# - `if`
-# - `elif`
-# - `else`
-
-# ## Conditionals: `if`
-
-# <div class="alert alert-success">
-# Conditionals are statements that check for a condition, using the <code>if</code> statement, and then only execute a set of code if the condition evaluates as <code>True</code>.
-# </div>
-
-# In[24]:
-
-
-condition = True
-
-if condition:
-    print('This code executes if the condition evaluates as True.')
-
-
-# In[25]:
-
-
-# equivalent to above
-if condition == True:
-    print('This code executes if the condition evaluates as True.')
-
-
-# #### Clicker Question #1
-# 
-# Replace `---` below with something that will print 'True'
-# 
-# - A) I did it!
-# - B) I think I did it!
-# - C) I tried but am stuck.
-# - D) I'm unsure where to start
-
-# In[26]:
-
-
-math = 3 > 2
-
-if math:
-    print('True')
-
-
-# ## Conditional: `else`
-
-# <div class="alert alert-success">
-# After an <code>if</code>, you can use an <code>else</code> that will run if the conditional(s) above have not run.
-# </div>
-
-# In[27]:
-
-
-condition = False
-
-if condition:
-    print('This code executes if the condition evaluates as True.')
-else:
-    print('This code executes if the condition evaluates as False')
-
-
-# #### Clicker Question #2
-# 
-# Replace `---` below with something that will print 'False'.
-# 
-# - A) I did it!
-# - B) I think I did it!
-# - C) I tried but am stuck.
-# - D) I'm unsure where to start
-
-# In[28]:
-
-
-my_value = 19 <= 10
-
-if my_value:
-    print('True')
-else:
-    print('False')
-
-
-# ## Conditional: `elif`
-
-# <div class="alert alert-success">
-# After an <code>if</code> statement, you can have any number of <code>elif</code>`s (meaning 'else if') to check other conditions.
-# </div>
-
-# In[29]:
-
-
-condition_1 = False
-condition_2 = True
-
-if condition_1:
-    print('This code executes if condition_1 evaluates as True.')
-elif condition_2:
-    print('This code executes if condition_1 did not evaluate as True, but condition_2 does.')
-else:
-    print('This code executes if both condition_1 and condition_2 evaluate as False')
-
-
-# ### `elif` without an `else`
-# 
-# An else statement is not required, but if both the `if` and the `elif` condtions are not met (both evaluate as `False`), then nothing is returned.
-
-# In[30]:
-
-
-condition_1 = False
-condition_2 = False
-
-if condition_1:
-    print('This code executes if condition_1 evaluates as True.')
-elif condition_2:
-    print('This code executes if condition_1 did not evaluate as True, but condition_2 does.')
-
-
-# ### `elif` *after* an `else` does not make sense
-# 
-# The order will always be `if`-`elif`-`else`...with only the `if` being required. If the `elif` is at the end...it will never be tested, as the `else` will have already returned a value once reached (and thus Python will throw an error).
-
-# In[31]:
-
-
-## THIS CODE WILL PRODUCE AN ERROR
-condition_1 = False
-condition_2 = False
-
-if condition_1:
-    print('This code executes if condition_1 evaluates as True.')
-else:
-    print('This code executes if both condition_1 and condition_2 evaluate as False')
-elif condition_2:
-    print('This code executes if condition_1 did not evaluate as True, but condition_2 does.')
-
-
-# ## Conditionals With Value Comparisons
-
-# <div class="alert alert-success">
-# Any expression that can be evaluated as a boolean, such as value comparisons, can be used with conditionals.
-# </div>
-
-# In[ ]:
-
-
-language = "Perl"
-
-if language == "Python" or language == "R":
-    print("Yay!")
-elif language == "Perl":
-    print("Hmmmmmmm")
-else:
-    print("Get yourself a programming language!")
-
-
-# In[ ]:
-
-
-# Exploring conditionals
-number = 4
-
-print('Before Conditional')
-
-if number < 5:
-    print('    if statement execution')
-elif number > 5:
-    print('    elif statement execution')
-
-print('After Conditional')
-
-
-# #### Clicker Question #3
-# 
-# What will the following code snippet print out:
-
-# In[ ]:
-
-
-condition = False
-
-if condition:
-    print("John")
-elif not condition:
-    print("Paul")
-elif not condition:
-    print("George")
-else:
-    print("Ringo")
-
-
-# - A) John
-# - B) Paul, George, Ringo
-# - C) Paul
-# - D) Paul, George
-# - E) Ringo
-
-# #### Clicker Question #4
-# 
-# What will the following code snippet print out:
-
-# In[ ]:
-
-
-if 1 + 1 == 2:
-    print("I did Math")
-elif 1/0:
-    print("I broke Math")
-else:
-    print("I didn't do math")
-
-
-# - A) I did Math
-# - B) I broke Math
-# - C) I didn't do math
-# - D) This code won't execute
-
-# #### Clicker Question #5
-# 
-# What will the following code snippet print out:
-
-# In[ ]:
-
-
-conditional = False
-python = "great"
-
-if conditional:
-    if python == "great":
-        print("Yay Python!")
-    else:
-        print("Oh no.")
-else:
-    print("I'm here.")
-
-
-# - A) Yay Python!
-# - B) Oh no.
-# - C) I'm here.
-# - D) This code won't execute
-
 # ## Properties of conditionals
 # 
 # - All conditionals start with an `if`, can have an optional and variable number of `elif`'s and an optional `else` statement

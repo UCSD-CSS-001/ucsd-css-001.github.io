@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # P01: Crash Landing
+# # P01: Our environment
 # 
 # ## Jupyter Notebooks
 # 
@@ -90,7 +90,7 @@
 # 
 # ```
 # 1. item 1  
-# 1. item 2
+# 2. item 2
 # ```
 # 
 # yields an automatically numbered list:
