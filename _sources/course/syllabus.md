@@ -26,7 +26,7 @@ This course is structured to help you get there.  The basic premise we start fro
 | Role     | Name                | email    | Office hours  |
 | ----------------: | :---------| -----------| ------------ |   
 | **Instructor** | Ed Vul  | [evul@ucsd.edu](mailto:evul@ucsd.edu) | [Fridays 3:30-4:30PM](https://ucsd.zoom.us/my/edvul) |   
-| **TA** | Jiaying Xu  | [jix030@ucsd.edu](mailto:jix030@ucsd.edu) | [Wednesday 9-10AM]() |
+| **TA** | Jiaying Xu  | [jix030@ucsd.edu](mailto:jix030@ucsd.edu) | [Wednesday 9-10AM](https://ucsd.zoom.us/j/4422823454) |
 
 ### All the links
 

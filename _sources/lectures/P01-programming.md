@@ -9,8 +9,7 @@ If you have never written a computer program before, you will find computer prog
 3. explaining those steps to a computer.  
 
 When you write your first program, 1 will be solved for you, 2 will be trivial, and 3 will seem quite hard.  
-As you get better at programming, and the programs you write become more complicated, 3 will become fairly easy, while 2 will prove to be quite difficult.
-Eventually, most of the difficulty will end up in 1.  
+As you get better at programming, and the programs you write become more complicated, 3 will become fairly easy, while 2 will prove to be quite difficult. Eventually, most of the difficulty will end up in 1.  
 
 ## Learning to program
 
@@ -37,4 +36,4 @@ Some observations about what makes this hard:
 - a priori unknown state model.  
 - tedious level of precision required because I don't understand more sophisticated commands.  
 
-Computer programming presents the same challenges: we need to write out very detailed instructions, using a very limited, literal, set of commands.  We need to write the instructions out in advance.   
+Computer programming presents the same challenges: we need to write out very detailed instructions, using a very limited, literal, set of commands.  We need to write the instructions out in advance.   The computer's representation of the world differs from our own.  How the state changes in response to instructions may differ from your expectations.
