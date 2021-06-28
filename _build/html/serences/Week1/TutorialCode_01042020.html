@@ -1,0 +1,775 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>This is a markdown cell (or text cell). Here we can write notes about the purpose of the code, we can include links to external references. Text cells use the “Markdown language” to format the text. &#8212; UCSD CSS 1</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">UCSD CSS 1</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../index.html">
+   Welcome to CSS 1
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Course (CSS 1 summer 1)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/syllabus.html">
+   Syllabus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/schedule.html">
+   Schedule
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/expectations.html">
+   Expectations
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../course/expectations-class.html">
+     Class structure
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../course/expectations-programming.html">
+     Learning to program
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../course/how-to.html">
+   Mechanics / How-To
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../course/datahub.html">
+     Datahub assignments
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../course/debugging.html">
+     How to debug and ask debugging questions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/resources.html">
+   Extracurricular Resources
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Week 1
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/week-01.html">
+   W1 problem
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../lectures/P01.html">
+   P01: Getting oriented
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../lectures/P01-programming.html">
+     P01: programming concepts
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../lectures/P01-jupyter.html">
+     P01: Crash Landing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../lectures/P01-python.html">
+     P01:  Python syntax, variables, types
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/P02.html">
+   P02: Control flow and logic
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Week 2
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/week-02.html">
+   W2 problem
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/P03.html">
+   P03: Sequence types
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/P04.html">
+   P04: dictionaries, sets, and files
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Week 3
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/week-03.html">
+   W3 problem
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/P05.html">
+   P05: functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/P06.html">
+   P06: classes and objects
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Week 4
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/week-04.html">
+   W4 problem
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/P07.html">
+   P07: data tables and pandas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/P08.html">
+   P08: plotting with matplotlib
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Week 2
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/week-05.html">
+   W5 problem
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/P09.html">
+   P09: more data: joins and file types
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lectures/P10.html">
+   P10: beyond
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/serences/Week1/TutorialCode_01042020.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/UCSD-CSS-001/ucsd-css-001.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/UCSD-CSS-001/ucsd-css-001.github.io/issues/new?title=Issue%20on%20page%20%2Fserences/Week1/TutorialCode_01042020.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/UCSD-CSS-001/ucsd-css-001.github.io/master?urlpath=tree/serences/Week1/TutorialCode_01042020.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#next-sub-heading-with-smaller-text-use-for-the-next-level-of-notes-in-your-code-below">
+   next sub-heading with smaller text - use for the next level of notes in your code below
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sub-sub-heading">
+     sub-sub-heading
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#sub-sub-sub-heading-etc">
+       sub-sub-sub-heading, etc.
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-string-is-a-collection-of-characters-surrounded-by-either-single-or-double-quotes">
+   A string is a collection of characters, surrounded by either single or double quotes
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#using-vs">
+     Using ‘ vs “
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-methods-of-an-object-in-this-case-a-string-object">
+   Using methods of an object (in this case a string object)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#why-using-print-here-because-otherwise-you-just-get-the-output-of-the-last-line-if-you-want-to-force-output-then-use-the-print-statement">
+     why using print here? Because otherwise you just get the output of the last line - if you want to force output, then use the print statement
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#some-handy-methods-for-data-cleaning-make-uniform-str-types">
+   Some handy methods for data cleaning - make uniform str types…
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#concatenating-strings-sticking-a-bunch-of-strings-together">
+   Concatenating strings (sticking a bunch of strings together)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#numerical-data-types-and-basic-operators-list-of-operators">
+   Numerical data types and basic operators list of operators
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#floating-point-numbers">
+   Floating point numbers
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-do-you-figure-out-what-the-variable-type-is">
+   How do you figure out what the variable type is?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#type-casting-changing-a-variable-from-one-type-to-another">
+   Type casting - changing a variable from one type to another
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#then-string-to-int-and-then-back-to-str">
+     Then string to int and then back to str!
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#you-can-convert-from-one-type-to-another-with-the-int-float-complex">
+     You can convert from one type to another with the int(), float(), complex()
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="this-is-a-markdown-cell-or-text-cell-here-we-can-write-notes-about-the-purpose-of-the-code-we-can-include-links-to-external-references-text-cells-use-the-markdown-language-to-format-the-text">
+<h1>This is a markdown cell (or text cell). Here we can write notes about the purpose of the code, we can include links to external references. Text cells use the “Markdown language” to format the text.<a class="headerlink" href="#this-is-a-markdown-cell-or-text-cell-here-we-can-write-notes-about-the-purpose-of-the-code-we-can-include-links-to-external-references-text-cells-use-the-markdown-language-to-format-the-text" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="next-sub-heading-with-smaller-text-use-for-the-next-level-of-notes-in-your-code-below">
+<h2>next sub-heading with smaller text - use for the next level of notes in your code below<a class="headerlink" href="#next-sub-heading-with-smaller-text-use-for-the-next-level-of-notes-in-your-code-below" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="sub-sub-heading">
+<h3>sub-sub-heading<a class="headerlink" href="#sub-sub-heading" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="sub-sub-sub-heading-etc">
+<h4>sub-sub-sub-heading, etc.<a class="headerlink" href="#sub-sub-sub-heading-etc" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>bullet points</p></li>
+<li><p>another bullet point</p>
+<ul>
+<li><p>an indented sub-bullet point</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>if you want bold text</strong></p>
+<p><em>italic text</em></p>
+<p><a class="reference external" href="https://www.markdownguide.org/basic-syntax/">this is a link to a useful guide to the basics of markdown</a></p>
+</div>
+</div>
+</div>
+<div class="section" id="a-string-is-a-collection-of-characters-surrounded-by-either-single-or-double-quotes">
+<h2>A string is a collection of characters, surrounded by either single or double quotes<a class="headerlink" href="#a-string-is-a-collection-of-characters-surrounded-by-either-single-or-double-quotes" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>notice that because this is a sub-heading in our notebook that is one level down, we use ‘##’ to change the size of the text</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hello python!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hello python!
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">message</span> <span class="o">=</span> <span class="s2">&quot;hello python!&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hello python!
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="using-vs">
+<h3>Using ‘ vs “<a class="headerlink" href="#using-vs" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Note that this is a sub-sub-heading (under the sub-heading of our discussion on strings)<em>italicized text</em>, so we use ‘###’</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">message</span> <span class="o">=</span> <span class="s2">&quot;hello python! we&#39;ll be back next monday&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hello python! we&#39;ll be back next monday
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># vs. </span>
+<span class="n">message</span> <span class="o">=</span> <span class="s1">&#39;hello python! we&#39;</span><span class="n">ll</span> <span class="n">be</span> <span class="n">back</span> <span class="nb">next</span> <span class="n">monday</span><span class="s1">&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-4-85fa934a4da1&gt;&quot;</span><span class="gt">, line </span><span class="mi">2</span>
+    <span class="n">message</span> <span class="o">=</span> <span class="s1">&#39;hello python! we&#39;</span><span class="n">ll</span> <span class="n">be</span> <span class="n">back</span> <span class="nb">next</span> <span class="n">monday</span><span class="s1">&#39;</span>
+                                <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="using-methods-of-an-object-in-this-case-a-string-object">
+<h2>Using methods of an object (in this case a string object)<a class="headerlink" href="#using-methods-of-an-object-in-this-case-a-string-object" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;joHn serencEs&quot;</span>
+<span class="n">name</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="why-using-print-here-because-otherwise-you-just-get-the-output-of-the-last-line-if-you-want-to-force-output-then-use-the-print-statement">
+<h3>why using print here? Because otherwise you just get the output of the last line - if you want to force output, then use the print statement<a class="headerlink" href="#why-using-print-here-because-otherwise-you-just-get-the-output-of-the-last-line-if-you-want-to-force-output-then-use-the-print-statement" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="some-handy-methods-for-data-cleaning-make-uniform-str-types">
+<h2>Some handy methods for data cleaning - make uniform str types…<a class="headerlink" href="#some-handy-methods-for-data-cleaning-make-uniform-str-types" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>useful for ‘cleaning’ non-uniform user input or labels in big data sets</p></li>
+<li><p>this is by no means an exhaustive list of methods for the str object type! but if you can use these, then you should be able to figure out how to use many of the other methods</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot; john &quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">rstrip</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">lstrip</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="concatenating-strings-sticking-a-bunch-of-strings-together">
+<h2>Concatenating strings (sticking a bunch of strings together)<a class="headerlink" href="#concatenating-strings-sticking-a-bunch-of-strings-together" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">first_name</span> <span class="o">=</span> <span class="s2">&quot;john&quot;</span>
+<span class="n">last_name</span> <span class="o">=</span> <span class="s2">&quot;serences&quot;</span>
+<span class="n">full_name</span> <span class="o">=</span> <span class="n">first_name</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="n">last_name</span> <span class="o">+</span> <span class="s2">&quot; was here!&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">full_name</span><span class="o">.</span><span class="n">title</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="numerical-data-types-and-basic-operators-list-of-operators">
+<h2>Numerical data types and basic operators <a class="reference external" href="https://www.w3schools.com/python/python_operators.asp">list of operators</a><a class="headerlink" href="#numerical-data-types-and-basic-operators-list-of-operators" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>integers are whole numbers</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># int data types (objects)</span>
+<span class="c1"># integers are WHOLE numbers</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="c1"># basic operations</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="p">)</span>    <span class="c1"># add</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="n">x</span><span class="p">)</span>    <span class="c1"># subtract</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="p">)</span>    <span class="c1"># multiply</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="n">y</span><span class="p">)</span>   <span class="c1"># raise to a power</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="floating-point-numbers">
+<h2>Floating point numbers<a class="headerlink" href="#floating-point-numbers" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># this returns a floating point number (decimal)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="how-do-you-figure-out-what-the-variable-type-is">
+<h2>How do you figure out what the variable type is?<a class="headerlink" href="#how-do-you-figure-out-what-the-variable-type-is" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="type-casting-changing-a-variable-from-one-type-to-another">
+<h2>Type casting - changing a variable from one type to another<a class="headerlink" href="#type-casting-changing-a-variable-from-one-type-to-another" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># type casting - first int to string</span>
+<span class="n">year</span> <span class="o">=</span> <span class="mi">2019</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;this is the year: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">year</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="then-string-to-int-and-then-back-to-str">
+<h3>Then string to int and then back to str!<a class="headerlink" href="#then-string-to-int-and-then-back-to-str" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># then string to an int</span>
+<span class="n">year</span> <span class="o">=</span> <span class="s2">&quot;2021&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;In 10 years it will be: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">year</span><span class="p">)</span> <span class="o">+</span> <span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>In 10 years it will be: 2031
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="you-can-convert-from-one-type-to-another-with-the-int-float-complex">
+<h3>You can convert from one type to another with the int(), float(), complex()<a class="headerlink" href="#you-can-convert-from-one-type-to-another-with-the-int-float-complex" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>be careful though as <strong>sometimes there are significant consequences!</strong></p>
+<ul>
+<li><p>for example, casting a float to an int will cause everything to the right of the decimal place to be truncated</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># make a floating point number and then type cast as an int to see what happens</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mf">2.9</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="c1"># does not ROUND!!! truncates</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./serences/Week1"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Ed Vul<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
