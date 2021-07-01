@@ -131,7 +131,7 @@ else:
 # 
 # A) 0 | B) 1 | C) 2 | D) 3 | E) 4
 
-# In[ ]:
+# In[13]:
 
 
 counter = 0
@@ -150,7 +150,7 @@ for item in my_lst:
 # 
 # A) 1 4 9 16 | B) 1 2 3 4| C)9 16 25 | | D) 1 4 9
 
-# In[ ]:
+# In[14]:
 
 
 my_lst = [1, 2, 3, 4, 5]
@@ -163,7 +163,7 @@ for item in my_lst[0:-2]:
 # 
 # What will the following code print out:
 
-# In[1]:
+# In[15]:
 
 
 index_outer = 1

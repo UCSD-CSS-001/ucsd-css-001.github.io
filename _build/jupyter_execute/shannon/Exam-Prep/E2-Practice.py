@@ -141,7 +141,7 @@ my_string = "My favourite number is " + 27
 # 
 # A) Syntax Error| B) Type Error | C) Name Error | D) Code will work 
 
-# In[ ]:
+# In[5]:
 
 
 print('My favorite number is' + str(3+5)
@@ -151,7 +151,7 @@ print('My favorite number is' + str(3+5)
 # 
 # A) Syntax Error| B) Type Error | C) Name Error | D) Code will work 
 
-# In[ ]:
+# In[6]:
 
 
 my_list = [1, 3, max]
@@ -163,32 +163,32 @@ my_list = [1, 3, max]
 # 
 # Identify the error, figure out how you would fix this could to run properly.
 
-# In[ ]:
+# In[7]:
 
 
 print'5 plus six')
 
 
-# In[ ]:
+# In[8]:
 
 
 int('six')
 
 
-# In[ ]:
+# In[9]:
 
 
 100/0
 
 
-# In[ ]:
+# In[10]:
 
 
 my_list = [4,5,2]
 print(my_list[3])
 
 
-# In[ ]:
+# In[11]:
 
 
 my_dict = {'this':100, 'that':200}
@@ -203,7 +203,7 @@ my_dict['there']
 # 
 # - Identify which parts are a class attribute, an instance attribute, and a method. 
 
-# In[ ]:
+# In[12]:
 
 
 class Shannon():
@@ -223,25 +223,25 @@ class Shannon():
 
 # Using the object from above, what will each of the following code cells (executed in order) do / print out?
 
-# In[ ]:
+# In[13]:
 
 
 shannon = Shannon('Teaching')
 
 
-# In[ ]:
+# In[14]:
 
 
 shannon.print_project()
 
 
-# In[ ]:
+# In[15]:
 
 
 shannon.do_new_thing('Research')
 
 
-# In[ ]:
+# In[16]:
 
 
 shannon.print_project()
@@ -251,7 +251,7 @@ shannon.print_project()
 
 # We're going to define a few functions that return booleans. 
 
-# In[ ]:
+# In[17]:
 
 
 def foo1():
@@ -267,28 +267,28 @@ def foo3(val):
 
 # For each of the following cells, given the function above, what will they print out?
 
-# In[ ]:
+# In[18]:
 
 
 result1 = (True and foo1()) or (False or foo2())
 print(result1)
 
 
-# In[ ]:
+# In[19]:
 
 
 result2 = (False and foo1()) or (True or foo2())
 print(result2)
 
 
-# In[ ]:
+# In[20]:
 
 
 result3 = (False and foo1()) or (False or foo2()) or (True and foo3(11))
 print(result3)
 
 
-# In[ ]:
+# In[21]:
 
 
 result4 = (False and foo1()) or (False or foo2()) or (True and foo3(1))

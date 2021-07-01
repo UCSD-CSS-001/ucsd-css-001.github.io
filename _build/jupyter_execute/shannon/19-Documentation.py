@@ -186,7 +186,7 @@ for element in list_of_elements:
 
 # #### Good Comments
 
-# In[ ]:
+# In[6]:
 
 
 # Because of X, we will use approach Y to do Z
@@ -206,7 +206,7 @@ for element in list_of_elements:
 
 # ### Example Docstring
 
-# In[5]:
+# In[7]:
 
 
 def add(num1, num2):
@@ -242,13 +242,13 @@ def add(num1, num2):
 
 # ### Docstrings are available through the code
 
-# In[6]:
+# In[8]:
 
 
 get_ipython().run_line_magic('pinfo', 'add')
 
 
-# In[7]:
+# In[9]:
 
 
 # The `help` function prints out the `docstring` 
@@ -258,7 +258,7 @@ help(add)
 
 # ### `__doc__`
 
-# In[8]:
+# In[10]:
 
 
 # Docstrings get stored as the `__doc__` attribute
@@ -330,7 +330,7 @@ print(add.__doc__)
 # - `<MINOR>` - increase by 1 w/ added functionality in a backwards-compatible manner
 # - `<MAINTENANCE>` - (aka patch) increase by 1 w/  backwards-compatible bug fixes.
 
-# In[9]:
+# In[11]:
 
 
 # see version information
@@ -340,7 +340,7 @@ pd.__version__
 
 # In Python package development... when `<MAJOR>` == 0, suggests a package in development
 
-# In[10]:
+# In[12]:
 
 
 # see version information

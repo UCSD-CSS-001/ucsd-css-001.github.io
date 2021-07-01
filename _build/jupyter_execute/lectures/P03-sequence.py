@@ -85,7 +85,7 @@ print("5: Alice said "Hello!"")
 # 
 # A list can be created with square brackets: `[item1, item2]`.  A list can contain all sorts of objects, and those objects need not be of the same type.  A list can even contain more lists.
 
-# In[ ]:
+# In[3]:
 
 
 list_of_stuff = ['hello', 'goodbye', 'ciao', 'salut', 'adios', 3.14159, 1200, ['a', 'b', 3, ], ]
@@ -98,7 +98,7 @@ print(list_of_stuff)
 # 
 # To do so, we will use the following two sequences.  Note that the list contains a mixture of types -- integers, floats, strings, and even another list.
 
-# In[ ]:
+# In[4]:
 
 
 alphabet = 'abcdefghijklmnopqrstuvqxyz'
@@ -111,7 +111,7 @@ print('some_numbers:', some_numbers)
 # 
 # Every collection (and thus, also every sequence) has a size property, indicating how many elements it has.  This can be polled with the `len()` function.  Note that the list inside the `some_numbers` list counts as one item.
 
-# In[ ]:
+# In[5]:
 
 
 print(len(alphabet))
@@ -122,7 +122,7 @@ print(len(some_numbers))
 # 
 # The contents of every container, (and thus every collection, and thus every sequence) can be probed with the `in` operation.  `x in container` returns `True` if x is one of the items in the container.
 
-# In[ ]:
+# In[6]:
 
 
 print('b' in alphabet) # True
@@ -135,7 +135,7 @@ print(1.41421356237 in some_numbers) # False Exact equality of floats is complic
 
 # For strings, the `in` operation is special because it can also evaluate if a given string contains a particular *substring*, rather than a specific character.  This does not work for other sequence types.
 
-# In[ ]:
+# In[7]:
 
 
 print('hijk' in alphabet) # True
@@ -150,7 +150,7 @@ print([0, 1] in some_numbers) # False: this asks if one of the elements is the l
 # 
 # Because sequences have a deterministic ordering, we can retrieve particular items from them with square bracket numerical indexing.  This applies to both lists and strings.
 
-# In[ ]:
+# In[8]:
 
 
 print(alphabet[0])
@@ -171,7 +171,7 @@ print(some_numbers[-4]) # same as len(some_numbers)-4, or 7
 # 
 # The full slicing notation is `x[start:stop:step]`, where we can pull out elements beginning with `start`, through `step-1`, incrementing by `step`.
 
-# In[ ]:
+# In[9]:
 
 
 print(alphabet)
@@ -208,7 +208,7 @@ print(alphabet[-3:-1:1]) # we can use negative indices here too. [-3, -2] = [23,
 # Altogether, `x[::-1]` is the same as `x[-1:None:-1]`
 # ```
 
-# In[ ]:
+# In[10]:
 
 
 print(alphabet[:5]) # [0, 1, 2, 3, 4]
@@ -220,7 +220,7 @@ print(alphabet[-1:None:-1]) # same as above.
 
 # We can do the same things with a list:
 
-# In[ ]:
+# In[11]:
 
 
 print(some_numbers[5:]) # [5, 6, 7, 8, 9, 10]
@@ -232,7 +232,7 @@ print(some_numbers[::3]) # [0, 3, 6, 9]
 # 
 # Often you will want to concatenate two sequences.  This can be done with the `+` operator.  This works for strings and all other sequences.
 
-# In[ ]:
+# In[12]:
 
 
 a = "hello"
@@ -247,13 +247,13 @@ print(c + d)
 # Note that this does not work for different types.  You cannot `+` a string and an integer (later we will see that to do this we must first convert the integer to a string).  Nor can you `+ a string and a list, even though they are both sequence types.
 # 
 
-# In[ ]:
+# In[13]:
 
 
 print('boo' + 3) # TypeError
 
 
-# In[ ]:
+# In[14]:
 
 
 print([1, 2, 3] + 'boo') # TypeError
@@ -265,7 +265,7 @@ print([1, 2, 3] + 'boo') # TypeError
 # 
 # The operator `*` applied to a sequence (such as a string) and an integer `n` repeats the string/sequence `n` times.
 
-# In[ ]:
+# In[15]:
 
 
 print('Go '*3 + 'Ole '*3)
@@ -282,7 +282,7 @@ print([1, 2]*5)
 # 
 # We can use string concatenation to put variable values into strings.  For instance:
 
-# In[ ]:
+# In[16]:
 
 
 name = "Bob"
@@ -297,7 +297,7 @@ print("Your age is " + str(age) + ".")
 # completely different than `+` applied to strings, so we have to make sure we are doing the right thing. (If we try to `+` a string and an integer, we get a TypeError.)
 # - It is a bit ugly, there are all these quotes and `+` signs scattered about. There is a better way
 
-# In[ ]:
+# In[17]:
 
 
 67 + 'years'
@@ -309,7 +309,7 @@ print("Your age is " + str(age) + ".")
 # include variables inside a string.  An f-string is defined with the special string notation: (`f''`)
 # For instance, the example above can be written more elegantly with f-strings:
 
-# In[ ]:
+# In[18]:
 
 
 name = "Bob"
@@ -337,7 +337,7 @@ print(f"Your age is {age}.")
 # 
 # Note that I use the f-string shortcut f'{var=}' which prints "var='contents of var'", so we can easily see what each line below is doing.
 
-# In[ ]:
+# In[19]:
 
 
 sentence = 'When angry it helps to WRITE IN ALL CAPS!'
@@ -350,7 +350,7 @@ print(f'{sentence.replace("angry", "excited")=}')
 
 # Note that strings are **immutable**, so any method that changes a string does not change the existing string, but instead makes a new, altered string.
 
-# In[ ]:
+# In[20]:
 
 
 sentence = 'When angry it helps to WRITE IN ALL CAPS!'
@@ -378,7 +378,7 @@ print(sentence)
 # - `list_1.append(item)` adds the item to the end of list_1.
 # - `list_1.extend(list_2)` adds the items in list_2 to the end of list_1
 
-# In[ ]:
+# In[21]:
 
 
 my_list = [1, 2, 'e', 3, ]
@@ -396,7 +396,7 @@ print(my_list)
 # - `list_1.pop(idx)` returns the element at index `idx` and also removes that element from the list.
 # - `list_1.remove(item)` removes the first occurrence of `item` from the list, i.e., it removes the first element that has the same value as `item`.
 
-# In[ ]:
+# In[22]:
 
 
 my_list = ['red', 'blue', 'green', 'tomato', 'tomato', 'tomato', 'purple']
@@ -423,21 +423,21 @@ print(my_list)
 
 # ### List examples
 
-# In[ ]:
+# In[23]:
 
 
 # Define a list
 lst = [1, 'a', True]
 
 
-# In[ ]:
+# In[24]:
 
 
 # Print out the contents of a list
 print(lst)
 
 
-# In[ ]:
+# In[25]:
 
 
 # Check the type of a list
@@ -448,7 +448,7 @@ type(lst)
 # 
 # Which of the following specifies a list of 4 items?
 
-# In[ ]:
+# In[26]:
 
 
 item_A = [0, 'string', 18]
@@ -470,62 +470,62 @@ item_E = [1234]
 # <b>Indexing</b> refers to selecting an item from within a collection. Indexing is done with square brackets.
 # </div>
 
-# In[ ]:
+# In[27]:
 
 
 # Define a list
 my_lst = ['Julian', 'Amal', 'Richard', 'Juan', 'Xuan']
 
 
-# In[ ]:
+# In[28]:
 
 
 # Indexing: Count forward, starting at 0, with positive numbers
 print(my_lst[1])
 
 
-# In[ ]:
+# In[29]:
 
 
 # Indexing: Count backward, starting at -1, with negative numbers
 print(my_lst[-1])
 
 
-# In[ ]:
+# In[30]:
 
 
 # Indexing: Grab a group of adjacent items using `start:stop`, called a slice
 print(my_lst[2:4])
 
 
-# In[ ]:
+# In[31]:
 
 
 # can determine type in list
 type(my_lst[2])
 
 
-# In[ ]:
+# In[32]:
 
 
 my_lst[2:-1]
 
 
-# In[ ]:
+# In[33]:
 
 
 # indexing to end of list
 print(my_lst[2:])
 
 
-# In[ ]:
+# In[34]:
 
 
 # Indexing from beginning of list
 print(my_lst[:4])
 
 
-# In[ ]:
+# In[35]:
 
 
 # slicing by skipping a value [start:stop:step]
@@ -534,26 +534,26 @@ print(my_lst[0:4:2])
 
 # ### Index Practices
 
-# In[ ]:
+# In[36]:
 
 
 # Define a list for the examples
 example_lst = [1, 2, 3, 4, 5]
 
 
-# In[ ]:
+# In[37]:
 
 
 example_lst[2]
 
 
-# In[ ]:
+# In[38]:
 
 
 example_lst[-3]
 
 
-# In[ ]:
+# In[39]:
 
 
 example_lst[1:3]
@@ -563,7 +563,7 @@ example_lst[1:3]
 # 
 # What will be the output of the following piece of code:
 
-# In[ ]:
+# In[40]:
 
 
 q2_lst = ['a', 'b', 'c','d']
@@ -586,14 +586,14 @@ q2_lst[-3:-1]
 # More details about `step`:
 # `step`: the amount by which the index increases, defaults to 1. If it's negative, you're slicing over the iterable in reverse.
 
-# In[ ]:
+# In[41]:
 
 
 # slice in reverse
 q2_lst[-2:-4:-1]
 
 
-# In[ ]:
+# In[42]:
 
 
 # you can use forward indexing
@@ -605,7 +605,7 @@ q2_lst[2:0:-1]
 # 
 # What would be the appropriate line of code to return `['butter', '&', 'jelly']`?
 
-# In[ ]:
+# In[43]:
 
 
 q3_lst = ['peanut', 'butter', '&','jelly']
@@ -634,7 +634,7 @@ q3_lst = ['peanut', 'butter', '&','jelly']
 
 # ### Length of a collection
 
-# In[ ]:
+# In[44]:
 
 
 # Define a new list
@@ -650,21 +650,21 @@ len(another_lst)
 # The <code>in</code> operator asks whether an element is present inside a collection, and returns a boolean answer.
 # </div>
 
-# In[ ]:
+# In[45]:
 
 
 # Define a new list to work with
 lst_again = [True, 13, None, 'apples']
 
 
-# In[ ]:
+# In[46]:
 
 
 # Check if a particular element is present in the list
 True in lst_again
 
 
-# In[ ]:
+# In[47]:
 
 
 # The `in` operator can also be combined with the `not` operator
@@ -673,39 +673,39 @@ True in lst_again
 
 # ### Practice with `in`
 
-# In[ ]:
+# In[48]:
 
 
 # Define a list to practice with
 practice_lst = [1, True, 'alpha', 13, 'cogs18']
 
 
-# In[ ]:
+# In[49]:
 
 
 13 in practice_lst
 
 
-# In[ ]:
+# In[50]:
 
 
 False in practice_lst
 
 
-# In[ ]:
+# In[51]:
 
 
 'True' in practice_lst
 
 
-# In[ ]:
+# In[52]:
 
 
 #searching partial strings
 'cogs' in practice_lst
 
 
-# In[ ]:
+# In[53]:
 
 
 'cogs18' not in practice_lst
@@ -715,7 +715,7 @@ False in practice_lst
 # 
 # After executing the following code, what will be the value of `output`?
 
-# In[ ]:
+# In[54]:
 
 
 ex2_lst = [0, False, 'ten', None]
@@ -745,28 +745,28 @@ print(output)
 # Lists are <i>mutable</i>, meaning after definition, you can update and change things about the list.
 # </div>
 
-# In[ ]:
+# In[55]:
 
 
 # Define a list
 updates = [1, 2, 3]
 
 
-# In[ ]:
+# In[56]:
 
 
 # Check the contents of the list
 print(updates)
 
 
-# In[ ]:
+# In[57]:
 
 
 # Redefine a particular element of the list
 updates[1] = 0
 
 
-# In[ ]:
+# In[58]:
 
 
 # Check the contents of the list
@@ -777,14 +777,14 @@ print(updates)
 # 
 # What would the following code accommplish?
 
-# In[ ]:
+# In[59]:
 
 
 lst_update = [1, 2, 3, 0, 5]
 lst_update[3] = 4
 
 
-# In[ ]:
+# In[60]:
 
 
 print(lst_update)
@@ -804,35 +804,35 @@ print(lst_update)
 
 # ### Tuple Examples
 
-# In[ ]:
+# In[61]:
 
 
 # Define a tuple
 tup = (2, 'b', False)
 
 
-# In[ ]:
+# In[62]:
 
 
 # Print out the contents of a tuple
 print(tup)
 
 
-# In[ ]:
+# In[63]:
 
 
 # Check the type of a tuple
 type(tup)
 
 
-# In[ ]:
+# In[64]:
 
 
 # Index into a tuple
 tup[0]
 
 
-# In[ ]:
+# In[65]:
 
 
 # Get the length of a tuple
@@ -841,7 +841,7 @@ len(tup)
 
 # ### Tuples are Immutable
 
-# In[ ]:
+# In[66]:
 
 
 # Tuples are immutable - meaning after they defined, you can't change them
@@ -853,7 +853,7 @@ tup[2] = 1
 # 
 # Which of the following specifies a tuple of 4 items?
 
-# In[ ]:
+# In[67]:
 
 
 item_A = [0, 'string', 18]
@@ -873,7 +873,7 @@ item_E = [1234]
 # 
 # Note: This was introduced in the Variables lecture.
 
-# In[ ]:
+# In[68]:
 
 
 # Make a variable, and an alias
@@ -894,7 +894,7 @@ print(b)
 # 
 # After executing the following code, what will the values stored in `a` and `b` be?
 
-# In[ ]:
+# In[69]:
 
 
 # Make a variable & an alias
@@ -919,7 +919,7 @@ print(b)
 # 
 # What happens if we make an alias of a **mutable** variable, like a list?
 
-# In[ ]:
+# In[70]:
 
 
 first_list = [1, 2, 3, 4]
@@ -927,7 +927,7 @@ alias_list = first_list
 alias_list
 
 
-# In[ ]:
+# In[71]:
 
 
 #change second value of first_list
@@ -935,14 +935,14 @@ first_list[1] = 29
 first_list
 
 
-# In[ ]:
+# In[72]:
 
 
 # check alias_list
 alias_list
 
 
-# In[ ]:
+# In[73]:
 
 
 # works in both directions
@@ -952,7 +952,7 @@ alias_list[2] = 929
 alias_list
 
 
-# In[ ]:
+# In[74]:
 
 
 first_list
@@ -964,7 +964,7 @@ first_list
 # 
 # After executing the following code, what will the second value stored in `second_tuple`?
 
-# In[ ]:
+# In[75]:
 
 
 # Make a variable & an alias
@@ -974,7 +974,7 @@ second_tuple = my_tuple
 my_tuple[1] = 29
 
 
-# In[ ]:
+# In[76]:
 
 
 second_tuple[1]
@@ -1000,35 +1000,35 @@ second_tuple[1]
 # Strings act similarly to ordered collections of homogenous elements - specifically characters. But, they are <b>immutable</b>.
 # </div>
 
-# In[ ]:
+# In[77]:
 
 
 # Define a string
 my_str = 'TheFamousFive'
 
 
-# In[ ]:
+# In[78]:
 
 
 # Index into a string
 my_str[2]
 
 
-# In[ ]:
+# In[79]:
 
 
 # Ask if an item is in a string
 'Fam' in my_str
 
 
-# In[ ]:
+# In[80]:
 
 
 # Check the length of a string
 len(my_str)
 
 
-# In[ ]:
+# In[81]:
 
 
 # Index into a string
@@ -1038,7 +1038,7 @@ my_str[1:3] = 'HE'
 
 # ### SideNote: using counters
 
-# In[ ]:
+# In[82]:
 
 
 # Initialize a counter variable
@@ -1046,14 +1046,14 @@ counter = 0
 print(counter)
 
 
-# In[ ]:
+# In[83]:
 
 
 counter = counter + 1
 print(counter)
 
 
-# In[ ]:
+# In[84]:
 
 
 counter = counter + 1
@@ -1066,13 +1066,13 @@ print(counter)
 # 
 # What will be the value of `counter` after this code is run?
 
-# In[ ]:
+# In[85]:
 
 
 len(things_that_are_good)
 
 
-# In[ ]:
+# In[86]:
 
 
 things_that_are_good = ['python', 'data', 'science', 'tacos']
@@ -1097,7 +1097,7 @@ print(counter)
 # 
 # What will be printed out from running this code?
 
-# In[ ]:
+# In[87]:
 
 
 lst = ['a', 'b', 'c']

@@ -76,14 +76,14 @@ assert extend([1, 2]) == [1, 2, 1, 2]
 assert extend((1, 2)) == (1, 2, 1, 2)
 
 
-# In[ ]:
+# In[6]:
 
 
 # Check that a different input list (different lengths / contents) returns expected result
 assert extend(['a', 'b', 'c']) == ['a', 'b', 'c', 'a', 'b', 'c']
 
 
-# In[ ]:
+# In[7]:
 
 
 # Check that an empty list executes, executing an empty list
@@ -123,14 +123,14 @@ assert extend([]) == []
 
 # ## Example Test Code
 
-# In[ ]:
+# In[8]:
 
 
 def add(num1, num2):
     return num1 + num2
 
 
-# In[ ]:
+# In[9]:
 
 
 # import math
@@ -152,14 +152,14 @@ def test_add():
     assert add(2, 0) == 2
 
 
-# In[ ]:
+# In[10]:
 
 
 # Run our test function
 test_add()
 
 
-# In[ ]:
+# In[11]:
 
 
 add(2.7, 1.2) == 3.9
@@ -167,7 +167,7 @@ add(2.7, 1.2) == 3.9
 
 # #### Clicker Question #2
 
-# In[ ]:
+# In[12]:
 
 
 # Given the following function:
@@ -180,7 +180,7 @@ def divide_list(in_list):
     return output
 
 
-# In[ ]:
+# In[13]:
 
 
 # And the following test function:
@@ -189,7 +189,7 @@ def test_divide_list():
     assert divide_list([1, 2, 4]) == [2, 2]
 
 
-# In[ ]:
+# In[14]:
 
 
 test_divide_list()
@@ -200,7 +200,7 @@ test_divide_list()
 # - C) These tests will fail, but they cover the needed cases
 # - D) These tests will fail, and we should also have more tests
 
-# In[ ]:
+# In[15]:
 
 
 divide_list((0,2,3))
@@ -267,7 +267,7 @@ divide_list((0,2,3))
 #     - check that function sums the list (which was our expectation)
 #     - check the output is expected output / expected type
 
-# In[ ]:
+# In[16]:
 
 
 def sum_list(input_list):
@@ -281,13 +281,13 @@ def sum_list(input_list):
     return output
 
 
-# In[ ]:
+# In[17]:
 
 
 ### YOUR TEST
 
 
-# In[ ]:
+# In[18]:
 
 
 test_sum_list()

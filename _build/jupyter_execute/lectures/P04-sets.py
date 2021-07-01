@@ -60,7 +60,7 @@ print(x)
 
 # Set membership can be evaluated with `in`
 
-# In[ ]:
+# In[4]:
 
 
 6 in x
@@ -68,7 +68,7 @@ print(x)
 
 # Sets can be iterated over with a `for loop`
 
-# In[ ]:
+# In[5]:
 
 
 for item in x:
@@ -81,7 +81,7 @@ for item in x:
 # 
 # #### Set operations
 
-# In[ ]:
+# In[6]:
 
 
 A = set('panda')
@@ -92,7 +92,7 @@ print(B)
 
 # Set union: items in A or B
 
-# In[ ]:
+# In[7]:
 
 
 print(A | B)
@@ -100,7 +100,7 @@ print(A | B)
 
 # Set intersections: items in A and B
 
-# In[ ]:
+# In[8]:
 
 
 print(A & B)
@@ -108,7 +108,7 @@ print(A & B)
 
 # Set difference: items in A but not B
 
-# In[ ]:
+# In[9]:
 
 
 print(A - B)
@@ -116,7 +116,7 @@ print(A - B)
 
 # Set symmetric difference: items in either set but *not both* sets.  (items in union but not in intersection)
 
-# In[ ]:
+# In[10]:
 
 
 print(A ^ B)

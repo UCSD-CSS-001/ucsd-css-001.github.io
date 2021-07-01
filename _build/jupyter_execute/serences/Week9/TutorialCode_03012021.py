@@ -43,13 +43,13 @@ from google.colab import files
 # 
 # 
 
-# In[ ]:
+# In[2]:
 
 
 get_ipython().run_line_magic('ls', '')
 
 
-# In[ ]:
+# In[3]:
 
 
 files.upload()
@@ -57,19 +57,19 @@ files.upload()
 
 # ### Remove unwanted files...
 
-# In[ ]:
+# In[4]:
 
 
 get_ipython().run_line_magic('ls', '')
 
 
-# In[ ]:
+# In[5]:
 
 
 get_ipython().run_line_magic('rm', '*.csv')
 
 
-# In[ ]:
+# In[6]:
 
 
 get_ipython().run_line_magic('pycat', 'annual_temp_csv2.csv')
@@ -83,14 +83,14 @@ get_ipython().run_line_magic('pycat', 'annual_temp_csv2.csv')
 # * Can also specify data type (default is inferred)
 # * If you read in the data from a csv file, you will be able to inheret row and column labels (if they are specified in the file). 
 
-# In[ ]:
+# In[7]:
 
 
 # make the call to pd.DataFrames to create the DF - usage much like pd.Series
 df = pd.read_csv('annual_temp_csv2.csv')
 
 
-# In[ ]:
+# In[8]:
 
 
 # take a look at the output...
@@ -98,7 +98,7 @@ df = pd.read_csv('annual_temp_csv2.csv')
 display(df)   
 
 
-# In[ ]:
+# In[9]:
 
 
 # another handy display function...good for large dfs that are too big to fit - 
@@ -111,7 +111,7 @@ df.head()
 # 
 # * What do you notice about the two counts for Year and for Mean
 
-# In[ ]:
+# In[10]:
 
 
 df.describe()
@@ -119,7 +119,7 @@ df.describe()
 
 # ## Just like with Series object, can compute mean, std, etc
 
-# In[ ]:
+# In[11]:
 
 
 df['Year'].mean()
@@ -127,7 +127,7 @@ df['Year'].mean()
 
 # ### remember that you can also call by field...I prefer by name like ['Mean'] to avoid confusion with built in methods/functions, but either will work
 
-# In[ ]:
+# In[12]:
 
 
 #df['Mean'].std()
@@ -140,7 +140,7 @@ df['Mean'].mean()
 # * Can do this by chosing to NOT skip the NaNs...in which case if they exist you'll get back NaN as the answer!
 # * Then you know that there are NaNs in the data set. 
 
-# In[ ]:
+# In[13]:
 
 
 df['Mean'].mean(skipna=False)
@@ -151,14 +151,14 @@ df['Mean'].mean(skipna=False)
 # * note that you can call the isna method from the object directly
 # * To make this work, you index into the data frame where 'Mean' is a Nan 
 
-# In[ ]:
+# In[14]:
 
 
 # isolate just the rows (indicies) where Mean is NaN
 df['Mean'].isna()
 
 
-# In[ ]:
+# In[15]:
 
 
 # now index into df using the true/false sequence from above!
@@ -167,7 +167,7 @@ df[df['Mean'].isna()]
 
 # #### Or do the opposite, isolate just the rows where Mean is not NaN (i.e. its a real number)
 
-# In[ ]:
+# In[16]:
 
 
 df[df['Mean'].notna()]
@@ -177,7 +177,7 @@ df[df['Mean'].notna()]
 # * Can make a new DF without them
 # * can assign the mean of all of the data to NaNs
 
-# In[ ]:
+# In[17]:
 
 
 # make a new df, but only keep the non-NaN entries
@@ -190,7 +190,7 @@ df2.head()
 # * see also 'interpolate' for more functions like this 
 # * NEED TO ASSIGN output to apply changes..e.g df = df.fillna(....)
 
-# In[ ]:
+# In[18]:
 
 
 print(df['Mean'].mean())
@@ -202,13 +202,13 @@ df2.head()
 
 # ## Pull out selected data and remove from DF
 
-# In[ ]:
+# In[19]:
 
 
 df.head()
 
 
-# In[ ]:
+# In[20]:
 
 
 # or your could self assign df = df[] here to update existing data frame
@@ -218,7 +218,7 @@ df2.head()
 
 # ## Grab a range of rows...across a set of years, for example
 
-# In[ ]:
+# In[21]:
 
 
 df2 = df[(df['Year']>1990) & (df['Year']<=2015)]
@@ -228,7 +228,7 @@ display(df2)
 # ## Apply several filters at once!
 # * Be careful here - readability of code is the prime directive...don't write one-liners that are so dense that nobody can understand them!
 
-# In[ ]:
+# In[22]:
 
 
 df2 = df[(df['Source']=='GCAG') & (df['Year']>1990) & (df['Year']<=2015)]
@@ -246,26 +246,26 @@ display(df2)
 # Contrary to usual slicing conventions, both the start and the stop indices are included when using the DF.LOC option...see below for demo. This makes sense because you're indexing by label name, not by a zero-based integer index. 
 # 
 
-# In[ ]:
+# In[23]:
 
 
 #for the next steps, load annual_temp2
 files.upload()
 
 
-# In[ ]:
+# In[24]:
 
 
 get_ipython().run_line_magic('pycat', 'annual_temp2.csv')
 
 
-# In[ ]:
+# In[25]:
 
 
 df = pd.read_csv('annual_temp2.csv', index_col=0)
 
 
-# In[ ]:
+# In[26]:
 
 
 df.head()
@@ -273,7 +273,7 @@ df.head()
 
 # ### This returns the data associated with one row
 
-# In[ ]:
+# In[27]:
 
 
 df.loc[2014]
@@ -281,7 +281,7 @@ df.loc[2014]
 
 # ### this returns the rows associated with a set of years specified in a list
 
-# In[ ]:
+# In[28]:
 
 
 # non-contiguous entries
@@ -289,47 +289,47 @@ df2 = df.loc[[1999,2015,2016,1880]]
 df2.head()
 
 
-# In[ ]:
+# In[29]:
 
 
 df.head()
 
 
-# In[ ]:
+# In[30]:
 
 
 # note that years run in descending order...
 df.loc[2014:2016]
 
 
-# In[ ]:
+# In[31]:
 
 
 # but this will work...
 df.loc[2016:2010:2]
 
 
-# In[ ]:
+# In[32]:
 
 
 # flip the data frame upside down
 df=df.loc[::-1]
 
 
-# In[ ]:
+# In[33]:
 
 
 df.head()
 
 
-# In[ ]:
+# In[34]:
 
 
 # now the years run in order
 df.loc[1990:2016]
 
 
-# In[ ]:
+# In[35]:
 
 
 # select rows and select colums
@@ -340,7 +340,7 @@ df.loc[2014:2016, 'Mean':'Std']
 # ### iloc does indexing by row location (not label)
 # * use normal rules of slicing here...start:stop:step
 
-# In[ ]:
+# In[36]:
 
 
 # the first 10
@@ -362,7 +362,7 @@ df.iloc[:10:2]
 
 
 
-# In[ ]:
+# In[37]:
 
 
 mean_temp = df['Mean'].mean()
@@ -379,7 +379,7 @@ df.head()
 # * Use what you might think is the intuitive way to convert True to 1 and False to 0 in our new column 'HighLow'
 # * **This throws a weird warning because you're trying to modify the thing that you're using as an index!**
 
-# In[ ]:
+# In[38]:
 
 
 df.HighLow[df.HighLow==True] = 1  #df['HighLow']
@@ -389,7 +389,7 @@ df.head()
 
 # ## Solution - use .loc to return the information and then modify it
 
-# In[ ]:
+# In[39]:
 
 
 # reload our df, re-create a new version of our HighLow column
@@ -409,7 +409,7 @@ df.head()
 
 # ### like this...using the .loc method ensures that things don't get confused...
 
-# In[ ]:
+# In[40]:
 
 
 df.loc[df['HighLow']==True, 'HighLow'] = 1
@@ -419,7 +419,7 @@ df.head()
 
 # ## Access specific row and columns!
 
-# In[ ]:
+# In[41]:
 
 
 # flip it over to chronological order so its a little more intuitive to slice
@@ -427,28 +427,28 @@ df = df.loc[::-1]
 df.head()
 
 
-# In[ ]:
+# In[42]:
 
 
 # just data from one year from just the "Mean" column
 df.loc[2016, 'Mean']
 
 
-# In[ ]:
+# In[43]:
 
 
 # a range of years
 df.loc[1880:1884, 'Mean']
 
 
-# In[ ]:
+# In[44]:
 
 
 # range of rows and columns
 df.loc[1880:1884, ['Mean','HighLow']]
 
 
-# In[ ]:
+# In[45]:
 
 
 # note that the order in which you ask for columns impacts the output
@@ -460,19 +460,19 @@ df2.head()
 
 # ### A few more examples of using iloc to index into specific rows,columns
 
-# In[ ]:
+# In[46]:
 
 
 df.head()
 
 
-# In[ ]:
+# In[47]:
 
 
 df.iloc[:20:2]
 
 
-# In[ ]:
+# In[48]:
 
 
 df.iloc[:10, 0]
@@ -481,19 +481,19 @@ df.iloc[:10, 0]
 # ## Deleting columns...
 # 
 
-# In[ ]:
+# In[49]:
 
 
 df_temp = df.copy()
 
 
-# In[ ]:
+# In[50]:
 
 
 df_temp.head()
 
 
-# In[ ]:
+# In[51]:
 
 
 # using the del command will delete a column from the DF
@@ -506,7 +506,7 @@ del df2['Mean']
 df2.head()
 
 
-# In[ ]:
+# In[52]:
 
 
 df_temp.head()
@@ -516,7 +516,7 @@ df_temp.head()
 # * first param is what you want to replace (can be any data type as needed)
 # * second param is what you want to replace it with
 
-# In[ ]:
+# In[53]:
 
 
 # make a df from a dictionary
@@ -528,7 +528,7 @@ df = pd.DataFrame(data)
 df.head()
 
 
-# In[ ]:
+# In[54]:
 
 
 df = df.replace(4, 7)
@@ -537,7 +537,7 @@ df.head()
 
 # ## Set index from a column in a data frame
 
-# In[ ]:
+# In[55]:
 
 
 data = {'D1': [6,8,4,3], 'D2': [4,4,2,1], 'D3': [2018,2019,2020,2021]}
@@ -547,7 +547,7 @@ df = pd.DataFrame(data)
 df.head()
 
 
-# In[ ]:
+# In[56]:
 
 
 df = df.set_index('D3')
@@ -557,7 +557,7 @@ df.head()
 # ## Loop over data frame and compute the mean of 'w' consecutive rows
 # 
 
-# In[2]:
+# In[57]:
 
 
 # make a df
@@ -578,7 +578,7 @@ df = pd.DataFrame({'D1':d1, 'D2':d2})
 df.head()
 
 
-# In[8]:
+# In[58]:
 
 
 # use iloc approach
@@ -598,7 +598,7 @@ print(m_avg)
 print(len(m_avg))
 
 
-# In[10]:
+# In[59]:
 
 
 # another approach
@@ -612,13 +612,13 @@ print(m_avg)
 
 # ## Preview of next week - quick intro to plotting
 
-# In[ ]:
+# In[60]:
 
 
 import matplotlib.pyplot as plt
 
 
-# In[ ]:
+# In[61]:
 
 
 plt.plot(df['D1'])

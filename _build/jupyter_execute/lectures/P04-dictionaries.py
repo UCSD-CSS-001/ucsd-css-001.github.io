@@ -439,7 +439,7 @@ if 'A1234' in completed_coding_lab:
 # - Dictionary keys are case sensitive.
 # 
 
-# In[ ]:
+# In[34]:
 
 
 {'Student' : 97, 'student': 88, 'STUDENT' : 91}
@@ -449,7 +449,7 @@ if 'A1234' in completed_coding_lab:
 # 
 # Why does the following code produce an error?
 
-# In[ ]:
+# In[35]:
 
 
 student_emails = {
@@ -460,7 +460,7 @@ student_emails = {
 }
 
 
-# In[ ]:
+# In[36]:
 
 
 student_emails

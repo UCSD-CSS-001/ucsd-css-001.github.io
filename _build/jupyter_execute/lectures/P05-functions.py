@@ -161,7 +161,7 @@ print(a, b, c)
 # - Functions are the building blocks of programs, and can be flexibly combined and executed in specified orders
 #     - This allows us to build up arbitrarily complex, well-organized programs
 
-# In[ ]:
+# In[5]:
 
 
 # you've seen functions before
@@ -170,7 +170,7 @@ my_var = [3, 4, 5]
 type(my_var)
 
 
-# In[ ]:
+# In[6]:
 
 
 # the function len() doesn't depend on type()
@@ -182,7 +182,7 @@ len(my_var)
 # 
 # When you use `def` you are creating a **user-defined function**.
 
-# In[ ]:
+# In[7]:
 
 
 # define a function: double_value
@@ -196,7 +196,7 @@ def double_value(num):
     return doubled
 
 
-# In[ ]:
+# In[8]:
 
 
 # excecute a function by calling function by name
@@ -204,7 +204,7 @@ def double_value(num):
 double_value(num=6)
 
 
-# In[ ]:
+# In[9]:
 
 
 # equivalent function call
@@ -216,7 +216,7 @@ double_value(6)
 # 
 # Something _slightly_ more interesting than just adding a value with itself
 
-# In[ ]:
+# In[10]:
 
 
 def add_two_numbers(num1, num2):
@@ -228,13 +228,13 @@ def add_two_numbers(num1, num2):
     return answer
 
 
-# In[ ]:
+# In[11]:
 
 
 add_two_numbers(1, 2)
 
 
-# In[ ]:
+# In[12]:
 
 
 # Execute our function again, on some other inputs
@@ -246,7 +246,7 @@ print(output)
 # 
 # We aren't limited to a single operation within a function. We can use multiple operations and all of the concepts we've used previously (including loops and conditionals).
 
-# In[ ]:
+# In[13]:
 
 
 # determine if a value is even or odd
@@ -259,7 +259,7 @@ def even_odd(value):
     return out
 
 
-# In[ ]:
+# In[14]:
 
 
 # Execute our function
@@ -289,7 +289,7 @@ even_odd(-1)
 
 # #### Clicker Question #1
 
-# In[ ]:
+# In[15]:
 
 
 def remainder(number, divider):
@@ -301,7 +301,7 @@ def remainder(number, divider):
 
 # Given the function above, what will the code below print out?
 
-# In[ ]:
+# In[16]:
 
 
 ans_1 = remainder(12, 5)
@@ -325,7 +325,7 @@ print(ans_1 + ans_2)
 # - C) I tried but am stuck.
 # - D) Super duper lost
 
-# In[ ]:
+# In[17]:
 
 
 ## YOUR CODE HERE
@@ -334,7 +334,7 @@ def greet(name):
     return output
 
 
-# In[ ]:
+# In[18]:
 
 
 greet(name='Shannon')
@@ -342,7 +342,7 @@ greet(name='Shannon')
 
 # ## Function Namespace I
 
-# In[ ]:
+# In[19]:
 
 
 # Remember, you can check defined variables with `%whos`
@@ -351,14 +351,14 @@ get_ipython().run_line_magic('whos', '')
 
 # ## Function Namespaces II
 
-# In[ ]:
+# In[20]:
 
 
 # Return a dictionary containing the current scope's local variables.
 # locals?
 
 
-# In[ ]:
+# In[21]:
 
 
 def check_function_namespace(function_input):
@@ -368,21 +368,21 @@ def check_function_namespace(function_input):
     return local_values
 
 
-# In[ ]:
+# In[22]:
 
 
 # Functions don't `see` everything
 check_function_namespace(1)
 
 
-# In[ ]:
+# In[23]:
 
 
 # Functions don't `see` everything
 check_function_namespace(True)
 
 
-# In[ ]:
+# In[24]:
 
 
 # using two different inputs to a function
@@ -396,7 +396,7 @@ def check_function_namespace2(function_input, other_name):
     return local_values
 
 
-# In[ ]:
+# In[25]:
 
 
 # returning what each input is storing
@@ -407,7 +407,7 @@ check_function_namespace2(1, True)
 # 
 # Names defined inside a function only exist within the function.
 
-# In[ ]:
+# In[26]:
 
 
 # Names used inside a function are independent of those used outside
@@ -422,7 +422,7 @@ print(my_var)
 
 # ### Function - Execution Order
 
-# In[ ]:
+# In[27]:
 
 
 def change_var(my_var):
@@ -431,28 +431,28 @@ def change_var(my_var):
     return my_var
 
 
-# In[ ]:
+# In[28]:
 
 
 # my_var in the global namespace
 my_var
 
 
-# In[ ]:
+# In[29]:
 
 
 # my_var within the function
 change_var(my_var)
 
 
-# In[ ]:
+# In[30]:
 
 
 # my_var in the global namespace remains unchanged
 my_var
 
 
-# In[ ]:
+# In[31]:
 
 
 print('Outside, before function: \t', my_var)
@@ -473,7 +473,7 @@ print('Outside, after function: \t', my_var)
 # 
 # What will the following code snippet print?
 
-# In[ ]:
+# In[32]:
 
 
 def my_func(my_dictionary):
@@ -509,7 +509,7 @@ print(out)
 # 
 # Specify a default value in a function by doing an assignment within the function definition.
 
-# In[ ]:
+# In[33]:
 
 
 # Create a function, that has a default values for a parameter
@@ -517,14 +517,14 @@ def exponentiate(number, exponent=2):
     return number ** exponent
 
 
-# In[ ]:
+# In[34]:
 
 
 # Use the function, using default value
 exponentiate(3)
 
 
-# In[ ]:
+# In[35]:
 
 
 # Call the function, over-riding default value with something else
@@ -532,7 +532,7 @@ exponentiate(3)
 exponentiate(2, 3)
 
 
-# In[ ]:
+# In[36]:
 
 
 # you can always state this explicitly
@@ -545,21 +545,21 @@ exponentiate(number=2, exponent=3)
 # Arguments to a function can be indicated by either position or keyword.
 # </div>
 
-# In[ ]:
+# In[37]:
 
 
 # Positional arguments use the position to infer which argument each value relates to
 exponentiate(2, 3)
 
 
-# In[ ]:
+# In[38]:
 
 
 # Keyword arguments are explicitly named as to which argument each value relates to
 exponentiate(number=2, exponent=3)
 
 
-# In[ ]:
+# In[39]:
 
 
 # discouraging flipping the order of parameters
@@ -568,7 +568,7 @@ exponentiate(number=2, exponent=3)
 exponentiate(exponent=3, number=2)
 
 
-# In[ ]:
+# In[40]:
 
 
 # Note: once you have a keyword argument, you can't have other positional arguments afterwards
@@ -580,7 +580,7 @@ exponentiate(number=2, 3)
 # 
 # (This may look like what we did above, but here we are including a default value for one parameter during function definition. During function *execution*, you can't mix and match using positional vs. keywords)
 
-# In[ ]:
+# In[41]:
 
 
 def exponentiate(number, exponent=2):
@@ -591,7 +591,7 @@ def exponentiate(number, exponent=2):
 # 
 # What will the following code snippet print?
 
-# In[ ]:
+# In[42]:
 
 
 def exponentiate(number, exponent = 2):
@@ -634,7 +634,7 @@ exponentiate(number=2, exponent=3)
 
 # In other words: methods "belong to" an object.
 
-# In[ ]:
+# In[43]:
 
 
 # The `append` method, defined on lists
@@ -645,7 +645,7 @@ print(my_list)
 
 # The method `append()` is called directly on the list `my_list`
 
-# In[ ]:
+# In[44]:
 
 
 # append is a method for lists
@@ -654,7 +654,7 @@ my_string = 'cogs18'
 my_string.append('!')
 
 
-# In[ ]:
+# In[45]:
 
 
 # The `is_integer()` method, defined on floats
@@ -662,7 +662,7 @@ my_float = 12.2
 my_float.is_integer()
 
 
-# In[ ]:
+# In[46]:
 
 
 # The `is_integer()` method, attempted on an integer
@@ -675,28 +675,28 @@ my_int.is_integer()
 # 
 # There are a whole bunch of string methods, all described [here](https://www.w3schools.com/python/python_ref_string.asp). We'll review a few of the most commonly used here.
 
-# In[ ]:
+# In[47]:
 
 
 # Make a string all lower case
 'aBcDE'.lower()
 
 
-# In[ ]:
+# In[48]:
 
 
 # Make a string all upper case
 'aBc'.upper()
 
 
-# In[ ]:
+# In[49]:
 
 
 # Capitalize a string
 'python is great'.capitalize()
 
 
-# In[ ]:
+# In[50]:
 
 
 # Find the index of where a string starts
@@ -707,7 +707,7 @@ my_int.is_integer()
 # 
 # What will the following code snippet print out?
 
-# In[ ]:
+# In[51]:
 
 
 inputs = ['fIx', 'tYpiNg', 'lIkE', 'tHiS']
@@ -729,13 +729,13 @@ output.capitalize()
 # 
 # There are also a bunch of list methods, all described [here](https://www.w3schools.com/python/python_ref_list.asp). You've seen some of these before, but we'll review a few of the most commonly used here.
 
-# In[ ]:
+# In[52]:
 
 
 get_ipython().run_line_magic('pinfo', 'list.sort')
 
 
-# In[ ]:
+# In[53]:
 
 
 # sort sorts integers in numerical orders
@@ -744,14 +744,14 @@ ints.sort()
 ints
 
 
-# In[ ]:
+# In[54]:
 
 
 ints.sort(reverse=True)
 ints
 
 
-# In[ ]:
+# In[55]:
 
 
 # append adds to the end of a list
@@ -759,7 +759,7 @@ ints.append(2)
 ints
 
 
-# In[ ]:
+# In[56]:
 
 
 # remove value from list
@@ -767,13 +767,13 @@ ints.remove(40)
 ints
 
 
-# In[ ]:
+# In[57]:
 
 
 get_ipython().run_line_magic('pinfo', 'list.remove')
 
 
-# In[ ]:
+# In[58]:
 
 
 # reverse order of list
@@ -785,7 +785,7 @@ ints
 # 
 # What will the following code snippet print out?
 
-# In[ ]:
+# In[59]:
 
 
 list_string = ['a', 'c', 'd', 'b']
@@ -805,7 +805,7 @@ list_string
 # As with string and list methods, there are many described [here](https://www.w3schools.com/python/python_ref_dictionary.asp) that are helpful when working with dictionaries.
 # 
 
-# In[ ]:
+# In[60]:
 
 
 car = {
@@ -818,7 +818,7 @@ car = {
 car.keys()
 
 
-# In[ ]:
+# In[61]:
 
 
 # get returns the value of a specified key
@@ -831,14 +831,14 @@ print(mod)
 print(mod2)
 
 
-# In[ ]:
+# In[62]:
 
 
 # previously done this by indexing
 print(car['model'])
 
 
-# In[ ]:
+# In[63]:
 
 
 # update adds a key-value pair
@@ -881,7 +881,7 @@ print(car)
 
 # #### List methods that are in place
 
-# In[ ]:
+# In[64]:
 
 
 # Reverse a list
@@ -891,7 +891,7 @@ my_list.reverse()
 print(my_list)
 
 
-# In[ ]:
+# In[65]:
 
 
 # Sort a list
@@ -903,20 +903,20 @@ print(my_numbers)
 
 # #### Dictionary methods that are not in place
 
-# In[ ]:
+# In[66]:
 
 
 car
 
 
-# In[ ]:
+# In[67]:
 
 
 # Return the keys in the dictionary
 out = car.keys()
 
 
-# In[ ]:
+# In[68]:
 
 
 # print keys
@@ -924,7 +924,7 @@ print(type(out))
 print(out)
 
 
-# In[ ]:
+# In[69]:
 
 
 # car has not changed
@@ -932,7 +932,7 @@ print(type(car))
 print(car)
 
 
-# In[ ]:
+# In[70]:
 
 
 # Return the values in the dicionary
@@ -943,14 +943,14 @@ car.values()
 
 # Typing the object/variable name you want to find methods for followed by a '.' and then pressing tab will display all the methods available for that type of object.
 
-# In[ ]:
+# In[71]:
 
 
 # Define a test string
 my_string = 'Python'
 
 
-# In[ ]:
+# In[72]:
 
 
 # See all the available methods on an object with tab complete
@@ -959,7 +959,7 @@ my_string.
 
 # Using the function `dir()` returns all methods available
 
-# In[ ]:
+# In[73]:
 
 
 # For our purposes now, you can ignore any leading underscores (these are special methods)
@@ -984,7 +984,7 @@ dir(my_string)
 
 # ### Method / Function Comparison Example
 
-# In[ ]:
+# In[74]:
 
 
 my_float = 11.0
@@ -997,14 +997,14 @@ print(my_float.is_integer())
 print(float.is_integer(my_float))
 
 
-# In[ ]:
+# In[75]:
 
 
 # method documentation
 get_ipython().run_line_magic('pinfo', 'float.is_integer')
 
 
-# In[ ]:
+# In[76]:
 
 
 # function documentation
@@ -1015,7 +1015,7 @@ get_ipython().run_line_magic('pinfo', 'type')
 # 
 # You _could_ write a function to check whether a float was an integer and use it as a function (rather than the method `.is_integer()`) ...and we know how to do that!
 
-# In[ ]:
+# In[77]:
 
 
 def is_integer(my_float):
@@ -1028,7 +1028,7 @@ def is_integer(my_float):
     return is_int
 
 
-# In[ ]:
+# In[78]:
 
 
 print(my_float)
@@ -1050,7 +1050,7 @@ is_integer(my_float)
 # 
 # If you write a function called `is_odd()` which takes an input `value`,
 
-# In[ ]:
+# In[79]:
 
 
 def is_odd(value):
@@ -1064,7 +1064,7 @@ def is_odd(value):
 
 # to use that function, you would execute `is_odd(value)` ....something like `is_odd(value = 6)`
 
-# In[ ]:
+# In[80]:
 
 
 out = is_odd(6)
@@ -1073,7 +1073,7 @@ out
 
 # Later on, if you wanted to use that function _within another function_ you still have to pass an input to the function.
 
-# In[ ]:
+# In[81]:
 
 
 def new_function(my_list):
@@ -1084,7 +1084,7 @@ def new_function(my_list):
     return output
 
 
-# In[ ]:
+# In[82]:
 
 
 new_function([1,2,3,4])

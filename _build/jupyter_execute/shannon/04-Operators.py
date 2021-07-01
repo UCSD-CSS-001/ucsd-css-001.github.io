@@ -271,7 +271,7 @@ TRUE and TRUE
 # 
 # How will the following boolean expression evaluate:
 
-# In[21]:
+# In[20]:
 
 
 True and not False
@@ -295,7 +295,7 @@ True and not False
 # - `<=` : value on left is less than *or equal to* value on right
 # - `>=` : value on left is greater than or equal to value on the right
 
-# In[26]:
+# In[21]:
 
 
 a = 12
@@ -303,25 +303,25 @@ b = 13
 a > b
 
 
-# In[27]:
+# In[22]:
 
 
 True == True
 
 
-# In[28]:
+# In[23]:
 
 
 True != False
 
 
-# In[29]:
+# In[24]:
 
 
 'aa' == 'aa'
 
 
-# In[30]:
+# In[25]:
 
 
 12 <= 13
@@ -338,7 +338,7 @@ True != False
 # - B) I tried but am stuck.
 # - C) I'm unsure where to start
 
-# In[31]:
+# In[26]:
 
 
 ## EDIT CODE HERE
@@ -358,14 +358,14 @@ shield_energy = 100
 # 1. Python considers empty strings as having boolean value of `False`. Non-empty string as having boolean value of `True`.
 # 
 
-# In[32]:
+# In[27]:
 
 
 empty_string = ''
 bool(empty_string)
 
 
-# In[33]:
+# In[28]:
 
 
 nonempty_string = 'string has something in it'
@@ -375,25 +375,25 @@ bool(nonempty_string)
 # 2.  For `and` operator if left value is `True`, then right value is checked and returned. If left value is `False`, then that left value is returned.
 # 
 
-# In[34]:
+# In[29]:
 
 
 True and False
 
 
-# In[35]:
+# In[30]:
 
 
 bool('a')
 
 
-# In[36]:
+# In[31]:
 
 
 'a' and 'b'
 
 
-# In[37]:
+# In[32]:
 
 
 'b' and 'a'
@@ -403,7 +403,7 @@ bool('a')
 # 
 # What would the following code cell return?
 
-# In[38]:
+# In[33]:
 
 
 '' and 'a'
@@ -414,28 +414,28 @@ bool('a')
 # - C) `True`
 # - D) `False`
 
-# In[39]:
+# In[34]:
 
 
 # the left value in parentheses evaluates as True
 'a' == ('b' and 'a')
 
 
-# In[40]:
+# In[35]:
 
 
 # the left value in parentheses evaluates as True
 'a' == ('a' and 'b')
 
 
-# In[ ]:
+# In[36]:
 
 
 # the left value in parentheses evaluates as False
 'a' == ('' and 'a')
 
 
-# In[41]:
+# In[37]:
 
 
 # what we actually wanted python to do
@@ -445,32 +445,32 @@ bool('a')
 
 # 3. For `or` operator if left value is `True`, then it is returned, otherwise if left value is `False`, then right value is returned.
 
-# In[42]:
+# In[38]:
 
 
 'a' or 'b'
 
 
-# In[43]:
+# In[39]:
 
 
 # empty string evaluates as False
 '' or 'b'
 
 
-# In[44]:
+# In[40]:
 
 
 'a' == ('a' or 'b')
 
 
-# In[48]:
+# In[41]:
 
 
 'b' == ('a' or 'b')
 
 
-# In[46]:
+# In[42]:
 
 
 'b' == 'a' or 'b' == 'b'
@@ -480,7 +480,7 @@ bool('a')
 # 
 # What would the following code cell return?
 
-# In[47]:
+# In[43]:
 
 
 'a' == ('' or 'a')
@@ -502,7 +502,7 @@ bool('a')
 # - `is` : True if both refer to the same object
 # - `is not` : True if they do not refer to the same object
 
-# In[53]:
+# In[44]:
 
 
 a = 927
@@ -510,7 +510,7 @@ b = a
 c = 927
 
 
-# In[54]:
+# In[45]:
 
 
 print(a is b)
@@ -521,14 +521,14 @@ print(c is a)
 
 # If we wanted that second statement to evaluate as `True` we could use `is not`...
 
-# In[55]:
+# In[46]:
 
 
 # make a True statement
 print(c is not a)
 
 
-# In[56]:
+# In[47]:
 
 
 # testing for value equality
@@ -545,7 +545,7 @@ a == b == c
 # - B) I tried but am stuck.
 # - C) I'm unsure where to start
 
-# In[65]:
+# In[48]:
 
 
 z = 5
@@ -576,58 +576,58 @@ print(true_variable, false_variable)
 # 
 # The rules behind this are a bit fuzzy, so we'll just go through a few examples here. But, if you want to read more about string interning and how Python handles this, you can read more [here](http://guilload.com/python-string-interning/).
 
-# In[66]:
+# In[49]:
 
 
 simple_string = 'string'
 simple_string2 = 'string'
 
 
-# In[67]:
+# In[50]:
 
 
 simple_string is simple_string2
 
 
-# In[68]:
+# In[51]:
 
 
 print(id(simple_string), id(simple_string2))
 
 
-# In[69]:
+# In[52]:
 
 
 longer_string = 'really long string that just keeps going'
 longer_string2 = 'really long string that just keeps going'
 
 
-# In[70]:
+# In[53]:
 
 
 longer_string is longer_string2
 
 
-# In[71]:
+# In[54]:
 
 
 print(id(longer_string), id(longer_string2))
 
 
-# In[72]:
+# In[55]:
 
 
 d = 5
 e = 5
 
 
-# In[73]:
+# In[56]:
 
 
 print(id(d), id(e))
 
 
-# In[74]:
+# In[57]:
 
 
 print(d is e)
@@ -635,7 +635,7 @@ print(d is e)
 
 # Python implementation front loads an array of integers between -5 to 256, so these objects *already exist*.
 
-# In[75]:
+# In[58]:
 
 
 # Python doesn't create a new object here
@@ -650,7 +650,7 @@ true_variable_string = l is m
 print(true_variable_integer, true_variable_string)
 
 
-# In[76]:
+# In[59]:
 
 
 # Python DOES create a new object here
@@ -673,21 +673,21 @@ print(false_variable_integer, false_variable_string)
 # - B) I tried but am stuck.
 # - C) I'm unsure where to start
 
-# In[82]:
+# In[60]:
 
 
 # equality (values are the same)
 f == g
 
 
-# In[83]:
+# In[61]:
 
 
 # identity (place in memory)
 f is g
 
 
-# In[81]:
+# In[62]:
 
 
 a = 5
@@ -718,32 +718,32 @@ print(true_variable, false_variable)
 # - `in` : True if value is found in the sequence
 # - `not in` : True if value is not found in the sequence
 
-# In[84]:
+# In[63]:
 
 
 x = 'I love COGS18!'
 print('l' in x)
 
 
-# In[85]:
+# In[64]:
 
 
 print('L' in x)
 
 
-# In[86]:
+# In[65]:
 
 
 print('COGS' in x)
 
 
-# In[87]:
+# In[66]:
 
 
 print('CSOG' in x)
 
 
-# In[88]:
+# In[67]:
 
 
 print(' ' in x)
@@ -755,7 +755,7 @@ print(' ' in x)
 # Operators sometimes do different things on different types of variables. For example, <code>+</code> on strings does concatenation.
 # </div>
 
-# In[92]:
+# In[68]:
 
 
 a = 'COGS'
@@ -764,13 +764,13 @@ b = '18'
 a + ' ' + b
 
 
-# In[89]:
+# In[69]:
 
 
 'COGS' + ' 18'
 
 
-# In[90]:
+# In[70]:
 
 
 'a' + 'b' + 'c'
@@ -782,20 +782,20 @@ a + ' ' + b
 # Operators and variables can also be chained together into arbitrarily complex expressions.
 # </div>
 
-# In[93]:
+# In[71]:
 
 
 # Note that you can use parentheses to chunk sections
 (13 % 7 >= 7) and ('COGS' + '18' == 'COGS18')
 
 
-# In[94]:
+# In[72]:
 
 
 (13 % 7 >= 7)
 
 
-# In[95]:
+# In[73]:
 
 
 ('COGS' + '18' == 'COGS18')
@@ -805,19 +805,19 @@ a + ' ' + b
 # 
 # How will the following expression evaluate:
 
-# In[96]:
+# In[74]:
 
 
 2**2 >= 4 and 13%3 > 1
 
 
-# In[97]:
+# In[75]:
 
 
 2**2 >= 4
 
 
-# In[99]:
+# In[76]:
 
 
 13%3

@@ -2,6 +2,12 @@
 # coding: utf-8
 
 # # P02: Loops!
+# 
+# Loops are a control structure that allows repeated execution of the same instructions.  The canonical loop is a `while` loop.  It checks if a condition is met, and executes its code block if it is met.  If the condition is not met, it proceeds to the instructions following its code block.  All loops basically have this structure, however, some are a bit more convenient, and less error prone than while loops.  In particular `for` loops are a great convenience which we will cover here.
+# 
+# Here is a picture of the loop control flow:
+# 
+# ![loop](img/loop-flow.jpg)
 
 # ## Lists
 # 
@@ -114,8 +120,6 @@ for item in  range(6):
 
 # In[8]:
 
-
-lst = [0, 1, 2, 3, 4, 5, 6]
 
 for item in range(6):
 

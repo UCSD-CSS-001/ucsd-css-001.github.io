@@ -13,7 +13,7 @@
 print(y)
 
 
-# In[ ]:
+# In[2]:
 
 
 try: 
@@ -26,7 +26,7 @@ except:
 # ### You can also catch specific errors to provide even more specific feedback about what happened. 
 # * same general structure, just with specific messages
 
-# In[ ]:
+# In[3]:
 
 
 try: 
@@ -43,7 +43,7 @@ except:
 
 # ## Else statement attached to try...will execute if the statements in the "try" block complete without error
 
-# In[ ]:
+# In[4]:
 
 
 # actually define y first so you don't get a name error
@@ -69,7 +69,7 @@ else:
 
 # ### Can catch multiple types of errors...
 
-# In[ ]:
+# In[5]:
 
 
 y = '27'
@@ -91,7 +91,7 @@ except (ZeroDivisionError):
 
 # ### Finally executes regardless of try/except outcome
 
-# In[ ]:
+# In[6]:
 
 
 x = 'john'
@@ -111,7 +111,7 @@ finally:
 #   * "docstring"
 # 
 
-# In[ ]:
+# In[7]:
 
 
 def print_msg(msg,postfix):
@@ -124,13 +124,13 @@ def print_msg(msg,postfix):
   print(msg, postfix)
 
 
-# In[ ]:
+# In[8]:
 
 
 get_ipython().run_line_magic('pinfo', 'print_msg')
 
 
-# In[ ]:
+# In[9]:
 
 
 print_msg('my name is','john')
@@ -138,13 +138,13 @@ print_msg('my name is','john')
 
 # ### positional arguments vs keyword arguments
 
-# In[ ]:
+# In[10]:
 
 
 print_msg('john','my name is')
 
 
-# In[ ]:
+# In[11]:
 
 
 print_msg(postfix='john',msg='my name is')
@@ -153,7 +153,7 @@ print_msg(postfix='john',msg='my name is')
 # ## return values
 # * have your function return a value after performing some computation
 
-# In[ ]:
+# In[12]:
 
 
 def add_two(x):
@@ -166,13 +166,13 @@ def add_two(x):
   return x
 
 
-# In[ ]:
+# In[13]:
 
 
 add_two(10)
 
 
-# In[ ]:
+# In[14]:
 
 
 def add_two(x,y):
@@ -181,7 +181,7 @@ def add_two(x,y):
   return x,y
 
 
-# In[ ]:
+# In[15]:
 
 
 ### multiple return values. 
@@ -192,7 +192,7 @@ val[0]
 
 # ## If a variable is defined within a function, then it is in the local namespace - it is created when the function is called and then destroyed after the function returns. Variables created outside of functions are in the global namespace and can be accessed from any cell in the notebook. 
 
-# In[ ]:
+# In[16]:
 
 
 # define a variable in the local namespace of the function
@@ -202,7 +202,7 @@ def minus_two(x):
   return z
 
 
-# In[ ]:
+# In[17]:
 
 
 print(minus_two(2))
@@ -218,14 +218,14 @@ except:
 # * this is because the list was defined in the **global** namespace, so if you modify it within the function, you will also modify it in the global namespace
 # 
 
-# In[ ]:
+# In[18]:
 
 
 def sort_list(in_list):
   in_list.sort()
 
 
-# In[ ]:
+# In[19]:
 
 
 my_list = ['john', 'ella', 'jack']
@@ -238,7 +238,7 @@ print(my_list)
 
 # ### But if you used sorted() (or something else that doesn't perm modify the list) then you would need to return the sorted value
 
-# In[ ]:
+# In[20]:
 
 
 def new_sorted_list(in_list):
@@ -246,7 +246,7 @@ def new_sorted_list(in_list):
   return sort_list
 
 
-# In[ ]:
+# In[21]:
 
 
 my_list = ['john', 'ella', 'jack']
@@ -257,7 +257,7 @@ print(s_my_list)
 
 # ## Make a function that allows variable length argument list using the *args special syntax
 
-# In[4]:
+# In[22]:
 
 
 # compute the cumulative product of a list of numbers
@@ -269,13 +269,13 @@ def mult(*numbers):
   return z
 
 
-# In[5]:
+# In[23]:
 
 
 mult(10,20,30,10)
 
 
-# In[ ]:
+# In[24]:
 
 
 # compute mean across a list of numbers - and list can be as long as you'd like!
@@ -288,7 +288,7 @@ def comp_avg(*nums_to_avg):
 # ### two ways to call...pass in vals directly
 # 
 
-# In[ ]:
+# In[25]:
 
 
 comp_avg(10,20,30,40,50)
@@ -296,7 +296,7 @@ comp_avg(10,20,30,40,50)
 
 # ### or pass in a list...use the *
 
-# In[ ]:
+# In[26]:
 
 
 nums = [10,20,30,40,50]
@@ -305,7 +305,7 @@ comp_avg(*nums)
 
 # ## Bonus stuff about using while loops...
 
-# In[ ]:
+# In[27]:
 
 
 # fill up a dictionary with key, value pairs. 
@@ -327,7 +327,7 @@ for name, food in fav_food.items():
   print(name, 'likes', food)
 
 
-# In[ ]:
+# In[28]:
 
 
 # more relevant example for experiments 

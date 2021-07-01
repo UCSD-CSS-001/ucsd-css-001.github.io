@@ -145,7 +145,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../course/debugging.html">
-     How to debug and ask debugging questions
+     Debugging
     </a>
    </li>
   </ul>
@@ -178,13 +178,18 @@
   </label>
   <ul>
    <li class="toctree-l2">
+    <a class="reference internal" href="../../lectures/P01-announcements.html">
+     Announcements (2021-06-29)
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../../lectures/P01-programming.html">
      P01: programming concepts
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../lectures/P01-jupyter.html">
-     P01: Crash Landing
+     P01: Our environment
     </a>
    </li>
    <li class="toctree-l2">
@@ -194,10 +199,32 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../lectures/P02.html">
    P02: Control flow and logic
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../lectures/P02-conditionals.html">
+     P02: Branching via conditional statement: if..elif..else..
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../lectures/P02-loops.html">
+     P02: Loops!
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../lectures/P02-while.html">
+     P02: While loops
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 <p class="caption">
@@ -573,6 +600,18 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="mi">88</span><span class="n">ae3a6d4744</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">files</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="c1"># usage: see below, but here is the basic syntax</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">files</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;test.txt&#39;</span><span class="p">)</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;google&#39;
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -596,6 +635,13 @@
 <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;test.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
 <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 <span class="o">%</span><span class="k">ls</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TutorialCode_02152021_Part1.ipynb  TutorialCode_02152021_Part2.pdf
+TutorialCode_02152021_Part1.pdf    test.txt
+TutorialCode_02152021_Part2.ipynb
 </pre></div>
 </div>
 </div>
@@ -658,6 +704,18 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">9</span><span class="o">-</span><span class="n">d567f14bb8dd</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="c1"># NOTE - if you&#39;re running windows then use WordPad instead of Notepad - Notepad</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="c1"># ignores newline chars</span>
+<span class="ne">---&gt; </span><span class="mi">12</span> <span class="n">files</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;test.txt&#39;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;files&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -685,6 +743,21 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="n">cabb5bea983a</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> 
+<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="c1"># download the file</span>
+<span class="ne">---&gt; </span><span class="mi">12</span> <span class="n">files</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;test.txt&#39;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;files&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="the-read-method-f-read-size">
 <h3>The ‘read’ method - f.read(size)<a class="headerlink" href="#the-read-method-f-read-size" title="Permalink to this headline">¶</a></h3>
@@ -704,6 +777,21 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 0    1     1
+ 1    2     3
+ 2    4     9
+ 3    8    27
+ 4   16    81
+ 5   32   243
+ 6   64   729
+ 7  128  2187
+ 8  256  6561
+ 9  512 19683
+10 1024 59049
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -713,6 +801,11 @@
     
 <span class="c1"># print it out</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 0    1     1
 </pre></div>
 </div>
 </div>
@@ -735,6 +828,11 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 0    1     1
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="loop-line-by-line-and-print-out">
 <h3>Loop line by line and print out…<a class="headerlink" href="#loop-line-by-line-and-print-out" title="Permalink to this headline">¶</a></h3>
@@ -748,6 +846,21 @@ the newline char, and we already have that so we don’t want to add it in again
   <span class="c1"># loop over all lines</span>
   <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 0    1     1
+ 1    2     3
+ 2    4     9
+ 3    8    27
+ 4   16    81
+ 5   32   243
+ 6   64   729
+ 7  128  2187
+ 8  256  6561
+ 9  512 19683
+10 1024 59049
 </pre></div>
 </div>
 </div>
@@ -769,6 +882,21 @@ the newline char, and we already have that so we don’t want to add it in again
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">15</span><span class="o">-</span><span class="mi">7</span><span class="n">f0662826386</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="c1">#confirm that its closed</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">closed</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">9</span> <span class="n">files</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;test.txt&#39;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;files&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="what-happens-when-you-try-to-write-an-integer-to-a-text-file">
@@ -779,6 +907,18 @@ the newline char, and we already have that so we don’t want to add it in again
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;test.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
   <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">11</span><span class="p">):</span>
     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">16</span><span class="o">-</span><span class="mi">22</span><span class="n">f1103655ec</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;test.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>   <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">11</span><span class="p">):</span>
+<span class="ne">----&gt; </span><span class="mi">4</span>     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="ne">TypeError</span>: write() argument must be str, not int
 </pre></div>
 </div>
 </div>
@@ -809,6 +949,19 @@ the newline char, and we already have that so we don’t want to add it in again
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">17</span><span class="o">-</span><span class="mi">7</span><span class="n">b4aa84f435d</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> 
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="c1"># have a look!</span>
+<span class="ne">---&gt; </span><span class="mi">11</span> <span class="n">files</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;test.bin&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_line_magic</span><span class="p">(</span><span class="s1">&#39;pycat&#39;</span><span class="p">,</span> <span class="s1">&#39;test.bin&#39;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;files&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -819,6 +972,11 @@ the newline char, and we already have that so we don’t want to add it in again
 
 <span class="c1"># notice that f.read() returns the byte array as a string</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">bytes_read</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>b&#39;\x00\x01\x02\x03\x04\x05&#39;
 </pre></div>
 </div>
 </div>
@@ -840,6 +998,11 @@ the newline char, and we already have that so we don’t want to add it in again
   <span class="c1">#bytes_read = np.fromfile(f, dtype=np.int16)</span>
   
 <span class="nb">print</span><span class="p">(</span><span class="n">bytes_read</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0 1 2 3 4 5]
 </pre></div>
 </div>
 </div>
@@ -893,6 +1056,18 @@ the newline char, and we already have that so we don’t want to add it in again
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">23</span><span class="o">-</span><span class="n">ddf7f5a5569c</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>   <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">user_profile</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> 
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">files</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;test.json&#39;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;files&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -905,6 +1080,11 @@ the newline char, and we already have that so we don’t want to add it in again
   
 <span class="c1"># and you get back a dictionary</span>
 <span class="n">x</span><span class="p">[</span><span class="s1">&#39;bicycle&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Giant&#39;
 </pre></div>
 </div>
 </div>

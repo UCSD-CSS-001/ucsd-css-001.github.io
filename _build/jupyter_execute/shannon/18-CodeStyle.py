@@ -455,7 +455,7 @@ my_string
 # - are indented to the same level as that code. 
 # - Each line of a block comment starts with a # and a single space
 
-# In[17]:
+# In[26]:
 
 
 # Badness
@@ -470,7 +470,7 @@ def week_9():
 week_9()
 
 
-# In[18]:
+# In[27]:
 
 
 # Goodness
@@ -496,14 +496,14 @@ week_9()
 # - to be separated by at least two spaces from the statement
 # - start with a # and a single space
 
-# In[19]:
+# In[28]:
 
 
 # Badness
 week_9()#words of encouragement
 
 
-# In[20]:
+# In[29]:
 
 
 # Goodness
@@ -526,7 +526,7 @@ week_9()  # words of encouragement
 # A linter is a tool that analyzes code for both programmatic errors and stylistic issues. 
 # </div>
 
-# In[ ]:
+# In[30]:
 
 
 get_ipython().system('pip install --user pylint')
@@ -538,7 +538,7 @@ get_ipython().system('pip install --user pylint')
 # 
 # How many PEP8 violations can you find in this code?
 
-# In[ ]:
+# In[31]:
 
 
 def MyFunction(input_num):
@@ -568,7 +568,7 @@ def MyFunction(input_num):
 # ### list here
 # 
 
-# In[ ]:
+# In[32]:
 
 
 # Let's fix this code
@@ -588,7 +588,7 @@ def divide_list(input_num):
     return output_list
 
 
-# In[ ]:
+# In[33]:
 
 
 # check using pylint

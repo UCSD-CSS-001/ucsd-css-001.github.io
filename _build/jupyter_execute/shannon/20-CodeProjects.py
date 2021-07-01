@@ -253,7 +253,7 @@ get_ipython().system('pytest test_atbash.py')
 import atbash as ab
 
 
-# In[27]:
+# In[14]:
 
 
 ab.atbash_encrypt('hello')
@@ -262,7 +262,7 @@ ab.atbash_decrypt('svool')
 
 # #### `atbash_wrapper`
 
-# In[28]:
+# In[15]:
 
 
 def atbash_wrapper(input_string, method='encrypt'):
@@ -277,14 +277,14 @@ def atbash_wrapper(input_string, method='encrypt'):
     return output_string
 
 
-# In[29]:
+# In[16]:
 
 
 # smoke test
 atbash_wrapper('hello')
 
 
-# In[30]:
+# In[17]:
 
 
 get_ipython().system('pytest test_atbash.py')
@@ -298,27 +298,27 @@ get_ipython().system('pytest test_atbash.py')
 
 # ### Putting it all together
 
-# In[1]:
+# In[18]:
 
 
 from atbash import atbash_wrapper
 
 
-# In[2]:
+# In[19]:
 
 
 # use wrapper to encrypt by default
 atbash_wrapper('hello')
 
 
-# In[3]:
+# In[20]:
 
 
 # wrapper also does decryption
 atbash_wrapper('svool', method='decrypt')
 
 
-# In[4]:
+# In[21]:
 
 
 # returns string when non-method provided
@@ -327,19 +327,19 @@ atbash_wrapper('hello', method='blargh')
 
 # **atbash improvement**
 
-# In[5]:
+# In[22]:
 
 
 import atbash as ab
 
 
-# In[6]:
+# In[23]:
 
 
 ab.atbash_encrypt('hello')
 
 
-# In[8]:
+# In[24]:
 
 
 ab.atbash_decrypt('hello')
@@ -361,7 +361,7 @@ ab.atbash_decrypt('hello')
 
 # #### Refactoring Example: Chatbot
 
-# In[9]:
+# In[25]:
 
 
 import random 
@@ -401,7 +401,7 @@ def have_a_chat():
         print('OUTPUT:', out_msg)
 
 
-# In[10]:
+# In[26]:
 
 
 have_a_chat()
@@ -418,7 +418,7 @@ have_a_chat()
 # 
 # That's four different things! Functions should do a single thing...
 
-# In[11]:
+# In[27]:
 
 
 def get_input():
@@ -430,7 +430,7 @@ def get_input():
     return msg, out_msg
 
 
-# In[12]:
+# In[28]:
 
 
 def is_question(input_string):
@@ -444,7 +444,7 @@ def is_question(input_string):
     return output
 
 
-# In[13]:
+# In[29]:
 
 
 def end_chat(input_list):
@@ -460,7 +460,7 @@ def end_chat(input_list):
     return output, chat
 
 
-# In[14]:
+# In[30]:
 
 
 def return_message(out_msg, question):
@@ -478,7 +478,7 @@ def return_message(out_msg, question):
     return out_msg
 
 
-# In[15]:
+# In[31]:
 
 
 def have_a_chat():
@@ -503,7 +503,7 @@ def have_a_chat():
         print('OUTPUT:', out_msg)
 
 
-# In[16]:
+# In[32]:
 
 
 have_a_chat()  

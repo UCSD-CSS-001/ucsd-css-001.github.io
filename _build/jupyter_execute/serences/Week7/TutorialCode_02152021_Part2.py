@@ -38,7 +38,7 @@ drive.mount('/content/drive')
 
 # ### An alternate to mounting the drive locally...this will open a download dialog box that you can use to download any text files that you create if you want to view them
 
-# In[ ]:
+# In[3]:
 
 
 from google.colab import files
@@ -58,7 +58,7 @@ files.download('test.txt')
 # 
 # * In binary mode, you're reading/writing in units of bytes - this will often be the case for non txt files like image files and so forth
 
-# In[ ]:
+# In[4]:
 
 
 # for writing to a txt file
@@ -68,7 +68,7 @@ f.close()
 get_ipython().run_line_magic('ls', '')
 
 
-# In[ ]:
+# In[5]:
 
 
 # for reading
@@ -76,7 +76,7 @@ f = open('test.txt', 'r')
 f.close()
 
 
-# In[ ]:
+# In[6]:
 
 
 # for appending
@@ -84,7 +84,7 @@ f = open('test.txt', 'a')
 f.close()
 
 
-# In[ ]:
+# In[7]:
 
 
 # for reading or writing
@@ -92,7 +92,7 @@ f = open('test.txt', 'r+')
 f.close()
 
 
-# In[ ]:
+# In[8]:
 
 
 # for writing binary file
@@ -103,7 +103,7 @@ f.close()
 # ### Now lets try it out by actually writing something to the text files. 
 # * Note the use of the newline character in format statement!
 
-# In[ ]:
+# In[9]:
 
 
 f = open('test.txt', 'w')
@@ -125,7 +125,7 @@ files.download('test.txt')
 # * You're letting python clean up your mess...not a good idea.
 # * Changes to the file may not into effect until you close it. This is big problem if you write to a file, then try to read from it...you may not see the stuff that you wrote. 
 
-# In[ ]:
+# In[10]:
 
 
 # a better way...this will ensure that the file is properly closed when you're 
@@ -146,7 +146,7 @@ files.download('test.txt')
 # * Will read in **size** data from the file, where size is in terms of text or in terms of bytes (for binary read, more on that later)
 # * If you leave this blank, then it will read the entire file. That can be very problematic if the file is REALLY big and explodes your computer. 
 
-# In[ ]:
+# In[11]:
 
 
 # open our file for reading...
@@ -158,7 +158,7 @@ with open('test.txt', 'r') as f:
 print(out)
 
 
-# In[ ]:
+# In[12]:
 
 
 # open our file for reading...just grab 13 (one line in this case) elements and print
@@ -172,7 +172,7 @@ print(out)
 # ## A better way to read a line of text...
 # * Importance of newline character!
 
-# In[ ]:
+# In[13]:
 
 
 with open('test.txt', 'r') as f:
@@ -188,7 +188,7 @@ print(out)
 # the newline char, and we already have that so we don't want to add it in again
 # 
 
-# In[ ]:
+# In[14]:
 
 
 with open('test.txt', 'r') as f:
@@ -199,7 +199,7 @@ with open('test.txt', 'r') as f:
 
 # ### Append mode
 
-# In[ ]:
+# In[15]:
 
 
 # open our test.txt file and append to it - will just pick up where you left off!
@@ -215,7 +215,7 @@ files.download('test.txt')
 
 # ### What happens when you try to write an integer to a text file?
 
-# In[ ]:
+# In[16]:
 
 
 # open a file for writing
@@ -229,7 +229,7 @@ with open('test.txt', 'w') as f:
 # * Binary files are written in "machine language" that is denser and easier to interpret (for the machine, not for you!)
 # * Can use bytearray to convert numbers over the range 0:255 to binary format
 
-# In[ ]:
+# In[17]:
 
 
 # open a file for writing binary
@@ -246,7 +246,7 @@ files.download('test.bin')
 get_ipython().run_line_magic('pycat', 'test.bin')
 
 
-# In[ ]:
+# In[18]:
 
 
 # now read it back in
@@ -260,13 +260,13 @@ print(bytes_read)
 
 # ## using the numpy "fromfile" method for easier binary read operations
 
-# In[ ]:
+# In[19]:
 
 
 import numpy as np
 
 
-# In[ ]:
+# In[20]:
 
 
 with open('test.bin', 'rb') as f:
@@ -288,14 +288,14 @@ print(bytes_read)
 # 
 # [link to main page](http://json.org/)
 
-# In[ ]:
+# In[21]:
 
 
 # import json module
 import json
 
 
-# In[ ]:
+# In[22]:
 
 
 # build a dictionary with a bunch of different data types, including a sub list
@@ -309,7 +309,7 @@ user_profile = {
 
 # ### Now write a .json file to disk - very similar to file creating/writing that we did above
 
-# In[ ]:
+# In[23]:
 
 
 with open('test.json', 'w') as f:
@@ -320,7 +320,7 @@ files.download('test.json')
 
 # ## Now load the json file back in!
 
-# In[ ]:
+# In[24]:
 
 
 with open('test.json', 'r') as f:

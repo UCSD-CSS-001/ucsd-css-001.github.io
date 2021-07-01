@@ -225,7 +225,7 @@ from math_tools import list
 # ### In this case we don't really hurt anything...
 # 
 
-# In[ ]:
+# In[24]:
 
 
 list([10,20])
@@ -233,7 +233,7 @@ list([10,20])
 
 # ### But in this case things go totally wrong and you will tear your hair out figuring out what the bug is
 
-# In[ ]:
+# In[25]:
 
 
 x = list(range(0,10))
@@ -249,13 +249,13 @@ print(y)
 # * again - rule here is that you should not sacrifice readability for short names...
 # 
 
-# In[ ]:
+# In[26]:
 
 
 from math_tools import cubed as cb
 
 
-# In[ ]:
+# In[27]:
 
 
 cb(3)
@@ -263,7 +263,7 @@ cb(3)
 
 # ## Bonus: Recursion...function calling itself!
 
-# In[ ]:
+# In[28]:
 
 
 def factorial(n):
@@ -276,7 +276,7 @@ def factorial(n):
     return result
 
 
-# In[ ]:
+# In[29]:
 
 
 print(factorial(4))

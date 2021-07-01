@@ -225,7 +225,7 @@ my_date.
 date.
 
 
-# In[16]:
+# In[17]:
 
 
 ## dir ouputs all methods and attributes
@@ -237,7 +237,7 @@ dir(my_date)
 # 
 # Given the code below:
 
-# In[ ]:
+# In[18]:
 
 
 my_date = date(year = 1050, month = 12, day = 12)
@@ -291,7 +291,7 @@ my_date = date(year = 1050, month = 12, day = 12)
 
 # ## Example Class: Dog
 
-# In[17]:
+# In[19]:
 
 
 # Define a class with `class`. 
@@ -322,21 +322,21 @@ class Dog():
 # - like functions, a new namespace is created within a Class
 # 
 
-# In[18]:
+# In[20]:
 
 
 # Initialize a dog object
 george = Dog()
 
 
-# In[19]:
+# In[21]:
 
 
 # george, has 'sound' attribute(s) from Dog()
 george.sound
 
 
-# In[20]:
+# In[22]:
 
 
 # george, has 'Dog' method(s)
@@ -348,7 +348,7 @@ george.speak()
 # 
 # Which of the following statements is true about the example we've been using? 
 
-# In[ ]:
+# In[23]:
 
 
 class Dog():
@@ -366,28 +366,28 @@ class Dog():
 
 # ### Using our Dog Objects
 
-# In[21]:
+# In[24]:
 
 
 # Initialize a group of dogs
 pack_of_dogs = [Dog(), Dog(), Dog(), Dog()]
 
 
-# In[22]:
+# In[25]:
 
 
 # take a look at this
 pack_of_dogs
 
 
-# In[23]:
+# In[26]:
 
 
 # take a look at this
 type(pack_of_dogs[0])
 
 
-# In[24]:
+# In[27]:
 
 
 for dog in pack_of_dogs:
@@ -400,7 +400,7 @@ for dog in pack_of_dogs:
 # An <b>instance</b> is particular instantiation of a class object. <code>self</code> refers to the current instance. 
 # </div>
 
-# In[25]:
+# In[28]:
 
 
 # Initialize a dog object
@@ -417,7 +417,7 @@ george = Dog()
 # 
 # How many instances of `Dog()` are created below and how many times does the `speak()` method execute?
 
-# In[26]:
+# In[29]:
 
 
 pack_of_dogs = [Dog(), Dog(), Dog(), Dog()]
@@ -442,7 +442,7 @@ for doggie in pack_of_dogs:
 # 
 # An instance attribute specific to the instance we're on. This allows different instances of the same class to be unique (have different values stored in attributes and use those in methods).
 
-# In[27]:
+# In[30]:
 
 
 # Initialize a group of dogs
@@ -470,7 +470,7 @@ pack_of_dogs = [Dog(), Dog(), Dog(), Dog()]
 # - Two trailing underscores (a `dunder`, or double underscore) is used to indicate something Python recognizes and knows what to do every time it sees it.
 # - Here, we use `__init__` to execute the code within it every time you initialize an object.
 
-# In[28]:
+# In[31]:
 
 
 class Dog():
@@ -487,7 +487,7 @@ class Dog():
         return self.sound * n_times
 
 
-# In[33]:
+# In[32]:
 
 
 # Initialize a dog
@@ -495,7 +495,7 @@ class Dog():
 gary = Dog(name='Gary') 
 
 
-# In[34]:
+# In[33]:
 
 
 # Check gary's attributes
@@ -503,7 +503,7 @@ print(gary.sound)    # This is an class attribute
 print(gary.name)     # This is a instance attribute
 
 
-# In[35]:
+# In[34]:
 
 
 # Check gary's methods
@@ -514,7 +514,7 @@ gary.speak()
 # 
 # Edit the code we've been using for the Class `Dog` to include information about the breed of the Class Dog in `NewDog`?
 
-# In[36]:
+# In[35]:
 
 
 # EDIT CODE HERE
@@ -530,7 +530,7 @@ class NewDog():
         return self.sound * n_times
 
 
-# In[42]:
+# In[36]:
 
 
 ## We'll execute here
@@ -544,7 +544,7 @@ lexi.breed
 
 # ## Class example: Cat
 
-# In[43]:
+# In[37]:
 
 
 # Define a class 'Cat'
@@ -561,7 +561,7 @@ class Cat():
 
 # ## Instances Examples
 
-# In[44]:
+# In[38]:
 
 
 # Define some instances of our objects
@@ -569,7 +569,7 @@ pets = [Cat('Jaspurr'), Dog('Barkley'),
         Cat('Picatso'), Dog('Ruffius')]
 
 
-# In[45]:
+# In[39]:
 
 
 for pet in pets:
@@ -581,7 +581,7 @@ for pet in pets:
 # 
 # What will the following code snippet print out?
 
-# In[46]:
+# In[40]:
 
 
 class MyClass():
@@ -598,7 +598,7 @@ class MyClass():
             return None
 
 
-# In[47]:
+# In[41]:
 
 
 student = MyClass('Rob', 'rob@python.com', 62)
@@ -619,7 +619,7 @@ student.check_score()
 # 
 # We would likely want an object type and then helpful methods that allow us to add a class to the course inventory and to compare between courses.
 
-# In[48]:
+# In[42]:
 
 
 class ProfCourses():
@@ -631,7 +631,7 @@ class ProfCourses():
         self.prof = prof
 
 
-# In[50]:
+# In[43]:
 
 
 ellis_courses = ProfCourses('Ellis')
@@ -642,7 +642,7 @@ print(ellis_courses.prof)
 
 # **`add_class()` method**
 
-# In[51]:
+# In[44]:
 
 
 class ProfCourses():
@@ -664,7 +664,7 @@ class ProfCourses():
         self.n_classes += 1
 
 
-# In[52]:
+# In[45]:
 
 
 # create ellis_courses
@@ -680,7 +680,7 @@ ellis_courses.classes
 
 # **`compare()` method**
 
-# In[53]:
+# In[46]:
 
 
 class ProfCourses():
@@ -718,7 +718,7 @@ class ProfCourses():
         return output
 
 
-# In[54]:
+# In[47]:
 
 
 # create ellis_courses
@@ -738,7 +738,7 @@ print(ellis_courses.n_classes)
 ellis_courses.classes
 
 
-# In[55]:
+# In[48]:
 
 
 # make comparison among all courses
@@ -746,7 +746,7 @@ ellis_courses.classes
 ellis_courses.compare('n_students')
 
 
-# In[56]:
+# In[49]:
 
 
 # return the class with the fewest students
@@ -755,7 +755,7 @@ ellis_courses.compare('n_students', 'fewest')
 
 # **extending the functionality of the `compare()` method**
 
-# In[57]:
+# In[50]:
 
 
 class ProfCourses():
@@ -796,7 +796,7 @@ class ProfCourses():
         return output
 
 
-# In[58]:
+# In[51]:
 
 
 # create ellis_courses
@@ -816,14 +816,14 @@ ellis_courses.add_class('COGS18', 'fa19', 301, 2, 4)
 print(ellis_courses.n_classes)
 
 
-# In[69]:
+# In[52]:
 
 
 # return the class with the most exams
 ellis_courses.compare('n_exams', 'most')
 
 
-# In[63]:
+# In[53]:
 
 
 # return the class with the fewest assignments
@@ -858,7 +858,7 @@ ellis_courses.compare('n_assignments', 'fewest')
 
 # ### Data variables are objects
 
-# In[64]:
+# In[54]:
 
 
 print(isinstance(True, object))
@@ -872,14 +872,14 @@ print(isinstance(a, object))
 
 # ### Functions are objects
 
-# In[65]:
+# In[55]:
 
 
 print(isinstance(sum, object))
 print(isinstance(max, object))
 
 
-# In[66]:
+# In[56]:
 
 
 # Custom function are also objects
@@ -891,7 +891,7 @@ isinstance(my_function, object)
 
 # ### Class definitions & instances are objects
 
-# In[67]:
+# In[57]:
 
 
 class MyClass():

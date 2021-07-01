@@ -145,7 +145,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../course/debugging.html">
-     How to debug and ask debugging questions
+     Debugging
     </a>
    </li>
   </ul>
@@ -178,13 +178,18 @@
   </label>
   <ul>
    <li class="toctree-l2">
+    <a class="reference internal" href="../../lectures/P01-announcements.html">
+     Announcements (2021-06-29)
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../../lectures/P01-programming.html">
      P01: programming concepts
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../lectures/P01-jupyter.html">
-     P01: Crash Landing
+     P01: Our environment
     </a>
    </li>
    <li class="toctree-l2">
@@ -194,10 +199,32 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../lectures/P02.html">
    P02: Control flow and logic
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../lectures/P02-conditionals.html">
+     P02: Branching via conditional statement: if..elif..else..
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../lectures/P02-loops.html">
+     P02: Loops!
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../lectures/P02-while.html">
+     P02: While loops
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 <p class="caption">
@@ -952,11 +979,11 @@ Total number of elements in array: 100
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.8902721  0.01298937 0.26998113 0.62587272]
- [0.56528956 0.6039411  0.16285783 0.27400117]
- [0.71721727 0.84547609 0.67724542 0.38915129]
- [0.86205523 0.50557601 0.52640504 0.49106998]
- [0.59927974 0.56410943 0.90917897 0.28279745]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.74792871 0.42817636 0.75502057 0.38225968]
+ [0.86167368 0.5077125  0.43162969 0.78825149]
+ [0.43858101 0.71008951 0.00298174 0.53669588]
+ [0.24174469 0.61626152 0.67302195 0.08985365]
+ [0.73874255 0.30614928 0.69489878 0.06567216]]
 </pre></div>
 </div>
 </div>
@@ -978,8 +1005,8 @@ Total number of elements in array: 100
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[-2.00000000e+000  1.73060048e-077]
- [-2.32035588e+077  2.82471405e-309]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 3.10503618e+231 -1.73060088e-077]
+ [ 3.10503618e+231  2.78134232e-309]]
 </pre></div>
 </div>
 </div>
@@ -1031,7 +1058,7 @@ Total number of elements in array: 100
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>447 µs ± 6.93 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>438 µs ± 1.88 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
 </pre></div>
 </div>
 </div>
@@ -1049,7 +1076,7 @@ Total number of elements in array: 100
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>810 ns ± 7.68 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>784 ns ± 10 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
 </pre></div>
 </div>
 </div>
@@ -1075,7 +1102,7 @@ Total number of elements in array: 100
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>36 ms ± 661 µs per loop (mean ± std. dev. of 7 runs, 10 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>36.7 ms ± 361 µs per loop (mean ± std. dev. of 7 runs, 10 loops each)
 </pre></div>
 </div>
 </div>
@@ -1094,7 +1121,7 @@ Total number of elements in array: 100
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>46.1 µs ± 568 ns per loop (mean ± std. dev. of 7 runs, 10000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>45.4 µs ± 176 ns per loop (mean ± std. dev. of 7 runs, 10000 loops each)
 </pre></div>
 </div>
 </div>
@@ -1313,18 +1340,18 @@ Total number of elements in array: 100
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 6.  8.  2.  7. 10.]
- [10.  7. 10.  1.  3.]
- [ 4.  5.  7.  5. 10.]
- [ 6.  3.  6.  8.  4.]
- [ 4.  1.  8. 10.  4.]
- [ 4.  7. 10.  7.  7.]
- [ 3.  0. 10.  1.  5.]
- [ 6.  2.  9.  4.  8.]
- [ 8.  6.  5.  5.  4.]
- [ 8.  4.  3.  4.  6.]]
-last row:  [8. 4. 3. 4. 6.]
-last column:  [10.  3. 10.  4.  4.  7.  5.  8.  4.  6.]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 2. 10.  9.  8.  2.]
+ [ 3.  8.  5.  9.  3.]
+ [ 3.  2.  3.  4.  5.]
+ [ 8.  3.  8.  1.  6.]
+ [10. 10.  9.  3.  2.]
+ [ 7.  8.  4.  0.  9.]
+ [ 4. 10.  4.  9.  5.]
+ [ 1.  4.  8.  3.  1.]
+ [ 9. 10.  7.  3.  6.]
+ [ 3.  7.  0.  6.  6.]]
+last row:  [3. 7. 0. 6. 6.]
+last column:  [2. 3. 5. 6. 2. 9. 5. 1. 6. 6.]
 last entry:  6.0
 </pre></div>
 </div>
@@ -1359,21 +1386,21 @@ last entry:  6.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.15215858 0.77104575 0.9302556 ]
- [0.37771344 0.45385197 0.79018316]
- [0.7674975  0.15304579 0.7450945 ]
- [0.4161381  0.2925211  0.91655895]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.60230737 0.51696996 0.60988259]
+ [0.60558058 0.95682299 0.4345441 ]
+ [0.25175808 0.17414095 0.95776049]
+ [0.4162482  0.23179193 0.04624111]]
 
- [[0.15215858 0.77104575 0.9302556 ]
- [0.37771344 0.45385197 0.79018316]]
+ [[0.60230737 0.51696996 0.60988259]
+ [0.60558058 0.95682299 0.4345441 ]]
 
- [[0.7674975  0.15304579 0.7450945 ]
- [0.4161381  0.2925211  0.91655895]]
+ [[0.25175808 0.17414095 0.95776049]
+ [0.4162482  0.23179193 0.04624111]]
 
- [0.15215858 0.37771344]
+ [0.60230737 0.60558058]
 
- [[0.15304579 0.7450945 ]
- [0.2925211  0.91655895]]
+ [[0.17414095 0.95776049]
+ [0.23179193 0.04624111]]
 </pre></div>
 </div>
 </div>
@@ -1526,11 +1553,11 @@ last entry:  6.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.68302603 0.69776109 0.19725435 0.99633509]
- [0.36008109 0.68479431 0.67489885 0.58154478]
- [0.99185161 0.10090682 0.98569771 0.19974428]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.78188748 0.85689568 0.75622199 0.01462368]
+ [0.46264013 0.07529836 0.04903491 0.08916525]
+ [0.20448622 0.75693778 0.16885963 0.13852495]]
 
- x indexed at tuple y:  0.19974428290735302
+ x indexed at tuple y:  0.13852495257518183
 </pre></div>
 </div>
 </div>
@@ -1551,14 +1578,14 @@ last entry:  6.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.68302603 0.69776109 0.19725435 0.99633509]
- [0.36008109 0.68479431 0.67489885 0.58154478]
- [0.99185161 0.10090682 0.98569771 0.19974428]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.78188748 0.85689568 0.75622199 0.01462368]
+ [0.46264013 0.07529836 0.04903491 0.08916525]
+ [0.20448622 0.75693778 0.16885963 0.13852495]]
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.69776109, 0.19725435, 0.68302603],
-       [0.68479431, 0.67489885, 0.36008109],
-       [0.10090682, 0.98569771, 0.99185161]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.85689568, 0.75622199, 0.78188748],
+       [0.07529836, 0.04903491, 0.46264013],
+       [0.75693778, 0.16885963, 0.20448622]])
 </pre></div>
 </div>
 </div>
@@ -1574,12 +1601,12 @@ last entry:  6.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.68302603 0.69776109 0.19725435 0.99633509]
- [0.36008109 0.68479431 0.67489885 0.58154478]
- [0.99185161 0.10090682 0.98569771 0.19974428]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.78188748 0.85689568 0.75622199 0.01462368]
+ [0.46264013 0.07529836 0.04903491 0.08916525]
+ [0.20448622 0.75693778 0.16885963 0.13852495]]
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.68479431, 0.98569771])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.07529836, 0.16885963])
 </pre></div>
 </div>
 </div>

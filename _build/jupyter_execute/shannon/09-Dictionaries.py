@@ -120,7 +120,7 @@ my_list['first item', 'second element']
 
 # ### Binary in Code
 
-# In[ ]:
+# In[2]:
 
 
 ## The `bin` operator returns the binary representation of an integer
@@ -128,13 +128,13 @@ my_list['first item', 'second element']
 print(bin(1))
 
 
-# In[ ]:
+# In[3]:
 
 
 print(bin(78))
 
 
-# In[ ]:
+# In[4]:
 
 
 #possible to encode Booleans in binary
@@ -142,13 +142,13 @@ print(bin(78))
 bin(False)
 
 
-# In[ ]:
+# In[5]:
 
 
 print(bool(0b0))
 
 
-# In[ ]:
+# In[6]:
 
 
 # We can also convert binary back to integers with 
@@ -174,7 +174,7 @@ int(0b1011)
 
 # ### Character Encoding in Code
 
-# In[2]:
+# In[7]:
 
 
 # Set the value we want to encode
@@ -198,28 +198,28 @@ elif character_encoding == 2:
 
 # ### Dictionaries as Key-Value Collections
 
-# In[3]:
+# In[8]:
 
 
 # Create a dictionary
 dictionary = {'key_1' : 'value_1', 'key_2' : 'value_2'}
 
 
-# In[4]:
+# In[9]:
 
 
 # Check the contents of the dictionary
 print(dictionary)
 
 
-# In[5]:
+# In[10]:
 
 
 # Check the type of the dictionary
 type(dictionary)
 
 
-# In[6]:
+# In[11]:
 
 
 # Dictionaries also have a length
@@ -229,14 +229,14 @@ len(dictionary)
 
 # ### Dictionaries: Indexing & Looping
 
-# In[7]:
+# In[12]:
 
 
 # Dictionaries are indexed using their keys
 dictionary['key_1']
 
 
-# In[8]:
+# In[13]:
 
 
 # Loop over a dictionary loops across the keys
@@ -247,7 +247,7 @@ for item in dictionary:
     print('\tValue:\t', dictionary[item])
 
 
-# In[9]:
+# In[14]:
 
 
 # another approach that you will find if you Google
@@ -272,7 +272,7 @@ for key, val in dictionary.items():
 # 
 # Fill in the '---' in the code below to return the value stored in the second key.
 
-# In[10]:
+# In[15]:
 
 
 height_dict = {'height_1' : 60, 'height_2': 68, 'height_3' : 65, 'height_4' : 72}
@@ -286,7 +286,7 @@ height_dict['height_2']
 
 # ### Example Dictionaries
 
-# In[11]:
+# In[16]:
 
 
 student_emails = {
@@ -299,7 +299,7 @@ student_emails = {
 student_emails
 
 
-# In[12]:
+# In[17]:
 
 
 completed_coding_lab = {
@@ -311,7 +311,7 @@ completed_coding_lab = {
 completed_coding_lab
 
 
-# In[13]:
+# In[18]:
 
 
 mixed_types = {
@@ -331,7 +331,7 @@ mixed_types
 # - C) I tried and am stuck
 # - D) No clue where to start...
 
-# In[16]:
+# In[19]:
 
 
 # YOUR CODE HERE
@@ -345,14 +345,14 @@ car
 # 
 # This means that dictionaries, once created, values *can* be updated.
 
-# In[17]:
+# In[20]:
 
 
 # remember what dictionary we created above
 completed_coding_lab
 
 
-# In[18]:
+# In[21]:
 
 
 # change value of specified key
@@ -362,14 +362,14 @@ completed_coding_lab
 
 # Because dictionaries are mutable, key-value pairs can also be removed from the dictionary using `del`.
 
-# In[19]:
+# In[22]:
 
 
 print(completed_coding_lab)
 len(completed_coding_lab)
 
 
-# In[20]:
+# In[23]:
 
 
 ## remove key-value pair using del
@@ -385,7 +385,7 @@ len(completed_coding_lab)
 # 
 # To determine if a specified key is present in a dictionary we can use the `in` operator:
 
-# In[21]:
+# In[24]:
 
 
 if 'A1234' in completed_coding_lab:
@@ -397,7 +397,7 @@ if 'A1234' in completed_coding_lab:
 # - Only one value per key. No duplicate keys allowed. 
 #     - If duplicate keys specified during assignment, the last assignment wins.
 
-# In[22]:
+# In[25]:
 
 
 # Last duplicate key assigned wins
@@ -407,7 +407,7 @@ if 'A1234' in completed_coding_lab:
 # - **keys** must be of an immutable type (string, tuple, integer, float, etc)
 # - Note: **values** can be of any type
 
-# In[23]:
+# In[26]:
 
 
 # lists are not allowed as key types
@@ -418,7 +418,7 @@ if 'A1234' in completed_coding_lab:
 # - Dictionary keys are case sensitive.
 # 
 
-# In[24]:
+# In[27]:
 
 
 {'Student' : 97, 'student': 88, 'STUDENT' : 91}
@@ -428,7 +428,7 @@ if 'A1234' in completed_coding_lab:
 # 
 # Why does the following code produce an error?
 
-# In[26]:
+# In[28]:
 
 
 student_emails = {
@@ -439,7 +439,7 @@ student_emails = {
 }
 
 
-# In[27]:
+# In[29]:
 
 
 student_emails
@@ -453,7 +453,7 @@ student_emails
 
 # ## Character Encodings with Dictionaries
 
-# In[29]:
+# In[30]:
 
 
 # Define some character encodings
@@ -463,7 +463,7 @@ character_encodings = {
 }
 
 
-# In[30]:
+# In[31]:
 
 
 # Use character encodings to use symbols we want - example 1
@@ -471,7 +471,7 @@ my_sentence = 'no hablo espa' + character_encodings[0] + 'ol'
 print(my_sentence)
 
 
-# In[31]:
+# In[32]:
 
 
 # Use character encodings to use symbols we want - example 2
@@ -501,13 +501,13 @@ print(my_sentence)
 
 # ### ord & chr examples
 
-# In[32]:
+# In[33]:
 
 
 print(ord('a'))
 
 
-# In[33]:
+# In[34]:
 
 
 print(chr(97))
@@ -517,7 +517,7 @@ print(chr(97))
 # 
 # `ord` and `chr` are inverses of one another. 
 
-# In[34]:
+# In[35]:
 
 
 inp = 'b'
@@ -527,13 +527,13 @@ assert inp == out
 print('Input: \t', inp, '\nOutput: ', out)
 
 
-# In[1]:
+# In[36]:
 
 
 ord('a')
 
 
-# In[2]:
+# In[37]:
 
 
 chr(97)
@@ -572,7 +572,7 @@ chr(97)
 # - stores _your_ `name` (string), `favorite_game` (string), and `height` (int) in inches as each key's value
 # 
 
-# In[39]:
+# In[38]:
 
 
 # YOUR CODE HERE
@@ -591,13 +591,13 @@ about_me
 # 
 # Store your name in the variable `my_name`. Then, encode your  name, such that each letter is first replaced by the unicode code point for that letter plus 500 and then turned back into a character using `chr`. Store the new output in `out_name`.
 
-# In[42]:
+# In[39]:
 
 
 chr(ord('S') + 500)
 
 
-# In[47]:
+# In[40]:
 
 
 # YOUR CODE HERE

@@ -3,6 +3,14 @@
 
 # # P02: Branching via conditional statement: if..elif..else..
 # 
+# ## Control flow.
+# 
+# Without any control flow commands, instructions are executed in a simple, linear order, as shown below:
+# 
+# ![straight-flow](img/straight-flow.jpg)
+# 
+# Conditional allow the flow to branch.
+
 # ## Conditional statement
 # 
 # The basic control structure that allows branching is a conditional: do something only if a condition is met.
@@ -42,6 +50,10 @@ print("it is a pleasure to meet you!")
 print("My name is Ed")
 
 
+# Here is a simple diagram of what is going on:
+# 
+# ![if](img/if-flow.jpg)
+# 
 # ### else
 # 
 # If we wanted to print one thing if `polite` is true, and a different thing if `polite` is false, when we would want to set up an `else` block:
@@ -59,6 +71,11 @@ else:
 print("My name is Ed")
 
 
+# 
+# Here is a simple diagram of what is going on:
+# 
+# ![if](img/if-else-flow.jpg)
+# 
 # ### elif
 # 
 # Sometimes we want to have more than two branches, so we would want a control structure that can accomodate that:
@@ -85,10 +102,20 @@ print('My name is Ed')
 # 
 # We can have as many `elif` after an `if` as we see fit, but it only makes sense to have one `else`.  (Note that an `else:` is logically equivalent to `elif True:`)
 # 
+# 
+# Here is a simple diagram of what is going on:
+# 
+# ![if](img/if-elif-else-flow.jpg)
+# 
 
 # ### if..elif vs if..if..
 # 
 # The mutually exclusive branching structure of `if..elif` is contrasted with a series of independent `if` statements, that each presents an optional branch, independent of the others.
+# 
+# 
+# Here is a simple diagram of the difference:
+# 
+# ![if](img/if-if-flow.jpg)
 # 
 # Consider the two blocks of code below.  What will each print?
 

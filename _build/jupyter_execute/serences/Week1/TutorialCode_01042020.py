@@ -55,7 +55,7 @@ print(message)
 
 # ## Using methods of an object (in this case a string object)
 
-# In[ ]:
+# In[5]:
 
 
 name = "joHn serencEs"
@@ -64,7 +64,7 @@ name.title()
 
 # ### why using print here? Because otherwise you just get the output of the last line - if you want to force output, then use the print statement
 
-# In[ ]:
+# In[6]:
 
 
 print(name.lower())
@@ -75,7 +75,7 @@ print(name.upper())
 # * useful for 'cleaning' non-uniform user input or labels in big data sets
 # * this is by no means an exhaustive list of methods for the str object type! but if you can use these, then you should be able to figure out how to use many of the other methods
 
-# In[ ]:
+# In[7]:
 
 
 name = " john "
@@ -87,7 +87,7 @@ print(name.strip())
 
 # ## Concatenating strings (sticking a bunch of strings together)
 
-# In[ ]:
+# In[8]:
 
 
 first_name = "john"
@@ -99,7 +99,7 @@ print(full_name.title())
 # ## Numerical data types and basic operators [list of operators](https://www.w3schools.com/python/python_operators.asp)
 # * integers are whole numbers
 
-# In[ ]:
+# In[9]:
 
 
 # int data types (objects)
@@ -116,7 +116,7 @@ print(x**y)   # raise to a power
 
 # ## Floating point numbers
 
-# In[ ]:
+# In[10]:
 
 
 # this returns a floating point number (decimal)
@@ -125,7 +125,7 @@ print(x/y)
 
 # ## How do you figure out what the variable type is? 
 
-# In[ ]:
+# In[11]:
 
 
 print(type(x))
@@ -133,7 +133,7 @@ print(type(x))
 
 # ## Type casting - changing a variable from one type to another
 
-# In[ ]:
+# In[12]:
 
 
 # type casting - first int to string
@@ -143,7 +143,7 @@ print("this is the year: " + str(year))
 
 # ### Then string to int and then back to str!
 
-# In[2]:
+# In[13]:
 
 
 # then string to an int
@@ -155,7 +155,7 @@ print("In 10 years it will be: " + str(int(year) + 10))
 # * be careful though as **sometimes there are significant consequences!**
 #   * for example, casting a float to an int will cause everything to the right of the decimal place to be truncated
 
-# In[ ]:
+# In[14]:
 
 
 # make a floating point number and then type cast as an int to see what happens

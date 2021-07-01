@@ -468,7 +468,7 @@ tup[2] = 1
 # 
 # Which of the following specifies a tuple of 4 items?
 
-# In[ ]:
+# In[45]:
 
 
 item_A = [0, 'string', 18]
@@ -488,7 +488,7 @@ item_E = [1234]
 # 
 # Note: This was introduced in the Variables lecture.
 
-# In[52]:
+# In[46]:
 
 
 # Make a variable, and an alias
@@ -509,7 +509,7 @@ print(b)
 # 
 # After executing the following code, what will the values stored in `a` and `b` be?
 
-# In[53]:
+# In[47]:
 
 
 # Make a variable & an alias
@@ -534,7 +534,7 @@ print(b)
 # 
 # What happens if we make an alias of a **mutable** variable, like a list?
 
-# In[54]:
+# In[48]:
 
 
 first_list = [1, 2, 3, 4]
@@ -542,7 +542,7 @@ alias_list = first_list
 alias_list
 
 
-# In[55]:
+# In[49]:
 
 
 #change second value of first_list
@@ -550,14 +550,14 @@ first_list[1] = 29
 first_list
 
 
-# In[56]:
+# In[50]:
 
 
 # check alias_list
 alias_list
 
 
-# In[57]:
+# In[51]:
 
 
 # works in both directions
@@ -567,7 +567,7 @@ alias_list[2] = 929
 alias_list
 
 
-# In[58]:
+# In[52]:
 
 
 first_list
@@ -579,7 +579,7 @@ first_list
 # 
 # After executing the following code, what will the second value stored in `second_tuple`?
 
-# In[59]:
+# In[53]:
 
 
 # Make a variable & an alias
@@ -589,7 +589,7 @@ second_tuple = my_tuple
 my_tuple[1] = 29 
 
 
-# In[60]:
+# In[54]:
 
 
 second_tuple[1]
@@ -615,35 +615,35 @@ second_tuple[1]
 # Strings act similarly to ordered collections of homogenous elements - specifically characters. But, they are <b>immutable</b>.
 # </div>
 
-# In[61]:
+# In[55]:
 
 
 # Define a string
 my_str = 'TheFamousFive'
 
 
-# In[62]:
+# In[56]:
 
 
 # Index into a string
 my_str[2]
 
 
-# In[63]:
+# In[57]:
 
 
 # Ask if an item is in a string
 'Fam' in my_str
 
 
-# In[64]:
+# In[58]:
 
 
 # Check the length of a string
 len(my_str)
 
 
-# In[65]:
+# In[59]:
 
 
 # Index into a string
@@ -653,7 +653,7 @@ my_str[1:3] = 'HE'
 
 # ### SideNote: using counters
 
-# In[66]:
+# In[60]:
 
 
 # Initialize a counter variable
@@ -661,14 +661,14 @@ counter = 0
 print(counter)
 
 
-# In[67]:
+# In[61]:
 
 
 counter = counter + 1
 print(counter)
 
 
-# In[68]:
+# In[62]:
 
 
 counter = counter + 1
@@ -681,13 +681,13 @@ print(counter)
 # 
 # What will be the value of `counter` after this code is run?
 
-# In[70]:
+# In[63]:
 
 
 len(things_that_are_good)
 
 
-# In[69]:
+# In[64]:
 
 
 things_that_are_good = ['python', 'data', 'science', 'tacos']
@@ -712,7 +712,7 @@ print(counter)
 # 
 # What will be printed out from running this code?
 
-# In[71]:
+# In[65]:
 
 
 lst = ['a', 'b', 'c']

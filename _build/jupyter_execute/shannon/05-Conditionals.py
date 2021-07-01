@@ -173,7 +173,7 @@ elif condition_2:
 # Any expression that can be evaluated as a boolean, such as value comparisons, can be used with conditionals.
 # </div>
 
-# In[21]:
+# In[9]:
 
 
 language = "Perl"
@@ -186,7 +186,7 @@ else:
     print("Get yourself a programming language!")
 
 
-# In[25]:
+# In[10]:
 
 
 # Exploring conditionals
@@ -206,7 +206,7 @@ print('After Conditional')
 # 
 # What will the following code snippet print out:
 
-# In[26]:
+# In[11]:
 
 
 condition = False
@@ -231,7 +231,7 @@ else:
 # 
 # What will the following code snippet print out:
 
-# In[27]:
+# In[12]:
 
 
 if 1 + 1 == 2:
@@ -251,7 +251,7 @@ else:
 # 
 # What will the following code snippet print out:
 
-# In[32]:
+# In[13]:
 
 
 conditional = False

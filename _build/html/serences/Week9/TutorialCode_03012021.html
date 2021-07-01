@@ -145,7 +145,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../course/debugging.html">
-     How to debug and ask debugging questions
+     Debugging
     </a>
    </li>
   </ul>
@@ -178,13 +178,18 @@
   </label>
   <ul>
    <li class="toctree-l2">
+    <a class="reference internal" href="../../lectures/P01-announcements.html">
+     Announcements (2021-06-29)
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../../lectures/P01-programming.html">
      P01: programming concepts
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../lectures/P01-jupyter.html">
-     P01: Crash Landing
+     P01: Our environment
     </a>
    </li>
    <li class="toctree-l2">
@@ -194,10 +199,32 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../lectures/P02.html">
    P02: Control flow and logic
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../lectures/P02-conditionals.html">
+     P02: Branching via conditional statement: if..elif..else..
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../lectures/P02-loops.html">
+     P02: Loops!
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../lectures/P02-while.html">
+     P02: While loops
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 <p class="caption">
@@ -643,7 +670,8 @@ One more quick note: if using an older version of Python (earlier than 3.6) and 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>annual_temp2.csv  <span class=" -Color -Color-Bold -Color-Bold-Blue">sample_data</span>/
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TutorialCode_03012021.ipynb  annual_temp2.csv
+TutorialCode_03012021.pdf    annual_temp_csv2.csv
 </pre></div>
 </div>
 </div>
@@ -655,17 +683,12 @@ One more quick note: if using an older version of Python (earlier than 3.6) and 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html">
-<input type="file" id="files-5ed395b9-a706-4512-9862-59b0aad7c566" name="files[]" multiple disabled
-   style="border:none" />
-<output id="result-5ed395b9-a706-4512-9862-59b0aad7c566">
- Upload widget is only available when the cell has been executed in the
- current browser session. Please rerun this cell to enable.
- </output>
- <script src="/nbextensions/google.colab/files.js"></script> </div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Saving annual_temp_csv2.csv to annual_temp_csv2.csv
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;annual_temp_csv2.csv&#39;: b&#39;Source,Year,Mean\r\nGCAG,2016,0.9363\r\nGISTEMP,2016,\r\nGCAG,2015,\r\nGISTEMP,2015,0.87\r\nGCAG,2014,0.7408\r\nGISTEMP,2014,0.74\r\nGCAG,2013,0.6679\r\nGISTEMP,2013,0.65\r\nGCAG,2012,0.624\r\nGISTEMP,2012,0.63\r\nGCAG,2011,0.5788\r\nGISTEMP,2011,0.6\r\nGCAG,2010,0.7014\r\nGISTEMP,2010,0.71\r\nGCAG,2009,0.6367\r\nGISTEMP,2009,0.64\r\nGCAG,2008,0.5419\r\nGISTEMP,2008,0.54\r\nGCAG,2007,0.61\r\nGISTEMP,2007,0.66\r\nGCAG,2006,0.6125\r\nGISTEMP,2006,0.63\r\nGCAG,2005,0.6585\r\nGISTEMP,2005,0.69\r\nGCAG,2004,0.5783\r\nGISTEMP,2004,0.55\r\nGCAG,2003,0.6134\r\nGISTEMP,2003,0.62\r\nGCAG,2002,0.6023\r\nGISTEMP,2002,0.63\r\nGCAG,2001,0.5473\r\nGISTEMP,2001,0.55\r\nGCAG,2000,0.4262\r\nGISTEMP,2000,0.42\r\nGCAG,1999,0.4438\r\nGISTEMP,1999,0.42\r\nGCAG,1998,0.6344\r\nGISTEMP,1998,0.64\r\nGCAG,1997,0.5187\r\nGISTEMP,1997,0.48\r\nGCAG,1996,0.3228\r\nGISTEMP,1996,0.35\r\nGCAG,1995,0.4577\r\nGISTEMP,1995,0.46\r\nGCAG,1994,0.3409\r\nGISTEMP,1994,0.32\r\nGCAG,1993,0.2853\r\nGISTEMP,1993,0.24\r\nGCAG,1992,0.2571\r\nGISTEMP,1992,0.23\r\nGCAG,1991,0.4055\r\nGISTEMP,1991,0.43\r\nGCAG,1990,0.4328\r\nGISTEMP,1990,0.44\r\nGCAG,1989,0.297\r\nGISTEMP,1989,0.29\r\nGCAG,1988,0.3757\r\nGISTEMP,1988,0.41\r\nGCAG,1987,0.3696\r\nGISTEMP,1987,0.33\r\nGCAG,1986,0.2296\r\nGISTEMP,1986,0.19\r\nGCAG,1985,0.1342\r\nGISTEMP,1985,0.12\r\nGCAG,1984,0.149\r\nGISTEMP,1984,0.15\r\nGCAG,1983,0.3411\r\nGISTEMP,1983,0.3\r\nGCAG,1982,0.1815\r\nGISTEMP,1982,0.13\r\nGCAG,1981,0.2999\r\nGISTEMP,1981,0.33\r\nGCAG,1980,0.2637\r\nGISTEMP,1980,0.27\r\nGCAG,1979,0.2273\r\nGISTEMP,1979,0.17\r\nGCAG,1978,0.1123\r\nGISTEMP,1978,0.07\r\nGCAG,1977,0.1978\r\nGISTEMP,1977,0.18\r\nGCAG,1976,-0.0792\r\nGISTEMP,1976,-0.11\r\nGCAG,1975,0.0034\r\nGISTEMP,1975,-0.02\r\nGCAG,1974,-0.0719\r\nGISTEMP,1974,-0.07\r\nGCAG,1973,0.1641\r\nGISTEMP,1973,0.15\r\nGCAG,1972,0.0264\r\nGISTEMP,1972,0.01\r\nGCAG,1971,-0.0783\r\nGISTEMP,1971,-0.09\r\nGCAG,1970,0.0372\r\nGISTEMP,1970,0.02\r\nGCAG,1969,0.0929\r\nGISTEMP,1969,0.07\r\nGCAG,1968,-0.0296\r\nGISTEMP,1968,-0.07\r\nGCAG,1967,-0.0131\r\nGISTEMP,1967,-0.02\r\nGCAG,1966,-0.0227\r\nGISTEMP,1966,-0.05\r\nGCAG,1965,-0.078\r\nGISTEMP,1965,-0.1\r\nGCAG,1964,-0.1495\r\nGISTEMP,1964,-0.2\r\nGCAG,1963,0.1068\r\nGISTEMP,1963,0.06\r\nGCAG,1962,0.0888\r\nGISTEMP,1962,0.03\r\nGCAG,1961,0.0775\r\nGISTEMP,1961,0.05\r\nGCAG,1960,0.0204\r\nGISTEMP,1960,-0.02\r\nGCAG,1959,0.0596\r\nGISTEMP,1959,0.03\r\nGCAG,1958,0.1095\r\nGISTEMP,1958,0.07\r\nGCAG,1957,0.0488\r\nGISTEMP,1957,0.04\r\nGCAG,1956,-0.199\r\nGISTEMP,1956,-0.2\r\nGCAG,1955,-0.1354\r\nGISTEMP,1955,-0.15\r\nGCAG,1954,-0.1165\r\nGISTEMP,1954,-0.13\r\nGCAG,1953,0.0952\r\nGISTEMP,1953,0.08\r\nGCAG,1952,0.0248\r\nGISTEMP,1952,0.01\r\nGCAG,1951,-0.0132\r\nGISTEMP,1951,-0.07\r\nGCAG,1950,-0.1616\r\nGISTEMP,1950,-0.18\r\nGCAG,1949,-0.0568\r\nGISTEMP,1949,-0.09\r\nGCAG,1948,-0.0487\r\nGISTEMP,1948,-0.09\r\nGCAG,1947,-0.0477\r\nGISTEMP,1947,-0.05\r\nGCAG,1946,-0.004\r\nGISTEMP,1946,-0.04\r\nGCAG,1945,0.171\r\nGISTEMP,1945,0.12\r\nGCAG,1944,0.2928\r\nGISTEMP,1944,0.25\r\nGCAG,1943,0.157\r\nGISTEMP,1943,0.13\r\nGCAG,1942,0.1538\r\nGISTEMP,1942,0.09\r\nGCAG,1941,0.196\r\nGISTEMP,1941,0.12\r\nGCAG,1940,0.0947\r\nGISTEMP,1940,0.08\r\nGCAG,1939,-0.0139\r\nGISTEMP,1939,-0.03\r\nGCAG,1938,-0.0288\r\nGISTEMP,1938,-0.03\r\nGCAG,1937,-0.0157\r\nGISTEMP,1937,-0.03\r\nGCAG,1936,-0.1134\r\nGISTEMP,1936,-0.15\r\nGCAG,1935,-0.1392\r\nGISTEMP,1935,-0.2\r\nGCAG,1934,-0.1015\r\nGISTEMP,1934,-0.14\r\nGCAG,1933,-0.2439\r\nGISTEMP,1933,-0.29\r\nGCAG,1932,-0.1168\r\nGISTEMP,1932,-0.17\r\nGCAG,1931,-0.0686\r\nGISTEMP,1931,-0.09\r\nGCAG,1930,-0.1003\r\nGISTEMP,1930,-0.15\r\nGCAG,1929,-0.2985\r\nGISTEMP,1929,-0.36\r\nGCAG,1928,-0.1774\r\nGISTEMP,1928,-0.21\r\nGCAG,1927,-0.1546\r\nGISTEMP,1927,-0.21\r\nGCAG,1926,-0.0667\r\nGISTEMP,1926,-0.1\r\nGCAG,1925,-0.1481\r\nGISTEMP,1925,-0.21\r\nGCAG,1924,-0.2486\r\nGISTEMP,1924,-0.28\r\nGCAG,1923,-0.2156\r\nGISTEMP,1923,-0.24\r\nGCAG,1922,-0.2304\r\nGISTEMP,1922,-0.28\r\nGCAG,1921,-0.1485\r\nGISTEMP,1921,-0.21\r\nGCAG,1920,-0.2105\r\nGISTEMP,1920,-0.27\r\nGCAG,1919,-0.2055\r\nGISTEMP,1919,-0.22\r\nGCAG,1918,-0.2084\r\nGISTEMP,1918,-0.26\r\nGCAG,1917,-0.3146\r\nGISTEMP,1917,-0.4\r\nGCAG,1916,-0.293\r\nGISTEMP,1916,-0.34\r\nGCAG,1915,-0.0693\r\nGISTEMP,1915,-0.11\r\nGCAG,1914,-0.1395\r\nGISTEMP,1914,-0.16\r\nGCAG,1913,-0.3162\r\nGISTEMP,1913,-0.34\r\nGCAG,1912,-0.3288\r\nGISTEMP,1912,-0.35\r\nGCAG,1911,-0.4332\r\nGISTEMP,1911,-0.44\r\nGCAG,1910,-0.3789\r\nGISTEMP,1910,-0.42\r\nGCAG,1909,-0.4261\r\nGISTEMP,1909,-0.47\r\nGCAG,1908,-0.4396\r\nGISTEMP,1908,-0.43\r\nGCAG,1907,-0.3706\r\nGISTEMP,1907,-0.4\r\nGCAG,1906,-0.2174\r\nGISTEMP,1906,-0.23\r\nGCAG,1905,-0.2931\r\nGISTEMP,1905,-0.28\r\nGCAG,1904,-0.4194\r\nGISTEMP,1904,-0.44\r\nGCAG,1903,-0.3369\r\nGISTEMP,1903,-0.35\r\nGCAG,1902,-0.2463\r\nGISTEMP,1902,-0.27\r\nGCAG,1901,-0.1417\r\nGISTEMP,1901,-0.15\r\nGCAG,1900,-0.0679\r\nGISTEMP,1900,-0.09\r\nGCAG,1899,-0.1173\r\nGISTEMP,1899,-0.16\r\nGCAG,1898,-0.2546\r\nGISTEMP,1898,\r\nGCAG,1897,\r\nGISTEMP,1897,\r\nGCAG,1896,-0.0974\r\nGISTEMP,1896,-0.15\r\nGCAG,1895,-0.229\r\nGISTEMP,1895,-0.21\r\nGCAG,1894,-0.2808\r\nGISTEMP,1894,-0.31\r\nGCAG,1893,-0.3212\r\nGISTEMP,1893,-0.3\r\nGCAG,1892,-0.3062\r\nGISTEMP,1892,-0.27\r\nGCAG,1891,-0.2532\r\nGISTEMP,1891,-0.24\r\nGCAG,1890,-0.322\r\nGISTEMP,1890,-0.37\r\nGCAG,1889,-0.0982\r\nGISTEMP,1889,-0.12\r\nGCAG,1888,-0.1471\r\nGISTEMP,1888,-0.2\r\nGCAG,1887,-0.2489\r\nGISTEMP,1887,-0.33\r\nGCAG,1886,-0.2003\r\nGISTEMP,1886,-0.31\r\nGCAG,1885,-0.2125\r\nGISTEMP,1885,-0.32\r\nGCAG,1884,-0.2009\r\nGISTEMP,1884,-0.28\r\nGCAG,1883,-0.1424\r\nGISTEMP,1883,-0.21\r\nGCAG,1882,-0.0648\r\nGISTEMP,1882,-0.1\r\nGCAG,1881,-0.0628\r\nGISTEMP,1881,-0.12\r\nGCAG,1880,-0.1148\r\nGISTEMP,1880,-0.2\r\n&#39;}
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="mi">63</span><span class="n">b259460c61</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">files</span><span class="o">.</span><span class="n">upload</span><span class="p">()</span>
+
+<span class="ne">NameError</span>: name &#39;files&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -679,8 +702,8 @@ One more quick note: if using an older version of Python (earlier than 3.6) and 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> annual_temp2.csv           &#39;annual_temp_csv2 (2).csv&#39;   <span class=" -Color -Color-Bold -Color-Bold-Blue">sample_data</span>/
-&#39;annual_temp_csv2 (1).csv&#39;   annual_temp_csv2.csv
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TutorialCode_03012021.ipynb  annual_temp2.csv
+TutorialCode_03012021.pdf    annual_temp_csv2.csv
 </pre></div>
 </div>
 </div>
@@ -695,6 +718,11 @@ One more quick note: if using an older version of Python (earlier than 3.6) and 
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">pycat</span> annual_temp_csv2.csv
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Error: no such file, variable, URL, history range or macro
 </pre></div>
 </div>
 </div>
@@ -717,6 +745,56 @@ One more quick note: if using an older version of Python (earlier than 3.6) and 
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">7</span><span class="o">-</span><span class="n">b75a13b12fff</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># make the call to pd.DataFrames to create the DF - usage much like pd.Series</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;annual_temp_csv2.csv&#39;</span><span class="p">)</span>
+
+<span class="nn">/opt/homebrew/anaconda3/lib/python3.8/site-packages/pandas/io/parsers.py</span> in <span class="ni">read_csv</span><span class="nt">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, squeeze, prefix, mangle_dupe_cols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, dialect, error_bad_lines, warn_bad_lines, delim_whitespace, low_memory, memory_map, float_precision)</span>
+<span class="g g-Whitespace">    </span><span class="mi">684</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">685</span> 
+<span class="ne">--&gt; </span><span class="mi">686</span>     <span class="k">return</span> <span class="n">_read</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">687</span> 
+<span class="g g-Whitespace">    </span><span class="mi">688</span> 
+
+<span class="nn">/opt/homebrew/anaconda3/lib/python3.8/site-packages/pandas/io/parsers.py</span> in <span class="ni">_read</span><span class="nt">(filepath_or_buffer, kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">450</span> 
+<span class="g g-Whitespace">    </span><span class="mi">451</span>     <span class="c1"># Create the parser.</span>
+<span class="ne">--&gt; </span><span class="mi">452</span>     <span class="n">parser</span> <span class="o">=</span> <span class="n">TextFileReader</span><span class="p">(</span><span class="n">fp_or_buf</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">453</span> 
+<span class="g g-Whitespace">    </span><span class="mi">454</span>     <span class="k">if</span> <span class="n">chunksize</span> <span class="ow">or</span> <span class="n">iterator</span><span class="p">:</span>
+
+<span class="nn">/opt/homebrew/anaconda3/lib/python3.8/site-packages/pandas/io/parsers.py</span> in <span class="ni">__init__</span><span class="nt">(self, f, engine, **kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">944</span>             <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwds</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">945</span> 
+<span class="ne">--&gt; </span><span class="mi">946</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_make_engine</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">947</span> 
+<span class="g g-Whitespace">    </span><span class="mi">948</span>     <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<span class="nn">/opt/homebrew/anaconda3/lib/python3.8/site-packages/pandas/io/parsers.py</span> in <span class="ni">_make_engine</span><span class="nt">(self, engine)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1176</span>     <span class="k">def</span> <span class="nf">_make_engine</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s2">&quot;c&quot;</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1177</span>         <span class="k">if</span> <span class="n">engine</span> <span class="o">==</span> <span class="s2">&quot;c&quot;</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1178</span>             <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span> <span class="o">=</span> <span class="n">CParserWrapper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">f</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1179</span>         <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1180</span>             <span class="k">if</span> <span class="n">engine</span> <span class="o">==</span> <span class="s2">&quot;python&quot;</span><span class="p">:</span>
+
+<span class="nn">/opt/homebrew/anaconda3/lib/python3.8/site-packages/pandas/io/parsers.py</span> in <span class="ni">__init__</span><span class="nt">(self, src, **kwds)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2006</span>         <span class="n">kwds</span><span class="p">[</span><span class="s2">&quot;usecols&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">usecols</span>
+<span class="g g-Whitespace">   </span><span class="mi">2007</span> 
+<span class="ne">-&gt; </span><span class="mi">2008</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_reader</span> <span class="o">=</span> <span class="n">parsers</span><span class="o">.</span><span class="n">TextReader</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2009</span>         <span class="bp">self</span><span class="o">.</span><span class="n">unnamed_cols</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reader</span><span class="o">.</span><span class="n">unnamed_cols</span>
+<span class="g g-Whitespace">   </span><span class="mi">2010</span> 
+
+<span class="nn">pandas/_libs/parsers.pyx</span> in <span class="ni">pandas._libs.parsers.TextReader.__cinit__</span><span class="nt">()</span>
+
+<span class="nn">pandas/_libs/parsers.pyx</span> in <span class="ni">pandas._libs.parsers.TextReader._setup_parser_source</span><span class="nt">()</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;annual_temp_csv2.csv&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -727,100 +805,17 @@ One more quick note: if using an older version of Python (earlier than 3.6) and 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">8</span><span class="o">-</span><span class="mi">67</span><span class="n">c328b1b299</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># take a look at the output...</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="c1"># compare to print(df) - looks nicer with display thanks to iPython backend</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Source</th>
-      <th>Year</th>
-      <th>Mean</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>GCAG</td>
-      <td>2016</td>
-      <td>0.9363</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>GISTEMP</td>
-      <td>2016</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>GCAG</td>
-      <td>2015</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>GISTEMP</td>
-      <td>2015</td>
-      <td>0.8700</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>GCAG</td>
-      <td>2014</td>
-      <td>0.7408</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>269</th>
-      <td>GISTEMP</td>
-      <td>1882</td>
-      <td>-0.1000</td>
-    </tr>
-    <tr>
-      <th>270</th>
-      <td>GCAG</td>
-      <td>1881</td>
-      <td>-0.0628</td>
-    </tr>
-    <tr>
-      <th>271</th>
-      <td>GISTEMP</td>
-      <td>1881</td>
-      <td>-0.1200</td>
-    </tr>
-    <tr>
-      <th>272</th>
-      <td>GCAG</td>
-      <td>1880</td>
-      <td>-0.1148</td>
-    </tr>
-    <tr>
-      <th>273</th>
-      <td>GISTEMP</td>
-      <td>1880</td>
-      <td>-0.2000</td>
-    </tr>
-  </tbody>
-</table>
-<p>274 rows × 3 columns</p>
-</div></div></div>
+<span class="ne">NameError</span>: name &#39;df&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -831,63 +826,17 @@ One more quick note: if using an older version of Python (earlier than 3.6) and 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">9</span><span class="o">-</span><span class="mi">8331</span><span class="n">b6acb92e</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># another handy display function...good for large dfs that are too big to fit -</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="c1"># at least you can get an idea of the overall structure</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Source</th>
-      <th>Year</th>
-      <th>Mean</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>GCAG</td>
-      <td>2016</td>
-      <td>0.9363</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>GISTEMP</td>
-      <td>2016</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>GCAG</td>
-      <td>2015</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>GISTEMP</td>
-      <td>2015</td>
-      <td>0.8700</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>GCAG</td>
-      <td>2014</td>
-      <td>0.7408</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<span class="ne">NameError</span>: name &#39;df&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="get-a-high-level-summary-of-the-data-using-built-in-functionality-of-dataframe-object">
@@ -903,72 +852,15 @@ One more quick note: if using an older version of Python (earlier than 3.6) and 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="n">ea8415b8a3ee</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Year</th>
-      <th>Mean</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>count</th>
-      <td>274.000000</td>
-      <td>269.000000</td>
-    </tr>
-    <tr>
-      <th>mean</th>
-      <td>1948.000000</td>
-      <td>0.032148</td>
-    </tr>
-    <tr>
-      <th>std</th>
-      <td>39.619805</td>
-      <td>0.312434</td>
-    </tr>
-    <tr>
-      <th>min</th>
-      <td>1880.000000</td>
-      <td>-0.470000</td>
-    </tr>
-    <tr>
-      <th>25%</th>
-      <td>1914.000000</td>
-      <td>-0.205500</td>
-    </tr>
-    <tr>
-      <th>50%</th>
-      <td>1948.000000</td>
-      <td>-0.050000</td>
-    </tr>
-    <tr>
-      <th>75%</th>
-      <td>1982.000000</td>
-      <td>0.227300</td>
-    </tr>
-    <tr>
-      <th>max</th>
-      <td>2016.000000</td>
-      <td>0.936300</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<span class="ne">NameError</span>: name &#39;df&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="just-like-with-series-object-can-compute-mean-std-etc">
@@ -980,7 +872,12 @@ One more quick note: if using an older version of Python (earlier than 3.6) and 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1948.0
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">2976938256</span><span class="n">cb</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+<span class="ne">NameError</span>: name &#39;df&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -996,7 +893,14 @@ One more quick note: if using an older version of Python (earlier than 3.6) and 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.032147583643122576
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">93</span><span class="n">d8177f7320</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1">#df[&#39;Mean&#39;].std()</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="c1">#df.Mean.std()</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Mean&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+<span class="ne">NameError</span>: name &#39;df&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -1016,7 +920,12 @@ One more quick note: if using an older version of Python (earlier than 3.6) and 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>nan
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">13</span><span class="o">-</span><span class="n">b07ab46f952f</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Mean&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">skipna</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;df&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -1038,18 +947,13 @@ One more quick note: if using an older version of Python (earlier than 3.6) and 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0      False
-1       True
-2       True
-3      False
-4      False
-       ...  
-269    False
-270    False
-271    False
-272    False
-273    False
-Name: Mean, Length: 274, dtype: bool
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">14</span><span class="o">-</span><span class="n">ea0f3fa24901</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># isolate just the rows (indicies) where Mean is NaN</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Mean&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span>
+
+<span class="ne">NameError</span>: name &#39;df&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -1062,63 +966,16 @@ Name: Mean, Length: 274, dtype: bool
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">15</span><span class="o">-</span><span class="n">c1fd7648e42f</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># now index into df using the true/false sequence from above!</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Mean&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">()]</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Source</th>
-      <th>Year</th>
-      <th>Mean</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>1</th>
-      <td>GISTEMP</td>
-      <td>2016</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>GCAG</td>
-      <td>2015</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>237</th>
-      <td>GISTEMP</td>
-      <td>1898</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>238</th>
-      <td>GCAG</td>
-      <td>1897</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>239</th>
-      <td>GISTEMP</td>
-      <td>1897</td>
-      <td>NaN</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<span class="ne">NameError</span>: name &#39;df&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="or-do-the-opposite-isolate-just-the-rows-where-mean-is-not-nan-i-e-its-a-real-number">
 <h3>Or do the opposite, isolate just the rows where Mean is not NaN (i.e. its a real number)<a class="headerlink" href="#or-do-the-opposite-isolate-just-the-rows-where-mean-is-not-nan-i-e-its-a-real-number" title="Permalink to this headline">¶</a></h3>
@@ -1129,100 +986,15 @@ Name: Mean, Length: 274, dtype: bool
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">16</span><span class="o">-</span><span class="n">a54e6b82a8e3</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Mean&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">notna</span><span class="p">()]</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Source</th>
-      <th>Year</th>
-      <th>Mean</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>GCAG</td>
-      <td>2016</td>
-      <td>0.9363</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>GISTEMP</td>
-      <td>2015</td>
-      <td>0.8700</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>GCAG</td>
-      <td>2014</td>
-      <td>0.7408</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>GISTEMP</td>
-      <td>2014</td>
-      <td>0.7400</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>GCAG</td>
-      <td>2013</td>
-      <td>0.6679</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>269</th>
-      <td>GISTEMP</td>
-      <td>1882</td>
-      <td>-0.1000</td>
-    </tr>
-    <tr>
-      <th>270</th>
-      <td>GCAG</td>
-      <td>1881</td>
-      <td>-0.0628</td>
-    </tr>
-    <tr>
-      <th>271</th>
-      <td>GISTEMP</td>
-      <td>1881</td>
-      <td>-0.1200</td>
-    </tr>
-    <tr>
-      <th>272</th>
-      <td>GCAG</td>
-      <td>1880</td>
-      <td>-0.1148</td>
-    </tr>
-    <tr>
-      <th>273</th>
-      <td>GISTEMP</td>
-      <td>1880</td>
-      <td>-0.2000</td>
-    </tr>
-  </tbody>
-</table>
-<p>269 rows × 3 columns</p>
-</div></div></div>
+<span class="ne">NameError</span>: name &#39;df&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="can-deal-with-nans-lots-of-ways">
@@ -1240,63 +1012,17 @@ Name: Mean, Length: 274, dtype: bool
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">17</span><span class="o">-</span><span class="mi">88</span><span class="n">c78d9b1e23</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># make a new df, but only keep the non-NaN entries</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">df2</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Mean&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">notna</span><span class="p">()]</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">df2</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Source</th>
-      <th>Year</th>
-      <th>Mean</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>GCAG</td>
-      <td>2016</td>
-      <td>0.9363</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>GISTEMP</td>
-      <td>2015</td>
-      <td>0.8700</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>GCAG</td>
-      <td>2014</td>
-      <td>0.7408</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>GISTEMP</td>
-      <td>2014</td>
-      <td>0.7400</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>GCAG</td>
-      <td>2013</td>
-      <td>0.6679</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<span class="ne">NameError</span>: name &#39;df&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="fill-the-nan-with-the-mean-of-the-column">
 <h4>Fill the NaN with the mean of the column!<a class="headerlink" href="#fill-the-nan-with-the-mean-of-the-column" title="Permalink to this headline">¶</a></h4>
@@ -1316,66 +1042,19 @@ Name: Mean, Length: 274, dtype: bool
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.032147583643122576
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">18</span><span class="o">-</span><span class="n">a8d2f9196a55</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Mean&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> 
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">df2</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Mean&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> 
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">df2</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+
+<span class="ne">NameError</span>: name &#39;df&#39; is not defined
 </pre></div>
 </div>
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Source</th>
-      <th>Year</th>
-      <th>Mean</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>GCAG</td>
-      <td>2016</td>
-      <td>0.936300</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>GISTEMP</td>
-      <td>2016</td>
-      <td>0.032148</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>GCAG</td>
-      <td>2015</td>
-      <td>0.032148</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>GISTEMP</td>
-      <td>2015</td>
-      <td>0.870000</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>GCAG</td>
-      <td>2014</td>
-      <td>0.740800</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+</div>
 </div>
 </div>
 </div>
@@ -1389,63 +1068,15 @@ Name: Mean, Length: 274, dtype: bool
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">19</span><span class="o">-</span><span class="n">c42a15b2c7cf</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Source</th>
-      <th>Year</th>
-      <th>Mean</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>GCAG</td>
-      <td>2016</td>
-      <td>0.9363</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>GISTEMP</td>
-      <td>2016</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>GCAG</td>
-      <td>2015</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>GISTEMP</td>
-      <td>2015</td>
-      <td>0.8700</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>GCAG</td>
-      <td>2014</td>
-      <td>0.7408</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<span class="ne">NameError</span>: name &#39;df&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1456,63 +1087,17 @@ Name: Mean, Length: 274, dtype: bool
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">20</span><span class="o">-</span><span class="mi">2</span><span class="n">dbec2ef346a</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># or your could self assign df = df[] here to update existing data frame</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">df2</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Source&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;GISTEMP&#39;</span><span class="p">]</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">df2</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Source</th>
-      <th>Year</th>
-      <th>Mean</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>1</th>
-      <td>GISTEMP</td>
-      <td>2016</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>GISTEMP</td>
-      <td>2015</td>
-      <td>0.87</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>GISTEMP</td>
-      <td>2014</td>
-      <td>0.74</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>GISTEMP</td>
-      <td>2013</td>
-      <td>0.65</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>GISTEMP</td>
-      <td>2012</td>
-      <td>0.63</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<span class="ne">NameError</span>: name &#39;df&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="grab-a-range-of-rows-across-a-set-of-years-for-example">
@@ -1525,333 +1110,16 @@ Name: Mean, Length: 274, dtype: bool
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">21</span><span class="o">-</span><span class="n">fa4933bcd22b</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df2</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">1990</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span><span class="o">&lt;=</span><span class="mi">2015</span><span class="p">)]</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">display</span><span class="p">(</span><span class="n">df2</span><span class="p">)</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Source</th>
-      <th>Year</th>
-      <th>Mean</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2</th>
-      <td>GCAG</td>
-      <td>2015</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>GISTEMP</td>
-      <td>2015</td>
-      <td>0.8700</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>GCAG</td>
-      <td>2014</td>
-      <td>0.7408</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>GISTEMP</td>
-      <td>2014</td>
-      <td>0.7400</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>GCAG</td>
-      <td>2013</td>
-      <td>0.6679</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>GISTEMP</td>
-      <td>2013</td>
-      <td>0.6500</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>GCAG</td>
-      <td>2012</td>
-      <td>0.6240</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>GISTEMP</td>
-      <td>2012</td>
-      <td>0.6300</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>GCAG</td>
-      <td>2011</td>
-      <td>0.5788</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>GISTEMP</td>
-      <td>2011</td>
-      <td>0.6000</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>GCAG</td>
-      <td>2010</td>
-      <td>0.7014</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>GISTEMP</td>
-      <td>2010</td>
-      <td>0.7100</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>GCAG</td>
-      <td>2009</td>
-      <td>0.6367</td>
-    </tr>
-    <tr>
-      <th>15</th>
-      <td>GISTEMP</td>
-      <td>2009</td>
-      <td>0.6400</td>
-    </tr>
-    <tr>
-      <th>16</th>
-      <td>GCAG</td>
-      <td>2008</td>
-      <td>0.5419</td>
-    </tr>
-    <tr>
-      <th>17</th>
-      <td>GISTEMP</td>
-      <td>2008</td>
-      <td>0.5400</td>
-    </tr>
-    <tr>
-      <th>18</th>
-      <td>GCAG</td>
-      <td>2007</td>
-      <td>0.6100</td>
-    </tr>
-    <tr>
-      <th>19</th>
-      <td>GISTEMP</td>
-      <td>2007</td>
-      <td>0.6600</td>
-    </tr>
-    <tr>
-      <th>20</th>
-      <td>GCAG</td>
-      <td>2006</td>
-      <td>0.6125</td>
-    </tr>
-    <tr>
-      <th>21</th>
-      <td>GISTEMP</td>
-      <td>2006</td>
-      <td>0.6300</td>
-    </tr>
-    <tr>
-      <th>22</th>
-      <td>GCAG</td>
-      <td>2005</td>
-      <td>0.6585</td>
-    </tr>
-    <tr>
-      <th>23</th>
-      <td>GISTEMP</td>
-      <td>2005</td>
-      <td>0.6900</td>
-    </tr>
-    <tr>
-      <th>24</th>
-      <td>GCAG</td>
-      <td>2004</td>
-      <td>0.5783</td>
-    </tr>
-    <tr>
-      <th>25</th>
-      <td>GISTEMP</td>
-      <td>2004</td>
-      <td>0.5500</td>
-    </tr>
-    <tr>
-      <th>26</th>
-      <td>GCAG</td>
-      <td>2003</td>
-      <td>0.6134</td>
-    </tr>
-    <tr>
-      <th>27</th>
-      <td>GISTEMP</td>
-      <td>2003</td>
-      <td>0.6200</td>
-    </tr>
-    <tr>
-      <th>28</th>
-      <td>GCAG</td>
-      <td>2002</td>
-      <td>0.6023</td>
-    </tr>
-    <tr>
-      <th>29</th>
-      <td>GISTEMP</td>
-      <td>2002</td>
-      <td>0.6300</td>
-    </tr>
-    <tr>
-      <th>30</th>
-      <td>GCAG</td>
-      <td>2001</td>
-      <td>0.5473</td>
-    </tr>
-    <tr>
-      <th>31</th>
-      <td>GISTEMP</td>
-      <td>2001</td>
-      <td>0.5500</td>
-    </tr>
-    <tr>
-      <th>32</th>
-      <td>GCAG</td>
-      <td>2000</td>
-      <td>0.4262</td>
-    </tr>
-    <tr>
-      <th>33</th>
-      <td>GISTEMP</td>
-      <td>2000</td>
-      <td>0.4200</td>
-    </tr>
-    <tr>
-      <th>34</th>
-      <td>GCAG</td>
-      <td>1999</td>
-      <td>0.4438</td>
-    </tr>
-    <tr>
-      <th>35</th>
-      <td>GISTEMP</td>
-      <td>1999</td>
-      <td>0.4200</td>
-    </tr>
-    <tr>
-      <th>36</th>
-      <td>GCAG</td>
-      <td>1998</td>
-      <td>0.6344</td>
-    </tr>
-    <tr>
-      <th>37</th>
-      <td>GISTEMP</td>
-      <td>1998</td>
-      <td>0.6400</td>
-    </tr>
-    <tr>
-      <th>38</th>
-      <td>GCAG</td>
-      <td>1997</td>
-      <td>0.5187</td>
-    </tr>
-    <tr>
-      <th>39</th>
-      <td>GISTEMP</td>
-      <td>1997</td>
-      <td>0.4800</td>
-    </tr>
-    <tr>
-      <th>40</th>
-      <td>GCAG</td>
-      <td>1996</td>
-      <td>0.3228</td>
-    </tr>
-    <tr>
-      <th>41</th>
-      <td>GISTEMP</td>
-      <td>1996</td>
-      <td>0.3500</td>
-    </tr>
-    <tr>
-      <th>42</th>
-      <td>GCAG</td>
-      <td>1995</td>
-      <td>0.4577</td>
-    </tr>
-    <tr>
-      <th>43</th>
-      <td>GISTEMP</td>
-      <td>1995</td>
-      <td>0.4600</td>
-    </tr>
-    <tr>
-      <th>44</th>
-      <td>GCAG</td>
-      <td>1994</td>
-      <td>0.3409</td>
-    </tr>
-    <tr>
-      <th>45</th>
-      <td>GISTEMP</td>
-      <td>1994</td>
-      <td>0.3200</td>
-    </tr>
-    <tr>
-      <th>46</th>
-      <td>GCAG</td>
-      <td>1993</td>
-      <td>0.2853</td>
-    </tr>
-    <tr>
-      <th>47</th>
-      <td>GISTEMP</td>
-      <td>1993</td>
-      <td>0.2400</td>
-    </tr>
-    <tr>
-      <th>48</th>
-      <td>GCAG</td>
-      <td>1992</td>
-      <td>0.2571</td>
-    </tr>
-    <tr>
-      <th>49</th>
-      <td>GISTEMP</td>
-      <td>1992</td>
-      <td>0.2300</td>
-    </tr>
-    <tr>
-      <th>50</th>
-      <td>GCAG</td>
-      <td>1991</td>
-      <td>0.4055</td>
-    </tr>
-    <tr>
-      <th>51</th>
-      <td>GISTEMP</td>
-      <td>1991</td>
-      <td>0.4300</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<span class="ne">NameError</span>: name &#39;df&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="apply-several-filters-at-once">
@@ -1863,6 +1131,17 @@ Name: Mean, Length: 274, dtype: bool
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Source&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;GCAG&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">1990</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span><span class="o">&lt;=</span><span class="mi">2015</span><span class="p">)]</span>
 <span class="n">display</span><span class="p">(</span><span class="n">df2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">22</span><span class="o">-</span><span class="mi">518</span><span class="n">c30748a27</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df2</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Source&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;GCAG&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">1990</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span><span class="o">&lt;=</span><span class="mi">2015</span><span class="p">)]</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">display</span><span class="p">(</span><span class="n">df2</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;df&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -1886,17 +1165,13 @@ Name: Mean, Length: 274, dtype: bool
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html">
-<input type="file" id="files-994e128a-7204-4ba6-9c6f-bf6f1a403a47" name="files[]" multiple disabled
-   style="border:none" />
-<output id="result-994e128a-7204-4ba6-9c6f-bf6f1a403a47">
- Upload widget is only available when the cell has been executed in the
- current browser session. Please rerun this cell to enable.
- </output>
- <script src="/nbextensions/google.colab/files.js"></script> </div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Saving annual_temp2.csv to annual_temp2 (1).csv
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;annual_temp2.csv&#39;: b&#39;Year,Mean,Std\r\n2016,0.9363,0.751983201423804\r\n2015,,\r\n2014,0.7408,0.308372327229529\r\n2013,0.6679,0.0642260963534021\r\n2012,0.624,0.369924308791563\r\n2011,0.5788,0.519886611755557\r\n2010,0.7014,0.00554037371614102\r\n2009,0.6367,0.710221086775733\r\n2008,0.5419,0.13596775970467\r\n2007,0.61,0.600989623657847\r\n2006,0.6125,0.477444551272558\r\n2005,0.6585,0.200089544839782\r\n2004,0.5783,0.350636861158391\r\n2003,0.6134,0.175530439616115\r\n2002,0.6023,0.958127276637697\r\n2001,0.5473,0.65481159234971\r\n2000,0.4262,0.315161882226467\r\n1999,0.4438,0.583836856570891\r\n1998,0.6344,0.318651207090184\r\n1997,0.5187,0.793294701283796\r\n1996,0.3228,0.297115830643744\r\n1995,0.4577,0.179343960389974\r\n1994,0.3409,0.484949551525664\r\n1993,0.2853,0.882884329517337\r\n1992,0.2571,0.562569395616625\r\n1991,0.4055,0.588429206506485\r\n1990,0.4328,0.147454693380858\r\n1989,0.297,0.721697423072878\r\n1988,0.3757,0.211935846229154\r\n1987,0.3696,0.645365247533375\r\n1986,0.2296,0.357759300788325\r\n1985,0.1342,0.344254799672039\r\n1984,0.149,0.772079944607475\r\n1983,0.3411,0.0687893670043981\r\n1982,0.1815,0.511231020671473\r\n1981,0.2999,0.0188473801261881\r\n1980,0.2637,0.201064607422642\r\n1979,0.2273,0.180923535127335\r\n1978,0.1123,0.360679532662809\r\n1977,0.1978,0.688585411771921\r\n1976,-0.0792,0.200876803208843\r\n1975,0.0034,0.741742394395867\r\n1974,-0.0719,0.00260350930010121\r\n1973,0.1641,0.787708734193673\r\n1972,0.0264,0.956011291618283\r\n1971,-0.0783,0.864109153001867\r\n1970,0.0372,0.511365110940953\r\n1969,0.0929,0.422571956441238\r\n1968,-0.0296,0.648416481077688\r\n1967,-0.0131,0.243417247260451\r\n1966,-0.0227,0.392410718324416\r\n1965,-0.078,0.231828574650785\r\n1964,-0.1495,0.140240270498326\r\n1963,0.1068,0.240137459097408\r\n1962,0.0888,0.529270041060965\r\n1961,0.0775,0.519028686374525\r\n1960,0.0204,0.156221801697547\r\n1959,0.0596,0.726664204051616\r\n1958,0.1095,0.162915134056691\r\n1957,0.0488,0.999169935961326\r\n1956,-0.19900000000000000,0.546784392995795\r\n1955,-0.1354,0.171323144951672\r\n1954,-0.1165,0.48231483549844\r\n1953,0.0952,0.14172833807198\r\n1952,0.0248,0.673033865260092\r\n1951,-0.0132,0.650865462586769\r\n1950,-0.1616,0.55238615774824\r\n1949,-0.0568,0.710415875189324\r\n1948,-0.0487,0.75621561925767\r\n1947,-0.0477,0.820574222667296\r\n1946,-0.004,0.148684153559589\r\n1945,0.171,0.046347412074689\r\n1944,0.2928,0.16891121594668\r\n1943,0.157,0.566967109683963\r\n1942,0.1538,0.519371976292688\r\n1941,0.196,0.851964242289424\r\n1940,0.0947,0.00757614470604082\r\n1939,-0.0139,0.296768844239944\r\n1938,-0.0288,0.456619843341373\r\n1937,-0.0157,0.291027811409836\r\n1936,-0.1134,0.503254927274545\r\n1935,-0.1392,0.00460569729445638\r\n1934,-0.1015,0.604094168246076\r\n1933,-0.2439,0.981605361042585\r\n1932,-0.1168,0.193604134882183\r\n1931,-0.0686,0.467190905709684\r\n1930,-0.1003,0.538348041508349\r\n1929,-0.2985,0.909757573806934\r\n1928,-0.1774,0.692378986542129\r\n1927,-0.1546,0.889108689788604\r\n1926,-0.0667,0.579265659153636\r\n1925,-0.1481,0.725146913844805\r\n1924,-0.2486,0.214365228374656\r\n1923,-0.2156,0.991481274558267\r\n1922,-0.2304,0.816778087500826\r\n1921,-0.1485,0.754195738476507\r\n1920,-0.2105,0.762448343300893\r\n1919,-0.2055,0.0804197154682573\r\n1918,-0.2084,0.214025254716516\r\n1917,-0.3146,0.342808847360293\r\n1916,-0.293,0.522969158250288\r\n1915,-0.0693,0.273753723961632\r\n1914,-0.1395,0.815101456578759\r\n1913,-0.3162,0.165023232641638\r\n1912,-0.3288,0.310420139528037\r\n1911,-0.4332,0.693082026953693\r\n1910,-0.3789,0.865678454926031\r\n1909,-0.4261,0.623919733722176\r\n1908,-0.4396,0.438704923193233\r\n1907,-0.3706,0.273439136137311\r\n1906,-0.2174,0.0364778482638509\r\n1905,-0.2931,0.424024934062817\r\n1904,-0.4194,0.979370498983175\r\n1903,-0.3369,0.279523116904304\r\n1902,-0.2463,0.00773229964501328\r\n1901,-0.1417,0.0457725939584814\r\n1900,-0.0679,0.0678002958632341\r\n1899,-0.1173,0.19280587714598\r\n1898,-0.2546,0.481234008629767\r\n1897,,0.835940846940579\r\n1896,-0.0974,0.488648240249878\r\n1895,-0.22900000000000000,0.525927890532822\r\n1894,-0.2808,0.70011900069477\r\n1893,-0.3212,0.399573260715036\r\n1892,-0.3062,0.0473633602672427\r\n1891,-0.2532,0.545200074140049\r\n1890,-0.322,0.931219124203922\r\n1889,-0.0982,0.953727894734898\r\n1888,-0.1471,0.376836477660656\r\n1887,-0.2489,0.309235336659661\r\n1886,-0.2003,0.555201311487298\r\n1885,-0.2125,0.361183756912452\r\n1884,-0.2009,0.882296486501537\r\n1883,-0.1424,0.146379303884453\r\n1882,-0.0648,0.513377910557089\r\n1881,-0.0628,0.180162696314947\r\n1880,-0.1148,0.823952706526975&#39;}
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">23</span><span class="o">-</span><span class="mi">3</span><span class="n">cd0a9a2a9d1</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1">#for the next steps, load annual_temp2</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">files</span><span class="o">.</span><span class="n">upload</span><span class="p">()</span>
+
+<span class="ne">NameError</span>: name &#39;files&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -1907,10 +1182,64 @@ Name: Mean, Length: 274, dtype: bool
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Error: no such file, variable, URL, history range or macro
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;annual_temp2.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">25</span><span class="o">-</span><span class="mi">2</span><span class="n">d8af3743f46</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;annual_temp2.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="nn">/opt/homebrew/anaconda3/lib/python3.8/site-packages/pandas/io/parsers.py</span> in <span class="ni">read_csv</span><span class="nt">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, squeeze, prefix, mangle_dupe_cols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, dialect, error_bad_lines, warn_bad_lines, delim_whitespace, low_memory, memory_map, float_precision)</span>
+<span class="g g-Whitespace">    </span><span class="mi">684</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">685</span> 
+<span class="ne">--&gt; </span><span class="mi">686</span>     <span class="k">return</span> <span class="n">_read</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">687</span> 
+<span class="g g-Whitespace">    </span><span class="mi">688</span> 
+
+<span class="nn">/opt/homebrew/anaconda3/lib/python3.8/site-packages/pandas/io/parsers.py</span> in <span class="ni">_read</span><span class="nt">(filepath_or_buffer, kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">450</span> 
+<span class="g g-Whitespace">    </span><span class="mi">451</span>     <span class="c1"># Create the parser.</span>
+<span class="ne">--&gt; </span><span class="mi">452</span>     <span class="n">parser</span> <span class="o">=</span> <span class="n">TextFileReader</span><span class="p">(</span><span class="n">fp_or_buf</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">453</span> 
+<span class="g g-Whitespace">    </span><span class="mi">454</span>     <span class="k">if</span> <span class="n">chunksize</span> <span class="ow">or</span> <span class="n">iterator</span><span class="p">:</span>
+
+<span class="nn">/opt/homebrew/anaconda3/lib/python3.8/site-packages/pandas/io/parsers.py</span> in <span class="ni">__init__</span><span class="nt">(self, f, engine, **kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">944</span>             <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwds</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">945</span> 
+<span class="ne">--&gt; </span><span class="mi">946</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_make_engine</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">947</span> 
+<span class="g g-Whitespace">    </span><span class="mi">948</span>     <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<span class="nn">/opt/homebrew/anaconda3/lib/python3.8/site-packages/pandas/io/parsers.py</span> in <span class="ni">_make_engine</span><span class="nt">(self, engine)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1176</span>     <span class="k">def</span> <span class="nf">_make_engine</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s2">&quot;c&quot;</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1177</span>         <span class="k">if</span> <span class="n">engine</span> <span class="o">==</span> <span class="s2">&quot;c&quot;</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1178</span>             <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span> <span class="o">=</span> <span class="n">CParserWrapper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">f</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1179</span>         <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1180</span>             <span class="k">if</span> <span class="n">engine</span> <span class="o">==</span> <span class="s2">&quot;python&quot;</span><span class="p">:</span>
+
+<span class="nn">/opt/homebrew/anaconda3/lib/python3.8/site-packages/pandas/io/parsers.py</span> in <span class="ni">__init__</span><span class="nt">(self, src, **kwds)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2006</span>         <span class="n">kwds</span><span class="p">[</span><span class="s2">&quot;usecols&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">usecols</span>
+<span class="g g-Whitespace">   </span><span class="mi">2007</span> 
+<span class="ne">-&gt; </span><span class="mi">2008</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_reader</span> <span class="o">=</span> <span class="n">parsers</span><span class="o">.</span><span class="n">TextReader</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2009</span>         <span class="bp">self</span><span class="o">.</span><span class="n">unnamed_cols</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reader</span><span class="o">.</span><span class="n">unnamed_cols</span>
+<span class="g g-Whitespace">   </span><span class="mi">2010</span> 
+
+<span class="nn">pandas/_libs/parsers.pyx</span> in <span class="ni">pandas._libs.parsers.TextReader.__cinit__</span><span class="nt">()</span>
+
+<span class="nn">pandas/_libs/parsers.pyx</span> in <span class="ni">pandas._libs.parsers.TextReader._setup_parser_source</span><span class="nt">()</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;annual_temp2.csv&#39;
 </pre></div>
 </div>
 </div>
@@ -1922,62 +1251,15 @@ Name: Mean, Length: 274, dtype: bool
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">26</span><span class="o">-</span><span class="n">c42a15b2c7cf</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Mean</th>
-      <th>Std</th>
-    </tr>
-    <tr>
-      <th>Year</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2016</th>
-      <td>0.9363</td>
-      <td>0.751983</td>
-    </tr>
-    <tr>
-      <th>2015</th>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>2014</th>
-      <td>0.7408</td>
-      <td>0.308372</td>
-    </tr>
-    <tr>
-      <th>2013</th>
-      <td>0.6679</td>
-      <td>0.064226</td>
-    </tr>
-    <tr>
-      <th>2012</th>
-      <td>0.6240</td>
-      <td>0.369924</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<span class="ne">NameError</span>: name &#39;df&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="this-returns-the-data-associated-with-one-row">
@@ -1989,9 +1271,12 @@ Name: Mean, Length: 274, dtype: bool
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mean    0.740800
-Std     0.308372
-Name: 2014, dtype: float64
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">27</span><span class="o">-</span><span class="mi">3</span><span class="n">f5ccd350379</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">2014</span><span class="p">]</span>
+
+<span class="ne">NameError</span>: name &#39;df&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -2008,57 +1293,17 @@ Name: 2014, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">28</span><span class="o">-</span><span class="n">f514ef3d5332</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># non-contiguous entries</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">df2</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="mi">1999</span><span class="p">,</span><span class="mi">2015</span><span class="p">,</span><span class="mi">2016</span><span class="p">,</span><span class="mi">1880</span><span class="p">]]</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">df2</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Mean</th>
-      <th>Std</th>
-    </tr>
-    <tr>
-      <th>Year</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>1999</th>
-      <td>0.4438</td>
-      <td>0.583837</td>
-    </tr>
-    <tr>
-      <th>2015</th>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>2016</th>
-      <td>0.9363</td>
-      <td>0.751983</td>
-    </tr>
-    <tr>
-      <th>1880</th>
-      <td>-0.1148</td>
-      <td>0.823953</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<span class="ne">NameError</span>: name &#39;df&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2067,62 +1312,15 @@ Name: 2014, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">29</span><span class="o">-</span><span class="n">c42a15b2c7cf</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Mean</th>
-      <th>Std</th>
-    </tr>
-    <tr>
-      <th>Year</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2016</th>
-      <td>0.9363</td>
-      <td>0.751983</td>
-    </tr>
-    <tr>
-      <th>2015</th>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>2014</th>
-      <td>0.7408</td>
-      <td>0.308372</td>
-    </tr>
-    <tr>
-      <th>2013</th>
-      <td>0.6679</td>
-      <td>0.064226</td>
-    </tr>
-    <tr>
-      <th>2012</th>
-      <td>0.6240</td>
-      <td>0.369924</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<span class="ne">NameError</span>: name &#39;df&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2132,37 +1330,16 @@ Name: 2014, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">30</span><span class="o">-</span><span class="mi">1</span><span class="n">dffc799ec57</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># note that years run in descending order...</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">2014</span><span class="p">:</span><span class="mi">2016</span><span class="p">]</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Mean</th>
-      <th>Std</th>
-    </tr>
-    <tr>
-      <th>Year</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-  </tbody>
-</table>
-</div></div></div>
+<span class="ne">NameError</span>: name &#39;df&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2172,62 +1349,32 @@ Name: 2014, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">31</span><span class="o">-</span><span class="mi">4309</span><span class="n">eabf6565</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># but this will work...</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">2016</span><span class="p">:</span><span class="mi">2010</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Mean</th>
-      <th>Std</th>
-    </tr>
-    <tr>
-      <th>Year</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2016</th>
-      <td>0.9363</td>
-      <td>0.751983</td>
-    </tr>
-    <tr>
-      <th>2014</th>
-      <td>0.7408</td>
-      <td>0.308372</td>
-    </tr>
-    <tr>
-      <th>2012</th>
-      <td>0.6240</td>
-      <td>0.369924</td>
-    </tr>
-    <tr>
-      <th>2010</th>
-      <td>0.7014</td>
-      <td>0.005540</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<span class="ne">NameError</span>: name &#39;df&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># flip the data frame upside down</span>
 <span class="n">df</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">32</span><span class="o">-</span><span class="mi">7</span><span class="n">f703c073644</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># flip the data frame upside down</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">df</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="ne">NameError</span>: name &#39;df&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -2239,62 +1386,15 @@ Name: 2014, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">33</span><span class="o">-</span><span class="n">c42a15b2c7cf</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Mean</th>
-      <th>Std</th>
-    </tr>
-    <tr>
-      <th>Year</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>1880</th>
-      <td>-0.1148</td>
-      <td>0.823953</td>
-    </tr>
-    <tr>
-      <th>1881</th>
-      <td>-0.0628</td>
-      <td>0.180163</td>
-    </tr>
-    <tr>
-      <th>1882</th>
-      <td>-0.0648</td>
-      <td>0.513378</td>
-    </tr>
-    <tr>
-      <th>1883</th>
-      <td>-0.1424</td>
-      <td>0.146379</td>
-    </tr>
-    <tr>
-      <th>1884</th>
-      <td>-0.2009</td>
-      <td>0.882296</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<span class="ne">NameError</span>: name &#39;df&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2304,172 +1404,16 @@ Name: 2014, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">34</span><span class="o">-</span><span class="n">a78ce3399ce3</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># now the years run in order</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1990</span><span class="p">:</span><span class="mi">2016</span><span class="p">]</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Mean</th>
-      <th>Std</th>
-    </tr>
-    <tr>
-      <th>Year</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>1990</th>
-      <td>0.4328</td>
-      <td>0.147455</td>
-    </tr>
-    <tr>
-      <th>1991</th>
-      <td>0.4055</td>
-      <td>0.588429</td>
-    </tr>
-    <tr>
-      <th>1992</th>
-      <td>0.2571</td>
-      <td>0.562569</td>
-    </tr>
-    <tr>
-      <th>1993</th>
-      <td>0.2853</td>
-      <td>0.882884</td>
-    </tr>
-    <tr>
-      <th>1994</th>
-      <td>0.3409</td>
-      <td>0.484950</td>
-    </tr>
-    <tr>
-      <th>1995</th>
-      <td>0.4577</td>
-      <td>0.179344</td>
-    </tr>
-    <tr>
-      <th>1996</th>
-      <td>0.3228</td>
-      <td>0.297116</td>
-    </tr>
-    <tr>
-      <th>1997</th>
-      <td>0.5187</td>
-      <td>0.793295</td>
-    </tr>
-    <tr>
-      <th>1998</th>
-      <td>0.6344</td>
-      <td>0.318651</td>
-    </tr>
-    <tr>
-      <th>1999</th>
-      <td>0.4438</td>
-      <td>0.583837</td>
-    </tr>
-    <tr>
-      <th>2000</th>
-      <td>0.4262</td>
-      <td>0.315162</td>
-    </tr>
-    <tr>
-      <th>2001</th>
-      <td>0.5473</td>
-      <td>0.654812</td>
-    </tr>
-    <tr>
-      <th>2002</th>
-      <td>0.6023</td>
-      <td>0.958127</td>
-    </tr>
-    <tr>
-      <th>2003</th>
-      <td>0.6134</td>
-      <td>0.175530</td>
-    </tr>
-    <tr>
-      <th>2004</th>
-      <td>0.5783</td>
-      <td>0.350637</td>
-    </tr>
-    <tr>
-      <th>2005</th>
-      <td>0.6585</td>
-      <td>0.200090</td>
-    </tr>
-    <tr>
-      <th>2006</th>
-      <td>0.6125</td>
-      <td>0.477445</td>
-    </tr>
-    <tr>
-      <th>2007</th>
-      <td>0.6100</td>
-      <td>0.600990</td>
-    </tr>
-    <tr>
-      <th>2008</th>
-      <td>0.5419</td>
-      <td>0.135968</td>
-    </tr>
-    <tr>
-      <th>2009</th>
-      <td>0.6367</td>
-      <td>0.710221</td>
-    </tr>
-    <tr>
-      <th>2010</th>
-      <td>0.7014</td>
-      <td>0.005540</td>
-    </tr>
-    <tr>
-      <th>2011</th>
-      <td>0.5788</td>
-      <td>0.519887</td>
-    </tr>
-    <tr>
-      <th>2012</th>
-      <td>0.6240</td>
-      <td>0.369924</td>
-    </tr>
-    <tr>
-      <th>2013</th>
-      <td>0.6679</td>
-      <td>0.064226</td>
-    </tr>
-    <tr>
-      <th>2014</th>
-      <td>0.7408</td>
-      <td>0.308372</td>
-    </tr>
-    <tr>
-      <th>2015</th>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>2016</th>
-      <td>0.9363</td>
-      <td>0.751983</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<span class="ne">NameError</span>: name &#39;df&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2480,11 +1424,14 @@ Name: 2014, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Year
-2014    0.7408
-2015       NaN
-2016    0.9363
-Name: Mean, dtype: float64
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">35</span><span class="o">-</span><span class="n">deba0d8e7e22</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># select rows and select colums</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="c1">#df.loc[2016:2014, &#39;Mean&#39;:&#39;Std&#39;]</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">2014</span><span class="p">:</span><span class="mi">2016</span><span class="p">,</span> <span class="s1">&#39;Mean&#39;</span><span class="p">:</span><span class="s1">&#39;Std&#39;</span><span class="p">]</span>
+
+<span class="ne">NameError</span>: name &#39;df&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -2509,7 +1456,16 @@ Name: Mean, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.751983201423804
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">36</span><span class="o">-</span><span class="n">f3b47496aa23</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># the first 10</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="mi">10</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> 
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># # reverse</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1"># df.iloc[::-1]</span>
+
+<span class="ne">NameError</span>: name &#39;df&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -2535,72 +1491,19 @@ Name: Mean, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean temp: 0.043760740740740725
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">37</span><span class="o">-</span><span class="mi">07</span><span class="n">edb655dfac</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">mean_temp</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Mean&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> 
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;mean temp:&#39;</span><span class="p">,</span> <span class="n">mean_temp</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> 
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1"># then populate the new column</span>
+
+<span class="ne">NameError</span>: name &#39;df&#39; is not defined
 </pre></div>
 </div>
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Mean</th>
-      <th>Std</th>
-      <th>HighLow</th>
-    </tr>
-    <tr>
-      <th>Year</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>1880</th>
-      <td>-0.1148</td>
-      <td>0.823953</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>1881</th>
-      <td>-0.0628</td>
-      <td>0.180163</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>1882</th>
-      <td>-0.0648</td>
-      <td>0.513378</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>1883</th>
-      <td>-0.1424</td>
-      <td>0.146379</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>1884</th>
-      <td>-0.2009</td>
-      <td>0.882296</td>
-      <td>False</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+</div>
 </div>
 </div>
 <div class="section" id="if-you-want-to-convert-values-in-a-column-can-be-a-little-tricky">
@@ -2618,76 +1521,17 @@ Name: Mean, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.7/dist-packages/ipykernel_launcher.py:1: SettingWithCopyWarning: 
-A value is trying to be set on a copy of a slice from a DataFrame
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">38</span><span class="o">-</span><span class="mi">47</span><span class="n">aa19f1bd96</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span><span class="o">.</span><span class="n">HighLow</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">HighLow</span><span class="o">==</span><span class="kc">True</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1">#df[&#39;HighLow&#39;]</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">df</span><span class="o">.</span><span class="n">HighLow</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">HighLow</span><span class="o">==</span><span class="kc">False</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 
-See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
-  &quot;&quot;&quot;Entry point for launching an IPython kernel.
+<span class="ne">NameError</span>: name &#39;df&#39; is not defined
 </pre></div>
 </div>
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Mean</th>
-      <th>Std</th>
-      <th>HighLow</th>
-    </tr>
-    <tr>
-      <th>Year</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2016</th>
-      <td>0.9363</td>
-      <td>0.751983</td>
-      <td>1.0</td>
-    </tr>
-    <tr>
-      <th>2015</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>2014</th>
-      <td>0.7408</td>
-      <td>0.308372</td>
-      <td>1.0</td>
-    </tr>
-    <tr>
-      <th>2013</th>
-      <td>0.6679</td>
-      <td>0.064226</td>
-      <td>1.0</td>
-    </tr>
-    <tr>
-      <th>2012</th>
-      <td>0.6240</td>
-      <td>0.369924</td>
-      <td>1.0</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+</div>
 </div>
 </div>
 <div class="section" id="solution-use-loc-to-return-the-information-and-then-modify-it">
@@ -2711,72 +1555,58 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean temp: 0.04376074074074073
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">39</span><span class="o">-</span><span class="mi">0617</span><span class="n">c301b792</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># reload our df, re-create a new version of our HighLow column</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> 
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;annual_temp2.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> 
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1"># make our new column again.</span>
+
+<span class="nn">/opt/homebrew/anaconda3/lib/python3.8/site-packages/pandas/io/parsers.py</span> in <span class="ni">read_csv</span><span class="nt">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, squeeze, prefix, mangle_dupe_cols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, dialect, error_bad_lines, warn_bad_lines, delim_whitespace, low_memory, memory_map, float_precision)</span>
+<span class="g g-Whitespace">    </span><span class="mi">684</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">685</span> 
+<span class="ne">--&gt; </span><span class="mi">686</span>     <span class="k">return</span> <span class="n">_read</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">687</span> 
+<span class="g g-Whitespace">    </span><span class="mi">688</span> 
+
+<span class="nn">/opt/homebrew/anaconda3/lib/python3.8/site-packages/pandas/io/parsers.py</span> in <span class="ni">_read</span><span class="nt">(filepath_or_buffer, kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">450</span> 
+<span class="g g-Whitespace">    </span><span class="mi">451</span>     <span class="c1"># Create the parser.</span>
+<span class="ne">--&gt; </span><span class="mi">452</span>     <span class="n">parser</span> <span class="o">=</span> <span class="n">TextFileReader</span><span class="p">(</span><span class="n">fp_or_buf</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">453</span> 
+<span class="g g-Whitespace">    </span><span class="mi">454</span>     <span class="k">if</span> <span class="n">chunksize</span> <span class="ow">or</span> <span class="n">iterator</span><span class="p">:</span>
+
+<span class="nn">/opt/homebrew/anaconda3/lib/python3.8/site-packages/pandas/io/parsers.py</span> in <span class="ni">__init__</span><span class="nt">(self, f, engine, **kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">944</span>             <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwds</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">945</span> 
+<span class="ne">--&gt; </span><span class="mi">946</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_make_engine</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">947</span> 
+<span class="g g-Whitespace">    </span><span class="mi">948</span>     <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<span class="nn">/opt/homebrew/anaconda3/lib/python3.8/site-packages/pandas/io/parsers.py</span> in <span class="ni">_make_engine</span><span class="nt">(self, engine)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1176</span>     <span class="k">def</span> <span class="nf">_make_engine</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s2">&quot;c&quot;</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1177</span>         <span class="k">if</span> <span class="n">engine</span> <span class="o">==</span> <span class="s2">&quot;c&quot;</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1178</span>             <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span> <span class="o">=</span> <span class="n">CParserWrapper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">f</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1179</span>         <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1180</span>             <span class="k">if</span> <span class="n">engine</span> <span class="o">==</span> <span class="s2">&quot;python&quot;</span><span class="p">:</span>
+
+<span class="nn">/opt/homebrew/anaconda3/lib/python3.8/site-packages/pandas/io/parsers.py</span> in <span class="ni">__init__</span><span class="nt">(self, src, **kwds)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2006</span>         <span class="n">kwds</span><span class="p">[</span><span class="s2">&quot;usecols&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">usecols</span>
+<span class="g g-Whitespace">   </span><span class="mi">2007</span> 
+<span class="ne">-&gt; </span><span class="mi">2008</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_reader</span> <span class="o">=</span> <span class="n">parsers</span><span class="o">.</span><span class="n">TextReader</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2009</span>         <span class="bp">self</span><span class="o">.</span><span class="n">unnamed_cols</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reader</span><span class="o">.</span><span class="n">unnamed_cols</span>
+<span class="g g-Whitespace">   </span><span class="mi">2010</span> 
+
+<span class="nn">pandas/_libs/parsers.pyx</span> in <span class="ni">pandas._libs.parsers.TextReader.__cinit__</span><span class="nt">()</span>
+
+<span class="nn">pandas/_libs/parsers.pyx</span> in <span class="ni">pandas._libs.parsers.TextReader._setup_parser_source</span><span class="nt">()</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;annual_temp2.csv&#39;
 </pre></div>
 </div>
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Mean</th>
-      <th>Std</th>
-      <th>HighLow</th>
-    </tr>
-    <tr>
-      <th>Year</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2016</th>
-      <td>0.9363</td>
-      <td>0.751983</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>2015</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>2014</th>
-      <td>0.7408</td>
-      <td>0.308372</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>2013</th>
-      <td>0.6679</td>
-      <td>0.064226</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>2012</th>
-      <td>0.6240</td>
-      <td>0.369924</td>
-      <td>True</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+</div>
 </div>
 <div class="section" id="like-this-using-the-loc-method-ensures-that-things-don-t-get-confused">
 <h3>like this…using the .loc method ensures that things don’t get confused…<a class="headerlink" href="#like-this-using-the-loc-method-ensures-that-things-don-t-get-confused" title="Permalink to this headline">¶</a></h3>
@@ -2789,69 +1619,17 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">40</span><span class="o">-</span><span class="n">f77f8914a0f1</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;HighLow&#39;</span><span class="p">]</span><span class="o">==</span><span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;HighLow&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;HighLow&#39;</span><span class="p">]</span><span class="o">==</span><span class="kc">False</span><span class="p">,</span> <span class="s1">&#39;HighLow&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Mean</th>
-      <th>Std</th>
-      <th>HighLow</th>
-    </tr>
-    <tr>
-      <th>Year</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2016</th>
-      <td>0.9363</td>
-      <td>0.751983</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>2015</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>2014</th>
-      <td>0.7408</td>
-      <td>0.308372</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>2013</th>
-      <td>0.6679</td>
-      <td>0.064226</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>2012</th>
-      <td>0.6240</td>
-      <td>0.369924</td>
-      <td>1</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<span class="ne">NameError</span>: name &#39;df&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -2866,69 +1644,17 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">41</span><span class="o">-</span><span class="mi">7</span><span class="n">b2d93b0c838</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># flip it over to chronological order so its a little more intuitive to slice</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Mean</th>
-      <th>Std</th>
-      <th>HighLow</th>
-    </tr>
-    <tr>
-      <th>Year</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>1880</th>
-      <td>-0.1148</td>
-      <td>0.823953</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>1881</th>
-      <td>-0.0628</td>
-      <td>0.180163</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>1882</th>
-      <td>-0.0648</td>
-      <td>0.513378</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>1883</th>
-      <td>-0.1424</td>
-      <td>0.146379</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>1884</th>
-      <td>-0.2009</td>
-      <td>0.882296</td>
-      <td>False</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<span class="ne">NameError</span>: name &#39;df&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2938,7 +1664,13 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9363
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">42</span><span class="o">-</span><span class="n">cb8a2490713b</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># just data from one year from just the &quot;Mean&quot; column</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">2016</span><span class="p">,</span> <span class="s1">&#39;Mean&#39;</span><span class="p">]</span>
+
+<span class="ne">NameError</span>: name &#39;df&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -2951,13 +1683,13 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Year
-1880   -0.1148
-1881   -0.0628
-1882   -0.0648
-1883   -0.1424
-1884   -0.2009
-Name: Mean, dtype: float64
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">43</span><span class="o">-</span><span class="mf">98e2</span><span class="n">ef40172c</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># a range of years</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1880</span><span class="p">:</span><span class="mi">1884</span><span class="p">,</span> <span class="s1">&#39;Mean&#39;</span><span class="p">]</span>
+
+<span class="ne">NameError</span>: name &#39;df&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -2970,62 +1702,16 @@ Name: Mean, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">44</span><span class="o">-</span><span class="mi">9848</span><span class="n">f79f469a</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># range of rows and columns</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1880</span><span class="p">:</span><span class="mi">1884</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Mean&#39;</span><span class="p">,</span><span class="s1">&#39;HighLow&#39;</span><span class="p">]]</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Mean</th>
-      <th>HighLow</th>
-    </tr>
-    <tr>
-      <th>Year</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>1880</th>
-      <td>-0.1148</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>1881</th>
-      <td>-0.0628</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>1882</th>
-      <td>-0.0648</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>1883</th>
-      <td>-0.1424</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>1884</th>
-      <td>-0.2009</td>
-      <td>False</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<span class="ne">NameError</span>: name &#39;df&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3038,47 +1724,18 @@ Name: Mean, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">45</span><span class="o">-</span><span class="mi">92</span><span class="n">ed728b8441</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">row_ind</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1880</span><span class="p">,</span><span class="mi">1980</span><span class="p">]</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">col_ind</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;HighLow&#39;</span><span class="p">,</span> <span class="s1">&#39;Mean&#39;</span><span class="p">]</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">df2</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">row_ind</span><span class="p">,</span> <span class="n">col_ind</span><span class="p">]</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">df2</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>HighLow</th>
-      <th>Mean</th>
-    </tr>
-    <tr>
-      <th>Year</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>1880</th>
-      <td>False</td>
-      <td>-0.1148</td>
-    </tr>
-    <tr>
-      <th>1980</th>
-      <td>True</td>
-      <td>0.2637</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<span class="ne">NameError</span>: name &#39;df&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="a-few-more-examples-of-using-iloc-to-index-into-specific-rows-columns">
 <h3>A few more examples of using iloc to index into specific rows,columns<a class="headerlink" href="#a-few-more-examples-of-using-iloc-to-index-into-specific-rows-columns" title="Permalink to this headline">¶</a></h3>
@@ -3089,62 +1746,15 @@ Name: Mean, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">46</span><span class="o">-</span><span class="n">c42a15b2c7cf</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Mean</th>
-      <th>Std</th>
-    </tr>
-    <tr>
-      <th>Year</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2016</th>
-      <td>0.9363</td>
-      <td>0.751983</td>
-    </tr>
-    <tr>
-      <th>2015</th>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>2014</th>
-      <td>0.7408</td>
-      <td>0.308372</td>
-    </tr>
-    <tr>
-      <th>2013</th>
-      <td>0.6679</td>
-      <td>0.064226</td>
-    </tr>
-    <tr>
-      <th>2012</th>
-      <td>0.6240</td>
-      <td>0.369924</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<span class="ne">NameError</span>: name &#39;df&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3153,87 +1763,15 @@ Name: Mean, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">47</span><span class="o">-</span><span class="n">eb69a4a20caf</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="mi">20</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Mean</th>
-      <th>Std</th>
-    </tr>
-    <tr>
-      <th>Year</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2016</th>
-      <td>0.9363</td>
-      <td>0.751983</td>
-    </tr>
-    <tr>
-      <th>2014</th>
-      <td>0.7408</td>
-      <td>0.308372</td>
-    </tr>
-    <tr>
-      <th>2012</th>
-      <td>0.6240</td>
-      <td>0.369924</td>
-    </tr>
-    <tr>
-      <th>2010</th>
-      <td>0.7014</td>
-      <td>0.005540</td>
-    </tr>
-    <tr>
-      <th>2008</th>
-      <td>0.5419</td>
-      <td>0.135968</td>
-    </tr>
-    <tr>
-      <th>2006</th>
-      <td>0.6125</td>
-      <td>0.477445</td>
-    </tr>
-    <tr>
-      <th>2004</th>
-      <td>0.5783</td>
-      <td>0.350637</td>
-    </tr>
-    <tr>
-      <th>2002</th>
-      <td>0.6023</td>
-      <td>0.958127</td>
-    </tr>
-    <tr>
-      <th>2000</th>
-      <td>0.4262</td>
-      <td>0.315162</td>
-    </tr>
-    <tr>
-      <th>1998</th>
-      <td>0.6344</td>
-      <td>0.318651</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<span class="ne">NameError</span>: name &#39;df&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3242,18 +1780,12 @@ Name: Mean, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Year
-2016    0.9363
-2015       NaN
-2014    0.7408
-2013    0.6679
-2012    0.6240
-2011    0.5788
-2010    0.7014
-2009    0.6367
-2008    0.5419
-2007    0.6100
-Name: Mean, dtype: float64
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">48</span><span class="o">-</span><span class="mi">0488505</span><span class="n">f59e2</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+
+<span class="ne">NameError</span>: name &#39;df&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -3268,6 +1800,16 @@ Name: Mean, dtype: float64
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">49</span><span class="o">-</span><span class="n">d83723c10c98</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df_temp</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="ne">NameError</span>: name &#39;df&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3276,62 +1818,15 @@ Name: Mean, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">50</span><span class="o">-</span><span class="mi">8</span><span class="n">d9980cffe12</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df_temp</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Mean</th>
-      <th>Std</th>
-    </tr>
-    <tr>
-      <th>Year</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2016</th>
-      <td>0.9363</td>
-      <td>0.751983</td>
-    </tr>
-    <tr>
-      <th>2015</th>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>2014</th>
-      <td>0.7408</td>
-      <td>0.308372</td>
-    </tr>
-    <tr>
-      <th>2013</th>
-      <td>0.6679</td>
-      <td>0.064226</td>
-    </tr>
-    <tr>
-      <th>2012</th>
-      <td>0.6240</td>
-      <td>0.369924</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<span class="ne">NameError</span>: name &#39;df_temp&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3347,55 +1842,19 @@ Name: Mean, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">51</span><span class="o">-</span><span class="mi">162773</span><span class="n">dcb747</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> 
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># make an explicit copy! (why???) so we don&#39;t overwrite our original data frame</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">df2</span> <span class="o">=</span> <span class="n">df_temp</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> 
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="k">del</span> <span class="n">df2</span><span class="p">[</span><span class="s1">&#39;Mean&#39;</span><span class="p">]</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Std</th>
-    </tr>
-    <tr>
-      <th>Year</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2016</th>
-      <td>0.751983</td>
-    </tr>
-    <tr>
-      <th>2015</th>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>2014</th>
-      <td>0.308372</td>
-    </tr>
-    <tr>
-      <th>2013</th>
-      <td>0.064226</td>
-    </tr>
-    <tr>
-      <th>2012</th>
-      <td>0.369924</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<span class="ne">NameError</span>: name &#39;df_temp&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3404,62 +1863,15 @@ Name: Mean, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">52</span><span class="o">-</span><span class="mi">8</span><span class="n">d9980cffe12</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df_temp</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Mean</th>
-      <th>Std</th>
-    </tr>
-    <tr>
-      <th>Year</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2016</th>
-      <td>0.9363</td>
-      <td>0.751983</td>
-    </tr>
-    <tr>
-      <th>2015</th>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>2014</th>
-      <td>0.7408</td>
-      <td>0.308372</td>
-    </tr>
-    <tr>
-      <th>2013</th>
-      <td>0.6679</td>
-      <td>0.064226</td>
-    </tr>
-    <tr>
-      <th>2012</th>
-      <td>0.6240</td>
-      <td>0.369924</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<span class="ne">NameError</span>: name &#39;df_temp&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="replace-method">
@@ -3622,25 +2034,25 @@ Name: Mean, dtype: float64
   </thead>
   <tbody>
     <tr>
-      <th>2018</th>
+      <th>0</th>
       <td>6</td>
       <td>4</td>
       <td>2018</td>
     </tr>
     <tr>
-      <th>2019</th>
+      <th>1</th>
       <td>8</td>
       <td>4</td>
       <td>2019</td>
     </tr>
     <tr>
-      <th>2020</th>
+      <th>2</th>
       <td>4</td>
       <td>2</td>
       <td>2020</td>
     </tr>
     <tr>
-      <th>2021</th>
+      <th>3</th>
       <td>3</td>
       <td>1</td>
       <td>2021</td>

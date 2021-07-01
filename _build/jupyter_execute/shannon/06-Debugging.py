@@ -67,7 +67,7 @@ if True
 # - what type of error it is
 # - and where it _thinks_ it occurred (`^`)
 
-# In[6]:
+# In[2]:
 
 
 # will produce a syntax error
@@ -90,7 +90,7 @@ print(value)
 # 
 # ZeroDivisionError occurs when you try to divide by zero. 
 
-# In[9]:
+# In[3]:
 
 
 # produces ZeroDivisionError
@@ -105,14 +105,14 @@ print(value)
 # 
 # NameError occurs when you try to access a name that Python does not know.
 
-# In[10]:
+# In[4]:
 
 
 # Define a variable
 variable = 12
 
 
-# In[11]:
+# In[5]:
 
 
 # If you typo a name, you will get a NameError
@@ -121,7 +121,7 @@ varaible
 
 # While it's annoying, it's helpful that Python doesn't just _guess_ that you _meant_ 'variable'....because sometimes Python would guess wrong. It's better for Python to just give us the error.
 
-# In[12]:
+# In[6]:
 
 
 # You also get a name error if you try to use the wrong operator for assignment
@@ -132,14 +132,14 @@ new_variable == 1
 # 
 # IndexError occurs when you try to access an index that doesn't exist.
 
-# In[13]:
+# In[7]:
 
 
 my_string = 'COGS18'
 my_string[6]
 
 
-# In[14]:
+# In[8]:
 
 
 # Relatedly, 'KeyError' occurs if you ask for a dictionary key that doesn't exist
@@ -152,7 +152,7 @@ my_dictionary['name3']
 # 
 # ValueError occurs when you try to use an illegal value for something.
 
-# In[15]:
+# In[9]:
 
 
 int('cat')
@@ -160,7 +160,7 @@ int('cat')
 
 # ### TypeError
 
-# In[22]:
+# In[10]:
 
 
 'a_string' + 12
@@ -185,7 +185,7 @@ int('cat')
 # 
 # What type of error will the following code produce?
 
-# In[25]:
+# In[11]:
 
 
 if num > 0
@@ -202,7 +202,7 @@ if num > 0
 # 
 # What type of error will the following code produce?
 
-# In[26]:
+# In[12]:
 
 
 if num > 0:
@@ -219,7 +219,7 @@ if num > 0:
 # 
 # The trace (log) of what Python did as it went through your code. Gets printed out if Python runs into an error.
 
-# In[27]:
+# In[13]:
 
 
 running_sum = 0
@@ -248,7 +248,7 @@ for val in my_list:
 
 # ### Try / Except Block
 
-# In[28]:
+# In[14]:
 
 
 # Try / Except Block
@@ -262,7 +262,7 @@ except:
 
 # ### Try / Except Example 
 
-# In[34]:
+# In[15]:
 
 
 # Example: we want to get an input number from the user
@@ -274,13 +274,13 @@ print('\nmy_num is: ', my_num)
 
 # ### Example with Try / Except
 
-# In[32]:
+# In[16]:
 
 
 int('asdflajksdfal;ksjdf')
 
 
-# In[31]:
+# In[17]:
 
 
 try:
@@ -299,7 +299,7 @@ except:
 # 
 # `raise` is a keyword that tells Python you want to create your own error.
 
-# In[36]:
+# In[18]:
 
 
 my_int = input('An integer please: ')
@@ -314,13 +314,13 @@ print('My integer is: ', my_int)
 # 
 # Edit the code below (replacing `---` with either values or variable names) so that when executed, this cell returns `None`.
 
-# In[38]:
+# In[19]:
 
 
 3 / 0
 
 
-# In[37]:
+# In[20]:
 
 
 num1 = 3
@@ -354,7 +354,7 @@ print(output)
 # 
 # Google: "How to check whether a variable stores an even value _in python_"
 
-# In[ ]:
+# In[21]:
 
 
 # variable my_val
@@ -367,13 +367,13 @@ print(output)
 # 
 # So you try to accomplish the task...below is your first attempt
 
-# In[41]:
+# In[22]:
 
 
 output
 
 
-# In[44]:
+# In[23]:
 
 
 # this code has errors

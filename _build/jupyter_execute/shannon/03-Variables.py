@@ -53,7 +53,7 @@ assert 3!=3
 
 # Programming: a way to ask computer to store values (variables), and do things with them (operations).`
 
-# In[4]:
+# In[3]:
 
 
 # This is a comment. You can write a comment by using a `#`
@@ -68,7 +68,7 @@ my_other_variable = 13 # Comments can be 'inline', like this one
 # In programming, variables are things that store values. Variables are defined with <code>name = value</code>.
 # </div>
 
-# In[5]:
+# In[4]:
 
 
 my_var = 1  # `my_var` is a variable
@@ -77,7 +77,7 @@ my_var = 1  # `my_var` is a variable
 other_var = 'variables are cool'
 
 
-# In[6]:
+# In[5]:
 
 
 # once you create a variable it's stored in your namespace
@@ -102,7 +102,7 @@ other_var
 # 
 # After executing the following code, what will be the value of `my_var`?
 
-# In[2]:
+# In[6]:
 
 
 my_var = 2 
@@ -110,7 +110,7 @@ my_var = 2
 my_var = my_var + 1
 
 
-# In[8]:
+# In[7]:
 
 
 my_var
@@ -125,7 +125,7 @@ my_var
 # 
 # After executing the following code, what will be the value of `diff_var`?
 
-# In[9]:
+# In[8]:
 
 
 diff_var = my_variabel - my_var
@@ -133,7 +133,7 @@ diff_var = my_variabel - my_var
 print(diff_var)
 
 
-# In[10]:
+# In[9]:
 
 
 my_variable - my_var
@@ -211,7 +211,7 @@ my_variable - my_var
 #   </tr>    
 # </table>
 
-# In[11]:
+# In[10]:
 
 
 # you will get an error if you try to assign a variable to one of these words
@@ -234,13 +234,13 @@ try = 6
 # The <b>namespace</b> is the 'place' where all your currently defined code is declared - all the things you have stored in active memory. 
 # </div>
 
-# In[1]:
+# In[11]:
 
 
 get_ipython().run_line_magic('pinfo', 'whos')
 
 
-# In[5]:
+# In[12]:
 
 
 # You can list everything declared in the namespace with '%whos'
@@ -253,7 +253,7 @@ get_ipython().run_line_magic('whos', '')
 # Every variable has a <b>type</b>, which refers to the kind of variable that it is, and how the computer stores that data.
 # </div>
 
-# In[6]:
+# In[13]:
 
 
 # Declare a variable
@@ -269,14 +269,14 @@ type(variable_name)
 # <b>Integers</b> store whole numbers.
 # </div>
 
-# In[7]:
+# In[14]:
 
 
 my_integer = 1
 another_integer = 321
 
 
-# In[10]:
+# In[15]:
 
 
 # integers can be signed
@@ -290,14 +290,14 @@ type(yet_another_integer)
 # <b>Floats</b> store signed, decimal-point numbers.
 # </div>
 
-# In[11]:
+# In[16]:
 
 
 my_float = 1.0
 another_float = -231.45
 
 
-# In[12]:
+# In[17]:
 
 
 type(another_float)
@@ -309,7 +309,7 @@ type(another_float)
 # <b>Strings</b> store characters, as text. 
 # </div>
 
-# In[13]:
+# In[18]:
 
 
 my_string = 'words, words, words'
@@ -319,7 +319,7 @@ another_string = 'more words'
 and_another = "and some more"
 
 
-# In[14]:
+# In[19]:
 
 
 print(and_another)
@@ -330,14 +330,14 @@ type(and_another)
 # 
 # About those quotation marks...
 
-# In[15]:
+# In[20]:
 
 
 my_string = 'This is a single-quoted string.'
 my_string
 
 
-# In[16]:
+# In[21]:
 
 
 my_string = "This is a double-quoted string."
@@ -352,7 +352,7 @@ my_string
 # - use double quotes outside with apostraphe inside quotes
 # - use an escape `\` (backslash) before character
 
-# In[17]:
+# In[22]:
 
 
 # double quotes on outside; single quote inside
@@ -360,7 +360,7 @@ my_string = "i wan't to see a quote."
 my_string
 
 
-# In[18]:
+# In[23]:
 
 
 # backslash to "escape" quotation mark
@@ -374,14 +374,14 @@ string_quote
 # <b>Booleans</b> store <code>True</code> or <code>False</code>. 
 # </div>
 
-# In[22]:
+# In[24]:
 
 
 my_bool = True
 another_bool = False
 
 
-# In[20]:
+# In[25]:
 
 
 type(another_bool)
@@ -393,13 +393,13 @@ type(another_bool)
 # <code>None</code> is a special type that stores <code>None</code>, used to denote a null or empty value.
 # </div>
 
-# In[23]:
+# In[26]:
 
 
 the_concept_of_nothing = None
 
 
-# In[24]:
+# In[27]:
 
 
 type(the_concept_of_nothing)
@@ -409,7 +409,7 @@ type(the_concept_of_nothing)
 # 
 # After executing the following code, what will the type of `var_a` be?
 
-# In[ ]:
+# In[28]:
 
 
 var_a = -17.5
@@ -425,13 +425,13 @@ var_a = -17.5
 # 
 # After executing the following code, what will the type of `var_b` be?
 
-# In[25]:
+# In[29]:
 
 
 var_b = '-17.5'
 
 
-# In[26]:
+# In[30]:
 
 
 type(var_b)
@@ -447,7 +447,7 @@ type(var_b)
 # 
 # After executing the following code, what will the type of the variable `m` be?
 
-# In[27]:
+# In[31]:
 
 
 n = 1
@@ -456,7 +456,7 @@ m = n
 type(m)
 
 
-# In[28]:
+# In[32]:
 
 
 m
@@ -474,7 +474,7 @@ m
 # Variables are names assigned to a value. Values can have more than one name. 
 # </div>
 
-# In[29]:
+# In[33]:
 
 
 # Make a variable, and an alias
@@ -497,14 +497,14 @@ print(b)
 # 
 # The variable types we've talked about today are all **immutable**. This means they cannot be altered after they're created. 
 
-# In[30]:
+# In[34]:
 
 
 immutable_string = 'COGS18 is the best!'
 immutable_string[4]
 
 
-# In[31]:
+# In[35]:
 
 
 # cannot change part of the string after creation
@@ -521,7 +521,7 @@ immutable_string[4] = '0'
 # 
 # You will get an error if Python runs into unanticipated whitespace.
 
-# In[35]:
+# In[36]:
 
 
 a = 1

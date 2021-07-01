@@ -16,7 +16,7 @@ print(name)
 
 # ## Use of the 'sep' keyword in the print statement to determine what character goes in between phrases
 
-# In[ ]:
+# In[2]:
 
 
 name = input('What is your name? ')
@@ -32,13 +32,13 @@ print(name, age, sep=':')
 # #### note that input returns a string object, even if the input is a number
 # 
 
-# In[ ]:
+# In[3]:
 
 
 type(age)
 
 
-# In[ ]:
+# In[4]:
 
 
 # first a bad example...this will go wrong if the user enters a non-numeric value
@@ -46,7 +46,7 @@ age = int(input('How old are you?'))
 type(age)
 
 
-# In[ ]:
+# In[5]:
 
 
 # a more robust way to deal with input
@@ -66,7 +66,7 @@ else:
 # * also allows for expanding the functionality of python - anyone can write a module to support new applications
 # * for the moment just a simple example...will build on this in the coming classes
 
-# In[ ]:
+# In[6]:
 
 
 # simple example
@@ -74,7 +74,7 @@ import math
 print(math.pi)
 
 
-# In[ ]:
+# In[7]:
 
 
 # little more complex...cos method
@@ -88,14 +88,14 @@ print(math.cos(math.pi))
 # #### Let's try some while loops, and we'll also import the "random" module, which has functionality to generate random numbers based on different distributions (uniform, gaussian, etc). 
 # * random.random will generate random numbers from a uniform distribution over the interval [0,1]
 
-# In[ ]:
+# In[8]:
 
 
 # import the entire random module
 import random
 
 
-# In[ ]:
+# In[9]:
 
 
 for i in range(0,6):
@@ -106,7 +106,7 @@ for i in range(0,6):
     print('tails')
 
 
-# In[ ]:
+# In[10]:
 
 
 x = random.random()
@@ -119,7 +119,7 @@ while x<.95:
 
 # ## Another example that will ask for user input until an appropriate value is provided - uses a boolean flag to keep looping until valid user input if provided...
 
-# In[ ]:
+# In[11]:
 
 
 get_input = True
@@ -139,7 +139,7 @@ while get_input:
 # ## While loops and the 'break' statement to exit
 # * An alternate means of stopping, or 'breaking out' of a while loop
 
-# In[ ]:
+# In[12]:
 
 
 while True:

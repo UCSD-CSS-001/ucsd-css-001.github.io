@@ -63,7 +63,7 @@ myobj = MyClass()
 "Hello! My name is {}. My job is {}, and I work on {}".format(myobj.attr_name, job, topic)
 
 
-# In[2]:
+# In[3]:
 
 
 name = "Shannon"
@@ -77,7 +77,7 @@ topic = "Python"
 
 # Sets are a variable type that store **only unique entries**.
 
-# In[3]:
+# In[4]:
 
 
 my_set = set([1, 1, 2, 3, 4])
@@ -86,7 +86,7 @@ my_set
 
 # Like lists, they are iterable & mutable.
 
-# In[4]:
+# In[5]:
 
 
 my_set.add(6)
@@ -97,7 +97,7 @@ my_set
 # 
 # How many values would be in the following set?
 
-# In[5]:
+# In[6]:
 
 
 clicker_set = set([1, 1, 2, 2, 3, 4])
@@ -120,13 +120,13 @@ clicker_set
 
 # "Special editions" of collections we've discussed before (lists, tuples, and dictionaries).
 
-# In[6]:
+# In[7]:
 
 
 from collections import Counter
 
 
-# In[7]:
+# In[8]:
 
 
 # count how many elements there are in collection
@@ -134,19 +134,19 @@ from collections import Counter
 Counter([1, 0, 1, 2, 1])
 
 
-# In[8]:
+# In[9]:
 
 
 import collections
 
 
-# In[9]:
+# In[10]:
 
 
 collections.Counter([1, 0, 1, 2, 1])
 
 
-# In[10]:
+# In[11]:
 
 
 # can count how many of each letter are in there
@@ -165,19 +165,19 @@ Counter("I wonder how many times I use the letter 'e'")
 
 # `any` and `all` evaluate collections for whether elements evaluate as True. 
 
-# In[ ]:
+# In[12]:
 
 
 my_bool_list = [True, False, True]
 
 
-# In[ ]:
+# In[13]:
 
 
 any(my_bool_list)
 
 
-# In[ ]:
+# In[14]:
 
 
 all(my_bool_list)
@@ -187,7 +187,7 @@ all(my_bool_list)
 # 
 # What would the following return?
 
-# In[ ]:
+# In[15]:
 
 
 my_list = [True, True, False, True]
@@ -206,7 +206,7 @@ any(my_list)
 
 # Flexibly return and define instance attributes.
 
-# In[ ]:
+# In[16]:
 
 
 class MyClass():
@@ -219,13 +219,13 @@ class MyClass():
 instance = MyClass()
 
 
-# In[ ]:
+# In[17]:
 
 
 instance.var_a
 
 
-# In[ ]:
+# In[18]:
 
 
 # Get a specified attribute
@@ -233,7 +233,7 @@ instance.var_a
 getattr(instance, 'var_a')
 
 
-# In[ ]:
+# In[19]:
 
 
 # Set a specified attribute
@@ -249,7 +249,7 @@ print(instance.var_b)
 
 # ### `*args`
 
-# In[ ]:
+# In[20]:
 
 
 # use *arguments to demonstrate args
@@ -258,13 +258,13 @@ def tell_audience(*arguments):
         print(arg)
 
 
-# In[ ]:
+# In[21]:
 
 
 tell_audience('asdf')
 
 
-# In[ ]:
+# In[22]:
 
 
 tell_audience("Hello!", 
@@ -274,7 +274,7 @@ tell_audience("Hello!",
 
 # ### `**kwargs`
 
-# In[ ]:
+# In[23]:
 
 
 def tell_audience_kwargs(**info):
@@ -285,7 +285,7 @@ def tell_audience_kwargs(**info):
         print("value: ", value, "\n")
 
 
-# In[ ]:
+# In[24]:
 
 
 tell_audience_kwargs(first='Shannon', 
@@ -302,7 +302,7 @@ tell_audience_kwargs(first='Shannon',
 # `[ expression for item in list if conditional ]`
 # 
 
-# In[ ]:
+# In[25]:
 
 
 # NOT a list comprehension
@@ -317,7 +317,7 @@ for ind in input_list:
 output_list
 
 
-# In[ ]:
+# In[26]:
 
 
 # This list comprehension is equivalent to the cell above
@@ -325,7 +325,7 @@ output_list
 [ind + 1 for ind in [0, 1, 2]]
 
 
-# In[ ]:
+# In[27]:
 
 
 # You can also include conditionals inside a list comprehension
@@ -333,7 +333,7 @@ my_list = [1, 2, 3, 4, 5]
 my_list2 = [val for val in my_list if val % 2 == 0]
 
 
-# In[ ]:
+# In[28]:
 
 
 print(my_list)
@@ -344,7 +344,7 @@ print(my_list2)
 # 
 # What would the following return?
 
-# In[ ]:
+# In[29]:
 
 
 list1 = [3, 4, 5]
@@ -364,26 +364,26 @@ multiplied
 
 # Regular expressions allow you to work with **specified patterns in strings**.
 
-# In[ ]:
+# In[30]:
 
 
 import re
 
 
-# In[ ]:
+# In[31]:
 
 
 my_string = "If 12 Python programmers try to complete 14 tasks in 16 minutes, why?"
 
 
-# In[ ]:
+# In[32]:
 
 
 # can just search for a letter
 re.findall('o', my_string)
 
 
-# In[ ]:
+# In[33]:
 
 
 # but the patterns are where these shine
@@ -394,7 +394,7 @@ re.findall('\d\d', my_string)
 
 # `filter` is a function that takes in another function, and a collection object, and **filters the collection with the function**. 
 
-# In[ ]:
+# In[34]:
 
 
 def is_bool(val):
@@ -404,13 +404,13 @@ def is_bool(val):
         return False
 
 
-# In[ ]:
+# In[35]:
 
 
 #filter?
 
 
-# In[ ]:
+# In[36]:
 
 
 out = []
@@ -421,7 +421,7 @@ for val in [1, False, 's', True]:
 out
 
 
-# In[ ]:
+# In[37]:
 
 
 # apply function to every element of list
@@ -435,19 +435,19 @@ list(filter(is_bool, [1, False, 's', True]))
 # 
 # Can define them in line.
 
-# In[ ]:
+# In[38]:
 
 
 increment = lambda a: a + 1
 
 
-# In[ ]:
+# In[39]:
 
 
 increment(1)
 
 
-# In[ ]:
+# In[40]:
 
 
 # not a lambda function
@@ -458,7 +458,7 @@ def lambda_equivalent(a):
     return output
 
 
-# In[ ]:
+# In[41]:
 
 
 lambda_equivalent(1)
@@ -468,7 +468,7 @@ lambda_equivalent(1)
 # 
 # What would the following return?
 
-# In[ ]:
+# In[42]:
 
 
 my_list = [1, 5, 4, 6, 8, 11, 3, 12]
@@ -486,7 +486,7 @@ new_list
 
 # `map` applies a given function to each element in a collection. 
 
-# In[ ]:
+# In[43]:
 
 
 # create a function
@@ -494,7 +494,7 @@ def double(val):
     return val * 2
 
 
-# In[ ]:
+# In[44]:
 
 
 # map function to each element of list
@@ -502,7 +502,7 @@ my_list = [1, 2, 3, 4]
 list(map(double, my_list))
 
 
-# In[ ]:
+# In[45]:
 
 
 # Note - we can use lambda functions with map
@@ -513,7 +513,7 @@ list(map(lambda x: x *2, my_list))
 
 # You can use a conditional within an assignment, to manipulate what gets assigned given some condition. 
 
-# In[ ]:
+# In[46]:
 
 
 # variable assignment
@@ -521,7 +521,7 @@ condition = False
 my_var = 1 if condition else 2
 
 
-# In[ ]:
+# In[47]:
 
 
 print(my_var)
@@ -531,42 +531,42 @@ print(my_var)
 
 # You can unpack collection objects with `*`, and key, value pairs with `**`. 
 
-# In[ ]:
+# In[48]:
 
 
 def my_func(xx, yy, zz):
     print(xx, yy, zz)
 
 
-# In[ ]:
+# In[49]:
 
 
 # create list
 my_list = [1, 2, 3]
 
 
-# In[ ]:
+# In[50]:
 
 
 # this will error
 my_func(my_list)
 
 
-# In[ ]:
+# In[51]:
 
 
 # unpack the list
 my_func(*my_list)
 
 
-# In[ ]:
+# In[52]:
 
 
 # create dictionary
 my_dict = {'xx' : 1, 'yy' : 2, 'zz' : 3}
 
 
-# In[ ]:
+# In[53]:
 
 
 # unpack the dictionary
@@ -601,7 +601,7 @@ my_func(**my_dict)
 
 # ## Twitter API
 
-# In[ ]:
+# In[54]:
 
 
 # to use this on your computer
@@ -611,7 +611,7 @@ my_func(**my_dict)
 
 # Then, follow the instructions [here](https://www.digitalocean.com/community/tutorials/how-to-authenticate-a-python-application-with-twitter-using-tweepy-on-ubuntu-14-04) for authetication of tweepy with Python.
 
-# In[ ]:
+# In[55]:
 
 
 # Accessing Twitter API from Python
@@ -644,7 +644,7 @@ for status in tweepy.Cursor(api.home_timeline).items(3):
 
 # Operators and special operations for objects are defined by double underscore methods, which we can overload to change how the object acts. 
 
-# In[ ]:
+# In[56]:
 
 
 class Language():
@@ -663,20 +663,20 @@ class Language():
 
 # Reminder: "dunder" is how we refer to those double underscore methods
 
-# In[ ]:
+# In[57]:
 
 
 python = Language('python')
 perl = Language('perl')
 
 
-# In[ ]:
+# In[58]:
 
 
 print(python)
 
 
-# In[ ]:
+# In[59]:
 
 
 python > perl

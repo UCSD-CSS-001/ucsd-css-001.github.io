@@ -140,7 +140,7 @@ my_list
 # = is an assignment operator  
 # == checks for equality
 
-# In[9]:
+# In[4]:
 
 
 # Operators Question #2
@@ -155,7 +155,7 @@ open_var = not False or not True
 print(open_var)
 
 
-# In[6]:
+# In[5]:
 
 
 # Operators Question #3
@@ -164,7 +164,7 @@ math_var =   36 // ((((2 + 3) * 2) / 2) - 3)
 math_var 
 
 
-# In[11]:
+# In[6]:
 
 
 # Operators Question #4
@@ -221,7 +221,7 @@ print(string_concat)
 # 1. Code Block A
 # 2. Code Block B
 
-# In[12]:
+# In[7]:
 
 
 ###### how to check your thinking when you're studying
@@ -240,7 +240,7 @@ else:
 # 
 # A Boolean
 
-# In[14]:
+# In[8]:
 
 
 # Example code to demonstrate:
@@ -284,7 +284,7 @@ print(type(out))
 # 
 # for and while
 
-# In[ ]:
+# In[9]:
 
 
 # Loops Question #2
@@ -296,7 +296,7 @@ while ind <= 4:
     #or ind = ind + 1
 
 
-# In[ ]:
+# In[10]:
 
 
 # Loops Question #3

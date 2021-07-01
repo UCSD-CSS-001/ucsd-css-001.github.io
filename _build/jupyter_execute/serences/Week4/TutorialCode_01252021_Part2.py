@@ -173,7 +173,7 @@ print(school_list[0])
 # ### get just the values
 # 
 
-# In[ ]:
+# In[13]:
 
 
 num_students = uc_enrollment.values()
@@ -182,7 +182,7 @@ print(num_students)
 
 # ## Can get the combined key,value pairs using the items() method
 
-# In[ ]:
+# In[14]:
 
 
 # use items to loop over key/value pairs. 
@@ -193,7 +193,7 @@ for k, v in uc_enrollment.items():
 
 # ## More advanced indexing (and storing function names in a list/dictionary)
 
-# In[ ]:
+# In[15]:
 
 
 my_stuff = ['Minnie', [21, 19], sorted, sum, [100, 20, 20]]

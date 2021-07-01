@@ -33,7 +33,7 @@ print(myVar)
 
 # ## Lists - a collection that is ordered and changeable and allows duplicate members.
 
-# In[ ]:
+# In[3]:
 
 
 # this is a single string object, like we did last week 
@@ -42,7 +42,7 @@ a_str = 'john'
 print(a_str)
 
 
-# In[ ]:
+# In[4]:
 
 
 # introduction to lists - in this case a list of strings!
@@ -60,7 +60,7 @@ print(names[2])
 # * -1 is the last element
 # * -3 is the third to last, etc.
 
-# In[ ]:
+# In[5]:
 
 
 print(names[-1])
@@ -69,7 +69,7 @@ print(names[-3])
 
 # ## you can also make a list using a bunch of str variables
 
-# In[ ]:
+# In[6]:
 
 
 str1 = 'bob'
@@ -87,7 +87,7 @@ names2 = [str3, str2, str1]
 # * the sort method modifies the list
 # * there is also a "sorted" function that does not modify the list...instead, you assign the output of the sorted function to another variable (another list)
 
-# In[ ]:
+# In[7]:
 
 
 names = ['toyota', 'ford', 'honda']
@@ -101,7 +101,7 @@ print(names)
 # ### sort without modifying using the sorted function
 # * note that sorted is a general use **function** that can be used across multiple object types, not just for lists
 
-# In[ ]:
+# In[8]:
 
 
 names = ['john', 'vy', 'sunyoung', 'maggie']
@@ -112,7 +112,7 @@ print(names)
 
 # ## Remove (delete) an item from a list
 
-# In[ ]:
+# In[9]:
 
 
 # redefine names list
@@ -128,7 +128,7 @@ print(names)
 
 # ## Pop an item from a list and assign to another variable
 
-# In[ ]:
+# In[10]:
 
 
 # redefine names list
@@ -145,7 +145,7 @@ print(names)
 # * Create a sequence of numbers
 # * non-inclusive of stop value
 
-# In[ ]:
+# In[11]:
 
 
 x = range(0,15)
@@ -154,7 +154,7 @@ print(x[-1])
 
 # ### Make a list using the range function...
 
-# In[ ]:
+# In[12]:
 
 
 # 0-14 (non inclusive of the last number!)
@@ -165,7 +165,7 @@ print(x)
 # ### Start value, stop value, step value
 # * make a sequence that increments/decrements at a specified step size
 
-# In[ ]:
+# In[13]:
 
 
 skip_num = list(range(0,100,20))

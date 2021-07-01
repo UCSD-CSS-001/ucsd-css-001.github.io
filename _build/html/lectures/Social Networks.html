@@ -96,17 +96,10 @@
  </span>
 </p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1">
   <a class="reference internal" href="../course/syllabus.html">
    Syllabus
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="simple">
-  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../course/schedule.html">
@@ -117,24 +110,44 @@
   <a class="reference internal" href="../course/expectations.html">
    Expectations
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="simple">
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../course/expectations-class.html">
+     Class structure
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../course/expectations-programming.html">
+     Learning to program
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../course/how-to.html">
    Mechanics / How-To
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="simple">
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../course/datahub.html">
+     Datahub assignments
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../course/debugging.html">
+     Debugging
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1">
@@ -156,14 +169,19 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="P01.html">
-   P01: Whirlwind intro
+   P01: Getting oriented
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P01-announcements.html">
+     Announcements (2021-06-29)
+    </a>
+   </li>
    <li class="toctree-l2">
     <a class="reference internal" href="P01-programming.html">
      P01: programming concepts
@@ -171,7 +189,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="P01-jupyter.html">
-     P01: Crash Landing
+     P01: Our environment
     </a>
    </li>
    <li class="toctree-l2">
@@ -181,10 +199,32 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="P02.html">
    P02: Control flow and logic
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P02-conditionals.html">
+     P02: Branching via conditional statement: if..elif..else..
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P02-loops.html">
+     P02: Loops!
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P02-while.html">
+     P02: While loops
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 <p class="caption">
@@ -505,7 +545,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Adon&#39;, &#39;Brielle&#39;, &#39;Demont&#39;, &#39;Eliane&#39;, &#39;Jaime&#39;, &#39;Kensey&#39;, &#39;Maria&#39;, &#39;Nichalos&#39;, &#39;Susanne&#39;, &#39;Talbot&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Christeena&#39;, &#39;Cigi&#39;, &#39;Deshondra&#39;, &#39;Elysia&#39;, &#39;Emmitt&#39;, &#39;Garrette&#39;, &#39;Jaira&#39;, &#39;Neghan&#39;, &#39;Tori&#39;, &#39;Travin&#39;]
 </pre></div>
 </div>
 </div>
@@ -536,16 +576,16 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Adon       [&#39;Brielle&#39;, &#39;Eliane&#39;]
-Brielle    [&#39;Adon&#39;, &#39;Eliane&#39;, &#39;Nichalos&#39;, &#39;Susanne&#39;, &#39;Talbot&#39;]
-Demont     [&#39;Nichalos&#39;]
-Eliane     [&#39;Adon&#39;, &#39;Brielle&#39;, &#39;Nichalos&#39;, &#39;Susanne&#39;, &#39;Talbot&#39;]
-Jaime      [&#39;Nichalos&#39;, &#39;Talbot&#39;]
-Kensey     [&#39;Nichalos&#39;, &#39;Susanne&#39;]
-Maria      [&#39;Susanne&#39;, &#39;Talbot&#39;]
-Nichalos   [&#39;Brielle&#39;, &#39;Demont&#39;, &#39;Eliane&#39;, &#39;Jaime&#39;, &#39;Kensey&#39;, &#39;Susanne&#39;, &#39;Talbot&#39;]
-Susanne    [&#39;Brielle&#39;, &#39;Eliane&#39;, &#39;Kensey&#39;, &#39;Maria&#39;, &#39;Nichalos&#39;]
-Talbot     [&#39;Brielle&#39;, &#39;Eliane&#39;, &#39;Jaime&#39;, &#39;Maria&#39;, &#39;Nichalos&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Christeena [&#39;Emmitt&#39;, &#39;Garrette&#39;, &#39;Tori&#39;, &#39;Travin&#39;]
+Cigi       [&#39;Tori&#39;, &#39;Travin&#39;]
+Deshondra  [&#39;Garrette&#39;, &#39;Jaira&#39;, &#39;Tori&#39;]
+Elysia     [&#39;Emmitt&#39;, &#39;Jaira&#39;]
+Emmitt     [&#39;Christeena&#39;, &#39;Elysia&#39;, &#39;Garrette&#39;, &#39;Tori&#39;]
+Garrette   [&#39;Christeena&#39;, &#39;Deshondra&#39;, &#39;Emmitt&#39;, &#39;Neghan&#39;]
+Jaira      [&#39;Deshondra&#39;, &#39;Elysia&#39;, &#39;Neghan&#39;, &#39;Travin&#39;]
+Neghan     [&#39;Garrette&#39;, &#39;Jaira&#39;]
+Tori       [&#39;Christeena&#39;, &#39;Cigi&#39;, &#39;Deshondra&#39;, &#39;Emmitt&#39;]
+Travin     [&#39;Christeena&#39;, &#39;Cigi&#39;, &#39;Jaira&#39;]
 </pre></div>
 </div>
 </div>
@@ -577,18 +617,18 @@ Talbot     [&#39;Brielle&#39;, &#39;Eliane&#39;, &#39;Jaime&#39;, &#39;Maria&#39
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Adon       has 2 friends with an average of 5.00 friends each
-Brielle    has 5 friends with an average of 4.80 friends each
-Demont     has 1 friends with an average of 7.00 friends each
-Eliane     has 5 friends with an average of 4.80 friends each
-Jaime      has 2 friends with an average of 6.00 friends each
-Kensey     has 2 friends with an average of 6.00 friends each
-Maria      has 2 friends with an average of 5.00 friends each
-Nichalos   has 7 friends with an average of 3.57 friends each
-Susanne    has 5 friends with an average of 4.20 friends each
-Talbot     has 5 friends with an average of 4.20 friends each
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Christeena has 4 friends with an average of 3.75 friends each
+Cigi       has 2 friends with an average of 3.50 friends each
+Deshondra  has 3 friends with an average of 4.00 friends each
+Elysia     has 2 friends with an average of 4.00 friends each
+Emmitt     has 4 friends with an average of 3.50 friends each
+Garrette   has 4 friends with an average of 3.25 friends each
+Jaira      has 4 friends with an average of 2.50 friends each
+Neghan     has 2 friends with an average of 4.00 friends each
+Tori       has 4 friends with an average of 3.25 friends each
+Travin     has 3 friends with an average of 3.33 friends each
 
-People have 1.46 fewer friends than the average number of friends their friends have
+People have 0.31 fewer friends than the average number of friends their friends have
 </pre></div>
 </div>
 </div>
@@ -627,16 +667,16 @@ People have 1.46 fewer friends than the average number of friends their friends 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Adon       can reach 10/10
-Brielle    can reach 10/10
-Demont     can reach 10/10
-Eliane     can reach 10/10
-Jaime      can reach 10/10
-Kensey     can reach 10/10
-Maria      can reach 10/10
-Nichalos   can reach 10/10
-Susanne    can reach 10/10
-Talbot     can reach 10/10
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Christeena can reach 10/10
+Cigi       can reach 10/10
+Deshondra  can reach 10/10
+Elysia     can reach 10/10
+Emmitt     can reach 10/10
+Garrette   can reach 10/10
+Jaira      can reach 10/10
+Neghan     can reach 10/10
+Tori       can reach 10/10
+Travin     can reach 10/10
 </pre></div>
 </div>
 </div>
@@ -649,16 +689,16 @@ Talbot     can reach 10/10
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Adon       {&#39;Adon&#39;: 0, &#39;Brielle&#39;: 1, &#39;Eliane&#39;: 1, &#39;Susanne&#39;: 2, &#39;Nichalos&#39;: 2, &#39;Talbot&#39;: 2, &#39;Maria&#39;: 3, &#39;Kensey&#39;: 3, &#39;Jaime&#39;: 3, &#39;Demont&#39;: 3}
-Brielle    {&#39;Brielle&#39;: 0, &#39;Susanne&#39;: 1, &#39;Eliane&#39;: 1, &#39;Nichalos&#39;: 1, &#39;Talbot&#39;: 1, &#39;Adon&#39;: 1, &#39;Maria&#39;: 2, &#39;Kensey&#39;: 2, &#39;Jaime&#39;: 2, &#39;Demont&#39;: 2}
-Demont     {&#39;Demont&#39;: 0, &#39;Nichalos&#39;: 1, &#39;Jaime&#39;: 2, &#39;Kensey&#39;: 2, &#39;Susanne&#39;: 2, &#39;Eliane&#39;: 2, &#39;Brielle&#39;: 2, &#39;Talbot&#39;: 2, &#39;Maria&#39;: 3, &#39;Adon&#39;: 3}
-Eliane     {&#39;Eliane&#39;: 0, &#39;Susanne&#39;: 1, &#39;Nichalos&#39;: 1, &#39;Brielle&#39;: 1, &#39;Talbot&#39;: 1, &#39;Adon&#39;: 1, &#39;Maria&#39;: 2, &#39;Kensey&#39;: 2, &#39;Jaime&#39;: 2, &#39;Demont&#39;: 2}
-Jaime      {&#39;Jaime&#39;: 0, &#39;Nichalos&#39;: 1, &#39;Talbot&#39;: 1, &#39;Kensey&#39;: 2, &#39;Susanne&#39;: 2, &#39;Eliane&#39;: 2, &#39;Brielle&#39;: 2, &#39;Demont&#39;: 2, &#39;Maria&#39;: 2, &#39;Adon&#39;: 3}
-Kensey     {&#39;Kensey&#39;: 0, &#39;Nichalos&#39;: 1, &#39;Susanne&#39;: 1, &#39;Jaime&#39;: 2, &#39;Eliane&#39;: 2, &#39;Demont&#39;: 2, &#39;Brielle&#39;: 2, &#39;Talbot&#39;: 2, &#39;Maria&#39;: 2, &#39;Adon&#39;: 3}
-Maria      {&#39;Maria&#39;: 0, &#39;Susanne&#39;: 1, &#39;Talbot&#39;: 1, &#39;Nichalos&#39;: 2, &#39;Brielle&#39;: 2, &#39;Kensey&#39;: 2, &#39;Eliane&#39;: 2, &#39;Jaime&#39;: 2, &#39;Demont&#39;: 3, &#39;Adon&#39;: 3}
-Nichalos   {&#39;Nichalos&#39;: 0, &#39;Jaime&#39;: 1, &#39;Kensey&#39;: 1, &#39;Susanne&#39;: 1, &#39;Eliane&#39;: 1, &#39;Demont&#39;: 1, &#39;Brielle&#39;: 1, &#39;Talbot&#39;: 1, &#39;Maria&#39;: 2, &#39;Adon&#39;: 2}
-Susanne    {&#39;Susanne&#39;: 0, &#39;Kensey&#39;: 1, &#39;Maria&#39;: 1, &#39;Eliane&#39;: 1, &#39;Nichalos&#39;: 1, &#39;Brielle&#39;: 1, &#39;Talbot&#39;: 2, &#39;Adon&#39;: 2, &#39;Jaime&#39;: 2, &#39;Demont&#39;: 2}
-Talbot     {&#39;Talbot&#39;: 0, &#39;Jaime&#39;: 1, &#39;Maria&#39;: 1, &#39;Eliane&#39;: 1, &#39;Nichalos&#39;: 1, &#39;Brielle&#39;: 1, &#39;Susanne&#39;: 2, &#39;Adon&#39;: 2, &#39;Demont&#39;: 2, &#39;Kensey&#39;: 2}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Christeena {&#39;Christeena&#39;: 0, &#39;Emmitt&#39;: 1, &#39;Garrette&#39;: 1, &#39;Travin&#39;: 1, &#39;Tori&#39;: 1, &#39;Elysia&#39;: 2, &#39;Deshondra&#39;: 2, &#39;Neghan&#39;: 2, &#39;Cigi&#39;: 2, &#39;Jaira&#39;: 2}
+Cigi       {&#39;Cigi&#39;: 0, &#39;Tori&#39;: 1, &#39;Travin&#39;: 1, &#39;Emmitt&#39;: 2, &#39;Deshondra&#39;: 2, &#39;Christeena&#39;: 2, &#39;Jaira&#39;: 2, &#39;Elysia&#39;: 3, &#39;Garrette&#39;: 3, &#39;Neghan&#39;: 3}
+Deshondra  {&#39;Deshondra&#39;: 0, &#39;Jaira&#39;: 1, &#39;Tori&#39;: 1, &#39;Garrette&#39;: 1, &#39;Elysia&#39;: 2, &#39;Neghan&#39;: 2, &#39;Travin&#39;: 2, &#39;Cigi&#39;: 2, &#39;Emmitt&#39;: 2, &#39;Christeena&#39;: 2}
+Elysia     {&#39;Elysia&#39;: 0, &#39;Jaira&#39;: 1, &#39;Emmitt&#39;: 1, &#39;Deshondra&#39;: 2, &#39;Neghan&#39;: 2, &#39;Travin&#39;: 2, &#39;Tori&#39;: 2, &#39;Garrette&#39;: 2, &#39;Christeena&#39;: 2, &#39;Cigi&#39;: 3}
+Emmitt     {&#39;Emmitt&#39;: 0, &#39;Elysia&#39;: 1, &#39;Tori&#39;: 1, &#39;Garrette&#39;: 1, &#39;Christeena&#39;: 1, &#39;Jaira&#39;: 2, &#39;Cigi&#39;: 2, &#39;Deshondra&#39;: 2, &#39;Neghan&#39;: 2, &#39;Travin&#39;: 2}
+Garrette   {&#39;Garrette&#39;: 0, &#39;Emmitt&#39;: 1, &#39;Deshondra&#39;: 1, &#39;Neghan&#39;: 1, &#39;Christeena&#39;: 1, &#39;Elysia&#39;: 2, &#39;Tori&#39;: 2, &#39;Jaira&#39;: 2, &#39;Travin&#39;: 2, &#39;Cigi&#39;: 3}
+Jaira      {&#39;Jaira&#39;: 0, &#39;Elysia&#39;: 1, &#39;Deshondra&#39;: 1, &#39;Neghan&#39;: 1, &#39;Travin&#39;: 1, &#39;Emmitt&#39;: 2, &#39;Tori&#39;: 2, &#39;Garrette&#39;: 2, &#39;Cigi&#39;: 2, &#39;Christeena&#39;: 2}
+Neghan     {&#39;Neghan&#39;: 0, &#39;Jaira&#39;: 1, &#39;Garrette&#39;: 1, &#39;Elysia&#39;: 2, &#39;Deshondra&#39;: 2, &#39;Travin&#39;: 2, &#39;Emmitt&#39;: 2, &#39;Christeena&#39;: 2, &#39;Tori&#39;: 3, &#39;Cigi&#39;: 3}
+Tori       {&#39;Tori&#39;: 0, &#39;Cigi&#39;: 1, &#39;Emmitt&#39;: 1, &#39;Deshondra&#39;: 1, &#39;Christeena&#39;: 1, &#39;Travin&#39;: 2, &#39;Elysia&#39;: 2, &#39;Garrette&#39;: 2, &#39;Jaira&#39;: 2, &#39;Neghan&#39;: 3}
+Travin     {&#39;Travin&#39;: 0, &#39;Cigi&#39;: 1, &#39;Jaira&#39;: 1, &#39;Christeena&#39;: 1, &#39;Tori&#39;: 2, &#39;Elysia&#39;: 2, &#39;Deshondra&#39;: 2, &#39;Neghan&#39;: 2, &#39;Emmitt&#39;: 2, &#39;Garrette&#39;: 2}
 </pre></div>
 </div>
 </div>
@@ -688,7 +728,7 @@ Talbot     {&#39;Talbot&#39;: 0, &#39;Jaime&#39;: 1, &#39;Maria&#39;: 1, &#39;El
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.711111111111111
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.7333333333333334
 </pre></div>
 </div>
 </div>
@@ -720,7 +760,7 @@ Talbot     {&#39;Talbot&#39;: 0, &#39;Jaime&#39;: 1, &#39;Maria&#39;: 1, &#39;El
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>p=0.2532843602293451 mean=0.5925925925925927
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>p=0.2532843602293451 mean=0.09999999999999999
 </pre></div>
 </div>
 </div>
@@ -756,16 +796,16 @@ Talbot     {&#39;Talbot&#39;: 0, &#39;Jaime&#39;: 1, &#39;Maria&#39;: 1, &#39;El
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Adon       [&#39;Brielle&#39;, &#39;Demont&#39;, &#39;Susanne&#39;, &#39;Talbot&#39;]
-Brielle    [&#39;Adon&#39;, &#39;Demont&#39;, &#39;Eliane&#39;, &#39;Talbot&#39;]
-Demont     [&#39;Adon&#39;, &#39;Brielle&#39;, &#39;Eliane&#39;, &#39;Jaime&#39;]
-Eliane     [&#39;Brielle&#39;, &#39;Demont&#39;, &#39;Jaime&#39;, &#39;Kensey&#39;]
-Jaime      [&#39;Demont&#39;, &#39;Eliane&#39;, &#39;Kensey&#39;, &#39;Maria&#39;]
-Kensey     [&#39;Eliane&#39;, &#39;Jaime&#39;, &#39;Maria&#39;, &#39;Nichalos&#39;]
-Maria      [&#39;Jaime&#39;, &#39;Kensey&#39;, &#39;Nichalos&#39;, &#39;Susanne&#39;]
-Nichalos   [&#39;Kensey&#39;, &#39;Maria&#39;, &#39;Susanne&#39;, &#39;Talbot&#39;]
-Susanne    [&#39;Adon&#39;, &#39;Maria&#39;, &#39;Nichalos&#39;, &#39;Talbot&#39;]
-Talbot     [&#39;Adon&#39;, &#39;Brielle&#39;, &#39;Nichalos&#39;, &#39;Susanne&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Christeena [&#39;Cigi&#39;, &#39;Deshondra&#39;, &#39;Tori&#39;, &#39;Travin&#39;]
+Cigi       [&#39;Christeena&#39;, &#39;Deshondra&#39;, &#39;Elysia&#39;, &#39;Travin&#39;]
+Deshondra  [&#39;Christeena&#39;, &#39;Cigi&#39;, &#39;Elysia&#39;, &#39;Emmitt&#39;]
+Elysia     [&#39;Cigi&#39;, &#39;Deshondra&#39;, &#39;Emmitt&#39;, &#39;Garrette&#39;]
+Emmitt     [&#39;Deshondra&#39;, &#39;Elysia&#39;, &#39;Garrette&#39;, &#39;Jaira&#39;]
+Garrette   [&#39;Elysia&#39;, &#39;Emmitt&#39;, &#39;Jaira&#39;, &#39;Neghan&#39;]
+Jaira      [&#39;Emmitt&#39;, &#39;Garrette&#39;, &#39;Neghan&#39;, &#39;Tori&#39;]
+Neghan     [&#39;Garrette&#39;, &#39;Jaira&#39;, &#39;Tori&#39;, &#39;Travin&#39;]
+Tori       [&#39;Christeena&#39;, &#39;Jaira&#39;, &#39;Neghan&#39;, &#39;Travin&#39;]
+Travin     [&#39;Christeena&#39;, &#39;Cigi&#39;, &#39;Neghan&#39;, &#39;Tori&#39;]
 </pre></div>
 </div>
 </div>
@@ -828,16 +868,16 @@ Talbot     [&#39;Adon&#39;, &#39;Brielle&#39;, &#39;Nichalos&#39;, &#39;Susanne&
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      Adon 5
-    Demont 5
-   Brielle 4
-    Eliane 3
-     Maria 3
-     Jaime 2
-    Kensey 2
-  Nichalos 2
-   Susanne 2
-    Talbot 2
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      Cigi 6
+ Deshondra 4
+    Elysia 4
+Christeena 3
+    Neghan 3
+    Emmitt 2
+  Garrette 2
+     Jaira 2
+      Tori 2
+    Travin 2
 </pre></div>
 </div>
 </div>
@@ -849,7 +889,7 @@ Talbot     [&#39;Adon&#39;, &#39;Brielle&#39;, &#39;Nichalos&#39;, &#39;Susanne&
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_keys([&#39;Brielle&#39;, &#39;Eliane&#39;, &#39;Jaime&#39;, &#39;Kensey&#39;, &#39;Maria&#39;, &#39;Nichalos&#39;, &#39;Susanne&#39;])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_keys([&#39;Christeena&#39;, &#39;Cigi&#39;, &#39;Deshondra&#39;, &#39;Emmitt&#39;, &#39;Garrette&#39;, &#39;Jaira&#39;, &#39;Tori&#39;])
 </pre></div>
 </div>
 </div>

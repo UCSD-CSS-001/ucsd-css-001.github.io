@@ -83,19 +83,19 @@ abc
 # 
 # For a bit more on fixing errors see [debugging](../course/debugging.md)
 
-# In[ ]:
+# In[7]:
 
 
 3 +
 
 
-# In[ ]:
+# In[8]:
 
 
 abc
 
 
-# In[ ]:
+# In[9]:
 
 
 '3' + 4
@@ -103,37 +103,37 @@ abc
 
 # Note that for strings, the quotes have to be closed, and must match.  `'abc'` is an acceptable string literal.  `"abc"` is also an acceptable string literal.  `'abc"`, `"abc'`, `'abc`, `"abc` are all syntax errors because Python cannot figure out where the string started by the first quote is supposed to end:
 
-# In[ ]:
+# In[10]:
 
 
 'abc'
 
 
-# In[ ]:
+# In[11]:
 
 
 "abc"
 
 
-# In[ ]:
+# In[12]:
 
 
 'abc"
 
 
-# In[ ]:
+# In[13]:
 
 
 "abc'
 
 
-# In[ ]:
+# In[14]:
 
 
 'abc
 
 
-# In[ ]:
+# In[15]:
 
 
 "abc
@@ -145,7 +145,7 @@ abc
 # 
 # For instance, the `print()` function prints whatever you give it.
 
-# In[ ]:
+# In[16]:
 
 
 print('hello!')
@@ -156,7 +156,7 @@ print('with the print function, we can print many lines in one cell!')
 # 
 # Python treats white space (i.e., spaces, tabs, etc.) as meaningful.  Some puzzling syntax errors might arise from impropertly indenting code.
 
-# In[ ]:
+# In[17]:
 
 
 print('hello')
@@ -180,25 +180,25 @@ print('hello')
 # 
 # the `type()` function takes some argument, and returns the data type of the object referenced by that argument.  If we pass in a literal, it will tell us the literal's type.
 
-# In[ ]:
+# In[18]:
 
 
 type('34')
 
 
-# In[ ]:
+# In[19]:
 
 
 type(34.0)
 
 
-# In[ ]:
+# In[20]:
 
 
 type(34)
 
 
-# In[ ]:
+# In[21]:
 
 
 type(True)
@@ -215,7 +215,7 @@ type(True)
 # 
 # Variable contents that look similar to the human eye may be treated very differently by the computer.  Let's not worry about all these particular types just yet, just remember that the *type* of a variable is of utmost importance to a computer, but is not intuitively relevant to most people.
 
-# In[13]:
+# In[22]:
 
 
 a = '345'
@@ -239,7 +239,7 @@ for name,var in zip('abcdefghij', (a,b,c,d,e,f,g,h,i,j)):
 # 
 # We can check if a given variable is a certain type with the isinstance() function
 
-# In[ ]:
+# In[23]:
 
 
 x = 34
@@ -252,31 +252,31 @@ isinstance(x, str) # False
 # 
 # Operators are special symbols that take some arguments, do something to them, and return some value.  The basic binary (meaning they take two values) arithmetic operators are very familiar, when applied to numbers:
 
-# In[ ]:
+# In[24]:
 
 
 3 + 4
 
 
-# In[ ]:
+# In[25]:
 
 
 3 - 4
 
 
-# In[ ]:
+# In[26]:
 
 
 3 * 4
 
 
-# In[ ]:
+# In[27]:
 
 
 3 / 4
 
 
-# In[ ]:
+# In[28]:
 
 
 3 ** 4
@@ -284,7 +284,7 @@ isinstance(x, str) # False
 
 # Note, that last one might be a bit surprising.  the `**` operator corresponds to exponentiation, so `3 ** 4` calculates $3^4$ (i.e., $3 * 3 * 3 *3$)
 
-# In[ ]:
+# In[29]:
 
 
 11 % 7
@@ -296,13 +296,13 @@ isinstance(x, str) # False
 # 
 # As in basic arithmetic, operators have precedence: some of them are executed first, and parentheses can be used to group operations to set a precedence order.
 
-# In[ ]:
+# In[30]:
 
 
 14 - 3 * 2
 
 
-# In[ ]:
+# In[31]:
 
 
 (14 - 3) * 2
@@ -314,7 +314,7 @@ isinstance(x, str) # False
 # 
 # For instance, some operations don't make any sense for certain types:
 
-# In[ ]:
+# In[32]:
 
 
 'css ' * 'class'
@@ -324,7 +324,7 @@ isinstance(x, str) # False
 # 
 # Some confusion may arise because, sometimes, the operation might look meaningful to us, but not to Python, because Python does not interpret code the same way we do.  For instance `'3' * '4'` makes sense to us, but not to Python.  The reason is that to Python `'3'` and `'4'` are strings, the fact that those strings *could* be interpreted as numbers is irrelevant for Python until we explicitly ask it to interpret those strings as integers.  At the level of data types, `'3'` and `'4'` are no different from a string like `'css'`.  All it knows is that you have asked it to apply `*` to two strings, and it does not think that is a valid operation.
 
-# In[ ]:
+# In[33]:
 
 
 '3' * '4'
@@ -334,7 +334,7 @@ isinstance(x, str) # False
 # 
 # When *we* see `'3' * '4'` we are implicitly converting ("casting") the strings into integers.  We need to do so explicitly for python to understand.  Which we can do with the `int()` function.
 
-# In[ ]:
+# In[34]:
 
 
 int('3') * int('4')
@@ -342,7 +342,7 @@ int('3') * int('4')
 
 # Of course, some strings cannot be converted to integers, what would it even mean?
 
-# In[ ]:
+# In[35]:
 
 
 int('css')
@@ -350,7 +350,7 @@ int('css')
 
 # Some types of conversion might make sense to us, but Python does not understand them:
 
-# In[ ]:
+# In[36]:
 
 
 int('three')
@@ -367,19 +367,19 @@ int('three')
 # 
 # These are mostly obvious: `+` applied to two numbers returns their sum.  Slightly less obvious is what number data type it returns: for two integers it returns another integer, but if a float is involved, it will return a float.
 
-# In[ ]:
+# In[37]:
 
 
 3 + 3
 
 
-# In[ ]:
+# In[38]:
 
 
 3.0 + 3.0
 
 
-# In[ ]:
+# In[39]:
 
 
 3 + 3.0
@@ -389,7 +389,7 @@ int('three')
 # 
 # - `str + str -> str`: when applied to two strings, `+` returns the concatenation of the two strings.
 
-# In[ ]:
+# In[40]:
 
 
 '3' + '3'
@@ -397,7 +397,7 @@ int('three')
 
 # Some combinations of types, however, do not work with `+`:  `str + int` will return a TypeError.
 
-# In[ ]:
+# In[41]:
 
 
 '3' + 3
@@ -409,19 +409,19 @@ int('three')
 # 
 # This has a certain logic to it: if we think of multiplication as repeated addition, and addition of strings is concatenation, then multiplication of strings would be repeated concatenation.
 
-# In[ ]:
+# In[42]:
 
 
 'a' * 5
 
 
-# In[ ]:
+# In[43]:
 
 
 2 * 'hip ' + 'hooray'
 
 
-# In[ ]:
+# In[44]:
 
 
 'a' * 5.0
@@ -451,7 +451,7 @@ int('three')
 # > **Assignment** is a procedural instruction, where we tell the computer to evaluate the stuff on the right hand side, and assign the output to the left hand side.  So a statement like `x = x+1` is totally fine.  We calculate `x+1` on the right hand side, then assign that value to `x`.  The net effect is that we have incremented the value of `x` by 1.
 # 
 
-# In[ ]:
+# In[45]:
 
 
 greeting = 'Hello!  This is a long string describing how we greet you!'
@@ -461,7 +461,7 @@ print(greeting)
 
 # By assigning values to variables, we can use them many times.
 
-# In[ ]:
+# In[46]:
 
 
 radius = 4
@@ -475,7 +475,7 @@ print('circumference: ', 2 * pi * radius)
 # 
 # Within a given code block, instructions are executed in a particular sequence, and future instructions (such as changing the value of a variable) do not change the calculations (and assignments) from prior instructions:
 
-# In[ ]:
+# In[47]:
 
 
 a = 3
@@ -522,7 +522,7 @@ print('a*b: ', a*b)
 # 
 # Below I demonstrate the second method:
 
-# In[ ]:
+# In[48]:
 
 
 # this line clears all prior variables from memory
@@ -555,7 +555,7 @@ print('a*b: ', a*b)
 # 
 # Important Note: This kind of logic for stepping through code works great when considering stand alone scripts.  Notebooks, however, are pretty tricky, because each cell runs code in the same environment, so the memory state at the start of the cell is determined by which cells had been run previously.  (this is why I used `%reset -f` above, to clear all variables from prior cells).
 
-# In[ ]:
+# In[49]:
 
 
 # note that x is still in memory, even though it was not defined in this cell!
@@ -566,13 +566,13 @@ print(x)
 # 
 # In jupyter notebooks, you can use the 'line magic' commands `%who` to see a list of currently declared variables in memory, and `%whos` to also see their values.
 
-# In[ ]:
+# In[50]:
 
 
 get_ipython().run_line_magic('who', '')
 
 
-# In[ ]:
+# In[51]:
 
 
 get_ipython().run_line_magic('whos', '')
@@ -580,7 +580,7 @@ get_ipython().run_line_magic('whos', '')
 
 # ### Print debugging
 
-# In[ ]:
+# In[52]:
 
 
 a = input('enter number a: ')
@@ -590,7 +590,7 @@ print(a+b)
 
 # The most generic (and arguably most powerful) way to figure out why a program is not doing what you want it to do (i.e., to "debug" a program) is to insert `print()` statements into the code, to ask the program to print out the current values (and types!) of various variables in memory.  Often this will reveal that variables do not have the values you expected, and you can figure out at what point in the program your expectations diverge from what the code is actually doing.
 
-# In[ ]:
+# In[53]:
 
 
 a = input('enter number a: ')

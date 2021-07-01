@@ -145,7 +145,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../course/debugging.html">
-     How to debug and ask debugging questions
+     Debugging
     </a>
    </li>
   </ul>
@@ -178,13 +178,18 @@
   </label>
   <ul>
    <li class="toctree-l2">
+    <a class="reference internal" href="../../lectures/P01-announcements.html">
+     Announcements (2021-06-29)
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../../lectures/P01-programming.html">
      P01: programming concepts
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../lectures/P01-jupyter.html">
-     P01: Crash Landing
+     P01: Our environment
     </a>
    </li>
    <li class="toctree-l2">
@@ -194,10 +199,32 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../lectures/P02.html">
    P02: Control flow and logic
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../lectures/P02-conditionals.html">
+     P02: Branching via conditional statement: if..elif..else..
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../lectures/P02-loops.html">
+     P02: Loops!
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../lectures/P02-while.html">
+     P02: While loops
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 <p class="caption">
@@ -528,6 +555,11 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>y is not a thing, why are you trying to print it???
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="you-can-also-catch-specific-errors-to-provide-even-more-specific-feedback-about-what-happened">
 <h2>You can also catch specific errors to provide even more specific feedback about what happened.<a class="headerlink" href="#you-can-also-catch-specific-errors-to-provide-even-more-specific-feedback-about-what-happened" title="Permalink to this headline">¶</a></h2>
@@ -546,6 +578,11 @@
 <span class="c1">#  if anything else bad happened, do this...</span>
 <span class="k">except</span><span class="p">:</span> 
   <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;some error happened, not a name error&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>y is not defined
 </pre></div>
 </div>
 </div>
@@ -577,6 +614,12 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
+20
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="can-catch-multiple-types-of-errors">
 <h3>Can catch multiple types of errors…<a class="headerlink" href="#can-catch-multiple-types-of-errors" title="Permalink to this headline">¶</a></h3>
@@ -600,6 +643,20 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">5</span><span class="o">-</span><span class="n">e1021e1007e1</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>   <span class="c1">#print(x * y)</span>
+<span class="ne">----&gt; </span><span class="mi">9</span>   <span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="o">/</span><span class="n">w</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> 
+<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="k">except</span> <span class="p">(</span><span class="ne">TypeError</span><span class="p">):</span>
+
+<span class="ne">NameError</span>: name &#39;z&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="finally-executes-regardless-of-try-except-outcome">
@@ -615,6 +672,12 @@
   
 <span class="k">finally</span><span class="p">:</span> 
   <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;you finished the try-except code block&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>y throws a name error
+you finished the try-except code block
 </pre></div>
 </div>
 </div>
@@ -672,10 +735,20 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>john my name is
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">print_msg</span><span class="p">(</span><span class="n">postfix</span><span class="o">=</span><span class="s1">&#39;john&#39;</span><span class="p">,</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;my name is&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>my name is john
 </pre></div>
 </div>
 </div>
@@ -707,6 +780,11 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -724,6 +802,11 @@
 <span class="n">val</span> <span class="o">=</span> <span class="n">add_two</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">12</span><span class="p">)</span>
 <span class="nb">type</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
 <span class="n">val</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12
 </pre></div>
 </div>
 </div>
@@ -754,6 +837,12 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+error
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="so-notice-that-things-like-the-sort-method-will-modify-the-list-even-though-its-local-to-the-function">
 <h3>So notice that things like the sort method will modify the list, even though its “local” to the function<a class="headerlink" href="#so-notice-that-things-like-the-sort-method-will-modify-the-list-even-though-its-local-to-the-function" title="Permalink to this headline">¶</a></h3>
@@ -779,6 +868,11 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;ella&#39;, &#39;jack&#39;, &#39;john&#39;]
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="but-if-you-used-sorted-or-something-else-that-doesn-t-perm-modify-the-list-then-you-would-need-to-return-the-sorted-value">
@@ -798,6 +892,12 @@
 <span class="n">s_my_list</span> <span class="o">=</span> <span class="n">new_sorted_list</span><span class="p">(</span><span class="n">my_list</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">my_list</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">s_my_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;john&#39;, &#39;ella&#39;, &#39;jack&#39;]
+[&#39;ella&#39;, &#39;jack&#39;, &#39;john&#39;]
 </pre></div>
 </div>
 </div>
@@ -850,6 +950,11 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>30.0
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="or-pass-in-a-list-use-the">
@@ -858,6 +963,11 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">50</span><span class="p">]</span>
 <span class="n">comp_avg</span><span class="p">(</span><span class="o">*</span><span class="n">nums</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>30.0
 </pre></div>
 </div>
 </div>
@@ -888,6 +998,27 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">27</span><span class="o">-</span><span class="mi">437400</span><span class="n">cbab58</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> 
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="ne">----&gt; </span><span class="mi">7</span>   <span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;What is your name: &#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>   <span class="n">food</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;What is your fav food: &#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> 
+
+<span class="nn">/opt/homebrew/anaconda3/lib/python3.8/site-packages/ipykernel/kernelbase.py</span> in <span class="ni">raw_input</span><span class="nt">(self, prompt)</span>
+<span class="g g-Whitespace">    </span><span class="mi">855</span>         <span class="s2">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">856</span><span class="s2">         if not self._allow_stdin:</span>
+<span class="ne">--&gt; </span><span class="mi">857</span><span class="s2">             raise StdinNotImplementedError(</span>
+<span class="g g-Whitespace">    </span><span class="mi">858</span><span class="s2">                 &quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">859</span><span class="s2">             )</span>
+
+<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -906,6 +1037,27 @@
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;answer only y or n&#39;</span><span class="p">)</span>
     
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;this is where the stimulus presentation code would go&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">28</span><span class="o">-</span><span class="n">f31acd2caae3</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> 
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="ne">----&gt; </span><span class="mi">5</span>   <span class="n">stim_trigger</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Start stimus presentation[y/n] &#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> 
+<span class="g g-Whitespace">      </span><span class="mi">7</span>   <span class="k">if</span> <span class="n">stim_trigger</span> <span class="o">==</span> <span class="s1">&#39;y&#39;</span><span class="p">:</span>
+
+<span class="nn">/opt/homebrew/anaconda3/lib/python3.8/site-packages/ipykernel/kernelbase.py</span> in <span class="ni">raw_input</span><span class="nt">(self, prompt)</span>
+<span class="g g-Whitespace">    </span><span class="mi">855</span>         <span class="s2">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">856</span><span class="s2">         if not self._allow_stdin:</span>
+<span class="ne">--&gt; </span><span class="mi">857</span><span class="s2">             raise StdinNotImplementedError(</span>
+<span class="g g-Whitespace">    </span><span class="mi">858</span><span class="s2">                 &quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">859</span><span class="s2">             )</span>
+
+<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
 </pre></div>
 </div>
 </div>

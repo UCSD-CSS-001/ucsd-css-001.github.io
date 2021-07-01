@@ -147,7 +147,7 @@ exponentiate(number=2, 3)
 # 
 # (This may look like what we did above, but here we are including a default value for one parameter during function definition. During function *execution*, you can't mix and match using positional vs. keywords)
 
-# In[ ]:
+# In[10]:
 
 
 def exponentiate(number, exponent=2):    
@@ -158,7 +158,7 @@ def exponentiate(number, exponent=2):
 # 
 # What will the following code snippet print?
 
-# In[9]:
+# In[11]:
 
 
 def exponentiate(number, exponent = 2):    
@@ -201,7 +201,7 @@ exponentiate(number=2, exponent=3)
 
 # In other words: methods "belong to" an object.
 
-# In[13]:
+# In[12]:
 
 
 # The `append` method, defined on lists
@@ -212,7 +212,7 @@ print(my_list)
 
 # The method `append()` is called directly on the list `my_list`
 
-# In[14]:
+# In[13]:
 
 
 # append is a method for lists
@@ -221,7 +221,7 @@ my_string = 'cogs18'
 my_string.append('!')
 
 
-# In[17]:
+# In[14]:
 
 
 # The `is_integer()` method, defined on floats
@@ -229,7 +229,7 @@ my_float = 12.2
 my_float.is_integer()
 
 
-# In[18]:
+# In[15]:
 
 
 # The `is_integer()` method, attempted on an integer
@@ -242,28 +242,28 @@ my_int.is_integer()
 # 
 # There are a whole bunch of string methods, all described [here](https://www.w3schools.com/python/python_ref_string.asp). We'll review a few of the most commonly used here.
 
-# In[20]:
+# In[16]:
 
 
 # Make a string all lower case
 'aBcDE'.lower()
 
 
-# In[23]:
+# In[17]:
 
 
 # Make a string all upper case
 'aBc'.upper()
 
 
-# In[24]:
+# In[18]:
 
 
 # Capitalize a string
 'python is great'.capitalize()
 
 
-# In[25]:
+# In[19]:
 
 
 # Find the index of where a string starts 
@@ -274,7 +274,7 @@ my_int.is_integer()
 # 
 # What will the following code snippet print out?
 
-# In[26]:
+# In[20]:
 
 
 inputs = ['fIx', 'tYpiNg', 'lIkE', 'tHiS']
@@ -296,13 +296,13 @@ output.capitalize()
 # 
 # There are also a bunch of list methods, all described [here](https://www.w3schools.com/python/python_ref_list.asp). You've seen some of these before, but we'll review a few of the most commonly used here.
 
-# In[29]:
+# In[21]:
 
 
 get_ipython().run_line_magic('pinfo', 'list.sort')
 
 
-# In[28]:
+# In[22]:
 
 
 # sort sorts integers in numerical orders
@@ -311,14 +311,14 @@ ints.sort()
 ints
 
 
-# In[30]:
+# In[23]:
 
 
 ints.sort(reverse=True)
 ints
 
 
-# In[31]:
+# In[24]:
 
 
 # append adds to the end of a list
@@ -326,7 +326,7 @@ ints.append(2)
 ints
 
 
-# In[32]:
+# In[25]:
 
 
 # remove value from list
@@ -334,13 +334,13 @@ ints.remove(40)
 ints
 
 
-# In[33]:
+# In[26]:
 
 
 get_ipython().run_line_magic('pinfo', 'list.remove')
 
 
-# In[34]:
+# In[27]:
 
 
 # reverse order of list
@@ -352,7 +352,7 @@ ints
 # 
 # What will the following code snippet print out?
 
-# In[35]:
+# In[28]:
 
 
 list_string = ['a', 'c', 'd', 'b']
@@ -372,7 +372,7 @@ list_string
 # As with string and list methods, there are many described [here](https://www.w3schools.com/python/python_ref_dictionary.asp) that are helpful when working with dictionaries.
 # 
 
-# In[36]:
+# In[29]:
 
 
 car = {
@@ -385,7 +385,7 @@ car = {
 car.keys()
 
 
-# In[37]:
+# In[30]:
 
 
 # get returns the value of a specified key
@@ -398,14 +398,14 @@ print(mod)
 print(mod2)
 
 
-# In[ ]:
+# In[31]:
 
 
 # previously done this by indexing
 print(car['model'])
 
 
-# In[38]:
+# In[32]:
 
 
 # update adds a key-value pair
@@ -448,7 +448,7 @@ print(car)
 
 # #### List methods that are in place
 
-# In[39]:
+# In[33]:
 
 
 # Reverse a list
@@ -458,7 +458,7 @@ my_list.reverse()
 print(my_list)
 
 
-# In[40]:
+# In[34]:
 
 
 # Sort a list
@@ -470,20 +470,20 @@ print(my_numbers)
 
 # #### Dictionary methods that are not in place
 
-# In[41]:
+# In[35]:
 
 
 car
 
 
-# In[42]:
+# In[36]:
 
 
 # Return the keys in the dictionary
 out = car.keys() 
 
 
-# In[43]:
+# In[37]:
 
 
 # print keys
@@ -491,7 +491,7 @@ print(type(out))
 print(out)
 
 
-# In[44]:
+# In[38]:
 
 
 # car has not changed
@@ -499,7 +499,7 @@ print(type(car))
 print(car)
 
 
-# In[45]:
+# In[39]:
 
 
 # Return the values in the dicionary
@@ -510,14 +510,14 @@ car.values()
 
 # Typing the object/variable name you want to find methods for followed by a '.' and then pressing tab will display all the methods available for that type of object.
 
-# In[46]:
+# In[40]:
 
 
 # Define a test string
 my_string = 'Python'
 
 
-# In[ ]:
+# In[41]:
 
 
 # See all the available methods on an object with tab complete
@@ -526,7 +526,7 @@ my_string.
 
 # Using the function `dir()` returns all methods available
 
-# In[47]:
+# In[42]:
 
 
 # For our purposes now, you can ignore any leading underscores (these are special methods)
@@ -551,7 +551,7 @@ dir(my_string)
 
 # ### Method / Function Comparison Example
 
-# In[48]:
+# In[43]:
 
 
 my_float = 11.0
@@ -564,14 +564,14 @@ print(my_float.is_integer())
 print(float.is_integer(my_float))
 
 
-# In[49]:
+# In[44]:
 
 
 # method documentation
 get_ipython().run_line_magic('pinfo', 'float.is_integer')
 
 
-# In[50]:
+# In[45]:
 
 
 # function documentation
@@ -582,7 +582,7 @@ get_ipython().run_line_magic('pinfo', 'type')
 # 
 # You _could_ write a function to check whether a float was an integer and use it as a function (rather than the method `.is_integer()`) ...and we know how to do that!
 
-# In[51]:
+# In[46]:
 
 
 def is_integer(my_float):
@@ -595,7 +595,7 @@ def is_integer(my_float):
     return is_int
 
 
-# In[52]:
+# In[47]:
 
 
 print(my_float)
@@ -617,7 +617,7 @@ is_integer(my_float)
 # 
 # If you write a function called `is_odd()` which takes an input `value`, 
 
-# In[ ]:
+# In[48]:
 
 
 def is_odd(value):
@@ -631,7 +631,7 @@ def is_odd(value):
 
 # to use that function, you would execute `is_odd(value)` ....something like `is_odd(value = 6)`
 
-# In[ ]:
+# In[49]:
 
 
 out = is_odd(6)
@@ -640,7 +640,7 @@ out
 
 # Later on, if you wanted to use that function _within another function_ you still have to pass an input to the function.
 
-# In[ ]:
+# In[50]:
 
 
 def new_function(my_list):
@@ -652,7 +652,7 @@ def new_function(my_list):
             
 
 
-# In[ ]:
+# In[51]:
 
 
 new_function([1,2,3,4])

@@ -124,27 +124,27 @@ math.sqrt(9)
 
 # ### `import` example: random module
 
-# In[8]:
+# In[7]:
 
 
 import random
 
 
-# In[9]:
+# In[8]:
 
 
 # Random is also a module
 type(random)
 
 
-# In[10]:
+# In[9]:
 
 
 # Explore what is available in random
 dir(random)
 
 
-# In[ ]:
+# In[10]:
 
 
 # working with random
@@ -174,7 +174,7 @@ get_ipython().run_line_magic('pinfo2', 'random.choice')
 get_ipython().run_line_magic('pinfo', 'random.sample')
 
 
-# In[16]:
+# In[14]:
 
 
 # Random example
@@ -192,14 +192,14 @@ print(chosen)
 # <code>from</code> and <code>as</code> allows us to decide exactly what objects to import into our namespace, and what we call them (in our namespace).
 # </div>
 
-# In[17]:
+# In[15]:
 
 
 # Import a specific object from a module
 from random import choice
 
 
-# In[18]:
+# In[16]:
 
 
 ## do NOT have to type module name 
@@ -208,7 +208,7 @@ from random import choice
 choice(to_choose_from)
 
 
-# In[19]:
+# In[17]:
 
 
 # Import a module with a specific name in our namespace
@@ -216,7 +216,7 @@ choice(to_choose_from)
 import collections as cols
 
 
-# In[ ]:
+# In[18]:
 
 
 ## collections is not defined
@@ -224,7 +224,7 @@ import collections as cols
 collections.
 
 
-# In[ ]:
+# In[19]:
 
 
 # this is how you would do it
@@ -251,7 +251,7 @@ from string import punctuation as punc
 
 # #### Clicker Question Answer
 
-# In[23]:
+# In[21]:
 
 
 # Check our imports
@@ -262,31 +262,31 @@ from string import punctuation as punc
 import ascii_letters from string
 
 
-# In[15]:
+# In[22]:
 
 
 from string import ascii_letters
 
 
-# In[16]:
+# In[23]:
 
 
 get_ipython().run_line_magic('pinfo', 'ascii_letters')
 
 
-# In[17]:
+# In[24]:
 
 
 ascii_letters
 
 
-# In[19]:
+# In[25]:
 
 
 from string import punctuation
 
 
-# In[20]:
+# In[26]:
 
 
 punctuation
@@ -306,7 +306,7 @@ punctuation
 # 
 # If you want to practice using import with the `remote` example in lecture, store the code in the next cell in a text file saved as `remote.py`. Be sure this is saved in the same directory (folder) as the notebook from which you're trying to call it.
 
-# In[ ]:
+# In[27]:
 
 
 def my_remote_function(input_1, input_2):
@@ -345,21 +345,21 @@ class MyNumbers():
         return self.num2 - self.num1
 
 
-# In[1]:
+# In[28]:
 
 
 # Import some custom code
 from remote import my_remote_function
 
 
-# In[2]:
+# In[29]:
 
 
 # Investigate our imported function
 get_ipython().run_line_magic('pinfo', 'my_remote_function')
 
 
-# In[3]:
+# In[30]:
 
 
 # Run our function
@@ -368,14 +368,14 @@ my_remote_function(2, 1)
 
 # ## Importing Custom Code II
 
-# In[1]:
+# In[31]:
 
 
 # Import a class class from an external module
 from remote import MyNumbers
 
 
-# In[2]:
+# In[32]:
 
 
 # Define an instance of our custom class
@@ -383,14 +383,14 @@ nums = MyNumbers(2, 3)
 type(nums)
 
 
-# In[3]:
+# In[33]:
 
 
 # Check 
 nums.add()
 
 
-# In[4]:
+# In[34]:
 
 
 # Check the definition of the code we imported
@@ -399,39 +399,39 @@ get_ipython().run_line_magic('pinfo2', 'nums.add')
 
 # ## Name Conflicts
 
-# In[5]:
+# In[35]:
 
 
 from random import choice
 
 
-# In[6]:
+# In[36]:
 
 
 # choice is currently from random module
 get_ipython().run_line_magic('pinfo', 'choice')
 
 
-# In[8]:
+# In[37]:
 
 
 choice([1, 2, 3, 4, 5])
 
 
-# In[9]:
+# In[38]:
 
 
 from remote import choice 
 
 
-# In[10]:
+# In[39]:
 
 
 # now it's from my remote module
 get_ipython().run_line_magic('pinfo', 'choice')
 
 
-# In[11]:
+# In[40]:
 
 
 choice([1, 2, 3, 4, 5])
@@ -447,7 +447,7 @@ choice([1, 2, 3, 4, 5])
 # 
 # This is generally considered not to be the best, as it is then unclear in your code exactly where the functionality came from.
 
-# In[ ]:
+# In[41]:
 
 
 # avoid doing this
@@ -456,7 +456,7 @@ choice([1, 2, 3, 4, 5])
 from random import *
 
 
-# In[12]:
+# In[42]:
 
 
 # a valid way to import
@@ -464,7 +464,7 @@ from random import choice
 choice([2,3,4])
 
 
-# In[13]:
+# In[43]:
 
 
 # a valid way to import
@@ -477,7 +477,7 @@ random.choice([2,3,4,])
 # 
 # If you want to run your own script example in lecture, store the code in the next cell in a text file saved as `remote_script.py`. Be sure this is saved in the same directory (folder) as the notebook from which you're trying to call it.
 
-# In[ ]:
+# In[44]:
 
 
 from remote import MyNumbers
@@ -486,7 +486,7 @@ print("nums value: ", nums)
 print("nums type: ", type(nums))
 
 
-# In[14]:
+# In[45]:
 
 
 # run the script
