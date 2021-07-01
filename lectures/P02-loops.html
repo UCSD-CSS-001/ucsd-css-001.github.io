@@ -487,6 +487,9 @@
                 
   <div class="section" id="p02-loops">
 <h1>P02: Loops!<a class="headerlink" href="#p02-loops" title="Permalink to this headline">¶</a></h1>
+<p>Loops are a control structure that allows repeated execution of the same instructions.  The canonical loop is a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop.  It checks if a condition is met, and executes its code block if it is met.  If the condition is not met, it proceeds to the instructions following its code block.  All loops basically have this structure, however, some are a bit more convenient, and less error prone than while loops.  In particular <code class="docutils literal notranslate"><span class="pre">for</span></code> loops are a great convenience which we will cover here.</p>
+<p>Here is a picture of the loop control flow:</p>
+<p><img alt="loop" src="../_images/loop-flow.jpg" /></p>
 <div class="section" id="lists">
 <h2>Lists<a class="headerlink" href="#lists" title="Permalink to this headline">¶</a></h2>
 <p>So far we have dealt with <em>atomic</em> data types.  We will also want to work with compound data types that contain lots of things.  The most common compound data type in Python is a <strong>list</strong>.  A list is a <strong>sequence</strong> of objects, which can be created with square brackets: <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3]</span></code>.</p>
@@ -669,9 +672,7 @@ end of for block for: 5
 <h3><code class="docutils literal notranslate"><span class="pre">break</span></code> example<a class="headerlink" href="#break-example" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lst</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
-
-<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">):</span>
 
     <span class="k">if</span> <span class="n">item</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
         <span class="k">break</span>
