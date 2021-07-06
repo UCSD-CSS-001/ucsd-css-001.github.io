@@ -36,6 +36,8 @@ parts:
     chapters:
       - file: lectures/week-02
       - file: lectures/P03
+        sections:
+          - file: lectures/P03-sequence
       - file: lectures/P04
   - caption: Week 3
     chapters:
