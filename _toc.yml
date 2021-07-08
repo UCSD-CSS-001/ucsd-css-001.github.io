@@ -41,6 +41,7 @@ parts:
       - file: lectures/P04
         sections:
           - file: lectures/P04-strings
+          - file: live/Lecture_4
   - caption: Week 3
     chapters:
       - file: lectures/week-03
