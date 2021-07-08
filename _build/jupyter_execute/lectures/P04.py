@@ -2,13 +2,8 @@
 # coding: utf-8
 
 # 
-# # P04: dictionaries, sets, and files
+# # P04: strings
 # 
-# In which we cover:
-# 
-# - dictionaries
-# - sets
-# - reading files
 # 
 # 
 # 

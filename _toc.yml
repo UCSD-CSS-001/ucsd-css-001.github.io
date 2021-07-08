@@ -40,7 +40,7 @@ parts:
           - file: lectures/P03-sequence
       - file: lectures/P04
         sections:
-          - file: lectures/P03-sequence
+          - file: lectures/P04-strings
   - caption: Week 3
     chapters:
       - file: lectures/week-03
