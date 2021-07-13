@@ -48,6 +48,7 @@ parts:
       - file: lectures/P05
         sections:
           - file: lectures/P05-dictionaries
+          - file: live/Lecture_5
       - file: lectures/P06
   - caption: Week 4
     chapters:
