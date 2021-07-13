@@ -46,6 +46,8 @@ parts:
     chapters:
       - file: lectures/week-03
       - file: lectures/P05
+        sections:
+          - file: lectures/P05-dictionaries
       - file: lectures/P06
   - caption: Week 4
     chapters:
