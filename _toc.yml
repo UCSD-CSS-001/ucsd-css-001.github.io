@@ -52,10 +52,14 @@ parts:
       - file: lectures/P06
         sections:
           - file: lectures/P06-functions
+          - file: live/Lecture_6
   - caption: Week 4
     chapters:
       - file: lectures/week-04
       - file: lectures/P07
+        sections:
+          - file: lectures/P07-classes
+          - file: live/Lecture_7
       - file: lectures/P08
   - caption: Week 2
     chapters:
