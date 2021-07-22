@@ -61,7 +61,7 @@ parts:
           - file: lectures/P07-classes
           - file: live/Lecture_7
       - file: lectures/P08
-  - caption: Week 2
+  - caption: Week 5
     chapters:
       - file: lectures/week-05
       - file: lectures/P09

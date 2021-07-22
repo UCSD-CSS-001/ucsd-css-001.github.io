@@ -3,34 +3,6 @@
 
 # # P06: classes and objects
 # 
-# ## Concepts
-# 
-# ### Classes
-# 
-# ### Objects
-# 
-# ## Python
-# 
-# ### Classes and objects
-# 
-# #### attributes
-# 
-# #### methods
-# 
-# ### Class definitions
-# 
-# #### __init__()
-# 
-# #### self
-# 
-# ### double underscore methods, duck-typing
-# 
-# ### Inheritance and extending existing classes.
-# 
-# 
-# 
-# # Classes
-# 
 # - objects
 # - `class`
 #     - attributes
@@ -43,15 +15,6 @@
 # <div class="alert alert-success">
 # Objects are an organization of data (called <b>attributes</b>), with associated code to operate on that data (functions defined on the objects, called <b>methods</b>).
 # </div>
-
-# #### Clicker Question #1
-# 
-# Given what we've discussed in this course so far, if you wanted to store information about a date, how would you do so?
-# 
-# - A) string
-# - B) dictionary
-# - C) list
-# - D) integers stored in separate variables
 
 # ### Storing Dates (Motivation)
 
@@ -221,43 +184,6 @@ date.
 dir(my_date)
 
 
-# #### Clicker Question #2
-# 
-# Given the code below:
-
-# In[18]:
-
-
-my_date = date(year = 1050, month = 12, day = 12)
-
-
-# Which is the best description:
-# - A) `my_date` is an object, with methods that store data, and attributes that store procedures
-# - B) `my_date` is variable, and can be used with functions
-# - C) `my_date` is an attribute, with methods attached to it
-# - D) `my_date` is a method, and also has attributes
-# - E) `my_date` is an object, with attributes that store data, and methods that store procedures
-
-# #### Clicker Question #3
-# 
-# For an object `lets` with a method `do_something`, how would you execute that method?
-# 
-# - A) `do_something(lets)`
-# - B) `lets.do_something`
-# - C) `lets.do_something()`
-# - D) `lets.do.something()`
-# - E) ¯\\\_(ツ)\_/¯
-
-# #### Clicker Question #4
-# 
-# For an object `lets` with an attribute `name`, how would you return the information stored in `name` for the object `lets`?
-# 
-# - A) `name(lets)`
-# - B) `lets.name`
-# - C) `lets.name()`
-# - D) lets.get.name()
-# - E) ¯\\\_(ツ)\_/¯
-
 # ### Objects Summary
 # 
 # - Objects allow for data (attributes) and functions (methods) to be organized together
@@ -279,7 +205,7 @@ my_date = date(year = 1050, month = 12, day = 12)
 
 # ## Example Class: Dog
 
-# In[19]:
+# In[18]:
 
 
 # Define a class with `class`.
@@ -310,21 +236,21 @@ class Dog():
 # - like functions, a new namespace is created within a Class
 # 
 
-# In[20]:
+# In[19]:
 
 
 # Initialize a dog object
 george = Dog()
 
 
-# In[21]:
+# In[20]:
 
 
 # george, has 'sound' attribute(s) from Dog()
 george.sound
 
 
-# In[22]:
+# In[21]:
 
 
 # george, has 'Dog' method(s)
@@ -332,50 +258,32 @@ george.sound
 george.speak()
 
 
-# #### Clicker Question #5
 # 
-# Which of the following statements is true about the example we've been using?
-
-# In[23]:
-
-
-class Dog():
-
-    sound = 'Woof'
-
-    def speak(self, n_times=2):
-        return self.sound * n_times
-
-
-# - A) `Dog` is a Class, `sound` is an attribute, and `speak` is a method.
-# - B) `Dog` is a function, `sound` is an attribute, and `speak` is a method.
-# - C) `Dog` is a Class, `sound` is a method, and `speak` is an attribute.
-# - D) `Dog` is a function, `sound` is an method, and `speak` is an attribute.
 
 # ### Using our Dog Objects
 
-# In[24]:
+# In[22]:
 
 
 # Initialize a group of dogs
 pack_of_dogs = [Dog(), Dog(), Dog(), Dog()]
 
 
-# In[25]:
+# In[23]:
 
 
 # take a look at this
 pack_of_dogs
 
 
-# In[26]:
+# In[24]:
 
 
 # take a look at this
 type(pack_of_dogs[0])
 
 
-# In[27]:
+# In[25]:
 
 
 for dog in pack_of_dogs:
@@ -388,7 +296,7 @@ for dog in pack_of_dogs:
 # An <b>instance</b> is particular instantiation of a class object. <code>self</code> refers to the current instance.
 # </div>
 
-# In[28]:
+# In[26]:
 
 
 # Initialize a dog object
@@ -401,36 +309,12 @@ george = Dog()
 # - `george` was an _instance_ of that class
 # - self just refers to whatever the _current_ instance is
 
-# #### Clicker Question #6
 # 
-# How many instances of `Dog()` are created below and how many times does the `speak()` method execute?
-
-# In[29]:
-
-
-pack_of_dogs = [Dog(), Dog(), Dog(), Dog()]
-
-counter = 1
-
-for doggie in pack_of_dogs:
-    if counter <= 2:
-        print(doggie.speak())
-        counter += 1
-    else:
-        break
-
-
-# - A) 2 instances, 2 method executions
-# - B) 2 instances, 4 method executions
-# - C) 4 instances, 2 method executions
-# - D) 4 instances, 4 method executions
-# - E) ¯\\\_(ツ)\_/¯
-
 # ## Instance Attributes
 # 
 # An instance attribute specific to the instance we're on. This allows different instances of the same class to be unique (have different values stored in attributes and use those in methods).
 
-# In[30]:
+# In[27]:
 
 
 # Initialize a group of dogs
@@ -442,23 +326,14 @@ pack_of_dogs = [Dog(), Dog(), Dog(), Dog()]
 # <div class="alert alert-success">
 # Instance attributes are attributes that we can make be different for each instance of a class. <code>__init__</code> is a special method used to define instance attributes.
 # </div>
-
-# **Course Announcements**
 # 
-# - **CL6** due tonight (11:59 PM)
-# - **A3** due 5/10 (next Mon)
-#     - A3 feedback available for those who submitted
-# - **E2** is next Monday (due Tues 8AM)
-#     - No Lecture Monday
-#     - No OH Monday
-#         - Prof Ellis will hold additional OH *this* Thurs (tomorrow) 1-3 PM; will use my normal Zoom OH link
-
+# 
 # ## Example Class: Dog Revisited
 # 
 # - Two trailing underscores (a `dunder`, or double underscore) is used to indicate something Python recognizes and knows what to do every time it sees it.
 # - Here, we use `__init__` to execute the code within it every time you initialize an object.
 
-# In[31]:
+# In[28]:
 
 
 class Dog():
@@ -475,7 +350,7 @@ class Dog():
         return self.sound * n_times
 
 
-# In[32]:
+# In[29]:
 
 
 # Initialize a dog
@@ -483,7 +358,7 @@ class Dog():
 gary = Dog(name='Gary')
 
 
-# In[33]:
+# In[30]:
 
 
 # Check gary's attributes
@@ -491,48 +366,17 @@ print(gary.sound)    # This is an class attribute
 print(gary.name)     # This is a instance attribute
 
 
-# In[34]:
+# In[31]:
 
 
 # Check gary's methods
 gary.speak()
 
 
-# #### Clicker Question #7
 # 
-# Edit the code we've been using for the Class `Dog` to include information about the breed of the Class Dog in `NewDog`?
-
-# In[35]:
-
-
-# EDIT CODE HERE
-class NewDog():
-
-    sound = 'Woof'
-
-    def __init__(self, name, breed):
-        self.name = name
-        self.breed = breed
-
-    def speak(self, n_times=2):
-        return self.sound * n_times
-
-
-# In[36]:
-
-
-## We'll execute here
-lexi = NewDog(name='Lexi', breed='Italian Greyhound')
-lexi.breed
-
-
-# - A) I did it!
-# - B) I think I did it!
-# - C) So lost. -_-
-
 # ## Class example: Cat
 
-# In[37]:
+# In[32]:
 
 
 # Define a class 'Cat'
@@ -549,7 +393,7 @@ class Cat():
 
 # ## Instances Examples
 
-# In[38]:
+# In[33]:
 
 
 # Define some instances of our objects
@@ -557,7 +401,7 @@ pets = [Cat('Jaspurr'), Dog('Barkley'),
         Cat('Picatso'), Dog('Ruffius')]
 
 
-# In[39]:
+# In[34]:
 
 
 for pet in pets:
@@ -565,265 +409,7 @@ for pet in pets:
     print(pet.speak())
 
 
-# #### Clicker Question #8
 # 
-# What will the following code snippet print out?
-
-# In[40]:
-
-
-class MyClass():
-
-    def __init__(self, name, email, score):
-        self.name = name
-        self.email = email
-        self.score = score
-
-    def check_score(self):
-        if self.score <= 65:
-            return self.email
-        else:
-            return None
-
-
-# In[41]:
-
-
-student = MyClass('Rob', 'rob@python.com', 62)
-student.check_score()
-
-
-# - A) True
-# - B) 'Rob'
-# - C) False
-# - D) 'rob@python.com'
-# - E) None
-
-# ### Example: `ProfCourses()`
-# 
-# Let's put a lot of these concepts together in a more complicated example...
-# 
-# What if we wanted some object type that would allow us to keep track of Professor Ellis' Courses? Well...we'd want this to work for any Professor, so we'll call it `ProfCourses`.
-# 
-# We would likely want an object type and then helpful methods that allow us to add a class to the course inventory and to compare between courses.
-
-# In[42]:
-
-
-class ProfCourses():
-
-    # create three instance attributes
-    def __init__(self, prof):
-        self.n_classes = 0
-        self.classes = []
-        self.prof = prof
-
-
-# In[43]:
-
-
-ellis_courses = ProfCourses('Ellis')
-print(ellis_courses.n_classes)
-print(ellis_courses.classes)
-print(ellis_courses.prof)
-
-
-# **`add_class()` method**
-
-# In[44]:
-
-
-class ProfCourses():
-
-    def __init__(self, prof):
-        self.n_classes = 0
-        self.classes = []
-        self.prof = prof
-
-    # add method that will add classes as a dictionary
-    # to our attribute (classes)...which is a list
-    def add_class(self, course_name, quarter, n_students):
-
-        self.classes.append({'course_name': course_name,
-                             'quarter' : quarter,
-                             'n_students': n_students})
-        # increase value store in n_classes
-        # by 1 any time a class is added
-        self.n_classes += 1
-
-
-# In[45]:
-
-
-# create ellis_courses
-ellis_courses = ProfCourses('Ellis')
-
-# add a class
-ellis_courses.add_class('COGS18', 'fa20', 363)
-
-# see output
-print(ellis_courses.n_classes)
-ellis_courses.classes
-
-
-# **`compare()` method**
-
-# In[46]:
-
-
-class ProfCourses():
-
-    def __init__(self, prof):
-        self.n_classes = 0
-        self.classes = []
-        self.prof = prof
-
-    def add_class(self, course_name, quarter, n_students):
-
-        self.classes.append({'course_name': course_name,
-                             'quarter' : quarter,
-                             'n_students': n_students})
-        self.n_classes += 1
-
-
-    # add method to compare values in classes
-    def compare(self, attribute, direction='most'):
-
-        fewest = self.classes[0]
-        most = self.classes[0]
-
-        for my_class in self.classes:
-            if my_class[attribute] <= fewest[attribute]:
-                fewest = my_class
-            elif my_class[attribute] >= most[attribute]:
-                most = my_class
-
-        if direction == 'most':
-            output = most
-        elif direction == 'fewest':
-            output = fewest
-
-        return output
-
-
-# In[47]:
-
-
-# create ellis_courses
-ellis_courses = ProfCourses('Ellis')
-
-# add a bunch of classes
-ellis_courses.add_class('COGS18', 'wi21', 100)
-ellis_courses.add_class('COGS108', 'wi21', 300)
-ellis_courses.add_class('COGS18', 'fa20', 363)
-ellis_courses.add_class('COGS108', 'fa20', 447)
-ellis_courses.add_class('COGS18', 'su20', 88)
-ellis_courses.add_class('COGS108', 'sp20', 469)
-ellis_courses.add_class('COGS108', 'sp19', 825)
-
-# see the courses
-print(ellis_courses.n_classes)
-ellis_courses.classes
-
-
-# In[48]:
-
-
-# make comparison among all courses
-# returns the class with the most students
-ellis_courses.compare('n_students')
-
-
-# In[49]:
-
-
-# return the class with the fewest students
-ellis_courses.compare('n_students', 'fewest')
-
-
-# **extending the functionality of the `compare()` method**
-
-# In[50]:
-
-
-class ProfCourses():
-
-    def __init__(self, prof):
-        self.n_classes = 0
-        self.classes = []
-        self.prof = prof
-
-    def add_class(self, course_name, quarter,
-                  n_students, n_exams, n_assignments):
-
-        # add in additional key-value pairs
-        self.classes.append({'course_name': course_name,
-                             'quarter' : quarter,
-                             'n_students': n_students,
-                             'n_exams' : n_exams,
-                             'n_assignments' : n_assignments})
-        self.n_classes += 1
-
-
-    def compare(self, attribute, direction='most'):
-
-        fewest = self.classes[0]
-        most = self.classes[0]
-
-        for my_class in self.classes:
-            if my_class[attribute] <= fewest[attribute]:
-                fewest = my_class
-            elif my_class[attribute] >= most[attribute]:
-                most = my_class
-
-        if direction == 'most':
-            output = most
-        elif direction == 'fewest':
-            output = fewest
-
-        return output
-
-
-# In[51]:
-
-
-# create ellis_courses
-ellis_courses = ProfCourses('Ellis')
-
-# add a bunch of classes
-ellis_courses.add_class('COGS18', 'wi21', 100, 2.5, 5)
-ellis_courses.add_class('COGS108', 'wi21', 300, 0, 4)
-ellis_courses.add_class('COGS18', 'fa20', 363, 2, 5)
-ellis_courses.add_class('COGS108', 'fa20', 447, 0, 6)
-ellis_courses.add_class('COGS18', 'su20', 88, 3, 5)
-ellis_courses.add_class('COGS108', 'sp20', 469, 0, 6)
-ellis_courses.add_class('COGS108', 'sp19', 825, 0, 5)
-ellis_courses.add_class('COGS18', 'fa19', 301, 2, 4)
-
-# see the courses
-print(ellis_courses.n_classes)
-
-
-# In[52]:
-
-
-# return the class with the most exams
-ellis_courses.compare('n_exams', 'most')
-
-
-# In[53]:
-
-
-# return the class with the fewest assignments
-ellis_courses.compare('n_assignments', 'fewest')
-
-
-# **Improving & updating this code**
-# - account for ties in `compare()`
-# - edit code in `compare()` to make the `for` loop and following conditional more intuitive
-# - add a method to put dictionary in time order
-# - etc.
-
 # ### Classes Review
 # 
 # - `class` creates a new class type
@@ -846,7 +432,7 @@ ellis_courses.compare('n_assignments', 'fewest')
 
 # ### Data variables are objects
 
-# In[54]:
+# In[35]:
 
 
 print(isinstance(True, object))
@@ -860,14 +446,14 @@ print(isinstance(a, object))
 
 # ### Functions are objects
 
-# In[55]:
+# In[36]:
 
 
 print(isinstance(sum, object))
 print(isinstance(max, object))
 
 
-# In[56]:
+# In[37]:
 
 
 # Custom function are also objects
@@ -879,7 +465,7 @@ isinstance(my_function, object)
 
 # ### Class definitions & instances are objects
 
-# In[57]:
+# In[38]:
 
 
 class MyClass():
@@ -922,7 +508,7 @@ print(isinstance(my_instance, object))
 
 # In other words: methods "belong to" an object.
 
-# In[58]:
+# In[39]:
 
 
 # The `append` method, defined on lists
@@ -933,16 +519,16 @@ print(my_list)
 
 # The method `append()` is called directly on the list `my_list`
 
-# In[59]:
+# In[40]:
 
 
 # append is a method for lists
 # this will error with a string
-my_string = 'cogs18'
+my_string = 'css1'
 my_string.append('!')
 
 
-# In[60]:
+# In[41]:
 
 
 # The `is_integer()` method, defined on floats
@@ -950,7 +536,7 @@ my_float = 12.2
 my_float.is_integer()
 
 
-# In[61]:
+# In[42]:
 
 
 # The `is_integer()` method, attempted on an integer
@@ -959,366 +545,4 @@ my_int = 12
 my_int.is_integer()
 
 
-# ## String Methods
 # 
-# There are a whole bunch of string methods, all described [here](https://www.w3schools.com/python/python_ref_string.asp). We'll review a few of the most commonly used here.
-
-# In[62]:
-
-
-# Make a string all lower case
-'aBcDE'.lower()
-
-
-# In[63]:
-
-
-# Make a string all upper case
-'aBc'.upper()
-
-
-# In[64]:
-
-
-# Capitalize a string
-'python is great'.capitalize()
-
-
-# In[65]:
-
-
-# Find the index of where a string starts
-'Hello, my name is'.find('name')
-
-
-# #### Clicker Question #3
-# 
-# What will the following code snippet print out?
-
-# In[66]:
-
-
-inputs = ['fIx', 'tYpiNg', 'lIkE', 'tHiS']
-output = ''
-
-for element in inputs:
-    output = output + element.lower() + ' '
-
-output.capitalize()
-
-
-# - A) 'fix typing like this '
-# - B) ['fix', 'typing', 'like', 'this']
-# - C) 'Fix typing like this '
-# - D) 'Fix typing like this'
-# - E) 'Fixtypinglikethis'
-
-# ## List Methods
-# 
-# There are also a bunch of list methods, all described [here](https://www.w3schools.com/python/python_ref_list.asp). You've seen some of these before, but we'll review a few of the most commonly used here.
-
-# In[67]:
-
-
-get_ipython().run_line_magic('pinfo', 'list.sort')
-
-
-# In[68]:
-
-
-# sort sorts integers in numerical orders
-ints = [16, 88, 33, 40]
-ints.sort()
-ints
-
-
-# In[69]:
-
-
-ints.sort(reverse=True)
-ints
-
-
-# In[70]:
-
-
-# append adds to the end of a list
-ints.append(2)
-ints
-
-
-# In[71]:
-
-
-# remove value from list
-ints.remove(40)
-ints
-
-
-# In[72]:
-
-
-get_ipython().run_line_magic('pinfo', 'list.remove')
-
-
-# In[73]:
-
-
-# reverse order of list
-ints.reverse()
-ints
-
-
-# #### Clicker Question #4
-# 
-# What will the following code snippet print out?
-
-# In[74]:
-
-
-list_string = ['a', 'c', 'd', 'b']
-list_string.sort()
-list_string.reverse()
-list_string
-
-
-# - A) ['a', 'c', 'd', 'b']
-# - B) ['a', 'b', 'c', 'd']
-# - C) ['d', 'c', 'b', 'a']
-# - D) ['d', 'b', 'a', 'c']
-# - E) ['d', 'a', 'b', 'c']
-
-# ## Dictionary Methods
-# 
-# As with string and list methods, there are many described [here](https://www.w3schools.com/python/python_ref_dictionary.asp) that are helpful when working with dictionaries.
-# 
-
-# In[75]:
-
-
-car = {
-  "brand": "BMW",
-  "model": "M5",
-  "year": 2019
-}
-
-# keys() returns the keys of a dictionary
-car.keys()
-
-
-# In[76]:
-
-
-# get returns the value of a specified key
-mod = car.get('model')
-
-# equivalent
-mod2 = car['model']
-
-print(mod)
-print(mod2)
-
-
-# In[77]:
-
-
-# previously done this by indexing
-print(car['model'])
-
-
-# In[78]:
-
-
-# update adds a key-value pair
-car.update({"color": "Black"})
-
-print(car)
-
-
-# #### Clicker Question #5
-# 
-# Assuming `dictionary` is a dictionary that exists, what would the following accomplish:
-# 
-# ```python
-# 
-# dictionary.get('letter')
-# 
-# ```
-# 
-# - A) Return the key for the value 'letter' from `dictionary`
-# - B) Add the key 'letter' to `dictionary`
-# - C) Add the value 'letter' to `dictionary`
-# - D) Return the value for the key 'letter' from `dictionary`
-# 
-
-# #### Clicker Question #6
-# 
-# Which method would you use to add a new key-value pair to a dictionary?
-# 
-# - A) `.append()`
-# - B) `.get()`
-# - C) `.keys()`
-# - D) `.update()`
-# 
-
-# ### Methods: In Place vs Not In Place
-
-# <div class="alert alert-success">
-# Some methods update the object directly (in place), whereas others return an updated version of the input.
-# </div>
-
-# #### List methods that are in place
-
-# In[79]:
-
-
-# Reverse a list
-my_list = ['a', 'b', 'c']
-my_list.reverse()
-
-print(my_list)
-
-
-# In[80]:
-
-
-# Sort a list
-my_numbers = [13, 3, -1]
-my_numbers.sort()
-
-print(my_numbers)
-
-
-# #### Dictionary methods that are not in place
-
-# In[81]:
-
-
-car
-
-
-# In[82]:
-
-
-# Return the keys in the dictionary
-out = car.keys()
-
-
-# In[83]:
-
-
-# print keys
-print(type(out))
-print(out)
-
-
-# In[84]:
-
-
-# car has not changed
-print(type(car))
-print(car)
-
-
-# In[85]:
-
-
-# Return the values in the dicionary
-car.values()
-
-
-# ## Finding Methods
-
-# Typing the object/variable name you want to find methods for followed by a '.' and then pressing tab will display all the methods available for that type of object.
-
-# In[86]:
-
-
-# Define a test string
-my_string = 'Python'
-
-
-# In[87]:
-
-
-# See all the available methods on an object with tab complete
-my_string.
-
-
-# Using the function `dir()` returns all methods available
-
-# In[88]:
-
-
-# For our purposes now, you can ignore any leading underscores (these are special methods)
-dir(my_string)
-
-
-# ## Correspondance Between Functions & Methods
-
-# Note that:
-# 
-# ```python
-# my_variable.method_call()
-# ```
-# 
-# acts like:
-# 
-# ```python
-# function_call(my_variable)
-# ```
-# 
-# A function that we can call directly on a variable (a method) acts like a shortcut for passing that variable into a function.
-
-# ### Method / Function Comparison Example
-
-# In[89]:
-
-
-my_float = 11.0
-
-# Method call
-print(my_float.is_integer())
-
-# Function call
-#   Note: `is_integer` is part of the float variable type, which is why we access it from there
-print(float.is_integer(my_float))
-
-
-# In[90]:
-
-
-# method documentation
-get_ipython().run_line_magic('pinfo', 'float.is_integer')
-
-
-# In[91]:
-
-
-# function documentation
-get_ipython().run_line_magic('pinfo', 'type')
-
-
-# #### `is_integer`
-# 
-# You _could_ write a function to check whether a float was an integer and use it as a function (rather than the method `.is_integer()`) ...and we know how to do that!
-
-# In[92]:
-
-
-def is_integer(my_float):
-
-    if my_float % 1 == 0:
-        is_int = True
-    else:
-        is_int = False
-
-    return is_int
-
-
-# In[93]:
-
-
-print(my_float)
-is_integer(my_float)
-
