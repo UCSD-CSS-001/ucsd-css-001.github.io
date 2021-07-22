@@ -55,7 +55,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="W5 problem" href="../lectures/week-05.html" />
-    <link rel="prev" title="P08: plotting with matplotlib" href="../lectures/P08.html" />
+    <link rel="prev" title="P08: Pandas and dataframes" href="../lectures/P08.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -371,7 +371,7 @@
  </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="../lectures/P08.html">
-   P08: plotting with matplotlib
+   P08: Pandas and dataframes
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
   <label for="toctree-checkbox-10">
@@ -538,8 +538,8 @@
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#agg-to-summarize">
-     agg to summarize
+    <a class="reference internal nav-link" href="#chaining">
+     chaining
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
@@ -548,8 +548,8 @@
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#chaining">
-     chaining
+    <a class="reference internal nav-link" href="#agg-to-summarize">
+     agg to summarize
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
@@ -584,6 +584,48 @@
 <h1>Modules<a class="headerlink" href="#modules" title="Permalink to this headline">¶</a></h1>
 <p><code class="docutils literal notranslate"><span class="pre">import</span></code> <code class="docutils literal notranslate"><span class="pre">from</span></code> <code class="docutils literal notranslate"><span class="pre">as</span></code></p>
 <p>statistics</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">log</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">isclose</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">string</span> <span class="kn">import</span> <span class="n">punctuation</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span> <span class="k">as</span> <span class="nn">ma</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="pandas">
 <h1>Pandas<a class="headerlink" href="#pandas" title="Permalink to this headline">¶</a></h1>
@@ -592,56 +634,4254 @@
 <ul class="simple">
 <li><p>import as pd</p></li>
 </ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="section" id="tabular-data-and-dataframe">
 <h2>Tabular data and DataFrame<a class="headerlink" href="#tabular-data-and-dataframe" title="Permalink to this headline">¶</a></h2>
 <p>why tabular data?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;alice&#39;</span><span class="p">,</span> <span class="s1">&#39;bob&#39;</span><span class="p">,</span> <span class="s1">&#39;carol&#39;</span><span class="p">,</span> <span class="s1">&#39;david&#39;</span><span class="p">]</span>
+<span class="n">heights</span> <span class="o">=</span> <span class="p">[</span><span class="mi">68</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">72</span><span class="p">]</span>
+<span class="n">weight</span> <span class="o">=</span> <span class="p">[</span><span class="mi">130</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">170</span><span class="p">,</span> <span class="mi">180</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
 <p>how to make a dataframe from lists</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;name&#39;</span><span class="p">:</span><span class="n">names</span><span class="p">,</span> <span class="s1">&#39;height&#39;</span><span class="p">:</span><span class="n">heights</span><span class="p">,</span> <span class="s1">&#39;weight&#39;</span><span class="p">:</span> <span class="n">weight</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>height</th>
+      <th>weight</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>alice</td>
+      <td>68</td>
+      <td>130</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>bob</td>
+      <td>70</td>
+      <td>150</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>carol</td>
+      <td>65</td>
+      <td>170</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>david</td>
+      <td>72</td>
+      <td>180</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
 <p>dataframe.shape</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(4, 3)
+</pre></div>
+</div>
+</div>
+</div>
 <p>dataframe.head()  .tail()  .columns</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;name&#39;, &#39;height&#39;, &#39;weight&#39;], dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
 <p>How to pull out a column.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">h</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;height&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
 <p>A dataframe column is a “series”.  Looks like a list, but default indexing more like a dictionary.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">h</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>68
+</pre></div>
+</div>
+</div>
+</div>
 <p>index  <code class="docutils literal notranslate"><span class="pre">.set_index</span></code> and <code class="docutils literal notranslate"><span class="pre">.reset_index</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>height</th>
+      <th>weight</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>alice</td>
+      <td>68</td>
+      <td>130</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>bob</td>
+      <td>70</td>
+      <td>150</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>carol</td>
+      <td>65</td>
+      <td>170</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>david</td>
+      <td>72</td>
+      <td>180</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
 <p>How to pull out rows.  (.loc, .iloc)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>name      alice
+height       68
+weight      130
+Name: 0, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
 <p>Several ways to get a particular ‘cell’:</p>
 <ul class="simple">
 <li><p>get column, then get item in column</p></li>
 <li><p>.loc() index based reference</p></li>
 <li><p>.iloc() integer index based reference</p></li>
 </ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;weight&#39;</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span>  <span class="c1"># pull out the column, and then the row from that column</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>170
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="s1">&#39;weight&#39;</span><span class="p">]</span>  <span class="c1"># pull out a row, and then the column from that row.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>170
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="csv-and-read-csv">
 <h2>csv, and read_csv()<a class="headerlink" href="#csv-and-read-csv" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>why csv?</p></li>
 </ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mcd</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;mcd-menu.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mcd</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Category</th>
+      <th>Item</th>
+      <th>Serving Size</th>
+      <th>Calories</th>
+      <th>Calories from Fat</th>
+      <th>Total Fat</th>
+      <th>Total Fat (% Daily Value)</th>
+      <th>Saturated Fat</th>
+      <th>Saturated Fat (% Daily Value)</th>
+      <th>Trans Fat</th>
+      <th>...</th>
+      <th>Carbohydrates</th>
+      <th>Carbohydrates (% Daily Value)</th>
+      <th>Dietary Fiber</th>
+      <th>Dietary Fiber (% Daily Value)</th>
+      <th>Sugars</th>
+      <th>Protein</th>
+      <th>Vitamin A (% Daily Value)</th>
+      <th>Vitamin C (% Daily Value)</th>
+      <th>Calcium (% Daily Value)</th>
+      <th>Iron (% Daily Value)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Breakfast</td>
+      <td>Egg McMuffin</td>
+      <td>4.8 oz (136 g)</td>
+      <td>300</td>
+      <td>120</td>
+      <td>13.0</td>
+      <td>20</td>
+      <td>5.0</td>
+      <td>25</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>31</td>
+      <td>10</td>
+      <td>4</td>
+      <td>17</td>
+      <td>3</td>
+      <td>17</td>
+      <td>10</td>
+      <td>0</td>
+      <td>25</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Breakfast</td>
+      <td>Egg White Delight</td>
+      <td>4.8 oz (135 g)</td>
+      <td>250</td>
+      <td>70</td>
+      <td>8.0</td>
+      <td>12</td>
+      <td>3.0</td>
+      <td>15</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>30</td>
+      <td>10</td>
+      <td>4</td>
+      <td>17</td>
+      <td>3</td>
+      <td>18</td>
+      <td>6</td>
+      <td>0</td>
+      <td>25</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Breakfast</td>
+      <td>Sausage McMuffin</td>
+      <td>3.9 oz (111 g)</td>
+      <td>370</td>
+      <td>200</td>
+      <td>23.0</td>
+      <td>35</td>
+      <td>8.0</td>
+      <td>42</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>29</td>
+      <td>10</td>
+      <td>4</td>
+      <td>17</td>
+      <td>2</td>
+      <td>14</td>
+      <td>8</td>
+      <td>0</td>
+      <td>25</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Breakfast</td>
+      <td>Sausage McMuffin with Egg</td>
+      <td>5.7 oz (161 g)</td>
+      <td>450</td>
+      <td>250</td>
+      <td>28.0</td>
+      <td>43</td>
+      <td>10.0</td>
+      <td>52</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>30</td>
+      <td>10</td>
+      <td>4</td>
+      <td>17</td>
+      <td>2</td>
+      <td>21</td>
+      <td>15</td>
+      <td>0</td>
+      <td>30</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Breakfast</td>
+      <td>Sausage McMuffin with Egg Whites</td>
+      <td>5.7 oz (161 g)</td>
+      <td>400</td>
+      <td>210</td>
+      <td>23.0</td>
+      <td>35</td>
+      <td>8.0</td>
+      <td>42</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>30</td>
+      <td>10</td>
+      <td>4</td>
+      <td>17</td>
+      <td>2</td>
+      <td>21</td>
+      <td>6</td>
+      <td>0</td>
+      <td>25</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>255</th>
+      <td>Smoothies &amp; Shakes</td>
+      <td>McFlurry with Oreo Cookies (Small)</td>
+      <td>10.1 oz (285 g)</td>
+      <td>510</td>
+      <td>150</td>
+      <td>17.0</td>
+      <td>26</td>
+      <td>9.0</td>
+      <td>44</td>
+      <td>0.5</td>
+      <td>...</td>
+      <td>80</td>
+      <td>27</td>
+      <td>1</td>
+      <td>4</td>
+      <td>64</td>
+      <td>12</td>
+      <td>15</td>
+      <td>0</td>
+      <td>40</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>256</th>
+      <td>Smoothies &amp; Shakes</td>
+      <td>McFlurry with Oreo Cookies (Medium)</td>
+      <td>13.4 oz (381 g)</td>
+      <td>690</td>
+      <td>200</td>
+      <td>23.0</td>
+      <td>35</td>
+      <td>12.0</td>
+      <td>58</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>106</td>
+      <td>35</td>
+      <td>1</td>
+      <td>5</td>
+      <td>85</td>
+      <td>15</td>
+      <td>20</td>
+      <td>0</td>
+      <td>50</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>257</th>
+      <td>Smoothies &amp; Shakes</td>
+      <td>McFlurry with Oreo Cookies (Snack)</td>
+      <td>6.7 oz (190 g)</td>
+      <td>340</td>
+      <td>100</td>
+      <td>11.0</td>
+      <td>17</td>
+      <td>6.0</td>
+      <td>29</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>53</td>
+      <td>18</td>
+      <td>1</td>
+      <td>2</td>
+      <td>43</td>
+      <td>8</td>
+      <td>10</td>
+      <td>0</td>
+      <td>25</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>258</th>
+      <td>Smoothies &amp; Shakes</td>
+      <td>McFlurry with Reese's Peanut Butter Cups (Medium)</td>
+      <td>14.2 oz (403 g)</td>
+      <td>810</td>
+      <td>290</td>
+      <td>32.0</td>
+      <td>50</td>
+      <td>15.0</td>
+      <td>76</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>114</td>
+      <td>38</td>
+      <td>2</td>
+      <td>9</td>
+      <td>103</td>
+      <td>21</td>
+      <td>20</td>
+      <td>0</td>
+      <td>60</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>259</th>
+      <td>Smoothies &amp; Shakes</td>
+      <td>McFlurry with Reese's Peanut Butter Cups (Snack)</td>
+      <td>7.1 oz (202 g)</td>
+      <td>410</td>
+      <td>150</td>
+      <td>16.0</td>
+      <td>25</td>
+      <td>8.0</td>
+      <td>38</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>57</td>
+      <td>19</td>
+      <td>1</td>
+      <td>5</td>
+      <td>51</td>
+      <td>10</td>
+      <td>10</td>
+      <td>0</td>
+      <td>30</td>
+      <td>4</td>
+    </tr>
+  </tbody>
+</table>
+<p>260 rows × 24 columns</p>
+</div></div></div>
+</div>
 </div>
 <div class="section" id="logical-indexing">
 <h2>logical indexing<a class="headerlink" href="#logical-indexing" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mcd</span><span class="p">[</span><span class="n">mcd</span><span class="p">[</span><span class="s1">&#39;Category&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Salads&#39;</span><span class="p">]</span>
+</pre></div>
 </div>
-<div class="section" id="agg-to-summarize">
-<h2>agg to summarize<a class="headerlink" href="#agg-to-summarize" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="section" id="groupby">
-<h2>groupby<a class="headerlink" href="#groupby" title="Permalink to this headline">¶</a></h2>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Category</th>
+      <th>Item</th>
+      <th>Serving Size</th>
+      <th>Calories</th>
+      <th>Calories from Fat</th>
+      <th>Total Fat</th>
+      <th>Total Fat (% Daily Value)</th>
+      <th>Saturated Fat</th>
+      <th>Saturated Fat (% Daily Value)</th>
+      <th>Trans Fat</th>
+      <th>...</th>
+      <th>Carbohydrates</th>
+      <th>Carbohydrates (% Daily Value)</th>
+      <th>Dietary Fiber</th>
+      <th>Dietary Fiber (% Daily Value)</th>
+      <th>Sugars</th>
+      <th>Protein</th>
+      <th>Vitamin A (% Daily Value)</th>
+      <th>Vitamin C (% Daily Value)</th>
+      <th>Calcium (% Daily Value)</th>
+      <th>Iron (% Daily Value)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>84</th>
+      <td>Salads</td>
+      <td>Premium Bacon Ranch Salad (without Chicken)</td>
+      <td>7.9 oz (223 g)</td>
+      <td>140</td>
+      <td>70</td>
+      <td>7.0</td>
+      <td>11</td>
+      <td>3.5</td>
+      <td>18</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>10</td>
+      <td>3</td>
+      <td>3</td>
+      <td>12</td>
+      <td>4</td>
+      <td>9</td>
+      <td>170</td>
+      <td>30</td>
+      <td>15</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>85</th>
+      <td>Salads</td>
+      <td>Premium Bacon Ranch Salad with Crispy Chicken</td>
+      <td>9 oz (255 g)</td>
+      <td>380</td>
+      <td>190</td>
+      <td>21.0</td>
+      <td>33</td>
+      <td>6.0</td>
+      <td>29</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>22</td>
+      <td>7</td>
+      <td>2</td>
+      <td>10</td>
+      <td>5</td>
+      <td>25</td>
+      <td>100</td>
+      <td>25</td>
+      <td>15</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>86</th>
+      <td>Salads</td>
+      <td>Premium Bacon Ranch Salad with Grilled Chicken</td>
+      <td>8.5 oz (241 g)</td>
+      <td>220</td>
+      <td>80</td>
+      <td>8.0</td>
+      <td>13</td>
+      <td>4.0</td>
+      <td>20</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>8</td>
+      <td>3</td>
+      <td>2</td>
+      <td>10</td>
+      <td>4</td>
+      <td>29</td>
+      <td>110</td>
+      <td>30</td>
+      <td>15</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>87</th>
+      <td>Salads</td>
+      <td>Premium Southwest Salad (without Chicken)</td>
+      <td>8.1 oz (230 g)</td>
+      <td>140</td>
+      <td>40</td>
+      <td>4.5</td>
+      <td>7</td>
+      <td>2.0</td>
+      <td>9</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>20</td>
+      <td>7</td>
+      <td>6</td>
+      <td>23</td>
+      <td>6</td>
+      <td>6</td>
+      <td>160</td>
+      <td>25</td>
+      <td>15</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>88</th>
+      <td>Salads</td>
+      <td>Premium Southwest Salad with Crispy Chicken</td>
+      <td>12.3 oz (348 g)</td>
+      <td>450</td>
+      <td>190</td>
+      <td>22.0</td>
+      <td>33</td>
+      <td>4.5</td>
+      <td>22</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>42</td>
+      <td>14</td>
+      <td>7</td>
+      <td>28</td>
+      <td>12</td>
+      <td>23</td>
+      <td>170</td>
+      <td>30</td>
+      <td>15</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <th>89</th>
+      <td>Salads</td>
+      <td>Premium Southwest Salad with Grilled Chicken</td>
+      <td>11.8 oz (335 g)</td>
+      <td>290</td>
+      <td>80</td>
+      <td>8.0</td>
+      <td>13</td>
+      <td>2.5</td>
+      <td>13</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>28</td>
+      <td>9</td>
+      <td>7</td>
+      <td>28</td>
+      <td>10</td>
+      <td>27</td>
+      <td>170</td>
+      <td>30</td>
+      <td>15</td>
+      <td>15</td>
+    </tr>
+  </tbody>
+</table>
+<p>6 rows × 24 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mcd</span><span class="p">[(</span><span class="n">mcd</span><span class="p">[</span><span class="s1">&#39;Category&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Breakfast&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">mcd</span><span class="p">[</span><span class="s1">&#39;Calories&#39;</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">1000</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Category</th>
+      <th>Item</th>
+      <th>Serving Size</th>
+      <th>Calories</th>
+      <th>Calories from Fat</th>
+      <th>Total Fat</th>
+      <th>Total Fat (% Daily Value)</th>
+      <th>Saturated Fat</th>
+      <th>Saturated Fat (% Daily Value)</th>
+      <th>Trans Fat</th>
+      <th>...</th>
+      <th>Carbohydrates</th>
+      <th>Carbohydrates (% Daily Value)</th>
+      <th>Dietary Fiber</th>
+      <th>Dietary Fiber (% Daily Value)</th>
+      <th>Sugars</th>
+      <th>Protein</th>
+      <th>Vitamin A (% Daily Value)</th>
+      <th>Vitamin C (% Daily Value)</th>
+      <th>Calcium (% Daily Value)</th>
+      <th>Iron (% Daily Value)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>31</th>
+      <td>Breakfast</td>
+      <td>Big Breakfast with Hotcakes (Regular Biscuit)</td>
+      <td>14.8 oz (420 g)</td>
+      <td>1090</td>
+      <td>510</td>
+      <td>56.0</td>
+      <td>87</td>
+      <td>19.0</td>
+      <td>96</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>111</td>
+      <td>37</td>
+      <td>6</td>
+      <td>23</td>
+      <td>17</td>
+      <td>36</td>
+      <td>15</td>
+      <td>2</td>
+      <td>25</td>
+      <td>40</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>Breakfast</td>
+      <td>Big Breakfast with Hotcakes (Large Biscuit)</td>
+      <td>15.3 oz (434 g)</td>
+      <td>1150</td>
+      <td>540</td>
+      <td>60.0</td>
+      <td>93</td>
+      <td>20.0</td>
+      <td>100</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>116</td>
+      <td>39</td>
+      <td>7</td>
+      <td>28</td>
+      <td>17</td>
+      <td>36</td>
+      <td>15</td>
+      <td>2</td>
+      <td>30</td>
+      <td>40</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>Breakfast</td>
+      <td>Big Breakfast with Hotcakes and Egg Whites (La...</td>
+      <td>15.4 oz (437 g)</td>
+      <td>1050</td>
+      <td>450</td>
+      <td>50.0</td>
+      <td>77</td>
+      <td>16.0</td>
+      <td>81</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>115</td>
+      <td>38</td>
+      <td>7</td>
+      <td>28</td>
+      <td>18</td>
+      <td>35</td>
+      <td>4</td>
+      <td>2</td>
+      <td>25</td>
+      <td>30</td>
+    </tr>
+  </tbody>
+</table>
+<p>3 rows × 24 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mcd</span><span class="p">[((</span><span class="n">mcd</span><span class="p">[</span><span class="s1">&#39;Category&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Breakfast&#39;</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">mcd</span><span class="p">[</span><span class="s1">&#39;Category&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Smoothies &amp; Shakes&#39;</span><span class="p">))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">mcd</span><span class="p">[</span><span class="s1">&#39;Calories&#39;</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">600</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Category</th>
+      <th>Item</th>
+      <th>Serving Size</th>
+      <th>Calories</th>
+      <th>Calories from Fat</th>
+      <th>Total Fat</th>
+      <th>Total Fat (% Daily Value)</th>
+      <th>Saturated Fat</th>
+      <th>Saturated Fat (% Daily Value)</th>
+      <th>Trans Fat</th>
+      <th>...</th>
+      <th>Carbohydrates</th>
+      <th>Carbohydrates (% Daily Value)</th>
+      <th>Dietary Fiber</th>
+      <th>Dietary Fiber (% Daily Value)</th>
+      <th>Sugars</th>
+      <th>Protein</th>
+      <th>Vitamin A (% Daily Value)</th>
+      <th>Vitamin C (% Daily Value)</th>
+      <th>Calcium (% Daily Value)</th>
+      <th>Iron (% Daily Value)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>24</th>
+      <td>Breakfast</td>
+      <td>Bacon, Egg &amp; Cheese Bagel</td>
+      <td>6.9 oz (197 g)</td>
+      <td>620</td>
+      <td>280</td>
+      <td>31.0</td>
+      <td>48</td>
+      <td>11.0</td>
+      <td>56</td>
+      <td>0.5</td>
+      <td>...</td>
+      <td>57</td>
+      <td>19</td>
+      <td>3</td>
+      <td>11</td>
+      <td>7</td>
+      <td>30</td>
+      <td>20</td>
+      <td>15</td>
+      <td>20</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>Breakfast</td>
+      <td>Steak, Egg &amp; Cheese Bagel</td>
+      <td>8.5 oz (241 g)</td>
+      <td>670</td>
+      <td>310</td>
+      <td>35.0</td>
+      <td>53</td>
+      <td>13.0</td>
+      <td>63</td>
+      <td>1.5</td>
+      <td>...</td>
+      <td>56</td>
+      <td>19</td>
+      <td>3</td>
+      <td>12</td>
+      <td>7</td>
+      <td>33</td>
+      <td>20</td>
+      <td>4</td>
+      <td>25</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>Breakfast</td>
+      <td>Big Breakfast (Regular Biscuit)</td>
+      <td>9.5 oz (269 g)</td>
+      <td>740</td>
+      <td>430</td>
+      <td>48.0</td>
+      <td>73</td>
+      <td>17.0</td>
+      <td>87</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>51</td>
+      <td>17</td>
+      <td>3</td>
+      <td>12</td>
+      <td>3</td>
+      <td>28</td>
+      <td>15</td>
+      <td>2</td>
+      <td>15</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>Breakfast</td>
+      <td>Big Breakfast (Large Biscuit)</td>
+      <td>10 oz (283 g)</td>
+      <td>800</td>
+      <td>470</td>
+      <td>52.0</td>
+      <td>80</td>
+      <td>18.0</td>
+      <td>90</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>56</td>
+      <td>19</td>
+      <td>4</td>
+      <td>17</td>
+      <td>3</td>
+      <td>28</td>
+      <td>15</td>
+      <td>2</td>
+      <td>15</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>Breakfast</td>
+      <td>Big Breakfast with Egg Whites (Regular Biscuit)</td>
+      <td>9.6 oz (272 g)</td>
+      <td>640</td>
+      <td>330</td>
+      <td>37.0</td>
+      <td>57</td>
+      <td>14.0</td>
+      <td>69</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>50</td>
+      <td>17</td>
+      <td>3</td>
+      <td>12</td>
+      <td>3</td>
+      <td>26</td>
+      <td>0</td>
+      <td>2</td>
+      <td>10</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>Breakfast</td>
+      <td>Big Breakfast with Egg Whites (Large Biscuit)</td>
+      <td>10.1 oz (286 g)</td>
+      <td>690</td>
+      <td>370</td>
+      <td>41.0</td>
+      <td>63</td>
+      <td>14.0</td>
+      <td>72</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>55</td>
+      <td>18</td>
+      <td>4</td>
+      <td>17</td>
+      <td>4</td>
+      <td>26</td>
+      <td>4</td>
+      <td>2</td>
+      <td>10</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>Breakfast</td>
+      <td>Big Breakfast with Hotcakes (Regular Biscuit)</td>
+      <td>14.8 oz (420 g)</td>
+      <td>1090</td>
+      <td>510</td>
+      <td>56.0</td>
+      <td>87</td>
+      <td>19.0</td>
+      <td>96</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>111</td>
+      <td>37</td>
+      <td>6</td>
+      <td>23</td>
+      <td>17</td>
+      <td>36</td>
+      <td>15</td>
+      <td>2</td>
+      <td>25</td>
+      <td>40</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>Breakfast</td>
+      <td>Big Breakfast with Hotcakes (Large Biscuit)</td>
+      <td>15.3 oz (434 g)</td>
+      <td>1150</td>
+      <td>540</td>
+      <td>60.0</td>
+      <td>93</td>
+      <td>20.0</td>
+      <td>100</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>116</td>
+      <td>39</td>
+      <td>7</td>
+      <td>28</td>
+      <td>17</td>
+      <td>36</td>
+      <td>15</td>
+      <td>2</td>
+      <td>30</td>
+      <td>40</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>Breakfast</td>
+      <td>Big Breakfast with Hotcakes and Egg Whites (Re...</td>
+      <td>14.9 oz (423 g)</td>
+      <td>990</td>
+      <td>410</td>
+      <td>46.0</td>
+      <td>70</td>
+      <td>16.0</td>
+      <td>78</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>110</td>
+      <td>37</td>
+      <td>6</td>
+      <td>23</td>
+      <td>17</td>
+      <td>35</td>
+      <td>0</td>
+      <td>2</td>
+      <td>25</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>Breakfast</td>
+      <td>Big Breakfast with Hotcakes and Egg Whites (La...</td>
+      <td>15.4 oz (437 g)</td>
+      <td>1050</td>
+      <td>450</td>
+      <td>50.0</td>
+      <td>77</td>
+      <td>16.0</td>
+      <td>81</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>115</td>
+      <td>38</td>
+      <td>7</td>
+      <td>28</td>
+      <td>18</td>
+      <td>35</td>
+      <td>4</td>
+      <td>2</td>
+      <td>25</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <th>242</th>
+      <td>Smoothies &amp; Shakes</td>
+      <td>Vanilla Shake (Medium)</td>
+      <td>16 fl oz cup</td>
+      <td>660</td>
+      <td>170</td>
+      <td>19.0</td>
+      <td>29</td>
+      <td>12.0</td>
+      <td>61</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>109</td>
+      <td>36</td>
+      <td>0</td>
+      <td>0</td>
+      <td>81</td>
+      <td>14</td>
+      <td>25</td>
+      <td>0</td>
+      <td>50</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>243</th>
+      <td>Smoothies &amp; Shakes</td>
+      <td>Vanilla Shake (Large)</td>
+      <td>22 fl oz cup</td>
+      <td>820</td>
+      <td>210</td>
+      <td>23.0</td>
+      <td>35</td>
+      <td>15.0</td>
+      <td>73</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>135</td>
+      <td>45</td>
+      <td>0</td>
+      <td>0</td>
+      <td>101</td>
+      <td>18</td>
+      <td>30</td>
+      <td>0</td>
+      <td>60</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>245</th>
+      <td>Smoothies &amp; Shakes</td>
+      <td>Strawberry Shake (Medium)</td>
+      <td>16 fl oz cup</td>
+      <td>690</td>
+      <td>180</td>
+      <td>20.0</td>
+      <td>30</td>
+      <td>13.0</td>
+      <td>63</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>114</td>
+      <td>38</td>
+      <td>0</td>
+      <td>0</td>
+      <td>100</td>
+      <td>15</td>
+      <td>25</td>
+      <td>0</td>
+      <td>50</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>246</th>
+      <td>Smoothies &amp; Shakes</td>
+      <td>Strawberry Shake (Large)</td>
+      <td>22 fl oz cup</td>
+      <td>850</td>
+      <td>210</td>
+      <td>24.0</td>
+      <td>36</td>
+      <td>15.0</td>
+      <td>75</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>140</td>
+      <td>47</td>
+      <td>0</td>
+      <td>0</td>
+      <td>123</td>
+      <td>18</td>
+      <td>30</td>
+      <td>0</td>
+      <td>70</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>248</th>
+      <td>Smoothies &amp; Shakes</td>
+      <td>Chocolate Shake (Medium)</td>
+      <td>16 fl oz cup</td>
+      <td>700</td>
+      <td>180</td>
+      <td>20.0</td>
+      <td>30</td>
+      <td>12.0</td>
+      <td>62</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>114</td>
+      <td>38</td>
+      <td>2</td>
+      <td>6</td>
+      <td>97</td>
+      <td>15</td>
+      <td>25</td>
+      <td>0</td>
+      <td>50</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>249</th>
+      <td>Smoothies &amp; Shakes</td>
+      <td>Chocolate Shake (Large)</td>
+      <td>22 fl oz cup</td>
+      <td>850</td>
+      <td>210</td>
+      <td>23.0</td>
+      <td>36</td>
+      <td>15.0</td>
+      <td>74</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>141</td>
+      <td>47</td>
+      <td>2</td>
+      <td>8</td>
+      <td>120</td>
+      <td>19</td>
+      <td>30</td>
+      <td>0</td>
+      <td>60</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <th>250</th>
+      <td>Smoothies &amp; Shakes</td>
+      <td>Shamrock Shake (Medium)</td>
+      <td>16 fl oz cup</td>
+      <td>660</td>
+      <td>170</td>
+      <td>19.0</td>
+      <td>29</td>
+      <td>12.0</td>
+      <td>61</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>109</td>
+      <td>36</td>
+      <td>0</td>
+      <td>0</td>
+      <td>93</td>
+      <td>14</td>
+      <td>25</td>
+      <td>0</td>
+      <td>50</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>251</th>
+      <td>Smoothies &amp; Shakes</td>
+      <td>Shamrock Shake (Large)</td>
+      <td>22 fl oz cup</td>
+      <td>820</td>
+      <td>210</td>
+      <td>23.0</td>
+      <td>35</td>
+      <td>15.0</td>
+      <td>73</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>135</td>
+      <td>45</td>
+      <td>0</td>
+      <td>0</td>
+      <td>115</td>
+      <td>18</td>
+      <td>30</td>
+      <td>0</td>
+      <td>60</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>252</th>
+      <td>Smoothies &amp; Shakes</td>
+      <td>McFlurry with M&amp;M’s Candies (Small)</td>
+      <td>10.9 oz (310 g)</td>
+      <td>650</td>
+      <td>210</td>
+      <td>23.0</td>
+      <td>35</td>
+      <td>14.0</td>
+      <td>72</td>
+      <td>0.5</td>
+      <td>...</td>
+      <td>96</td>
+      <td>32</td>
+      <td>1</td>
+      <td>6</td>
+      <td>89</td>
+      <td>13</td>
+      <td>15</td>
+      <td>0</td>
+      <td>45</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>253</th>
+      <td>Smoothies &amp; Shakes</td>
+      <td>McFlurry with M&amp;M’s Candies (Medium)</td>
+      <td>16.2 oz (460 g)</td>
+      <td>930</td>
+      <td>290</td>
+      <td>33.0</td>
+      <td>50</td>
+      <td>20.0</td>
+      <td>102</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>139</td>
+      <td>46</td>
+      <td>2</td>
+      <td>7</td>
+      <td>128</td>
+      <td>20</td>
+      <td>25</td>
+      <td>0</td>
+      <td>70</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>256</th>
+      <td>Smoothies &amp; Shakes</td>
+      <td>McFlurry with Oreo Cookies (Medium)</td>
+      <td>13.4 oz (381 g)</td>
+      <td>690</td>
+      <td>200</td>
+      <td>23.0</td>
+      <td>35</td>
+      <td>12.0</td>
+      <td>58</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>106</td>
+      <td>35</td>
+      <td>1</td>
+      <td>5</td>
+      <td>85</td>
+      <td>15</td>
+      <td>20</td>
+      <td>0</td>
+      <td>50</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>258</th>
+      <td>Smoothies &amp; Shakes</td>
+      <td>McFlurry with Reese's Peanut Butter Cups (Medium)</td>
+      <td>14.2 oz (403 g)</td>
+      <td>810</td>
+      <td>290</td>
+      <td>32.0</td>
+      <td>50</td>
+      <td>15.0</td>
+      <td>76</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>114</td>
+      <td>38</td>
+      <td>2</td>
+      <td>9</td>
+      <td>103</td>
+      <td>21</td>
+      <td>20</td>
+      <td>0</td>
+      <td>60</td>
+      <td>6</td>
+    </tr>
+  </tbody>
+</table>
+<p>22 rows × 24 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mcd</span><span class="p">[</span><span class="n">mcd</span><span class="p">[</span><span class="s1">&#39;Category&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s1">&#39;Breakfast&#39;</span><span class="p">,</span> <span class="s1">&#39;Smoothies &amp; Shakes&#39;</span><span class="p">,</span> <span class="s1">&#39;Beverages&#39;</span><span class="p">])</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">mcd</span><span class="p">[</span><span class="s1">&#39;Calories&#39;</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">600</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Category</th>
+      <th>Item</th>
+      <th>Serving Size</th>
+      <th>Calories</th>
+      <th>Calories from Fat</th>
+      <th>Total Fat</th>
+      <th>Total Fat (% Daily Value)</th>
+      <th>Saturated Fat</th>
+      <th>Saturated Fat (% Daily Value)</th>
+      <th>Trans Fat</th>
+      <th>...</th>
+      <th>Carbohydrates</th>
+      <th>Carbohydrates (% Daily Value)</th>
+      <th>Dietary Fiber</th>
+      <th>Dietary Fiber (% Daily Value)</th>
+      <th>Sugars</th>
+      <th>Protein</th>
+      <th>Vitamin A (% Daily Value)</th>
+      <th>Vitamin C (% Daily Value)</th>
+      <th>Calcium (% Daily Value)</th>
+      <th>Iron (% Daily Value)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>24</th>
+      <td>Breakfast</td>
+      <td>Bacon, Egg &amp; Cheese Bagel</td>
+      <td>6.9 oz (197 g)</td>
+      <td>620</td>
+      <td>280</td>
+      <td>31.0</td>
+      <td>48</td>
+      <td>11.0</td>
+      <td>56</td>
+      <td>0.5</td>
+      <td>...</td>
+      <td>57</td>
+      <td>19</td>
+      <td>3</td>
+      <td>11</td>
+      <td>7</td>
+      <td>30</td>
+      <td>20</td>
+      <td>15</td>
+      <td>20</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>Breakfast</td>
+      <td>Steak, Egg &amp; Cheese Bagel</td>
+      <td>8.5 oz (241 g)</td>
+      <td>670</td>
+      <td>310</td>
+      <td>35.0</td>
+      <td>53</td>
+      <td>13.0</td>
+      <td>63</td>
+      <td>1.5</td>
+      <td>...</td>
+      <td>56</td>
+      <td>19</td>
+      <td>3</td>
+      <td>12</td>
+      <td>7</td>
+      <td>33</td>
+      <td>20</td>
+      <td>4</td>
+      <td>25</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>Breakfast</td>
+      <td>Big Breakfast (Regular Biscuit)</td>
+      <td>9.5 oz (269 g)</td>
+      <td>740</td>
+      <td>430</td>
+      <td>48.0</td>
+      <td>73</td>
+      <td>17.0</td>
+      <td>87</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>51</td>
+      <td>17</td>
+      <td>3</td>
+      <td>12</td>
+      <td>3</td>
+      <td>28</td>
+      <td>15</td>
+      <td>2</td>
+      <td>15</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>Breakfast</td>
+      <td>Big Breakfast (Large Biscuit)</td>
+      <td>10 oz (283 g)</td>
+      <td>800</td>
+      <td>470</td>
+      <td>52.0</td>
+      <td>80</td>
+      <td>18.0</td>
+      <td>90</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>56</td>
+      <td>19</td>
+      <td>4</td>
+      <td>17</td>
+      <td>3</td>
+      <td>28</td>
+      <td>15</td>
+      <td>2</td>
+      <td>15</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>Breakfast</td>
+      <td>Big Breakfast with Egg Whites (Regular Biscuit)</td>
+      <td>9.6 oz (272 g)</td>
+      <td>640</td>
+      <td>330</td>
+      <td>37.0</td>
+      <td>57</td>
+      <td>14.0</td>
+      <td>69</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>50</td>
+      <td>17</td>
+      <td>3</td>
+      <td>12</td>
+      <td>3</td>
+      <td>26</td>
+      <td>0</td>
+      <td>2</td>
+      <td>10</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>Breakfast</td>
+      <td>Big Breakfast with Egg Whites (Large Biscuit)</td>
+      <td>10.1 oz (286 g)</td>
+      <td>690</td>
+      <td>370</td>
+      <td>41.0</td>
+      <td>63</td>
+      <td>14.0</td>
+      <td>72</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>55</td>
+      <td>18</td>
+      <td>4</td>
+      <td>17</td>
+      <td>4</td>
+      <td>26</td>
+      <td>4</td>
+      <td>2</td>
+      <td>10</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>Breakfast</td>
+      <td>Big Breakfast with Hotcakes (Regular Biscuit)</td>
+      <td>14.8 oz (420 g)</td>
+      <td>1090</td>
+      <td>510</td>
+      <td>56.0</td>
+      <td>87</td>
+      <td>19.0</td>
+      <td>96</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>111</td>
+      <td>37</td>
+      <td>6</td>
+      <td>23</td>
+      <td>17</td>
+      <td>36</td>
+      <td>15</td>
+      <td>2</td>
+      <td>25</td>
+      <td>40</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>Breakfast</td>
+      <td>Big Breakfast with Hotcakes (Large Biscuit)</td>
+      <td>15.3 oz (434 g)</td>
+      <td>1150</td>
+      <td>540</td>
+      <td>60.0</td>
+      <td>93</td>
+      <td>20.0</td>
+      <td>100</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>116</td>
+      <td>39</td>
+      <td>7</td>
+      <td>28</td>
+      <td>17</td>
+      <td>36</td>
+      <td>15</td>
+      <td>2</td>
+      <td>30</td>
+      <td>40</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>Breakfast</td>
+      <td>Big Breakfast with Hotcakes and Egg Whites (Re...</td>
+      <td>14.9 oz (423 g)</td>
+      <td>990</td>
+      <td>410</td>
+      <td>46.0</td>
+      <td>70</td>
+      <td>16.0</td>
+      <td>78</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>110</td>
+      <td>37</td>
+      <td>6</td>
+      <td>23</td>
+      <td>17</td>
+      <td>35</td>
+      <td>0</td>
+      <td>2</td>
+      <td>25</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>Breakfast</td>
+      <td>Big Breakfast with Hotcakes and Egg Whites (La...</td>
+      <td>15.4 oz (437 g)</td>
+      <td>1050</td>
+      <td>450</td>
+      <td>50.0</td>
+      <td>77</td>
+      <td>16.0</td>
+      <td>81</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>115</td>
+      <td>38</td>
+      <td>7</td>
+      <td>28</td>
+      <td>18</td>
+      <td>35</td>
+      <td>4</td>
+      <td>2</td>
+      <td>25</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <th>242</th>
+      <td>Smoothies &amp; Shakes</td>
+      <td>Vanilla Shake (Medium)</td>
+      <td>16 fl oz cup</td>
+      <td>660</td>
+      <td>170</td>
+      <td>19.0</td>
+      <td>29</td>
+      <td>12.0</td>
+      <td>61</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>109</td>
+      <td>36</td>
+      <td>0</td>
+      <td>0</td>
+      <td>81</td>
+      <td>14</td>
+      <td>25</td>
+      <td>0</td>
+      <td>50</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>243</th>
+      <td>Smoothies &amp; Shakes</td>
+      <td>Vanilla Shake (Large)</td>
+      <td>22 fl oz cup</td>
+      <td>820</td>
+      <td>210</td>
+      <td>23.0</td>
+      <td>35</td>
+      <td>15.0</td>
+      <td>73</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>135</td>
+      <td>45</td>
+      <td>0</td>
+      <td>0</td>
+      <td>101</td>
+      <td>18</td>
+      <td>30</td>
+      <td>0</td>
+      <td>60</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>245</th>
+      <td>Smoothies &amp; Shakes</td>
+      <td>Strawberry Shake (Medium)</td>
+      <td>16 fl oz cup</td>
+      <td>690</td>
+      <td>180</td>
+      <td>20.0</td>
+      <td>30</td>
+      <td>13.0</td>
+      <td>63</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>114</td>
+      <td>38</td>
+      <td>0</td>
+      <td>0</td>
+      <td>100</td>
+      <td>15</td>
+      <td>25</td>
+      <td>0</td>
+      <td>50</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>246</th>
+      <td>Smoothies &amp; Shakes</td>
+      <td>Strawberry Shake (Large)</td>
+      <td>22 fl oz cup</td>
+      <td>850</td>
+      <td>210</td>
+      <td>24.0</td>
+      <td>36</td>
+      <td>15.0</td>
+      <td>75</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>140</td>
+      <td>47</td>
+      <td>0</td>
+      <td>0</td>
+      <td>123</td>
+      <td>18</td>
+      <td>30</td>
+      <td>0</td>
+      <td>70</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>248</th>
+      <td>Smoothies &amp; Shakes</td>
+      <td>Chocolate Shake (Medium)</td>
+      <td>16 fl oz cup</td>
+      <td>700</td>
+      <td>180</td>
+      <td>20.0</td>
+      <td>30</td>
+      <td>12.0</td>
+      <td>62</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>114</td>
+      <td>38</td>
+      <td>2</td>
+      <td>6</td>
+      <td>97</td>
+      <td>15</td>
+      <td>25</td>
+      <td>0</td>
+      <td>50</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>249</th>
+      <td>Smoothies &amp; Shakes</td>
+      <td>Chocolate Shake (Large)</td>
+      <td>22 fl oz cup</td>
+      <td>850</td>
+      <td>210</td>
+      <td>23.0</td>
+      <td>36</td>
+      <td>15.0</td>
+      <td>74</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>141</td>
+      <td>47</td>
+      <td>2</td>
+      <td>8</td>
+      <td>120</td>
+      <td>19</td>
+      <td>30</td>
+      <td>0</td>
+      <td>60</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <th>250</th>
+      <td>Smoothies &amp; Shakes</td>
+      <td>Shamrock Shake (Medium)</td>
+      <td>16 fl oz cup</td>
+      <td>660</td>
+      <td>170</td>
+      <td>19.0</td>
+      <td>29</td>
+      <td>12.0</td>
+      <td>61</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>109</td>
+      <td>36</td>
+      <td>0</td>
+      <td>0</td>
+      <td>93</td>
+      <td>14</td>
+      <td>25</td>
+      <td>0</td>
+      <td>50</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>251</th>
+      <td>Smoothies &amp; Shakes</td>
+      <td>Shamrock Shake (Large)</td>
+      <td>22 fl oz cup</td>
+      <td>820</td>
+      <td>210</td>
+      <td>23.0</td>
+      <td>35</td>
+      <td>15.0</td>
+      <td>73</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>135</td>
+      <td>45</td>
+      <td>0</td>
+      <td>0</td>
+      <td>115</td>
+      <td>18</td>
+      <td>30</td>
+      <td>0</td>
+      <td>60</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>252</th>
+      <td>Smoothies &amp; Shakes</td>
+      <td>McFlurry with M&amp;M’s Candies (Small)</td>
+      <td>10.9 oz (310 g)</td>
+      <td>650</td>
+      <td>210</td>
+      <td>23.0</td>
+      <td>35</td>
+      <td>14.0</td>
+      <td>72</td>
+      <td>0.5</td>
+      <td>...</td>
+      <td>96</td>
+      <td>32</td>
+      <td>1</td>
+      <td>6</td>
+      <td>89</td>
+      <td>13</td>
+      <td>15</td>
+      <td>0</td>
+      <td>45</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>253</th>
+      <td>Smoothies &amp; Shakes</td>
+      <td>McFlurry with M&amp;M’s Candies (Medium)</td>
+      <td>16.2 oz (460 g)</td>
+      <td>930</td>
+      <td>290</td>
+      <td>33.0</td>
+      <td>50</td>
+      <td>20.0</td>
+      <td>102</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>139</td>
+      <td>46</td>
+      <td>2</td>
+      <td>7</td>
+      <td>128</td>
+      <td>20</td>
+      <td>25</td>
+      <td>0</td>
+      <td>70</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>256</th>
+      <td>Smoothies &amp; Shakes</td>
+      <td>McFlurry with Oreo Cookies (Medium)</td>
+      <td>13.4 oz (381 g)</td>
+      <td>690</td>
+      <td>200</td>
+      <td>23.0</td>
+      <td>35</td>
+      <td>12.0</td>
+      <td>58</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>106</td>
+      <td>35</td>
+      <td>1</td>
+      <td>5</td>
+      <td>85</td>
+      <td>15</td>
+      <td>20</td>
+      <td>0</td>
+      <td>50</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>258</th>
+      <td>Smoothies &amp; Shakes</td>
+      <td>McFlurry with Reese's Peanut Butter Cups (Medium)</td>
+      <td>14.2 oz (403 g)</td>
+      <td>810</td>
+      <td>290</td>
+      <td>32.0</td>
+      <td>50</td>
+      <td>15.0</td>
+      <td>76</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>114</td>
+      <td>38</td>
+      <td>2</td>
+      <td>9</td>
+      <td>103</td>
+      <td>21</td>
+      <td>20</td>
+      <td>0</td>
+      <td>60</td>
+      <td>6</td>
+    </tr>
+  </tbody>
+</table>
+<p>22 rows × 24 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mcd</span><span class="p">[</span><span class="s1">&#39;Category&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Coffee &amp; Tea          95
+Breakfast             42
+Smoothies &amp; Shakes    28
+Chicken &amp; Fish        27
+Beverages             27
+Beef &amp; Pork           15
+Snacks &amp; Sides        13
+Desserts               7
+Salads                 6
+Name: Category, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>.isin() method</p>
+<p>pd.isna()</p>
 </div>
 <div class="section" id="chaining">
 <h2>chaining<a class="headerlink" href="#chaining" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">max</span><span class="p">(</span><span class="n">mcd</span><span class="p">[</span><span class="s1">&#39;Calories&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1880
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mcd</span><span class="p">[</span><span class="n">mcd</span><span class="p">[</span><span class="s1">&#39;Calories&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1880</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Category</th>
+      <th>Item</th>
+      <th>Serving Size</th>
+      <th>Calories</th>
+      <th>Calories from Fat</th>
+      <th>Total Fat</th>
+      <th>Total Fat (% Daily Value)</th>
+      <th>Saturated Fat</th>
+      <th>Saturated Fat (% Daily Value)</th>
+      <th>Trans Fat</th>
+      <th>...</th>
+      <th>Carbohydrates</th>
+      <th>Carbohydrates (% Daily Value)</th>
+      <th>Dietary Fiber</th>
+      <th>Dietary Fiber (% Daily Value)</th>
+      <th>Sugars</th>
+      <th>Protein</th>
+      <th>Vitamin A (% Daily Value)</th>
+      <th>Vitamin C (% Daily Value)</th>
+      <th>Calcium (% Daily Value)</th>
+      <th>Iron (% Daily Value)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>82</th>
+      <td>Chicken &amp; Fish</td>
+      <td>Chicken McNuggets (40 piece)</td>
+      <td>22.8 oz (646 g)</td>
+      <td>1880</td>
+      <td>1060</td>
+      <td>118.0</td>
+      <td>182</td>
+      <td>20.0</td>
+      <td>101</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>118</td>
+      <td>39</td>
+      <td>6</td>
+      <td>24</td>
+      <td>1</td>
+      <td>87</td>
+      <td>0</td>
+      <td>15</td>
+      <td>8</td>
+      <td>25</td>
+    </tr>
+  </tbody>
+</table>
+<p>1 rows × 24 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mcd</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;Calories&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Category</th>
+      <th>Item</th>
+      <th>Serving Size</th>
+      <th>Calories</th>
+      <th>Calories from Fat</th>
+      <th>Total Fat</th>
+      <th>Total Fat (% Daily Value)</th>
+      <th>Saturated Fat</th>
+      <th>Saturated Fat (% Daily Value)</th>
+      <th>Trans Fat</th>
+      <th>...</th>
+      <th>Carbohydrates</th>
+      <th>Carbohydrates (% Daily Value)</th>
+      <th>Dietary Fiber</th>
+      <th>Dietary Fiber (% Daily Value)</th>
+      <th>Sugars</th>
+      <th>Protein</th>
+      <th>Vitamin A (% Daily Value)</th>
+      <th>Vitamin C (% Daily Value)</th>
+      <th>Calcium (% Daily Value)</th>
+      <th>Iron (% Daily Value)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>82</th>
+      <td>Chicken &amp; Fish</td>
+      <td>Chicken McNuggets (40 piece)</td>
+      <td>22.8 oz (646 g)</td>
+      <td>1880</td>
+      <td>1060</td>
+      <td>118.0</td>
+      <td>182</td>
+      <td>20.0</td>
+      <td>101</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>118</td>
+      <td>39</td>
+      <td>6</td>
+      <td>24</td>
+      <td>1</td>
+      <td>87</td>
+      <td>0</td>
+      <td>15</td>
+      <td>8</td>
+      <td>25</td>
+    </tr>
+  </tbody>
+</table>
+<p>1 rows × 24 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mcd</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;Calories&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Category</th>
+      <th>Item</th>
+      <th>Serving Size</th>
+      <th>Calories</th>
+      <th>Calories from Fat</th>
+      <th>Total Fat</th>
+      <th>Total Fat (% Daily Value)</th>
+      <th>Saturated Fat</th>
+      <th>Saturated Fat (% Daily Value)</th>
+      <th>Trans Fat</th>
+      <th>...</th>
+      <th>Carbohydrates</th>
+      <th>Carbohydrates (% Daily Value)</th>
+      <th>Dietary Fiber</th>
+      <th>Dietary Fiber (% Daily Value)</th>
+      <th>Sugars</th>
+      <th>Protein</th>
+      <th>Vitamin A (% Daily Value)</th>
+      <th>Vitamin C (% Daily Value)</th>
+      <th>Calcium (% Daily Value)</th>
+      <th>Iron (% Daily Value)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>82</th>
+      <td>Chicken &amp; Fish</td>
+      <td>Chicken McNuggets (40 piece)</td>
+      <td>22.8 oz (646 g)</td>
+      <td>1880</td>
+      <td>1060</td>
+      <td>118.0</td>
+      <td>182</td>
+      <td>20.0</td>
+      <td>101</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>118</td>
+      <td>39</td>
+      <td>6</td>
+      <td>24</td>
+      <td>1</td>
+      <td>87</td>
+      <td>0</td>
+      <td>15</td>
+      <td>8</td>
+      <td>25</td>
+    </tr>
+  </tbody>
+</table>
+<p>1 rows × 24 columns</p>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="groupby">
+<h2>groupby<a class="headerlink" href="#groupby" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mcd</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Category&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Category</th>
+      <th>Item</th>
+      <th>Serving Size</th>
+      <th>Calories</th>
+      <th>Calories from Fat</th>
+      <th>Total Fat</th>
+      <th>Total Fat (% Daily Value)</th>
+      <th>Saturated Fat</th>
+      <th>Saturated Fat (% Daily Value)</th>
+      <th>Trans Fat</th>
+      <th>...</th>
+      <th>Carbohydrates</th>
+      <th>Carbohydrates (% Daily Value)</th>
+      <th>Dietary Fiber</th>
+      <th>Dietary Fiber (% Daily Value)</th>
+      <th>Sugars</th>
+      <th>Protein</th>
+      <th>Vitamin A (% Daily Value)</th>
+      <th>Vitamin C (% Daily Value)</th>
+      <th>Calcium (% Daily Value)</th>
+      <th>Iron (% Daily Value)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Breakfast</td>
+      <td>Egg McMuffin</td>
+      <td>4.8 oz (136 g)</td>
+      <td>300</td>
+      <td>120</td>
+      <td>13.0</td>
+      <td>20</td>
+      <td>5.0</td>
+      <td>25</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>31</td>
+      <td>10</td>
+      <td>4</td>
+      <td>17</td>
+      <td>3</td>
+      <td>17</td>
+      <td>10</td>
+      <td>0</td>
+      <td>25</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>Beef &amp; Pork</td>
+      <td>Big Mac</td>
+      <td>7.4 oz (211 g)</td>
+      <td>530</td>
+      <td>240</td>
+      <td>27.0</td>
+      <td>42</td>
+      <td>10.0</td>
+      <td>48</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>47</td>
+      <td>16</td>
+      <td>3</td>
+      <td>13</td>
+      <td>9</td>
+      <td>24</td>
+      <td>6</td>
+      <td>2</td>
+      <td>25</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>57</th>
+      <td>Chicken &amp; Fish</td>
+      <td>Premium Crispy Chicken Classic Sandwich</td>
+      <td>7.5 oz (213 g)</td>
+      <td>510</td>
+      <td>200</td>
+      <td>22.0</td>
+      <td>33</td>
+      <td>3.5</td>
+      <td>18</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>55</td>
+      <td>18</td>
+      <td>3</td>
+      <td>13</td>
+      <td>10</td>
+      <td>24</td>
+      <td>4</td>
+      <td>6</td>
+      <td>15</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <th>84</th>
+      <td>Salads</td>
+      <td>Premium Bacon Ranch Salad (without Chicken)</td>
+      <td>7.9 oz (223 g)</td>
+      <td>140</td>
+      <td>70</td>
+      <td>7.0</td>
+      <td>11</td>
+      <td>3.5</td>
+      <td>18</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>10</td>
+      <td>3</td>
+      <td>3</td>
+      <td>12</td>
+      <td>4</td>
+      <td>9</td>
+      <td>170</td>
+      <td>30</td>
+      <td>15</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>90</th>
+      <td>Snacks &amp; Sides</td>
+      <td>Chipotle BBQ Snack Wrap (Crispy Chicken)</td>
+      <td>4.6 oz (130 g)</td>
+      <td>340</td>
+      <td>130</td>
+      <td>15.0</td>
+      <td>23</td>
+      <td>4.5</td>
+      <td>22</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>37</td>
+      <td>12</td>
+      <td>1</td>
+      <td>6</td>
+      <td>8</td>
+      <td>14</td>
+      <td>4</td>
+      <td>0</td>
+      <td>10</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>103</th>
+      <td>Desserts</td>
+      <td>Baked Apple Pie</td>
+      <td>2.7 oz (77 g)</td>
+      <td>250</td>
+      <td>110</td>
+      <td>13.0</td>
+      <td>19</td>
+      <td>7.0</td>
+      <td>35</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>32</td>
+      <td>11</td>
+      <td>4</td>
+      <td>15</td>
+      <td>13</td>
+      <td>2</td>
+      <td>4</td>
+      <td>25</td>
+      <td>2</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>110</th>
+      <td>Beverages</td>
+      <td>Coca-Cola Classic (Small)</td>
+      <td>16 fl oz cup</td>
+      <td>140</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>39</td>
+      <td>13</td>
+      <td>0</td>
+      <td>0</td>
+      <td>39</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>137</th>
+      <td>Coffee &amp; Tea</td>
+      <td>Iced Tea (Small)</td>
+      <td>16 fl oz cup</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>232</th>
+      <td>Smoothies &amp; Shakes</td>
+      <td>Blueberry Pomegranate Smoothie (Small)</td>
+      <td>12 fl oz cup</td>
+      <td>220</td>
+      <td>5</td>
+      <td>0.5</td>
+      <td>1</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>50</td>
+      <td>17</td>
+      <td>3</td>
+      <td>12</td>
+      <td>44</td>
+      <td>2</td>
+      <td>0</td>
+      <td>2</td>
+      <td>6</td>
+      <td>2</td>
+    </tr>
+  </tbody>
+</table>
+<p>9 rows × 24 columns</p>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="agg-to-summarize">
+<h2>agg to summarize<a class="headerlink" href="#agg-to-summarize" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mcd</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Category&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="s2">&quot;mean&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Calories</th>
+      <th>Calories from Fat</th>
+      <th>Total Fat</th>
+      <th>Total Fat (% Daily Value)</th>
+      <th>Saturated Fat</th>
+      <th>Saturated Fat (% Daily Value)</th>
+      <th>Trans Fat</th>
+      <th>Cholesterol</th>
+      <th>Cholesterol (% Daily Value)</th>
+      <th>Sodium</th>
+      <th>...</th>
+      <th>Carbohydrates</th>
+      <th>Carbohydrates (% Daily Value)</th>
+      <th>Dietary Fiber</th>
+      <th>Dietary Fiber (% Daily Value)</th>
+      <th>Sugars</th>
+      <th>Protein</th>
+      <th>Vitamin A (% Daily Value)</th>
+      <th>Vitamin C (% Daily Value)</th>
+      <th>Calcium (% Daily Value)</th>
+      <th>Iron (% Daily Value)</th>
+    </tr>
+    <tr>
+      <th>Category</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Beef &amp; Pork</th>
+      <td>494.000000</td>
+      <td>224.666667</td>
+      <td>24.866667</td>
+      <td>38.600000</td>
+      <td>10.466667</td>
+      <td>52.000000</td>
+      <td>1.100000</td>
+      <td>87.333333</td>
+      <td>28.933333</td>
+      <td>1020.666667</td>
+      <td>...</td>
+      <td>40.133333</td>
+      <td>13.466667</td>
+      <td>2.533333</td>
+      <td>9.866667</td>
+      <td>8.800000</td>
+      <td>27.333333</td>
+      <td>6.933333</td>
+      <td>7.333333</td>
+      <td>23.000000</td>
+      <td>23.333333</td>
+    </tr>
+    <tr>
+      <th>Beverages</th>
+      <td>113.703704</td>
+      <td>0.740741</td>
+      <td>0.092593</td>
+      <td>0.148148</td>
+      <td>0.055556</td>
+      <td>0.296296</td>
+      <td>0.000000</td>
+      <td>0.555556</td>
+      <td>0.185185</td>
+      <td>41.481481</td>
+      <td>...</td>
+      <td>28.814815</td>
+      <td>9.592593</td>
+      <td>0.037037</td>
+      <td>0.074074</td>
+      <td>27.851852</td>
+      <td>1.333333</td>
+      <td>0.740741</td>
+      <td>23.481481</td>
+      <td>2.962963</td>
+      <td>0.296296</td>
+    </tr>
+    <tr>
+      <th>Breakfast</th>
+      <td>526.666667</td>
+      <td>248.928571</td>
+      <td>27.690476</td>
+      <td>42.666667</td>
+      <td>10.654762</td>
+      <td>53.428571</td>
+      <td>0.107143</td>
+      <td>152.857143</td>
+      <td>50.952381</td>
+      <td>1211.071429</td>
+      <td>...</td>
+      <td>49.761905</td>
+      <td>16.571429</td>
+      <td>3.261905</td>
+      <td>12.833333</td>
+      <td>8.261905</td>
+      <td>19.857143</td>
+      <td>6.928571</td>
+      <td>8.904762</td>
+      <td>16.166667</td>
+      <td>17.142857</td>
+    </tr>
+    <tr>
+      <th>Chicken &amp; Fish</th>
+      <td>552.962963</td>
+      <td>242.222222</td>
+      <td>26.962963</td>
+      <td>41.333333</td>
+      <td>6.166667</td>
+      <td>31.111111</td>
+      <td>0.129630</td>
+      <td>75.370370</td>
+      <td>25.222222</td>
+      <td>1257.777778</td>
+      <td>...</td>
+      <td>49.074074</td>
+      <td>16.333333</td>
+      <td>2.925926</td>
+      <td>11.814815</td>
+      <td>7.333333</td>
+      <td>29.111111</td>
+      <td>20.444444</td>
+      <td>12.629630</td>
+      <td>15.444444</td>
+      <td>16.370370</td>
+    </tr>
+    <tr>
+      <th>Coffee &amp; Tea</th>
+      <td>283.894737</td>
+      <td>71.105263</td>
+      <td>8.021053</td>
+      <td>12.357895</td>
+      <td>4.921053</td>
+      <td>24.368421</td>
+      <td>0.142105</td>
+      <td>27.263158</td>
+      <td>9.378947</td>
+      <td>136.894737</td>
+      <td>...</td>
+      <td>44.526316</td>
+      <td>14.863158</td>
+      <td>0.778947</td>
+      <td>3.178947</td>
+      <td>39.610526</td>
+      <td>8.863158</td>
+      <td>10.736842</td>
+      <td>0.000000</td>
+      <td>28.294737</td>
+      <td>2.147368</td>
+    </tr>
+    <tr>
+      <th>Desserts</th>
+      <td>222.142857</td>
+      <td>64.285714</td>
+      <td>7.357143</td>
+      <td>11.142857</td>
+      <td>4.285714</td>
+      <td>21.285714</td>
+      <td>0.000000</td>
+      <td>15.000000</td>
+      <td>4.857143</td>
+      <td>117.142857</td>
+      <td>...</td>
+      <td>34.857143</td>
+      <td>11.571429</td>
+      <td>1.000000</td>
+      <td>3.428571</td>
+      <td>26.142857</td>
+      <td>4.000000</td>
+      <td>5.142857</td>
+      <td>4.142857</td>
+      <td>11.428571</td>
+      <td>4.000000</td>
+    </tr>
+    <tr>
+      <th>Salads</th>
+      <td>270.000000</td>
+      <td>108.333333</td>
+      <td>11.750000</td>
+      <td>18.333333</td>
+      <td>3.750000</td>
+      <td>18.500000</td>
+      <td>0.000000</td>
+      <td>51.666667</td>
+      <td>17.333333</td>
+      <td>588.333333</td>
+      <td>...</td>
+      <td>21.666667</td>
+      <td>7.166667</td>
+      <td>4.500000</td>
+      <td>18.500000</td>
+      <td>6.833333</td>
+      <td>19.833333</td>
+      <td>146.666667</td>
+      <td>28.333333</td>
+      <td>15.000000</td>
+      <td>10.333333</td>
+    </tr>
+    <tr>
+      <th>Smoothies &amp; Shakes</th>
+      <td>531.428571</td>
+      <td>127.678571</td>
+      <td>14.125000</td>
+      <td>21.714286</td>
+      <td>8.375000</td>
+      <td>41.785714</td>
+      <td>0.535714</td>
+      <td>45.000000</td>
+      <td>14.714286</td>
+      <td>183.571429</td>
+      <td>...</td>
+      <td>90.428571</td>
+      <td>30.142857</td>
+      <td>1.464286</td>
+      <td>5.750000</td>
+      <td>77.892857</td>
+      <td>10.857143</td>
+      <td>18.750000</td>
+      <td>6.964286</td>
+      <td>35.571429</td>
+      <td>3.964286</td>
+    </tr>
+    <tr>
+      <th>Snacks &amp; Sides</th>
+      <td>245.769231</td>
+      <td>94.615385</td>
+      <td>10.538462</td>
+      <td>16.230769</td>
+      <td>2.692308</td>
+      <td>13.384615</td>
+      <td>0.000000</td>
+      <td>18.461538</td>
+      <td>6.230769</td>
+      <td>395.769231</td>
+      <td>...</td>
+      <td>29.153846</td>
+      <td>9.615385</td>
+      <td>1.538462</td>
+      <td>7.076923</td>
+      <td>4.076923</td>
+      <td>8.384615</td>
+      <td>4.846154</td>
+      <td>28.153846</td>
+      <td>6.000000</td>
+      <td>6.615385</td>
+    </tr>
+  </tbody>
+</table>
+<p>9 rows × 21 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mcd</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Category&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">mean_calories</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;Calories&#39;</span><span class="p">,</span> <span class="s2">&quot;mean&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mean_calories</th>
+    </tr>
+    <tr>
+      <th>Category</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Beef &amp; Pork</th>
+      <td>494.000000</td>
+    </tr>
+    <tr>
+      <th>Beverages</th>
+      <td>113.703704</td>
+    </tr>
+    <tr>
+      <th>Breakfast</th>
+      <td>526.666667</td>
+    </tr>
+    <tr>
+      <th>Chicken &amp; Fish</th>
+      <td>552.962963</td>
+    </tr>
+    <tr>
+      <th>Coffee &amp; Tea</th>
+      <td>283.894737</td>
+    </tr>
+    <tr>
+      <th>Desserts</th>
+      <td>222.142857</td>
+    </tr>
+    <tr>
+      <th>Salads</th>
+      <td>270.000000</td>
+    </tr>
+    <tr>
+      <th>Smoothies &amp; Shakes</th>
+      <td>531.428571</td>
+    </tr>
+    <tr>
+      <th>Snacks &amp; Sides</th>
+      <td>245.769231</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mcd</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Category&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">mean_calories</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;Calories&#39;</span><span class="p">,</span> <span class="s2">&quot;mean&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;mean_calories&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mean_calories</th>
+    </tr>
+    <tr>
+      <th>Category</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Chicken &amp; Fish</th>
+      <td>552.962963</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mcd</span><span class="p">[</span><span class="s1">&#39;Calories&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>368.2692307692308
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="sorting">
 <h2>sorting<a class="headerlink" href="#sorting" title="Permalink to this headline">¶</a></h2>
+<p>.sort_values()</p>
 </div>
 <div class="section" id="make-a-new-column">
 <h2>make a new column<a class="headerlink" href="#make-a-new-column" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mcd</span><span class="p">[[</span><span class="s1">&#39;Category&#39;</span><span class="p">,</span> <span class="s1">&#39;Item&#39;</span><span class="p">,</span> <span class="s1">&#39;Calories&#39;</span><span class="p">,</span> <span class="s1">&#39;Total Fat&#39;</span><span class="p">,</span> <span class="s1">&#39;Carbohydrates&#39;</span><span class="p">,</span> <span class="s1">&#39;Protein&#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Category</th>
+      <th>Item</th>
+      <th>Calories</th>
+      <th>Total Fat</th>
+      <th>Carbohydrates</th>
+      <th>Protein</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Breakfast</td>
+      <td>Egg McMuffin</td>
+      <td>300</td>
+      <td>13.0</td>
+      <td>31</td>
+      <td>17</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Breakfast</td>
+      <td>Egg White Delight</td>
+      <td>250</td>
+      <td>8.0</td>
+      <td>30</td>
+      <td>18</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Breakfast</td>
+      <td>Sausage McMuffin</td>
+      <td>370</td>
+      <td>23.0</td>
+      <td>29</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Breakfast</td>
+      <td>Sausage McMuffin with Egg</td>
+      <td>450</td>
+      <td>28.0</td>
+      <td>30</td>
+      <td>21</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Breakfast</td>
+      <td>Sausage McMuffin with Egg Whites</td>
+      <td>400</td>
+      <td>23.0</td>
+      <td>30</td>
+      <td>21</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>255</th>
+      <td>Smoothies &amp; Shakes</td>
+      <td>McFlurry with Oreo Cookies (Small)</td>
+      <td>510</td>
+      <td>17.0</td>
+      <td>80</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>256</th>
+      <td>Smoothies &amp; Shakes</td>
+      <td>McFlurry with Oreo Cookies (Medium)</td>
+      <td>690</td>
+      <td>23.0</td>
+      <td>106</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <th>257</th>
+      <td>Smoothies &amp; Shakes</td>
+      <td>McFlurry with Oreo Cookies (Snack)</td>
+      <td>340</td>
+      <td>11.0</td>
+      <td>53</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>258</th>
+      <td>Smoothies &amp; Shakes</td>
+      <td>McFlurry with Reese's Peanut Butter Cups (Medium)</td>
+      <td>810</td>
+      <td>32.0</td>
+      <td>114</td>
+      <td>21</td>
+    </tr>
+    <tr>
+      <th>259</th>
+      <td>Smoothies &amp; Shakes</td>
+      <td>McFlurry with Reese's Peanut Butter Cups (Snack)</td>
+      <td>410</td>
+      <td>16.0</td>
+      <td>57</td>
+      <td>10</td>
+    </tr>
+  </tbody>
+</table>
+<p>260 rows × 6 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mcd</span><span class="p">[</span><span class="s1">&#39;Calories from Carbohydrates&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">mcd</span><span class="p">[</span><span class="s1">&#39;Carbohydrates&#39;</span><span class="p">]</span><span class="o">*</span><span class="mi">4</span>
+<span class="n">mcd</span><span class="p">[</span><span class="s1">&#39;Calories from Protein&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">mcd</span><span class="p">[</span><span class="s1">&#39;Protein&#39;</span><span class="p">]</span><span class="o">*</span><span class="mi">4</span>
+<span class="n">mcd</span><span class="p">[</span><span class="s1">&#39;Calories from Fat&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">mcd</span><span class="p">[</span><span class="s1">&#39;Total Fat&#39;</span><span class="p">]</span><span class="o">*</span><span class="mi">9</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mcd</span><span class="p">[</span><span class="s1">&#39;Predicted Calories&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">mcd</span><span class="p">[</span><span class="s1">&#39;Calories from Carbohydrates&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">mcd</span><span class="p">[</span><span class="s1">&#39;Calories from Protein&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">mcd</span><span class="p">[</span><span class="s1">&#39;Calories from Fat&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mcd</span><span class="p">[</span><span class="s1">&#39;Error&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">mcd</span><span class="p">[</span><span class="s1">&#39;Calories&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">mcd</span><span class="p">[</span><span class="s1">&#39;Predicted Calories&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mcd</span><span class="p">[</span><span class="s1">&#39;Error&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1.9576923076923076
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mcd</span><span class="p">[</span><span class="s1">&#39;New Value&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mcd</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Category</th>
+      <th>Item</th>
+      <th>Serving Size</th>
+      <th>Calories</th>
+      <th>Calories from Fat</th>
+      <th>Total Fat</th>
+      <th>Total Fat (% Daily Value)</th>
+      <th>Saturated Fat</th>
+      <th>Saturated Fat (% Daily Value)</th>
+      <th>Trans Fat</th>
+      <th>...</th>
+      <th>Protein</th>
+      <th>Vitamin A (% Daily Value)</th>
+      <th>Vitamin C (% Daily Value)</th>
+      <th>Calcium (% Daily Value)</th>
+      <th>Iron (% Daily Value)</th>
+      <th>Calories from Carbohydrates</th>
+      <th>Calories from Protein</th>
+      <th>Predicted Calories</th>
+      <th>Error</th>
+      <th>New Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Breakfast</td>
+      <td>Egg McMuffin</td>
+      <td>4.8 oz (136 g)</td>
+      <td>300</td>
+      <td>117.0</td>
+      <td>13.0</td>
+      <td>20</td>
+      <td>5.0</td>
+      <td>25</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>17</td>
+      <td>10</td>
+      <td>0</td>
+      <td>25</td>
+      <td>15</td>
+      <td>124</td>
+      <td>68</td>
+      <td>309.0</td>
+      <td>-9.0</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Breakfast</td>
+      <td>Egg White Delight</td>
+      <td>4.8 oz (135 g)</td>
+      <td>250</td>
+      <td>72.0</td>
+      <td>8.0</td>
+      <td>12</td>
+      <td>3.0</td>
+      <td>15</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>18</td>
+      <td>6</td>
+      <td>0</td>
+      <td>25</td>
+      <td>8</td>
+      <td>120</td>
+      <td>72</td>
+      <td>264.0</td>
+      <td>-14.0</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Breakfast</td>
+      <td>Sausage McMuffin</td>
+      <td>3.9 oz (111 g)</td>
+      <td>370</td>
+      <td>207.0</td>
+      <td>23.0</td>
+      <td>35</td>
+      <td>8.0</td>
+      <td>42</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>14</td>
+      <td>8</td>
+      <td>0</td>
+      <td>25</td>
+      <td>10</td>
+      <td>116</td>
+      <td>56</td>
+      <td>379.0</td>
+      <td>-9.0</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Breakfast</td>
+      <td>Sausage McMuffin with Egg</td>
+      <td>5.7 oz (161 g)</td>
+      <td>450</td>
+      <td>252.0</td>
+      <td>28.0</td>
+      <td>43</td>
+      <td>10.0</td>
+      <td>52</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>21</td>
+      <td>15</td>
+      <td>0</td>
+      <td>30</td>
+      <td>15</td>
+      <td>120</td>
+      <td>84</td>
+      <td>456.0</td>
+      <td>-6.0</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Breakfast</td>
+      <td>Sausage McMuffin with Egg Whites</td>
+      <td>5.7 oz (161 g)</td>
+      <td>400</td>
+      <td>207.0</td>
+      <td>23.0</td>
+      <td>35</td>
+      <td>8.0</td>
+      <td>42</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>21</td>
+      <td>6</td>
+      <td>0</td>
+      <td>25</td>
+      <td>10</td>
+      <td>120</td>
+      <td>84</td>
+      <td>411.0</td>
+      <td>-11.0</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>255</th>
+      <td>Smoothies &amp; Shakes</td>
+      <td>McFlurry with Oreo Cookies (Small)</td>
+      <td>10.1 oz (285 g)</td>
+      <td>510</td>
+      <td>153.0</td>
+      <td>17.0</td>
+      <td>26</td>
+      <td>9.0</td>
+      <td>44</td>
+      <td>0.5</td>
+      <td>...</td>
+      <td>12</td>
+      <td>15</td>
+      <td>0</td>
+      <td>40</td>
+      <td>8</td>
+      <td>320</td>
+      <td>48</td>
+      <td>521.0</td>
+      <td>-11.0</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>256</th>
+      <td>Smoothies &amp; Shakes</td>
+      <td>McFlurry with Oreo Cookies (Medium)</td>
+      <td>13.4 oz (381 g)</td>
+      <td>690</td>
+      <td>207.0</td>
+      <td>23.0</td>
+      <td>35</td>
+      <td>12.0</td>
+      <td>58</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>15</td>
+      <td>20</td>
+      <td>0</td>
+      <td>50</td>
+      <td>10</td>
+      <td>424</td>
+      <td>60</td>
+      <td>691.0</td>
+      <td>-1.0</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>257</th>
+      <td>Smoothies &amp; Shakes</td>
+      <td>McFlurry with Oreo Cookies (Snack)</td>
+      <td>6.7 oz (190 g)</td>
+      <td>340</td>
+      <td>99.0</td>
+      <td>11.0</td>
+      <td>17</td>
+      <td>6.0</td>
+      <td>29</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>8</td>
+      <td>10</td>
+      <td>0</td>
+      <td>25</td>
+      <td>6</td>
+      <td>212</td>
+      <td>32</td>
+      <td>343.0</td>
+      <td>-3.0</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>258</th>
+      <td>Smoothies &amp; Shakes</td>
+      <td>McFlurry with Reese's Peanut Butter Cups (Medium)</td>
+      <td>14.2 oz (403 g)</td>
+      <td>810</td>
+      <td>288.0</td>
+      <td>32.0</td>
+      <td>50</td>
+      <td>15.0</td>
+      <td>76</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>21</td>
+      <td>20</td>
+      <td>0</td>
+      <td>60</td>
+      <td>6</td>
+      <td>456</td>
+      <td>84</td>
+      <td>828.0</td>
+      <td>-18.0</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>259</th>
+      <td>Smoothies &amp; Shakes</td>
+      <td>McFlurry with Reese's Peanut Butter Cups (Snack)</td>
+      <td>7.1 oz (202 g)</td>
+      <td>410</td>
+      <td>144.0</td>
+      <td>16.0</td>
+      <td>25</td>
+      <td>8.0</td>
+      <td>38</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>10</td>
+      <td>10</td>
+      <td>0</td>
+      <td>30</td>
+      <td>4</td>
+      <td>228</td>
+      <td>40</td>
+      <td>412.0</td>
+      <td>-2.0</td>
+      <td>10</td>
+    </tr>
+  </tbody>
+</table>
+<p>260 rows × 29 columns</p>
+</div></div></div>
+</div>
 </div>
 </div>
 <div class="section" id="tasks">
 <h1>Tasks<a class="headerlink" href="#tasks" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
-<li><p>find the item with the most calories</p></li>
+<li><p>find the Breakfast with the least calories</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># select just the breakfast</span>
+<span class="c1">#   logical indexing.</span>
+
+<span class="c1"># sort by calories</span>
+<span class="c1"># take the first one</span>
+<span class="n">mcd</span><span class="p">[</span> <span class="n">mcd</span><span class="p">[</span><span class="s1">&#39;Category&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Breakfast&#39;</span> <span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;Calories&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Category</th>
+      <th>Item</th>
+      <th>Serving Size</th>
+      <th>Calories</th>
+      <th>Calories from Fat</th>
+      <th>Total Fat</th>
+      <th>Total Fat (% Daily Value)</th>
+      <th>Saturated Fat</th>
+      <th>Saturated Fat (% Daily Value)</th>
+      <th>Trans Fat</th>
+      <th>...</th>
+      <th>Protein</th>
+      <th>Vitamin A (% Daily Value)</th>
+      <th>Vitamin C (% Daily Value)</th>
+      <th>Calcium (% Daily Value)</th>
+      <th>Iron (% Daily Value)</th>
+      <th>Calories from Carbohydrates</th>
+      <th>Calories from Protein</th>
+      <th>Predicted Calories</th>
+      <th>Error</th>
+      <th>New Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>38</th>
+      <td>Breakfast</td>
+      <td>Hash Brown</td>
+      <td>2 oz (56 g)</td>
+      <td>150</td>
+      <td>81.0</td>
+      <td>9.0</td>
+      <td>14</td>
+      <td>1.5</td>
+      <td>6</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>1</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>2</td>
+      <td>60</td>
+      <td>4</td>
+      <td>145.0</td>
+      <td>5.0</td>
+      <td>10</td>
+    </tr>
+  </tbody>
+</table>
+<p>1 rows × 29 columns</p>
+</div></div></div>
+</div>
+<ul class="simple">
 <li><p>calculate ‘vul’ index, and find highest vul_index food (after filtering out nonsense)</p></li>
-<li><p>calculate mean, max, and n for each category</p></li>
+</ul>
+<p>ratio of vul_index = (protein + fiber) / calories</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mcd</span><span class="p">[</span><span class="s1">&#39;vul&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">mcd</span><span class="p">[</span><span class="s1">&#39;Protein&#39;</span><span class="p">]</span><span class="o">+</span><span class="n">mcd</span><span class="p">[</span><span class="s1">&#39;Dietary Fiber&#39;</span><span class="p">])</span><span class="o">/</span><span class="n">mcd</span><span class="p">[</span><span class="s1">&#39;Calories&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mcd</span><span class="p">[[</span><span class="s1">&#39;Category&#39;</span><span class="p">,</span> <span class="s1">&#39;Item&#39;</span><span class="p">,</span> <span class="s1">&#39;Calories&#39;</span><span class="p">,</span> <span class="s1">&#39;Protein&#39;</span><span class="p">,</span> <span class="s1">&#39;Dietary Fiber&#39;</span><span class="p">,</span> <span class="s1">&#39;vul&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;vul&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Category</th>
+      <th>Item</th>
+      <th>Calories</th>
+      <th>Protein</th>
+      <th>Dietary Fiber</th>
+      <th>vul</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>123</th>
+      <td>Beverages</td>
+      <td>Diet Dr Pepper (Medium)</td>
+      <td>0</td>
+      <td>3</td>
+      <td>0</td>
+      <td>inf</td>
+    </tr>
+    <tr>
+      <th>122</th>
+      <td>Beverages</td>
+      <td>Diet Dr Pepper (Small)</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>inf</td>
+    </tr>
+    <tr>
+      <th>125</th>
+      <td>Beverages</td>
+      <td>Diet Dr Pepper (Child)</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>inf</td>
+    </tr>
+    <tr>
+      <th>124</th>
+      <td>Beverages</td>
+      <td>Diet Dr Pepper (Large)</td>
+      <td>0</td>
+      <td>4</td>
+      <td>0</td>
+      <td>inf</td>
+    </tr>
+    <tr>
+      <th>86</th>
+      <td>Salads</td>
+      <td>Premium Bacon Ranch Salad with Grilled Chicken</td>
+      <td>220</td>
+      <td>29</td>
+      <td>2</td>
+      <td>0.140909</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>139</th>
+      <td>Coffee &amp; Tea</td>
+      <td>Iced Tea (Large)</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>140</th>
+      <td>Coffee &amp; Tea</td>
+      <td>Iced Tea (Child)</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>145</th>
+      <td>Coffee &amp; Tea</td>
+      <td>Coffee (Small)</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>146</th>
+      <td>Coffee &amp; Tea</td>
+      <td>Coffee (Medium)</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>147</th>
+      <td>Coffee &amp; Tea</td>
+      <td>Coffee (Large)</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>260 rows × 6 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mcd</span><span class="p">[(</span><span class="n">mcd</span><span class="p">[</span><span class="s1">&#39;vul&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="o">~</span><span class="n">pd</span><span class="o">.</span><span class="n">isna</span><span class="p">(</span><span class="n">mcd</span><span class="p">[</span><span class="s1">&#39;vul&#39;</span><span class="p">]))]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;vul&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Category</th>
+      <th>Item</th>
+      <th>Serving Size</th>
+      <th>Calories</th>
+      <th>Calories from Fat</th>
+      <th>Total Fat</th>
+      <th>Total Fat (% Daily Value)</th>
+      <th>Saturated Fat</th>
+      <th>Saturated Fat (% Daily Value)</th>
+      <th>Trans Fat</th>
+      <th>...</th>
+      <th>Vitamin A (% Daily Value)</th>
+      <th>Vitamin C (% Daily Value)</th>
+      <th>Calcium (% Daily Value)</th>
+      <th>Iron (% Daily Value)</th>
+      <th>Calories from Carbohydrates</th>
+      <th>Calories from Protein</th>
+      <th>Predicted Calories</th>
+      <th>Error</th>
+      <th>New Value</th>
+      <th>vul</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>86</th>
+      <td>Salads</td>
+      <td>Premium Bacon Ranch Salad with Grilled Chicken</td>
+      <td>8.5 oz (241 g)</td>
+      <td>220</td>
+      <td>72.0</td>
+      <td>8.0</td>
+      <td>13</td>
+      <td>4.0</td>
+      <td>20</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>110</td>
+      <td>30</td>
+      <td>15</td>
+      <td>8</td>
+      <td>32</td>
+      <td>116</td>
+      <td>220.0</td>
+      <td>0.0</td>
+      <td>10</td>
+      <td>0.140909</td>
+    </tr>
+  </tbody>
+</table>
+<p>1 rows × 30 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mcd</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;Category&#39;, &#39;Item&#39;, &#39;Serving Size&#39;, &#39;Calories&#39;, &#39;Calories from Fat&#39;,
+       &#39;Total Fat&#39;, &#39;Total Fat (% Daily Value)&#39;, &#39;Saturated Fat&#39;,
+       &#39;Saturated Fat (% Daily Value)&#39;, &#39;Trans Fat&#39;, &#39;Cholesterol&#39;,
+       &#39;Cholesterol (% Daily Value)&#39;, &#39;Sodium&#39;, &#39;Sodium (% Daily Value)&#39;,
+       &#39;Carbohydrates&#39;, &#39;Carbohydrates (% Daily Value)&#39;, &#39;Dietary Fiber&#39;,
+       &#39;Dietary Fiber (% Daily Value)&#39;, &#39;Sugars&#39;, &#39;Protein&#39;,
+       &#39;Vitamin A (% Daily Value)&#39;, &#39;Vitamin C (% Daily Value)&#39;,
+       &#39;Calcium (% Daily Value)&#39;, &#39;Iron (% Daily Value)&#39;,
+       &#39;Calories from Carbohydrates&#39;, &#39;Calories from Protein&#39;,
+       &#39;Predicted Calories&#39;, &#39;Error&#39;, &#39;New Value&#39;, &#39;vul&#39;],
+      dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>calculate mean, max calories, and n for each category</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">mcd</span>
+ <span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Category&#39;</span><span class="p">)</span>
+ <span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">mean_calories</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;Calories&quot;</span><span class="p">,</span> <span class="s2">&quot;mean&quot;</span><span class="p">),</span> 
+            <span class="n">max_calories</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;Calories&quot;</span><span class="p">,</span> <span class="s2">&quot;max&quot;</span><span class="p">),</span> 
+            <span class="n">n</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;Calories&quot;</span><span class="p">,</span> <span class="s2">&quot;count&quot;</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mean_calories</th>
+      <th>max_calories</th>
+      <th>n</th>
+    </tr>
+    <tr>
+      <th>Category</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Beef &amp; Pork</th>
+      <td>494.000000</td>
+      <td>750</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <th>Beverages</th>
+      <td>113.703704</td>
+      <td>280</td>
+      <td>27</td>
+    </tr>
+    <tr>
+      <th>Breakfast</th>
+      <td>526.666667</td>
+      <td>1150</td>
+      <td>42</td>
+    </tr>
+    <tr>
+      <th>Chicken &amp; Fish</th>
+      <td>552.962963</td>
+      <td>1880</td>
+      <td>27</td>
+    </tr>
+    <tr>
+      <th>Coffee &amp; Tea</th>
+      <td>283.894737</td>
+      <td>760</td>
+      <td>95</td>
+    </tr>
+    <tr>
+      <th>Desserts</th>
+      <td>222.142857</td>
+      <td>340</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>Salads</th>
+      <td>270.000000</td>
+      <td>450</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>Smoothies &amp; Shakes</th>
+      <td>531.428571</td>
+      <td>930</td>
+      <td>28</td>
+    </tr>
+    <tr>
+      <th>Snacks &amp; Sides</th>
+      <td>245.769231</td>
+      <td>510</td>
+      <td>13</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<ul class="simple">
 <li><p>pull out max calorie item for each category</p></li>
 </ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mcd</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;Calories&#39;</span><span class="p">,</span> <span class="n">ascending</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Category&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Category</th>
+      <th>Item</th>
+      <th>Serving Size</th>
+      <th>Calories</th>
+      <th>Calories from Fat</th>
+      <th>Total Fat</th>
+      <th>Total Fat (% Daily Value)</th>
+      <th>Saturated Fat</th>
+      <th>Saturated Fat (% Daily Value)</th>
+      <th>Trans Fat</th>
+      <th>...</th>
+      <th>Vitamin A (% Daily Value)</th>
+      <th>Vitamin C (% Daily Value)</th>
+      <th>Calcium (% Daily Value)</th>
+      <th>Iron (% Daily Value)</th>
+      <th>Calories from Carbohydrates</th>
+      <th>Calories from Protein</th>
+      <th>Predicted Calories</th>
+      <th>Error</th>
+      <th>New Value</th>
+      <th>vul</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>82</th>
+      <td>Chicken &amp; Fish</td>
+      <td>Chicken McNuggets (40 piece)</td>
+      <td>22.8 oz (646 g)</td>
+      <td>1880</td>
+      <td>1062.0</td>
+      <td>118.0</td>
+      <td>182</td>
+      <td>20.0</td>
+      <td>101</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>15</td>
+      <td>8</td>
+      <td>25</td>
+      <td>472</td>
+      <td>348</td>
+      <td>1882.0</td>
+      <td>-2.0</td>
+      <td>10</td>
+      <td>0.049468</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>Breakfast</td>
+      <td>Big Breakfast with Hotcakes (Large Biscuit)</td>
+      <td>15.3 oz (434 g)</td>
+      <td>1150</td>
+      <td>540.0</td>
+      <td>60.0</td>
+      <td>93</td>
+      <td>20.0</td>
+      <td>100</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>15</td>
+      <td>2</td>
+      <td>30</td>
+      <td>40</td>
+      <td>464</td>
+      <td>144</td>
+      <td>1148.0</td>
+      <td>2.0</td>
+      <td>10</td>
+      <td>0.037391</td>
+    </tr>
+    <tr>
+      <th>253</th>
+      <td>Smoothies &amp; Shakes</td>
+      <td>McFlurry with M&amp;M’s Candies (Medium)</td>
+      <td>16.2 oz (460 g)</td>
+      <td>930</td>
+      <td>297.0</td>
+      <td>33.0</td>
+      <td>50</td>
+      <td>20.0</td>
+      <td>102</td>
+      <td>1.0</td>
+      <td>...</td>
+      <td>25</td>
+      <td>0</td>
+      <td>70</td>
+      <td>10</td>
+      <td>556</td>
+      <td>80</td>
+      <td>933.0</td>
+      <td>-3.0</td>
+      <td>10</td>
+      <td>0.023656</td>
+    </tr>
+    <tr>
+      <th>231</th>
+      <td>Coffee &amp; Tea</td>
+      <td>Frappé Chocolate Chip (Large)</td>
+      <td>22 fl oz cup</td>
+      <td>760</td>
+      <td>279.0</td>
+      <td>31.0</td>
+      <td>48</td>
+      <td>20.0</td>
+      <td>101</td>
+      <td>1.5</td>
+      <td>...</td>
+      <td>20</td>
+      <td>0</td>
+      <td>35</td>
+      <td>6</td>
+      <td>444</td>
+      <td>48</td>
+      <td>771.0</td>
+      <td>-11.0</td>
+      <td>10</td>
+      <td>0.017105</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>Beef &amp; Pork</td>
+      <td>Double Quarter Pounder with Cheese</td>
+      <td>10 oz (283 g)</td>
+      <td>750</td>
+      <td>387.0</td>
+      <td>43.0</td>
+      <td>66</td>
+      <td>19.0</td>
+      <td>96</td>
+      <td>2.5</td>
+      <td>...</td>
+      <td>10</td>
+      <td>2</td>
+      <td>30</td>
+      <td>35</td>
+      <td>168</td>
+      <td>192</td>
+      <td>747.0</td>
+      <td>3.0</td>
+      <td>10</td>
+      <td>0.068000</td>
+    </tr>
+    <tr>
+      <th>98</th>
+      <td>Snacks &amp; Sides</td>
+      <td>Large French Fries</td>
+      <td>5.9 oz (168 g)</td>
+      <td>510</td>
+      <td>216.0</td>
+      <td>24.0</td>
+      <td>37</td>
+      <td>3.5</td>
+      <td>17</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>70</td>
+      <td>2</td>
+      <td>8</td>
+      <td>268</td>
+      <td>24</td>
+      <td>508.0</td>
+      <td>2.0</td>
+      <td>10</td>
+      <td>0.021569</td>
+    </tr>
+    <tr>
+      <th>88</th>
+      <td>Salads</td>
+      <td>Premium Southwest Salad with Crispy Chicken</td>
+      <td>12.3 oz (348 g)</td>
+      <td>450</td>
+      <td>198.0</td>
+      <td>22.0</td>
+      <td>33</td>
+      <td>4.5</td>
+      <td>22</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>170</td>
+      <td>30</td>
+      <td>15</td>
+      <td>15</td>
+      <td>168</td>
+      <td>92</td>
+      <td>458.0</td>
+      <td>-8.0</td>
+      <td>10</td>
+      <td>0.066667</td>
+    </tr>
+    <tr>
+      <th>108</th>
+      <td>Desserts</td>
+      <td>Hot Caramel Sundae</td>
+      <td>6.4 oz (182 g)</td>
+      <td>340</td>
+      <td>72.0</td>
+      <td>8.0</td>
+      <td>12</td>
+      <td>5.0</td>
+      <td>24</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>10</td>
+      <td>0</td>
+      <td>25</td>
+      <td>0</td>
+      <td>240</td>
+      <td>28</td>
+      <td>340.0</td>
+      <td>0.0</td>
+      <td>10</td>
+      <td>0.020588</td>
+    </tr>
+    <tr>
+      <th>128</th>
+      <td>Beverages</td>
+      <td>Sprite (Large)</td>
+      <td>30 fl oz cup</td>
+      <td>280</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>296</td>
+      <td>0</td>
+      <td>296.0</td>
+      <td>-16.0</td>
+      <td>10</td>
+      <td>0.000000</td>
+    </tr>
+  </tbody>
+</table>
+<p>9 rows × 30 columns</p>
+</div></div></div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -669,7 +4909,7 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="../lectures/P08.html" title="previous page">P08: plotting with matplotlib</a>
+    <a class='left-prev' id="prev-link" href="../lectures/P08.html" title="previous page">P08: Pandas and dataframes</a>
     <a class='right-next' id="next-link" href="../lectures/week-05.html" title="next page">W5 problem</a>
 
         </div>
