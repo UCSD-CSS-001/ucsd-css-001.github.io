@@ -67,4 +67,6 @@ parts:
     chapters:
       - file: lectures/week-05
       - file: lectures/P09
+        sections:
+          - file: live/Lecture_9
       - file: lectures/P10
