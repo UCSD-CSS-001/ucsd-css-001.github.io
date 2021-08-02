@@ -56,6 +56,35 @@ Recordings of these will be made available on  {{ url_canvas }}
   
 - No local software is required (as we will use remotely hosted jupyter notebooks).  If you want to install a local copy, we recommend the bundled [anaconda distribution](https://www.anaconda.com/products/individual) of Python 3  
 
+## Schedule, as a pithy table:
+
+| Date | Topics | Assignment due |
+| ---- | ------ | -------------- |
+| 2021-08-03 | [Basic python](../lectures/P01) | |
+| 2021-08-04 |    | Lab 1 due |
+| 2021-08-05 | [Control flow](../lectures/P02) | |
+| 2021-08-06 |    | Lab 2 due |
+| 2021-08-09 |    | pset 1 due |
+| 2021-08-10 | [Lists](../lectures/P03) | |
+| 2021-08-11 |    | Lab 3 due |
+| 2021-08-12 | [Strings](../lectures/P04) | |
+| 2021-08-13 |    | Lab 4 due |
+| 2021-08-16 |    | pset 2 due |
+| 2021-08-17 | [Dictionaries](../lectures/P05) | |
+| 2021-08-18 |    | Lab 5 due |
+| 2021-08-19 | [Functions](../lectures/P06) | |
+| 2021-08-20 |    | Lab 6 due |
+| 2021-08-23 |    | pset 3 due |
+| 2021-08-24 | [Classes](../lectures/P07) | |
+| 2021-08-25 |    | Lab 7 due |
+| 2021-08-26 | [Pandas Dataframes](../lectures/P08) | |
+| 2021-08-27 |    | Lab 8 due |
+| 2021-08-30 |    | pset 4 due |
+| 2021-08-31 | [Plotting Matplotlib](../lectures/P09) | |
+| 2021-09-01 |    | Lab 9 due |
+| 2021-09-02 | [advanced](../lectures/P10) | |
+| **2021-09-04** |    | final pset due |
+
 
 ## Grading
 
