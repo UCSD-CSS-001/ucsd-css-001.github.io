@@ -7,22 +7,14 @@ parts:
   - caption: Course (CSS 1 summer 1)
     chapters:
       - file: course/syllabus
-      - file: course/schedule
       - file: course/expectations
-        sections:
-          - file: course/expectations-class
-          - file: course/expectations-programming
-      - file: course/how-to
-        sections:
-          - file: course/datahub
-          - file: course/debugging
+      - file: course/datahub
+      - file: course/debugging
       - file: course/resources
-  - caption: Week 1
+  - caption: Content
     chapters:
-      - file: lectures/week-01
       - file: lectures/P01
         sections:
-          - file: lectures/P01-announcements
           - file: lectures/P01-css
           - file: lectures/P01-programming
           - file: lectures/P01-jupyter
@@ -32,9 +24,6 @@ parts:
           - file: lectures/P02-conditionals
           - file: lectures/P02-loops
           - file: lectures/P02-while
-  - caption: Week 2
-    chapters:
-      - file: lectures/week-02
       - file: lectures/P03
         sections:
           - file: lectures/P03-sequence
@@ -42,9 +31,6 @@ parts:
         sections:
           - file: lectures/P04-strings
           - file: live/Lecture_4
-  - caption: Week 3
-    chapters:
-      - file: lectures/week-03
       - file: lectures/P05
         sections:
           - file: lectures/P05-dictionaries
@@ -53,9 +39,6 @@ parts:
         sections:
           - file: lectures/P06-functions
           - file: live/Lecture_6
-  - caption: Week 4
-    chapters:
-      - file: lectures/week-04
       - file: lectures/P07
         sections:
           - file: lectures/P07-classes
@@ -63,8 +46,6 @@ parts:
       - file: lectures/P08
         sections:
           - file: live/Lecture_8
-  - caption: Week 5
-    chapters:
       - file: lectures/week-05
       - file: lectures/P09
         sections:
