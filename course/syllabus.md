@@ -25,8 +25,8 @@ This course is structured to help you get there.  The basic premise we start fro
 
 | Role     | Name                | email    | Office hours  |
 | ----------------: | :---------| -----------| ------------ |   
-| **Instructor** | Ed Vul  | [evul@ucsd.edu](mailto:evul@ucsd.edu) | [Fridays 3:30-4:30PM](https://ucsd.zoom.us/my/edvul) |   
-| **TA** | Jiaying Xu  | [jix030@ucsd.edu](mailto:jix030@ucsd.edu) | [Wednesday 9-10AM](https://ucsd.zoom.us/j/4422823454) |
+| **Instructor** | Ed Vul  | [evul@ucsd.edu](mailto:evul@ucsd.edu) | [Fridays 3:00-4:30PM](https://ucsd.zoom.us/my/edvul) |   
+| **TA** | Erik Brockbank  | [ebrockba@ucsd.edu](mailto:ebrockba@ucsd.edu) | TBD |
 
 ### All the links
 
@@ -35,9 +35,8 @@ This course is structured to help you get there.  The basic premise we start fro
     - {{ url_lecture }}: Tu/Th 11am - 1pm PST - conducted live, recordings posted on canvas      
     - {{ url_lab }}: Tu/Th 1pm - 3pm PST - conducted live, recordings posted on canvas  
 - {{ url_canvas }}: used to post grades and recordings of lectures/labs   
-- {{ url_campuswire }}: used for all communication: discussion, Q&A, announcements etc.  Email the instructor if you cannot access.    
+- {{ url_campuswire }}: **CODE: 6205** used for all communication: discussion, Q&A, announcements etc.  Email the instructor if you cannot access.    
 - {{ url_datahub }}: used to submit comleted labs and problem sets  
-- {{ url_feedback }}: to provide anonymous feedback to instructors.  :   
 
 ### Lectures and labs
 

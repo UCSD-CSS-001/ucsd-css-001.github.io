@@ -4,7 +4,7 @@
 format: jb-book
 root: index
 parts:
-  - caption: Course (CSS 1 summer 1)
+  - caption: Course (CSS 1 summer 2)
     chapters:
       - file: course/syllabus
       - file: course/expectations
