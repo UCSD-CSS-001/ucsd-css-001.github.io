@@ -19,6 +19,7 @@ parts:
           - file: lectures/P01-programming
           - file: lectures/P01-jupyter
           - file: lectures/P01-python
+          - file: live/Lecture-01
       - file: lectures/P02
         sections:
           - file: lectures/P02-conditionals
