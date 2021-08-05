@@ -25,6 +25,7 @@ parts:
           - file: lectures/P02-conditionals
           - file: lectures/P02-loops
           - file: lectures/P02-while
+          - file: live/Lecture-02
       - file: lectures/P03
         sections:
           - file: lectures/P03-sequence
