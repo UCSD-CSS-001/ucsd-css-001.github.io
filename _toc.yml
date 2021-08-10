@@ -29,6 +29,7 @@ parts:
       - file: lectures/P03
         sections:
           - file: lectures/P03-sequence
+          - file: live/Lecture-03
       - file: lectures/P04
         sections:
           - file: lectures/P04-strings
