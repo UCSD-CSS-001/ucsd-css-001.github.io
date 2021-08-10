@@ -97,7 +97,7 @@ You are evaluated based on:
 
 **Labs:** Labs are short, simple exercises designed to be completed during the scheduled lab time (Tu/Th 1-3 PST), with interactive help from the TA and other students.  Labs are completed by turning them in on datahub.  Labs are due by the end of the day following lab (e.g., a Tuesday lab is due by end of day Wednesday).  This window is wide so that people who cannot attend lab, or otherwise do not complete the work during lab, can submit on their own schedule.  That said, *it is very much advised that you attend lab to complete the activities and get interactive help!*
 
-**Problem Sets:** Are longer, weekly assignments.  They are due by the end of the day on Saturday of a given week.  You are to complete each problem set **on your own**.  You are advised to *start early*
+**Problem Sets:** Are longer, weekly assignments.  They are due by the end of the day on the Monday following a given week.  You are to complete each problem set **on your own**.  You are advised to *start early*
 
 **Final:** The final is a more involved, more integrated problem set, due at the end of week 5.
 
