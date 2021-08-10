@@ -19,14 +19,14 @@ This course is structured to help you get there.  The basic premise we start fro
 
 ## Course Information
 
-**Summer Session 1, 2021**  
+**Summer Session 2, 2021**  
 
 ### Instructors
 
 | Role     | Name                | email    | Office hours  |
 | ----------------: | :---------| -----------| ------------ |   
 | **Instructor** | Ed Vul  | [evul@ucsd.edu](mailto:evul@ucsd.edu) | [Fridays 3:00-4:30PM](https://ucsd.zoom.us/my/edvul) |   
-| **TA** | Erik Brockbank  | [ebrockba@ucsd.edu](mailto:ebrockba@ucsd.edu) | TBD |
+| **TA** | Erik Brockbank  | [ebrockba@ucsd.edu](mailto:ebrockba@ucsd.edu) | [Mondays 2:00-3:00PM](https://ucsd.zoom.us/j/7131149147)  |
 
 ### All the links
 
