@@ -33,7 +33,7 @@ parts:
       - file: lectures/P04
         sections:
           - file: lectures/P04-strings
-          - file: live/Lecture-4
+          - file: live/Lecture-04
       - file: lectures/P05
         sections:
           - file: lectures/P05-dictionaries
