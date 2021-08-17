@@ -256,6 +256,11 @@
      Dictionaries
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../live/Lecture-05.html">
+     Introducing Dictionaries (sometimes called “hash maps”)
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -577,7 +582,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Alixandria&#39;, &#39;Bonifacio&#39;, &#39;Dwaine&#39;, &#39;Emelina&#39;, &#39;Lashannon&#39;, &#39;Marceline&#39;, &#39;Neha&#39;, &#39;Tannia&#39;, &#39;Treavor&#39;, &#39;Tyffanie&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Abubakar&#39;, &#39;Christana&#39;, &#39;Franki&#39;, &#39;Jahmar&#39;, &#39;Jovonne&#39;, &#39;Melody&#39;, &#39;Shadia&#39;, &#39;Tabatha&#39;, &#39;Tahnee&#39;, &#39;Vianca&#39;]
 </pre></div>
 </div>
 </div>
@@ -608,16 +613,16 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Alixandria [&#39;Emelina&#39;, &#39;Marceline&#39;, &#39;Tannia&#39;, &#39;Tyffanie&#39;]
-Bonifacio  [&#39;Dwaine&#39;, &#39;Emelina&#39;]
-Dwaine     [&#39;Bonifacio&#39;, &#39;Lashannon&#39;, &#39;Marceline&#39;, &#39;Neha&#39;]
-Emelina    [&#39;Alixandria&#39;, &#39;Bonifacio&#39;, &#39;Neha&#39;]
-Lashannon  [&#39;Dwaine&#39;]
-Marceline  [&#39;Alixandria&#39;, &#39;Dwaine&#39;, &#39;Tannia&#39;, &#39;Treavor&#39;]
-Neha       [&#39;Dwaine&#39;, &#39;Emelina&#39;, &#39;Tannia&#39;]
-Tannia     [&#39;Alixandria&#39;, &#39;Marceline&#39;, &#39;Neha&#39;]
-Treavor    [&#39;Marceline&#39;]
-Tyffanie   [&#39;Alixandria&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Abubakar   [&#39;Jahmar&#39;, &#39;Jovonne&#39;, &#39;Melody&#39;, &#39;Tahnee&#39;, &#39;Vianca&#39;]
+Christana  [&#39;Franki&#39;, &#39;Jahmar&#39;, &#39;Melody&#39;, &#39;Tabatha&#39;]
+Franki     [&#39;Christana&#39;, &#39;Tabatha&#39;]
+Jahmar     [&#39;Abubakar&#39;, &#39;Christana&#39;, &#39;Shadia&#39;, &#39;Tabatha&#39;, &#39;Tahnee&#39;]
+Jovonne    [&#39;Abubakar&#39;, &#39;Melody&#39;]
+Melody     [&#39;Abubakar&#39;, &#39;Christana&#39;, &#39;Jovonne&#39;, &#39;Shadia&#39;]
+Shadia     [&#39;Jahmar&#39;, &#39;Melody&#39;, &#39;Vianca&#39;]
+Tabatha    [&#39;Christana&#39;, &#39;Franki&#39;, &#39;Jahmar&#39;]
+Tahnee     [&#39;Abubakar&#39;, &#39;Jahmar&#39;]
+Vianca     [&#39;Abubakar&#39;, &#39;Shadia&#39;]
 </pre></div>
 </div>
 </div>
@@ -649,18 +654,18 @@ Tyffanie   [&#39;Alixandria&#39;]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Alixandria has 4 friends with an average of 2.75 friends each
-Bonifacio  has 2 friends with an average of 3.50 friends each
-Dwaine     has 4 friends with an average of 2.50 friends each
-Emelina    has 3 friends with an average of 3.00 friends each
-Lashannon  has 1 friends with an average of 4.00 friends each
-Marceline  has 4 friends with an average of 3.00 friends each
-Neha       has 3 friends with an average of 3.33 friends each
-Tannia     has 3 friends with an average of 3.67 friends each
-Treavor    has 1 friends with an average of 4.00 friends each
-Tyffanie   has 1 friends with an average of 4.00 friends each
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Abubakar   has 5 friends with an average of 3.00 friends each
+Christana  has 4 friends with an average of 3.50 friends each
+Franki     has 2 friends with an average of 3.50 friends each
+Jahmar     has 5 friends with an average of 3.40 friends each
+Jovonne    has 2 friends with an average of 4.50 friends each
+Melody     has 4 friends with an average of 3.50 friends each
+Shadia     has 3 friends with an average of 3.67 friends each
+Tabatha    has 3 friends with an average of 3.67 friends each
+Tahnee     has 2 friends with an average of 5.00 friends each
+Vianca     has 2 friends with an average of 4.00 friends each
 
-People have 0.78 fewer friends than the average number of friends their friends have
+People have 0.57 fewer friends than the average number of friends their friends have
 </pre></div>
 </div>
 </div>
@@ -699,16 +704,16 @@ People have 0.78 fewer friends than the average number of friends their friends 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Alixandria can reach 10/10
-Bonifacio  can reach 10/10
-Dwaine     can reach 10/10
-Emelina    can reach 10/10
-Lashannon  can reach 10/10
-Marceline  can reach 10/10
-Neha       can reach 10/10
-Tannia     can reach 10/10
-Treavor    can reach 10/10
-Tyffanie   can reach 10/10
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Abubakar   can reach 10/10
+Christana  can reach 10/10
+Franki     can reach 10/10
+Jahmar     can reach 10/10
+Jovonne    can reach 10/10
+Melody     can reach 10/10
+Shadia     can reach 10/10
+Tabatha    can reach 10/10
+Tahnee     can reach 10/10
+Vianca     can reach 10/10
 </pre></div>
 </div>
 </div>
@@ -721,16 +726,16 @@ Tyffanie   can reach 10/10
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Alixandria {&#39;Alixandria&#39;: 0, &#39;Emelina&#39;: 1, &#39;Marceline&#39;: 1, &#39;Tannia&#39;: 1, &#39;Tyffanie&#39;: 1, &#39;Bonifacio&#39;: 2, &#39;Neha&#39;: 2, &#39;Dwaine&#39;: 2, &#39;Treavor&#39;: 2, &#39;Lashannon&#39;: 3}
-Bonifacio  {&#39;Bonifacio&#39;: 0, &#39;Dwaine&#39;: 1, &#39;Emelina&#39;: 1, &#39;Marceline&#39;: 2, &#39;Lashannon&#39;: 2, &#39;Neha&#39;: 2, &#39;Alixandria&#39;: 2, &#39;Treavor&#39;: 3, &#39;Tannia&#39;: 3, &#39;Tyffanie&#39;: 3}
-Dwaine     {&#39;Dwaine&#39;: 0, &#39;Marceline&#39;: 1, &#39;Bonifacio&#39;: 1, &#39;Lashannon&#39;: 1, &#39;Neha&#39;: 1, &#39;Treavor&#39;: 2, &#39;Tannia&#39;: 2, &#39;Alixandria&#39;: 2, &#39;Emelina&#39;: 2, &#39;Tyffanie&#39;: 3}
-Emelina    {&#39;Emelina&#39;: 0, &#39;Bonifacio&#39;: 1, &#39;Alixandria&#39;: 1, &#39;Neha&#39;: 1, &#39;Dwaine&#39;: 2, &#39;Tannia&#39;: 2, &#39;Marceline&#39;: 2, &#39;Tyffanie&#39;: 2, &#39;Lashannon&#39;: 3, &#39;Treavor&#39;: 3}
-Lashannon  {&#39;Lashannon&#39;: 0, &#39;Dwaine&#39;: 1, &#39;Bonifacio&#39;: 2, &#39;Marceline&#39;: 2, &#39;Neha&#39;: 2, &#39;Emelina&#39;: 3, &#39;Treavor&#39;: 3, &#39;Tannia&#39;: 3, &#39;Alixandria&#39;: 3, &#39;Tyffanie&#39;: 4}
-Marceline  {&#39;Marceline&#39;: 0, &#39;Dwaine&#39;: 1, &#39;Treavor&#39;: 1, &#39;Tannia&#39;: 1, &#39;Alixandria&#39;: 1, &#39;Bonifacio&#39;: 2, &#39;Lashannon&#39;: 2, &#39;Neha&#39;: 2, &#39;Emelina&#39;: 2, &#39;Tyffanie&#39;: 2}
-Neha       {&#39;Neha&#39;: 0, &#39;Dwaine&#39;: 1, &#39;Emelina&#39;: 1, &#39;Tannia&#39;: 1, &#39;Bonifacio&#39;: 2, &#39;Lashannon&#39;: 2, &#39;Marceline&#39;: 2, &#39;Alixandria&#39;: 2, &#39;Treavor&#39;: 3, &#39;Tyffanie&#39;: 3}
-Tannia     {&#39;Tannia&#39;: 0, &#39;Marceline&#39;: 1, &#39;Alixandria&#39;: 1, &#39;Neha&#39;: 1, &#39;Dwaine&#39;: 2, &#39;Treavor&#39;: 2, &#39;Emelina&#39;: 2, &#39;Tyffanie&#39;: 2, &#39;Bonifacio&#39;: 3, &#39;Lashannon&#39;: 3}
-Treavor    {&#39;Treavor&#39;: 0, &#39;Marceline&#39;: 1, &#39;Dwaine&#39;: 2, &#39;Tannia&#39;: 2, &#39;Alixandria&#39;: 2, &#39;Bonifacio&#39;: 3, &#39;Lashannon&#39;: 3, &#39;Neha&#39;: 3, &#39;Emelina&#39;: 3, &#39;Tyffanie&#39;: 3}
-Tyffanie   {&#39;Tyffanie&#39;: 0, &#39;Alixandria&#39;: 1, &#39;Emelina&#39;: 2, &#39;Marceline&#39;: 2, &#39;Tannia&#39;: 2, &#39;Bonifacio&#39;: 3, &#39;Neha&#39;: 3, &#39;Dwaine&#39;: 3, &#39;Treavor&#39;: 3, &#39;Lashannon&#39;: 4}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Abubakar   {&#39;Abubakar&#39;: 0, &#39;Vianca&#39;: 1, &#39;Jovonne&#39;: 1, &#39;Tahnee&#39;: 1, &#39;Jahmar&#39;: 1, &#39;Melody&#39;: 1, &#39;Shadia&#39;: 2, &#39;Christana&#39;: 2, &#39;Tabatha&#39;: 2, &#39;Franki&#39;: 3}
+Christana  {&#39;Christana&#39;: 0, &#39;Tabatha&#39;: 1, &#39;Franki&#39;: 1, &#39;Melody&#39;: 1, &#39;Jahmar&#39;: 1, &#39;Jovonne&#39;: 2, &#39;Shadia&#39;: 2, &#39;Abubakar&#39;: 2, &#39;Tahnee&#39;: 2, &#39;Vianca&#39;: 3}
+Franki     {&#39;Franki&#39;: 0, &#39;Christana&#39;: 1, &#39;Tabatha&#39;: 1, &#39;Melody&#39;: 2, &#39;Jahmar&#39;: 2, &#39;Jovonne&#39;: 3, &#39;Shadia&#39;: 3, &#39;Abubakar&#39;: 3, &#39;Tahnee&#39;: 3, &#39;Vianca&#39;: 4}
+Jahmar     {&#39;Jahmar&#39;: 0, &#39;Tahnee&#39;: 1, &#39;Shadia&#39;: 1, &#39;Abubakar&#39;: 1, &#39;Christana&#39;: 1, &#39;Tabatha&#39;: 1, &#39;Vianca&#39;: 2, &#39;Melody&#39;: 2, &#39;Jovonne&#39;: 2, &#39;Franki&#39;: 2}
+Jovonne    {&#39;Jovonne&#39;: 0, &#39;Abubakar&#39;: 1, &#39;Melody&#39;: 1, &#39;Vianca&#39;: 2, &#39;Tahnee&#39;: 2, &#39;Jahmar&#39;: 2, &#39;Christana&#39;: 2, &#39;Shadia&#39;: 2, &#39;Tabatha&#39;: 3, &#39;Franki&#39;: 3}
+Melody     {&#39;Melody&#39;: 0, &#39;Christana&#39;: 1, &#39;Shadia&#39;: 1, &#39;Abubakar&#39;: 1, &#39;Jovonne&#39;: 1, &#39;Tabatha&#39;: 2, &#39;Franki&#39;: 2, &#39;Jahmar&#39;: 2, &#39;Vianca&#39;: 2, &#39;Tahnee&#39;: 2}
+Shadia     {&#39;Shadia&#39;: 0, &#39;Vianca&#39;: 1, &#39;Melody&#39;: 1, &#39;Jahmar&#39;: 1, &#39;Abubakar&#39;: 2, &#39;Christana&#39;: 2, &#39;Jovonne&#39;: 2, &#39;Tabatha&#39;: 2, &#39;Tahnee&#39;: 2, &#39;Franki&#39;: 3}
+Tabatha    {&#39;Tabatha&#39;: 0, &#39;Christana&#39;: 1, &#39;Franki&#39;: 1, &#39;Jahmar&#39;: 1, &#39;Melody&#39;: 2, &#39;Shadia&#39;: 2, &#39;Abubakar&#39;: 2, &#39;Tahnee&#39;: 2, &#39;Jovonne&#39;: 3, &#39;Vianca&#39;: 3}
+Tahnee     {&#39;Tahnee&#39;: 0, &#39;Abubakar&#39;: 1, &#39;Jahmar&#39;: 1, &#39;Jovonne&#39;: 2, &#39;Vianca&#39;: 2, &#39;Melody&#39;: 2, &#39;Christana&#39;: 2, &#39;Shadia&#39;: 2, &#39;Tabatha&#39;: 2, &#39;Franki&#39;: 3}
+Vianca     {&#39;Vianca&#39;: 0, &#39;Shadia&#39;: 1, &#39;Abubakar&#39;: 1, &#39;Melody&#39;: 2, &#39;Jahmar&#39;: 2, &#39;Jovonne&#39;: 2, &#39;Tahnee&#39;: 2, &#39;Christana&#39;: 3, &#39;Tabatha&#39;: 3, &#39;Franki&#39;: 4}
 </pre></div>
 </div>
 </div>
@@ -760,7 +765,7 @@ Tyffanie   {&#39;Tyffanie&#39;: 0, &#39;Alixandria&#39;: 1, &#39;Emelina&#39;: 2
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.022222222222222
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.8444444444444446
 </pre></div>
 </div>
 </div>
@@ -792,7 +797,7 @@ Tyffanie   {&#39;Tyffanie&#39;: 0, &#39;Alixandria&#39;: 1, &#39;Emelina&#39;: 2
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>p=0.2532843602293451 mean=0.09523809523809523
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>p=0.2532843602293451 mean=0.45666666666666667
 </pre></div>
 </div>
 </div>
@@ -828,16 +833,16 @@ Tyffanie   {&#39;Tyffanie&#39;: 0, &#39;Alixandria&#39;: 1, &#39;Emelina&#39;: 2
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Alixandria [&#39;Bonifacio&#39;, &#39;Dwaine&#39;, &#39;Treavor&#39;, &#39;Tyffanie&#39;]
-Bonifacio  [&#39;Alixandria&#39;, &#39;Dwaine&#39;, &#39;Emelina&#39;, &#39;Tyffanie&#39;]
-Dwaine     [&#39;Alixandria&#39;, &#39;Bonifacio&#39;, &#39;Emelina&#39;, &#39;Lashannon&#39;]
-Emelina    [&#39;Bonifacio&#39;, &#39;Dwaine&#39;, &#39;Lashannon&#39;, &#39;Marceline&#39;]
-Lashannon  [&#39;Dwaine&#39;, &#39;Emelina&#39;, &#39;Marceline&#39;, &#39;Neha&#39;]
-Marceline  [&#39;Emelina&#39;, &#39;Lashannon&#39;, &#39;Neha&#39;, &#39;Tannia&#39;]
-Neha       [&#39;Lashannon&#39;, &#39;Marceline&#39;, &#39;Tannia&#39;, &#39;Treavor&#39;]
-Tannia     [&#39;Marceline&#39;, &#39;Neha&#39;, &#39;Treavor&#39;, &#39;Tyffanie&#39;]
-Treavor    [&#39;Alixandria&#39;, &#39;Neha&#39;, &#39;Tannia&#39;, &#39;Tyffanie&#39;]
-Tyffanie   [&#39;Alixandria&#39;, &#39;Bonifacio&#39;, &#39;Tannia&#39;, &#39;Treavor&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Abubakar   [&#39;Christana&#39;, &#39;Franki&#39;, &#39;Tahnee&#39;, &#39;Vianca&#39;]
+Christana  [&#39;Abubakar&#39;, &#39;Franki&#39;, &#39;Jahmar&#39;, &#39;Vianca&#39;]
+Franki     [&#39;Abubakar&#39;, &#39;Christana&#39;, &#39;Jahmar&#39;, &#39;Jovonne&#39;]
+Jahmar     [&#39;Christana&#39;, &#39;Franki&#39;, &#39;Jovonne&#39;, &#39;Melody&#39;]
+Jovonne    [&#39;Franki&#39;, &#39;Jahmar&#39;, &#39;Melody&#39;, &#39;Shadia&#39;]
+Melody     [&#39;Jahmar&#39;, &#39;Jovonne&#39;, &#39;Shadia&#39;, &#39;Tabatha&#39;]
+Shadia     [&#39;Jovonne&#39;, &#39;Melody&#39;, &#39;Tabatha&#39;, &#39;Tahnee&#39;]
+Tabatha    [&#39;Melody&#39;, &#39;Shadia&#39;, &#39;Tahnee&#39;, &#39;Vianca&#39;]
+Tahnee     [&#39;Abubakar&#39;, &#39;Shadia&#39;, &#39;Tabatha&#39;, &#39;Vianca&#39;]
+Vianca     [&#39;Abubakar&#39;, &#39;Christana&#39;, &#39;Tabatha&#39;, &#39;Tahnee&#39;]
 </pre></div>
 </div>
 </div>
@@ -900,16 +905,16 @@ Tyffanie   [&#39;Alixandria&#39;, &#39;Bonifacio&#39;, &#39;Tannia&#39;, &#39;Tr
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Dwaine 5
-Alixandria 4
- Bonifacio 3
- Lashannon 3
- Marceline 3
-      Neha 3
-    Tannia 3
-   Emelina 2
-   Treavor 2
-  Tyffanie 2
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Franki 6
+    Jahmar 4
+    Melody 4
+   Jovonne 3
+   Tabatha 3
+  Abubakar 2
+ Christana 2
+    Shadia 2
+    Tahnee 2
+    Vianca 2
 </pre></div>
 </div>
 </div>
@@ -921,7 +926,7 @@ Alixandria 4
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_keys([&#39;Alixandria&#39;, &#39;Bonifacio&#39;, &#39;Emelina&#39;, &#39;Lashannon&#39;, &#39;Marceline&#39;, &#39;Tannia&#39;, &#39;Treavor&#39;])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_keys([&#39;Abubakar&#39;, &#39;Christana&#39;, &#39;Franki&#39;, &#39;Jahmar&#39;, &#39;Shadia&#39;, &#39;Tabatha&#39;, &#39;Tahnee&#39;])
 </pre></div>
 </div>
 </div>
