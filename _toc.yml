@@ -38,6 +38,7 @@ parts:
         sections:
           - file: lectures/P05-dictionaries
           - file: live/Lecture_5
+          - file: live/Lecture-05
       - file: lectures/P06
         sections:
           - file: lectures/P06-functions
