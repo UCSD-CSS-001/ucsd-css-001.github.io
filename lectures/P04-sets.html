@@ -22,7 +22,7 @@
       
 
     
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.5f77b4aec8189eecf79907ce328c390d.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
@@ -153,6 +153,11 @@
      P01:  Python syntax, variables, types
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../live/Lecture-01.html">
+     CSS1 Lecture 1
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -180,6 +185,11 @@
      P02: While loops
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../live/Lecture-02.html">
+     CSS1 Lecture 2
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -195,6 +205,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="P03-sequence.html">
      P03: Sequence types
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../live/Lecture-03.html">
+     CSS 1 Lecture 3
     </a>
    </li>
   </ul>
@@ -215,8 +230,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../live/Lecture_4.html">
-     Lecture 4: strings
+    <a class="reference internal" href="../live/Lecture-04.html">
+     Lecture 4: Strings
     </a>
    </li>
   </ul>
@@ -497,7 +512,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;b&#39;, 3, 4, &#39;a&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;b&#39;, 3, &#39;a&#39;, 4}
 </pre></div>
 </div>
 </div>
@@ -516,9 +531,9 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;b&#39;, 3, 4, &#39;a&#39;}
-{3, 4, 10, &#39;a&#39;, &#39;abs&#39;, &#39;b&#39;}
-{3, 4, 10, &#39;a&#39;, &#39;abs&#39;, &#39;b&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;b&#39;, 3, &#39;a&#39;, 4}
+{&#39;b&#39;, &#39;abs&#39;, 3, 4, 10, &#39;a&#39;}
+{&#39;b&#39;, &#39;abs&#39;, 3, 4, 10, &#39;a&#39;}
 </pre></div>
 </div>
 </div>
@@ -534,7 +549,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{3, 4, 10, &#39;a&#39;, &#39;abs&#39;, &#39;b&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;b&#39;, &#39;abs&#39;, 3, 4, 10, &#39;a&#39;}
 </pre></div>
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
@@ -571,12 +586,12 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>b
+abs
+3
 4
 10
 a
-abs
-b
 </pre></div>
 </div>
 </div>
@@ -598,8 +613,8 @@ b
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;p&#39;, &#39;n&#39;, &#39;d&#39;, &#39;a&#39;}
-{&#39;o&#39;, &#39;c&#39;, &#39;n&#39;, &#39;a&#39;, &#39;g&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;a&#39;, &#39;d&#39;, &#39;n&#39;, &#39;p&#39;}
+{&#39;n&#39;, &#39;c&#39;, &#39;g&#39;, &#39;o&#39;, &#39;a&#39;}
 </pre></div>
 </div>
 </div>
@@ -612,7 +627,7 @@ b
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;d&#39;, &#39;o&#39;, &#39;c&#39;, &#39;p&#39;, &#39;n&#39;, &#39;a&#39;, &#39;g&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;n&#39;, &#39;d&#39;, &#39;c&#39;, &#39;g&#39;, &#39;o&#39;, &#39;a&#39;, &#39;p&#39;}
 </pre></div>
 </div>
 </div>
@@ -625,7 +640,7 @@ b
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;n&#39;, &#39;a&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;a&#39;, &#39;n&#39;}
 </pre></div>
 </div>
 </div>
@@ -638,7 +653,7 @@ b
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;p&#39;, &#39;d&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;d&#39;, &#39;p&#39;}
 </pre></div>
 </div>
 </div>

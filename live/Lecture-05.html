@@ -1,0 +1,1345 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introducing Dictionaries (sometimes called “hash maps”) &#8212; UCSD CSS 1</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.5f77b4aec8189eecf79907ce328c390d.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="P06: functions" href="../lectures/P06.html" />
+    <link rel="prev" title="Dictionaries" href="Lecture_5.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">UCSD CSS 1</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Welcome to CSS 1
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Course (CSS 1 summer 2)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/syllabus.html">
+   Syllabus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/expectations.html">
+   Expectations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/datahub.html">
+   Datahub assignments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/debugging.html">
+   Debugging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/resources.html">
+   Extracurricular Resources
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Content
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lectures/P01.html">
+   P01: Getting oriented
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lectures/P01-programming.html">
+     P01: programming concepts
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lectures/P01-jupyter.html">
+     P01: Our environment
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lectures/P01-python.html">
+     P01:  Python syntax, variables, types
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture-01.html">
+     CSS1 Lecture 1
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lectures/P02.html">
+   P02: Control flow and logic
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lectures/P02-conditionals.html">
+     P02: Branching via conditional statement: if..elif..else..
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lectures/P02-loops.html">
+     P02: Loops!
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lectures/P02-while.html">
+     P02: While loops
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture-02.html">
+     CSS1 Lecture 2
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lectures/P03.html">
+   P03: Sequence types
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lectures/P03-sequence.html">
+     P03: Sequence types
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture-03.html">
+     CSS 1 Lecture 3
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lectures/P04.html">
+   P04: strings
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lectures/P04-strings.html">
+     P04: Strings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture-04.html">
+     Lecture 4: Strings
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../lectures/P05.html">
+   P05: dictionaries
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lectures/P05-dictionaries.html">
+     P04: dictionaries, sets, and files
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_5.html">
+     Dictionaries
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Introducing Dictionaries (sometimes called “hash maps”)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lectures/P06.html">
+   P06: functions
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lectures/P06-functions.html">
+     P06: functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_6.html">
+     functions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lectures/P07.html">
+   P07: objects and classes
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lectures/P07-classes.html">
+     P06: classes and objects
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_7.html">
+     Classes, Objects, etc.
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lectures/P08.html">
+   P08: Pandas and dataframes
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_8.html">
+     Modules
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/week-05.html">
+   W5 problem
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../lectures/P09.html">
+   P09: Plotting and Matplotlib
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_9.html">
+     Plotting with matplotlib
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lectures/P10.html">
+   P10: Advanced / Beyond
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/live/Lecture-05.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/UCSD-CSS-001/ucsd-css-001.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/UCSD-CSS-001/ucsd-css-001.github.io/issues/new?title=Issue%20on%20page%20%2Flive/Lecture-05.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/UCSD-CSS-001/ucsd-css-001.github.io/master?urlpath=tree/live/Lecture-05.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Introducing Dictionaries (sometimes called “hash maps”)
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-a-dictionary">
+     What is a dictionary?
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-are-dictionaries-useful-for">
+     What are dictionaries useful for?
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#so-how-do-dictionaries-work">
+     So how do dictionaries work?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#today-s-agenda">
+   Today’s Agenda
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#constructing-dictionaries">
+   Constructing dictionaries
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-to-dictionaries">
+   Adding to dictionaries
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#accessing-items-in-a-dictionary">
+   Accessing items in a dictionary
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#aside-what-s-happening-when-we-add-or-edit-key-value-pairs-in-a-dictionary">
+     Aside: what’s happening when we add or edit key-value pairs in a dictionary?
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q-what-can-we-use-as-keys-in-a-dictionary">
+     Q: What can we use as keys in a dictionary?
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#q-what-can-we-use-as-values-in-a-dictionary">
+     Q: What can we use as values in a dictionary?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#deleting-items-from-a-dictionary">
+   Deleting items from a dictionary
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#iterating-over-items-in-a-dictionary">
+   Iterating over items in a dictionary
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#which-month-has-the-most-birthdays">
+     Which month has the most birthdays??
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#iterating-through-dictionary-keys">
+       Iterating through dictionary keys
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#iterating-through-dictionary-values">
+       Iterating through dictionary values
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#iterating-through-dictionaries-using-key-value-combinations-most-common">
+       Iterating through dictionaries using key-value combinations (most common)
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sorting-items-in-a-dictionary">
+   Sorting items in a dictionary
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sorting-by-keys">
+     Sorting by keys
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sorting-by-values">
+     Sorting by values
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="introducing-dictionaries-sometimes-called-hash-maps">
+<h1>Introducing Dictionaries (sometimes called “hash maps”)<a class="headerlink" href="#introducing-dictionaries-sometimes-called-hash-maps" title="Permalink to this headline">¶</a></h1>
+<p>Today, we’ll be talking about a very important <em>data structure</em> that is more or less universal in coding languages: the dictionary.</p>
+<div class="section" id="what-is-a-dictionary">
+<h2>What is a dictionary?<a class="headerlink" href="#what-is-a-dictionary" title="Permalink to this headline">¶</a></h2>
+<p>It keeps track of <em>key-value pairs</em> (like a word and its definition).</p>
+<p>Can we just use existing data structures like lists for this? Not really.</p>
+</div>
+<div class="section" id="what-are-dictionaries-useful-for">
+<h2>What are dictionaries useful for?<a class="headerlink" href="#what-are-dictionaries-useful-for" title="Permalink to this headline">¶</a></h2>
+<p>You need a dictionary (at least one) for almost any complex coding problem.</p>
+<p>They show up repeatedly in the rest of our labs and problem sets.</p>
+<p>Example: password validation</p>
+</div>
+<div class="section" id="so-how-do-dictionaries-work">
+<h2>So how do dictionaries work?<a class="headerlink" href="#so-how-do-dictionaries-work" title="Permalink to this headline">¶</a></h2>
+<p>Formally, a dictionary in python is:</p>
+<ul class="simple">
+<li><p>mutable (you can change it <em>in place</em>)</p></li>
+<li><p>a collection (like a list, it stores things and has attributes like <code class="docutils literal notranslate"><span class="pre">len</span></code>)</p></li>
+<li><p><em>unordered</em> (IMPORTANT: this has a big effect on how you interact with dictionaries. More on this below.)</p></li>
+<li><p>defined by a pairing between unique <em>keys</em> and their associated <em>values</em></p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="today-s-agenda">
+<h1>Today’s Agenda<a class="headerlink" href="#today-s-agenda" title="Permalink to this headline">¶</a></h1>
+<ol class="simple">
+<li><p>How to <strong>construct</strong> dictionaries in python</p></li>
+<li><p>How to <strong>add new items</strong> to a dictionary</p></li>
+<li><p>How to <strong>access</strong> items in a dictionary</p></li>
+<li><p>How to <strong>delete</strong> items from a dictionary</p></li>
+<li><p>How to <strong>iterate</strong> over items in a dictionary (remember, they’re un-ordered)</p></li>
+<li><p>How to <strong>sort</strong> a dictionary (sometimes, we need them in order!)</p></li>
+</ol>
+</div>
+<hr class="docutils" />
+<div class="section" id="constructing-dictionaries">
+<h1>Constructing dictionaries<a class="headerlink" href="#constructing-dictionaries" title="Permalink to this headline">¶</a></h1>
+<p>In python, you can declare a new, empty dictionary, or say what’s in it when you declare it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Declare a new, empty dictionary</span>
+<span class="n">birthdays</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">birthdays</span><span class="p">)</span>
+
+<span class="n">birthdays</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">birthday_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">birthdays</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{}
+{}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Declare a new dictionary with some stuff in it</span>
+<span class="n">birthdays</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;Erik&#39;</span><span class="p">:</span> <span class="s1">&#39;03/21/1991&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Isabella&#39;</span><span class="p">:</span> <span class="s1">&#39;07/14/1992&#39;</span>
+<span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">birthdays</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">birthdays</span><span class="p">))</span> <span class="c1"># why is this 2?</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Erik&#39;: &#39;03/21/1991&#39;, &#39;Isabella&#39;: &#39;07/14/1992&#39;}
+2
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="adding-to-dictionaries">
+<h1>Adding to dictionaries<a class="headerlink" href="#adding-to-dictionaries" title="Permalink to this headline">¶</a></h1>
+<p>You can add <em>new key-value pairs</em> to dictionaries all at once with <code class="docutils literal notranslate"><span class="pre">update</span></code> or one by one with bracket […] notation.</p>
+<p>NOTE: use the same syntax to change existing values in a dictionary.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Adding multiple key-value pairs </span>
+<span class="nb">print</span><span class="p">(</span><span class="n">birthdays</span><span class="p">)</span>
+
+<span class="n">new_birthdays</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;Deniz&#39;</span><span class="p">:</span> <span class="s1">&#39;09/23/2000&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Elliott&#39;</span><span class="p">:</span> <span class="s1">&#39;08/06/2001&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Kayla&#39;</span> <span class="p">:</span> <span class="s1">&#39;10/12/2002&#39;</span>
+<span class="p">}</span>
+<span class="n">birthdays</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">new_birthdays</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">birthdays</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Erik&#39;: &#39;03/21/1991&#39;, &#39;Isabella&#39;: &#39;07/14/1992&#39;}
+{&#39;Erik&#39;: &#39;03/21/1991&#39;, &#39;Isabella&#39;: &#39;07/14/1992&#39;, &#39;Deniz&#39;: &#39;09/23/2000&#39;, &#39;Elliott&#39;: &#39;08/06/2001&#39;, &#39;Kayla&#39;: &#39;10/12/2002&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">birthdays</span><span class="p">)</span>
+<span class="c1"># Adding a single key-value pair (this is more common than the above)</span>
+<span class="c1"># dictionary[key] = value</span>
+<span class="n">birthdays</span><span class="p">[</span><span class="s1">&#39;Talia&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;10/16/1998&#39;</span>
+<span class="n">birthdays</span><span class="p">[</span><span class="s1">&#39;Maricel&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;11/26/2000&#39;</span>
+<span class="n">birthdays</span><span class="p">[</span><span class="s1">&#39;Alexis&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;6/27/2000&#39;</span>
+<span class="n">birthdays</span><span class="p">[</span><span class="s1">&#39;Rachel&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;06/15/1999&#39;</span>
+
+
+<span class="c1"># Changing a single key-value pair</span>
+<span class="c1"># dictionary[key] = new_value</span>
+<span class="n">birthdays</span><span class="p">[</span><span class="s1">&#39;Erik&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;3/21/1912&#39;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">birthdays</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">birthdays</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Erik&#39;: &#39;03/21/1991&#39;, &#39;Isabella&#39;: &#39;07/14/1992&#39;, &#39;Deniz&#39;: &#39;09/23/2000&#39;, &#39;Elliott&#39;: &#39;08/06/2001&#39;, &#39;Kayla&#39;: &#39;10/12/2002&#39;}
+{&#39;Erik&#39;: &#39;3/21/1912&#39;, &#39;Isabella&#39;: &#39;07/14/1992&#39;, &#39;Deniz&#39;: &#39;09/23/2000&#39;, &#39;Elliott&#39;: &#39;08/06/2001&#39;, &#39;Kayla&#39;: &#39;10/12/2002&#39;, &#39;Talia&#39;: &#39;10/16/1998&#39;, &#39;Maricel&#39;: &#39;11/26/2000&#39;, &#39;Alexis&#39;: &#39;6/27/2000&#39;, &#39;Rachel&#39;: &#39;06/15/1999&#39;}
+9
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="accessing-items-in-a-dictionary">
+<h1>Accessing items in a dictionary<a class="headerlink" href="#accessing-items-in-a-dictionary" title="Permalink to this headline">¶</a></h1>
+<p>Access items in a dictionary using the same bracket […] syntax as you use to add or update items.</p>
+<p>NOTE: this means you can only get items in a dictionary using the lookup <em>key</em>, not the value.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Access dictionary values with `dictionary[key]`</span>
+<span class="n">Isabella_birthday</span> <span class="o">=</span> <span class="n">birthdays</span><span class="p">[</span><span class="s1">&#39;Isabella&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Isabella_birthday</span><span class="p">)</span>
+
+<span class="n">bday_card</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Dear Isabella, sorry I missed your birthday on </span><span class="si">{</span><span class="n">Isabella_birthday</span><span class="si">}</span><span class="s2">.&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">bday_card</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>07/14/1992
+Dear Isabella, sorry I missed your birthday on 07/14/1992.
+</pre></div>
+</div>
+</div>
+</div>
+<p>When you try to access an item that isn’t in a dictionary, python returns a <code class="docutils literal notranslate"><span class="pre">KeyError</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">birthdays</span><span class="p">[</span><span class="s1">&#39;Ed&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">6</span><span class="o">-</span><span class="mi">74</span><span class="n">f6d205b294</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">birthdays</span><span class="p">[</span><span class="s1">&#39;Ed&#39;</span><span class="p">]</span>
+
+<span class="ne">KeyError</span>: &#39;Ed&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>To avoid a <code class="docutils literal notranslate"><span class="pre">KeyError</span></code>, use the <code class="docutils literal notranslate"><span class="pre">in</span></code> operator to check if a key is in the dictionary.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Erik&#39;</span> <span class="ow">in</span> <span class="n">birthdays</span><span class="p">)</span> <span class="c1"># What does this return?</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Ed&#39;</span> <span class="ow">in</span> <span class="n">birthdays</span><span class="p">)</span> <span class="c1"># What does this return?</span>
+
+<span class="n">people</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Erik&#39;</span><span class="p">,</span> <span class="s1">&#39;Ed&#39;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">person</span> <span class="ow">in</span> <span class="n">people</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">person</span> <span class="ow">in</span> <span class="n">birthdays</span><span class="p">:</span> <span class="c1"># This `in`, a little different from the one above! </span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">birthdays</span><span class="p">[</span><span class="n">person</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+False
+3/21/1912
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="aside-what-s-happening-when-we-add-or-edit-key-value-pairs-in-a-dictionary">
+<h2>Aside: what’s happening when we add or edit key-value pairs in a dictionary?<a class="headerlink" href="#aside-what-s-happening-when-we-add-or-edit-key-value-pairs-in-a-dictionary" title="Permalink to this headline">¶</a></h2>
+<p>In most coding languages, the <em>values</em> in a dictionary or hash map are stored in memory just like a list.</p>
+<p>The magic is that instead of adding values to the list based on the index you assign to them, a <strong>hash function</strong> converts the key to a unique number and stores the value in the list at the index for that number. This keeps track of key-value pairs because the hash function applied to a particular key will always point to the same place where the value is stored.</p>
+</div>
+<div class="section" id="q-what-can-we-use-as-keys-in-a-dictionary">
+<h2>Q: What can we use as keys in a dictionary?<a class="headerlink" href="#q-what-can-we-use-as-keys-in-a-dictionary" title="Permalink to this headline">¶</a></h2>
+<p>A. Only things that can be <em>uniquely</em> “hashed”.</p>
+<p>This usually means strings or numbers (even tuples!) but not things like lists (or other dictionaries).</p>
+<p>This also means <strong>you can’t have multiple copies of the same key</strong> in a dictionary.</p>
+<p>Final point: dictionaries are very flexible!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">birthdays</span><span class="p">[</span><span class="mf">6.5</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;January 1st&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">birthdays</span><span class="p">)</span>
+
+<span class="n">birthdays</span><span class="p">[(</span><span class="s1">&#39;I am&#39;</span><span class="p">,</span> <span class="s1">&#39;a tuple&#39;</span><span class="p">)]</span> <span class="o">=</span> <span class="s1">&#39;January 1st&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">birthdays</span><span class="p">)</span>
+
+<span class="c1"># Can we add another entry with the same key? No!</span>
+<span class="n">birthdays</span><span class="p">[</span><span class="s1">&#39;Erik&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;January 2nd&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">birthdays</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Erik&#39;: &#39;3/21/1912&#39;, &#39;Isabella&#39;: &#39;07/14/1992&#39;, &#39;Deniz&#39;: &#39;09/23/2000&#39;, &#39;Elliott&#39;: &#39;08/06/2001&#39;, &#39;Kayla&#39;: &#39;10/12/2002&#39;, &#39;Talia&#39;: &#39;10/16/1998&#39;, &#39;Maricel&#39;: &#39;11/26/2000&#39;, &#39;Alexis&#39;: &#39;6/27/2000&#39;, &#39;Rachel&#39;: &#39;06/15/1999&#39;, 6.5: &#39;January 1st&#39;}
+{&#39;Erik&#39;: &#39;3/21/1912&#39;, &#39;Isabella&#39;: &#39;07/14/1992&#39;, &#39;Deniz&#39;: &#39;09/23/2000&#39;, &#39;Elliott&#39;: &#39;08/06/2001&#39;, &#39;Kayla&#39;: &#39;10/12/2002&#39;, &#39;Talia&#39;: &#39;10/16/1998&#39;, &#39;Maricel&#39;: &#39;11/26/2000&#39;, &#39;Alexis&#39;: &#39;6/27/2000&#39;, &#39;Rachel&#39;: &#39;06/15/1999&#39;, 6.5: &#39;January 1st&#39;, (&#39;I am&#39;, &#39;a tuple&#39;): &#39;January 1st&#39;}
+{&#39;Erik&#39;: &#39;January 2nd&#39;, &#39;Isabella&#39;: &#39;07/14/1992&#39;, &#39;Deniz&#39;: &#39;09/23/2000&#39;, &#39;Elliott&#39;: &#39;08/06/2001&#39;, &#39;Kayla&#39;: &#39;10/12/2002&#39;, &#39;Talia&#39;: &#39;10/16/1998&#39;, &#39;Maricel&#39;: &#39;11/26/2000&#39;, &#39;Alexis&#39;: &#39;6/27/2000&#39;, &#39;Rachel&#39;: &#39;06/15/1999&#39;, 6.5: &#39;January 1st&#39;, (&#39;I am&#39;, &#39;a tuple&#39;): &#39;January 1st&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">birthdays</span><span class="p">[[</span><span class="s1">&#39;I am&#39;</span><span class="p">,</span> <span class="s1">&#39;a list&#39;</span><span class="p">]]</span> <span class="o">=</span> <span class="s1">&#39;January 1st&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">9</span><span class="o">-</span><span class="mf">5e0</span><span class="n">cb2eb7954</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">birthdays</span><span class="p">[[</span><span class="s1">&#39;I am&#39;</span><span class="p">,</span> <span class="s1">&#39;a list&#39;</span><span class="p">]]</span> <span class="o">=</span> <span class="s1">&#39;January 1st&#39;</span>
+
+<span class="ne">TypeError</span>: unhashable type: &#39;list&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="q-what-can-we-use-as-values-in-a-dictionary">
+<h2>Q: What can we use as values in a dictionary?<a class="headerlink" href="#q-what-can-we-use-as-values-in-a-dictionary" title="Permalink to this headline">¶</a></h2>
+<p>A. Almost anything, including other dictionaries!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># How about a list? sure!</span>
+<span class="n">birthdays</span><span class="p">[</span><span class="s1">&#39;Erik_siblings&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;02/26/1994&#39;</span><span class="p">,</span> <span class="s1">&#39;03/31/1999&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">birthdays</span><span class="p">)</span>
+
+<span class="c1"># Dictionaries inside dictionaries? sure! </span>
+<span class="n">birthdays_by_month</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="c1"># key = month, value = another dictionary with key = name, value = day of the month</span>
+    <span class="s1">&#39;March&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;Erik&#39;</span><span class="p">:</span> <span class="mi">21</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;July&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;Isabella&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
+        <span class="s1">&#39;Riley&#39;</span><span class="p">:</span> <span class="mi">12</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">birthdays_by_month</span><span class="p">)</span>
+
+<span class="c1"># Accessing and editing values is the same as before, just with multiple levels of keys</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">birthdays_by_month</span><span class="p">[</span><span class="s1">&#39;July&#39;</span><span class="p">])</span> <span class="c1"># {&#39;Isabella&#39;: 14, &#39;Riley&#39;: 12}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">birthdays_by_month</span><span class="p">[</span><span class="s1">&#39;July&#39;</span><span class="p">][</span><span class="s1">&#39;Riley&#39;</span><span class="p">])</span> <span class="c1"># 12</span>
+
+<span class="n">birthdays_by_month</span><span class="p">[</span><span class="s1">&#39;July&#39;</span><span class="p">][</span><span class="s1">&#39;America&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">birthdays_by_month</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Erik&#39;: &#39;January 2nd&#39;, &#39;Isabella&#39;: &#39;07/14/1992&#39;, &#39;Deniz&#39;: &#39;09/23/2000&#39;, &#39;Elliott&#39;: &#39;08/06/2001&#39;, &#39;Kayla&#39;: &#39;10/12/2002&#39;, &#39;Talia&#39;: &#39;10/16/1998&#39;, &#39;Maricel&#39;: &#39;11/26/2000&#39;, &#39;Alexis&#39;: &#39;6/27/2000&#39;, &#39;Rachel&#39;: &#39;06/15/1999&#39;, 6.5: &#39;January 1st&#39;, (&#39;I am&#39;, &#39;a tuple&#39;): &#39;January 1st&#39;, &#39;Erik_siblings&#39;: [&#39;02/26/1994&#39;, &#39;03/31/1999&#39;]}
+{&#39;March&#39;: {&#39;Erik&#39;: 21}, &#39;July&#39;: {&#39;Isabella&#39;: 14, &#39;Riley&#39;: 12}}
+{&#39;Isabella&#39;: 14, &#39;Riley&#39;: 12}
+12
+{&#39;March&#39;: {&#39;Erik&#39;: 21}, &#39;July&#39;: {&#39;Isabella&#39;: 14, &#39;Riley&#39;: 12, &#39;America&#39;: 4}}
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="deleting-items-from-a-dictionary">
+<h1>Deleting items from a dictionary<a class="headerlink" href="#deleting-items-from-a-dictionary" title="Permalink to this headline">¶</a></h1>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">del</span></code> operator to delete items from a dictionary.</p>
+<p>The syntax to say which item you want to delete uses the same bracket […] notation.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">birthdays</span><span class="p">)</span> <span class="c1"># Before deletion</span>
+
+<span class="c1"># del(birthdays[&#39;Erik&#39;], birthdays[&#39;Isabella&#39;]) # We&#39;re saying delete the key and value pair with 6.5 as the key</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">birthdays</span><span class="p">)</span>
+
+<span class="k">del</span> <span class="n">birthdays</span><span class="p">[</span><span class="s1">&#39;Kayla&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Erik&#39;: &#39;January 2nd&#39;, &#39;Isabella&#39;: &#39;07/14/1992&#39;, &#39;Deniz&#39;: &#39;09/23/2000&#39;, &#39;Elliott&#39;: &#39;08/06/2001&#39;, &#39;Kayla&#39;: &#39;10/12/2002&#39;, &#39;Talia&#39;: &#39;10/16/1998&#39;, &#39;Maricel&#39;: &#39;11/26/2000&#39;, &#39;Alexis&#39;: &#39;6/27/2000&#39;, &#39;Rachel&#39;: &#39;06/15/1999&#39;, 6.5: &#39;January 1st&#39;, (&#39;I am&#39;, &#39;a tuple&#39;): &#39;January 1st&#39;, &#39;Erik_siblings&#39;: [&#39;02/26/1994&#39;, &#39;03/31/1999&#39;]}
+{&#39;Erik&#39;: &#39;January 2nd&#39;, &#39;Isabella&#39;: &#39;07/14/1992&#39;, &#39;Deniz&#39;: &#39;09/23/2000&#39;, &#39;Elliott&#39;: &#39;08/06/2001&#39;, &#39;Kayla&#39;: &#39;10/12/2002&#39;, &#39;Talia&#39;: &#39;10/16/1998&#39;, &#39;Maricel&#39;: &#39;11/26/2000&#39;, &#39;Alexis&#39;: &#39;6/27/2000&#39;, &#39;Rachel&#39;: &#39;06/15/1999&#39;, 6.5: &#39;January 1st&#39;, (&#39;I am&#39;, &#39;a tuple&#39;): &#39;January 1st&#39;, &#39;Erik_siblings&#39;: [&#39;02/26/1994&#39;, &#39;03/31/1999&#39;]}
+</pre></div>
+</div>
+</div>
+</div>
+<p>What happens when you try to delete an item that wasn’t in the dictionary in the first place?</p>
+<p>…take a guess!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># del birthdays[&#39;Ed&#39;]</span>
+
+<span class="k">if</span> <span class="s1">&#39;Ed&#39;</span> <span class="ow">in</span> <span class="n">birthdays</span><span class="p">:</span>
+    <span class="k">del</span> <span class="n">birthdays</span><span class="p">[</span><span class="s1">&#39;Ed&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="iterating-over-items-in-a-dictionary">
+<h1>Iterating over items in a dictionary<a class="headerlink" href="#iterating-over-items-in-a-dictionary" title="Permalink to this headline">¶</a></h1>
+<p>With lists, we say something like <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">elem</span> <span class="pre">in</span> <span class="pre">my_list</span></code> or <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">i</span> <span class="pre">in</span> <span class="pre">range(len(my_list))</span></code>.</p>
+<p>With dictionaries, it’s a little more complicated. We iterate over the items by a) iterating through the <em>keys</em>, b) iterating through the <em>values</em> (not super common), or c) iterating through <em>keys and values</em> (most common).</p>
+<p>To illustrate this, we’re going to make use of a super common example of dictionaries: keeping track of counts of things.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">months</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Jan&#39;</span><span class="p">,</span> <span class="s1">&#39;Feb&#39;</span><span class="p">,</span> <span class="s1">&#39;Mar&#39;</span><span class="p">,</span> <span class="s1">&#39;Apr&#39;</span><span class="p">,</span> <span class="s1">&#39;May&#39;</span><span class="p">,</span> <span class="s1">&#39;Jun&#39;</span><span class="p">,</span> <span class="s1">&#39;Jul&#39;</span><span class="p">,</span> <span class="s1">&#39;Aug&#39;</span><span class="p">,</span> <span class="s1">&#39;Sep&#39;</span><span class="p">,</span> <span class="s1">&#39;Oct&#39;</span><span class="p">,</span> <span class="s1">&#39;Nov&#39;</span><span class="p">,</span> <span class="s1">&#39;Dec&#39;</span><span class="p">]</span>
+
+<span class="n">birthday_months</span> <span class="o">=</span> <span class="p">{}</span> <span class="c1"># Declaring my new dictionary</span>
+
+<span class="c1"># Filling in counts of 0 for each month to initialize my dictionary</span>
+<span class="k">for</span> <span class="n">month</span> <span class="ow">in</span> <span class="n">months</span><span class="p">:</span>
+    <span class="n">birthday_months</span><span class="p">[</span><span class="n">month</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">birthday_months</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Jan&#39;: 0, &#39;Feb&#39;: 0, &#39;Mar&#39;: 0, &#39;Apr&#39;: 0, &#39;May&#39;: 0, &#39;Jun&#39;: 0, &#39;Jul&#39;: 0, &#39;Aug&#39;: 0, &#39;Sep&#39;: 0, &#39;Oct&#39;: 0, &#39;Nov&#39;: 0, &#39;Dec&#39;: 0}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Now, we&#39;ll fill in the actual counts of birthday months in the class</span>
+<span class="n">birthday_months</span><span class="p">[</span><span class="s1">&#39;Jan&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">birthday_months</span><span class="p">[</span><span class="s1">&#39;Feb&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">birthday_months</span><span class="p">[</span><span class="s1">&#39;Mar&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">birthday_months</span><span class="p">[</span><span class="s1">&#39;Apr&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">birthday_months</span><span class="p">[</span><span class="s1">&#39;May&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">birthday_months</span><span class="p">[</span><span class="s1">&#39;Jun&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">birthday_months</span><span class="p">[</span><span class="s1">&#39;Jul&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">birthday_months</span><span class="p">[</span><span class="s1">&#39;Aug&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">birthday_months</span><span class="p">[</span><span class="s1">&#39;Sep&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">birthday_months</span><span class="p">[</span><span class="s1">&#39;Oct&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">birthday_months</span><span class="p">[</span><span class="s1">&#39;Nov&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">birthday_months</span><span class="p">[</span><span class="s1">&#39;Dec&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="n">birthday_months</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Jan&#39;: 2, &#39;Feb&#39;: 0, &#39;Mar&#39;: 0, &#39;Apr&#39;: 0, &#39;May&#39;: 0, &#39;Jun&#39;: 3, &#39;Jul&#39;: 2, &#39;Aug&#39;: 1, &#39;Sep&#39;: 2, &#39;Oct&#39;: 2, &#39;Nov&#39;: 1, &#39;Dec&#39;: 3}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="which-month-has-the-most-birthdays">
+<h2>Which month has the most birthdays??<a class="headerlink" href="#which-month-has-the-most-birthdays" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="iterating-through-dictionary-keys">
+<h3>Iterating through dictionary keys<a class="headerlink" href="#iterating-through-dictionary-keys" title="Permalink to this headline">¶</a></h3>
+<p>Use <code class="docutils literal notranslate"><span class="pre">.keys()</span></code> to fetch the keys in a dictionary. You can iterate through the dictionary keys like a list.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">month_keys</span> <span class="o">=</span> <span class="n">birthday_months</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="c1"># get the keys from the dictionary</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">month_keys</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">month</span> <span class="ow">in</span> <span class="n">birthday_months</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span> <span class="c1"># iterate through the keys using a for loop</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">month</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">birthday_months</span><span class="p">[</span><span class="n">month</span><span class="p">])</span>
+    
+
+<span class="n">birthday_max</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">max_month</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<span class="k">for</span> <span class="n">month</span> <span class="ow">in</span> <span class="n">birthday_months</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">birthday_months</span><span class="p">[</span><span class="n">month</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">birthday_max</span><span class="p">:</span>
+        <span class="n">max_month</span> <span class="o">=</span> <span class="n">month</span>
+        <span class="n">birthday_max</span> <span class="o">=</span> <span class="n">birthday_months</span><span class="p">[</span><span class="n">month</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">max_month</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_keys([&#39;Jan&#39;, &#39;Feb&#39;, &#39;Mar&#39;, &#39;Apr&#39;, &#39;May&#39;, &#39;Jun&#39;, &#39;Jul&#39;, &#39;Aug&#39;, &#39;Sep&#39;, &#39;Oct&#39;, &#39;Nov&#39;, &#39;Dec&#39;])
+Jan
+2
+Feb
+0
+Mar
+0
+Apr
+0
+May
+0
+Jun
+3
+Jul
+2
+Aug
+1
+Sep
+2
+Oct
+2
+Nov
+1
+Dec
+3
+Jun
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="iterating-through-dictionary-values">
+<h3>Iterating through dictionary values<a class="headerlink" href="#iterating-through-dictionary-values" title="Permalink to this headline">¶</a></h3>
+<p>Use <code class="docutils literal notranslate"><span class="pre">.values()</span></code> to fetch the values in a dictionary. You can iterate through the values this way
+(NOTE: this is not very common).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">month_vals</span> <span class="o">=</span> <span class="n">birthday_months</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">month_vals</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">birthday_months</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">birthday_months</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span>
+<span class="n">max_birthdays</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">birthday_months</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">max_birthdays</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">month</span> <span class="ow">in</span> <span class="n">birthday_months</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">month</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">birthday_months</span><span class="p">[</span><span class="n">month</span><span class="p">]</span> <span class="o">==</span> <span class="n">max_birthdays</span><span class="p">:</span>
+        <span class="n">max_month</span> <span class="o">=</span> <span class="n">month</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">max_month</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_values([2, 0, 0, 0, 0, 3, 2, 1, 2, 2, 1, 3])
+2
+0
+0
+0
+0
+3
+2
+1
+2
+2
+1
+3
+&lt;class &#39;dict_values&#39;&gt;
+3
+Jan
+Feb
+Mar
+Apr
+May
+Jun
+Jul
+Aug
+Sep
+Oct
+Nov
+Dec
+Dec
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="iterating-through-dictionaries-using-key-value-combinations-most-common">
+<h3>Iterating through dictionaries using key-value combinations (most common)<a class="headerlink" href="#iterating-through-dictionaries-using-key-value-combinations-most-common" title="Permalink to this headline">¶</a></h3>
+<p>Use <code class="docutils literal notranslate"><span class="pre">.items()</span></code> to fetch the <em>key-value pairs</em> in a dictionary. This lets you iterate over the keys and their corresponding values all at once!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">key_vals</span> <span class="o">=</span> <span class="n">birthday_months</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">key_vals</span><span class="p">)</span> <span class="c1"># NOTE: these are tuples</span>
+
+<span class="c1"># Iterate through them by declaring the key and the value in the for-loop</span>
+<span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">birthday_months</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+
+    
+<span class="n">max_month</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<span class="n">max_birthdays</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">month</span><span class="p">,</span> <span class="n">count</span> <span class="ow">in</span> <span class="n">birthday_months</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">count</span> <span class="o">&gt;</span> <span class="n">max_birthdays</span><span class="p">:</span>
+        <span class="n">max_month</span> <span class="o">=</span> <span class="n">month</span>
+        <span class="n">max_birthdays</span> <span class="o">=</span> <span class="n">count</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">max_month</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">max_birthdays</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_items([(&#39;Jan&#39;, 2), (&#39;Feb&#39;, 0), (&#39;Mar&#39;, 0), (&#39;Apr&#39;, 0), (&#39;May&#39;, 0), (&#39;Jun&#39;, 3), (&#39;Jul&#39;, 2), (&#39;Aug&#39;, 1), (&#39;Sep&#39;, 2), (&#39;Oct&#39;, 2), (&#39;Nov&#39;, 1), (&#39;Dec&#39;, 3)])
+Jan
+2
+Feb
+0
+Mar
+0
+Apr
+0
+May
+0
+Jun
+3
+Jul
+2
+Aug
+1
+Sep
+2
+Oct
+2
+Nov
+1
+Dec
+3
+Jun
+3
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="sorting-items-in-a-dictionary">
+<h1>Sorting items in a dictionary<a class="headerlink" href="#sorting-items-in-a-dictionary" title="Permalink to this headline">¶</a></h1>
+<p>One common challenge with a dictionary is to identify the smallest or largest values in the dictionary.</p>
+<p>For example, say we want to know which <strong>3</strong> birthday months have the most birthdays. <em>How can we do this?</em></p>
+<p>We’ll use our old friend <code class="docutils literal notranslate"><span class="pre">sorted</span></code> and a new friend, <code class="docutils literal notranslate"><span class="pre">itemgetter</span></code>.</p>
+<div class="section" id="sorting-by-keys">
+<h2>Sorting by keys<a class="headerlink" href="#sorting-by-keys" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">birthday_months</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">birthday_months</span><span class="o">.</span><span class="n">items</span><span class="p">()))</span>
+
+
+<span class="n">birthdays_sorted</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">month</span><span class="p">,</span> <span class="n">count</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">birthday_months</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
+    <span class="n">birthdays_sorted</span><span class="p">[</span><span class="n">month</span><span class="p">]</span> <span class="o">=</span> <span class="n">count</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="n">birthday_months</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">birthdays_sorted</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Apr&#39;, &#39;Aug&#39;, &#39;Dec&#39;, &#39;Feb&#39;, &#39;Jan&#39;, &#39;Jul&#39;, &#39;Jun&#39;, &#39;Mar&#39;, &#39;May&#39;, &#39;Nov&#39;, &#39;Oct&#39;, &#39;Sep&#39;]
+[(&#39;Apr&#39;, 0), (&#39;Aug&#39;, 1), (&#39;Dec&#39;, 3), (&#39;Feb&#39;, 0), (&#39;Jan&#39;, 2), (&#39;Jul&#39;, 2), (&#39;Jun&#39;, 3), (&#39;Mar&#39;, 0), (&#39;May&#39;, 0), (&#39;Nov&#39;, 1), (&#39;Oct&#39;, 2), (&#39;Sep&#39;, 2)]
+{&#39;Jan&#39;: 2, &#39;Feb&#39;: 0, &#39;Mar&#39;: 0, &#39;Apr&#39;: 0, &#39;May&#39;: 0, &#39;Jun&#39;: 3, &#39;Jul&#39;: 2, &#39;Aug&#39;: 1, &#39;Sep&#39;: 2, &#39;Oct&#39;: 2, &#39;Nov&#39;: 1, &#39;Dec&#39;: 3}
+{&#39;Apr&#39;: 0, &#39;Aug&#39;: 1, &#39;Dec&#39;: 3, &#39;Feb&#39;: 0, &#39;Jan&#39;: 2, &#39;Jul&#39;: 2, &#39;Jun&#39;: 3, &#39;Mar&#39;: 0, &#39;May&#39;: 0, &#39;Nov&#39;: 1, &#39;Oct&#39;: 2, &#39;Sep&#39;: 2}
+</pre></div>
+</div>
+</div>
+</div>
+<p>This sorts our keys alphabetically (if keys were numeric, it would be in numeric order, etc.). But that’s not what we want!</p>
+</div>
+<div class="section" id="sorting-by-values">
+<h2>Sorting by values<a class="headerlink" href="#sorting-by-values" title="Permalink to this headline">¶</a></h2>
+<p>To sort by values, we need to introduce a new tool in our toolbox: the <code class="docutils literal notranslate"><span class="pre">itemgetter</span></code>.</p>
+<p>We use this to tell python to sort by the <em>values</em> in our dictionary, rather than the keys.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">operator</span> <span class="kn">import</span> <span class="n">itemgetter</span> <span class="c1"># this imports the itemgetter function</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">This says: </span>
+<span class="sd">a. sort the items in the dictionary, </span>
+<span class="sd">b. but use the element at index 1 (the second element of our key-value pair) as the basis for sorting</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">birthday_months</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="n">itemgetter</span><span class="p">(</span><span class="mi">1</span><span class="p">)))</span> <span class="c1"># this is sorting by value</span>
+
+
+
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">birthday_months</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="n">itemgetter</span><span class="p">(</span><span class="mi">0</span><span class="p">)))</span> <span class="c1"># this is the same as sorting by key above</span>
+
+
+
+
+
+
+
+
+
+
+<span class="c1"># We can sort in the other direction as well with reverse=True (this sorts from high to low)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">birthday_months</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="n">itemgetter</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+<span class="nb">type</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">birthday_months</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="n">itemgetter</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span> <span class="c1"># Note this is a list!</span>
+
+<span class="n">sorted_dict</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">birthday_months</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="n">itemgetter</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># this is a list</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">sorted_dict</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sorted_dict</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># the first item in the list</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">sorted_dict</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sorted_dict</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># the value at index 1 (second item) from the first item in the list</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(&#39;Feb&#39;, 0), (&#39;Mar&#39;, 0), (&#39;Apr&#39;, 0), (&#39;May&#39;, 0), (&#39;Aug&#39;, 1), (&#39;Nov&#39;, 1), (&#39;Jan&#39;, 2), (&#39;Jul&#39;, 2), (&#39;Sep&#39;, 2), (&#39;Oct&#39;, 2), (&#39;Jun&#39;, 3), (&#39;Dec&#39;, 3)]
+[(&#39;Apr&#39;, 0), (&#39;Aug&#39;, 1), (&#39;Dec&#39;, 3), (&#39;Feb&#39;, 0), (&#39;Jan&#39;, 2), (&#39;Jul&#39;, 2), (&#39;Jun&#39;, 3), (&#39;Mar&#39;, 0), (&#39;May&#39;, 0), (&#39;Nov&#39;, 1), (&#39;Oct&#39;, 2), (&#39;Sep&#39;, 2)]
+[(&#39;Jun&#39;, 3), (&#39;Dec&#39;, 3), (&#39;Jan&#39;, 2), (&#39;Jul&#39;, 2), (&#39;Sep&#39;, 2), (&#39;Oct&#39;, 2), (&#39;Aug&#39;, 1), (&#39;Nov&#39;, 1), (&#39;Feb&#39;, 0), (&#39;Mar&#39;, 0), (&#39;Apr&#39;, 0), (&#39;May&#39;, 0)]
+&lt;class &#39;list&#39;&gt;
+(&#39;Jun&#39;, 3)
+&lt;class &#39;tuple&#39;&gt;
+3
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">birthday_times</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;Talia&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;10/16/1998&#39;</span><span class="p">,</span> <span class="s1">&#39;3:42 AM&#39;</span><span class="p">),</span>
+    <span class="s1">&#39;Erik&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;3/21/1991&#39;</span><span class="p">,</span> <span class="s1">&#39;2:00 AM&#39;</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">birthday_times</span><span class="p">)</span>
+
+<span class="nb">sorted</span><span class="p">(</span><span class="n">birthday_times</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">birthday_times</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="n">itemgetter</span><span class="p">(</span><span class="mi">1</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Talia&#39;: (&#39;10/16/1998&#39;, &#39;3:42 AM&#39;), &#39;Erik&#39;: (&#39;3/21/1991&#39;, &#39;2:00 AM&#39;)}
+[(&#39;Talia&#39;, (&#39;10/16/1998&#39;, &#39;3:42 AM&#39;)), (&#39;Erik&#39;, (&#39;3/21/1991&#39;, &#39;2:00 AM&#39;))]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">birthday_months</span><span class="o">.</span><span class="n">items</span><span class="p">()))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">birthday_months</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="n">itemgetter</span><span class="p">(</span><span class="mi">0</span><span class="p">)))</span> <span class="c1"># Use the key (element 0) to sort each item</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">birthday_months</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="n">itemgetter</span><span class="p">(</span><span class="mi">1</span><span class="p">)))</span> <span class="c1"># Use the value (element 1) to sort each item</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(&#39;Apr&#39;, 0), (&#39;Aug&#39;, 1), (&#39;Dec&#39;, 3), (&#39;Feb&#39;, 0), (&#39;Jan&#39;, 2), (&#39;Jul&#39;, 2), (&#39;Jun&#39;, 3), (&#39;Mar&#39;, 0), (&#39;May&#39;, 0), (&#39;Nov&#39;, 1), (&#39;Oct&#39;, 2), (&#39;Sep&#39;, 2)]
+[(&#39;Apr&#39;, 0), (&#39;Aug&#39;, 1), (&#39;Dec&#39;, 3), (&#39;Feb&#39;, 0), (&#39;Jan&#39;, 2), (&#39;Jul&#39;, 2), (&#39;Jun&#39;, 3), (&#39;Mar&#39;, 0), (&#39;May&#39;, 0), (&#39;Nov&#39;, 1), (&#39;Oct&#39;, 2), (&#39;Sep&#39;, 2)]
+[(&#39;Feb&#39;, 0), (&#39;Mar&#39;, 0), (&#39;Apr&#39;, 0), (&#39;May&#39;, 0), (&#39;Aug&#39;, 1), (&#39;Nov&#39;, 1), (&#39;Jan&#39;, 2), (&#39;Jul&#39;, 2), (&#39;Sep&#39;, 2), (&#39;Oct&#39;, 2), (&#39;Jun&#39;, 3), (&#39;Dec&#39;, 3)]
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Using the tools above, what are our top three birthday months?</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">top_3_months</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># Sort the items in the dictionary, by their value, from highest to lowest</span>
+<span class="n">sorted_months</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">birthday_months</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="n">itemgetter</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="c1"># print(sorted_months)</span>
+<span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">sorted_months</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]:</span>
+    <span class="n">top_3_months</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="c1"># Add the month</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">top_3_months</span><span class="p">)</span>
+
+<span class="c1"># for item in sorted_months[0:3]:</span>
+<span class="c1">#     top_3_months.append(item) # Add the month</span>
+
+<span class="c1"># print(top_3_months)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Jun&#39;, &#39;Dec&#39;, &#39;Jan&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./live"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="Lecture_5.html" title="previous page">Dictionaries</a>
+    <a class='right-next' id="next-link" href="../lectures/P06.html" title="next page">P06: functions</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Ed Vul<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
