@@ -285,6 +285,11 @@
      functions
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture-06.html">
+     Let’s put the “fun” in functions! 🕺 💃
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -1997,7 +2002,7 @@ item=&#39;^&amp;&#39;
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;c&#39;, &#39;d&#39;, &#39;b&#39;, &#39;a&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;c&#39;, &#39;d&#39;, &#39;a&#39;, &#39;b&#39;}
 </pre></div>
 </div>
 </div>
@@ -2011,8 +2016,8 @@ item=&#39;^&amp;&#39;
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;c&#39;, &#39;d&#39;, &#39;b&#39;, &#39;a&#39;}
-{&#39;b&#39;, &#39;5&#39;, &#39;d&#39;, &#39;a&#39;, &#39;c&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;c&#39;, &#39;d&#39;, &#39;a&#39;, &#39;b&#39;}
+{&#39;d&#39;, &#39;5&#39;, &#39;c&#39;, &#39;a&#39;, &#39;b&#39;}
 </pre></div>
 </div>
 </div>
@@ -2026,8 +2031,8 @@ item=&#39;^&amp;&#39;
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;b&#39;, &#39;5&#39;, &#39;d&#39;, &#39;a&#39;, &#39;c&#39;}
-{&#39;b&#39;, &#39;5&#39;, &#39;d&#39;, &#39;a&#39;, &#39;c&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;d&#39;, &#39;5&#39;, &#39;c&#39;, &#39;a&#39;, &#39;b&#39;}
+{&#39;d&#39;, &#39;5&#39;, &#39;c&#39;, &#39;a&#39;, &#39;b&#39;}
 </pre></div>
 </div>
 </div>
@@ -2041,8 +2046,8 @@ item=&#39;^&amp;&#39;
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;b&#39;, &#39;5&#39;, &#39;d&#39;, &#39;a&#39;, &#39;c&#39;}
-{&#39;b&#39;, &#39;5&#39;, &#39;d&#39;, &#39;a&#39;, &#39;55&#39;, &#39;c&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;d&#39;, &#39;5&#39;, &#39;c&#39;, &#39;a&#39;, &#39;b&#39;}
+{&#39;d&#39;, &#39;5&#39;, &#39;55&#39;, &#39;c&#39;, &#39;a&#39;, &#39;b&#39;}
 </pre></div>
 </div>
 </div>
@@ -2206,39 +2211,40 @@ item=&#39;^&amp;&#39;
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>char=&#39;n&#39; text.count(char)=20 curmax_count=0 curmax_char=&#39;&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>char=&#39;z&#39; text.count(char)=1 curmax_count=0 curmax_char=&#39;&#39;
+Changing max to  1 z
+char=&#39;o&#39; text.count(char)=17 curmax_count=1 curmax_char=&#39;z&#39;
+Changing max to  17 o
+char=&#39;c&#39; text.count(char)=12 curmax_count=17 curmax_char=&#39;o&#39;
+char=&#39;n&#39; text.count(char)=20 curmax_count=17 curmax_char=&#39;o&#39;
 Changing max to  20 n
-char=&#39;.&#39; text.count(char)=3 curmax_count=20 curmax_char=&#39;n&#39;
-char=&#39;p&#39; text.count(char)=10 curmax_count=20 curmax_char=&#39;n&#39;
 char=&#39;j&#39; text.count(char)=2 curmax_count=20 curmax_char=&#39;n&#39;
-char=&#39;m&#39; text.count(char)=12 curmax_count=20 curmax_char=&#39;n&#39;
-char=&#39;l&#39; text.count(char)=10 curmax_count=20 curmax_char=&#39;n&#39;
-char=&#39;y&#39; text.count(char)=2 curmax_count=20 curmax_char=&#39;n&#39;
-char=&#39;\n&#39; text.count(char)=3 curmax_count=20 curmax_char=&#39;n&#39;
-char=&#39;-&#39; text.count(char)=1 curmax_count=20 curmax_char=&#39;n&#39;
-char=&#39;v&#39; text.count(char)=3 curmax_count=20 curmax_char=&#39;n&#39;
-char=&#39;e&#39; text.count(char)=28 curmax_count=20 curmax_char=&#39;n&#39;
-Changing max to  28 e
-char=&#39;r&#39; text.count(char)=12 curmax_count=28 curmax_char=&#39;e&#39;
-char=&#39;t&#39; text.count(char)=19 curmax_count=28 curmax_char=&#39;e&#39;
-char=&#39;u&#39; text.count(char)=6 curmax_count=28 curmax_char=&#39;e&#39;
-char=&#39;x&#39; text.count(char)=1 curmax_count=28 curmax_char=&#39;e&#39;
-char=&#39;w&#39; text.count(char)=3 curmax_count=28 curmax_char=&#39;e&#39;
-char=&#39;3&#39; text.count(char)=1 curmax_count=28 curmax_char=&#39;e&#39;
-char=&#39;,&#39; text.count(char)=10 curmax_count=28 curmax_char=&#39;e&#39;
-char=&#39;b&#39; text.count(char)=2 curmax_count=28 curmax_char=&#39;e&#39;
-char=&#39;s&#39; text.count(char)=23 curmax_count=28 curmax_char=&#39;e&#39;
-char=&#39;d&#39; text.count(char)=17 curmax_count=28 curmax_char=&#39;e&#39;
-char=&#39;k&#39; text.count(char)=1 curmax_count=28 curmax_char=&#39;e&#39;
-char=&#39; &#39; text.count(char)=47 curmax_count=28 curmax_char=&#39;e&#39;
+char=&#39;p&#39; text.count(char)=10 curmax_count=20 curmax_char=&#39;n&#39;
+char=&#39; &#39; text.count(char)=47 curmax_count=20 curmax_char=&#39;n&#39;
 Changing max to  47  
+char=&#39;r&#39; text.count(char)=12 curmax_count=47 curmax_char=&#39; &#39;
+char=&#39;m&#39; text.count(char)=12 curmax_count=47 curmax_char=&#39; &#39;
+char=&#39;b&#39; text.count(char)=2 curmax_count=47 curmax_char=&#39; &#39;
+char=&#39;v&#39; text.count(char)=3 curmax_count=47 curmax_char=&#39; &#39;
+char=&#39;x&#39; text.count(char)=1 curmax_count=47 curmax_char=&#39; &#39;
+char=&#39;-&#39; text.count(char)=1 curmax_count=47 curmax_char=&#39; &#39;
+char=&#39;a&#39; text.count(char)=26 curmax_count=47 curmax_char=&#39; &#39;
+char=&#39;y&#39; text.count(char)=2 curmax_count=47 curmax_char=&#39; &#39;
 char=&#39;i&#39; text.count(char)=18 curmax_count=47 curmax_char=&#39; &#39;
+char=&#39;w&#39; text.count(char)=3 curmax_count=47 curmax_char=&#39; &#39;
+char=&#39;l&#39; text.count(char)=10 curmax_count=47 curmax_char=&#39; &#39;
+char=&#39;,&#39; text.count(char)=10 curmax_count=47 curmax_char=&#39; &#39;
+char=&#39;k&#39; text.count(char)=1 curmax_count=47 curmax_char=&#39; &#39;
+char=&#39;u&#39; text.count(char)=6 curmax_count=47 curmax_char=&#39; &#39;
+char=&#39;d&#39; text.count(char)=17 curmax_count=47 curmax_char=&#39; &#39;
+char=&#39;3&#39; text.count(char)=1 curmax_count=47 curmax_char=&#39; &#39;
+char=&#39;s&#39; text.count(char)=23 curmax_count=47 curmax_char=&#39; &#39;
 char=&#39;g&#39; text.count(char)=3 curmax_count=47 curmax_char=&#39; &#39;
 char=&#39;h&#39; text.count(char)=8 curmax_count=47 curmax_char=&#39; &#39;
-char=&#39;a&#39; text.count(char)=26 curmax_count=47 curmax_char=&#39; &#39;
-char=&#39;o&#39; text.count(char)=17 curmax_count=47 curmax_char=&#39; &#39;
-char=&#39;c&#39; text.count(char)=12 curmax_count=47 curmax_char=&#39; &#39;
-char=&#39;z&#39; text.count(char)=1 curmax_count=47 curmax_char=&#39; &#39;
+char=&#39;.&#39; text.count(char)=3 curmax_count=47 curmax_char=&#39; &#39;
+char=&#39;\n&#39; text.count(char)=3 curmax_count=47 curmax_char=&#39; &#39;
+char=&#39;t&#39; text.count(char)=19 curmax_count=47 curmax_char=&#39; &#39;
+char=&#39;e&#39; text.count(char)=28 curmax_count=47 curmax_char=&#39; &#39;
 </pre></div>
 </div>
 </div>
@@ -2259,7 +2265,7 @@ char=&#39;z&#39; text.count(char)=1 curmax_count=47 curmax_char=&#39; &#39;
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[20, 3, 10, 2, 12, 10, 2, 3, 1, 3, 28, 12, 19, 6, 1, 3, 1, 10, 2, 23, 17, 1, 47, 18, 3, 8, 26, 17, 12, 1]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 17, 12, 20, 2, 10, 47, 12, 12, 2, 3, 1, 1, 26, 2, 18, 3, 10, 10, 1, 6, 17, 1, 23, 3, 8, 3, 3, 19, 28]
 </pre></div>
 </div>
 </div>
