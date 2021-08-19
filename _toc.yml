@@ -43,6 +43,7 @@ parts:
         sections:
           - file: lectures/P06-functions
           - file: live/Lecture_6
+          - file: live/Lecture-06
       - file: lectures/P07
         sections:
           - file: lectures/P07-classes
