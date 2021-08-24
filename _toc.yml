@@ -48,6 +48,7 @@ parts:
         sections:
           - file: lectures/P07-classes
           - file: live/Lecture_7
+          - file: live/Lecture-07
       - file: lectures/P08
         sections:
           - file: live/Lecture_8
