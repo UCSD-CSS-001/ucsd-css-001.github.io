@@ -22,7 +22,7 @@
       
 
     
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.5f77b4aec8189eecf79907ce328c390d.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
@@ -155,11 +155,6 @@
      P01:  Python syntax, variables, types
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../live/Lecture-01.html">
-     CSS1 Lecture 1
-    </a>
-   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -187,11 +182,6 @@
      P02: While loops
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../live/Lecture-02.html">
-     CSS1 Lecture 2
-    </a>
-   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -207,11 +197,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="P03-sequence.html">
      P03: Sequence types
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../live/Lecture-03.html">
-     CSS 1 Lecture 3
     </a>
    </li>
   </ul>
@@ -232,8 +217,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../live/Lecture-04.html">
-     Lecture 4: Strings
+    <a class="reference internal" href="../live/Lecture_4.html">
+     Lecture 4: strings
     </a>
    </li>
   </ul>
@@ -258,11 +243,6 @@
      Dictionaries
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../live/Lecture-05.html">
-     Introducing Dictionaries (sometimes called “hash maps”)
-    </a>
-   </li>
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
@@ -283,11 +263,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../live/Lecture_6.html">
      functions
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../live/Lecture-06.html">
-     Let’s put the “fun” in functions! 🕺 💃
     </a>
    </li>
   </ul>
@@ -838,9 +813,9 @@ Modular programming is an approach to programming that focuses on building progr
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Variable          Type        Data/Info
 ---------------------------------------
-add_two_numbers   function    &lt;function add_two_numbers at 0x7fd07cf5f820&gt;
-double_value      function    &lt;function double_value at 0x7fd07cf5f8b0&gt;
-even_odd          function    &lt;function even_odd at 0x7fd07cf5f790&gt;
+add_two_numbers   function    &lt;function add_two_numbers at 0x7fa0818e11f0&gt;
+double_value      function    &lt;function double_value at 0x7fa0818e10d0&gt;
+even_odd          function    &lt;function even_odd at 0x7fa0818e1160&gt;
 my_var            list        n=3
 output            int         3
 </pre></div>
@@ -1030,8 +1005,8 @@ Outside, after function: 	 I am a variable
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140533426728816
-140533426728816
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140327345287472
+140327345287472
 </pre></div>
 </div>
 </div>
@@ -1048,8 +1023,8 @@ Outside, after function: 	 I am a variable
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140533426728816
-140533426728816
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140327345287472
+140327345287472
 </pre></div>
 </div>
 </div>
@@ -1077,15 +1052,15 @@ Outside, after function: 	 I am a variable
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a: hello
-id of a globally 140533426728816
+id of a globally 140327345287472
 enter function
     x: hello
-    id(x) 140533426728816
+    id(x) 140327345287472
     x: boo
-    id(x) 140533390304304
+    id(x) 140327326810416
 exit function
 a: hello
-id of a globally 140533426728816
+id of a globally 140327345287472
 </pre></div>
 </div>
 </div>
@@ -1114,15 +1089,15 @@ id of a globally 140533426728816
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a: [&#39;hello&#39;]
-id of a globally 140533426695360
+id of a globally 140327345229632
 enter function
     x: [&#39;hello&#39;]
-    id(x) 140533426695360
+    id(x) 140327345229632
     x: [&#39;hello&#39;, &#39;boo&#39;]
-    id(x) 140533426695360
+    id(x) 140327345229632
 exit function
 a: [&#39;hello&#39;, &#39;boo&#39;]
-id of a globally 140533426695360
+id of a globally 140327345229632
 </pre></div>
 </div>
 </div>
@@ -1151,15 +1126,15 @@ id of a globally 140533426695360
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a: [&#39;hello&#39;]
-id of a globally 140533425978624
+id of a globally 140327344935296
 enter function
     x: [&#39;hello&#39;]
-    id(x) 140533425978624
+    id(x) 140327344935296
     x: [&#39;hello&#39;, &#39;boo&#39;]
-    id(x) 140533426639168
+    id(x) 140327345200128
 exit function
 a: [&#39;hello&#39;]
-id of a globally 140533425978624
+id of a globally 140327344935296
 </pre></div>
 </div>
 </div>

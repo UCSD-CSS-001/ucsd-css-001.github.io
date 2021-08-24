@@ -22,7 +22,7 @@
       
 
     
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.5f77b4aec8189eecf79907ce328c390d.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
@@ -54,7 +54,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Introducing Dictionaries (sometimes called “hash maps”)" href="Lecture-05.html" />
+    <link rel="next" title="P06: functions" href="../lectures/P06.html" />
     <link rel="prev" title="P04: dictionaries, sets, and files" href="../lectures/P05-dictionaries.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -155,11 +155,6 @@
      P01:  Python syntax, variables, types
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="Lecture-01.html">
-     CSS1 Lecture 1
-    </a>
-   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -187,11 +182,6 @@
      P02: While loops
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="Lecture-02.html">
-     CSS1 Lecture 2
-    </a>
-   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -207,11 +197,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../lectures/P03-sequence.html">
      P03: Sequence types
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="Lecture-03.html">
-     CSS 1 Lecture 3
     </a>
    </li>
   </ul>
@@ -232,8 +217,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="Lecture-04.html">
-     Lecture 4: Strings
+    <a class="reference internal" href="Lecture_4.html">
+     Lecture 4: strings
     </a>
    </li>
   </ul>
@@ -258,11 +243,6 @@
      Dictionaries
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="Lecture-05.html">
-     Introducing Dictionaries (sometimes called “hash maps”)
-    </a>
-   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -283,11 +263,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="Lecture_6.html">
      functions
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="Lecture-06.html">
-     Let’s put the “fun” in functions! 🕺 💃
     </a>
    </li>
   </ul>
@@ -716,12 +691,12 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140308761089792
-140308761089792
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140421564066176
+140421564066176
 other_variable=[5, 2, 3]
 list_variable=[5, 2, 3]
-140308761089792
-140308761089792
+140421564066176
+140421564066176
 </pre></div>
 </div>
 </div>
@@ -741,12 +716,12 @@ list_variable=[5, 2, 3]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140308762260976
-140308762260976
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140421273465136
+140421273465136
 fdward
 edward
-140308762260976
-140308761668080
+140421273465136
+140421273465520
 </pre></div>
 </div>
 </div>
@@ -1084,67 +1059,14 @@ value:  http://ucsd-css-001.github.io
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>this loop:
-n: 16
-this loop:
-n: 19
-this loop:
-n: 17
-this loop:
-n: 12
-this loop:
-n: 19
-this loop:
-n: 19
-this loop:
-n: 17
-this loop:
 n: 20
 incrementing counter
 this loop:
-n: 19
-this loop:
-n: 13
-this loop:
-n: 17
-this loop:
-n: 16
-this loop:
-n: 18
-this loop:
-n: 18
-this loop:
-n: 10
-this loop:
-n: 10
-this loop:
-n: 13
-this loop:
-n: 19
-this loop:
-n: 19
-this loop:
-n: 17
-this loop:
-n: 19
-this loop:
 n: 12
 this loop:
-n: 10
+n: 17
 this loop:
-n: 11
-this loop:
-n: 16
-this loop:
-n: 20
-incrementing counter
-this loop:
-n: 10
-this loop:
-n: 10
-this loop:
-n: 15
-this loop:
-n: 14
+n: 19
 this loop:
 n: 10
 this loop:
@@ -1152,147 +1074,199 @@ n: 13
 this loop:
 n: 12
 this loop:
+n: 18
+this loop:
+n: 14
+this loop:
 n: 15
+this loop:
+n: 13
+this loop:
+n: 16
+this loop:
+n: 19
+this loop:
+n: 19
+this loop:
+n: 10
+this loop:
+n: 14
 this loop:
 n: 14
 this loop:
 n: 18
 this loop:
-n: 14
-this loop:
-n: 11
+n: 16
 this loop:
 n: 15
+this loop:
+n: 16
+this loop:
+n: 19
+this loop:
+n: 19
 this loop:
 n: 11
 this loop:
 n: 10
 this loop:
-n: 19
+n: 15
 this loop:
-n: 13
-this loop:
-n: 14
-this loop:
-n: 19
+n: 11
 this loop:
 n: 14
-this loop:
-n: 19
-this loop:
-n: 17
 this loop:
 n: 12
 this loop:
-n: 10
-this loop:
-n: 10
-this loop:
-n: 18
-this loop:
-n: 17
-this loop:
-n: 11
-this loop:
-n: 18
-this loop:
-n: 19
-this loop:
-n: 19
-this loop:
-n: 19
-this loop:
-n: 17
-this loop:
-n: 13
-this loop:
-n: 20
-incrementing counter
-this loop:
 n: 16
 this loop:
-n: 14
+n: 17
 this loop:
-n: 15
+n: 19
 this loop:
-n: 11
-this loop:
-n: 10
-this loop:
-n: 18
-this loop:
-n: 13
+n: 12
 this loop:
 n: 20
 incrementing counter
 this loop:
-n: 15
-this loop:
-n: 14
-this loop:
-n: 11
-this loop:
-n: 13
-this loop:
 n: 18
 this loop:
-n: 20
-incrementing counter
+n: 12
 this loop:
-n: 14
-this loop:
-n: 18
+n: 16
 this loop:
 n: 16
 this loop:
 n: 11
-this loop:
-n: 11
-this loop:
-n: 13
 this loop:
 n: 12
 this loop:
 n: 18
 this loop:
+n: 12
+this loop:
+n: 11
+this loop:
+n: 20
+incrementing counter
+this loop:
+n: 11
+this loop:
+n: 12
+this loop:
+n: 10
+this loop:
+n: 14
+this loop:
+n: 20
+incrementing counter
+this loop:
+n: 18
+this loop:
+n: 18
+this loop:
+n: 16
+this loop:
+n: 12
+this loop:
+n: 15
+this loop:
+n: 13
+this loop:
+n: 17
+this loop:
+n: 19
+this loop:
+n: 15
+this loop:
+n: 12
+this loop:
+n: 17
+this loop:
+n: 16
+this loop:
+n: 15
+this loop:
+n: 13
+this loop:
+n: 13
+this loop:
+n: 11
+this loop:
+n: 12
+this loop:
+n: 12
+this loop:
+n: 11
+this loop:
+n: 20
+incrementing counter
+this loop:
+n: 11
+this loop:
+n: 13
+this loop:
+n: 14
+this loop:
+n: 16
+this loop:
+n: 11
+this loop:
+n: 13
+this loop:
+n: 12
+this loop:
+n: 17
+this loop:
+n: 20
+incrementing counter
+this loop:
+n: 17
+this loop:
+n: 14
+this loop:
+n: 11
+this loop:
+n: 18
+this loop:
+n: 11
+this loop:
+n: 20
+incrementing counter
+this loop:
 n: 18
 this loop:
 n: 10
 this loop:
-n: 20
-incrementing counter
-this loop:
-n: 16
+n: 12
 this loop:
 n: 13
 this loop:
-n: 11
+n: 17
 this loop:
 n: 13
-this loop:
-n: 11
-this loop:
-n: 15
 this loop:
 n: 18
 this loop:
+n: 13
+this loop:
+n: 17
+this loop:
+n: 13
+this loop:
+n: 11
+this loop:
+n: 12
+this loop:
+n: 12
+this loop:
 n: 20
 incrementing counter
 this loop:
-n: 11
-this loop:
 n: 17
 this loop:
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>n: 13
-this loop:
-n: 11
-this loop:
-n: 19
-this loop:
-n: 17
-7
+n: 13
+8
 </pre></div>
 </div>
 </div>
@@ -1317,7 +1291,7 @@ n: 17
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{16: 6, 19: 14, 17: 9, 12: 5, 20: 7, 13: 11, 18: 11, 10: 11, 11: 12, 15: 6, 14: 8}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{20: 8, 12: 16, 17: 9, 19: 7, 10: 5, 13: 12, 18: 9, 14: 7, 15: 6, 16: 9, 11: 12}
 </pre></div>
 </div>
 </div>
@@ -1329,7 +1303,7 @@ n: 17
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{16: 6, 19: 14, 17: 9, 12: 5, 20: 7, 13: 11, 18: 11, 10: 11, 11: 12, 15: 6, 14: 8}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{20: 8, 12: 16, 17: 9, 19: 7, 10: 5, 13: 12, 18: 9, 14: 7, 15: 6, 16: 9, 11: 12}
 </pre></div>
 </div>
 </div>
@@ -1348,7 +1322,7 @@ n: 17
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{16: 6, 19: 14, 17: 9, 12: 5, 20: 7, 13: 11, 18: 11, 10: 11, 11: 12, 15: 6, 14: 8}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{20: 8, 12: 16, 17: 9, 19: 7, 10: 5, 13: 12, 18: 9, 14: 7, 15: 6, 16: 9, 11: 12}
 </pre></div>
 </div>
 </div>
@@ -1363,17 +1337,17 @@ n: 17
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{16: 6,
- 19: 14,
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{20: 8,
+ 12: 16,
  17: 9,
- 12: 5,
- 20: 7,
- 13: 11,
- 18: 11,
- 10: 11,
- 11: 12,
+ 19: 7,
+ 10: 5,
+ 13: 12,
+ 18: 9,
+ 14: 7,
  15: 6,
- 14: 8}
+ 16: 9,
+ 11: 12}
 </pre></div>
 </div>
 </div>
@@ -1386,17 +1360,17 @@ n: 17
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10 11
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10 5
 11 12
-12 5
-13 11
-14 8
+12 16
+13 12
+14 7
 15 6
-16 6
+16 9
 17 9
-18 11
-19 14
-20 7
+18 9
+19 7
+20 8
 </pre></div>
 </div>
 </div>
@@ -1408,7 +1382,7 @@ n: 17
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[5, 6, 6, 7, 8, 9, 11, 11, 11, 12, 14]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[5, 6, 7, 7, 8, 9, 9, 9, 12, 12, 16]
 </pre></div>
 </div>
 </div>
@@ -1426,28 +1400,28 @@ n: 17
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(16, 6)
-6
-(19, 14)
-14
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(20, 8)
+8
+(12, 16)
+16
 (17, 9)
 9
-(12, 5)
-5
-(20, 7)
+(19, 7)
 7
-(13, 11)
-11
-(18, 11)
-11
-(10, 11)
-11
-(11, 12)
+(10, 5)
+5
+(13, 12)
 12
+(18, 9)
+9
+(14, 7)
+7
 (15, 6)
 6
-(14, 8)
-8
+(16, 9)
+9
+(11, 12)
+12
 </pre></div>
 </div>
 </div>
@@ -1459,17 +1433,17 @@ n: 17
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(19, 14),
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(12, 16),
+ (13, 12),
  (11, 12),
- (13, 11),
- (18, 11),
- (10, 11),
  (17, 9),
- (14, 8),
- (20, 7),
- (16, 6),
+ (18, 9),
+ (16, 9),
+ (20, 8),
+ (19, 7),
+ (14, 7),
  (15, 6),
- (12, 5)]
+ (10, 5)]
 </pre></div>
 </div>
 </div>
@@ -1482,17 +1456,17 @@ n: 17
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>19 14
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12 16
+13 12
 11 12
-13 11
-18 11
-10 11
 17 9
-14 8
-20 7
-16 6
+18 9
+16 9
+20 8
+19 7
+14 7
 15 6
-12 5
+10 5
 </pre></div>
 </div>
 </div>
@@ -1745,7 +1719,9 @@ f 3
 b 3
 k 2
 y 2
-v 1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>v 1
 z 1
 w 1
 x 1
@@ -1827,7 +1803,7 @@ x 1
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="../lectures/P05-dictionaries.html" title="previous page">P04: dictionaries, sets, and files</a>
-    <a class='right-next' id="next-link" href="Lecture-05.html" title="next page">Introducing Dictionaries (sometimes called “hash maps”)</a>
+    <a class='right-next' id="next-link" href="../lectures/P06.html" title="next page">P06: functions</a>
 
         </div>
         
