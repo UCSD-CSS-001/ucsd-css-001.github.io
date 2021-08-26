@@ -52,6 +52,7 @@ parts:
       - file: lectures/P08
         sections:
           - file: live/Lecture_8
+          - file: live/Lecture-08
       - file: lectures/week-05
       - file: lectures/P09
         sections:
