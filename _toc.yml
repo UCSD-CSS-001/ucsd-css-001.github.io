@@ -57,4 +57,5 @@ parts:
       - file: lectures/P09
         sections:
           - file: live/Lecture_9
+          - file: live/Lecture-09
       - file: lectures/P10
