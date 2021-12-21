@@ -19,20 +19,24 @@ This course is structured to help you get there.  The basic premise we start fro
 
 ## Course Information
 
-**Summer Session 2, 2021**  
+**Winter, 2022**  
 
 ### Instructors
 
 | Role     | Name                | email    | Office hours  |
 | ----------------: | :---------| -----------| ------------ |   
-| **Instructor** | Ed Vul  | [evul@ucsd.edu](mailto:evul@ucsd.edu) | [Fridays 3:00-4:30PM](https://ucsd.zoom.us/my/edvul) |   
-| **TA** | Erik Brockbank  | [ebrockba@ucsd.edu](mailto:ebrockba@ucsd.edu) | [Mondays 2:00-3:00PM](https://ucsd.zoom.us/j/7131149147)  |
+| **Instructor** | John Serences  | [jserences@ucsd.edu](mailto:jserences@ucsd.edu) | [Fridays 3:00-4:30PM](https://ucsd.zoom.us/j/96496750531) |   
+| **TA** | Sourabh Raja-Murali    | [srajamurali@ucsd.edu](mailto:srajamurali@ucsd.edu) | [Monday 10:00AM-12:00PM]()  |
+| **TA** | Panayu Keelawat    | [pkeelawa@ucsd.edu](mailto:pkeelawa@ucsd.edu) | [Monday 12:00-2:00PM]()  |
+| **TA** | Pulkit Agrawal   | [p3agrawal@ucsd.edu](mailto:p3agrawal@ucsd.edu) | [Tuesday 9:00-11:00AM]()  |
+| **TA** | Purva Kothari    | [pukothar@ucsd.edu](mailto:pukothar@ucsd.edu) | [Friday 9:00-11:00AM]()  |
+
 
 ### All the links
 
 - Main {{ url_website }}: contains all the materials and links    
 - Zoom (Note: lectures & labs use different zoom rooms):   
-    - {{ url_lecture }}: Tu/Th 11am - 1pm PST - conducted live, recordings posted on canvas      
+    - {{ url_lecture }}: M/W 9am - 9:50am PST - conducted live, recordings posted on canvas      
     - {{ url_lab }}: Tu/Th 1pm - 3pm PST - conducted live, recordings posted on canvas  
 - {{ url_canvas }}: used to post grades and recordings of lectures/labs   
 - {{ url_campuswire }}: **CODE: 6205** used for all communication: discussion, Q&A, announcements etc.  Email the instructor if you cannot access.    
@@ -42,7 +46,7 @@ This course is structured to help you get there.  The basic premise we start fro
 
 Lectures and labs take place at their scheduled time over zoom, at the following links.
 
-- Lectures (Tu/Th 11am - 1pm PST): {{ url_lecture }}    
+- Lectures (M/W 9:00am - 9:50am PST): {{ url_lecture }}    
 - Labs (Tu/Th 1pm - 3pm PST):  {{ url_lab }}  
 
 Recordings of these will be made available on  {{ url_canvas }}      
@@ -90,14 +94,14 @@ Recordings of these will be made available on  {{ url_canvas }}
 ### Basis
 
 You are evaluated based on:   
-- 35% 4 weekly problem sets (weeks 1-4)   
-- 15% final (week 5)   
-- 40% 10 labs  (2 per week)
+- 35% 4 bi-weekly problem sets   
+- 15% final (week 10)   
+- 40% 10 labs  (1 per week)
 - 10% pro-social behavior 
 
-**Labs:** Labs are short, simple exercises designed to be completed during the scheduled lab time (Tu/Th 1-3 PST), with interactive help from the TA and other students.  Labs are completed by turning them in on datahub.  Labs are due by the end of the day following lab (e.g., a Tuesday lab is due by end of day Wednesday).  This window is wide so that people who cannot attend lab, or otherwise do not complete the work during lab, can submit on their own schedule.  That said, *it is very much advised that you attend lab to complete the activities and get interactive help!*
+**Labs:** Labs are short, simple exercises designed to be completed during the scheduled lab time, with interactive help from the TA and other students.  Labs are completed by turning them in on datahub.  Labs are due by the end of the day following lab (e.g., a Tuesday lab is due by end of day Wednesday).  This window is wide so that people who cannot attend lab, or otherwise do not complete the work during lab, can submit on their own schedule.  That said, *it is very much advised that you attend lab to complete the activities and get interactive help!*
 
-**Problem Sets:** Are longer, weekly assignments.  They are due by the end of the day on the Monday following a given week.  You are to complete each problem set **on your own**.  You are advised to *start early*
+**Problem Sets:** Are longer, weekly assignments.  They are due by the end of the day on the Monday following a given week.  You are to complete each problem set **on your own** (i.e., these are not group projects).  You are advised to *start early*
 
 **Final:** The final is a more involved, more integrated problem set, due at the end of week 5.
 
@@ -162,7 +166,7 @@ The instructors can be reached in the following ways:
 
 - Direct message to specific instructor on {{ url_campuswire }}  
 
-Outside of office hours, all communication should happen over {{ url-campuswire }}.  Email is reserved for the unanticipated circumstances when campuswire is down, or you cannot access it.  In that case, [email the instructor](mailto:evul@ucsd.edu) about in inability to access Campuswire.
+Outside of office hours, all communication should happen over {{ url-campuswire }}.  Email is reserved for the unanticipated circumstances when campuswire is down, or you cannot access it.  In that case, [email the instructor](mailto:jserences@ucsd.edu) about in inability to access Campuswire.
 
 ### Specific types of questions / comments
 
@@ -198,11 +202,9 @@ Campuswire is an incredible resource for technical classes. It gives you a place
 
 ## Remote learning
 
-For some of you, remote learning is new. For others, you've got a bit of practice. For all of us, there is a lot going on in the world. While students have always been under a fair amount of pressure and stress, the struggles students may encounter this quarter (for a whole bunch of different reasons) may go beyond what is typical. I want you all to know that I fully understand this and am here to help you succeed. 
+For some of you, remote learning is new. For others, you've got a bit of practice. For all of us, there is a lot going on in the world. While students have always been under a fair amount of pressure and stress, the struggles students may encounter this quarter (for a whole bunch of different reasons) may go beyond what is typical. We acknowledge this and we are here to help you succeed. 
 
-While regular deadlines have been established to help keep you all on track, I want you to know up front that I am a very reasonable person. While I ask that you all do your best to meet deadlines that have been set, know that if you're struggling, I absolutely want you to reach out to let me know, to ask for an extension, or to discuss some other accommodation.
-
-Please take care of yourselves and one another, and I'll work as hard as needed to ensure success for all students this quarter.
+Please take care of yourselves and one another, and we'll work as hard to ensure a supportive learning environment for all students this quarter.
 
 ### Remote technology
 
@@ -245,7 +247,7 @@ This class will be a welcoming, inclusive, and harassment-free experience for ev
 
 At all times, you should be considerate and respectful. Always refrain from demeaning, discriminatory, or harassing behavior and speech. Last of all, take care of each other.
 
-If you have a concern, please speak with the Professor, your TAs, or IAs. If you are uncomfortable doing so, that's OK! The [OPHD](https://blink.ucsd.edu/HR/policies/sexual/OPHD.html) (Office for the Prevention of Sexual Harassment and Discrimination) and [CARE](https://care.ucsd.edu/) (confidential advocacy and education office for sexual violence and gender-based violence) are wonderful resources on campus.  
+If you have a concern, please speak with the Professor, your TAs, or IAs. If you are uncomfortable doing so, the [OPHD](https://blink.ucsd.edu/HR/policies/sexual/OPHD.html) (Office for the Prevention of Sexual Harassment and Discrimination) and [CARE](https://care.ucsd.edu/) (confidential advocacy and education office for sexual violence and gender-based violence) are wonderful resources on campus.  
 
 
 ### Disability Access
