@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Syllabus &#8212; UCSD CSS 1</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet" />
-  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -22,8 +22,8 @@
       
 
     
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -31,22 +31,19 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -57,7 +54,10 @@
     <link rel="next" title="Expectations" href="expectations.html" />
     <link rel="prev" title="Welcome to CSS 1" href="../index.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -74,6 +74,10 @@
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
       <img src="../_static/logo.png" class="logo" alt="logo">
       
       
@@ -83,7 +87,7 @@
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
@@ -92,9 +96,9 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Course (CSS 1 summer 2)
+  Course (CSS01 Winter 2022)
  </span>
 </p>
 <ul class="current nav bd-sidenav">
@@ -124,7 +128,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Content
  </span>
@@ -161,187 +165,6 @@
     </a>
    </li>
   </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../lectures/P02.html">
-   P02: Control flow and logic
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../lectures/P02-conditionals.html">
-     P02: Branching via conditional statement: if..elif..else..
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../lectures/P02-loops.html">
-     P02: Loops!
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../lectures/P02-while.html">
-     P02: While loops
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../live/Lecture-02.html">
-     CSS1 Lecture 2
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../lectures/P03.html">
-   P03: Sequence types
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../lectures/P03-sequence.html">
-     P03: Sequence types
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../lectures/P04.html">
-   P04: strings
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../lectures/P04-strings.html">
-     P04: Strings
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../live/Lecture_4.html">
-     Lecture 4: strings
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../lectures/P05.html">
-   P05: dictionaries
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../lectures/P05-dictionaries.html">
-     P04: dictionaries, sets, and files
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../live/Lecture_5.html">
-     Dictionaries
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../lectures/P06.html">
-   P06: functions
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../lectures/P06-functions.html">
-     P06: functions
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../live/Lecture_6.html">
-     functions
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../lectures/P07.html">
-   P07: objects and classes
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-  <label for="toctree-checkbox-7">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../lectures/P07-classes.html">
-     P06: classes and objects
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../live/Lecture_7.html">
-     Classes, Objects, etc.
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../lectures/P08.html">
-   P08: Pandas and dataframes
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-  <label for="toctree-checkbox-8">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../live/Lecture_8.html">
-     Modules
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../lectures/week-05.html">
-   W5 problem
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../lectures/P09.html">
-   P09: Plotting and Matplotlib
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
-  <label for="toctree-checkbox-9">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../live/Lecture_9.html">
-     Plotting with matplotlib
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../lectures/P10.html">
-   P10: Advanced / Beyond
-  </a>
  </li>
 </ul>
 
@@ -428,7 +251,7 @@
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
             </div>
-            <nav id="bd-toc-nav">
+            <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#course-overview-and-goals">
@@ -458,13 +281,8 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#all-the-links">
-     All the links
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#lectures-and-labs">
-     Lectures and labs
+    <a class="reference internal nav-link" href="#all-the-zoom-links-for-class-labs-office-hour-links-above">
+     All the Zoom links for class, labs (office hour links above)
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -517,15 +335,15 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#campuswire-rules">
-     Campuswire Rules
+    <a class="reference internal nav-link" href="#slack-rules">
+     Slack Rules
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#remote-learning">
-   Remote learning
+  <a class="reference internal nav-link" href="#remote-learning-during-weeks-1-2">
+   Remote learning during weeks 1-2
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -534,8 +352,8 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#remote-lectures-and-labs">
-     Remote Lectures and Labs
+    <a class="reference internal nav-link" href="#lectures-and-labs">
+     Lectures and Labs
     </a>
    </li>
   </ul>
@@ -578,7 +396,7 @@
         
               <div>
                 
-  <div class="section" id="syllabus">
+  <div class="tex2jax_ignore mathjax_ignore section" id="syllabus">
 <h1>Syllabus<a class="headerlink" href="#syllabus" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="course-overview-and-goals">
 <h2>Course overview and goals<a class="headerlink" href="#course-overview-and-goals" title="Permalink to this headline">¶</a></h2>
@@ -600,7 +418,7 @@
 </div>
 <div class="section" id="course-information">
 <h2>Course Information<a class="headerlink" href="#course-information" title="Permalink to this headline">¶</a></h2>
-<p><strong>Summer Session 2, 2021</strong></p>
+<p><strong>Winter, 2022</strong></p>
 <div class="section" id="instructors">
 <h3>Instructors<a class="headerlink" href="#instructors" title="Permalink to this headline">¶</a></h3>
 <table class="colwidths-auto table">
@@ -613,41 +431,51 @@
 </thead>
 <tbody>
 <tr class="row-even"><td class="text-align:right"><p><strong>Instructor</strong></p></td>
-<td class="text-align:left"><p>Ed Vul</p></td>
-<td><p><a class="reference external" href="mailto:evul&#37;&#52;&#48;ucsd&#46;edu">evul<span>&#64;</span>ucsd<span>&#46;</span>edu</a></p></td>
-<td><p><a class="reference external" href="https://ucsd.zoom.us/my/edvul">Fridays 3:00-4:30PM</a></p></td>
+<td class="text-align:left"><p>John Serences</p></td>
+<td><p><a class="reference external" href="mailto:jserences&#37;&#52;&#48;ucsd&#46;edu">jserences<span>&#64;</span>ucsd<span>&#46;</span>edu</a></p></td>
+<td><p><a class="reference external" href="https://ucsd.zoom.us/j/96496750531">Fridays 3:00-4:30PM</a></p></td>
 </tr>
 <tr class="row-odd"><td class="text-align:right"><p><strong>TA</strong></p></td>
-<td class="text-align:left"><p>Erik Brockbank</p></td>
-<td><p><a class="reference external" href="mailto:ebrockba&#37;&#52;&#48;ucsd&#46;edu">ebrockba<span>&#64;</span>ucsd<span>&#46;</span>edu</a></p></td>
-<td><p><a class="reference external" href="https://ucsd.zoom.us/j/7131149147">Mondays 2:00-3:00PM</a></p></td>
+<td class="text-align:left"><p>Sourabh Raja-Murali</p></td>
+<td><p><a class="reference external" href="mailto:srajamurali&#37;&#52;&#48;ucsd&#46;edu">srajamurali<span>&#64;</span>ucsd<span>&#46;</span>edu</a></p></td>
+<td><p><span class="xref myst">Monday 10:00AM-12:00PM</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:right"><p><strong>TA</strong></p></td>
+<td class="text-align:left"><p>Panayu Keelawat</p></td>
+<td><p><a class="reference external" href="mailto:pkeelawa&#37;&#52;&#48;ucsd&#46;edu">pkeelawa<span>&#64;</span>ucsd<span>&#46;</span>edu</a></p></td>
+<td><p><span class="xref myst">Monday 12:00-2:00PM</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:right"><p><strong>TA</strong></p></td>
+<td class="text-align:left"><p>Pulkit Agrawal</p></td>
+<td><p><a class="reference external" href="mailto:p3agrawal&#37;&#52;&#48;ucsd&#46;edu">p3agrawal<span>&#64;</span>ucsd<span>&#46;</span>edu</a></p></td>
+<td><p><span class="xref myst">Tuesday 9:00-11:00AM</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:right"><p><strong>TA</strong></p></td>
+<td class="text-align:left"><p>Purva Kothari</p></td>
+<td><p><a class="reference external" href="mailto:pukothar&#37;&#52;&#48;ucsd&#46;edu">pukothar<span>&#64;</span>ucsd<span>&#46;</span>edu</a></p></td>
+<td><p><span class="xref myst">Friday 9:00-11:00AM</span></p></td>
 </tr>
 </tbody>
 </table>
 </div>
-<div class="section" id="all-the-links">
-<h3>All the links<a class="headerlink" href="#all-the-links" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="all-the-zoom-links-for-class-labs-office-hour-links-above">
+<h3>All the Zoom links for class, labs (office hour links above)<a class="headerlink" href="#all-the-zoom-links-for-class-labs-office-hour-links-above" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Main <a class="reference external" href="https://ucsd-css-001.github.io">Class Website</a>: contains all the materials and links</p></li>
 <li><p>Zoom (Note: lectures &amp; labs use different zoom rooms):</p>
 <ul>
-<li><p><a class="reference external" href="https://ucsd.zoom.us/j/92614231911">Lecture zoom (UCSD)</a>: Tu/Th 11am - 1pm PST - conducted live, recordings posted on canvas</p></li>
-<li><p><a class="reference external" href="https://ucsd.zoom.us/j/92658283484">Lab zoom (UCSD)</a>: Tu/Th 1pm - 3pm PST - conducted live, recordings posted on canvas</p></li>
+<li><p><a class="reference external" href="https://ucsd.zoom.us/j/96328022911">Lecture zoom (UCSD)</a>: M/W 9am - 9:50am PST - conducted live, recordings posted on canvas</p></li>
+<li><p><a class="reference external" href="https://ucsd.zoom.us/j/97556854018">Mon 10-12 Lab zoom (Sourabh Raja-murali)</a>: Monday 10am - 12pm PST - conducted live</p></li>
+<li><p><a class="reference external" href="https://zoom.us/j/94270923304?pwd=TXVzSXBXbjE1b2RMWjdqZUtDcTZ5Zz09">Mon 12-2 Lab zoom (Panayu Keelawat)</a>: Monday 12pm - 2pm PST - conducted live</p></li>
+<li><p><a class="reference external" href="https://ucsd.zoom.us/j/91919528909">Tues 9-11 Lab zoom (Pulkit Agrawal)</a>: Tusday 9am - 11am PST - conducted live</p></li>
+<li><p>: Friday 9am - 11am PST - conducted live</p></li>
 </ul>
 </li>
-<li><p><a class="reference external" href="https://canvas.ucsd.edu/courses/28027/external_tools/82">Canvas (UCSD)</a>: used to post grades and recordings of lectures/labs</p></li>
-<li><p><a class="reference external" href="https://campuswire.com/c/G3785E48A/">Campuswire</a>: <strong>CODE: 6205</strong> used for all communication: discussion, Q&amp;A, announcements etc.  Email the instructor if you cannot access.</p></li>
+<li><p><a class="reference external" href="https://canvas.ucsd.edu/courses/32741">Canvas (UCSD)</a>: used to post grades and recordings of lectures/labs</p></li>
+<li><p>: used for all communication: discussion, Q&amp;A, announcements etc.</p></li>
 <li><p><a class="reference external" href="https://datahub.ucsd.edu">Datahub (UCSD)</a>: used to submit comleted labs and problem sets</p></li>
 </ul>
-</div>
-<div class="section" id="lectures-and-labs">
-<h3>Lectures and labs<a class="headerlink" href="#lectures-and-labs" title="Permalink to this headline">¶</a></h3>
-<p>Lectures and labs take place at their scheduled time over zoom, at the following links.</p>
-<ul class="simple">
-<li><p>Lectures (Tu/Th 11am - 1pm PST): <a class="reference external" href="https://ucsd.zoom.us/j/92614231911">Lecture zoom (UCSD)</a></p></li>
-<li><p>Labs (Tu/Th 1pm - 3pm PST):  <a class="reference external" href="https://ucsd.zoom.us/j/92658283484">Lab zoom (UCSD)</a></p></li>
-</ul>
-<p>Recordings of these will be made available on  <a class="reference external" href="https://canvas.ucsd.edu/courses/28027/external_tools/82">Canvas (UCSD)</a></p>
+<p>Recordings of class lectures (M/W) will be made available on <a class="reference external" href="https://canvas.ucsd.edu/courses/32741">Canvas (UCSD)</a></p>
 </div>
 <div class="section" id="materials">
 <h3>Materials<a class="headerlink" href="#materials" title="Permalink to this headline">¶</a></h3>
@@ -668,104 +496,101 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>2021-08-03</p></td>
-<td><p><a class="reference internal" href="../lectures/P01.html"><span class="doc std std-doc">Basic python</span></a></p></td>
+<tr class="row-even"><td><p>2022-01-03</p></td>
+<td><p>Basic python</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p>2021-08-04</p></td>
-<td><p></p></td>
-<td><p>Lab 1 due</p></td>
-</tr>
-<tr class="row-even"><td><p>2021-08-05</p></td>
-<td><p><a class="reference internal" href="../lectures/P02.html"><span class="doc std std-doc">Control flow</span></a></p></td>
+<tr class="row-odd"><td><p>2022-01-05</p></td>
+<td><p>Basic python</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p>2021-08-06</p></td>
-<td><p></p></td>
-<td><p>Lab 2 due</p></td>
-</tr>
-<tr class="row-even"><td><p>2021-08-09</p></td>
-<td><p></p></td>
-<td><p>pset 1 due</p></td>
-</tr>
-<tr class="row-odd"><td><p>2021-08-10</p></td>
-<td><p><a class="reference internal" href="../lectures/P03.html"><span class="doc std std-doc">Lists</span></a></p></td>
+<tr class="row-even"><td><p>2022-01-10</p></td>
+<td><p>Basic python</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p>2021-08-11</p></td>
-<td><p></p></td>
-<td><p>Lab 3 due</p></td>
-</tr>
-<tr class="row-odd"><td><p>2021-08-12</p></td>
-<td><p><a class="reference internal" href="../lectures/P04.html"><span class="doc std std-doc">Strings</span></a></p></td>
+<tr class="row-odd"><td><p>2022-01-12</p></td>
+<td><p>Basic python</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p>2021-08-13</p></td>
-<td><p></p></td>
-<td><p>Lab 4 due</p></td>
-</tr>
-<tr class="row-odd"><td><p>2021-08-16</p></td>
-<td><p></p></td>
-<td><p>pset 2 due</p></td>
-</tr>
-<tr class="row-even"><td><p>2021-08-17</p></td>
-<td><p><a class="reference internal" href="../lectures/P05.html"><span class="doc std std-doc">Dictionaries</span></a></p></td>
+<tr class="row-even"><td><p>2022-01-17</p></td>
+<td><p>Basic python</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p>2021-08-18</p></td>
-<td><p></p></td>
-<td><p>Lab 5 due</p></td>
-</tr>
-<tr class="row-even"><td><p>2021-08-19</p></td>
-<td><p><a class="reference internal" href="../lectures/P06.html"><span class="doc std std-doc">Functions</span></a></p></td>
+<tr class="row-odd"><td><p>2022-01-19</p></td>
+<td><p>Basic python</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p>2021-08-20</p></td>
-<td><p></p></td>
-<td><p>Lab 6 due</p></td>
-</tr>
-<tr class="row-even"><td><p>2021-08-23</p></td>
-<td><p></p></td>
-<td><p>pset 3 due</p></td>
-</tr>
-<tr class="row-odd"><td><p>2021-08-24</p></td>
-<td><p><a class="reference internal" href="../lectures/P07.html"><span class="doc std std-doc">Classes</span></a></p></td>
+<tr class="row-even"><td><p>2022-01-24</p></td>
+<td><p>Basic python</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p>2021-08-25</p></td>
-<td><p></p></td>
-<td><p>Lab 7 due</p></td>
-</tr>
-<tr class="row-odd"><td><p>2021-08-26</p></td>
-<td><p><a class="reference internal" href="../lectures/P08.html"><span class="doc std std-doc">Pandas Dataframes</span></a></p></td>
+<tr class="row-odd"><td><p>2022-01-26</p></td>
+<td><p>Basic python</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p>2021-08-27</p></td>
-<td><p></p></td>
-<td><p>Lab 8 due</p></td>
-</tr>
-<tr class="row-odd"><td><p>2021-08-30</p></td>
-<td><p></p></td>
-<td><p>pset 4 due</p></td>
-</tr>
-<tr class="row-even"><td><p>2021-08-31</p></td>
-<td><p><a class="reference internal" href="../lectures/P09.html"><span class="doc std std-doc">Plotting Matplotlib</span></a></p></td>
+<tr class="row-even"><td><p>2022-01-31</p></td>
+<td><p>Basic python</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p>2021-09-01</p></td>
-<td><p></p></td>
-<td><p>Lab 9 due</p></td>
-</tr>
-<tr class="row-even"><td><p>2021-09-02</p></td>
-<td><p><a class="reference internal" href="../lectures/P10.html"><span class="doc std std-doc">advanced</span></a></p></td>
+<tr class="row-odd"><td><p>2022-02-02</p></td>
+<td><p>Basic python</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>2021-09-04</strong></p></td>
+<tr class="row-even"><td><p>2022-02-07</p></td>
+<td><p>Basic python</p></td>
 <td><p></p></td>
-<td><p>final pset due</p></td>
+</tr>
+<tr class="row-odd"><td><p>2022-02-09</p></td>
+<td><p>Basic python</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>2022-02-14</p></td>
+<td><p>Basic python</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>2022-02-16</p></td>
+<td><p>Basic python</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>2022-02-21</p></td>
+<td><p>Basic python</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>2022-02-23</p></td>
+<td><p>Basic python</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>2022-02-28</p></td>
+<td><p>Basic python</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>2022-03-02</p></td>
+<td><p>Basic python</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>2022-03-07</p></td>
+<td><p>Basic python</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>2022-03-09</p></td>
+<td><p>Basic python</p></td>
+<td><p></p></td>
 </tr>
 </tbody>
 </table>
+<p>| 2022-01-05 | <span class="xref myst">Control flow</span> | |
+| 2022-01-12 | <span class="xref myst">Lists</span> | |
+| 2022-01-17 |    | pset 1 due |
+| 2022-01-17 | <span class="xref myst">Strings</span> | |
+| 2022-01-19 | <span class="xref myst">Dictionaries</span> | |
+| 2022-01-24 | <span class="xref myst">Functions</span> | |
+| 2022-01-26 | <span class="xref myst">Classes</span> | |
+| 2022-01-31 |    | pset 2 due |
+| 2022-01-31 | <span class="xref myst">Pandas Dataframes</span> | |
+| 2022-02-02 | <span class="xref myst">Plotting Matplotlib</span> | |
+| 2021-09-01 |    | Lab 9 due |
+| 2021-09-02 | <span class="xref myst">advanced</span> | |
+| <strong>2021-09-04</strong> |    | final pset due |</p>
 </div>
 <div class="section" id="grading">
 <h2>Grading<a class="headerlink" href="#grading" title="Permalink to this headline">¶</a></h2>
@@ -773,15 +598,14 @@
 <h3>Basis<a class="headerlink" href="#basis" title="Permalink to this headline">¶</a></h3>
 <p>You are evaluated based on:</p>
 <ul class="simple">
-<li><p>35% 4 weekly problem sets (weeks 1-4)</p></li>
-<li><p>15% final (week 5)</p></li>
-<li><p>40% 10 labs  (2 per week)</p></li>
-<li><p>10% pro-social behavior</p></li>
+<li><p>45% 4 bi-weekly problem sets</p></li>
+<li><p>15% final (week 10)</p></li>
+<li><p>40% 10 labs  (1 per week)</p></li>
 </ul>
-<p><strong>Labs:</strong> Labs are short, simple exercises designed to be completed during the scheduled lab time (Tu/Th 1-3 PST), with interactive help from the TA and other students.  Labs are completed by turning them in on datahub.  Labs are due by the end of the day following lab (e.g., a Tuesday lab is due by end of day Wednesday).  This window is wide so that people who cannot attend lab, or otherwise do not complete the work during lab, can submit on their own schedule.  That said, <em>it is very much advised that you attend lab to complete the activities and get interactive help!</em></p>
-<p><strong>Problem Sets:</strong> Are longer, weekly assignments.  They are due by the end of the day on the Monday following a given week.  You are to complete each problem set <strong>on your own</strong>.  You are advised to <em>start early</em></p>
-<p><strong>Final:</strong> The final is a more involved, more integrated problem set, due at the end of week 5.</p>
-<p><strong>Pro-Social Behavior:</strong> This component of your grade is based on doing things that help the instructors and other students, and generally creating a positive class environment.  This includes things like: showing up and participating during lectures and labs, participating in campuswire discussion (asking good questions, answering others’ questions), demonstrating an interest in learning, not just maximizing your grade, etc.</p>
+<p><strong>Labs:</strong> Labs are short exercises designed to be completed during the scheduled lab time, with interactive help from the TA and other students.  Labs are completed by turning them in on datahub.  Labs are due by the end of the day following lab (e.g., a Tuesday lab is due by end of day Wednesday).  This window is wide so that people who cannot attend lab, or otherwise do not complete the work during lab, can submit on their own schedule.  That said, <em>it is very much advised that you attend lab to complete the activities and get interactive help!</em></p>
+<p><strong>Problem Sets:</strong> Are longer, bi-weekly assignments.  They are due by the end of the day every other Monday.  You are to complete each problem set <strong>on your own</strong> (i.e., these are not group projects).  You are advised to <em>start early</em></p>
+<p><strong>Final:</strong> The final is a more involved, more integrated problem set, due at the end of week 10.</p>
+<p><strong>Pro-Social Behavior:</strong> While not graded, all students are encouraged to help the instructors and other students, and generally to support a positive class environment.  This includes things like: showing up and participating during lectures and labs, participating in slack discussion (asking good questions, answering others’ questions), demonstrating an interest in learning, not just maximizing your grade, etc.</p>
 </div>
 <div class="section" id="letter-grades">
 <h3>Letter grades<a class="headerlink" href="#letter-grades" title="Permalink to this headline">¶</a></h3>
@@ -824,7 +648,7 @@
 <div class="section" id="manual-regrades">
 <h3>Manual Regrades<a class="headerlink" href="#manual-regrades" title="Permalink to this headline">¶</a></h3>
 <p>Problem sets and labs are scored using <a class="reference external" href="https://nbgrader.readthedocs.io/en/stable/">nbgrader</a> on <a class="reference external" href="https://datahub.ucsd.edu/hub/login">UCSD datahub</a>.  Some parts are graded automatically by computer, and some parts are graded manually by a human.</p>
-<p>We will work hard to grade everyone fairly and return assignments quickly. And, we know you also work hard and want you to receive the grade you’ve earned. Occasionally, grading mistakes do happen, and it’s important to us to correct them. If you think there is a mistake in your grade on an assignment, post privately on Campuswire to “Instructors &amp; TAs” using the “regrades” tag within 72 hours. This post should include evidence of why you think your answer was correct and should point to the specific part of the assignment in question.</p>
+<p>We will work hard to grade everyone fairly and return assignments quickly. And, we know you also work hard and want you to receive the grade you’ve earned. Occasionally, grading mistakes do happen, and it’s important to us to correct them. If you think there is a mistake in your grade on an assignment, post privately using a direct message on Slack to me and your lab TA within 72 hours. This post should include evidence of why you think your answer was correct and should point to the specific part of the assignment in question.</p>
 <p>Note that points will not be rewarded if you fail to follow instructions. For example, if the instructions say to name the variable <code class="docutils literal notranslate"><span class="pre">orange</span></code> and you name it <code class="docutils literal notranslate"><span class="pre">ornage</span></code> (misspelled), you will not be rewarded credit upon regrade. This is because (1) following instructions and being detail-oriented in general, (2) referring to things by their correct names, and getting other minor technicalitieis right is <em>essential</em> to programming.</p>
 </div>
 </div>
@@ -833,50 +657,48 @@
 <p>The instructors can be reached in the following ways:</p>
 <ul class="simple">
 <li><p>Drop in during scheduled <strong>office hours</strong> (see <a class="reference internal" href="#"><span class="doc std std-doc">syllabus</span></a> for links and schedule).</p></li>
-<li><p>Public message on <a class="reference external" href="https://campuswire.com/c/G3785E48A/">Campuswire</a>.</p></li>
-<li><p>Private “Instructors &amp; TAs” message on <a class="reference external" href="https://campuswire.com/c/G3785E48A/">Campuswire</a></p></li>
-<li><p>Direct message to specific instructor on <a class="reference external" href="https://campuswire.com/c/G3785E48A/">Campuswire</a></p></li>
+<li><p>Public message on .</p></li>
+<li><p>Private “Instructors &amp; TAs” message on </p></li>
+<li><p>Direct message to specific instructor on </p></li>
 </ul>
-<p>Outside of office hours, all communication should happen over .  Email is reserved for the unanticipated circumstances when campuswire is down, or you cannot access it.  In that case, <a class="reference external" href="mailto:evul&#37;&#52;&#48;ucsd&#46;edu">email the instructor</a> about in inability to access Campuswire.</p>
+<p>Outside of office hours, all communication should happen over .  Email is reserved for the unanticipated circumstances when slack is down, or you cannot access it.  In that case, <a class="reference external" href="mailto:jserences&#37;&#52;&#48;ucsd&#46;edu">email the instructor</a> about in inability to access slack.</p>
 <div class="section" id="specific-types-of-questions-comments">
 <h3>Specific types of questions / comments<a class="headerlink" href="#specific-types-of-questions-comments" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p><strong>questions about course logistics:</strong> First, check the syllabus and the detailed how-to pages on the <a class="reference external" href="https://ucsd-css-001.github.io">Class Website</a>. If you can’t find the answer there, first ask a classmate. If still unsure, post on Campuswire in the General tag.</p></li>
-<li><p><strong>questions about course content:</strong> these are awesome! We want everyone to see them, be able to answer them, and have their questions answered too, so post these to Campuswire with an appropriate tag!</p></li>
-<li><p><strong>my code produces an error that I cannot fix:</strong> follow the <a class="reference internal" href="debugging.html"><span class="doc std std-doc">debugging instructions</span></a> to find a minimal reproducible example and fill out the debugging question checklist, then post on Campuswire in the “Python” category or the relevant “Problem Set” category.</p></li>
-<li><p><strong>assignment clarification question:</strong> Ask in the appropriate “Problem Set” or “Labs” category.</p></li>
-<li><p><strong>a technical assignment question:</strong> Come to office hours (or post to Campuswire). Answering technical questions is often best accomplished ‘in person’ where we can discuss the question and talk through ideas. However, if that is not possible, post your question to Campuswire. Be as specific as you can in the question you ask. And, for those answering, help your classmates as much as you can without just giving the answer. Help guide them, point them in a direction, provide pseudo code, but do not provide code that answers assignment questions.</p></li>
-<li><p><strong>been stuck on something for a while (&gt;30min) and aren’t even really sure where to start</strong> - Programming can be frustrating and it may not always be obvious what is going wrong or why something isn’t working. That’s OK - we’ve all been there! IF you are stuck, you can and should reach out for help, even if you aren’t exactly sure what your specific question is. To determine when to reach out, consider the 2-hour rule. This rule states that if you are stuck, work on that problem for an hour. Then, take a 30 minute break and do something else. When you come back after your break, try for another 30 minutes or so to solve your problem while working through our <a class="reference internal" href="debugging.html"><span class="doc std std-doc">debugging</span></a> checklist. If you are still completely stuck, stop and contact us (office hours, post on Campuswire). If you don’t have a specific question, include the information you have (what you’re stuck on, the <a class="reference internal" href="debugging.html"><span class="doc std std-doc">debugging checklist</span></a>).</p></li>
-<li><p><strong>questions about a grade</strong> - Post on Campuswire with the “Regrades” tag in a private post to “Instructors &amp; TAs”.</p></li>
-<li><p><strong>something super cool to share related to class or want to talk about a topic in further depth</strong> - come to office hours, post in General, or send in a DM to the instructors!</p></li>
-<li><p><strong>feedback about the course you want to share anonymously:</strong> - If you’ve been offended by an example in class, really liked or disliked a lesson, or wish there were something covered in class that wasn’t but would rather not share this publicly, etc., please fill out the .  While UCSD login is required to access the form, your email is not associated with your responses – your responses are anonymous.</p></li>
+<li><p><strong>questions about course logistics:</strong> First, check the syllabus and the detailed how-to pages on the <a class="reference external" href="https://ucsd-css-001.github.io">Class Website</a>. If you can’t find the answer there, first ask a classmate. If still unsure, post on Slack.</p></li>
+<li><p><strong>questions about course content:</strong> these are awesome! We want everyone to see them, be able to answer them, and have their questions answered too, so post these to Slack.</p></li>
+<li><p><strong>my code produces an error that I cannot fix:</strong> follow the <a class="reference internal" href="debugging.html"><span class="doc std std-doc">debugging instructions</span></a> to find a minimal reproducible example and fill out the debugging question checklist, then post on Slack.</p></li>
+<li><p><strong>a technical assignment question:</strong> Come to office hours (or post to Slack). Answering technical questions is often best accomplished ‘in person’ where we can discuss the question and talk through ideas. However, if that is not possible, post your question to Slack. Be as specific as you can in the question you ask. And, for those answering, help your classmates as much as you can without just giving the answer. Help guide them, point them in a direction, provide pseudo code, <strong>but do not provide code that answers assignment questions</strong>.</p></li>
+<li><p><strong>been stuck on something for a while (&gt;30min) and aren’t even really sure where to start</strong> - Programming can be frustrating and it may not always be obvious what is going wrong or why something isn’t working. That’s OK - we’ve all been there! IF you are stuck, you can and should reach out for help, even if you aren’t exactly sure what your specific question is. To determine when to reach out, consider the 2-hour rule. This rule states that if you are stuck, work on that problem for an hour. Then, take a 30 minute break and do something else. When you come back after your break, try for another 30 minutes or so to solve your problem while working through our <a class="reference internal" href="debugging.html"><span class="doc std std-doc">debugging</span></a> checklist. If you are still completely stuck, stop and contact us (office hours, post on Slack). If you don’t have a specific question, include the information you have (what you’re stuck on, the <a class="reference internal" href="debugging.html"><span class="doc std std-doc">debugging checklist</span></a>).</p></li>
+<li><p><strong>questions about a grade</strong> - Post on Slack in a direct message to your instructor and lab TA.</p></li>
+<li><p><strong>something super cool to share related to class or want to talk about a topic in further depth</strong> - come to office hours, post on Slack, or send in a DM to the instructors!</p></li>
 </ul>
 </div>
-<div class="section" id="campuswire-rules">
-<h3>Campuswire Rules<a class="headerlink" href="#campuswire-rules" title="Permalink to this headline">¶</a></h3>
-<p>Campuswire is an incredible resource for technical classes. It gives you a place to post questions and an opportunity to answer others’ questions. We do our very best as an instructional staff to make sure each and every question is answered in a timely manner. We also want to make sure this platform is being used to learn and not thwarting anyone’s education. To make all of this possible, there are a few rules for this course’s campuswire:</p>
+<div class="section" id="slack-rules">
+<h3>Slack Rules<a class="headerlink" href="#slack-rules" title="Permalink to this headline">¶</a></h3>
+<p>Slack is an incredible resource for technical classes. It gives you a place to post questions and an opportunity to answer others’ questions. We do our very best as an instructional staff to make sure each and every question is answered in a timely manner. We also want to make sure this platform is being used to learn and not thwarting anyone’s education. To make all of this possible, there are a few rules for this course’s slack:</p>
 <ol class="simple">
 <li><p>Before posting your question, look at questions that have already been posted to avoid duplicates.</p></li>
 <li><p>If posting about an assignment, note title should have assignment number, question number, and 1-2 words about the question. (i.e. PS01 Q1 Variable Naming)</p></li>
-<li><p>Never post an answer to or code for an assignment on a public post. Pseudocode is encouraged for public posts. If you must include code for an assignment, make this post private (to “Instructors &amp; TAs” only) on Campuswire.</p></li>
+<li><p>Never post an answer to or code for an assignment on a public post. Pseudocode is encouraged for public posts. If you must include code for an assignment, direct message your lab TA or the instructor.</p></li>
 <li><p>Your post must include not only your question/where you’re stuck, but also what you’ve already done to try to solve it so far and what resources (class notes, online URLs, etc.) you used to try to answer the question up to this point.  See how to ask <a class="reference internal" href="debugging.html"><span class="doc std std-doc">debugging questions</span></a>.</p></li>
 </ol>
 </div>
 </div>
-<div class="section" id="remote-learning">
-<h2>Remote learning<a class="headerlink" href="#remote-learning" title="Permalink to this headline">¶</a></h2>
-<p>For some of you, remote learning is new. For others, you’ve got a bit of practice. For all of us, there is a lot going on in the world. While students have always been under a fair amount of pressure and stress, the struggles students may encounter this quarter (for a whole bunch of different reasons) may go beyond what is typical. I want you all to know that I fully understand this and am here to help you succeed.</p>
-<p>While regular deadlines have been established to help keep you all on track, I want you to know up front that I am a very reasonable person. While I ask that you all do your best to meet deadlines that have been set, know that if you’re struggling, I absolutely want you to reach out to let me know, to ask for an extension, or to discuss some other accommodation.</p>
-<p>Please take care of yourselves and one another, and I’ll work as hard as needed to ensure success for all students this quarter.</p>
+<div class="section" id="remote-learning-during-weeks-1-2">
+<h2>Remote learning during weeks 1-2<a class="headerlink" href="#remote-learning-during-weeks-1-2" title="Permalink to this headline">¶</a></h2>
+<p>The current campus plan is to hold all courses over zoom during weeks 1 and 2 while people slowly move back onto campus. While most of us have now gotten a bit of practice participating in class over zoom, there is still a lot going on in the world. While students have always been under a fair amount of pressure and stress, the struggles students may encounter this quarter (for a whole bunch of different reasons) may go beyond what is typical. We acknowledge this and we are here to help you succeed.</p>
+<p>Please take care of yourselves and one another, and we’ll work as hard to ensure a supportive learning environment for all students this quarter.</p>
 <div class="section" id="remote-technology">
 <h3>Remote technology<a class="headerlink" href="#remote-technology" title="Permalink to this headline">¶</a></h3>
 <p>If you do not have consistent access to the technology needed to fully access remote instruction options, please use the form below to request a loaner laptop for the period during which you will be learning remotely due to the COVID-19 pandemic: <a class="reference external" href="https://eforms.ucsd.edu/view.php?id=490887">https://eforms.ucsd.edu/view.php?id=490887</a>. (For any issues that you may have, please email <a class="reference external" href="mailto:vcsa&#37;&#52;&#48;ucsd&#46;edu">vcsa<span>&#64;</span>ucsd<span>&#46;</span>edu</a> and they will work to assist you.)</p>
 </div>
-<div class="section" id="remote-lectures-and-labs">
-<h3>Remote Lectures and Labs<a class="headerlink" href="#remote-lectures-and-labs" title="Permalink to this headline">¶</a></h3>
-<p>Attendance will be neither required nor incentivized for any part of the course this quarter. This policy is in place because we do not want to disadvantage students working in different time zones. While lectures and coding labs will take place during their scheduled times, there <em>will</em> be options for students to complete all work asynchronously.</p>
-<p>Lectures will take place at their scheduled time for those who are able to attend. As typically occurs in CSS 1, students will be encouraged to follow along with the notes, will be given time to complete small coding challenges during lecture on their own, and will have the opportunity to see their classmates thoughts during lecture.</p>
-<p>However, every lecture will also be recorded and shared so that students who are not able to or choose not to watch during the scheduled class time are still able to receive and digest all class materials. If a lecture recording ever fails during class, instructors will re-record a lecture, ensuring all students have access to the material. Lecture and Lab recordings will be available on <a class="reference external" href="https://canvas.ucsd.edu/courses/28027/external_tools/82">Canvas (UCSD)</a> in the Media Gallery.</p>
+<div class="section" id="lectures-and-labs">
+<h3>Lectures and Labs<a class="headerlink" href="#lectures-and-labs" title="Permalink to this headline">¶</a></h3>
+<p>Due to uncertainty around campus closures, attendance will not be required for any part of the course this quarter and the first two weeks of class will be held remotely over zoom (barring any changes to current campus plans). That said, lectures and coding labs will take place during their scheduled times, and attending class and labs in person – when campus fully re-opens – is highly encouraged to get the full benefits of the course.</p>
+<p>Lectures will take place at their scheduled time (M/W 9-9:50am). The instructor will lecture and do live coding in class and students will be expected to write out the code along with the instructor, to complete small coding challenges during lecture on their own, and to interact with the instructor and classmates during lecture. Following along with the lectures in real time and writing out the code is highly recommended for success - as noted elsewhere, there is simply no substitute for practice when learning the <em>skill</em> of coding.</p>
+<p>However, every lecture will be recorded and shared so that students who are not able to or choose not to participate during the scheduled class time are still able to receive and digest all class materials. That said, this class is not designed to be taught in an entirely remote format (i.e, it is <strong>NOT</strong> an intentionally designed “R” course). Thus, during the first few weeks of class when campus is partially closed, we will hold lecures/labs on zoom and those zoom sessions will be recorded and posted. However, after campus re-opens, the lectures/labs will <strong>not be simulcast in realtime on zoom</strong>. Instead, they will be recorded using the podcast capabilties in the classrooms and no real-time remote interactions will be possible. As a result, those who participate entirely asynchronously will not be able to ask questions in real time during class/labs. <em>This makes it especially important to attend the lab sections in person</em> after campus re-opens, as the TAs will be moving about in the computer lab to interactively help students and we will not be able to capture those interactions for later viewing.</p>
+<p>All lecture and lab recordings will be available on <a class="reference external" href="https://canvas.ucsd.edu/courses/32741">Canvas (UCSD)</a> in the Media Gallery.</p>
 </div>
 </div>
 <div class="section" id="ucsd-policies-resources">
@@ -888,21 +710,21 @@
 <div><p>Integrity of scholarship is essential for an academic community. The University expects that both faculty and students will honor this principle and in so doing protect the validity of University intellectual work. For students, this means that all academic work will be done by the individual to whom it is assigned, without unauthorized aid of any kind.</p>
 </div></blockquote>
 <p><a class="reference external" href="http://senate.ucsd.edu/Operating-Procedures/Senate-Manual/Appendices/2">Please read the full UCSD policy</a></p>
-<p>You are encouraged to work together and help one another for <em>labs</em>. However, you are personally responsible for the work you submit. It is your responsibility to ensure you understand everything you’ve submitted.</p>
-<p><strong>You must work independently on the problem sets and the final.</strong>  You may ask and answer <a class="reference internal" href="debugging.html"><span class="doc std std-doc">debugging questions</span></a> on campuswire, but doing work for another student or providing assistance outside of public questions on campuswire on the problem sets or final project will be treated as a violation of academic integrity and you will be referred for disciplinary action. Similarly, emailing with or otherwise communicating with other students or anyone else during a quiz or exam will be treated as a violation and also referred for disciplinary action.   Cheating and plagiarism have been and will be strongly penalized. Please review academic integrity policies <a class="reference external" href="http://academicintegrity.ucsd.edu">here</a>.</p>
+<p><strong>Labs</strong> You are encouraged to work together and help one another on the <em>lab assignments</em>. That said, you are <em>personally responsible</em> for the work you submit, and it is your responsibility to ensure you understand everything you’ve submitted.</p>
+<p><strong>Problem sets and final</strong>. <em>You must work independently on the problem sets and the final</em>. You may ask and answer <a class="reference internal" href="debugging.html"><span class="doc std std-doc">debugging questions</span></a> on slack or in lab sections, but doing work for another student or providing assistance outside of public questions on slack on the problem sets or final project will be treated as a violation of academic integrity and you will be referred for disciplinary action. Similarly, emailing with or otherwise communicating with other students or anyone else for assistance on the problem sets or the final will be treated as a violation of academic integrity and will be referred for disciplinary action.   Cheating and plagiarism have been and will be strongly penalized. Please review campus academic integrity policies <a class="reference external" href="http://academicintegrity.ucsd.edu">here</a>.</p>
 <p>You are responsible for ensuring that the correct file has been submitted and that the submission is uncorrupted. If, for whatever reason, Canvas or DataHub is down or something else prohibits you from being able to turn in an assignment on time, immediately contact the instructor by emailing the assignment, otherwise the assignment will be graded as late.</p>
 </div>
 <div class="section" id="class-conduct">
 <h3>Class Conduct<a class="headerlink" href="#class-conduct" title="Permalink to this headline">¶</a></h3>
-<p>In all interactions in this class, you are expected to be respectful. This includes following the <a class="reference external" href="https://ucsd.edu/about/principles.html">UC San Diego principles of community</a>.</p>
-<p>This class will be a welcoming, inclusive, and harassment-free experience for everyone, regardless of gender, gender identity and expression, age, sexual orientation, disability, physical appearance, body size, race, ethnicity, religion (or lack thereof), political beliefs/leanings, or technology choices.</p>
+<p>In all interactions in this class, you are expected to be respectful of your classmates, the TAs, and the instructor. This includes following the <a class="reference external" href="https://ucsd.edu/about/principles.html">UC San Diego principles of community</a>.</p>
+<p>The teaching team places top priority on making class a welcoming, inclusive, and harassment-free experience for everyone, regardless of gender, gender identity and expression, age, sexual orientation, disability, physical appearance, body size, race, ethnicity, religion (or lack thereof), political beliefs/leanings, or technology choices.</p>
 <p>At all times, you should be considerate and respectful. Always refrain from demeaning, discriminatory, or harassing behavior and speech. Last of all, take care of each other.</p>
-<p>If you have a concern, please speak with the Professor, your TAs, or IAs. If you are uncomfortable doing so, that’s OK! The <a class="reference external" href="https://blink.ucsd.edu/HR/policies/sexual/OPHD.html">OPHD</a> (Office for the Prevention of Sexual Harassment and Discrimination) and <a class="reference external" href="https://care.ucsd.edu/">CARE</a> (confidential advocacy and education office for sexual violence and gender-based violence) are wonderful resources on campus.</p>
+<p>If you have a concern, please speak with the Professor or your TAs. If you are uncomfortable doing so, the <a class="reference external" href="https://blink.ucsd.edu/HR/policies/sexual/OPHD.html">OPHD</a> (Office for the Prevention of Sexual Harassment and Discrimination) and <a class="reference external" href="https://care.ucsd.edu/">CARE</a> (confidential advocacy and education office for sexual violence and gender-based violence) are wonderful resources on campus.</p>
 </div>
 <div class="section" id="disability-access">
 <h3>Disability Access<a class="headerlink" href="#disability-access" title="Permalink to this headline">¶</a></h3>
 <p>Students requesting accommodations due to a disability must provide a current Authorization for Accommodation (AFA) letter. These letters are issued by the Office for Students with Disabilities (OSD), which is located in University Center 202 behind Center Hall. Please make arrangements to contact Professor privately to arrange accommodations.</p>
-<p>Contacting the OSD can help you further:<br />
+<p>Contact information for the OSD:<br />
 858.534.4382 (phone)<br />
 <a class="reference external" href="mailto:osd&#37;&#52;&#48;ucsd&#46;edu">osd<span>&#64;</span>ucsd<span>&#46;</span>edu</a> (email)<br />
 <a class="reference external" href="http://disabilities.ucsd.edu">http://disabilities.ucsd.edu</a></p>
@@ -942,20 +764,31 @@
               </div>
               
         
-        <div class='prev-next-bottom'>
-            
-    <a class='left-prev' id="prev-link" href="../index.html" title="previous page">Welcome to CSS 1</a>
-    <a class='right-next' id="next-link" href="expectations.html" title="next page">Expectations</a>
-
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../index.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Welcome to CSS 1</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="expectations.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Expectations</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
         
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
+    <footer class="footer">
     <div class="container">
       <p>
         
-          By Ed Vul<br/>
+          By modified by John Serences for W2022<br/>
         
             &copy; Copyright 2021.<br/>
       </p>
@@ -967,8 +800,7 @@
       </div>
     </div>
   
-  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>

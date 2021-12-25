@@ -8,11 +8,11 @@
   
 - **Lots of practice:** There are many small assignments, rather than a few large tests.  
   
-- **Objective evaluation:** (Simple) computer programs either work as intended or not.  
+- **Objective evaluation:** Computer programs either work as intended or not. We have designed the grading of labs and problem sets so that you can test your code to make sure that it works before turning it in (although see next section on effort).  
 
-- **Scale effort not grades:** All students can get a good grade, but students who find the material new and difficult will have to spend more time and exert more effort.  
+- **Scale effort not grades:** All students can get a good grade, but students who find the material new and difficult will have to spend more time and exert more effort to get all of their code working properly.
 
-- **Effort required:** For many students, this course requires more effort than most social science courses.  To succeed you need to start assignments early, work consistently, and persevere through failure.  
+- **Effort required:** For many students, this course requires more effort than most social science courses.  To succeed you need to start assignments early, work consistently, persevere through failure (which all programmers, no matter the skill level, must do), and ask questions during class/lab/office hours.  
 
 For further details to refine your expectations about this class read:  
 
@@ -22,17 +22,17 @@ Programming requires practice, and this class is structured to give you lots of 
 
 ### What we expect of you:
 
-- Put in a good faith effort.  Go to lectures and labs (attendance is not required, but is noticed.)  
+- Put in a good faith effort.  Go to lectures and labs (attendance is not required, but is expected and you will miss out on a lot of important interactions if you cannot attend - especially the labs)  
   
-- Be brave.  Ask questions as soon as you have a slight inkling that you are confused.    
+- Ask questions as soon as you have a slight inkling that you are confused. Remember that if you are confused, then at least 50% of the rest of the students are likely confused as well. I take all questions seriously and will treat you with respect, and questions help me identify topics/concepts that I am not explaining clearly.    
   
 - Be proactive: Start assignments early, ask questions early.  If you skip lectures and labs, and put off working on assignments until the last minute, we will not be able to help you.  
   
-- Persevere: You will make errors in your programs.  It will be frustrating, it will seem hopeless, you will want to give up.  Do not give up: keep trying and ask for help.
+- Persevere: You will make errors in your programs - **all programmers make errors, no matter their skill level or amount of experience**. I started programming in the last century when I was an undergrad (1997!) and I know many languages and applications. Nevertheless, I make errors all the time and you will see me make plenty of them while I am coding in class.  This can be frustrating, it can sometimes seem hopeless, and you may sometimes want to give up.  Do not give up: keep trying and ask for help. This is probably the most important skill of a good programmer, and learning to see errors as learning opportunities instead of personal failures will make for a much more pleasant and productive experience. 
 
 ### What you can expect of us:
 
-- Responsive: We will respond to questions on campuswire within one working day.
+- Responsive: We will respond to questions on slack within one working day.
 
 - Transparent and predictable grades.  Assignments are mostly auto-graded.  You should have a very good sense whether your solutions work for a given assignment before you turn that assignment in.~~
 
@@ -46,9 +46,9 @@ Programming requires practice, and this class is structured to give you lots of 
 
 - Learning facts requires memorization.  Developing skills requires practice.  
 
-- Computer programming is a skill.    
+- Computer programming is mostly a skill.    
   
-- Therefore, learning to program computers requires lots of practice writing computer programs. 
+- Therefore, learning to program computers requires lots of practice writing computer programs. There is no way around this, and you will not learn if you just listen to lectures and try to passively absorb the material. 
 
 
 ### Computer programming is a skill
