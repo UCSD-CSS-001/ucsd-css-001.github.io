@@ -3,6 +3,7 @@
 
 title: UCSD CSS 1
 author: Ed Vul
+author: modified by John Serences for W2022
 logo: logo.png
 
 # Force re-execution of notebooks on each build.
@@ -15,10 +16,13 @@ parse:
   myst_substitutions:
     key: value
     url_website: "[Class Website](https://ucsd-css-001.github.io)"
-    url_lecture: "[Lecture zoom (UCSD)](https://ucsd.zoom.us/j/92614231911)"
-    url_lab: "[Lab zoom (UCSD)](https://ucsd.zoom.us/j/92658283484)"
-    url_canvas: "[Canvas (UCSD)](https://canvas.ucsd.edu/courses/28027/external_tools/82)"
-    url_campuswire: "[Campuswire](https://campuswire.com/c/G3785E48A/)"
+    url_lecture: "[Lecture zoom (UCSD)](https://ucsd.zoom.us/j/96328022911)"
+    url_lab_m10: "[Mon 10-12 Lab zoom (Sourabh Raja-murali)](https://ucsd.zoom.us/j/97556854018)"
+    url_lab_m12: "[Mon 12-2 Lab zoom (Panayu Keelawat)](https://zoom.us/j/94270923304?pwd=TXVzSXBXbjE1b2RMWjdqZUtDcTZ5Zz09)"
+    url_lab_t9: "[Tues 9-11 Lab zoom (Pulkit Agrawal)](https://ucsd.zoom.us/j/91919528909)"
+    url_lab_f9: "[Fri 9-11 Lab zoom (Purva Kothari)]()"
+    url_canvas: "[Canvas (UCSD)](https://canvas.ucsd.edu/courses/32741)"
+    url_slack: "[Slack]()"
     url_datahub: "[Datahub (UCSD)](https://datahub.ucsd.edu)"
 
 # Information about where the book exists on the web

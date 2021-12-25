@@ -4,7 +4,7 @@
 format: jb-book
 root: index
 parts:
-  - caption: Course (CSS 1 summer 2)
+  - caption: Course (CSS01 Winter 2022)
     chapters:
       - file: course/syllabus
       - file: course/expectations
@@ -20,42 +20,4 @@ parts:
           - file: lectures/P01-jupyter
           - file: lectures/P01-python
           - file: live/Lecture-01
-      - file: lectures/P02
-        sections:
-          - file: lectures/P02-conditionals
-          - file: lectures/P02-loops
-          - file: lectures/P02-while
-          - file: live/Lecture-02
-      - file: lectures/P03
-        sections:
-          - file: lectures/P03-sequence
-          - file: live/Lecture-03
-      - file: lectures/P04
-        sections:
-          - file: lectures/P04-strings
-          - file: live/Lecture-04
-      - file: lectures/P05
-        sections:
-          - file: lectures/P05-dictionaries
-          - file: live/Lecture_5
-          - file: live/Lecture-05
-      - file: lectures/P06
-        sections:
-          - file: lectures/P06-functions
-          - file: live/Lecture_6
-          - file: live/Lecture-06
-      - file: lectures/P07
-        sections:
-          - file: lectures/P07-classes
-          - file: live/Lecture_7
-          - file: live/Lecture-07
-      - file: lectures/P08
-        sections:
-          - file: live/Lecture_8
-          - file: live/Lecture-08
-      - file: lectures/week-05
-      - file: lectures/P09
-        sections:
-          - file: live/Lecture_9
-          - file: live/Lecture-09
-      - file: lectures/P10
+ 
