@@ -1,5 +1,6 @@
+# P01: Computational Social Science
 
-# P01: Computational social science
+## What is it???
 
 The "social science" part refers to the domain of study: social phenomena -- how people behave in various circumstances and in groups large and small.  The many disciplines subsumed in the social sciences each study different aspects and different scales of human behavior.  Linguistics is concerned with how people communicate via language, and the properties of languages.  Communications is concerned with how people and societies are shaped by the different mediums by which information and messages are transmitted.  Psychology and Cognitive Science focus on what shapes the behavior of individuals.  Economics is concerned with the aggregate behavior of large groups of people during the production, distribution, and consumption of valuable goods and services. Political Science is concerned with governance and power among large groups of people.
 
