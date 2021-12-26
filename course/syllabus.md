@@ -26,10 +26,10 @@ This course is structured to help you get there.  The basic premise we start fro
 | Role     | Name                | email    | Office hours  |
 | ----------------: | :---------| -----------| ------------ |   
 | **Instructor** | John Serences  | [jserences@ucsd.edu](mailto:jserences@ucsd.edu) | [Fridays 3:00-4:30PM](https://ucsd.zoom.us/j/96496750531) |   
-| **TA** | Sourabh Raja-Murali    | [srajamurali@ucsd.edu](mailto:srajamurali@ucsd.edu) | [Monday 10:00AM-12:00PM]()  |
-| **TA** | Panayu Keelawat    | [pkeelawa@ucsd.edu](mailto:pkeelawa@ucsd.edu) | [Monday 12:00-2:00PM]()  |
-| **TA** | Pulkit Agrawal   | [p3agrawal@ucsd.edu](mailto:p3agrawal@ucsd.edu) | [Tuesday 9:00-11:00AM]()  |
-| **TA** | Purva Kothari    | [pukothar@ucsd.edu](mailto:pukothar@ucsd.edu) | [Friday 9:00-11:00AM]()  |
+| **TA** | Sourabh Raja-Murali    | [srajamurali@ucsd.edu](mailto:srajamurali@ucsd.edu) | [Monday 10:00AM-12:00PM](https://ucsd.zoom.us/j/97556854018)  |
+| **TA** | Panayu Keelawat    | [pkeelawa@ucsd.edu](mailto:pkeelawa@ucsd.edu) | [Monday 12:00-2:00PM](https://zoom.us/j/94270923304?pwd=TXVzSXBXbjE1b2RMWjdqZUtDcTZ5Zz09)  |
+| **TA** | Pulkit Agrawal   | [p3agrawal@ucsd.edu](mailto:p3agrawal@ucsd.edu) | [Tuesday 9:00-11:00AM](https://ucsd.zoom.us/j/91919528909)  |
+| **TA** | Purva Kothari    | [pukothar@ucsd.edu](mailto:pukothar@ucsd.edu) | [Friday 9:00-11:00AM](https://ucsd.zoom.us/j/97556854018)  |
 
 
 ### All the Zoom links for class, labs (office hour links above)
@@ -37,12 +37,11 @@ This course is structured to help you get there.  The basic premise we start fro
 - Main {{ url_website }}: contains all the materials and links    
 - Zoom (Note: lectures & labs use different zoom rooms):   
     - {{ url_lecture }}: M/W 9am - 9:50am PST - conducted live, recordings posted on canvas      
-    - {{ url_lab_m10 }}: Monday 10am - 12pm PST - conducted live
-    - {{ url_lab_m12 }}: Monday 12pm - 2pm PST - conducted live
-    - {{ url_lab_t9 }}: Tusday 9am - 11am PST - conducted live
-    - {{ url_lab_f9 }}: Friday 9am - 11am PST - conducted live
+    - {{ url_lm10 }}: Monday 10am - 12pm PST - conducted live
+    - {{ url_lm12 }}: Monday 12pm - 2pm PST - conducted live
+    - {{ url_lt9 }}: Tusday 9am - 11am PST - conducted live
+    - {{ url_lf9 }}: Friday 9am - 11am PST - conducted live
 - {{ url_canvas }}: used to post grades and recordings of lectures/labs   
-- {{ url_slack }}: used for all communication: discussion, Q&A, announcements etc.     
 - {{ url_datahub }}: used to submit comleted labs and problem sets  
 
 Recordings of class lectures (M/W) will be made available on {{ url_canvas }}      
@@ -55,44 +54,35 @@ Recordings of class lectures (M/W) will be made available on {{ url_canvas }}
   
 - No local software is required (as we will use remotely hosted jupyter notebooks).  If you want to install a local copy, we recommend the bundled [anaconda distribution](https://www.anaconda.com/products/individual) of Python 3  
 
-## Schedule, as a pithy table:
+## Class/topic schedule, tentative and subject to change (as of 2021-12-25):
 
 | Date | Topics | Assignment due |
 | ---- | ------ | -------------- |
-| 2022-01-03 | Basic python| |
-| 2022-01-05 | Basic python| |
-| 2022-01-10 | Basic python| |
-| 2022-01-12 | Basic python| |
-| 2022-01-17 | Basic python| |
-| 2022-01-19 | Basic python| |
-| 2022-01-24 | Basic python| |
-| 2022-01-26 | Basic python| |
-| 2022-01-31 | Basic python| |
-| 2022-02-02 | Basic python| |
-| 2022-02-07 | Basic python| |
-| 2022-02-09 | Basic python| |
-| 2022-02-14 | Basic python| |
-| 2022-02-16 | Basic python| |
-| 2022-02-21 | Basic python| |
-| 2022-02-23 | Basic python| |
-| 2022-02-28 | Basic python| |
-| 2022-03-02 | Basic python| |
-| 2022-03-07 | Basic python| |
-| 2022-03-09 | Basic python| |
-
-| 2022-01-05 | [Control flow](../lectures/P02) | |
-| 2022-01-12 | [Lists](../lectures/P03) | |
-| 2022-01-17 |    | pset 1 due |
-| 2022-01-17 | [Strings](../lectures/P04) | |
-| 2022-01-19 | [Dictionaries](../lectures/P05) | |
-| 2022-01-24 | [Functions](../lectures/P06) | |
-| 2022-01-26 | [Classes](../lectures/P07) | |
-| 2022-01-31 |    | pset 2 due |
-| 2022-01-31 | [Pandas Dataframes](../lectures/P08) | |
-| 2022-02-02 | [Plotting Matplotlib](../lectures/P09) | |
-| 2021-09-01 |    | Lab 9 due |
-| 2021-09-02 | [advanced](../lectures/P10) | |
-| **2021-09-04** |    | final pset due |
+| M-2022-01-03 | [Basic python](../lectures/P01)| |
+| W-2022-01-05 | Basic python| |
+| M-2022-01-10 | Control flow| |
+| W-2022-01-12 | Control flow| |
+| M-2022-01-17 | MLK - no class | |
+| **T-2022-01-18** |    | **pset 1 due (one day extension due to holiday)**|
+| W-2022-01-19 | Stings| |
+| M-2022-01-24 | Lists| |
+| W-2022-01-26 | Lists| |
+| M-2022-01-31 | Dictionaries| |
+| **M-2022-01-31** |    | **pset 2 due** |
+| W-2022-02-02 | Dictionaries| |
+| M-2022-02-07 | Functions| |
+| W-2022-02-09 | Functions| |
+| M-2022-02-14 | Classes| |
+| **M-2022-02-14** |    | **pset 3 due** |
+| W-2022-02-16 | Classes| |
+| M-2022-02-21 | Presidents' Day - no class| |
+| W-2022-02-23 | Pandas Series| |
+| M-2022-02-28 | Pandas Dataframes| |
+| **M-2022-02-14** |    | **pset 4 due** |
+| W-2022-03-02 | Plotting (Matplotlib)| |
+| M-2022-03-07 | Advanced| |
+| W-2022-03-09 | Advanced| |
+| **F-2022-03-11** |    | **final pset due** |
 
 
 ## Grading
@@ -100,21 +90,21 @@ Recordings of class lectures (M/W) will be made available on {{ url_canvas }}
 ### Basis
 
 You are evaluated based on:   
-- 45% 4 bi-weekly problem sets   
-- 15% final (week 10)   
-- 40% 10 labs  (1 per week)
+- 45% 4 bi-weekly problem sets  
+- 40% 9 labs  (1 per week, starting Week 2)
+- 15% final (due Friday March 11, 2022, end of week 10)   
 
-**Labs:** Labs are short exercises designed to be completed during the scheduled lab time, with interactive help from the TA and other students.  Labs are completed by turning them in on datahub.  Labs are due by the end of the day following lab (e.g., a Tuesday lab is due by end of day Wednesday).  This window is wide so that people who cannot attend lab, or otherwise do not complete the work during lab, can submit on their own schedule.  That said, *it is very much advised that you attend lab to complete the activities and get interactive help!*
+**Labs:** Labs are short exercises designed to be completed during the scheduled lab time, with interactive help from the TA and other students.  Labs are completed by turning them in on datahub.  Labs are due by the end of the day following lab (e.g., a Tuesday lab is due by end of day Wednesday).  This window is wide so that people who cannot attend lab, or otherwise do not complete the work during lab, can submit on their own schedule.  That said, *it is strongly advised that you attend lab to complete the activities and get interactive help!*
 
-**Problem Sets:** Are longer, bi-weekly assignments.  They are due by the end of the day every other Monday.  You are to complete each problem set **on your own** (i.e., these are not group projects).  You are advised to *start early*
+**Problem Sets:** Are longer, bi-weekly assignments.  They are due by the end of the day (11:59PM) every other Monday (see above table for exact due dates).  You are to complete each problem set **on your own** (i.e., these are not group projects, and you are not allowed to seek help from classmates or anyone else).  You are advised to *start early* so that you can do the easier problems to get credit and so that you can identify and set aside extra time for the problems that are hardest for you.
 
-**Final:** The final is a more involved, more integrated problem set, due at the end of week 10.
+**Final:** The final is a more involved, more integrated problem set and will be cumulative (as will all the other problem sets given the cumulative nature of programming). The final problem set will be due at the end of week 10 (11:59PM on Friday, March 11th, 2022). 
 
-**Pro-Social Behavior:** While not graded, all students are encouraged to help the instructors and other students, and generally to support a positive class environment.  This includes things like: showing up and participating during lectures and labs, participating in slack discussion (asking good questions, answering others' questions), demonstrating an interest in learning, not just maximizing your grade, etc. 
+**Pro-Social Behavior:** While not a graded component of the class, all students are encouraged to help other students and the instructors. Most importantly, **everyone is expected to contribute to a supportive and positive class environment**.  Programming can be very intimidating, and my expectation is that all questions and communications will be treated with respect, patience, and honest attempts to answer. This includes things like: showing up and participating during lectures and labs, participating in slack discussion (asking well thought-out questions, answering others' questions), demonstrating an interest in learning, not just maximizing your grade, etc. 
 
 ### Letter grades
 
-Letter grades will be based on the percentage of total points earned across the items above.  Having encoded the percentage in the variable `percent`, we can obtain the grade as follows:  
+Letter grades will be based on the percentage of total points earned across the items above.  Standard grading scale with 90-100 an A, 80-89.9999 a B and so forth. Each letter grade will be further broken into +'s and -'s based on which third of the interval you are in (e.g., a 92% would be an A-, and 85 would be a B, and a 82% would be a B-). More formally, if we encode the percentage of total points that you earn in the variable `percent`, you can obtain your grade using the following python code:  
 
 ```python
 if percent >= 90: 
@@ -167,21 +157,19 @@ The instructors can be reached in the following ways:
 
 - Public message on {{ url_slack }}.   
 
-- Private "Instructors & TAs" message on {{ url_slack }}  
+- Private direct message to specific lab TA or to the course instructor on {{ url_slack }}  
 
-- Direct message to specific instructor on {{ url_slack }}  
-
-Outside of office hours, all communication should happen over {{ url_slack }}.  Email is reserved for the unanticipated circumstances when slack is down, or you cannot access it.  In that case, [email the instructor](mailto:jserences@ucsd.edu) about in inability to access slack.
+Outside of office hours, all communication should happen over {{ url_slack }}.  Email is reserved for the unanticipated circumstances when Slack is down, or you cannot access it.  In that case, email your lab TA [M 10-12](mailto:srajamurali@ucsd.edu), [M 12-2](mailto:pkeelawa@ucsd.edu), [T 9-11](mailto:p3agrawal@ucsd.edu), [F 9-11](mailto:pukothar@ucsd.edu) about in inability to access slack.
 
 ### Specific types of questions / comments
 
-- **questions about course logistics:** First, check the syllabus and the detailed how-to pages on the {{ url_website }}. If you can't find the answer there, first ask a classmate. If still unsure, post on Slack.
+- **if you have questions about course logistics:** First, check the syllabus and the detailed how-to pages on the {{ url_website }}. If you can't find the answer there, first ask a classmate if you are able. If still unsure or you are unable to reach a classmate, post on {{ url_slack }}.
   
-- **questions about course content:** these are awesome! We want everyone to see them, be able to answer them, and have their questions answered too, so post these to Slack.  
+- **if you have questions about course content:** these are awesome! We want everyone to see them, be able to answer them, and have their questions answered too, so post these to {{ url_slack }}.  
 
-- **my code produces an error that I cannot fix:** follow the [debugging instructions](debugging.md) to find a minimal reproducible example and fill out the debugging question checklist, then post on Slack. 
+- **if your code produces an error that you cannot fix:** first follow the [debugging instructions](debugging.md) to find a minimal reproducible example and fill out the debugging question checklist, then post on Slack if you are still stuck after following that guidance. 
   
-- **a technical assignment question:** Come to office hours (or post to Slack). Answering technical questions is often best accomplished 'in person' where we can discuss the question and talk through ideas. However, if that is not possible, post your question to Slack. Be as specific as you can in the question you ask. And, for those answering, help your classmates as much as you can without just giving the answer. Help guide them, point them in a direction, provide pseudo code, **but do not provide code that answers assignment questions**.  
+- **a technical assignment question:** Come to office hours (or post to Slack). Answering technical questions is often best accomplished 'in person' where we can discuss the question and talk through ideas. However, if that is not possible, post your question to {{ url_slack }}. Be as specific as you can in the question you ask. And, for those answering, help your classmates as much as you can without just giving the answer. Help guide them, point them in a direction, and you can even provide pseudo code (e.g., guidance about the steps that one might take to solve the problem), **but do not provide code that directly answers assignment questions**.  
   
 - **been stuck on something for a while (>30min) and aren't even really sure where to start** - Programming can be frustrating and it may not always be obvious what is going wrong or why something isn't working. That's OK - we've all been there! IF you are stuck, you can and should reach out for help, even if you aren't exactly sure what your specific question is. To determine when to reach out, consider the 2-hour rule. This rule states that if you are stuck, work on that problem for an hour. Then, take a 30 minute break and do something else. When you come back after your break, try for another 30 minutes or so to solve your problem while working through our [debugging](debugging.md) checklist. If you are still completely stuck, stop and contact us (office hours, post on Slack). If you don't have a specific question, include the information you have (what you're stuck on, the [debugging checklist](debugging.md)).
   
@@ -196,7 +184,7 @@ Slack is an incredible resource for technical classes. It gives you a place to p
 
 1. Before posting your question, look at questions that have already been posted to avoid duplicates.   
 2. If posting about an assignment, note title should have assignment number, question number, and 1-2 words about the question. (i.e. PS01 Q1 Variable Naming)    
-3. Never post an answer to or code for an assignment on a public post. Pseudocode is encouraged for public posts. If you must include code for an assignment, direct message your lab TA or the instructor.   
+3. Never post an answer to or code for an assignment on a public post. Pseudocode is encouraged for public posts (e.g., plain english hints on the steps that one might take to solve a problem, but **do not** insert the actual code). If you must include code for an assignment in order to make your question clear, do so **only** via direct message to your lab TA or to the instructor.   
    
 4. Your post must include not only your question/where you're stuck, but also what you've already done to try to solve it so far and what resources (class notes, online URLs, etc.) you used to try to answer the question up to this point.  See how to ask [debugging questions](debugging.md).
 

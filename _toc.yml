@@ -4,7 +4,7 @@
 format: jb-book
 root: index
 parts:
-  - caption: Course (CSS01 Winter 2022)
+  - caption: Course (CSS 1 Winter 2022)
     chapters:
       - file: course/syllabus
       - file: course/expectations
