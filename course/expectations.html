@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Expectations &#8212; UCSD CSS 1</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet" />
-  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -22,8 +22,8 @@
       
 
     
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -31,22 +31,19 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -57,7 +54,10 @@
     <link rel="next" title="Datahub assignments" href="datahub.html" />
     <link rel="prev" title="Syllabus" href="syllabus.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -74,6 +74,10 @@
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
       <img src="../_static/logo.png" class="logo" alt="logo">
       
       
@@ -83,7 +87,7 @@
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
@@ -92,9 +96,9 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Course (CSS 1 summer 2)
+  Course (CSS 1 Winter 2022)
  </span>
 </p>
 <ul class="current nav bd-sidenav">
@@ -124,7 +128,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Content
  </span>
@@ -155,183 +159,12 @@
      P01:  Python syntax, variables, types
     </a>
    </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../lectures/P02.html">
-   P02: Control flow and logic
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../lectures/P02-conditionals.html">
-     P02: Branching via conditional statement: if..elif..else..
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../lectures/P02-loops.html">
-     P02: Loops!
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../lectures/P02-while.html">
-     P02: While loops
+    <a class="reference internal" href="../live/Lecture-01.html">
+     CSS1 Lecture 1
     </a>
    </li>
   </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../lectures/P03.html">
-   P03: Sequence types
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../lectures/P03-sequence.html">
-     P03: Sequence types
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../lectures/P04.html">
-   P04: strings
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../lectures/P04-strings.html">
-     P04: Strings
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../live/Lecture_4.html">
-     Lecture 4: strings
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../lectures/P05.html">
-   P05: dictionaries
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../lectures/P05-dictionaries.html">
-     P04: dictionaries, sets, and files
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../live/Lecture_5.html">
-     Dictionaries
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../lectures/P06.html">
-   P06: functions
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../lectures/P06-functions.html">
-     P06: functions
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../live/Lecture_6.html">
-     functions
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../lectures/P07.html">
-   P07: objects and classes
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-  <label for="toctree-checkbox-7">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../lectures/P07-classes.html">
-     P06: classes and objects
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../live/Lecture_7.html">
-     Classes, Objects, etc.
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../lectures/P08.html">
-   P08: Pandas and dataframes
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-  <label for="toctree-checkbox-8">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../live/Lecture_8.html">
-     Modules
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../lectures/week-05.html">
-   W5 problem
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../lectures/P09.html">
-   P09: Plotting and Matplotlib
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
-  <label for="toctree-checkbox-9">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../live/Lecture_9.html">
-     Plotting with matplotlib
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../lectures/P10.html">
-   P10: Advanced / Beyond
-  </a>
  </li>
 </ul>
 
@@ -418,7 +251,7 @@
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
             </div>
-            <nav id="bd-toc-nav">
+            <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#class-structure">
@@ -470,16 +303,16 @@
         
               <div>
                 
-  <div class="section" id="expectations">
+  <div class="tex2jax_ignore mathjax_ignore section" id="expectations">
 <h1>Expectations<a class="headerlink" href="#expectations" title="Permalink to this headline">¶</a></h1>
 <p><strong>Computational Social Science (CSS)</strong> uses <strong>computation</strong> to understand <strong>social phenomena</strong>.  “Using computation” means giving a computer very precise instructions about what steps to follow to calculate something of interest.  This is what it means to “program” a computer.  So to do CSS, you have to learn to program computers.</p>
 <p><strong>In this class you will learn to write computer programs in <a class="reference external" href="https://www.python.org/">Python</a>.</strong>  The following are all consequences of this primary goal:</p>
 <ul class="simple">
 <li><p><strong>High variability:</strong> Students have very different levels of prior experience with programming, so the material in this class will be easy for some, and difficult for others.</p></li>
 <li><p><strong>Lots of practice:</strong> There are many small assignments, rather than a few large tests.</p></li>
-<li><p><strong>Objective evaluation:</strong> (Simple) computer programs either work as intended or not.</p></li>
-<li><p><strong>Scale effort not grades:</strong> All students can get a good grade, but students who find the material new and difficult will have to spend more time and exert more effort.</p></li>
-<li><p><strong>Effort required:</strong> For many students, this course requires more effort than most social science courses.  To succeed you need to start assignments early, work consistently, and persevere through failure.</p></li>
+<li><p><strong>Objective evaluation:</strong> Computer programs either work as intended or not. We have designed the grading of labs and problem sets so that you can test your code to make sure that it works before turning it in (although see next section on effort).</p></li>
+<li><p><strong>Scale effort not grades:</strong> All students can get a good grade, but students who find the material new and difficult will have to spend more time and exert more effort to get all of their code working properly.</p></li>
+<li><p><strong>Effort required:</strong> For many students, this course requires more effort than most social science courses.  To succeed you need to start assignments early, work consistently, persevere through failure (which all programmers, no matter the skill level, must do), and ask questions during class/lab/office hours.</p></li>
 </ul>
 <p>For further details to refine your expectations about this class read:</p>
 <div class="section" id="class-structure">
@@ -488,16 +321,16 @@
 <div class="section" id="what-we-expect-of-you">
 <h3>What we expect of you:<a class="headerlink" href="#what-we-expect-of-you" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p>Put in a good faith effort.  Go to lectures and labs (attendance is not required, but is noticed.)</p></li>
-<li><p>Be brave.  Ask questions as soon as you have a slight inkling that you are confused.</p></li>
+<li><p>Put in a good faith effort.  Go to lectures and labs (attendance is not required, but is expected and you will miss out on a lot of important interactions if you cannot attend - especially the labs)</p></li>
+<li><p>Ask questions as soon as you have a slight inkling that you are confused. Remember that if you are confused, then at least 50% of the rest of the students are likely confused as well. I take all questions seriously and will treat you with respect, and questions help me identify topics/concepts that I am not explaining clearly.</p></li>
 <li><p>Be proactive: Start assignments early, ask questions early.  If you skip lectures and labs, and put off working on assignments until the last minute, we will not be able to help you.</p></li>
-<li><p>Persevere: You will make errors in your programs.  It will be frustrating, it will seem hopeless, you will want to give up.  Do not give up: keep trying and ask for help.</p></li>
+<li><p>Persevere: You will make errors in your programs - <strong>all programmers make errors, no matter their skill level or amount of experience</strong>. I started programming in the last century when I was an undergrad (1997!) and I know many languages and applications. Nevertheless, I make errors all the time and you will see me make plenty of them while I am coding in class.  This can be frustrating, it can sometimes seem hopeless, and you may sometimes want to give up.  Do not give up: keep trying and ask for help. This is probably the most important skill of a good programmer, and learning to see errors as learning opportunities instead of personal failures will make for a much more pleasant and productive experience.</p></li>
 </ul>
 </div>
 <div class="section" id="what-you-can-expect-of-us">
 <h3>What you can expect of us:<a class="headerlink" href="#what-you-can-expect-of-us" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p>Responsive: We will respond to questions on campuswire within one working day.</p></li>
+<li><p>Responsive: We will respond to questions on slack within one working day.</p></li>
 <li><p>Transparent and predictable grades.  Assignments are mostly auto-graded.  You should have a very good sense whether your solutions work for a given assignment before you turn that assignment in.~~</p></li>
 </ul>
 </div>
@@ -509,8 +342,8 @@
 <ul class="simple">
 <li><p><strong>Facts</strong> are <em>declarative</em> knowledge: what things are true.  <strong>Skills</strong> are <em>procedural</em> knowledge: how to do things.</p></li>
 <li><p>Learning facts requires memorization.  Developing skills requires practice.</p></li>
-<li><p>Computer programming is a skill.</p></li>
-<li><p>Therefore, learning to program computers requires lots of practice writing computer programs.</p></li>
+<li><p>Computer programming is mostly a skill.</p></li>
+<li><p>Therefore, learning to program computers requires lots of practice writing computer programs. There is no way around this, and you will not learn if you just listen to lectures and try to passively absorb the material.</p></li>
 </ul>
 </div>
 <div class="section" id="computer-programming-is-a-skill">
@@ -550,20 +383,31 @@
               </div>
               
         
-        <div class='prev-next-bottom'>
-            
-    <a class='left-prev' id="prev-link" href="syllabus.html" title="previous page">Syllabus</a>
-    <a class='right-next' id="next-link" href="datahub.html" title="next page">Datahub assignments</a>
-
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="syllabus.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Syllabus</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="datahub.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Datahub assignments</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
         
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
+    <footer class="footer">
     <div class="container">
       <p>
         
-          By Ed Vul<br/>
+          By Initial design/build Ed Vul for SS22021, modified John Serences for W2022<br/>
         
             &copy; Copyright 2021.<br/>
       </p>
@@ -575,8 +419,7 @@
       </div>
     </div>
   
-  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>
