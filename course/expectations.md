@@ -28,7 +28,7 @@ Programming requires practice, and this class is structured to give you lots of 
   
 - Be proactive: Start assignments early, ask questions early.  If you skip lectures and labs, and put off working on assignments until the last minute, we will not be able to help you.  
   
-- Persevere: You will make errors in your programs - **all programmers make errors, no matter their skill level or amount of experience**. I started programming in the last century when I was an undergrad (1997!) and I know many languages and applications. Nevertheless, I make errors all the time and you will see me make plenty of them while I am coding in class.  This can be frustrating, it can sometimes seem hopeless, and you may sometimes want to give up.  Do not give up: keep trying and ask for help. This is probably the most important skill of a good programmer, and learning to see errors as learning opportunities instead of personal failures will make for a much more pleasant and productive experience. 
+- Persevere: You will make errors in your programs - **all programmers make errors, no matter their skill level or amount of experience**. I started programming in the last century when I was a third year undergrad (1997!) and I know many languages and applications. Nevertheless, I make errors all the time and you will see me make plenty of them while I am coding in class.  This can be frustrating, it can sometimes seem hopeless, and you may sometimes want to give up.  Do not give up: keep trying and ask for help. This is probably the most important skill of a good programmer, and learning to see errors as learning opportunities instead of personal failures will make for a much more pleasant and productive experience. 
 
 ### What you can expect of us:
 
