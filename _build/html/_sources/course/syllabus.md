@@ -29,7 +29,7 @@ This course is structured to help you get there.  The basic premise we start fro
 | **TA** | Sourabh Raja-Murali    | [srajamurali@ucsd.edu](mailto:srajamurali@ucsd.edu) | [Monday 10:00AM-12:00PM](https://ucsd.zoom.us/j/97556854018)  |
 | **TA** | Panayu Keelawat    | [pkeelawa@ucsd.edu](mailto:pkeelawa@ucsd.edu) | [Monday 12:00-2:00PM](https://zoom.us/j/94270923304?pwd=TXVzSXBXbjE1b2RMWjdqZUtDcTZ5Zz09)  |
 | **TA** | Pulkit Agrawal   | [p3agrawal@ucsd.edu](mailto:p3agrawal@ucsd.edu) | [Tuesday 9:00-11:00AM](https://ucsd.zoom.us/j/91919528909)  |
-| **TA** | Purva Kothari    | [pukothar@ucsd.edu](mailto:pukothar@ucsd.edu) | [Friday 9:00-11:00AM](https://ucsd.zoom.us/j/97556854018)  |
+| **TA** | Purva Kothari    | [pukothar@ucsd.edu](mailto:pukothar@ucsd.edu) | [Friday 9:00-11:00AM](https://ucsd.zoom.us/j/99945320652)  |
 
 
 ### All the Zoom links for class, labs (office hour links above)
@@ -58,31 +58,31 @@ Recordings of class lectures (M/W) will be made available on {{ url_canvas }}
 
 | Date | Topics | Assignment due |
 | ---- | ------ | -------------- |
-| M-2022-01-03 | [Basic python](../lectures/P01)| |
-| W-2022-01-05 | Basic python| |
-| M-2022-01-10 | Control flow| |
-| W-2022-01-12 | Control flow| |
-| M-2022-01-17 | MLK - no class | |
-| **T-2022-01-18** |    | **pset 1 due (one day extension due to holiday)**|
-| W-2022-01-19 | Stings| |
-| M-2022-01-24 | Lists| |
-| W-2022-01-26 | Lists| |
-| M-2022-01-31 | Dictionaries| |
-| **M-2022-01-31** |    | **pset 2 due** |
-| W-2022-02-02 | Dictionaries| |
-| M-2022-02-07 | Functions| |
-| W-2022-02-09 | Functions| |
-| M-2022-02-14 | Classes| |
-| **M-2022-02-14** |    | **pset 3 due** |
-| W-2022-02-16 | Classes| |
-| M-2022-02-21 | Presidents' Day - no class| |
-| W-2022-02-23 | Pandas Series| |
-| M-2022-02-28 | Pandas Dataframes| |
-| **M-2022-02-14** |    | **pset 4 due** |
-| W-2022-03-02 | Plotting (Matplotlib)| |
-| M-2022-03-07 | Advanced| |
-| W-2022-03-09 | Advanced| |
-| **F-2022-03-11** |    | **final pset due** |
+| M-01-03-2022 | [Basic python](../lectures/W01_P01)| |
+| W-01-05-2022 | Basic python| |
+| M-01-10-2022 | Control flow| |
+| W-01-12-2022 | Control flow| |
+| M-01-17-2022 | MLK - no class | |
+| **T-01-18-2022** |    | **pset 1 due (one day extension due to holiday)**|
+| W-01-19-2022 | Stings| |
+| M-01-24-2022 | Lists| |
+| W-01-26-2022 | Lists| |
+| M-01-31-2022 | Dictionaries| |
+| **M-01-31-2022** |    | **pset 2 due** |
+| W-02-02-2022 | Dictionaries| |
+| M-02-07-2022 | Functions| |
+| W-02-09-2022 | Functions| |
+| M-02-14-2022 | Classes| |
+| **M-02-14-2022** |    | **pset 3 due** |
+| W-02-16-2022 | Classes| |
+| M-02-21-2022 | Presidents' Day - no class| |
+| W-02-23-2022 | Pandas Series| |
+| M-02-28-2022 | Pandas Dataframes| |
+| **M-02-14-2022** |    | **pset 4 due** |
+| W-03-02-2022 | Plotting (Matplotlib)| |
+| M-03-07-2022 | Advanced| |
+| W-03-09-2022 | Advanced| |
+| **F-03-11-2022** |    | **final pset due** |
 
 
 ## Grading

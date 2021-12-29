@@ -13,11 +13,11 @@ parts:
       - file: course/resources
   - caption: Content
     chapters:
-      - file: lectures/P01
+      - file: lectures/W01_P01
         sections:
           - file: lectures/W01_P01-css
           - file: lectures/W01_P01-programming
           - file: lectures/W01_P01-jupyter
           - file: lectures/W01_P01-python
-          - file: live/Week01_Part01_01032022
+          - file: live/W01_P01_01032022
  
