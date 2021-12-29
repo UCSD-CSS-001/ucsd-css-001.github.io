@@ -79,12 +79,12 @@ Recordings of class lectures (M/W) will be made available on {{ url_canvas }}
 | New Content in Lecture | | |
 | M-01-17-2022 | MLK - no class | |
 | **T-01-18-2022** |    | **pset 1 due (basics)**|
-| W-01-19-2022 | Strings| |
+| W-01-19-2022 | Strings, List basics| |
 |  | | |
 | Week 4 | | |
-| Labs Week 4 | Strings| |
+| Labs Week 4 | Strings, List basics| |
 | New Content in Lecture | | |
-| M-01-24-2022 | Lists| |
+| M-01-24-2022 | Lists (slicing)| |
 | W-01-26-2022 | Lists| |
 |  | | |
 | Week 5 | | |
