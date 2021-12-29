@@ -2,7 +2,7 @@
 # Learn more at https://jupyterbook.org/customize/config.html
 
 title: UCSD CSS 1
-author: Version 1, Ed Vul for SS2 2021, Version 2, John Serences for Winter 2022
+author: John Serences for Winter 2022 (based on web design by Ed Vul for SS2, 2021)
 logo: logo.png
 
 # Force re-execution of notebooks on each build.
