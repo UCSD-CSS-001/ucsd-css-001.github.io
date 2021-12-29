@@ -30,9 +30,9 @@ This course is structured to help you get there.  The basic premise we start fro
 | Role     | Name                | email    | Office hours  |
 | ----------------: | :---------| -----------| ------------ |   
 | **Instructor** | John Serences  | [jserences@ucsd.edu](mailto:jserences@ucsd.edu) | [Weds 10:00-11:00AM](https://ucsd.zoom.us/j/96496750531) |   
-| **TA** | Sourabh Raja-Murali    | [srajamurali@ucsd.edu](mailto:srajamurali@ucsd.edu) | []()  |
+| **TA** | Sourabh Raja-Murali    | [srajamurali@ucsd.edu](mailto:srajamurali@ucsd.edu) | [Monday 6:00-7:00PM](https://ucsd.zoom.us/j/98260056673)  |
 | **TA** | Panayu Keelawat    | [pkeelawa@ucsd.edu](mailto:pkeelawa@ucsd.edu) | [Monday 5:00-6:00pm](https://zoom.us/j/94507149380?pwd=VWV2R1VuL0J6MG43ckN2UE1Teitidz09)  |
-| **TA** | Pulkit Agrawal   | [p3agrawal@ucsd.edu](mailto:p3agrawal@ucsd.edu) | []()  |
+| **TA** | Pulkit Agrawal   | [p3agrawal@ucsd.edu](mailto:p3agrawal@ucsd.edu) | [Thursday 1:30-2:30](https://ucsd.zoom.us/j/91919528909)  |
 | **TA** | Purva Kothari    | [pukothar@ucsd.edu](mailto:pukothar@ucsd.edu) | [Tuesday 5:00-6:00PM](https://ucsd.zoom.us/j/93025194368)  |
 
 
