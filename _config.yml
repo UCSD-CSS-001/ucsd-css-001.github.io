@@ -2,7 +2,8 @@
 # Learn more at https://jupyterbook.org/customize/config.html
 
 title: UCSD CSS 1
-author: Ed Vul for SS2 2021, modified John Serences for Winter 2022
+author: Version 1, Ed Vul for SS2 2021
+author: Version 2, John Serences for Winter 2022
 logo: logo.png
 
 # Force re-execution of notebooks on each build.
@@ -19,9 +20,9 @@ parse:
     url_lm10: "[Mon 10-12 Lab zoom (Sourabh Raja-murali)](https://ucsd.zoom.us/j/97556854018)"
     url_lm12: "[Mon 12-2 Lab zoom (Panayu Keelawat)](https://zoom.us/j/94270923304?pwd=TXVzSXBXbjE1b2RMWjdqZUtDcTZ5Zz09)"
     url_lt9: "[Tues 9-11 Lab zoom (Pulkit Agrawal)](https://ucsd.zoom.us/j/91919528909)"
-    url_lf9: "[Fri 9-11 Lab zoom (Purva Kothari)](https://ucsd.zoom.us/j/97556854018)"
+    url_lf9: "[Fri 9-11 Lab zoom (Purva Kothari)](https://ucsd.zoom.us/j/99945320652)"
     url_canvas: "[Canvas (UCSD)](https://canvas.ucsd.edu/courses/32741)"
-    url_slack: "[Slack](https://css1coursechannel.slack.com/archives/C02QKSJS140)"
+    url_slack: "[Slack](https://join.slack.com/t/css1coursechannel/shared_invite/zt-106sne18g-C_z6DvtKN2pvd2EN9M6mHg)"
     url_datahub: "[Datahub (UCSD)](https://datahub.ucsd.edu)"
 
 # Information about where the book exists on the web
