@@ -31,12 +31,12 @@ x = 34
 print(x)
 
 
-# Python reads the `x = 34` line first.  It parses this into a binary operator expression: `exp op exp` with the assignment operator:  `exp_1 = exp_2`. The right hand expression is the name `x`, and the left hand expression is the literal `34`.  Python evaluates the literal `34` which returns the integer 34; that value is then assigned to the variable named `x`.
+# Python reads the `x = 34` line first.  It parses this into a binary operator expression: `exp op exp` with the assignment operator:  `exp_1 = exp_2`. The left hand expression is the name `x`, and the right hand expression is the literal `34`.  Python evaluates the literal `34` which returns the integer 34; that value is then assigned to the variable named `x`.
 # 
 # The next line is parsed as a call expression.  The `print()` function is called on a sub-expression.  That sub-expression contains the name `x`.  Python evaluates `x` to obtain the integer 34.  And that is passed to the print() function.  The print function calls a particular method in the integer object to obtain its string representation, and then prints that representation.
 # 
 # This is all a bit fast and loose, but the parts that are worth remembering:
-# - Python has to parse the code you type
+# - Python has to parse the code you type and if your code is ambiguous or does not conform to the python syntanx, then you will get an error!
 
 # ### Literals
 # 
@@ -154,7 +154,7 @@ print('with the print function, we can print many lines in one cell!')
 
 # ### White space
 # 
-# Python treats white space (i.e., spaces, tabs, etc.) as meaningful.  Some puzzling syntax errors might arise from impropertly indenting code.
+# Python treats white space (i.e., spaces, tabs, etc.) as meaningful.  Some puzzling syntax errors might arise from improperly indenting code.
 
 # In[17]:
 
