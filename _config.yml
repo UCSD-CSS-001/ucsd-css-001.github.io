@@ -21,7 +21,7 @@ parse:
     url_lt9: "[Tues 9-11 Lab zoom (Pulkit Agrawal)](https://ucsd.zoom.us/j/91829894145)"
     url_lf9: "[Fri 9-11 Lab zoom (Purva Kothari)](https://ucsd.zoom.us/j/99945320652)"
     url_canvas: "[Canvas (UCSD)](https://canvas.ucsd.edu/courses/32741)"
-    #url_slack: "[Slack](https://join.slack.com/t/css1coursechannel/shared_invite/zt-106sne18g-C_z6DvtKN2pvd2EN9M6mHg)"
+    url_slack: "[Slack](https://join.slack.com/t/css1coursechannel/shared_invite/zt-106sne18g-C_z6DvtKN2pvd2EN9M6mHg)"
     url_datahub: "[Datahub (UCSD)](https://datahub.ucsd.edu)"
 
 # Information about where the book exists on the web
