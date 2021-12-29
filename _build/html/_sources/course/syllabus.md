@@ -62,7 +62,7 @@ Recordings of class lectures (M/W) will be made available on {{ url_canvas }}
 
 | Date | Topics | Assignment due |
 | ---- | ------ | -------------- |
-| M-01-03-2022 | [Basic python](../lectures/W01_P01)| |
+| M-01-03-2022 | [Basic python](../live/P01_01032022)| |
 | W-01-05-2022 | Basic python| |
 | M-01-10-2022 | Control flow| |
 | W-01-12-2022 | Control flow| |
