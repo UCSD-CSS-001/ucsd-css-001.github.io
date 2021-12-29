@@ -4,6 +4,10 @@
 
 This course will introduce new programmers to Python and the Jupyter Notebook environment in the context of Computational Social Science problems. No programming experience is necessary as we'll start with the basics.
 
+### Main Course Webpage for Materials and Resources
+
+[Main Page](https://ucsd-css-001.github.io/)
+
 ### Goals
 
 At the end of the course you should have a working understanding of the Python language and the Jupyter environment.  This means that you will be able to:
@@ -25,11 +29,11 @@ This course is structured to help you get there.  The basic premise we start fro
 
 | Role     | Name                | email    | Office hours  |
 | ----------------: | :---------| -----------| ------------ |   
-| **Instructor** | John Serences  | [jserences@ucsd.edu](mailto:jserences@ucsd.edu) | [Fridays 3:00-4:30PM](https://ucsd.zoom.us/j/96496750531) |   
-| **TA** | Sourabh Raja-Murali    | [srajamurali@ucsd.edu](mailto:srajamurali@ucsd.edu) | [Monday 10:00AM-12:00PM](https://ucsd.zoom.us/j/97556854018)  |
-| **TA** | Panayu Keelawat    | [pkeelawa@ucsd.edu](mailto:pkeelawa@ucsd.edu) | [Monday 12:00-2:00PM](https://zoom.us/j/94270923304?pwd=TXVzSXBXbjE1b2RMWjdqZUtDcTZ5Zz09)  |
-| **TA** | Pulkit Agrawal   | [p3agrawal@ucsd.edu](mailto:p3agrawal@ucsd.edu) | [Tuesday 9:00-11:00AM](https://ucsd.zoom.us/j/91919528909)  |
-| **TA** | Purva Kothari    | [pukothar@ucsd.edu](mailto:pukothar@ucsd.edu) | [Friday 9:00-11:00AM](https://ucsd.zoom.us/j/99945320652)  |
+| **Instructor** | John Serences  | [jserences@ucsd.edu](mailto:jserences@ucsd.edu) | [Weds 10:00-11:00AM](https://ucsd.zoom.us/j/96496750531) |   
+| **TA** | Sourabh Raja-Murali    | [srajamurali@ucsd.edu](mailto:srajamurali@ucsd.edu) | []()  |
+| **TA** | Panayu Keelawat    | [pkeelawa@ucsd.edu](mailto:pkeelawa@ucsd.edu) | [Monday 5:00-6:00pm](https://zoom.us/j/94507149380?pwd=VWV2R1VuL0J6MG43ckN2UE1Teitidz09)  |
+| **TA** | Pulkit Agrawal   | [p3agrawal@ucsd.edu](mailto:p3agrawal@ucsd.edu) | []()  |
+| **TA** | Purva Kothari    | [pukothar@ucsd.edu](mailto:pukothar@ucsd.edu) | [Tuesday 5:00-6:00PM](https://ucsd.zoom.us/j/93025194368)  |
 
 
 ### All the Zoom links for class, labs (office hour links above)
@@ -192,7 +196,7 @@ Slack is an incredible resource for technical classes. It gives you a place to p
 
 ## Remote learning during weeks 1-2
 
-The current campus plan is to hold all courses over zoom during weeks 1 and 2 while people slowly move back onto campus. While most of us have now gotten a bit of practice participating in class over zoom, there is still a lot going on in the world. While students have always been under a fair amount of pressure and stress, the struggles students may encounter this quarter (for a whole bunch of different reasons) may go beyond what is typical. We acknowledge this and we are here to help you succeed. 
+The current campus plan is to hold all courses over zoom during weeks 1 and 2 while people slowly move back onto campus. While most of us have now gotten a bit of practice participating in class over zoom, there is still a lot going on in the world. While students have always been under the typical pressure and stress of navigating college courses, the struggles students may encounter this quarter (for a whole bunch of different reasons) may go beyond what is typical. We acknowledge this and we are here to help you succeed. 
 
 Please take care of yourselves and one another, and we'll work as hard to ensure a supportive learning environment for all students this quarter.
 
@@ -203,11 +207,11 @@ If you do not have consistent access to the technology needed to fully access re
 
 ### Lectures and Labs
 
-Due to uncertainty around campus closures, attendance will not be required for any part of the course this quarter and the first two weeks of class will be held remotely over zoom (barring any changes to current campus plans). That said, lectures and coding labs will take place during their scheduled times, and attending class and labs in person -- when campus fully re-opens -- is highly encouraged to get the full benefits of the course.
+Due to uncertainty around campus closures, attendance will not be required for any part of the course this quarter and the first two weeks of class will be held remotely over zoom (barring any changes to current campus plans). That said, lectures and coding labs will take place during their scheduled times, and attending class and labs synchronously -- and in person when campus fully re-opens -- is highly encouraged to get the full benefits of the course.
 
-Lectures will take place at their scheduled time (M/W 9-9:50am). The instructor will lecture and do live coding in class and students will be expected to write out the code along with the instructor, to complete small coding challenges during lecture on their own, and to interact with the instructor and classmates during lecture. Following along with the lectures in real time and writing out the code is highly recommended for success - as noted elsewhere, there is simply no substitute for practice when learning the *skill* of coding.
+Lectures will take place at their scheduled time (M/W 9-9:50am). The instructor will lecture and do live coding in class and students will be expected to write out the code along with the instructor, to complete small coding challenges during lecture on their own, and to interact with the instructor and classmates during lecture. Following along with the lectures in real time and writing out the code is highly recommended for success - as noted elsewhere, there is no substitute for practice when learning the *skill* of coding.
 
-However, every lecture will be recorded and shared so that students who are not able to or choose not to participate during the scheduled class time are still able to receive and digest all class materials. That said, this class is not designed to be taught in an entirely remote format (i.e, it is **NOT** an intentionally designed "R" course). Thus, during the first few weeks of class when campus is partially closed, we will hold lecures/labs on zoom and those zoom sessions will be recorded and posted. However, after campus re-opens, the lectures/labs will **not be simulcast in realtime on zoom**. Instead, they will be recorded using the podcast capabilties in the classrooms and no real-time remote interactions will be possible. As a result, those who participate entirely asynchronously will not be able to ask questions in real time during class/labs. *This makes it especially important to attend the lab sections in person* after campus re-opens, as the TAs will be moving about in the computer lab to interactively help students and we will not be able to capture those interactions for later viewing. 
+However, every lecture will be recorded and shared so that students who are not able to or choose not to participate during the scheduled class time are still able to receive and digest all class materials. That said, this class is not designed to be taught in an entirely remote format (i.e, it is **NOT** an intentionally designed "R" course). Thus, during the first few weeks of class when campus is partially closed, we will hold lectures/labs on zoom and those zoom sessions will be recorded and posted. However, after campus re-opens, the lectures/labs will **not be simulcast in realtime on zoom**. Instead, they will be recorded using the podcast capabilties in the classrooms and no real-time remote interactions will be possible. As a result, those who participate entirely asynchronously will not be able to ask questions in real time during class/labs. *This makes it especially important to attend the lab sections in person* after campus re-opens, as the TAs will be moving about in the computer lab to interactively help students and we will not be able to capture those interactions for later viewing. 
 
 All lecture and lab recordings will be available on {{ url_canvas }} in the Media Gallery.
 

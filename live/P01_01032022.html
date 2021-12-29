@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>P01: programming concepts &#8212; UCSD CSS 1</title>
+    <title>Week 01, part 01 &#8212; UCSD CSS 1</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -51,8 +51,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="P01: Our environment" href="P01-jupyter.html" />
-    <link rel="prev" title="P01: Computational Social Science" href="P01-css.html" />
+    <link rel="prev" title="P01: Python syntax, variables, types" href="../lectures/P01-python.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -135,7 +134,7 @@
 </p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="P01.html">
+  <a class="reference internal" href="../lectures/P01.html">
    P01: Getting oriented
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
@@ -145,27 +144,27 @@
   </label>
   <ul class="current">
    <li class="toctree-l2">
-    <a class="reference internal" href="P01-css.html">
+    <a class="reference internal" href="../lectures/P01-css.html">
      P01: Computational Social Science
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lectures/P01-programming.html">
      P01: programming concepts
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="P01-jupyter.html">
+    <a class="reference internal" href="../lectures/P01-jupyter.html">
      P01: Our environment
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="P01-python.html">
+    <a class="reference internal" href="../lectures/P01-python.html">
      P01:  Python syntax, variables, types
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../live/P01_01032022.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Week 01, part 01
     </a>
    </li>
@@ -212,9 +211,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/lectures/P01-programming.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/live/P01_01032022.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -232,7 +231,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/UCSD-CSS-001/ucsd-css-001.github.io/issues/new?title=Issue%20on%20page%20%2Flectures/P01-programming.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/UCSD-CSS-001/ucsd-css-001.github.io/issues/new?title=Issue%20on%20page%20%2Flive/P01_01032022.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -248,36 +247,28 @@
 
             <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/UCSD-CSS-001/ucsd-css-001.github.io/master?urlpath=tree/live/P01_01032022.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
         </div>
 
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-s-hard-about-programming">
-   What’s hard about programming?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#learning-to-program">
-   Learning to program
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#example">
-     Example:
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -286,45 +277,8 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="p01-programming-concepts">
-<h1>P01: programming concepts<a class="headerlink" href="#p01-programming-concepts" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="what-s-hard-about-programming">
-<h2>What’s hard about programming?<a class="headerlink" href="#what-s-hard-about-programming" title="Permalink to this headline">¶</a></h2>
-<p>If you have never written a computer program before, you will find computer programming to be difficult.  Programming a computer requires:</p>
-<ol class="simple">
-<li><p>figuring out what computation solves the problem you want to solve</p></li>
-<li><p>specifying what steps to follow to perform that computation, and</p></li>
-<li><p>explaining those steps to a computer.</p></li>
-</ol>
-<p>When you write your first simple programs, 1 will be solved for you, 2 will be easier, and 3 will seem quite hard.<br />
-As you get better at programming, and the programs you write become more complicated, 3 will become fairly easy, while 2 will prove to be quite difficult. Eventually, most of the difficulty will end up in 1.</p>
-</div>
-<div class="section" id="learning-to-program">
-<h2>Learning to program<a class="headerlink" href="#learning-to-program" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>Programming means giving a computer instructions about what steps to follow to perform some calculation.</p></li>
-<li><p>Computers have no build in knowledge of the world and they are very ‘literal’.  They do <em>exactly</em> what we tell them; no more, no less.  No matter how silly or simple the instructions sound.</p></li>
-<li><p>The most common cause of a computer doing something wrong is us telling it to do the wrong thing.</p></li>
-<li><p>Learning to program means learning to think like a computer (i.e., that you know nothing about the state of the world or the nature of the problem to be solved except what you are explcitly told by a programmer using code).  Programming about figuring out what calculation to do to solve the problem you are interested in, and then explaining those steps to the idiot computer.</p></li>
-</ul>
-<div class="section" id="example">
-<h3>Example:<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
-<p>You want to instruct me to send a new post to the class with the message “hi” using the campuswire website.  The trick is that (1) you have to write all the instructions out ahead of time, and (2) I only understand a limited set of commands:</p>
-<ul class="simple">
-<li><p>move mouse {left, right, up, down} (distance in cm, on my screen)</p></li>
-<li><p>click mouse</p></li>
-<li><p>press (keyboard button)</p></li>
-</ul>
-<p>Some observations about what makes this hard:</p>
-<ul class="simple">
-<li><p>cannot observe intermediate state.</p></li>
-<li><p>my representation differs from yours, and you have to give me instructions in my representation.</p></li>
-<li><p>tedious level of precision required because I don’t understand more sophisticated commands.</p></li>
-</ul>
-<p>Computer programming presents the same challenges: we need to write out very detailed instructions, using a very limited, literal, set of commands.  We need to write the instructions out in advance.   The computer’s representation of the world differs from our own.  How the state changes in response to instructions may differ from your expectations.</p>
-<p>Another example - the directions on your shampoo bottle probably say something like “Apply, Rise, Repeat”. If you told a computer to that, the world would rapidly run out of shampoo…</p>
-</div>
-</div>
+  <div class="tex2jax_ignore mathjax_ignore section" id="week-01-part-01">
+<h1>Week 01, part 01<a class="headerlink" href="#week-01-part-01" title="Permalink to this headline">¶</a></h1>
 </div>
 
     <script type="text/x-thebe-config">
@@ -340,7 +294,7 @@ As you get better at programming, and the programs you write become more complic
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./lectures"
+            path: "./live"
         },
         predefinedOutput: true
     }
@@ -352,19 +306,12 @@ As you get better at programming, and the programs you write become more complic
         
             <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="P01-css.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../lectures/P01-python.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">P01: Computational Social Science</p>
+            <p class="prev-next-title">P01:  Python syntax, variables, types</p>
         </div>
-    </a>
-    <a class='right-next' id="next-link" href="P01-jupyter.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">P01: Our environment</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
     </a>
 </div>
         
