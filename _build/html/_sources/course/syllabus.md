@@ -62,65 +62,65 @@ Recordings of class lectures (M/W) will be made available on {{ url_canvas }}
 
 | Date | Topics | Assignment due |
 | ---- | ------ | -------------- |
-| Week 1 | | |
+| **Week 1** | | |
 | Labs Week 1 | Datahub + Jupyter Environment| |
 | New Content in Lecture | | |
 | M-01-03-2022 | [Basic python](../live/P01_01032022)| |
 | W-01-05-2022 | Basic python| |
 |  | | |
-| Week 2 | | |
+| **Week 2** | | |
 | Labs Week 2 | Basic python| |
 | New Content in Lecture | | |
 | M-01-10-2022 | Control flow| |
 | W-01-12-2022 | Control flow| |
 |  | | |
-| Week 3 | | |
+| **Week 3** | | |
 | Labs Week 3 | Control Flow| |
 | New Content in Lecture | | |
 | M-01-17-2022 | MLK - no class | |
 | **T-01-18-2022** |    | **pset 1 due (basics)**|
 | W-01-19-2022 | Strings| |
 |  | | |
-| Week 4 | | |
-| Labs Week 4 | Strings| |
+| **Week 4** | | |
+| Labs Week 4 | Strings | |
 | New Content in Lecture | | |
-| M-01-24-2022 | Lists| |
+| M-01-24-2022 | Lists (slicing)| |
 | W-01-26-2022 | Lists| |
 |  | | |
-| Week 5 | | |
+| **Week 5** | | |
 | Labs Week 5 | Lists| |
 | New Content in Lecture | | |
 | M-01-31-2022 | Dictionaries| |
 | **M-01-31-2022** |    | **pset 2 due (control flow + strings)** |
 | W-02-02-2022 | Dictionaries| |
 |  | | |
-| Week 6 | | |
+| **Week 6** | | |
 | Labs Week 6 | Dictionaries| |
 | New Content in Lecture | | |
 | M-02-07-2022 | Functions| |
 | W-02-09-2022 | Functions| |
 |  | | |
-| Week 7 | | |
+| **Week 7** | | |
 | Labs Week 7 | Functions| |
 | New Content in Lecture | | |
 | M-02-14-2022 | Classes| |
 | **M-02-14-2022** |    | **pset 3 (Functions) due** |
 | W-02-16-2022 | Classes| |
 |  | | |
-| Week 8 | | |
+| **Week 8** | | |
 | Labs Week 8 | Classes| |
 | New Content in Lecture | | |
 | M-02-21-2022 | Presidents' Day - no class| |
 | W-02-23-2022 | Pandas Series| |
 |  | | |
-| Week 9 | | |
+| **Week 9** | | |
 | Labs Week 9 | Pandas Series| |
 | New Content in Lecture | | |
 | M-02-28-2022 | Pandas Dataframes| |
 | **M-02-14-2022** |    | **pset 4  (Classes) due** |
 | W-03-02-2022 | Pandas Dataframes (advanced)| |
 |  | | |
-| Week 10 | | |
+| **Week 10** | | |
 | Labs Week 10 | | |
 | M-03-07-2022 | Plotting (Matplotlib)| |
 | W-03-09-2022 | Plotting (Matplotlib)| |
