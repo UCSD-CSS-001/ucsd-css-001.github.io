@@ -5,7 +5,7 @@
 # 
 # ## Python Syntax
 # 
-# Python is a programming language.  Unlike human languages, programming languages have a very strict syntax.  One virtue of this is that code written in a programming language is unambiguous -- there is only one way that Python can interpret that code.  The downside is that our intuitions from speaking human language fail us when faced with a very strict syntax, semantics, vocabulary, etc.
+# Python is a programming language.  Unlike human languages, programming languages have a very strict syntax.  One virtue of this is that code written in a programming language is unambiguous -- there is only one way that Python can interpret that code.  The downside is that our intuitions from speaking human language can make it difficult to comply with a very strict syntax, semantics, vocabulary, etc. This is perhaps the hardest concept to learn when programming, but you will  get used to it with practice!
 
 # ### Comments
 # 
@@ -36,7 +36,7 @@ print(x)
 # The next line is parsed as a call expression.  The `print()` function is called on a sub-expression.  That sub-expression contains the name `x`.  Python evaluates `x` to obtain the integer 34.  And that is passed to the print() function.  The print function calls a particular method in the integer object to obtain its string representation, and then prints that representation.
 # 
 # This is all a bit fast and loose, but the parts that are worth remembering:
-# - Python has to parse the code you type and if your code is ambiguous or does not conform to the python syntanx, then you will get an error!
+# - Python has to parse the code you type and if your code is ambiguous or does not conform to the python syntax, then you will get an error!
 
 # ### Literals
 # 
@@ -62,7 +62,7 @@ True
 
 # ### Names
 # 
-# Without quotes, `abc` is interpreted by Python to be a reference to an object in memory.  When no object in memory has such a name, we get a `NameError`.
+# Without quotes, `abc` is interpreted by Python to be a reference to an object in memory (i.e., a variable).  When no object in memory has such a name, we get a `NameError`.
 
 # In[6]:
 
@@ -139,13 +139,27 @@ abc
 "abc
 
 
+# ### sometimes you need to mix and match ' with " if you want quotes or apostrophes in your string...
+
+# In[16]:
+
+
+I don't want to do my homework'
+
+
+# In[17]:
+
+
+"I don't want to do my homework"
+
+
 # ### functions
 # 
 # We will talk much more about functions when we start writing them ourselves, but for now, we just need to know that functions are stored procedures, which we can call by invoking their name, and passing some arguments to them:  `functionname(argument)`.
 # 
 # For instance, the `print()` function prints whatever you give it.
 
-# In[16]:
+# In[18]:
 
 
 print('hello!')
@@ -156,7 +170,7 @@ print('with the print function, we can print many lines in one cell!')
 # 
 # Python treats white space (i.e., spaces, tabs, etc.) as meaningful.  Some puzzling syntax errors might arise from improperly indenting code.
 
-# In[17]:
+# In[19]:
 
 
 print('hello')
@@ -180,25 +194,25 @@ print('hello')
 # 
 # the `type()` function takes some argument, and returns the data type of the object referenced by that argument.  If we pass in a literal, it will tell us the literal's type.
 
-# In[18]:
+# In[20]:
 
 
 type('34')
 
 
-# In[19]:
+# In[21]:
 
 
 type(34.0)
 
 
-# In[20]:
+# In[22]:
 
 
 type(34)
 
 
-# In[21]:
+# In[23]:
 
 
 type(True)
@@ -215,7 +229,7 @@ type(True)
 # 
 # Variable contents that look similar to the human eye may be treated very differently by the computer.  Let's not worry about all these particular types just yet, just remember that the *type* of a variable is of utmost importance to a computer, but is not intuitively relevant to most people.
 
-# In[22]:
+# In[24]:
 
 
 a = '345'
@@ -230,16 +244,11 @@ i = True
 j = 'True'
 
 
-print('Variable contents / types: ')
-for name,var in zip('abcdefghij', (a,b,c,d,e,f,g,h,i,j)):
-    print(f'{name}: {str(type(var)):<20} {var}')
-
-
 # #### isinstance()
 # 
 # We can check if a given variable is a certain type with the isinstance() function
 
-# In[23]:
+# In[25]:
 
 
 x = 34
@@ -252,31 +261,31 @@ isinstance(x, str) # False
 # 
 # Operators are special symbols that take some arguments, do something to them, and return some value.  The basic binary (meaning they take two values) arithmetic operators are very familiar, when applied to numbers:
 
-# In[24]:
+# In[26]:
 
 
 3 + 4
 
 
-# In[25]:
+# In[27]:
 
 
 3 - 4
 
 
-# In[26]:
+# In[28]:
 
 
 3 * 4
 
 
-# In[27]:
+# In[29]:
 
 
 3 / 4
 
 
-# In[28]:
+# In[30]:
 
 
 3 ** 4
@@ -284,25 +293,39 @@ isinstance(x, str) # False
 
 # Note, that last one might be a bit surprising.  the `**` operator corresponds to exponentiation, so `3 ** 4` calculates $3^4$ (i.e., $3 * 3 * 3 *3$)
 
-# In[29]:
+# In[31]:
 
 
 11 % 7
 
 
 # this modulus operator may be surprising -- it returns the *remainder*.  11 / 7 is 1 with a remainder of 4.  so 11 % 7 returns 4.
+# * A very handy use of the modulus operator is to determine if a number is even or odd...if it is even then the number modulus 2 is 0, otherwise the number is odd!
+
+# In[32]:
+
+
+4 % 2
+
+
+# In[33]:
+
+
+7 % 2
+
 
 # ### Operator precedence
 # 
 # As in basic arithmetic, operators have precedence: some of them are executed first, and parentheses can be used to group operations to set a precedence order.
+# * Remember PEMDAS (paren, exp, multiply, divide, add, sub)
 
-# In[30]:
+# In[34]:
 
 
 14 - 3 * 2
 
 
-# In[31]:
+# In[35]:
 
 
 (14 - 3) * 2
@@ -314,7 +337,7 @@ isinstance(x, str) # False
 # 
 # For instance, some operations don't make any sense for certain types:
 
-# In[32]:
+# In[36]:
 
 
 'css ' * 'class'
@@ -324,7 +347,7 @@ isinstance(x, str) # False
 # 
 # Some confusion may arise because, sometimes, the operation might look meaningful to us, but not to Python, because Python does not interpret code the same way we do.  For instance `'3' * '4'` makes sense to us, but not to Python.  The reason is that to Python `'3'` and `'4'` are strings, the fact that those strings *could* be interpreted as numbers is irrelevant for Python until we explicitly ask it to interpret those strings as integers.  At the level of data types, `'3'` and `'4'` are no different from a string like `'css'`.  All it knows is that you have asked it to apply `*` to two strings, and it does not think that is a valid operation.
 
-# In[33]:
+# In[37]:
 
 
 '3' * '4'
@@ -334,7 +357,7 @@ isinstance(x, str) # False
 # 
 # When *we* see `'3' * '4'` we are implicitly converting ("casting") the strings into integers.  We need to do so explicitly for python to understand.  Which we can do with the `int()` function.
 
-# In[34]:
+# In[38]:
 
 
 int('3') * int('4')
@@ -342,7 +365,7 @@ int('3') * int('4')
 
 # Of course, some strings cannot be converted to integers, what would it even mean?
 
-# In[35]:
+# In[39]:
 
 
 int('css')
@@ -350,7 +373,7 @@ int('css')
 
 # Some types of conversion might make sense to us, but Python does not understand them:
 
-# In[36]:
+# In[40]:
 
 
 int('three')
@@ -367,19 +390,19 @@ int('three')
 # 
 # These are mostly obvious: `+` applied to two numbers returns their sum.  Slightly less obvious is what number data type it returns: for two integers it returns another integer, but if a float is involved, it will return a float.
 
-# In[37]:
+# In[41]:
 
 
 3 + 3
 
 
-# In[38]:
+# In[42]:
 
 
 3.0 + 3.0
 
 
-# In[39]:
+# In[43]:
 
 
 3 + 3.0
@@ -389,7 +412,7 @@ int('three')
 # 
 # - `str + str -> str`: when applied to two strings, `+` returns the concatenation of the two strings.
 
-# In[40]:
+# In[44]:
 
 
 '3' + '3'
@@ -397,7 +420,7 @@ int('three')
 
 # Some combinations of types, however, do not work with `+`:  `str + int` will return a TypeError.
 
-# In[41]:
+# In[45]:
 
 
 '3' + 3
@@ -409,19 +432,19 @@ int('three')
 # 
 # This has a certain logic to it: if we think of multiplication as repeated addition, and addition of strings is concatenation, then multiplication of strings would be repeated concatenation.
 
-# In[42]:
+# In[46]:
 
 
 'a' * 5
 
 
-# In[43]:
+# In[47]:
 
 
 2 * 'hip ' + 'hooray'
 
 
-# In[44]:
+# In[48]:
 
 
 'a' * 5.0
@@ -451,7 +474,7 @@ int('three')
 # > **Assignment** is a procedural instruction, where we tell the computer to evaluate the stuff on the right hand side, and assign the output to the left hand side.  So a statement like `x = x+1` is totally fine.  We calculate `x+1` on the right hand side, then assign that value to `x`.  The net effect is that we have incremented the value of `x` by 1.
 # 
 
-# In[45]:
+# In[49]:
 
 
 greeting = 'Hello!  This is a long string describing how we greet you!'
@@ -461,7 +484,7 @@ print(greeting)
 
 # By assigning values to variables, we can use them many times.
 
-# In[46]:
+# In[50]:
 
 
 radius = 4
@@ -475,7 +498,7 @@ print('circumference: ', 2 * pi * radius)
 # 
 # Within a given code block, instructions are executed in a particular sequence, and future instructions (such as changing the value of a variable) do not change the calculations (and assignments) from prior instructions:
 
-# In[47]:
+# In[51]:
 
 
 a = 3
@@ -522,11 +545,12 @@ print('a*b: ', a*b)
 # 
 # Below I demonstrate the second method:
 
-# In[48]:
+# In[52]:
 
 
 # this line clears all prior variables from memory
 get_ipython().run_line_magic('reset', '-f')
+
 # shows contents of variables in memory
 get_ipython().run_line_magic('whos', '')
 print('') # prints an empty line for easier reading.
@@ -555,7 +579,7 @@ print('a*b: ', a*b)
 # 
 # Important Note: This kind of logic for stepping through code works great when considering stand alone scripts.  Notebooks, however, are pretty tricky, because each cell runs code in the same environment, so the memory state at the start of the cell is determined by which cells had been run previously.  (this is why I used `%reset -f` above, to clear all variables from prior cells).
 
-# In[49]:
+# In[53]:
 
 
 # note that x is still in memory, even though it was not defined in this cell!
@@ -566,13 +590,13 @@ print(x)
 # 
 # In jupyter notebooks, you can use the 'line magic' commands `%who` to see a list of currently declared variables in memory, and `%whos` to also see their values.
 
-# In[50]:
+# In[54]:
 
 
 get_ipython().run_line_magic('who', '')
 
 
-# In[51]:
+# In[55]:
 
 
 get_ipython().run_line_magic('whos', '')
@@ -580,7 +604,7 @@ get_ipython().run_line_magic('whos', '')
 
 # ### Print debugging
 
-# In[52]:
+# In[56]:
 
 
 a = input('enter number a: ')
@@ -590,7 +614,7 @@ print(a+b)
 
 # The most generic (and arguably most powerful) way to figure out why a program is not doing what you want it to do (i.e., to "debug" a program) is to insert `print()` statements into the code, to ask the program to print out the current values (and types!) of various variables in memory.  Often this will reveal that variables do not have the values you expected, and you can figure out at what point in the program your expectations diverge from what the code is actually doing.
 
-# In[53]:
+# In[57]:
 
 
 a = input('enter number a: ')

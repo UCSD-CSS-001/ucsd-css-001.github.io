@@ -308,6 +308,11 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sometimes-you-need-to-mix-and-match-with-if-you-want-quotes-or-apostrophes-in-your-string">
+     sometimes you need to mix and match ‘ with ” if you want quotes or apostrophes in your string…
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#functions">
      functions
     </a>
@@ -419,7 +424,7 @@
 <h1>P01:  Python syntax, variables, types<a class="headerlink" href="#p01-python-syntax-variables-types" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="python-syntax">
 <h2>Python Syntax<a class="headerlink" href="#python-syntax" title="Permalink to this headline">¶</a></h2>
-<p>Python is a programming language.  Unlike human languages, programming languages have a very strict syntax.  One virtue of this is that code written in a programming language is unambiguous – there is only one way that Python can interpret that code.  The downside is that our intuitions from speaking human language fail us when faced with a very strict syntax, semantics, vocabulary, etc.</p>
+<p>Python is a programming language.  Unlike human languages, programming languages have a very strict syntax.  One virtue of this is that code written in a programming language is unambiguous – there is only one way that Python can interpret that code.  The downside is that our intuitions from speaking human language can make it difficult to comply with a very strict syntax, semantics, vocabulary, etc. This is perhaps the hardest concept to learn when programming, but you will  get used to it with practice!</p>
 <div class="section" id="comments">
 <h3>Comments<a class="headerlink" href="#comments" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
@@ -453,7 +458,7 @@
 <p>The next line is parsed as a call expression.  The <code class="docutils literal notranslate"><span class="pre">print()</span></code> function is called on a sub-expression.  That sub-expression contains the name <code class="docutils literal notranslate"><span class="pre">x</span></code>.  Python evaluates <code class="docutils literal notranslate"><span class="pre">x</span></code> to obtain the integer 34.  And that is passed to the print() function.  The print function calls a particular method in the integer object to obtain its string representation, and then prints that representation.</p>
 <p>This is all a bit fast and loose, but the parts that are worth remembering:</p>
 <ul class="simple">
-<li><p>Python has to parse the code you type and if your code is ambiguous or does not conform to the python syntanx, then you will get an error!</p></li>
+<li><p>Python has to parse the code you type and if your code is ambiguous or does not conform to the python syntax, then you will get an error!</p></li>
 </ul>
 </div>
 <div class="section" id="literals">
@@ -498,7 +503,7 @@
 </div>
 <div class="section" id="names">
 <h3>Names<a class="headerlink" href="#names" title="Permalink to this headline">¶</a></h3>
-<p>Without quotes, <code class="docutils literal notranslate"><span class="pre">abc</span></code> is interpreted by Python to be a reference to an object in memory.  When no object in memory has such a name, we get a <code class="docutils literal notranslate"><span class="pre">NameError</span></code>.</p>
+<p>Without quotes, <code class="docutils literal notranslate"><span class="pre">abc</span></code> is interpreted by Python to be a reference to an object in memory (i.e., a variable).  When no object in memory has such a name, we get a <code class="docutils literal notranslate"><span class="pre">NameError</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">abc</span>
@@ -508,7 +513,7 @@
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">y</span><span class="o">/</span><span class="n">scw4yk6d3g99kqbs49wp8q3r0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_78884</span><span class="o">/</span><span class="mf">3350977461.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">y</span><span class="o">/</span><span class="n">scw4yk6d3g99kqbs49wp8q3r0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_79308</span><span class="o">/</span><span class="mf">3350977461.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">abc</span>
 
 <span class="ne">NameError</span>: name &#39;abc&#39; is not defined
@@ -532,7 +537,7 @@ told it to do.  There are many different kinds of exceptions you will encounter,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/var/folders/8y/scw4yk6d3g99kqbs49wp8q3r0000gn/T/ipykernel_78884/289321411.py&quot;</span><span class="gt">, line </span><span class="mi">1</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/var/folders/8y/scw4yk6d3g99kqbs49wp8q3r0000gn/T/ipykernel_79308/289321411.py&quot;</span><span class="gt">, line </span><span class="mi">1</span>
 <span class="g g-Whitespace">    </span><span class="mi">3</span> <span class="o">+</span>
        <span class="o">^</span>
 <span class="ne">SyntaxError</span>: invalid syntax
@@ -549,7 +554,7 @@ told it to do.  There are many different kinds of exceptions you will encounter,
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">y</span><span class="o">/</span><span class="n">scw4yk6d3g99kqbs49wp8q3r0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_78884</span><span class="o">/</span><span class="mf">3350977461.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">y</span><span class="o">/</span><span class="n">scw4yk6d3g99kqbs49wp8q3r0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_79308</span><span class="o">/</span><span class="mf">3350977461.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">abc</span>
 
 <span class="ne">NameError</span>: name &#39;abc&#39; is not defined
@@ -566,7 +571,7 @@ told it to do.  There are many different kinds of exceptions you will encounter,
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">y</span><span class="o">/</span><span class="n">scw4yk6d3g99kqbs49wp8q3r0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_78884</span><span class="o">/</span><span class="mf">2273684448.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">y</span><span class="o">/</span><span class="n">scw4yk6d3g99kqbs49wp8q3r0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_79308</span><span class="o">/</span><span class="mf">2273684448.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="s1">&#39;3&#39;</span> <span class="o">+</span> <span class="mi">4</span>
 
 <span class="ne">TypeError</span>: can only concatenate str (not &quot;int&quot;) to str
@@ -606,7 +611,7 @@ told it to do.  There are many different kinds of exceptions you will encounter,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/var/folders/8y/scw4yk6d3g99kqbs49wp8q3r0000gn/T/ipykernel_78884/2422965145.py&quot;</span><span class="gt">, line </span><span class="mi">1</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/var/folders/8y/scw4yk6d3g99kqbs49wp8q3r0000gn/T/ipykernel_79308/2422965145.py&quot;</span><span class="gt">, line </span><span class="mi">1</span>
     <span class="s1">&#39;abc&quot;</span>
          <span class="o">^</span>
 <span class="ne">SyntaxError</span>: EOL while scanning string literal
@@ -621,7 +626,7 @@ told it to do.  There are many different kinds of exceptions you will encounter,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/var/folders/8y/scw4yk6d3g99kqbs49wp8q3r0000gn/T/ipykernel_78884/213977287.py&quot;</span><span class="gt">, line </span><span class="mi">1</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/var/folders/8y/scw4yk6d3g99kqbs49wp8q3r0000gn/T/ipykernel_79308/213977287.py&quot;</span><span class="gt">, line </span><span class="mi">1</span>
     <span class="s2">&quot;abc&#39;</span>
          <span class="o">^</span>
 <span class="ne">SyntaxError</span>: EOL while scanning string literal
@@ -636,7 +641,7 @@ told it to do.  There are many different kinds of exceptions you will encounter,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/var/folders/8y/scw4yk6d3g99kqbs49wp8q3r0000gn/T/ipykernel_78884/2276159364.py&quot;</span><span class="gt">, line </span><span class="mi">1</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/var/folders/8y/scw4yk6d3g99kqbs49wp8q3r0000gn/T/ipykernel_79308/2276159364.py&quot;</span><span class="gt">, line </span><span class="mi">1</span>
     <span class="s1">&#39;abc</span>
         <span class="o">^</span>
 <span class="ne">SyntaxError</span>: EOL while scanning string literal
@@ -651,10 +656,40 @@ told it to do.  There are many different kinds of exceptions you will encounter,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/var/folders/8y/scw4yk6d3g99kqbs49wp8q3r0000gn/T/ipykernel_78884/1341868124.py&quot;</span><span class="gt">, line </span><span class="mi">1</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/var/folders/8y/scw4yk6d3g99kqbs49wp8q3r0000gn/T/ipykernel_79308/1341868124.py&quot;</span><span class="gt">, line </span><span class="mi">1</span>
     <span class="s2">&quot;abc</span>
         <span class="o">^</span>
 <span class="ne">SyntaxError</span>: EOL while scanning string literal
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="sometimes-you-need-to-mix-and-match-with-if-you-want-quotes-or-apostrophes-in-your-string">
+<h3>sometimes you need to mix and match ‘ with ” if you want quotes or apostrophes in your string…<a class="headerlink" href="#sometimes-you-need-to-mix-and-match-with-if-you-want-quotes-or-apostrophes-in-your-string" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">I</span> <span class="n">don</span><span class="s1">&#39;t want to do my homework&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/var/folders/8y/scw4yk6d3g99kqbs49wp8q3r0000gn/T/ipykernel_79308/1125096715.py&quot;</span><span class="gt">, line </span><span class="mi">1</span>
+    <span class="n">I</span> <span class="n">don</span><span class="s1">&#39;t want to do my homework&#39;</span>
+      <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;I don&#39;t want to do my homework&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;I don&#39;t want to do my homework&quot;
 </pre></div>
 </div>
 </div>
@@ -690,7 +725,7 @@ with the print function, we can print many lines in one cell!
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/var/folders/8y/scw4yk6d3g99kqbs49wp8q3r0000gn/T/ipykernel_78884/607908354.py&quot;</span><span class="gt">, line </span><span class="mi">2</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/var/folders/8y/scw4yk6d3g99kqbs49wp8q3r0000gn/T/ipykernel_79308/607908354.py&quot;</span><span class="gt">, line </span><span class="mi">2</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;with the print function...&#39;</span><span class="p">)</span>
     <span class="o">^</span>
 <span class="ne">IndentationError</span>: unexpected indent
@@ -780,26 +815,6 @@ with the print function, we can print many lines in one cell!
 <span class="n">h</span> <span class="o">=</span> <span class="s1">&#39;None&#39;</span>
 <span class="n">i</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="n">j</span> <span class="o">=</span> <span class="s1">&#39;True&#39;</span>
-
-
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Variable contents / types: &#39;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">name</span><span class="p">,</span><span class="n">var</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="s1">&#39;abcdefghij&#39;</span><span class="p">,</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">d</span><span class="p">,</span><span class="n">e</span><span class="p">,</span><span class="n">f</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">h</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">: </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">var</span><span class="p">))</span><span class="si">:</span><span class="s1">&lt;20</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">var</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Variable contents / types: 
-a: &lt;class &#39;str&#39;&gt;        345
-b: &lt;class &#39;int&#39;&gt;        345
-c: &lt;class &#39;float&#39;&gt;      345.0
-d: &lt;class &#39;tuple&#39;&gt;      (345,)
-e: &lt;class &#39;list&#39;&gt;       [345]
-f: &lt;class &#39;dict&#39;&gt;       {&#39;#&#39;: 345}
-g: &lt;class &#39;NoneType&#39;&gt;   None
-h: &lt;class &#39;str&#39;&gt;        None
-i: &lt;class &#39;bool&#39;&gt;       True
-j: &lt;class &#39;str&#39;&gt;        True
 </pre></div>
 </div>
 </div>
@@ -902,9 +917,39 @@ j: &lt;class &#39;str&#39;&gt;        True
 </div>
 </div>
 <p>this modulus operator may be surprising – it returns the <em>remainder</em>.  11 / 7 is 1 with a remainder of 4.  so 11 % 7 returns 4.</p>
+<ul class="simple">
+<li><p>A very handy use of the modulus operator is to determine if a number is even or odd…if it is even then the number modulus 2 is 0, otherwise the number is odd!</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">4</span> <span class="o">%</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">7</span> <span class="o">%</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+</div>
+</div>
 <div class="section" id="operator-precedence">
 <h3>Operator precedence<a class="headerlink" href="#operator-precedence" title="Permalink to this headline">¶</a></h3>
 <p>As in basic arithmetic, operators have precedence: some of them are executed first, and parentheses can be used to group operations to set a precedence order.</p>
+<ul class="simple">
+<li><p>Remember PEMDAS (paren, exp, multiply, divide, add, sub)</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">14</span> <span class="o">-</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">2</span>
@@ -943,7 +988,7 @@ j: &lt;class &#39;str&#39;&gt;        True
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">y</span><span class="o">/</span><span class="n">scw4yk6d3g99kqbs49wp8q3r0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_78884</span><span class="o">/</span><span class="mf">1110209261.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">y</span><span class="o">/</span><span class="n">scw4yk6d3g99kqbs49wp8q3r0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_79308</span><span class="o">/</span><span class="mf">1110209261.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="s1">&#39;css &#39;</span> <span class="o">*</span> <span class="s1">&#39;class&#39;</span>
 
 <span class="ne">TypeError</span>: can&#39;t multiply sequence by non-int of type &#39;str&#39;
@@ -962,7 +1007,7 @@ j: &lt;class &#39;str&#39;&gt;        True
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">y</span><span class="o">/</span><span class="n">scw4yk6d3g99kqbs49wp8q3r0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_78884</span><span class="o">/</span><span class="mf">1966990954.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">y</span><span class="o">/</span><span class="n">scw4yk6d3g99kqbs49wp8q3r0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_79308</span><span class="o">/</span><span class="mf">1966990954.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="s1">&#39;3&#39;</span> <span class="o">*</span> <span class="s1">&#39;4&#39;</span>
 
 <span class="ne">TypeError</span>: can&#39;t multiply sequence by non-int of type &#39;str&#39;
@@ -996,7 +1041,7 @@ j: &lt;class &#39;str&#39;&gt;        True
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">y</span><span class="o">/</span><span class="n">scw4yk6d3g99kqbs49wp8q3r0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_78884</span><span class="o">/</span><span class="mf">1082876627.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">y</span><span class="o">/</span><span class="n">scw4yk6d3g99kqbs49wp8q3r0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_79308</span><span class="o">/</span><span class="mf">1082876627.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">int</span><span class="p">(</span><span class="s1">&#39;css&#39;</span><span class="p">)</span>
 
 <span class="ne">ValueError</span>: invalid literal for int() with base 10: &#39;css&#39;
@@ -1014,7 +1059,7 @@ j: &lt;class &#39;str&#39;&gt;        True
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">y</span><span class="o">/</span><span class="n">scw4yk6d3g99kqbs49wp8q3r0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_78884</span><span class="o">/</span><span class="mf">1429592388.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">y</span><span class="o">/</span><span class="n">scw4yk6d3g99kqbs49wp8q3r0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_79308</span><span class="o">/</span><span class="mf">1429592388.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">int</span><span class="p">(</span><span class="s1">&#39;three&#39;</span><span class="p">)</span>
 
 <span class="ne">ValueError</span>: invalid literal for int() with base 10: &#39;three&#39;
@@ -1095,7 +1140,7 @@ j: &lt;class &#39;str&#39;&gt;        True
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">y</span><span class="o">/</span><span class="n">scw4yk6d3g99kqbs49wp8q3r0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_78884</span><span class="o">/</span><span class="mf">1841419283.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">y</span><span class="o">/</span><span class="n">scw4yk6d3g99kqbs49wp8q3r0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_79308</span><span class="o">/</span><span class="mf">1841419283.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="s1">&#39;3&#39;</span> <span class="o">+</span> <span class="mi">3</span>
 
 <span class="ne">TypeError</span>: can only concatenate str (not &quot;int&quot;) to str
@@ -1141,7 +1186,7 @@ j: &lt;class &#39;str&#39;&gt;        True
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">y</span><span class="o">/</span><span class="n">scw4yk6d3g99kqbs49wp8q3r0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_78884</span><span class="o">/</span><span class="mf">2730885937.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">y</span><span class="o">/</span><span class="n">scw4yk6d3g99kqbs49wp8q3r0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_79308</span><span class="o">/</span><span class="mf">2730885937.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="s1">&#39;a&#39;</span> <span class="o">*</span> <span class="mf">5.0</span>
 
 <span class="ne">TypeError</span>: can&#39;t multiply sequence by non-int of type &#39;float&#39;
@@ -1264,6 +1309,7 @@ a*b:  20
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># this line clears all prior variables from memory</span>
 <span class="o">%</span><span class="k">reset</span> -f
+
 <span class="c1"># shows contents of variables in memory</span>
 <span class="o">%</span><span class="k">whos</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="c1"># prints an empty line for easier reading.</span>
@@ -1379,7 +1425,7 @@ x          int     12
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">y</span><span class="o">/</span><span class="n">scw4yk6d3g99kqbs49wp8q3r0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_78884</span><span class="o">/</span><span class="mf">407298572.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">y</span><span class="o">/</span><span class="n">scw4yk6d3g99kqbs49wp8q3r0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_79308</span><span class="o">/</span><span class="mf">407298572.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">a</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;enter number a: &#39;</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">b</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;enter number b: &#39;</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">)</span>
@@ -1410,7 +1456,7 @@ x          int     12
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">y</span><span class="o">/</span><span class="n">scw4yk6d3g99kqbs49wp8q3r0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_78884</span><span class="o">/</span><span class="mf">2212815029.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">y</span><span class="o">/</span><span class="n">scw4yk6d3g99kqbs49wp8q3r0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_79308</span><span class="o">/</span><span class="mf">2212815029.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">a</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;enter number a: &#39;</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">b</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;enter number b: &#39;</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="n">a</span><span class="p">)</span>
