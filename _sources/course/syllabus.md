@@ -58,70 +58,79 @@ Recordings of class lectures (M/W) will be made available on {{ url_canvas }}
   
 - No local software is required (as we will use remotely hosted jupyter notebooks).  If you want to install a local copy, we recommend the bundled [anaconda distribution](https://www.anaconda.com/products/individual) of Python 3  
 
-## Class/topic schedule, tentative and subject to change (as of 2021-12-25):
+## Class/topic schedule, tentative and subject to change (as of 2021-12-30):
 
 | Date | Topics | Assignment due |
 | ---- | ------ | -------------- |
 | **Week 1** | | |
-| Labs Week 1 | Datahub + Jupyter Environment| |
+| Lab Week 1 | Datahub + First Problem Set to practice with Datahub + Jupyter Environment| |
 | New Content in Lecture | | |
 | M-01-03-2022 | [Basic python](../live/P01_01032022)| |
 | W-01-05-2022 | Basic python| |
 |  | | |
 | **Week 2** | | |
-| Labs Week 2 | Basic python| |
+| **M-01-10-2022** |    | **Lab 1 due at 11:59PM** | |
+| Lab Week 2 | Basic python| |
 | New Content in Lecture | | |
 | M-01-10-2022 | Control flow| |
 | W-01-12-2022 | Control flow| |
 |  | | |
 | **Week 3** | | |
-| Labs Week 3 | Control Flow| |
+| **T-01-18-2022** |    | **Lab 2 due at 11:59PM** | |
+| Lab Week 3 | Control Flow| |
 | New Content in Lecture | | |
 | M-01-17-2022 | MLK - no class | |
-| **T-01-18-2022** |    | **pset 1 due (basics)**|
+| **T-01-18-2022** |    | **pset 1 due (basics) at 11:59PM**|
 | W-01-19-2022 | Strings| |
 |  | | |
 | **Week 4** | | |
-| Labs Week 4 | Strings | |
+| **M-01-24-2022** |    | **Lab 3 due at 11:59PM** | |
+| Lab Week 4 | Strings | |
 | New Content in Lecture | | |
 | M-01-24-2022 | Lists (slicing)| |
 | W-01-26-2022 | Lists| |
 |  | | |
 | **Week 5** | | |
-| Labs Week 5 | Lists| |
+| **M-01-31-2022** |    | **Lab 4 due at 11:59PM** | |
+| Lab Week 5 | Lists| |
 | New Content in Lecture | | |
 | M-01-31-2022 | Dictionaries| |
-| **M-01-31-2022** |    | **pset 2 due (control flow + strings)** |
+| **M-01-31-2022** |    | **pset 2 due (control flow + strings) at 11:59PM** |
 | W-02-02-2022 | Dictionaries| |
 |  | | |
 | **Week 6** | | |
-| Labs Week 6 | Dictionaries| |
+| **M-02-07-2022** |    | **Lab 5 due at 11:59PM** | |
+| Lab Week 6 | Dictionaries| |
 | New Content in Lecture | | |
 | M-02-07-2022 | Functions| |
 | W-02-09-2022 | Functions| |
 |  | | |
 | **Week 7** | | |
-| Labs Week 7 | Functions| |
+| **M-02-14-2022** |    | **Lab 6 due at 11:59PM** | |
+| Lab Week 7 | Functions| |
 | New Content in Lecture | | |
 | M-02-14-2022 | Classes| |
-| **M-02-14-2022** |    | **pset 3 (Functions) due** |
+| **M-02-14-2022** |    | **pset 3 (Functions) due at 11:59PM** |
 | W-02-16-2022 | Classes| |
 |  | | |
 | **Week 8** | | |
-| Labs Week 8 | Classes| |
+| **M-02-21-2022** |    | **Lab 7 due at 11:59PM** | |
+| Lab Week 8 | Classes| |
 | New Content in Lecture | | |
 | M-02-21-2022 | Presidents' Day - no class| |
 | W-02-23-2022 | Pandas Series| |
 |  | | |
 | **Week 9** | | |
-| Labs Week 9 | Pandas Series| |
+| **M-02-28-2022** |    | **Lab 8 due at 11:59PM** | |
+| Lab Week 9 | Pandas Series| |
 | New Content in Lecture | | |
 | M-02-28-2022 | Pandas Dataframes| |
-| **M-02-14-2022** |    | **pset 4  (Classes) due** |
+| **M-02-14-2022** |    | **pset 4  (Classes) due at 11:59PM** |
 | W-03-02-2022 | Pandas Dataframes (advanced)| |
 |  | | |
 | **Week 10** | | |
-| Labs Week 10 | | |
+| **M-03-07-2022** |    | **Lab 9 due at 11:59PM** | |
+| Lab Week 10 | Pandas Dataframes + Plotting| |
 | M-03-07-2022 | Plotting (Matplotlib)| |
 | W-03-09-2022 | Plotting (Matplotlib)| |
 | **F-03-11-2022** |    | **final pset due** |
@@ -133,10 +142,10 @@ Recordings of class lectures (M/W) will be made available on {{ url_canvas }}
 
 You are evaluated based on:   
 - 45% 4 bi-weekly problem sets  
-- 40% 9 labs  (1 per week, starting Week 2)
-- 15% final (due Friday March 11, 2022, end of week 10)   
+- 40% 9 labs  (1 per week, starting Week 1 - the Week 10 lab will not be graded to give you more time to work on the final problem set)
+- 15% final problem set (due Friday March 11, 2022, end of week 10)   
 
-**Labs:** Labs are short exercises designed to be completed during the scheduled lab time, with interactive help from the TA and other students.  Labs are completed by turning them in on datahub.  Labs are due by the end of the day following lab (e.g., a Tuesday lab is due by end of day Wednesday).  This window is wide so that people who cannot attend lab, or otherwise do not complete the work during lab, can submit on their own schedule.  That said, *it is strongly advised that you attend lab to complete the activities and get interactive help!*
+**Labs:** Labs are short exercises designed to be completed during the scheduled lab time, with interactive help from the TA and other students.  Labs are completed by turning them in on datahub.  Labs are due by the end of the day on the Monday following the lab (e.g., if you have the Monday lab from 10-12am, then the lab assigned on 01.03.2022 would be due at midnight on 01.10.2022. Similarly if you have the Friday lab from 9-11am on 01.07.2022, your lab would also be due on Monday 01.10.2022). This means that everyone will have at least 2-3 days to finish the lab if they do not finish it during the actual lab time (and we will design the labs so that most, if not all, of it can be completed in the 2 hour lab time). For people who cannot attend lab, or otherwise do not complete the work during lab, you are still responsible for turning the assignment in on time. Therefore, *it is strongly advised that you attend lab to complete the activities and get interactive help from the TAs in real time!*
 
 **Problem Sets:** Are longer, bi-weekly assignments.  They are due by the end of the day (11:59PM) every other Monday (see above table for exact due dates).  You are to complete each problem set **on your own** (i.e., these are not group projects, and you are not allowed to seek help from classmates or anyone else).  You are advised to *start early* so that you can do the easier problems to get credit and so that you can identify and set aside extra time for the problems that are hardest for you.
 
