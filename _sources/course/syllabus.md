@@ -27,7 +27,7 @@ This course is structured to help you get there.  The basic premise we start fro
 
 ### Instructors
 
-| Role     | Name                | email    | Office hours  |
+| Role     | Name                | email    | Office hours (zoom links)  |
 | ----------------: | :---------| -----------| ------------ |   
 | **Instructor** | John Serences  | [jserences@ucsd.edu](mailto:jserences@ucsd.edu) | [Weds 10:00-11:00AM](https://ucsd.zoom.us/j/96496750531) |   
 | **TA** | Sourabh Raja-Murali    | [srajamurali@ucsd.edu](mailto:srajamurali@ucsd.edu) | [Monday 6:00-7:00PM](https://ucsd.zoom.us/j/98260056673)  |
