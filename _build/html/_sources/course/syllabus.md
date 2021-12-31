@@ -65,7 +65,7 @@ Recordings of class lectures (M/W) will be made available on {{ url_canvas }}
 | **Week 1** | | |
 | Lab Week 1 | Datahub + First Problem Set to practice with Datahub + Jupyter Environment| |
 | New Content in Lecture | | |
-| M-01-03-2022 | [Basic python](../live/P01_01032022)| |
+| M-01-03-2022 | Basic python| |
 | W-01-05-2022 | Basic python| |
 |  | | |
 | **Week 2** | | |

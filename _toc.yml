@@ -19,5 +19,4 @@ parts:
           - file: lectures/P01-programming
           - file: lectures/P01-jupyter
           - file: lectures/P01-python
-          - file: live/P01_01032022
  
