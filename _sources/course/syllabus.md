@@ -198,7 +198,7 @@ Problem sets and labs are scored using [nbgrader](https://nbgrader.readthedocs.i
 
 We will work hard to grade everyone fairly and return assignments quickly. And, we know you also work hard and want you to receive the grade you’ve earned. Occasionally, grading mistakes do happen, and it’s important to us to correct them. If you think there is a mistake in your grade on an assignment, post privately using a direct message on Slack to me and your lab TA within 72 hours. This post should include evidence of why you think your answer was correct and should point to the specific part of the assignment in question.
 
-Note that points will not be rewarded if you fail to follow instructions. For example, if the instructions say to name the variable `orange` and you name it `ornage` (misspelled), you will not be rewarded credit upon regrade. This is because (1) following instructions and being detail-oriented in general, (2) referring to things by their correct names, and getting other minor technicalitieis right is *essential* to programming.
+Note that points will not be rewarded if you fail to follow instructions. For example, if the instructions say to name the variable `orange` and you name it `ornage` (misspelled), you will not be rewarded credit upon regrade. This is because (1) following instructions and being detail-oriented in general, (2) referring to things by their correct names, and getting other minor technicalities right is *essential* to programming.
 
 ## Questions, feedback, and communication
 
@@ -210,7 +210,7 @@ The instructors can be reached in the following ways:
 
 - Private direct message to specific lab TA or to the course instructor on {{ url_slack }}  
 
-Outside of office hours, all communication should happen over {{ url_slack }}.  Email is reserved for the unanticipated circumstances when Slack is down, or you cannot access it.  In that case, email your lab TA [M 10-12](mailto:srajamurali@ucsd.edu), [M 12-2](mailto:pkeelawa@ucsd.edu), [T 9-11](mailto:p3agrawal@ucsd.edu), [F 9-11](mailto:pukothar@ucsd.edu) about in inability to access slack.
+Outside of office hours, all communication should happen over {{ url_slack }}.  Email is reserved for the unanticipated circumstances when Slack is down, or you cannot access it.  In that case, email your lab TA [M 10-12](mailto:srajamurali@ucsd.edu), [M 12-2](mailto:pkeelawa@ucsd.edu), [T 9-11](mailto:p3agrawal@ucsd.edu), [F 9-11](mailto:pukothar@ucsd.edu) about your question and your inability to access slack.
 
 ### Specific types of questions / comments
 
