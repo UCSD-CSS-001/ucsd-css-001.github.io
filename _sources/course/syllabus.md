@@ -4,7 +4,7 @@
 
 This course will introduce new programmers to Python and the Jupyter Notebook environment in the context of Computational Social Science problems. No programming experience is necessary as we'll start with the basics.
 
-### Main Course Webpage for Materials and Resources
+### Main Course Webpage for Materials, Resources, and Zoom links
 
 [Main Page](https://ucsd-css-001.github.io/)
 
