@@ -125,7 +125,7 @@ Recordings of class lectures (M/W) will be made available on {{ url_canvas }}
 | Lab Week 9 | Pandas Series| |
 | New Content in Lecture | | |
 | M-02-28-2022 | Pandas Dataframes| |
-| **M-02-14-2022** |    | **pset 4  (Classes) due at 11:59PM** |
+| **M-02-28-2022** |    | **pset 4  (Classes) due at 11:59PM** |
 | W-03-02-2022 | Pandas Dataframes (advanced)| |
 |  | | |
 | **Week 10** | | |
