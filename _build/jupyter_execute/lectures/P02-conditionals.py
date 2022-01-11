@@ -161,7 +161,7 @@ if B:
 if C:
     print('C is true')
 else:
-    print('neither A nor B nor C are true')
+    print('neither A nor B nor C is not true')
 
 
 # Note that what the code above *prints* deviates from reality!  The code runs just fine, but it will print "neither A nor B nor C are true" even when A or B are true!  This is the trickiest sort of bug to fix, because the computer does not know that anything is wrong, so it cheerfully does the incorrect thing.
