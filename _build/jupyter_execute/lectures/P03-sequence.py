@@ -45,7 +45,7 @@
 # 
 # A string can be created in python by putting some text in quotes.
 # - You can use either single quotes (`'string'`), or double quotes (`"string"`), it does not matter so long as the start and end of the string match. The choice of single vs double quotes is arbitrary. Pick one and use it consistently.
-# - Tripple quotes, where you repeat three quotes of the same type to start the string (e.g., : `'''string'''` or `"""string"""`) are a special string definition that allows the string to span multiple lines.
+# - Triple quotes, where you repeat three quotes of the same type to start the string (e.g., : `'''string'''` or `"""string"""`) are a special string definition that allows the string to span multiple lines.
 
 # In[1]:
 
@@ -60,7 +60,7 @@ d = """
 this is a
 fourth string
 """
-print(a,b,c,d, sep='\n')
+print(a,b,c,d)
 
 
 # One reason to favor single or double quotes is if you have to have quotes in your own string,
@@ -68,26 +68,13 @@ print(a,b,c,d, sep='\n')
 # Alternatively, you can *escape* quotes inside a string, to tell Python that the quote in the
 # string should be treated as a character, rather than the end of the string.
 
-# In[2]:
-
-
-# these are ok because different quotes are used inside the string.
-print('1: Alice said "Hello!"')
-print("2: Alice said 'Hello!'")
-# these are ok because the inside quote is escaped.
-print("3: Alice said \"Hello!\"")
-print('4: Alice said \'Hello!\'')
-# this is a syntax error because Python thinks the string ends before the H
-print("5: Alice said "Hello!"")
-
-
 # ### Lists: defining
 # 
 # Lists are a general purpose, mutable sequence types for storing a bunch of objects in a deterministic order.
 # 
 # A list can be created with square brackets: `[item1, item2]`.  A list can contain all sorts of objects, and those objects need not be of the same type.  A list can even contain more lists.
 
-# In[3]:
+# In[2]:
 
 
 list_of_stuff = ['hello', 'goodbye', 'ciao', 'salut', 'adios', 3.14159, 1200, ['a', 'b', 3, ]]
@@ -100,11 +87,11 @@ print(list_of_stuff)
 # 
 # To do so, we will use the following two sequences.  Note that the list contains a mixture of types -- integers, floats, strings, and even another list.
 
-# In[4]:
+# In[3]:
 
 
-alphabet = 'abcdefghijklmnopqrstuvqxyz'
-some_numbers = [0, 1, 2**(1/2), 3**(1/2), 2, 'e', 3, 'pi', 4, 5, [2, 3, 5, 7], ]
+alphabet = 'abcdefg'
+some_numbers = [0, 1, 2**(1/2), 3**(1/2), 'pi']
 print('alphabet: ', alphabet)
 print('some_numbers:', some_numbers)
 
@@ -113,7 +100,7 @@ print('some_numbers:', some_numbers)
 # 
 # Every collection (and thus, also every sequence) has a size property, indicating how many elements it has.  This can be polled with the `len()` function.  Note that the list inside the `some_numbers` list counts as one item.
 
-# In[5]:
+# In[4]:
 
 
 print(len(alphabet))
@@ -124,27 +111,25 @@ print(len(some_numbers))
 # 
 # The contents of every container, (and thus every collection, and thus every sequence) can be probed with the `in` operation.  `x in container` returns `True` if x is one of the items in the container.
 
-# In[6]:
+# In[5]:
 
 
 print('b' in alphabet) # True
 print('@' in alphabet) # False
 print('pi' in some_numbers) # True
-print(7 in some_numbers) # False -- it only probes immediate members, not elements of elements.
-print([2, 3, 5, 7] in some_numbers) # True
+print(0 in some_numbers) # True
 print(1.41421356237 in some_numbers) # False Exact equality of floats is complicated
 
 
 # For strings, the `in` operation is special because it can also evaluate if a given string contains a particular *substring*, rather than a specific character.  This does not work for other sequence types.
 
-# In[7]:
+# In[6]:
 
 
-print('hijk' in alphabet) # True
+print('abcd' in alphabet) # True
 print('cba' in alphabet) # False
 print('Abc' in alphabet) # False -- case sensitive
 print(' abc' in alphabet) # False
-print([0, 1] in some_numbers) # False: this asks if one of the elements is the list [0,1]
 
 
 # 
@@ -152,7 +137,7 @@ print([0, 1] in some_numbers) # False: this asks if one of the elements is the l
 # 
 # Because sequences have a deterministic ordering, we can retrieve particular items from them with square bracket numerical indexing.  This applies to both lists and strings.
 
-# In[8]:
+# In[7]:
 
 
 print(alphabet[0])
@@ -165,8 +150,20 @@ print(some_numbers[-4]) # same as len(some_numbers)-4, or 7
 # - this is zero-indexed, so the initial item of the sequence has an index of 0,
 # - the last item of the sequence has an index of `len(seq)-1`
 # - negative indexing `-1` is a shortcut for indexing from the end of the sequence by omitting the `len(seq)` part, so `x[-1]` has the same meaning as `x[len(x)-1]`
-# 
-# 
+
+# ### Using a for loop to index into items in a list
+
+# In[8]:
+
+
+for i in range(len(some_numbers)):
+    if some_numbers[i] == 1:
+        some_numbers[i] = some_numbers[i] + 1
+
+# now the 2nd element, which was the number 1, will now be 2 (incremented by one)
+print(some_numbers)
+
+
 # #### slicing
 # 
 # Indexing pulls out one item from a sequence, but slicing can pull out multiple elements.
@@ -214,10 +211,9 @@ print(alphabet[-3:-1:1]) # we can use negative indices here too. [-3, -2] = [23,
 
 
 print(alphabet[:5]) # [0, 1, 2, 3, 4]
-print(alphabet[-5:]) # [21, 22, 23, 24, 25]
-print(alphabet[::2]) # [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24]
-print(alphabet[::-1]) # [25, 24, 23, ... 0]
-print(alphabet[-1:None:-1]) # same as above.
+print(alphabet[-5:]) 
+print(alphabet[::2]) 
+print(alphabet[::-1]) # step backwards (or reverse)
 
 
 # We can do the same things with a list:
@@ -276,61 +272,12 @@ print([1, 2]*5)
 
 # (You cannot `*` two strings, or two sequences of any other type, or a sequence and a float)
 # 
-# ## Strings - concatenation and common methods (functions that are specific to the string object type)
-# 
-# In addition to inheriting properties from the generic "sequence" type, strings have many of their own unique methods that are particularly helpful for dealing with text.
-# 
-# ### inserting variables into strings via concatenation
-# 
-# We can use string concatenation to put variable values into strings.  For instance:
 
-# In[16]:
-
-
-name = "Bob"
-age = 67
-print("Hello " + name + "!")
-print("Your age is " + str(age) + ".")
-
-
-# Note two things about the code above:
-# - because age is an integer, not a string, we have to convert it into a string
-# first before we can use `+` concatenation to it. After all `+` applied to integers means something
-# completely different than `+` applied to strings, so we have to make sure we are doing the right thing. (If we try to `+` a string and an integer, we get a TypeError.)
-# - It is a bit ugly, there are all these quotes and `+` signs scattered about. There is a better way
-
-# In[17]:
-
-
-67 + 'years'
-
-
-# ### inserting variables into strings via f-strings
-# 
-# f-strings, or formatted strings, are a special kind of string that allows for a nice way to
-# include variables inside a string.  An f-string is defined with the special string notation: (`f''`)
-# For instance, the example above can be written more elegantly with f-strings:
-
-# In[18]:
-
-
-name = "Bob"
-age = 67
-print(f'Hello {name}!')
-print(f"Your age is {age}.")
-
-
-# Note that the f strings look much tidier, and also do the conversion of different data types into strings for you.
-# 
-# There are lots of details about how to refine formatting inside the f-string
-# (e.g., how many decimals to print in a float? pad a string with space? etc.)
-# But for now we can just use them as a tidy way of sticking variables into strings.
-# 
-# ### String methods
+# ## String methods
 # 
 # Everything in python is an object, and strings are no exception. What it means for strings to be objects, is that each string has *methods* defined by the string class.  For an exhaustive list, and explanations, look at the [python string documentation](https://docs.python.org/3/library/stdtypes.html#string-methods).
 # 
-# #### String modification methods
+# ### String modification methods
 # 
 # These methods are many, but a few helpful ones alter the string in various common ways:
 # - `'string'.lower()` converts it to lower case
@@ -339,7 +286,7 @@ print(f"Your age is {age}.")
 # 
 # Note that I use the f-string shortcut f'{var=}' which prints "var='contents of var'", so we can easily see what each line below is doing.
 
-# In[19]:
+# In[16]:
 
 
 sentence = 'When angry it helps to WRITE IN ALL CAPS!'
@@ -352,7 +299,7 @@ print(f'{sentence.replace("angry", "excited")=}')
 
 # Note that strings are **immutable**, so any method that changes a string does not change the existing string, but instead makes a new, altered string.
 
-# In[20]:
+# In[17]:
 
 
 sentence = 'When angry it helps to WRITE IN ALL CAPS!'
@@ -370,6 +317,80 @@ print(sentence)
 # - `.isalpha()` returns  True if a string is composed entirely of alphabetic letters {a-zA-Z}.
 # - `istitle()` returns True if a string is in title format (e.g. 'John' vs. 'john')
 
+# ## Inserting variables into strings via concatenation
+# 
+# We can use string concatenation to put variable values into strings.  For instance:
+
+# In[18]:
+
+
+name = "Bob"
+age = 67
+print("Hello " + name + "!")
+print("Your age is " + str(age) + ".")
+
+
+# Note two things about the code above:
+# - because age is an integer, not a string, we have to convert it into a string
+# first before we can use `+` concatenation to it. After all `+` applied to integers means something
+# completely different than `+` applied to strings, so we have to make sure we are doing the right thing. (If we try to `+` a string and an integer, we get a TypeError.)
+# - It is a bit ugly, there are all these quotes and `+` signs scattered about. There is a better way
+
+# In[19]:
+
+
+67 + 'years'
+
+
+# ### inserting variables into strings via f-strings
+# 
+# f-strings, or formatted strings, are a special kind of string that allows for a nice way to
+# include variables inside a string.  An f-string is defined with the special string notation: (`f''`)
+# For instance, the example above can be written more elegantly with f-strings:
+
+# In[20]:
+
+
+name = "Bob"
+age = 67
+print(f'Hello {name}!')
+print(f"Your age is {age}.")
+
+
+# Note that the f strings look much tidier, and also do the conversion of different data types into strings for you.
+# 
+# There are lots of details about how to refine formatting inside the f-string
+# (e.g., how many decimals to print in a float? pad a string with space? etc.)
+# But for now we can just use them as a tidy way of sticking variables into strings.
+
+# ## String pieces and lists: splitting and joining
+# * can use `split()` to divide up a string into parts and to assign the resulting parts into a list
+# * can use `join()` to put elements of a list into a single string
+
+# In[21]:
+
+
+# split a single string into a list of elements based on where the 
+# spaces are in the string (can split based on other characters too!)
+text = 'Hi my name is John'
+split_list = text.split(' ')
+print(split_list)
+print(split_list[0])
+
+
+# In[22]:
+
+
+# then can join the elements of a list into a single string
+favorite_foods = ['taco', 'ice-cream', 'potatoes', 'chameleon']
+print(f'My favorite foods are: {favorite_foods}')
+
+# join elements into one string that a ', ' (comma then space) between words
+join_str = ', '.join(favorite_foods)
+print(f'My favorite foods are: {join_str}')
+print(type(join_str))
+
+
 # ## Lists
 # 
 # Lists are **mutable** sequences, so they have a number of methods for modifying the list "in place".  Which means that the method changes the existing list, rather than creates a new list with the change made (the only way to change immutable sequences, like strings).
@@ -381,7 +402,7 @@ print(sentence)
 # - `list_1.append(item)` adds the item to the end of list_1.
 # - `list_1.extend(list_2)` adds the items in list_2 to the end of list_1
 
-# In[21]:
+# In[23]:
 
 
 my_list = [1, 2, 'e', 3, ]
@@ -399,7 +420,7 @@ print(my_list)
 # - `list_1.pop(idx)` returns the element at index `idx` and also removes that element from the list.
 # - `list_1.remove(item)` removes the first occurrence of `item` from the list, i.e., it removes the first element that has the same value as `item`.
 
-# In[22]:
+# In[24]:
 
 
 my_list = ['red', 'blue', 'green', 'tomato', 'tomato', 'tomato', 'purple']
@@ -414,7 +435,7 @@ print(my_list)
 # * `sort` method (a function specific to a particular object type like a list) will sort the list in place (i.e. it will modify the list and is undoable)
 # * the `sorted` function, in contrast, will make a new variable that contains the sorted contents of the list, but it will leave the original list in the original form
 
-# In[23]:
+# In[25]:
 
 
 # use sort to modify in place (this will change the list and can't be undone!)
@@ -422,7 +443,7 @@ my_list.sort()
 print(my_list)
 
 
-# In[24]:
+# In[26]:
 
 
 # use sorted to make a new version of the list with sorted elements. Does NOT modify the original list
@@ -436,7 +457,7 @@ print(s_list)
 # 
 # **Tuples** are *immutable sequences* of mixed elements. They are defined using ( ). They have a number of uses which we may cover eventually, particularly when we start writing out own functions.
 
-# In[25]:
+# In[27]:
 
 
 heights_list = [68, 70, 59, 65, 77] # this is a list
@@ -445,7 +466,7 @@ print(heights_list)
 print(heights_tuple)
 
 
-# In[26]:
+# In[28]:
 
 
 print(type(heights_list))
@@ -455,7 +476,7 @@ print(type(heights_tuple))
 # ### Can do many of the same things with lists and tuples, like looping over elements and indexing
 # 
 
-# In[27]:
+# In[29]:
 
 
 # loop over elements
@@ -463,7 +484,7 @@ for height in heights_tuple:
     print(height)
 
 
-# In[28]:
+# In[30]:
 
 
 # index...
@@ -473,44 +494,16 @@ print(heights_tuple[3])
 
 # ### However, lists are mutable (changeble) and tuples are not!
 
-# In[29]:
+# In[31]:
 
 
 # can change the contents of a list
 heights_list[3] = 78
 
 
-# In[30]:
+# In[32]:
 
 
 # but trying to change a tuple will give you an error
 heights_tuple[3] = 78
-
-
-# ## String pieces and lists: splitting and joining
-# * can use `split()` to divide up a string into parts and to assign the resulting parts into a list
-# * can use `join()` to put elements of a list into a single string
-
-# In[31]:
-
-
-# split a single string into a list of elements based on where the 
-# spaces are in the string (can split based on other characters too!)
-text = 'Hi my name is John'
-split_list = text.split(' ')
-print(split_list)
-print(split_list[0])
-
-
-# In[32]:
-
-
-# then can join the elements of a list into a single string
-favorite_foods = ['taco', 'ice-cream', 'potatoes', 'chameleon']
-print(f'My favorite foods are: {favorite_foods}')
-
-# join elements into one string that a ', ' (comma then space) between words
-join_str = ', '.join(favorite_foods)
-print(f'My favorite foods are: {join_str}')
-print(type(join_str))
 
