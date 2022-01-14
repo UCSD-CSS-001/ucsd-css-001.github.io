@@ -365,6 +365,13 @@
        indexing
       </a>
      </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#using-a-for-loop-to-index-into-items-in-a-list">
+     Using a for loop to index into items in a list
+    </a>
+    <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#slicing">
        slicing
@@ -394,30 +401,15 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#strings-concatenation-and-common-methods-functions-that-are-specific-to-the-string-object-type">
-   Strings - concatenation and common methods (functions that are specific to the string object type)
+  <a class="reference internal nav-link" href="#string-methods">
+   String methods
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#inserting-variables-into-strings-via-concatenation">
-     inserting variables into strings via concatenation
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#inserting-variables-into-strings-via-f-strings">
-     inserting variables into strings via f-strings
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#string-methods">
-     String methods
+    <a class="reference internal nav-link" href="#string-modification-methods">
+     String modification methods
     </a>
     <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#string-modification-methods">
-       String modification methods
-      </a>
-     </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#other-string-evaluation-methods">
        Other string evaluation methods
@@ -426,6 +418,23 @@
     </ul>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#inserting-variables-into-strings-via-concatenation">
+   Inserting variables into strings via concatenation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#inserting-variables-into-strings-via-f-strings">
+     inserting variables into strings via f-strings
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#string-pieces-and-lists-splitting-and-joining">
+   String pieces and lists: splitting and joining
+  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#lists">
@@ -465,11 +474,6 @@
     </a>
    </li>
   </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#string-pieces-and-lists-splitting-and-joining">
-   String pieces and lists: splitting and joining
-  </a>
  </li>
 </ul>
 
@@ -515,7 +519,7 @@ For instance, a list is a sequence, so you can ask for the initial item of a lis
 <p>A string can be created in python by putting some text in quotes.</p>
 <ul class="simple">
 <li><p>You can use either single quotes (<code class="docutils literal notranslate"><span class="pre">'string'</span></code>), or double quotes (<code class="docutils literal notranslate"><span class="pre">&quot;string&quot;</span></code>), it does not matter so long as the start and end of the string match. The choice of single vs double quotes is arbitrary. Pick one and use it consistently.</p></li>
-<li><p>Tripple quotes, where you repeat three quotes of the same type to start the string (e.g., : <code class="docutils literal notranslate"><span class="pre">'''string'''</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;&quot;&quot;string&quot;&quot;&quot;</span></code>) are a special string definition that allows the string to span multiple lines.</p></li>
+<li><p>Triple quotes, where you repeat three quotes of the same type to start the string (e.g., : <code class="docutils literal notranslate"><span class="pre">'''string'''</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;&quot;&quot;string&quot;&quot;&quot;</span></code>) are a special string definition that allows the string to span multiple lines.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -529,18 +533,15 @@ For instance, a list is a sequence, so you can ask for the initial item of a lis
 <span class="s2">this is a</span>
 <span class="s2">fourth string</span>
 <span class="s2">&quot;&quot;&quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">d</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">d</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>this is a string
-this is another string
-
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>this is a string this is another string 
 this is a
 3rd string
-
-
+ 
 this is a
 fourth string
 </pre></div>
@@ -551,28 +552,6 @@ fourth string
 in which case use one type of quote to indicate the string, and another type of quote inside.
 Alternatively, you can <em>escape</em> quotes inside a string, to tell Python that the quote in the
 string should be treated as a character, rather than the end of the string.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># these are ok because different quotes are used inside the string.</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;1: Alice said &quot;Hello!&quot;&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;2: Alice said &#39;Hello!&#39;&quot;</span><span class="p">)</span>
-<span class="c1"># these are ok because the inside quote is escaped.</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;3: Alice said </span><span class="se">\&quot;</span><span class="s2">Hello!</span><span class="se">\&quot;</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;4: Alice said </span><span class="se">\&#39;</span><span class="s1">Hello!</span><span class="se">\&#39;</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="c1"># this is a syntax error because Python thinks the string ends before the H</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;5: Alice said &quot;</span><span class="n">Hello</span><span class="o">!</span><span class="s2">&quot;&quot;</span><span class="o">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/var/folders/8y/scw4yk6d3g99kqbs49wp8q3r0000gn/T/ipykernel_82954/4254170710.py&quot;</span><span class="gt">, line </span><span class="mi">8</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;5: Alice said &quot;</span><span class="n">Hello</span><span class="o">!</span><span class="s2">&quot;&quot;</span><span class="o">)</span>
-                          <span class="o">^</span>
-<span class="ne">SyntaxError</span>: invalid syntax
-</pre></div>
-</div>
-</div>
-</div>
 </div>
 <div class="section" id="lists-defining">
 <h3>Lists: defining<a class="headerlink" href="#lists-defining" title="Permalink to this headline">¶</a></h3>
@@ -598,16 +577,16 @@ string should be treated as a character, rather than the end of the string.</p>
 <p>To do so, we will use the following two sequences.  Note that the list contains a mixture of types – integers, floats, strings, and even another list.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alphabet</span> <span class="o">=</span> <span class="s1">&#39;abcdefghijklmnopqrstuvqxyz&#39;</span>
-<span class="n">some_numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="mi">3</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;pi&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alphabet</span> <span class="o">=</span> <span class="s1">&#39;abcdefg&#39;</span>
+<span class="n">some_numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="mi">3</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="s1">&#39;pi&#39;</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;alphabet: &#39;</span><span class="p">,</span> <span class="n">alphabet</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;some_numbers:&#39;</span><span class="p">,</span> <span class="n">some_numbers</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>alphabet:  abcdefghijklmnopqrstuvqxyz
-some_numbers: [0, 1, 1.4142135623730951, 1.7320508075688772, 2, &#39;e&#39;, 3, &#39;pi&#39;, 4, 5, [2, 3, 5, 7]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>alphabet:  abcdefg
+some_numbers: [0, 1, 1.4142135623730951, 1.7320508075688772, &#39;pi&#39;]
 </pre></div>
 </div>
 </div>
@@ -623,8 +602,8 @@ some_numbers: [0, 1, 1.4142135623730951, 1.7320508075688772, 2, &#39;e&#39;, 3, 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>26
-11
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7
+5
 </pre></div>
 </div>
 </div>
@@ -638,8 +617,7 @@ some_numbers: [0, 1, 1.4142135623730951, 1.7320508075688772, 2, &#39;e&#39;, 3, 
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;b&#39;</span> <span class="ow">in</span> <span class="n">alphabet</span><span class="p">)</span> <span class="c1"># True</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;@&#39;</span> <span class="ow">in</span> <span class="n">alphabet</span><span class="p">)</span> <span class="c1"># False</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;pi&#39;</span> <span class="ow">in</span> <span class="n">some_numbers</span><span class="p">)</span> <span class="c1"># True</span>
-<span class="nb">print</span><span class="p">(</span><span class="mi">7</span> <span class="ow">in</span> <span class="n">some_numbers</span><span class="p">)</span> <span class="c1"># False -- it only probes immediate members, not elements of elements.</span>
-<span class="nb">print</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span> <span class="ow">in</span> <span class="n">some_numbers</span><span class="p">)</span> <span class="c1"># True</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">0</span> <span class="ow">in</span> <span class="n">some_numbers</span><span class="p">)</span> <span class="c1"># True</span>
 <span class="nb">print</span><span class="p">(</span><span class="mf">1.41421356237</span> <span class="ow">in</span> <span class="n">some_numbers</span><span class="p">)</span> <span class="c1"># False Exact equality of floats is complicated</span>
 </pre></div>
 </div>
@@ -648,7 +626,6 @@ some_numbers: [0, 1, 1.4142135623730951, 1.7320508075688772, 2, &#39;e&#39;, 3, 
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 False
 True
-False
 True
 False
 </pre></div>
@@ -658,17 +635,15 @@ False
 <p>For strings, the <code class="docutils literal notranslate"><span class="pre">in</span></code> operation is special because it can also evaluate if a given string contains a particular <em>substring</em>, rather than a specific character.  This does not work for other sequence types.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;hijk&#39;</span> <span class="ow">in</span> <span class="n">alphabet</span><span class="p">)</span> <span class="c1"># True</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;abcd&#39;</span> <span class="ow">in</span> <span class="n">alphabet</span><span class="p">)</span> <span class="c1"># True</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;cba&#39;</span> <span class="ow">in</span> <span class="n">alphabet</span><span class="p">)</span> <span class="c1"># False</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Abc&#39;</span> <span class="ow">in</span> <span class="n">alphabet</span><span class="p">)</span> <span class="c1"># False -- case sensitive</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39; abc&#39;</span> <span class="ow">in</span> <span class="n">alphabet</span><span class="p">)</span> <span class="c1"># False</span>
-<span class="nb">print</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="ow">in</span> <span class="n">some_numbers</span><span class="p">)</span> <span class="c1"># False: this asks if one of the elements is the list [0,1]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
-False
 False
 False
 False
@@ -692,8 +667,8 @@ False
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a
 1.7320508075688772
-z
-pi
+g
+1
 </pre></div>
 </div>
 </div>
@@ -704,6 +679,26 @@ pi
 <li><p>the last item of the sequence has an index of <code class="docutils literal notranslate"><span class="pre">len(seq)-1</span></code></p></li>
 <li><p>negative indexing <code class="docutils literal notranslate"><span class="pre">-1</span></code> is a shortcut for indexing from the end of the sequence by omitting the <code class="docutils literal notranslate"><span class="pre">len(seq)</span></code> part, so <code class="docutils literal notranslate"><span class="pre">x[-1]</span></code> has the same meaning as <code class="docutils literal notranslate"><span class="pre">x[len(x)-1]</span></code></p></li>
 </ul>
+</div>
+</div>
+<div class="section" id="using-a-for-loop-to-index-into-items-in-a-list">
+<h3>Using a for loop to index into items in a list<a class="headerlink" href="#using-a-for-loop-to-index-into-items-in-a-list" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">some_numbers</span><span class="p">)):</span>
+    <span class="k">if</span> <span class="n">some_numbers</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">some_numbers</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">some_numbers</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="c1"># now the 2nd element, which was the number 1, will now be 2 (incremented by one)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">some_numbers</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 2, 1.4142135623730951, 1.7320508075688772, &#39;pi&#39;]
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="slicing">
 <h4>slicing<a class="headerlink" href="#slicing" title="Permalink to this headline">¶</a></h4>
@@ -721,12 +716,12 @@ pi
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>abcdefghijklmnopqrstuvqxyz
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>abcdefg
 f
 abcde
 ace
 fedcb
-xy
+ef
 </pre></div>
 </div>
 </div>
@@ -758,19 +753,17 @@ Consequently, if you want to end at the initial sequence item with negative inde
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">alphabet</span><span class="p">[:</span><span class="mi">5</span><span class="p">])</span> <span class="c1"># [0, 1, 2, 3, 4]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">alphabet</span><span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">:])</span> <span class="c1"># [21, 22, 23, 24, 25]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">alphabet</span><span class="p">[::</span><span class="mi">2</span><span class="p">])</span> <span class="c1"># [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">alphabet</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># [25, 24, 23, ... 0]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">alphabet</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="kc">None</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># same as above.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">alphabet</span><span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">:])</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">alphabet</span><span class="p">[::</span><span class="mi">2</span><span class="p">])</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">alphabet</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># step backwards (or reverse)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>abcde
-vqxyz
-acegikmoqsuqy
-zyxqvutsrqponmlkjihgfedcba
-zyxqvutsrqponmlkjihgfedcba
+cdefg
+aceg
+gfedcba
 </pre></div>
 </div>
 </div>
@@ -785,9 +778,9 @@ zyxqvutsrqponmlkjihgfedcba
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;e&#39;, 3, &#39;pi&#39;, 4, 5, [2, 3, 5, 7]]
-[0, 1, 1.4142135623730951, 1.7320508075688772, 2, &#39;e&#39;, 3, &#39;pi&#39;]
-[0, 1.7320508075688772, 3, 5]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
+[0, 2]
+[0, 1.7320508075688772]
 </pre></div>
 </div>
 </div>
@@ -826,7 +819,7 @@ zyxqvutsrqponmlkjihgfedcba
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">y</span><span class="o">/</span><span class="n">scw4yk6d3g99kqbs49wp8q3r0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_82954</span><span class="o">/</span><span class="mf">2959460589.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">y</span><span class="o">/</span><span class="n">scw4yk6d3g99kqbs49wp8q3r0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_69936</span><span class="o">/</span><span class="mf">2959460589.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;boo&#39;</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span> <span class="c1"># TypeError</span>
 
 <span class="ne">TypeError</span>: can only concatenate str (not &quot;int&quot;) to str
@@ -843,7 +836,7 @@ zyxqvutsrqponmlkjihgfedcba
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">y</span><span class="o">/</span><span class="n">scw4yk6d3g99kqbs49wp8q3r0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_82954</span><span class="o">/</span><span class="mf">1918426835.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">y</span><span class="o">/</span><span class="n">scw4yk6d3g99kqbs49wp8q3r0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_69936</span><span class="o">/</span><span class="mf">1918426835.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;boo&#39;</span><span class="p">)</span> <span class="c1"># TypeError</span>
 
 <span class="ne">TypeError</span>: can only concatenate list (not &quot;str&quot;) to list
@@ -874,84 +867,11 @@ zyxqvutsrqponmlkjihgfedcba
 </div>
 </div>
 </div>
-<div class="section" id="strings-concatenation-and-common-methods-functions-that-are-specific-to-the-string-object-type">
-<h2>Strings - concatenation and common methods (functions that are specific to the string object type)<a class="headerlink" href="#strings-concatenation-and-common-methods-functions-that-are-specific-to-the-string-object-type" title="Permalink to this headline">¶</a></h2>
-<p>In addition to inheriting properties from the generic “sequence” type, strings have many of their own unique methods that are particularly helpful for dealing with text.</p>
-<div class="section" id="inserting-variables-into-strings-via-concatenation">
-<h3>inserting variables into strings via concatenation<a class="headerlink" href="#inserting-variables-into-strings-via-concatenation" title="Permalink to this headline">¶</a></h3>
-<p>We can use string concatenation to put variable values into strings.  For instance:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Bob&quot;</span>
-<span class="n">age</span> <span class="o">=</span> <span class="mi">67</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello &quot;</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="s2">&quot;!&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Your age is &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">age</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;.&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello Bob!
-Your age is 67.
-</pre></div>
-</div>
-</div>
-</div>
-<p>Note two things about the code above:</p>
-<ul class="simple">
-<li><p>because age is an integer, not a string, we have to convert it into a string
-first before we can use <code class="docutils literal notranslate"><span class="pre">+</span></code> concatenation to it. After all <code class="docutils literal notranslate"><span class="pre">+</span></code> applied to integers means something
-completely different than <code class="docutils literal notranslate"><span class="pre">+</span></code> applied to strings, so we have to make sure we are doing the right thing. (If we try to <code class="docutils literal notranslate"><span class="pre">+</span></code> a string and an integer, we get a TypeError.)</p></li>
-<li><p>It is a bit ugly, there are all these quotes and <code class="docutils literal notranslate"><span class="pre">+</span></code> signs scattered about. There is a better way</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">67</span> <span class="o">+</span> <span class="s1">&#39;years&#39;</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">y</span><span class="o">/</span><span class="n">scw4yk6d3g99kqbs49wp8q3r0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_82954</span><span class="o">/</span><span class="mf">476196730.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="mi">67</span> <span class="o">+</span> <span class="s1">&#39;years&#39;</span>
-
-<span class="ne">TypeError</span>: unsupported operand type(s) for +: &#39;int&#39; and &#39;str&#39;
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="inserting-variables-into-strings-via-f-strings">
-<h3>inserting variables into strings via f-strings<a class="headerlink" href="#inserting-variables-into-strings-via-f-strings" title="Permalink to this headline">¶</a></h3>
-<p>f-strings, or formatted strings, are a special kind of string that allows for a nice way to
-include variables inside a string.  An f-string is defined with the special string notation: (<code class="docutils literal notranslate"><span class="pre">f''</span></code>)
-For instance, the example above can be written more elegantly with f-strings:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Bob&quot;</span>
-<span class="n">age</span> <span class="o">=</span> <span class="mi">67</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Hello </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">!&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Your age is </span><span class="si">{</span><span class="n">age</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello Bob!
-Your age is 67.
-</pre></div>
-</div>
-</div>
-</div>
-<p>Note that the f strings look much tidier, and also do the conversion of different data types into strings for you.</p>
-<p>There are lots of details about how to refine formatting inside the f-string
-(e.g., how many decimals to print in a float? pad a string with space? etc.)
-But for now we can just use them as a tidy way of sticking variables into strings.</p>
-</div>
 <div class="section" id="string-methods">
-<h3>String methods<a class="headerlink" href="#string-methods" title="Permalink to this headline">¶</a></h3>
+<h2>String methods<a class="headerlink" href="#string-methods" title="Permalink to this headline">¶</a></h2>
 <p>Everything in python is an object, and strings are no exception. What it means for strings to be objects, is that each string has <em>methods</em> defined by the string class.  For an exhaustive list, and explanations, look at the <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#string-methods">python string documentation</a>.</p>
 <div class="section" id="string-modification-methods">
-<h4>String modification methods<a class="headerlink" href="#string-modification-methods" title="Permalink to this headline">¶</a></h4>
+<h3>String modification methods<a class="headerlink" href="#string-modification-methods" title="Permalink to this headline">¶</a></h3>
 <p>These methods are many, but a few helpful ones alter the string in various common ways:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">'string'.lower()</span></code> converts it to lower case</p></li>
@@ -999,7 +919,6 @@ when angry it helps to write in all caps!
 </div>
 </div>
 </div>
-</div>
 <div class="section" id="other-string-evaluation-methods">
 <h4>Other string evaluation methods<a class="headerlink" href="#other-string-evaluation-methods" title="Permalink to this headline">¶</a></h4>
 <p>There is also a large family of string evaluation methods of the form <code class="docutils literal notranslate"><span class="pre">'string'.isXXX()</span></code> where
@@ -1009,6 +928,122 @@ XXX is something you might care about.  For instance</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">.isalpha()</span></code> returns  True if a string is composed entirely of alphabetic letters {a-zA-Z}.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">istitle()</span></code> returns True if a string is in title format (e.g. ‘John’ vs. ‘john’)</p></li>
 </ul>
+</div>
+</div>
+</div>
+<div class="section" id="inserting-variables-into-strings-via-concatenation">
+<h2>Inserting variables into strings via concatenation<a class="headerlink" href="#inserting-variables-into-strings-via-concatenation" title="Permalink to this headline">¶</a></h2>
+<p>We can use string concatenation to put variable values into strings.  For instance:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Bob&quot;</span>
+<span class="n">age</span> <span class="o">=</span> <span class="mi">67</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello &quot;</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="s2">&quot;!&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Your age is &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">age</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello Bob!
+Your age is 67.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note two things about the code above:</p>
+<ul class="simple">
+<li><p>because age is an integer, not a string, we have to convert it into a string
+first before we can use <code class="docutils literal notranslate"><span class="pre">+</span></code> concatenation to it. After all <code class="docutils literal notranslate"><span class="pre">+</span></code> applied to integers means something
+completely different than <code class="docutils literal notranslate"><span class="pre">+</span></code> applied to strings, so we have to make sure we are doing the right thing. (If we try to <code class="docutils literal notranslate"><span class="pre">+</span></code> a string and an integer, we get a TypeError.)</p></li>
+<li><p>It is a bit ugly, there are all these quotes and <code class="docutils literal notranslate"><span class="pre">+</span></code> signs scattered about. There is a better way</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">67</span> <span class="o">+</span> <span class="s1">&#39;years&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">y</span><span class="o">/</span><span class="n">scw4yk6d3g99kqbs49wp8q3r0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_69936</span><span class="o">/</span><span class="mf">476196730.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="mi">67</span> <span class="o">+</span> <span class="s1">&#39;years&#39;</span>
+
+<span class="ne">TypeError</span>: unsupported operand type(s) for +: &#39;int&#39; and &#39;str&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="inserting-variables-into-strings-via-f-strings">
+<h3>inserting variables into strings via f-strings<a class="headerlink" href="#inserting-variables-into-strings-via-f-strings" title="Permalink to this headline">¶</a></h3>
+<p>f-strings, or formatted strings, are a special kind of string that allows for a nice way to
+include variables inside a string.  An f-string is defined with the special string notation: (<code class="docutils literal notranslate"><span class="pre">f''</span></code>)
+For instance, the example above can be written more elegantly with f-strings:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Bob&quot;</span>
+<span class="n">age</span> <span class="o">=</span> <span class="mi">67</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Hello </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">!&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Your age is </span><span class="si">{</span><span class="n">age</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello Bob!
+Your age is 67.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that the f strings look much tidier, and also do the conversion of different data types into strings for you.</p>
+<p>There are lots of details about how to refine formatting inside the f-string
+(e.g., how many decimals to print in a float? pad a string with space? etc.)
+But for now we can just use them as a tidy way of sticking variables into strings.</p>
+</div>
+</div>
+<div class="section" id="string-pieces-and-lists-splitting-and-joining">
+<h2>String pieces and lists: splitting and joining<a class="headerlink" href="#string-pieces-and-lists-splitting-and-joining" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>can use <code class="docutils literal notranslate"><span class="pre">split()</span></code> to divide up a string into parts and to assign the resulting parts into a list</p></li>
+<li><p>can use <code class="docutils literal notranslate"><span class="pre">join()</span></code> to put elements of a list into a single string</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># split a single string into a list of elements based on where the </span>
+<span class="c1"># spaces are in the string (can split based on other characters too!)</span>
+<span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;Hi my name is John&#39;</span>
+<span class="n">split_list</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">split_list</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">split_list</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Hi&#39;, &#39;my&#39;, &#39;name&#39;, &#39;is&#39;, &#39;John&#39;]
+Hi
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># then can join the elements of a list into a single string</span>
+<span class="n">favorite_foods</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;taco&#39;</span><span class="p">,</span> <span class="s1">&#39;ice-cream&#39;</span><span class="p">,</span> <span class="s1">&#39;potatoes&#39;</span><span class="p">,</span> <span class="s1">&#39;chameleon&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;My favorite foods are: </span><span class="si">{</span><span class="n">favorite_foods</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="c1"># join elements into one string that a &#39;, &#39; (comma then space) between words</span>
+<span class="n">join_str</span> <span class="o">=</span> <span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">favorite_foods</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;My favorite foods are: </span><span class="si">{</span><span class="n">join_str</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">join_str</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>My favorite foods are: [&#39;taco&#39;, &#39;ice-cream&#39;, &#39;potatoes&#39;, &#39;chameleon&#39;]
+My favorite foods are: taco, ice-cream, potatoes, chameleon
+&lt;class &#39;str&#39;&gt;
+</pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -1197,59 +1232,13 @@ XXX is something you might care about.  For instance</p>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">y</span><span class="o">/</span><span class="n">scw4yk6d3g99kqbs49wp8q3r0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_82954</span><span class="o">/</span><span class="mf">2980616486.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">y</span><span class="o">/</span><span class="n">scw4yk6d3g99kqbs49wp8q3r0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_69936</span><span class="o">/</span><span class="mf">2980616486.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># but trying to change a tuple will give you an error</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">heights_tuple</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mi">78</span>
 
 <span class="ne">TypeError</span>: &#39;tuple&#39; object does not support item assignment
 </pre></div>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="string-pieces-and-lists-splitting-and-joining">
-<h2>String pieces and lists: splitting and joining<a class="headerlink" href="#string-pieces-and-lists-splitting-and-joining" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>can use <code class="docutils literal notranslate"><span class="pre">split()</span></code> to divide up a string into parts and to assign the resulting parts into a list</p></li>
-<li><p>can use <code class="docutils literal notranslate"><span class="pre">join()</span></code> to put elements of a list into a single string</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># split a single string into a list of elements based on where the </span>
-<span class="c1"># spaces are in the string (can split based on other characters too!)</span>
-<span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;Hi my name is John&#39;</span>
-<span class="n">split_list</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">split_list</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">split_list</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Hi&#39;, &#39;my&#39;, &#39;name&#39;, &#39;is&#39;, &#39;John&#39;]
-Hi
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># then can join the elements of a list into a single string</span>
-<span class="n">favorite_foods</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;taco&#39;</span><span class="p">,</span> <span class="s1">&#39;ice-cream&#39;</span><span class="p">,</span> <span class="s1">&#39;potatoes&#39;</span><span class="p">,</span> <span class="s1">&#39;chameleon&#39;</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;My favorite foods are: </span><span class="si">{</span><span class="n">favorite_foods</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-
-<span class="c1"># join elements into one string that a &#39;, &#39; (comma then space) between words</span>
-<span class="n">join_str</span> <span class="o">=</span> <span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">favorite_foods</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;My favorite foods are: </span><span class="si">{</span><span class="n">join_str</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">join_str</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>My favorite foods are: [&#39;taco&#39;, &#39;ice-cream&#39;, &#39;potatoes&#39;, &#39;chameleon&#39;]
-My favorite foods are: taco, ice-cream, potatoes, chameleon
-&lt;class &#39;str&#39;&gt;
-</pre></div>
 </div>
 </div>
 </div>
