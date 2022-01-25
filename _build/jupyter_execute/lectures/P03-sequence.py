@@ -413,6 +413,22 @@ my_list.extend([4, 5, 6])
 print(my_list)
 
 
+# ### Building a list using `append`
+# * Initialize an empty list, then fill it up using a `for` loop and `append`
+# * In this exmaple, we will fill a list up with odd numbers between 0 and 10
+
+# In[24]:
+
+
+odd_lst = []  # init an empty list
+
+# fill it using a for loop and append
+for i in range(1,10,2):  # start, stop, step...start at 1, go until 10 (exclusive of 10), in steps of 2
+    odd_lst.append(i)
+
+print(odd_lst)
+
+
 # ### shrinking a list in place
 # 
 # You can make a new, subset of a list via slicing.  But sometimes that is cumbersome, and the creation of a new list is inefficient.  Alternatively, we can modify the list in place via `pop` and `remove`.
@@ -420,7 +436,7 @@ print(my_list)
 # - `list_1.pop(idx)` returns the element at index `idx` and also removes that element from the list.
 # - `list_1.remove(item)` removes the first occurrence of `item` from the list, i.e., it removes the first element that has the same value as `item`.
 
-# In[24]:
+# In[25]:
 
 
 my_list = ['red', 'blue', 'green', 'tomato', 'tomato', 'tomato', 'purple']
@@ -435,7 +451,7 @@ print(my_list)
 # * `sort` method (a function specific to a particular object type like a list) will sort the list in place (i.e. it will modify the list and is undoable)
 # * the `sorted` function, in contrast, will make a new variable that contains the sorted contents of the list, but it will leave the original list in the original form
 
-# In[25]:
+# In[26]:
 
 
 # use sort to modify in place (this will change the list and can't be undone!)
@@ -443,7 +459,7 @@ my_list.sort()
 print(my_list)
 
 
-# In[26]:
+# In[27]:
 
 
 # use sorted to make a new version of the list with sorted elements. Does NOT modify the original list
@@ -457,7 +473,7 @@ print(s_list)
 # 
 # **Tuples** are *immutable sequences* of mixed elements. They are defined using ( ). They have a number of uses which we may cover eventually, particularly when we start writing out own functions.
 
-# In[27]:
+# In[28]:
 
 
 heights_list = [68, 70, 59, 65, 77] # this is a list
@@ -466,7 +482,7 @@ print(heights_list)
 print(heights_tuple)
 
 
-# In[28]:
+# In[29]:
 
 
 print(type(heights_list))
@@ -476,7 +492,7 @@ print(type(heights_tuple))
 # ### Can do many of the same things with lists and tuples, like looping over elements and indexing
 # 
 
-# In[29]:
+# In[30]:
 
 
 # loop over elements
@@ -484,7 +500,7 @@ for height in heights_tuple:
     print(height)
 
 
-# In[30]:
+# In[31]:
 
 
 # index...
@@ -494,14 +510,14 @@ print(heights_tuple[3])
 
 # ### However, lists are mutable (changeble) and tuples are not!
 
-# In[31]:
+# In[32]:
 
 
 # can change the contents of a list
 heights_list[3] = 78
 
 
-# In[32]:
+# In[33]:
 
 
 # but trying to change a tuple will give you an error
