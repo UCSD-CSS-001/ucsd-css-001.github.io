@@ -27,3 +27,8 @@ parts:
       - file: lectures/P03
         sections:
           - file: lectures/P03-sequence
+      - file: lectures/P04
+        sections:
+          - file: lectures/P04-dictionaries
+          - file: lectures/P04-sets
+          - file: lectures/P04-files
