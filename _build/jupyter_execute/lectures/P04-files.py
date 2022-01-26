@@ -57,7 +57,7 @@
 ## absolute path
 ## this is specific to my computer
 ## look at the path output above for you computer
-get_ipython().run_line_magic('ls', '/Users/johnserences/Dropbox/teaching/')
+get_ipython().run_line_magic('ls', "'/Users/johnserences/Dropbox/My Papers/Editorial/'")
 
 
 # #### Relative Paths
