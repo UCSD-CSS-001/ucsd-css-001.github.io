@@ -226,7 +226,7 @@ with open('frankenstein.txt', 'r') as f:
 search_target = 'It was on a dreary night'
 
 # how many lines of text do we want to keep 
-# after we fine the search target?
+# after we find the search target?
 keep_lines = 5
 
 # initialize a counter (int object)
@@ -281,7 +281,7 @@ with open('frankenstein.txt', 'r') as f:
 search_target = 'It was on a dreary night'
 
 # how many lines of text do we want to keep 
-# after we fine the search target?
+# after we find the search target?
 keep_lines = 5
 
 # loop over each line in the book using enumerate
