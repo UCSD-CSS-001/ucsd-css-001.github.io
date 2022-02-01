@@ -458,6 +458,18 @@
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#working-with-files-once-they-have-been-read-in">
+   Working with files once they have been read in…
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#same-as-above-but-using-enumerate">
+     Same as above but using enumerate…
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
             </nav>
@@ -746,6 +758,135 @@ This is the 10th line of the file
 Slicing the list to grab a subset of the strings...
 
 [&#39;This is the 2th line of the file\n&#39;, &#39;This is the 3th line of the file\n&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="working-with-files-once-they-have-been-read-in">
+<h2>Working with files once they have been read in…<a class="headerlink" href="#working-with-files-once-they-have-been-read-in" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Here we will read in txt from a book (Frankenstein by Mary Wollstonecraft (Godwin) Shelley)</p></li>
+<li><p>We’ll then search for a specific string in the book…in this case we’ll look for the first sentence of Chapter 5</p></li>
+<li><p>We’ll use <code class="docutils literal notranslate"><span class="pre">.readlines()</span></code> to read the book into a list, where each line of text from the book is an entry in the list (and remember, <code class="docutils literal notranslate"><span class="pre">.readlines()</span></code> is parsing the text based on where the <code class="docutils literal notranslate"><span class="pre">'\n'</span></code> (newline) characters are).</p></li>
+<li><p>Then we’ll get rid of everything else in the book except for the few lines at the start of Chapter 5</p></li>
+<li><p>I will show you two methods…one using a counter that we initialize, and one using the <code class="docutils literal notranslate"><span class="pre">enumerate</span></code> method that allows you to have a counter in a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop that is initialized and incremented automatically.</p></li>
+<li><p>I’ll also show you the <code class="docutils literal notranslate"><span class="pre">break</span></code> syntax for a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop. <code class="docutils literal notranslate"><span class="pre">break</span></code> allows you to exit the loop if a certain condition is met. In this case, we will exit the loop when we find the text that we’re looking for!</p></li>
+<li><p>Last - there are many ways to do this task…so don’t feel constrained by this approach when you’re working on the problem set…</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># open our file for reading...</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;frankenstein.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="c1"># read the entire file...with each line </span>
+    <span class="c1"># returned as a string in a list</span>
+    <span class="c1"># we&#39;ll call the list &#39;book&#39;</span>
+    <span class="n">book</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+
+<span class="c1"># now we can search the book for the text that we want, </span>
+<span class="c1"># which in this case is the first sentence of Chapter 5, which </span>
+<span class="c1"># starts with the string &#39;It was on a dreary night&#39; </span>
+<span class="n">search_target</span> <span class="o">=</span> <span class="s1">&#39;It was on a dreary night&#39;</span>
+
+<span class="c1"># how many lines of text do we want to keep </span>
+<span class="c1"># after we fine the search target?</span>
+<span class="n">keep_lines</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="c1"># initialize a counter (int object)</span>
+<span class="n">cnt</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1"># loop over each line in the book</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">book</span><span class="p">:</span>
+    
+    <span class="c1"># test to see if the current line has search_target in it</span>
+    <span class="k">if</span> <span class="n">search_target</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
+        <span class="c1"># grab the line where chapter 5 starts</span>
+        <span class="n">start_index</span> <span class="o">=</span> <span class="n">cnt</span>
+        
+        <span class="c1"># exit the for loop by calling &#39;break&#39;</span>
+        <span class="k">break</span>
+        
+    <span class="c1"># if the current line does not have our search_target</span>
+    <span class="c1"># then we&#39;ll increment the counter to keep track of how</span>
+    <span class="c1"># many lines we&#39;ve read...</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">cnt</span> <span class="o">+=</span> <span class="mi">1</span>
+        
+<span class="c1"># now use slicing to just keep the first keep_lines lines </span>
+<span class="c1"># after the search_target</span>
+<span class="n">book</span> <span class="o">=</span> <span class="n">book</span><span class="p">[</span><span class="n">start_index</span><span class="p">:</span><span class="n">start_index</span> <span class="o">+</span> <span class="n">keep_lines</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">book</span><span class="p">)</span>
+
+<span class="c1"># Related to ps3, Q1: How would you do the slicing if you </span>
+<span class="c1"># wanted to keep **all** of the text in the book after search_target?</span>
+<span class="c1"># And how would do the slicing if you wanted to keep all of the text</span>
+<span class="c1"># after the search_target while excluding the line that contained the </span>
+<span class="c1"># search_target? </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;It was on a dreary night of November that I beheld the accomplishment\n&#39;, &#39;of my toils. With an anxiety that almost amounted to agony, I\n&#39;, &#39;collected the instruments of life around me, that I might infuse a\n&#39;, &#39;spark of being into the lifeless thing that lay at my feet. It was\n&#39;, &#39;already one in the morning; the rain pattered dismally against the\n&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="same-as-above-but-using-enumerate">
+<h3>Same as above but using enumerate…<a class="headerlink" href="#same-as-above-but-using-enumerate" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>See <a class="reference external" href="https://realpython.com/python-enumerate/">here</a> for a nice explanation…</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># open our file for reading...</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;frankenstein.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="c1"># read the entire file...with each line </span>
+    <span class="c1"># returned as a string in a list</span>
+    <span class="c1"># we&#39;ll call the list &#39;book&#39;</span>
+    <span class="n">book</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+
+<span class="c1"># now we can search the book for the text that we want, </span>
+<span class="c1"># which in this case is the first sentence of Chapter 5, which </span>
+<span class="c1"># starts with the string &#39;It was on a dreary night&#39; </span>
+<span class="n">search_target</span> <span class="o">=</span> <span class="s1">&#39;It was on a dreary night&#39;</span>
+
+<span class="c1"># how many lines of text do we want to keep </span>
+<span class="c1"># after we fine the search target?</span>
+<span class="n">keep_lines</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="c1"># loop over each line in the book using enumerate</span>
+<span class="c1"># enumerate will automatically create and increment a counter </span>
+<span class="c1"># that we&#39;ll call &#39;cnt&#39; and it will give you each line</span>
+<span class="c1"># in the book just like a normal for loop. </span>
+<span class="k">for</span> <span class="n">cnt</span><span class="p">,</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">book</span><span class="p">):</span>
+    
+    <span class="c1"># test to see if the current line has search_target in it</span>
+    <span class="k">if</span> <span class="n">search_target</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
+        <span class="c1"># grab the line where chapter 5 starts</span>
+        <span class="n">start_index</span> <span class="o">=</span> <span class="n">cnt</span>
+        
+        <span class="c1"># exit the loop by calling &#39;break&#39;</span>
+        <span class="k">break</span>
+        
+
+<span class="c1"># now use slicing to just keep the first keep_lines lines </span>
+<span class="c1"># after the search_target</span>
+<span class="n">book</span> <span class="o">=</span> <span class="n">book</span><span class="p">[</span><span class="n">start_index</span><span class="p">:</span><span class="n">start_index</span> <span class="o">+</span> <span class="n">keep_lines</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">book</span><span class="p">)</span>
+
+<span class="c1"># Related to ps3, Q1: How would you do the slicing if you </span>
+<span class="c1"># wanted to keep **all** of the text in the book after search_target?</span>
+<span class="c1"># And how would do the slicing if you wanted to keep all of the text</span>
+<span class="c1"># after the search_target while excluding the line that contained the </span>
+<span class="c1"># search_target? </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;It was on a dreary night of November that I beheld the accomplishment\n&#39;, &#39;of my toils. With an anxiety that almost amounted to agony, I\n&#39;, &#39;collected the instruments of life around me, that I might infuse a\n&#39;, &#39;spark of being into the lifeless thing that lay at my feet. It was\n&#39;, &#39;already one in the morning; the rain pattered dismally against the\n&#39;]
 </pre></div>
 </div>
 </div>
