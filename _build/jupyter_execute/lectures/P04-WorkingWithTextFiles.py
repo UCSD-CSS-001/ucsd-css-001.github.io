@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Working with files once they have been read in...
+# ## P04: Working with text files
 # 
 # ### Find a target string and then keep the next N lines of text
 # * Here we will read in txt from a book (Frankenstein by Mary Wollstonecraft (Godwin) Shelley)
