@@ -202,6 +202,8 @@ print(out[2:4])
 
 
 # ## Working with files once they have been read in...
+# 
+# ### Find a target string and then keep the next N lines of text
 # * Here we will read in txt from a book (Frankenstein by Mary Wollstonecraft (Godwin) Shelley)
 # * We'll then search for a specific string in the book...in this case we'll look for the first sentence of Chapter 5
 # * We'll use `.readlines()` to read the book into a list, where each line of text from the book is an entry in the list (and remember, `.readlines()` is parsing the text based on where the `'\n'` (newline) characters are). 
@@ -262,7 +264,7 @@ print(book)
 # search_target? 
 
 
-# ### Same as above but using enumerate...
+# ### Find a target string and then keep the next N lines of text but this time use `enumerate`
 # * See [here](https://realpython.com/python-enumerate/) for a nice explanation...
 
 # In[12]:
@@ -312,7 +314,7 @@ print(book)
 # search_target? 
 
 
-# ## Counting words in text...
+# ### Counting words in text...
 # * Here we can count the occurence of each word in the book (or in the part of the book that you have left after slicing the book list in the code cell above). 
 # * Notice that there are some empty strings `''` in the list that we need to deal with (i.e. things that are not words, so we need to check for these so they don't get counted). We can do that in a few ways that I'll write out below. 
 # * Our general algorithm here will be: 
@@ -344,11 +346,11 @@ book_lst_clean = book_str.split(' ')
 # init a dictionary with a key for each unique 
 # word, and 0 for the starting count
 wc = {}
-for k in set(book_lst_clean):
+for w in set(book_lst_clean):
     # because there are some empty strings in our list
     # we can check here and we'll skip them 
-    if k != '':
-        wc[k] = 0
+    if w != '':
+        wc[w] = 0
 
 # now loop over **all** words in the book, even the repeated words
 # and count them up!
@@ -360,14 +362,65 @@ for w in book_lst_clean:
 print(wc)
 
 
-# ## Find the most common word in text. 
+# ### A slightly more compact way to count all the words in text using just one `for` loop
+# * This might be easier to understand (or it might be harder) so just writing it out in case it helps...
+# * I am using the `continue` statement (see below)...
+# * Note that there are several other ways you could achieve the same result, so long as you are checking to make sure that the current word is not an empty string `''` somehow
+
+# In[14]:
+
+
+# turn the book list into a string to make it easier to remove things we don't want (like newline 
+# characters)
+book_str = ''.join(book)
+
+# convert to lower case
+book_str = book_str.lower()
+
+# clean out the newline characters
+book_str = book_str.replace('\n', ' ')
+
+# turn back into a list based on the location of spaces
+book_lst_clean = book_str.split(' ')
+
+# init an empty dictionary
+wc = {}   # or you can use dict()
+
+# now loop over **all** words in the book, even the repeated words
+# and count them up!
+for w in book_lst_clean:
+    
+    # if w is not a word (i.e. it is an empty string)
+    # then continue, where continue means "go back to the 
+    # top of the for loop and skip the rest of the code in
+    # the loop"
+    if not w:
+        continue
+    
+    # if w is a word, and its not already in our dictionary
+    # then make a new key and assign a value of 0
+    if w not in wc:
+        wc[w] = 0
+    
+    # increment a counter each time the word w appears...
+    # note that you only get to this line of code if w
+    # is indeed a word (the if not w: continue
+    # line above will prevent you from getting here if w is
+    # not a word)
+    wc[w] += 1
+
+# have a look at the dictionary...
+print(wc)
+
+
+# ### Find the most common word in text. 
 # * To find the most common word, you can loop over our word count dictionary (`wc`, defined above)
 # * Basic approach: 
 #     * Initialize a counter (lets call it `max_count`) to `0`
 #     * Loop over `key:value` pairs in `wc` using the `.items()` method
 #     * If the current `value` exceeds `max_count`, then update `max_count` with that value and also store the current `key`
 
-# In[14]:
+# In[15]:
 
 
 # init max_count to 0

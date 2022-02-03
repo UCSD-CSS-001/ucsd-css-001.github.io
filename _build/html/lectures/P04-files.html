@@ -464,21 +464,42 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#same-as-above-but-using-enumerate">
-     Same as above but using enumerate…
+    <a class="reference internal nav-link" href="#find-a-target-string-and-then-keep-the-next-n-lines-of-text">
+     Find a target string and then keep the next N lines of text
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#find-a-target-string-and-then-keep-the-next-n-lines-of-text-but-this-time-use-enumerate">
+     Find a target string and then keep the next N lines of text but this time use
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       enumerate
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#counting-words-in-text">
+     Counting words in text…
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-slightly-more-compact-way-to-count-all-the-words-in-text-using-just-one-for-loop">
+     A slightly more compact way to count all the words in text using just one
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       for
+      </span>
+     </code>
+     loop
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#find-the-most-common-word-in-text">
+     Find the most common word in text.
     </a>
    </li>
   </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#counting-words-in-text">
-   Counting words in text…
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#find-the-most-common-word-in-text">
-   Find the most common word in text.
-  </a>
  </li>
 </ul>
 
@@ -776,6 +797,8 @@ Slicing the list to grab a subset of the strings...
 </div>
 <div class="section" id="working-with-files-once-they-have-been-read-in">
 <h2>Working with files once they have been read in…<a class="headerlink" href="#working-with-files-once-they-have-been-read-in" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="find-a-target-string-and-then-keep-the-next-n-lines-of-text">
+<h3>Find a target string and then keep the next N lines of text<a class="headerlink" href="#find-a-target-string-and-then-keep-the-next-n-lines-of-text" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Here we will read in txt from a book (Frankenstein by Mary Wollstonecraft (Godwin) Shelley)</p></li>
 <li><p>We’ll then search for a specific string in the book…in this case we’ll look for the first sentence of Chapter 5</p></li>
@@ -843,8 +866,9 @@ Slicing the list to grab a subset of the strings...
 </div>
 </div>
 </div>
-<div class="section" id="same-as-above-but-using-enumerate">
-<h3>Same as above but using enumerate…<a class="headerlink" href="#same-as-above-but-using-enumerate" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="find-a-target-string-and-then-keep-the-next-n-lines-of-text-but-this-time-use-enumerate">
+<h3>Find a target string and then keep the next N lines of text but this time use <code class="docutils literal notranslate"><span class="pre">enumerate</span></code><a class="headerlink" href="#find-a-target-string-and-then-keep-the-next-n-lines-of-text-but-this-time-use-enumerate" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>See <a class="reference external" href="https://realpython.com/python-enumerate/">here</a> for a nice explanation…</p></li>
 </ul>
@@ -902,9 +926,8 @@ Slicing the list to grab a subset of the strings...
 </div>
 </div>
 </div>
-</div>
 <div class="section" id="counting-words-in-text">
-<h2>Counting words in text…<a class="headerlink" href="#counting-words-in-text" title="Permalink to this headline">¶</a></h2>
+<h3>Counting words in text…<a class="headerlink" href="#counting-words-in-text" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Here we can count the occurence of each word in the book (or in the part of the book that you have left after slicing the book list in the code cell above).</p></li>
 <li><p>Notice that there are some empty strings <code class="docutils literal notranslate"><span class="pre">''</span></code> in the list that we need to deal with (i.e. things that are not words, so we need to check for these so they don’t get counted). We can do that in a few ways that I’ll write out below.</p></li>
@@ -942,11 +965,11 @@ Slicing the list to grab a subset of the strings...
 <span class="c1"># init a dictionary with a key for each unique </span>
 <span class="c1"># word, and 0 for the starting count</span>
 <span class="n">wc</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">set</span><span class="p">(</span><span class="n">book_lst_clean</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="nb">set</span><span class="p">(</span><span class="n">book_lst_clean</span><span class="p">):</span>
     <span class="c1"># because there are some empty strings in our list</span>
     <span class="c1"># we can check here and we&#39;ll skip them </span>
-    <span class="k">if</span> <span class="n">k</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
-        <span class="n">wc</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">if</span> <span class="n">w</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+        <span class="n">wc</span><span class="p">[</span><span class="n">w</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
 
 <span class="c1"># now loop over **all** words in the book, even the repeated words</span>
 <span class="c1"># and count them up!</span>
@@ -960,14 +983,74 @@ Slicing the list to grab a subset of the strings...
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;lustrous&#39;: 1, &#39;breathed&#39;: 1, &#39;agitated&#39;: 1, &#39;opened,&#39;: 1, &#39;change,&#39;: 1, &#39;accidents&#39;: 1, &#39;these&#39;: 1, &#39;beautiful.&#39;: 1, &#39;disgust&#39;: 1, &#39;be&#39;: 1, &#39;wildest&#39;: 1, &#39;have&#39;: 1, &#39;during&#39;: 1, &#39;dull&#39;: 1, &#39;they&#39;: 3, &#39;formed&#39;: 1, &#39;slept,&#39;: 1, &#39;form?&#39;: 1, &#39;muttered&#39;: 1, &#39;cheeks.&#39;: 1, &#39;exceeded&#39;: 1, &#39;forgetfulness.&#39;: 1, &#39;worked&#39;: 1, &#39;its&#39;: 2, &#39;infuse&#39;: 1, &#39;horror&#39;: 1, &#39;folds&#39;: 1, &#39;hard&#39;: 1, &#39;almost&#39;: 2, &#39;seemingly&#39;: 1, &#39;tumult&#39;: 1, &#39;wretch—the&#39;: 1, &#39;flannel.&#39;: 1, &#39;lay&#39;: 1, &#39;convulsive&#39;: 1, &#39;light&#39;: 1, &#39;created.&#39;: 1, &#39;length&#39;: 1, &#39;health,&#39;: 1, &#39;covered&#39;: 2, &#39;lips,&#39;: 1, &#39;monster&#39;: 1, &#39;continued&#39;: 1, &#39;limbs&#39;: 1, &#39;mother&#39;: 1, &#39;muscles&#39;: 1, &#39;now&#39;: 1, &#39;death;&#39;: 1, &#39;cold&#39;: 1, &#39;moments&#39;: 1, &#39;moderation;&#39;: 1, &#39;complexion&#39;: 1, &#39;being&#39;: 2, &#39;demoniacal&#39;: 1, &#39;miserable&#39;: 1, &#39;motion&#39;: 1, &#39;house&#39;: 1, &#39;he&#39;: 3, &#39;enveloped&#39;: 1, &#39;it&#39;: 7, &#39;more&#39;: 1, &#39;dream&#39;: 1, &#39;approach&#39;: 1, &#39;eyes,&#39;: 2, &#39;some&#39;: 1, &#39;called,&#39;: 1, &#39;pains&#39;: 1, &#39;lips.&#39;: 1, &#39;courtyard&#39;: 1, &#39;eyes&#39;: 1, &#39;delighted&#39;: 1, &#39;dead&#39;: 1, &#39;breathless&#39;: 1, &#39;finished,&#39;: 1, &#39;far&#39;: 1, &#39;became&#39;: 2, &#39;to&#39;: 12, &#39;beheld&#39;: 2, &#39;endeavoured&#39;: 1, &#39;deprived&#39;: 1, &#39;sockets&#39;: 1, &#39;rest&#39;: 2, &#39;toils.&#39;: 1, &#39;sounds,&#39;: 1, &#39;bed;&#39;: 1, &#39;amounted&#39;: 1, &#39;pearly&#39;: 1, &#39;collected&#39;: 1, &#39;through&#39;: 1, &#39;feet.&#39;: 1, &#39;selected&#39;: 1, &#39;so&#39;: 1, &#39;may&#39;: 1, &#39;inhabited,&#39;: 1, &#39;horrid&#39;: 1, &#39;god!&#39;: 1, &#39;endeavouring&#39;: 1, &#39;listening&#39;: 1, &#39;shroud&#39;: 1, &#39;desired&#39;: 1, &#39;stretched&#39;: 1, &#39;vain;&#39;: 1, &#39;down&#39;: 1, &#39;features&#39;: 2, &#39;proportion,&#39;: 1, &#39;dim&#39;: 1, &#39;kiss&#39;: 1, &#39;thought&#39;: 2, &#39;before&#39;: 1, &#39;contrast&#39;: 1, &#39;livid&#39;: 1, &#39;corpse&#39;: 2, &#39;inarticulate&#39;: 1, &#39;shutters,&#39;: 1, &#39;arteries&#39;: 1, &#39;elizabeth,&#39;: 1, &#39;dismally&#39;: 1, &#39;her,&#39;: 1, &#39;flowing;&#39;: 1, &#39;on&#39;: 4, &#39;as&#39;: 6, &#39;up&#39;: 2, &#39;when,&#39;: 2, &#39;moon,&#39;: 1, &#39;fearing&#39;: 1, &#39;remained&#39;: 1, &#39;forced&#39;: 1, &#39;indeed,&#39;: 1, &#39;me,&#39;: 2, &#39;me.&#39;: 1, &#39;started&#39;: 1, &#39;heart.&#39;: 1, &#39;beneath;&#39;: 1, &#39;few&#39;: 1, &#39;traversing&#39;: 1, &#39;feelings&#39;: 1, &#39;agitation,&#39;: 1, &#39;clothes,&#39;: 1, &#39;set,&#39;: 1, &#39;streets&#39;: 1, &#39;november&#39;: 1, &#39;his&#39;: 10, &#39;life&#39;: 3, &#39;purpose&#39;: 1, &#39;bed-chamber,&#39;: 1, &#39;surprised,&#39;: 1, &#39;crawling&#39;: 1, &#39;downstairs.&#39;: 1, &#39;delineate&#39;: 1, &#39;refuge&#39;: 1, &#39;open;&#39;: 1, &#39;every&#39;: 1, &#39;her&#39;: 3, &#39;around&#39;: 1, &#39;luxuriances&#39;: 1, &#39;thing&#39;: 1, &#39;limb&#39;: 1, &#39;seek&#39;: 1, &#39;appeared&#39;: 1, &#39;arms;&#39;: 1, &#39;agony,&#39;: 1, &#39;skin&#39;: 1, &#39;rain&#39;: 1, &#39;hand&#39;: 1, &#39;sleep&#39;: 1, &#39;endured,&#39;: 1, &#39;i&#39;: 33, &#39;black,&#39;: 1, &#39;teeth&#39;: 2, &#39;chattered,&#39;: 1, &#39;walking&#39;: 2, &#39;or&#39;: 1, &#39;are&#39;: 1, &#39;rushed&#39;: 2, &#39;if&#39;: 2, &#39;attentively,&#39;: 1, &#39;sole&#39;: 1, &#39;light,&#39;: 1, &#39;colour&#39;: 1, &#39;creature&#39;: 1, &#39;dun-white&#39;: 1, &#39;nearly&#39;: 2, &#39;night&#39;: 1, &#39;dew&#39;: 1, &#39;dreary&#39;: 1, &#39;the&#39;: 46, &#39;whiteness;&#39;: 1, &#39;my&#39;: 13, &#39;already&#39;: 1, &#39;from&#39;: 1, &#39;black&#39;: 1, &#39;saw&#39;: 3, &#39;succeeded&#39;: 1, &#39;filled&#39;: 1, &#39;compose&#39;: 1, &#39;lassitude&#39;: 1, &#39;inanimate&#39;: 1, &#39;infusing&#39;: 1, &#39;endure&#39;: 1, &#39;had&#39;: 9, &#39;aspect&#39;: 1, &#39;into&#39;: 2, &#39;created,&#39;: 1, &#39;mind&#39;: 1, &#39;way&#39;: 1, &#39;beauty&#39;: 1, &#39;limbs.&#39;: 1, &#39;took&#39;: 1, &#39;infinite&#39;: 1, &#39;for&#39;: 3, &#39;escaped&#39;: 1, &#39;such&#39;: 1, &#39;changeable&#39;: 1, &#39;spark&#39;: 1, &#39;an&#39;: 3, &#39;yellow&#39;: 3, &#39;night,&#39;: 1, &#39;belonging&#39;: 1, &#39;announce&#39;: 1, &#39;bloom&#39;: 1, &#39;greatest&#39;: 1, &#39;one&#39;: 2, &#39;dreams.&#39;: 1, &#39;embraced&#39;: 1, &#39;half-extinguished&#39;: 1, &#39;can&#39;: 1, &#39;human&#39;: 1, &#39;convulsed;&#39;: 1, &#39;which&#39;: 3, &#39;nature.&#39;: 1, &#39;and&#39;: 22, &#39;only&#39;: 1, &#39;work&#39;: 1, &#39;disturbed&#39;: 1, &#39;imprinted&#39;: 1, &#39;with&#39;: 6, &#39;body.&#39;: 1, &#39;catching&#39;: 1, &#39;myself&#39;: 2, &#39;seemed&#39;: 1, &#39;morning;&#39;: 1, &#39;wrinkled&#39;: 1, &#39;straight&#39;: 1, &#39;fixed&#39;: 1, &#39;first&#39;: 1, &#39;anxiety&#39;: 1, &#39;years,&#39;: 1, &#39;horror;&#39;: 1, &#39;different&#39;: 1, &#39;emotions&#39;: 1, &#39;hair&#39;: 1, &#39;detain&#39;: 1, &#39;did&#39;: 1, &#39;pattered&#39;: 1, &#39;spoken,&#39;: 1, &#39;whom&#39;: 2, &#39;ardour&#39;: 1, &#39;against&#39;: 1, &#39;room&#39;: 1, &#39;panes,&#39;: 1, &#39;grave-worms&#39;: 1, &#39;sound&#39;: 1, &#39;beautiful!&#39;: 1, &#39;care&#39;: 1, &#39;grin&#39;: 1, &#39;might&#39;: 2, &#39;describe&#39;: 1, &#39;hard,&#39;: 1, &#39;vanished,&#39;: 1, &#39;candle&#39;: 1, &#39;hear;&#39;: 1, &#39;shrivelled&#39;: 1, &#39;wretch&#39;: 1, &#39;of&#39;: 27, &#39;where&#39;: 1, &#39;window&#39;: 1, &#39;a&#39;: 11, &#39;how&#39;: 2, &#39;out,&#39;: 2, &#39;watery&#39;: 1, &#39;accomplishment&#39;: 1, &#39;curtain&#39;: 1, &#39;but&#39;: 7, &#39;scarcely&#39;: 1, &#39;in&#39;: 11, &#39;health.&#39;: 1, &#39;long&#39;: 1, &#39;ingolstadt.&#39;: 1, &#39;this&#39;: 2, &#39;out&#39;: 1, &#39;great&#39;: 1, &#39;by&#39;: 3, &#39;instruments&#39;: 1, &#39;at&#39;: 3, &#39;while&#39;: 1, &#39;sleep.&#39;: 1, &#39;threw&#39;: 1, &#39;bed&#39;: 1, &#39;unable&#39;: 2, &#39;glimmer&#39;: 1, &#39;were&#39;: 4, &#39;was&#39;: 7, &#39;form,&#39;: 1, &#39;two&#39;: 1, &#39;burnt&#39;: 1, &#39;jaws&#39;: 1, &#39;each&#39;: 1, &#39;forehead,&#39;: 1, &#39;that&#39;: 8, &#39;not&#39;: 2, &#39;held&#39;: 2, &#39;hue&#39;: 1, &#39;eye&#39;: 1, &#39;catastrophe,&#39;: 1, &#39;same&#39;: 1, &#39;lifeless&#39;: 1, &#39;time&#39;: 1}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;delineate&#39;: 1, &#39;when,&#39;: 2, &#39;seemingly&#39;: 1, &#39;luxuriances&#39;: 1, &#39;these&#39;: 1, &#39;elizabeth,&#39;: 1, &#39;colour&#39;: 1, &#39;agitation,&#39;: 1, &#39;was&#39;: 7, &#39;exceeded&#39;: 1, &#39;dismally&#39;: 1, &#39;threw&#39;: 1, &#39;far&#39;: 1, &#39;bed-chamber,&#39;: 1, &#39;moderation;&#39;: 1, &#39;length&#39;: 1, &#39;it&#39;: 7, &#39;were&#39;: 4, &#39;ingolstadt.&#39;: 1, &#39;horror;&#39;: 1, &#39;lips,&#39;: 1, &#39;way&#39;: 1, &#39;succeeded&#39;: 1, &#39;enveloped&#39;: 1, &#39;bloom&#39;: 1, &#39;grin&#39;: 1, &#39;continued&#39;: 1, &#39;sounds,&#39;: 1, &#39;appeared&#39;: 1, &#39;straight&#39;: 1, &#39;did&#39;: 1, &#39;work&#39;: 1, &#39;in&#39;: 11, &#39;now&#39;: 1, &#39;formed&#39;: 1, &#39;hard,&#39;: 1, &#39;before&#39;: 1, &#39;inarticulate&#39;: 1, &#39;myself&#39;: 2, &#39;can&#39;: 1, &#39;heart.&#39;: 1, &#39;form,&#39;: 1, &#39;indeed,&#39;: 1, &#39;arms;&#39;: 1, &#39;wildest&#39;: 1, &#39;dreams.&#39;: 1, &#39;years,&#39;: 1, &#39;house&#39;: 1, &#39;slept,&#39;: 1, &#39;escaped&#39;: 1, &#39;breathed&#39;: 1, &#39;out&#39;: 1, &#39;how&#39;: 2, &#39;nature.&#39;: 1, &#39;flannel.&#39;: 1, &#39;shroud&#39;: 1, &#39;change,&#39;: 1, &#39;dead&#39;: 1, &#39;aspect&#39;: 1, &#39;lustrous&#39;: 1, &#39;embraced&#39;: 1, &#39;bed;&#39;: 1, &#39;kiss&#39;: 1, &#39;worked&#39;: 1, &#39;rest&#39;: 2, &#39;lay&#39;: 1, &#39;moments&#39;: 1, &#39;his&#39;: 10, &#39;by&#39;: 3, &#39;during&#39;: 1, &#39;room&#39;: 1, &#39;on&#39;: 4, &#39;not&#39;: 2, &#39;are&#39;: 1, &#39;endure&#39;: 1, &#39;candle&#39;: 1, &#39;pains&#39;: 1, &#39;demoniacal&#39;: 1, &#39;pearly&#39;: 1, &#39;announce&#39;: 1, &#39;inhabited,&#39;: 1, &#39;agony,&#39;: 1, &#39;changeable&#39;: 1, &#39;deprived&#39;: 1, &#39;chattered,&#39;: 1, &#39;proportion,&#39;: 1, &#39;attentively,&#39;: 1, &#39;contrast&#39;: 1, &#39;breathless&#39;: 1, &#39;seek&#39;: 1, &#39;convulsed;&#39;: 1, &#39;hear;&#39;: 1, &#39;endeavouring&#39;: 1, &#39;panes,&#39;: 1, &#39;tumult&#39;: 1, &#39;november&#39;: 1, &#39;burnt&#39;: 1, &#39;already&#39;: 1, &#39;amounted&#39;: 1, &#39;had&#39;: 9, &#39;same&#39;: 1, &#39;be&#39;: 1, &#39;took&#39;: 1, &#39;or&#39;: 1, &#39;dull&#39;: 1, &#39;glimmer&#39;: 1, &#39;horror&#39;: 1, &#39;her&#39;: 3, &#39;infusing&#39;: 1, &#39;being&#39;: 2, &#39;death;&#39;: 1, &#39;collected&#39;: 1, &#39;of&#39;: 27, &#39;dream&#39;: 1, &#39;few&#39;: 1, &#39;teeth&#39;: 2, &#39;compose&#39;: 1, &#39;vain;&#39;: 1, &#39;at&#39;: 3, &#39;approach&#39;: 1, &#39;for&#39;: 3, &#39;delighted&#39;: 1, &#39;cold&#39;: 1, &#39;beauty&#39;: 1, &#39;first&#39;: 1, &#39;selected&#39;: 1, &#39;every&#39;: 1, &#39;catastrophe,&#39;: 1, &#39;flowing;&#39;: 1, &#39;limbs.&#39;: 1, &#39;care&#39;: 1, &#39;scarcely&#39;: 1, &#39;hair&#39;: 1, &#39;god!&#39;: 1, &#39;different&#39;: 1, &#39;seemed&#39;: 1, &#39;shutters,&#39;: 1, &#39;mind&#39;: 1, &#39;feelings&#39;: 1, &#39;anxiety&#39;: 1, &#39;out,&#39;: 2, &#39;may&#39;: 1, &#39;light,&#39;: 1, &#39;moon,&#39;: 1, &#39;features&#39;: 2, &#39;limb&#39;: 1, &#39;rain&#39;: 1, &#39;a&#39;: 11, &#39;an&#39;: 3, &#39;saw&#39;: 3, &#39;thing&#39;: 1, &#39;my&#39;: 13, &#39;livid&#39;: 1, &#39;he&#39;: 3, &#39;i&#39;: 33, &#39;became&#39;: 2, &#39;listening&#39;: 1, &#39;which&#39;: 3, &#39;endured,&#39;: 1, &#39;hue&#39;: 1, &#39;unable&#39;: 2, &#39;accomplishment&#39;: 1, &#39;muscles&#39;: 1, &#39;light&#39;: 1, &#39;skin&#39;: 1, &#39;against&#39;: 1, &#39;cheeks.&#39;: 1, &#39;creature&#39;: 1, &#39;that&#39;: 8, &#39;forgetfulness.&#39;: 1, &#39;covered&#39;: 2, &#39;each&#39;: 1, &#39;bed&#39;: 1, &#39;filled&#39;: 1, &#39;where&#39;: 1, &#39;me.&#39;: 1, &#39;greatest&#39;: 1, &#39;instruments&#39;: 1, &#39;vanished,&#39;: 1, &#39;infinite&#39;: 1, &#39;thought&#39;: 2, &#39;beneath;&#39;: 1, &#39;yellow&#39;: 3, &#39;grave-worms&#39;: 1, &#39;eyes,&#39;: 2, &#39;endeavoured&#39;: 1, &#39;set,&#39;: 1, &#39;night,&#39;: 1, &#39;jaws&#39;: 1, &#39;rushed&#39;: 2, &#39;with&#39;: 6, &#39;half-extinguished&#39;: 1, &#39;miserable&#39;: 1, &#39;beautiful!&#39;: 1, &#39;hand&#39;: 1, &#39;refuge&#39;: 1, &#39;body.&#39;: 1, &#39;inanimate&#39;: 1, &#39;wretch&#39;: 1, &#39;held&#39;: 2, &#39;dun-white&#39;: 1, &#39;created,&#39;: 1, &#39;life&#39;: 3, &#39;beheld&#39;: 2, &#39;surprised,&#39;: 1, &#39;mother&#39;: 1, &#39;into&#39;: 2, &#39;purpose&#39;: 1, &#39;desired&#39;: 1, &#39;accidents&#39;: 1, &#39;sound&#39;: 1, &#39;dew&#39;: 1, &#39;beautiful.&#39;: 1, &#39;and&#39;: 22, &#39;disgust&#39;: 1, &#39;infuse&#39;: 1, &#39;so&#39;: 1, &#39;black,&#39;: 1, &#39;courtyard&#39;: 1, &#39;its&#39;: 2, &#39;health.&#39;: 1, &#39;clothes,&#39;: 1, &#39;some&#39;: 1, &#39;arteries&#39;: 1, &#39;disturbed&#39;: 1, &#39;down&#39;: 1, &#39;sleep&#39;: 1, &#39;watery&#39;: 1, &#39;horrid&#39;: 1, &#39;convulsive&#39;: 1, &#39;whom&#39;: 2, &#39;fearing&#39;: 1, &#39;toils.&#39;: 1, &#39;spark&#39;: 1, &#39;have&#39;: 1, &#39;black&#39;: 1, &#39;created.&#39;: 1, &#39;lips.&#39;: 1, &#39;pattered&#39;: 1, &#39;might&#39;: 2, &#39;her,&#39;: 1, &#39;as&#39;: 6, &#39;almost&#39;: 2, &#39;traversing&#39;: 1, &#39;fixed&#39;: 1, &#39;sole&#39;: 1, &#39;downstairs.&#39;: 1, &#39;lifeless&#39;: 1, &#39;night&#39;: 1, &#39;describe&#39;: 1, &#39;remained&#39;: 1, &#39;this&#39;: 2, &#39;open;&#39;: 1, &#39;nearly&#39;: 2, &#39;eyes&#39;: 1, &#39;window&#39;: 1, &#39;stretched&#39;: 1, &#39;folds&#39;: 1, &#39;form?&#39;: 1, &#39;they&#39;: 3, &#39;agitated&#39;: 1, &#39;complexion&#39;: 1, &#39;spoken,&#39;: 1, &#39;streets&#39;: 1, &#39;muttered&#39;: 1, &#39;sleep.&#39;: 1, &#39;up&#39;: 2, &#39;curtain&#39;: 1, &#39;time&#39;: 1, &#39;crawling&#39;: 1, &#39;such&#39;: 1, &#39;through&#39;: 1, &#39;dim&#39;: 1, &#39;dreary&#39;: 1, &#39;long&#39;: 1, &#39;shrivelled&#39;: 1, &#39;one&#39;: 2, &#39;belonging&#39;: 1, &#39;forced&#39;: 1, &#39;emotions&#39;: 1, &#39;sockets&#39;: 1, &#39;morning;&#39;: 1, &#39;only&#39;: 1, &#39;if&#39;: 2, &#39;eye&#39;: 1, &#39;started&#39;: 1, &#39;motion&#39;: 1, &#39;wretch—the&#39;: 1, &#39;limbs&#39;: 1, &#39;detain&#39;: 1, &#39;more&#39;: 1, &#39;finished,&#39;: 1, &#39;two&#39;: 1, &#39;ardour&#39;: 1, &#39;great&#39;: 1, &#39;imprinted&#39;: 1, &#39;but&#39;: 7, &#39;corpse&#39;: 2, &#39;catching&#39;: 1, &#39;the&#39;: 46, &#39;whiteness;&#39;: 1, &#39;wrinkled&#39;: 1, &#39;hard&#39;: 1, &#39;while&#39;: 1, &#39;feet.&#39;: 1, &#39;forehead,&#39;: 1, &#39;from&#39;: 1, &#39;monster&#39;: 1, &#39;lassitude&#39;: 1, &#39;to&#39;: 12, &#39;called,&#39;: 1, &#39;around&#39;: 1, &#39;human&#39;: 1, &#39;walking&#39;: 2, &#39;opened,&#39;: 1, &#39;me,&#39;: 2, &#39;health,&#39;: 1}
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="a-slightly-more-compact-way-to-count-all-the-words-in-text-using-just-one-for-loop">
+<h3>A slightly more compact way to count all the words in text using just one <code class="docutils literal notranslate"><span class="pre">for</span></code> loop<a class="headerlink" href="#a-slightly-more-compact-way-to-count-all-the-words-in-text-using-just-one-for-loop" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>This might be easier to understand (or it might be harder) so just writing it out in case it helps…</p></li>
+<li><p>I am using the <code class="docutils literal notranslate"><span class="pre">continue</span></code> statement (see below)…</p></li>
+<li><p>Note that there are several other ways you could achieve the same result, so long as you are checking to make sure that the current word is not an empty string <code class="docutils literal notranslate"><span class="pre">''</span></code> somehow</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># turn the book list into a string to make it easier to remove things we don&#39;t want (like newline </span>
+<span class="c1"># characters)</span>
+<span class="n">book_str</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">book</span><span class="p">)</span>
+
+<span class="c1"># convert to lower case</span>
+<span class="n">book_str</span> <span class="o">=</span> <span class="n">book_str</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+
+<span class="c1"># clean out the newline characters</span>
+<span class="n">book_str</span> <span class="o">=</span> <span class="n">book_str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">)</span>
+
+<span class="c1"># turn back into a list based on the location of spaces</span>
+<span class="n">book_lst_clean</span> <span class="o">=</span> <span class="n">book_str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+
+<span class="c1"># init an empty dictionary</span>
+<span class="n">wc</span> <span class="o">=</span> <span class="p">{}</span>   <span class="c1"># or you can use dict()</span>
+
+<span class="c1"># now loop over **all** words in the book, even the repeated words</span>
+<span class="c1"># and count them up!</span>
+<span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">book_lst_clean</span><span class="p">:</span>
+    
+    <span class="c1"># if w is not a word (i.e. it is an empty string)</span>
+    <span class="c1"># then continue, where continue means &quot;go back to the </span>
+    <span class="c1"># top of the for loop and skip the rest of the code in</span>
+    <span class="c1"># the loop&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">w</span><span class="p">:</span>
+        <span class="k">continue</span>
+    
+    <span class="c1"># if w is a word, and its not already in our dictionary</span>
+    <span class="c1"># then make a new key and assign a value of 0</span>
+    <span class="k">if</span> <span class="n">w</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">wc</span><span class="p">:</span>
+        <span class="n">wc</span><span class="p">[</span><span class="n">w</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+    
+    <span class="c1"># increment a counter each time the word w appears...</span>
+    <span class="c1"># note that you only get to this line of code if w</span>
+    <span class="c1"># is indeed a word (the if not w: continue</span>
+    <span class="c1"># line above will prevent you from getting here if w is</span>
+    <span class="c1"># not a word)</span>
+    <span class="n">wc</span><span class="p">[</span><span class="n">w</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="c1"># have a look at the dictionary...</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">wc</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;it&#39;: 7, &#39;was&#39;: 7, &#39;on&#39;: 4, &#39;a&#39;: 11, &#39;dreary&#39;: 1, &#39;night&#39;: 1, &#39;of&#39;: 27, &#39;november&#39;: 1, &#39;that&#39;: 8, &#39;i&#39;: 33, &#39;beheld&#39;: 2, &#39;the&#39;: 46, &#39;accomplishment&#39;: 1, &#39;my&#39;: 13, &#39;toils.&#39;: 1, &#39;with&#39;: 6, &#39;an&#39;: 3, &#39;anxiety&#39;: 1, &#39;almost&#39;: 2, &#39;amounted&#39;: 1, &#39;to&#39;: 12, &#39;agony,&#39;: 1, &#39;collected&#39;: 1, &#39;instruments&#39;: 1, &#39;life&#39;: 3, &#39;around&#39;: 1, &#39;me,&#39;: 2, &#39;might&#39;: 2, &#39;infuse&#39;: 1, &#39;spark&#39;: 1, &#39;being&#39;: 2, &#39;into&#39;: 2, &#39;lifeless&#39;: 1, &#39;thing&#39;: 1, &#39;lay&#39;: 1, &#39;at&#39;: 3, &#39;feet.&#39;: 1, &#39;already&#39;: 1, &#39;one&#39;: 2, &#39;in&#39;: 11, &#39;morning;&#39;: 1, &#39;rain&#39;: 1, &#39;pattered&#39;: 1, &#39;dismally&#39;: 1, &#39;against&#39;: 1, &#39;panes,&#39;: 1, &#39;and&#39;: 22, &#39;candle&#39;: 1, &#39;nearly&#39;: 2, &#39;burnt&#39;: 1, &#39;out,&#39;: 2, &#39;when,&#39;: 2, &#39;by&#39;: 3, &#39;glimmer&#39;: 1, &#39;half-extinguished&#39;: 1, &#39;light,&#39;: 1, &#39;saw&#39;: 3, &#39;dull&#39;: 1, &#39;yellow&#39;: 3, &#39;eye&#39;: 1, &#39;creature&#39;: 1, &#39;open;&#39;: 1, &#39;breathed&#39;: 1, &#39;hard,&#39;: 1, &#39;convulsive&#39;: 1, &#39;motion&#39;: 1, &#39;agitated&#39;: 1, &#39;its&#39;: 2, &#39;limbs.&#39;: 1, &#39;how&#39;: 2, &#39;can&#39;: 1, &#39;describe&#39;: 1, &#39;emotions&#39;: 1, &#39;this&#39;: 2, &#39;catastrophe,&#39;: 1, &#39;or&#39;: 1, &#39;delineate&#39;: 1, &#39;wretch&#39;: 1, &#39;whom&#39;: 2, &#39;such&#39;: 1, &#39;infinite&#39;: 1, &#39;pains&#39;: 1, &#39;care&#39;: 1, &#39;had&#39;: 9, &#39;endeavoured&#39;: 1, &#39;form?&#39;: 1, &#39;his&#39;: 10, &#39;limbs&#39;: 1, &#39;were&#39;: 4, &#39;proportion,&#39;: 1, &#39;selected&#39;: 1, &#39;features&#39;: 2, &#39;as&#39;: 6, &#39;beautiful.&#39;: 1, &#39;beautiful!&#39;: 1, &#39;great&#39;: 1, &#39;god!&#39;: 1, &#39;skin&#39;: 1, &#39;scarcely&#39;: 1, &#39;covered&#39;: 2, &#39;work&#39;: 1, &#39;muscles&#39;: 1, &#39;arteries&#39;: 1, &#39;beneath;&#39;: 1, &#39;hair&#39;: 1, &#39;lustrous&#39;: 1, &#39;black,&#39;: 1, &#39;flowing;&#39;: 1, &#39;teeth&#39;: 2, &#39;pearly&#39;: 1, &#39;whiteness;&#39;: 1, &#39;but&#39;: 7, &#39;these&#39;: 1, &#39;luxuriances&#39;: 1, &#39;only&#39;: 1, &#39;formed&#39;: 1, &#39;more&#39;: 1, &#39;horrid&#39;: 1, &#39;contrast&#39;: 1, &#39;watery&#39;: 1, &#39;eyes,&#39;: 2, &#39;seemed&#39;: 1, &#39;same&#39;: 1, &#39;colour&#39;: 1, &#39;dun-white&#39;: 1, &#39;sockets&#39;: 1, &#39;which&#39;: 3, &#39;they&#39;: 3, &#39;set,&#39;: 1, &#39;shrivelled&#39;: 1, &#39;complexion&#39;: 1, &#39;straight&#39;: 1, &#39;black&#39;: 1, &#39;lips.&#39;: 1, &#39;different&#39;: 1, &#39;accidents&#39;: 1, &#39;are&#39;: 1, &#39;not&#39;: 2, &#39;so&#39;: 1, &#39;changeable&#39;: 1, &#39;feelings&#39;: 1, &#39;human&#39;: 1, &#39;nature.&#39;: 1, &#39;worked&#39;: 1, &#39;hard&#39;: 1, &#39;for&#39;: 3, &#39;two&#39;: 1, &#39;years,&#39;: 1, &#39;sole&#39;: 1, &#39;purpose&#39;: 1, &#39;infusing&#39;: 1, &#39;inanimate&#39;: 1, &#39;body.&#39;: 1, &#39;deprived&#39;: 1, &#39;myself&#39;: 2, &#39;rest&#39;: 2, &#39;health.&#39;: 1, &#39;desired&#39;: 1, &#39;ardour&#39;: 1, &#39;far&#39;: 1, &#39;exceeded&#39;: 1, &#39;moderation;&#39;: 1, &#39;now&#39;: 1, &#39;finished,&#39;: 1, &#39;beauty&#39;: 1, &#39;dream&#39;: 1, &#39;vanished,&#39;: 1, &#39;breathless&#39;: 1, &#39;horror&#39;: 1, &#39;disgust&#39;: 1, &#39;filled&#39;: 1, &#39;heart.&#39;: 1, &#39;unable&#39;: 2, &#39;endure&#39;: 1, &#39;aspect&#39;: 1, &#39;created,&#39;: 1, &#39;rushed&#39;: 2, &#39;out&#39;: 1, &#39;room&#39;: 1, &#39;continued&#39;: 1, &#39;long&#39;: 1, &#39;time&#39;: 1, &#39;traversing&#39;: 1, &#39;bed-chamber,&#39;: 1, &#39;compose&#39;: 1, &#39;mind&#39;: 1, &#39;sleep.&#39;: 1, &#39;length&#39;: 1, &#39;lassitude&#39;: 1, &#39;succeeded&#39;: 1, &#39;tumult&#39;: 1, &#39;before&#39;: 1, &#39;endured,&#39;: 1, &#39;threw&#39;: 1, &#39;bed&#39;: 1, &#39;clothes,&#39;: 1, &#39;endeavouring&#39;: 1, &#39;seek&#39;: 1, &#39;few&#39;: 1, &#39;moments&#39;: 1, &#39;forgetfulness.&#39;: 1, &#39;vain;&#39;: 1, &#39;slept,&#39;: 1, &#39;indeed,&#39;: 1, &#39;disturbed&#39;: 1, &#39;wildest&#39;: 1, &#39;dreams.&#39;: 1, &#39;thought&#39;: 2, &#39;elizabeth,&#39;: 1, &#39;bloom&#39;: 1, &#39;health,&#39;: 1, &#39;walking&#39;: 2, &#39;streets&#39;: 1, &#39;ingolstadt.&#39;: 1, &#39;delighted&#39;: 1, &#39;surprised,&#39;: 1, &#39;embraced&#39;: 1, &#39;her,&#39;: 1, &#39;imprinted&#39;: 1, &#39;first&#39;: 1, &#39;kiss&#39;: 1, &#39;her&#39;: 3, &#39;lips,&#39;: 1, &#39;became&#39;: 2, &#39;livid&#39;: 1, &#39;hue&#39;: 1, &#39;death;&#39;: 1, &#39;appeared&#39;: 1, &#39;change,&#39;: 1, &#39;held&#39;: 2, &#39;corpse&#39;: 2, &#39;dead&#39;: 1, &#39;mother&#39;: 1, &#39;arms;&#39;: 1, &#39;shroud&#39;: 1, &#39;enveloped&#39;: 1, &#39;form,&#39;: 1, &#39;grave-worms&#39;: 1, &#39;crawling&#39;: 1, &#39;folds&#39;: 1, &#39;flannel.&#39;: 1, &#39;started&#39;: 1, &#39;from&#39;: 1, &#39;sleep&#39;: 1, &#39;horror;&#39;: 1, &#39;cold&#39;: 1, &#39;dew&#39;: 1, &#39;forehead,&#39;: 1, &#39;chattered,&#39;: 1, &#39;every&#39;: 1, &#39;limb&#39;: 1, &#39;convulsed;&#39;: 1, &#39;dim&#39;: 1, &#39;light&#39;: 1, &#39;moon,&#39;: 1, &#39;forced&#39;: 1, &#39;way&#39;: 1, &#39;through&#39;: 1, &#39;window&#39;: 1, &#39;shutters,&#39;: 1, &#39;wretch—the&#39;: 1, &#39;miserable&#39;: 1, &#39;monster&#39;: 1, &#39;created.&#39;: 1, &#39;he&#39;: 3, &#39;up&#39;: 2, &#39;curtain&#39;: 1, &#39;bed;&#39;: 1, &#39;if&#39;: 2, &#39;eyes&#39;: 1, &#39;may&#39;: 1, &#39;be&#39;: 1, &#39;called,&#39;: 1, &#39;fixed&#39;: 1, &#39;me.&#39;: 1, &#39;jaws&#39;: 1, &#39;opened,&#39;: 1, &#39;muttered&#39;: 1, &#39;some&#39;: 1, &#39;inarticulate&#39;: 1, &#39;sounds,&#39;: 1, &#39;while&#39;: 1, &#39;grin&#39;: 1, &#39;wrinkled&#39;: 1, &#39;cheeks.&#39;: 1, &#39;have&#39;: 1, &#39;spoken,&#39;: 1, &#39;did&#39;: 1, &#39;hear;&#39;: 1, &#39;hand&#39;: 1, &#39;stretched&#39;: 1, &#39;seemingly&#39;: 1, &#39;detain&#39;: 1, &#39;escaped&#39;: 1, &#39;downstairs.&#39;: 1, &#39;took&#39;: 1, &#39;refuge&#39;: 1, &#39;courtyard&#39;: 1, &#39;belonging&#39;: 1, &#39;house&#39;: 1, &#39;inhabited,&#39;: 1, &#39;where&#39;: 1, &#39;remained&#39;: 1, &#39;during&#39;: 1, &#39;night,&#39;: 1, &#39;down&#39;: 1, &#39;greatest&#39;: 1, &#39;agitation,&#39;: 1, &#39;listening&#39;: 1, &#39;attentively,&#39;: 1, &#39;catching&#39;: 1, &#39;fearing&#39;: 1, &#39;each&#39;: 1, &#39;sound&#39;: 1, &#39;announce&#39;: 1, &#39;approach&#39;: 1, &#39;demoniacal&#39;: 1}
 </pre></div>
 </div>
 </div>
 </div>
 </div>
 <div class="section" id="find-the-most-common-word-in-text">
-<h2>Find the most common word in text.<a class="headerlink" href="#find-the-most-common-word-in-text" title="Permalink to this headline">¶</a></h2>
+<h3>Find the most common word in text.<a class="headerlink" href="#find-the-most-common-word-in-text" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>To find the most common word, you can loop over our word count dictionary (<code class="docutils literal notranslate"><span class="pre">wc</span></code>, defined above)</p></li>
 <li><p>Basic approach:</p>
@@ -1001,6 +1084,7 @@ Slicing the list to grab a subset of the strings...
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The most common word is &quot;the&quot;, it occured 46 times
 </pre></div>
+</div>
 </div>
 </div>
 </div>
