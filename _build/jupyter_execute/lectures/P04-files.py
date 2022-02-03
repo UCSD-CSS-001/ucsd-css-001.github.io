@@ -227,7 +227,7 @@ search_target = 'It was on a dreary night'
 
 # how many lines of text do we want to keep 
 # after we find the search target?
-keep_lines = 5
+keep_lines = 50
 
 # initialize a counter (int object)
 cnt = 0
@@ -282,7 +282,7 @@ search_target = 'It was on a dreary night'
 
 # how many lines of text do we want to keep 
 # after we find the search target?
-keep_lines = 5
+keep_lines = 50
 
 # loop over each line in the book using enumerate
 # enumerate will automatically create and increment a counter 
@@ -310,4 +310,79 @@ print(book)
 # And how would do the slicing if you wanted to keep all of the text
 # after the search_target while excluding the line that contained the 
 # search_target? 
+
+
+# ## Counting words in text...
+# * Here we can count the occurence of each word in the book (or in the part of the book that you have left after slicing the book list in the code cell above). 
+# * Notice that there are some empty strings `''` in the list that we need to deal with (i.e. things that are not words, so we need to check for these so they don't get counted). We can do that in a few ways that I'll write out below. 
+# * Our general algorithm here will be: 
+#     * convert the list to a string to make it easier to clean
+#     * remove the newline characters using the `.replace()` method (and if you are working with a string that has other stuff in it that you don't want you can define a string with all the unwanted characters and loop over each_letter in that string to `.replace()` each unwanted character using a `for` loop). 
+#     * convert back to a list
+#     * initialize an empty dictionary
+#     * loop over all unique words in the book - use `set` to get the unique words
+#         * in this loop check to make sure we're not considering the empty strings `''`
+#     * whenever we find a real word, create a new `key:value` pair in a dictionary with the word as the `key` and an initial value of `0`
+#     * Now that the dictionary is set up and we have one key for each unique word, we can loop over **all** the words in the book, including repeated words, and increment the `value` associated with each `key`
+
+# In[13]:
+
+
+# turn the book list into a string to make it easier to remove things we don't want (like newline 
+# characters)
+book_str = ''.join(book)
+
+# convert to lower case
+book_str = book_str.lower()
+
+# clean out the newline characters
+book_str = book_str.replace('\n', ' ')
+
+# turn back into a list based on the location of spaces
+book_lst_clean = book_str.split(' ')
+
+# init a dictionary with a key for each unique 
+# word, and 0 for the starting count
+wc = {}
+for k in set(book_lst_clean):
+    # because there are some empty strings in our list
+    # we can check here and we'll skip them 
+    if k != '':
+        wc[k] = 0
+
+# now loop over **all** words in the book, even the repeated words
+# and count them up!
+for w in book_lst_clean:
+    if w != '':
+        wc[w] += 1
+
+# have a look at the dictionary...
+print(wc)
+
+
+# ## Find the most common word in text. 
+# * To find the most common word, you can loop over our word count dictionary (`wc`, defined above)
+# * Basic approach: 
+#     * Initialize a counter (lets call it `max_count`) to `0`
+#     * Loop over `key:value` pairs in `wc` using the `.items()` method
+#     * If the current `value` exceeds `max_count`, then update `max_count` with that value and also store the current `key`
+
+# In[14]:
+
+
+# init max_count to 0
+max_count = 0
+
+# loop over the key:value pairs in wc
+for k,v in wc.items():
+    
+    # if the current value exceeds the previous value of 
+    # max_count, then reassign max_count to the current value
+    # and save the associated key (which is the actual word)
+    if v > max_count:
+        max_count = v
+        most_common_word = k
+        
+print(f'The most common word is "{most_common_word}", it occured {max_count} times')
+    
 
