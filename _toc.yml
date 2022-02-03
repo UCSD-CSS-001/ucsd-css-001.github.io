@@ -32,3 +32,4 @@ parts:
           - file: lectures/P04-dictionaries
           - file: lectures/P04-sets
           - file: lectures/P04-files
+          - file: lectures/P04-WorkingWithTextFiles
