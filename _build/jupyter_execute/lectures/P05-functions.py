@@ -132,9 +132,16 @@ print(output)
 # * Thus, if you have multiple input arguments it is good practice to pass by keyword instead of position
 # * When passing by keyword, the order doesn't matter, so long as you have the correct keywords
 
+# In[8]:
+
+
+def exp(num, exponent):
+    return num ** exponent
+
+
 # ### Call by positional arguments: 2**3, so expected output is 8
 
-# In[8]:
+# In[9]:
 
 
 exp(2, 3)
@@ -142,7 +149,7 @@ exp(2, 3)
 
 # ### Call by keyword arguments: expected value is 8
 
-# In[9]:
+# In[10]:
 
 
 exp(num=2, exponent=3)
@@ -150,7 +157,7 @@ exp(num=2, exponent=3)
 
 # ### Call by positional arguments: expected value is 8 but suppose you forgot that num comes first and exponent comes second...expected result is still 8 but you get 9 instead (i.e. 3**2 = 9)
 
-# In[10]:
+# In[11]:
 
 
 exp(3, 2)
@@ -158,7 +165,7 @@ exp(3, 2)
 
 # ### So even though its bad practice to flip the order of parameters, passing by keyword will save you and produce the expected result
 
-# In[11]:
+# In[12]:
 
 
 exp(exponent=3, num=2)
@@ -166,27 +173,27 @@ exp(exponent=3, num=2)
 
 # ### Note: once you have a keyword argument, you can't have other positional arguments afterwards
 
-# In[12]:
+# In[13]:
 
 
-exp(number=2, 3)
+exp(num=2, 3)
 
 
 # ## Setting a default value for parameters
 # * You sometimes want to set a default value for a parameter...this is allowed during function **definition**
 
-# In[13]:
+# In[14]:
 
 
-def exp(number, exponent=2):
-    return number ** exponent
+def exp(num, exponent=2):
+    return num ** exponent
 
 
 # ## Multiple operations in a single function
 # * We aren't limited to a single operation within a function. 
 # * Instead, we can use multiple operations and all of the concepts we've used previously (including loops and conditionals).
 
-# In[14]:
+# In[15]:
 
 
 # determine if a value is even or odd
@@ -199,7 +206,7 @@ def even_odd(value):
     return out
 
 
-# In[15]:
+# In[16]:
 
 
 # Execute our function
@@ -232,7 +239,7 @@ even_odd(-1)
 #  
 # 
 
-# In[16]:
+# In[17]:
 
 
 # Remember, you can check defined variables with `%whos`
@@ -242,7 +249,7 @@ get_ipython().run_line_magic('whos', '')
 # ### Names defined inside a function only exist within the function
 # * In this example, we're using a function that has a **local** variable `x`
 
-# In[17]:
+# In[18]:
 
 
 # write a function that subtracts two numbers
@@ -259,7 +266,7 @@ def sub(num1, num2):
 # * Since `x` is defined outside of a fucntion, it is a **global** variable that can be seen or accessed from any other regular code cell in our notebook
 # * **Important** Even though we are using a variable `x` in our function, it will not overwrite or change the value of the global variable `x` because the local variable `x` only exists within the function
 
-# In[18]:
+# In[19]:
 
 
 # assign two integers - these are def
@@ -285,7 +292,7 @@ print(f'Global variable x is unchanged: {x}')
 # the function definition `def func(a, b, *vars)` will assign the first (positional) argument to a, the second to b, and all the rest will be elements of the tuple `vars`.
 # 
 
-# In[19]:
+# In[20]:
 
 
 def myfunction(a, b, *vars):
@@ -305,7 +312,7 @@ myfunction(1, 2, 3, 4, 'five!')
 # * The function definition `def func(a, b, **kwargs)` will assign the first (positional) argument to a, the second to b, and all the rest will be elements of the dictionary `kwargs`.
 # * **Important**: You need to the keyword argument notation that we covered above (e.g. variable_name = value)
 
-# In[20]:
+# In[21]:
 
 
 def myfunction(a, b, **kwargs):
@@ -331,7 +338,7 @@ myfunction(1, 2, 3)
 # * Because you can pass in a variable number of parameters by position (`*`) or by keyword (`**`) you **could** write a function that would take just about anything as input (see below)
 # * But please don't do this - it will drive people crazy because they won't know what kind of input the function expects, and it is almost always better to have well defined functions with a specific *signature*.
 
-# In[21]:
+# In[22]:
 
 
 def myfunction(*args, **kwargs):
@@ -354,7 +361,7 @@ myfunction(1, 2, 3, x=4, y=5, z=6)
 
 # ### Note that this definition captures all the positional arguments first, then captures the remaining keyword arguments.  For this reason there may be no positional arguments after a keyword argument.
 
-# In[22]:
+# In[23]:
 
 
 myfunction(1, 2, 3, x=4, y=5, z=6, 7)
@@ -378,7 +385,7 @@ myfunction(1, 2, 3, x=4, y=5, z=6, 7)
 # ### Calling functions within other functions
 # * Suppose we wrote a function called `is_odd()` which takes an input `value`,
 
-# In[23]:
+# In[24]:
 
 
 def is_odd(value):
@@ -392,7 +399,7 @@ def is_odd(value):
 
 # To use the function, we can execute `is_odd(value)`
 
-# In[24]:
+# In[25]:
 
 
 out = is_odd(6)
@@ -401,7 +408,7 @@ out
 
 # Later on, if you wanted to use that function _within another function_ you still have to pass an input to the function.
 
-# In[25]:
+# In[26]:
 
 
 def new_function(my_list):
@@ -413,7 +420,7 @@ def new_function(my_list):
     return output
 
 
-# In[26]:
+# In[27]:
 
 
 new_function([1,2,3,4])
@@ -426,7 +433,7 @@ new_function([1,2,3,4])
 # In Python you can also add type **annotations** to your function definitions.  These are not used directly by the python interpreter, but are often used by the IDE to help you write code.  This is also good practice as it makes it clear what kind of arguments your function expects and returns.
 # 
 
-# In[27]:
+# In[28]:
 
 
 def transformString(string: str) -> str:
@@ -437,7 +444,7 @@ def transformString(string: str) -> str:
 # * Variables in python are passed to functions by *assignment*.
 # * Recall that we can assign two names to the same object:
 
-# In[28]:
+# In[29]:
 
 
 a = 'hello'
@@ -452,7 +459,7 @@ print(id(b))
 
 # when we pass something to a function, we are effectively assigning a new (local) name to that same object.
 
-# In[29]:
+# In[30]:
 
 
 def func(x):
@@ -465,7 +472,7 @@ func(a)
 # This is nice, because we don't have to allocate more memory to store a *copy* of that object when we pass it into a function.  However, weird things might happen, depending on what we do to that object.
 # 
 
-# In[30]:
+# In[31]:
 
 
 def func(x):
@@ -491,7 +498,7 @@ print('id of a globally', id(a))
 # 
 # * However, some objects we can alter in place, and as a consequence, local changes will also carry over to the global variable.
 
-# In[31]:
+# In[32]:
 
 
 def func(x):
@@ -515,7 +522,7 @@ print('id of a globally', id(a))
 # 
 # If we instead changed the variable inside the function via reassignment, then those changes would stay local.  (This is a case in which `x += [a]` behaves differently from `x = x + [a]` because the `+=` operator uses an inplace method to append).
 
-# In[32]:
+# In[33]:
 
 
 def func(x):
