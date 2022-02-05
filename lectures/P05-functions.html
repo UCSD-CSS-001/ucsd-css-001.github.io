@@ -727,6 +727,14 @@
 <li><p>Thus, if you have multiple input arguments it is good practice to pass by keyword instead of position</p></li>
 <li><p>When passing by keyword, the order doesn’t matter, so long as you have the correct keywords</p></li>
 </ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">exp</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">exponent</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">num</span> <span class="o">**</span> <span class="n">exponent</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="section" id="call-by-positional-arguments-2-3-so-expected-output-is-8">
 <h3>Call by positional arguments: 2**3, so expected output is 8<a class="headerlink" href="#call-by-positional-arguments-2-3-so-expected-output-is-8" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
@@ -736,12 +744,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">y</span><span class="o">/</span><span class="n">scw4yk6d3g99kqbs49wp8q3r0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_7207</span><span class="o">/</span><span class="mf">2194567556.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">exp</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;exp&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8
 </pre></div>
 </div>
 </div>
@@ -756,12 +759,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">y</span><span class="o">/</span><span class="n">scw4yk6d3g99kqbs49wp8q3r0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_7207</span><span class="o">/</span><span class="mf">1017471869.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">exp</span><span class="p">(</span><span class="n">num</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">exponent</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;exp&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8
 </pre></div>
 </div>
 </div>
@@ -776,12 +774,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">y</span><span class="o">/</span><span class="n">scw4yk6d3g99kqbs49wp8q3r0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_7207</span><span class="o">/</span><span class="mf">141336091.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">exp</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;exp&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9
 </pre></div>
 </div>
 </div>
@@ -796,12 +789,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">y</span><span class="o">/</span><span class="n">scw4yk6d3g99kqbs49wp8q3r0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_7207</span><span class="o">/</span><span class="mf">571243077.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">exp</span><span class="p">(</span><span class="n">exponent</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;exp&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8
 </pre></div>
 </div>
 </div>
@@ -811,14 +799,14 @@
 <h3>Note: once you have a keyword argument, you can’t have other positional arguments afterwards<a class="headerlink" href="#note-once-you-have-a-keyword-argument-you-can-t-have-other-positional-arguments-afterwards" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">exp</span><span class="p">(</span><span class="n">number</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">exp</span><span class="p">(</span><span class="n">num</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/var/folders/8y/scw4yk6d3g99kqbs49wp8q3r0000gn/T/ipykernel_7207/4224112232.py&quot;</span><span class="gt">, line </span><span class="mi">1</span>
-    <span class="n">exp</span><span class="p">(</span><span class="n">number</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-                   <span class="o">^</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/var/folders/8y/scw4yk6d3g99kqbs49wp8q3r0000gn/T/ipykernel_7403/4058479434.py&quot;</span><span class="gt">, line </span><span class="mi">1</span>
+    <span class="n">exp</span><span class="p">(</span><span class="n">num</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+                <span class="o">^</span>
 <span class="ne">SyntaxError</span>: positional argument follows keyword argument
 </pre></div>
 </div>
@@ -833,8 +821,8 @@
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">exp</span><span class="p">(</span><span class="n">number</span><span class="p">,</span> <span class="n">exponent</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">number</span> <span class="o">**</span> <span class="n">exponent</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">exp</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">exponent</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">num</span> <span class="o">**</span> <span class="n">exponent</span>
 </pre></div>
 </div>
 </div>
@@ -923,10 +911,10 @@
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Variable          Type        Data/Info
 ---------------------------------------
-add_two_numbers   function    &lt;function add_two_numbers at 0x7fbb58db90d0&gt;
-double_value      function    &lt;function double_value at 0x7fbb58db9040&gt;
-even_odd          function    &lt;function even_odd at 0x7fbb58e3a1f0&gt;
-exp               function    &lt;function exp at 0x7fbb58e3a0d0&gt;
+add_two_numbers   function    &lt;function add_two_numbers at 0x7f9a502410d0&gt;
+double_value      function    &lt;function double_value at 0x7f9a50241040&gt;
+even_odd          function    &lt;function even_odd at 0x7f9a50241280&gt;
+exp               function    &lt;function exp at 0x7f9a502411f0&gt;
 my_var            list        n=3
 output            int         3
 </pre></div>
@@ -1060,7 +1048,7 @@ kwargs {&#39;x&#39;: 4, &#39;y&#39;: 5, &#39;z&#39;: 6}
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">y</span><span class="o">/</span><span class="n">scw4yk6d3g99kqbs49wp8q3r0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_7207</span><span class="o">/</span><span class="mf">2915692804.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">y</span><span class="o">/</span><span class="n">scw4yk6d3g99kqbs49wp8q3r0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_7403</span><span class="o">/</span><span class="mf">2915692804.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="c1"># but notice that **kwargs does not capture positional arguments!</span>
 <span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="c1"># you have to assign by keyword</span>
 <span class="ne">---&gt; </span><span class="mi">16</span> <span class="n">myfunction</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
@@ -1127,7 +1115,7 @@ kwargs {&#39;x&#39;: 4, &#39;y&#39;: 5, &#39;z&#39;: 6}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/var/folders/8y/scw4yk6d3g99kqbs49wp8q3r0000gn/T/ipykernel_7207/2997981550.py&quot;</span><span class="gt">, line </span><span class="mi">1</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/var/folders/8y/scw4yk6d3g99kqbs49wp8q3r0000gn/T/ipykernel_7403/2997981550.py&quot;</span><span class="gt">, line </span><span class="mi">1</span>
     <span class="n">myfunction</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
                                         <span class="o">^</span>
 <span class="ne">SyntaxError</span>: positional argument follows keyword argument
@@ -1248,8 +1236,8 @@ kwargs {&#39;x&#39;: 4, &#39;y&#39;: 5, &#39;z&#39;: 6}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140443154216816
-140443154216816
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140300217315696
+140300217315696
 </pre></div>
 </div>
 </div>
@@ -1266,8 +1254,8 @@ kwargs {&#39;x&#39;: 4, &#39;y&#39;: 5, &#39;z&#39;: 6}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140443154216816
-140443154216816
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140300217315696
+140300217315696
 </pre></div>
 </div>
 </div>
@@ -1295,15 +1283,15 @@ kwargs {&#39;x&#39;: 4, &#39;y&#39;: 5, &#39;z&#39;: 6}
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a: hello
-id of a globally 140443154216816
+id of a globally 140300217315696
 enter function
     x: hello
-    id(x) 140443154216816
+    id(x) 140300217315696
     x: boo
-    id(x) 140442617431088
+    id(x) 140300480890032
 exit function
 a: hello
-id of a globally 140443154216816
+id of a globally 140300217315696
 </pre></div>
 </div>
 </div>
@@ -1335,15 +1323,15 @@ id of a globally 140443154216816
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a: [&#39;hello&#39;]
-id of a globally 140442626369856
+id of a globally 140300746210368
 enter function
     x: [&#39;hello&#39;]
-    id(x) 140442626369856
+    id(x) 140300746210368
     x: [&#39;hello&#39;, &#39;boo&#39;]
-    id(x) 140442626369856
+    id(x) 140300746210368
 exit function
 a: [&#39;hello&#39;, &#39;boo&#39;]
-id of a globally 140442626369856
+id of a globally 140300746210368
 </pre></div>
 </div>
 </div>
@@ -1372,15 +1360,18 @@ id of a globally 140442626369856
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a: [&#39;hello&#39;]
-id of a globally 140442626370496
+id of a globally 140300746201280
 enter function
     x: [&#39;hello&#39;]
-    id(x) 140442626370496
+    id(x) 140300746201280
     x: [&#39;hello&#39;, &#39;boo&#39;]
-    id(x) 140442890854528
+    id(x) 140300487742528
 exit function
 a: [&#39;hello&#39;]
-id of a globally 140442626370496
+id of a globally 140300746201280
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
