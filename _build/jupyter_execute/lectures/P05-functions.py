@@ -367,6 +367,55 @@ myfunction(1, 2, 3, x=4, y=5, z=6)
 myfunction(1, 2, 3, x=4, y=5, z=6, 7)
 
 
+# ## Example of abstracting a common operation into a function
+# * Recall last week we wrote some code to find a string of text in a book and then we kept N lines of text following the target string
+# * Using functions, we can write a general purpose block of code that will take a target string and the number of lines to keep as input parameters. Now we can apply this function to any book and it will do this job for us. 
+
+# In[24]:
+
+
+def find_str(book,search_target,keep_lines):
+
+    # loop over each line in the book using enumerate
+    # enumerate will automatically create and increment a counter 
+    # that we'll call 'cnt' and it will give you each line
+    # in the book just like a normal for loop. 
+    for cnt, line in enumerate(book):
+
+        # test to see if the current line has search_target in it
+        if search_target in line:
+            # grab the line where chapter 5 starts
+            start_index = cnt
+
+            # exit the loop by calling 'break'
+            break
+
+    # now use slicing to just keep the first keep_lines lines 
+    # after the search_target
+    book = book[start_index:start_index + keep_lines]
+
+    return book
+
+
+# ### Now we can call the function...
+# * And the key thing here is that this should work for **any** book or list object with strings of text as elements...i.e. it is now a general purpose function and we don't have to type that code again!
+
+# In[25]:
+
+
+# open our file for reading...
+with open('frankenstein.txt', 'r') as f:
+    # read the entire file...with each line 
+    # returned as a string in a list
+    # we'll call the list 'book'
+    book = f.readlines()
+    
+# now call the function...
+book_trimmed = find_str(book, 'It was on a dreary night', 10)
+
+print(book_trimmed)
+
+
 # 
 # ## Functions: Review
 # 
@@ -385,7 +434,7 @@ myfunction(1, 2, 3, x=4, y=5, z=6, 7)
 # ### Calling functions within other functions
 # * Suppose we wrote a function called `is_odd()` which takes an input `value`,
 
-# In[24]:
+# In[26]:
 
 
 def is_odd(value):
@@ -399,7 +448,7 @@ def is_odd(value):
 
 # To use the function, we can execute `is_odd(value)`
 
-# In[25]:
+# In[27]:
 
 
 out = is_odd(6)
@@ -408,7 +457,7 @@ out
 
 # Later on, if you wanted to use that function _within another function_ you still have to pass an input to the function.
 
-# In[26]:
+# In[28]:
 
 
 def new_function(my_list):
@@ -420,7 +469,7 @@ def new_function(my_list):
     return output
 
 
-# In[27]:
+# In[29]:
 
 
 new_function([1,2,3,4])
@@ -433,7 +482,7 @@ new_function([1,2,3,4])
 # In Python you can also add type **annotations** to your function definitions.  These are not used directly by the python interpreter, but are often used by the IDE to help you write code.  This is also good practice as it makes it clear what kind of arguments your function expects and returns.
 # 
 
-# In[28]:
+# In[30]:
 
 
 def transformString(string: str) -> str:
@@ -444,7 +493,7 @@ def transformString(string: str) -> str:
 # * Variables in python are passed to functions by *assignment*.
 # * Recall that we can assign two names to the same object:
 
-# In[29]:
+# In[31]:
 
 
 a = 'hello'
@@ -459,7 +508,7 @@ print(id(b))
 
 # when we pass something to a function, we are effectively assigning a new (local) name to that same object.
 
-# In[30]:
+# In[32]:
 
 
 def func(x):
@@ -472,7 +521,7 @@ func(a)
 # This is nice, because we don't have to allocate more memory to store a *copy* of that object when we pass it into a function.  However, weird things might happen, depending on what we do to that object.
 # 
 
-# In[31]:
+# In[33]:
 
 
 def func(x):
@@ -498,7 +547,7 @@ print('id of a globally', id(a))
 # 
 # * However, some objects we can alter in place, and as a consequence, local changes will also carry over to the global variable.
 
-# In[32]:
+# In[34]:
 
 
 def func(x):
@@ -522,7 +571,7 @@ print('id of a globally', id(a))
 # 
 # If we instead changed the variable inside the function via reassignment, then those changes would stay local.  (This is a case in which `x += [a]` behaves differently from `x = x + [a]` because the `+=` operator uses an inplace method to append).
 
-# In[33]:
+# In[35]:
 
 
 def func(x):

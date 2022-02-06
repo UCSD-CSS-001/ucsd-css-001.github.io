@@ -499,6 +499,18 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-of-abstracting-a-common-operation-into-a-function">
+   Example of abstracting a common operation into a function
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#now-we-can-call-the-function">
+     Now we can call the function…
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#functions-review">
    Functions: Review
   </a>
@@ -804,7 +816,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/var/folders/8y/scw4yk6d3g99kqbs49wp8q3r0000gn/T/ipykernel_7403/4058479434.py&quot;</span><span class="gt">, line </span><span class="mi">1</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/var/folders/8y/scw4yk6d3g99kqbs49wp8q3r0000gn/T/ipykernel_8929/4058479434.py&quot;</span><span class="gt">, line </span><span class="mi">1</span>
     <span class="n">exp</span><span class="p">(</span><span class="n">num</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
                 <span class="o">^</span>
 <span class="ne">SyntaxError</span>: positional argument follows keyword argument
@@ -911,10 +923,10 @@
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Variable          Type        Data/Info
 ---------------------------------------
-add_two_numbers   function    &lt;function add_two_numbers at 0x7f9a502410d0&gt;
-double_value      function    &lt;function double_value at 0x7f9a50241040&gt;
-even_odd          function    &lt;function even_odd at 0x7f9a50241280&gt;
-exp               function    &lt;function exp at 0x7f9a502411f0&gt;
+add_two_numbers   function    &lt;function add_two_numbers at 0x7f9909fa6b80&gt;
+double_value      function    &lt;function double_value at 0x7f9909fc4040&gt;
+even_odd          function    &lt;function even_odd at 0x7f9909fc41f0&gt;
+exp               function    &lt;function exp at 0x7f9909fc4310&gt;
 my_var            list        n=3
 output            int         3
 </pre></div>
@@ -1048,7 +1060,7 @@ kwargs {&#39;x&#39;: 4, &#39;y&#39;: 5, &#39;z&#39;: 6}
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">y</span><span class="o">/</span><span class="n">scw4yk6d3g99kqbs49wp8q3r0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_7403</span><span class="o">/</span><span class="mf">2915692804.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">y</span><span class="o">/</span><span class="n">scw4yk6d3g99kqbs49wp8q3r0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_8929</span><span class="o">/</span><span class="mf">2915692804.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="c1"># but notice that **kwargs does not capture positional arguments!</span>
 <span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="c1"># you have to assign by keyword</span>
 <span class="ne">---&gt; </span><span class="mi">16</span> <span class="n">myfunction</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
@@ -1115,10 +1127,72 @@ kwargs {&#39;x&#39;: 4, &#39;y&#39;: 5, &#39;z&#39;: 6}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/var/folders/8y/scw4yk6d3g99kqbs49wp8q3r0000gn/T/ipykernel_7403/2997981550.py&quot;</span><span class="gt">, line </span><span class="mi">1</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/var/folders/8y/scw4yk6d3g99kqbs49wp8q3r0000gn/T/ipykernel_8929/2997981550.py&quot;</span><span class="gt">, line </span><span class="mi">1</span>
     <span class="n">myfunction</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
                                         <span class="o">^</span>
 <span class="ne">SyntaxError</span>: positional argument follows keyword argument
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="example-of-abstracting-a-common-operation-into-a-function">
+<h2>Example of abstracting a common operation into a function<a class="headerlink" href="#example-of-abstracting-a-common-operation-into-a-function" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Recall last week we wrote some code to find a string of text in a book and then we kept N lines of text following the target string</p></li>
+<li><p>Using functions, we can write a general purpose block of code that will take a target string and the number of lines to keep as input parameters. Now we can apply this function to any book and it will do this job for us.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">find_str</span><span class="p">(</span><span class="n">book</span><span class="p">,</span><span class="n">search_target</span><span class="p">,</span><span class="n">keep_lines</span><span class="p">):</span>
+
+    <span class="c1"># loop over each line in the book using enumerate</span>
+    <span class="c1"># enumerate will automatically create and increment a counter </span>
+    <span class="c1"># that we&#39;ll call &#39;cnt&#39; and it will give you each line</span>
+    <span class="c1"># in the book just like a normal for loop. </span>
+    <span class="k">for</span> <span class="n">cnt</span><span class="p">,</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">book</span><span class="p">):</span>
+
+        <span class="c1"># test to see if the current line has search_target in it</span>
+        <span class="k">if</span> <span class="n">search_target</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
+            <span class="c1"># grab the line where chapter 5 starts</span>
+            <span class="n">start_index</span> <span class="o">=</span> <span class="n">cnt</span>
+
+            <span class="c1"># exit the loop by calling &#39;break&#39;</span>
+            <span class="k">break</span>
+
+    <span class="c1"># now use slicing to just keep the first keep_lines lines </span>
+    <span class="c1"># after the search_target</span>
+    <span class="n">book</span> <span class="o">=</span> <span class="n">book</span><span class="p">[</span><span class="n">start_index</span><span class="p">:</span><span class="n">start_index</span> <span class="o">+</span> <span class="n">keep_lines</span><span class="p">]</span>
+
+    <span class="k">return</span> <span class="n">book</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="now-we-can-call-the-function">
+<h3>Now we can call the function…<a class="headerlink" href="#now-we-can-call-the-function" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>And the key thing here is that this should work for <strong>any</strong> book or list object with strings of text as elements…i.e. it is now a general purpose function and we don’t have to type that code again!</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># open our file for reading...</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;frankenstein.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="c1"># read the entire file...with each line </span>
+    <span class="c1"># returned as a string in a list</span>
+    <span class="c1"># we&#39;ll call the list &#39;book&#39;</span>
+    <span class="n">book</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+    
+<span class="c1"># now call the function...</span>
+<span class="n">book_trimmed</span> <span class="o">=</span> <span class="n">find_str</span><span class="p">(</span><span class="n">book</span><span class="p">,</span> <span class="s1">&#39;It was on a dreary night&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">book_trimmed</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;It was on a dreary night of November that I beheld the accomplishment\n&#39;, &#39;of my toils. With an anxiety that almost amounted to agony, I\n&#39;, &#39;collected the instruments of life around me, that I might infuse a\n&#39;, &#39;spark of being into the lifeless thing that lay at my feet. It was\n&#39;, &#39;already one in the morning; the rain pattered dismally against the\n&#39;, &#39;panes, and my candle was nearly burnt out, when, by the glimmer of the\n&#39;, &#39;half-extinguished light, I saw the dull yellow eye of the creature\n&#39;, &#39;open; it breathed hard, and a convulsive motion agitated its limbs.\n&#39;, &#39;\n&#39;, &#39;How can I describe my emotions at this catastrophe, or how delineate\n&#39;]
 </pre></div>
 </div>
 </div>
@@ -1236,8 +1310,8 @@ kwargs {&#39;x&#39;: 4, &#39;y&#39;: 5, &#39;z&#39;: 6}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140300217315696
-140300217315696
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140295269583856
+140295269583856
 </pre></div>
 </div>
 </div>
@@ -1254,8 +1328,8 @@ kwargs {&#39;x&#39;: 4, &#39;y&#39;: 5, &#39;z&#39;: 6}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140300217315696
-140300217315696
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140295269583856
+140295269583856
 </pre></div>
 </div>
 </div>
@@ -1283,15 +1357,15 @@ kwargs {&#39;x&#39;: 4, &#39;y&#39;: 5, &#39;z&#39;: 6}
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a: hello
-id of a globally 140300217315696
+id of a globally 140295269583856
 enter function
     x: hello
-    id(x) 140300217315696
+    id(x) 140295269583856
     x: boo
-    id(x) 140300480890032
+    id(x) 140295252657712
 exit function
 a: hello
-id of a globally 140300217315696
+id of a globally 140295269583856
 </pre></div>
 </div>
 </div>
@@ -1323,15 +1397,15 @@ id of a globally 140300217315696
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a: [&#39;hello&#39;]
-id of a globally 140300746210368
+id of a globally 140295273964480
 enter function
     x: [&#39;hello&#39;]
-    id(x) 140300746210368
+    id(x) 140295273964480
     x: [&#39;hello&#39;, &#39;boo&#39;]
-    id(x) 140300746210368
+    id(x) 140295273964480
 exit function
 a: [&#39;hello&#39;, &#39;boo&#39;]
-id of a globally 140300746210368
+id of a globally 140295273964480
 </pre></div>
 </div>
 </div>
@@ -1360,18 +1434,15 @@ id of a globally 140300746210368
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a: [&#39;hello&#39;]
-id of a globally 140300746201280
+id of a globally 140295274286464
 enter function
     x: [&#39;hello&#39;]
-    id(x) 140300746201280
+    id(x) 140295274286464
     x: [&#39;hello&#39;, &#39;boo&#39;]
-    id(x) 140300487742528
+    id(x) 140295274287424
 exit function
 a: [&#39;hello&#39;]
-id of a globally 140300746201280
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+id of a globally 140295274286464
 </pre></div>
 </div>
 </div>
