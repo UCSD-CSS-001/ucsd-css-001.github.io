@@ -307,7 +307,8 @@ myfunction(1, 2, 'something else')
 myfunction(1, 2, 3, 4, 'five!')
 
 
-# ## More complex example of *args
+# ## More useful examples using *args
+# * square all elements of a set of numbers... 
 
 # In[21]:
 
@@ -326,12 +327,56 @@ def squ_nums(*args):
 print(squ_nums(9,10,12))
 
 
+# ### Find the max value of a set of numbers
+
+# In[23]:
+
+
+def my_max(*args):
+    
+    # check to make sure all elements are numbers
+    # if there are non-numerical values (like a string)
+    # then return a message to user letting them know
+    for i in args:
+        if not isinstance(i, int) and not isinstance(i, float):
+            return 'non numerical input'
+    
+    # start by assigning first input 
+    # value to a variable that stores the 
+    # max (m)
+    m = args[0]
+    
+    # then loop over all the remaining
+    # elements
+    for i in args[1:]:
+        # if the current element is 
+        # bigger than the previous max
+        # then reassign
+        
+        if i > m: 
+            m = i
+            
+    return m
+
+
+# In[24]:
+
+
+my_max(0,7,100,2.0)
+
+
+# In[25]:
+
+
+my_max(0,7,100,'2.0')
+
+
 # ## Variable number of keyword arguments
 # * You can specify a *variable* number of keyword arguments to a function with the special `**` prefix:
 # * The function definition `def func(a, b, **kwargs)` will assign the first (positional) argument to a, the second to b, and all the rest will be elements of the dictionary `kwargs`.
 # * **Important**: You need to the keyword argument notation that we covered above (e.g. variable_name = value)
 
-# In[23]:
+# In[26]:
 
 
 def myfunction(a, b, **kwargs):
@@ -354,7 +399,7 @@ myfunction(1, 2, 3)
 
 # ### Note that this definition captures all the positional arguments first, then captures the remaining keyword arguments.  For this reason there may be no positional arguments after a keyword argument.
 
-# In[24]:
+# In[27]:
 
 
 myfunction(1, 2, 3, x=4, y=5, z=6, 7)
@@ -365,8 +410,9 @@ myfunction(1, 2, 3, x=4, y=5, z=6, 7)
 # * You want to collect as much information as possible about each customer, but some people don't share much and others share a lot of stuff...
 # * Pass all of the user input into a function that creates a dictionary with all provided information. 
 # * If you use **kwargs** then you can flexibly accomodate different amounts of info about each user. 
+# * Also introduce **docstrings** where you can write helper info about your function so that others can quickly figure out what the function does, what kinds of input you're expecting, and what the function returns. 
 
-# In[25]:
+# In[28]:
 
 
 def define_user(name, **info):
@@ -394,7 +440,14 @@ def define_user(name, **info):
     return user_info
 
 
-# In[26]:
+# In[29]:
+
+
+# see the docstring so we know how to use the function
+# define_user?
+
+
+# In[30]:
 
 
 usr_info = define_user('john', bike='aethos', car='tacoma', address='24895 Long Valley Rd')
@@ -405,7 +458,7 @@ usr_info
 # * Recall last week we wrote some code to find a string of text in a book and then we kept N lines of text following the target string
 # * Using functions, we can write a general purpose block of code that will take a target string and the number of lines to keep as input parameters. Now we can apply this function to any book and it will do this job for us. 
 
-# In[27]:
+# In[31]:
 
 
 def find_str(book,search_target,keep_lines):
@@ -434,7 +487,7 @@ def find_str(book,search_target,keep_lines):
 # ### Now we can call the function...
 # * And the key thing here is that this should work for **any** book or list object with strings of text as elements...i.e. it is now a general purpose function and we don't have to type that code again!
 
-# In[28]:
+# In[32]:
 
 
 # open our file for reading...
@@ -469,7 +522,7 @@ print(book_trimmed)
 # * Because you can pass in a variable number of parameters by position (`*`) or by keyword (`**`) you **could** write a function that would take just about anything as input (see below)
 # * But please don't do this - it will drive people crazy because they won't know what kind of input the function expects, and it is almost always better to have well defined functions with a specific *signature*.
 
-# In[29]:
+# In[33]:
 
 
 def myfunction(*args, **kwargs):
@@ -493,7 +546,7 @@ myfunction(1, 2, 3, x=4, y=5, z=6)
 # ### Calling functions within other functions
 # * Suppose we wrote a function called `is_odd()` which takes an input `value`,
 
-# In[30]:
+# In[34]:
 
 
 def is_odd(value):
@@ -507,7 +560,7 @@ def is_odd(value):
 
 # To use the function, we can execute `is_odd(value)`
 
-# In[31]:
+# In[35]:
 
 
 out = is_odd(6)
@@ -516,7 +569,7 @@ out
 
 # Later on, if you wanted to use that function _within another function_ you still have to pass an input to the function.
 
-# In[32]:
+# In[36]:
 
 
 def new_function(my_list):
@@ -528,7 +581,7 @@ def new_function(my_list):
     return output
 
 
-# In[33]:
+# In[37]:
 
 
 new_function([1,2,3,4])
@@ -541,7 +594,7 @@ new_function([1,2,3,4])
 # In Python you can also add type **annotations** to your function definitions.  These are not used directly by the python interpreter, but are often used by the IDE to help you write code.  This is also good practice as it makes it clear what kind of arguments your function expects and returns.
 # 
 
-# In[34]:
+# In[38]:
 
 
 def transformString(string: str) -> str:
@@ -552,7 +605,7 @@ def transformString(string: str) -> str:
 # * Variables in python are passed to functions by *assignment*.
 # * Recall that we can assign two names to the same object:
 
-# In[35]:
+# In[39]:
 
 
 a = 'hello'
@@ -567,7 +620,7 @@ print(id(b))
 
 # when we pass something to a function, we are effectively assigning a new (local) name to that same object.
 
-# In[36]:
+# In[40]:
 
 
 def func(x):
@@ -580,7 +633,7 @@ func(a)
 # This is nice, because we don't have to allocate more memory to store a *copy* of that object when we pass it into a function.  However, weird things might happen, depending on what we do to that object.
 # 
 
-# In[37]:
+# In[41]:
 
 
 def func(x):
@@ -606,7 +659,7 @@ print('id of a globally', id(a))
 # 
 # * However, some objects we can alter in place, and as a consequence, local changes will also carry over to the global variable.
 
-# In[38]:
+# In[42]:
 
 
 def func(x):
@@ -630,7 +683,7 @@ print('id of a globally', id(a))
 # 
 # If we instead changed the variable inside the function via reassignment, then those changes would stay local.  (This is a case in which `x += [a]` behaves differently from `x = x + [a]` because the `+=` operator uses an inplace method to append).
 
-# In[39]:
+# In[43]:
 
 
 def func(x):
