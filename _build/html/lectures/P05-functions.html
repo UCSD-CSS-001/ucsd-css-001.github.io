@@ -485,11 +485,6 @@
   <a class="reference internal nav-link" href="#variable-number-of-keyword-arguments">
    Variable number of keyword arguments
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-catch-all-function">
-   The catch-all function
-  </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#note-that-this-definition-captures-all-the-positional-arguments-first-then-captures-the-remaining-keyword-arguments-for-this-reason-there-may-be-no-positional-arguments-after-a-keyword-argument">
@@ -497,6 +492,11 @@
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-more-useful-example-of-kwargs">
+   A more useful example of **kwargs
+  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#example-of-abstracting-a-common-operation-into-a-function">
@@ -520,6 +520,11 @@
    More advanced stuff - not covered in class but useful to read
   </a>
   <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-catch-all-function">
+     The catch-all function
+    </a>
+   </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#calling-functions-within-other-functions">
      Calling functions within other functions
@@ -816,7 +821,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/var/folders/8y/scw4yk6d3g99kqbs49wp8q3r0000gn/T/ipykernel_8929/4058479434.py&quot;</span><span class="gt">, line </span><span class="mi">1</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/var/folders/8y/scw4yk6d3g99kqbs49wp8q3r0000gn/T/ipykernel_19903/4058479434.py&quot;</span><span class="gt">, line </span><span class="mi">1</span>
     <span class="n">exp</span><span class="p">(</span><span class="n">num</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
                 <span class="o">^</span>
 <span class="ne">SyntaxError</span>: positional argument follows keyword argument
@@ -923,10 +928,10 @@
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Variable          Type        Data/Info
 ---------------------------------------
-add_two_numbers   function    &lt;function add_two_numbers at 0x7f9909fa6b80&gt;
-double_value      function    &lt;function double_value at 0x7f9909fc4040&gt;
-even_odd          function    &lt;function even_odd at 0x7f9909fc41f0&gt;
-exp               function    &lt;function exp at 0x7f9909fc4310&gt;
+add_two_numbers   function    &lt;function add_two_numbers at 0x7fd48a06eaf0&gt;
+double_value      function    &lt;function double_value at 0x7fd48a09a040&gt;
+even_odd          function    &lt;function even_odd at 0x7fd48a09a1f0&gt;
+exp               function    &lt;function exp at 0x7fd48a09a310&gt;
 my_var            list        n=3
 output            int         3
 </pre></div>
@@ -1060,60 +1065,12 @@ kwargs {&#39;x&#39;: 4, &#39;y&#39;: 5, &#39;z&#39;: 6}
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">y</span><span class="o">/</span><span class="n">scw4yk6d3g99kqbs49wp8q3r0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_8929</span><span class="o">/</span><span class="mf">2915692804.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">y</span><span class="o">/</span><span class="n">scw4yk6d3g99kqbs49wp8q3r0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_19903</span><span class="o">/</span><span class="mf">2915692804.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="c1"># but notice that **kwargs does not capture positional arguments!</span>
 <span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="c1"># you have to assign by keyword</span>
 <span class="ne">---&gt; </span><span class="mi">16</span> <span class="n">myfunction</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 
 <span class="ne">TypeError</span>: myfunction() takes 2 positional arguments but 3 were given
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="the-catch-all-function">
-<h2>The catch-all function<a class="headerlink" href="#the-catch-all-function" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>Because you can pass in a variable number of parameters by position (<code class="docutils literal notranslate"><span class="pre">*</span></code>) or by keyword (<code class="docutils literal notranslate"><span class="pre">**</span></code>) you <strong>could</strong> write a function that would take just about anything as input (see below)</p></li>
-<li><p>But please don’t do this - it will drive people crazy because they won’t know what kind of input the function expects, and it is almost always better to have well defined functions with a specific <em>signature</em>.</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">myfunction</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;args&#39;</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;kwargs&#39;</span><span class="p">,</span><span class="n">kwargs</span><span class="p">)</span>
-
-
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">myfunction()&#39;</span><span class="p">)</span>
-<span class="n">myfunction</span><span class="p">()</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">myfunction(1, 2, x=4, y=5, z=6)&#39;</span><span class="p">)</span>
-<span class="n">myfunction</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">myfunction(1, 2, 3)&#39;</span><span class="p">)</span>
-<span class="n">myfunction</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">myfunction(1, 2, 3, x=4, y=5, z=6)&#39;</span><span class="p">)</span>
-<span class="n">myfunction</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>myfunction()
-args ()
-kwargs {}
-
-myfunction(1, 2, x=4, y=5, z=6)
-args (1, 2)
-kwargs {&#39;x&#39;: 4, &#39;y&#39;: 5, &#39;z&#39;: 6}
-
-myfunction(1, 2, 3)
-args (1, 2, 3)
-kwargs {}
-
-myfunction(1, 2, 3, x=4, y=5, z=6)
-args (1, 2, 3)
-kwargs {&#39;x&#39;: 4, &#39;y&#39;: 5, &#39;z&#39;: 6}
 </pre></div>
 </div>
 </div>
@@ -1127,12 +1084,63 @@ kwargs {&#39;x&#39;: 4, &#39;y&#39;: 5, &#39;z&#39;: 6}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/var/folders/8y/scw4yk6d3g99kqbs49wp8q3r0000gn/T/ipykernel_8929/2997981550.py&quot;</span><span class="gt">, line </span><span class="mi">1</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/var/folders/8y/scw4yk6d3g99kqbs49wp8q3r0000gn/T/ipykernel_19903/2997981550.py&quot;</span><span class="gt">, line </span><span class="mi">1</span>
     <span class="n">myfunction</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
                                         <span class="o">^</span>
 <span class="ne">SyntaxError</span>: positional argument follows keyword argument
 </pre></div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="a-more-useful-example-of-kwargs">
+<h2>A more useful example of **kwargs<a class="headerlink" href="#a-more-useful-example-of-kwargs" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Imagine you run a bike shop or some other store.</p></li>
+<li><p>You want to collect as much information as possible about each customer, but some people don’t share much and others share a lot of stuff…</p></li>
+<li><p>Pass all of the user input into a function that creates a dictionary with all provided information.</p></li>
+<li><p>If you use <strong>kwargs</strong> then you can flexibly accomodate different amounts of info about each user.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">define_user</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="o">**</span><span class="n">info</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Accept user input for database</span>
+
+<span class="sd">    input: </span>
+<span class="sd">    </span>
+<span class="sd">        name - first name of user</span>
+<span class="sd">        **info - kwargs...other relevant info in form of key:value pairs</span>
+
+<span class="sd">    returns:</span>
+<span class="sd">    </span>
+<span class="sd">        dictionary with user info</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># init a blank dictionary</span>
+    <span class="n">user_info</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="n">user_info</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">name</span>
+
+    <span class="c1"># then loop over kwargs</span>
+    <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">info</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">user_info</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span>
+
+    <span class="k">return</span> <span class="n">user_info</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">usr_info</span> <span class="o">=</span> <span class="n">define_user</span><span class="p">(</span><span class="s1">&#39;john&#39;</span><span class="p">,</span> <span class="n">bike</span><span class="o">=</span><span class="s1">&#39;aethos&#39;</span><span class="p">,</span> <span class="n">car</span><span class="o">=</span><span class="s1">&#39;tacoma&#39;</span><span class="p">,</span> <span class="n">house</span><span class="o">=</span><span class="s1">&#39;hearst castle&#39;</span><span class="p">)</span>
+<span class="n">usr_info</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;name&#39;: &#39;john&#39;, &#39;bike&#39;: &#39;aethos&#39;, &#39;car&#39;: &#39;tacoma&#39;, &#39;house&#39;: &#39;hearst castle&#39;}
+</pre></div>
 </div>
 </div>
 </div>
@@ -1218,6 +1226,54 @@ kwargs {&#39;x&#39;: 4, &#39;y&#39;: 5, &#39;z&#39;: 6}
 </div>
 <div class="section" id="more-advanced-stuff-not-covered-in-class-but-useful-to-read">
 <h2>More advanced stuff - not covered in class but useful to read<a class="headerlink" href="#more-advanced-stuff-not-covered-in-class-but-useful-to-read" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="the-catch-all-function">
+<h3>The catch-all function<a class="headerlink" href="#the-catch-all-function" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Because you can pass in a variable number of parameters by position (<code class="docutils literal notranslate"><span class="pre">*</span></code>) or by keyword (<code class="docutils literal notranslate"><span class="pre">**</span></code>) you <strong>could</strong> write a function that would take just about anything as input (see below)</p></li>
+<li><p>But please don’t do this - it will drive people crazy because they won’t know what kind of input the function expects, and it is almost always better to have well defined functions with a specific <em>signature</em>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">myfunction</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;args&#39;</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;kwargs&#39;</span><span class="p">,</span><span class="n">kwargs</span><span class="p">)</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">myfunction()&#39;</span><span class="p">)</span>
+<span class="n">myfunction</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">myfunction(1, 2, x=4, y=5, z=6)&#39;</span><span class="p">)</span>
+<span class="n">myfunction</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">myfunction(1, 2, 3)&#39;</span><span class="p">)</span>
+<span class="n">myfunction</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">myfunction(1, 2, 3, x=4, y=5, z=6)&#39;</span><span class="p">)</span>
+<span class="n">myfunction</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>myfunction()
+args ()
+kwargs {}
+
+myfunction(1, 2, x=4, y=5, z=6)
+args (1, 2)
+kwargs {&#39;x&#39;: 4, &#39;y&#39;: 5, &#39;z&#39;: 6}
+
+myfunction(1, 2, 3)
+args (1, 2, 3)
+kwargs {}
+
+myfunction(1, 2, 3, x=4, y=5, z=6)
+args (1, 2, 3)
+kwargs {&#39;x&#39;: 4, &#39;y&#39;: 5, &#39;z&#39;: 6}
+</pre></div>
+</div>
+</div>
+</div>
+</div>
 <div class="section" id="calling-functions-within-other-functions">
 <h3>Calling functions within other functions<a class="headerlink" href="#calling-functions-within-other-functions" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
@@ -1310,8 +1366,8 @@ kwargs {&#39;x&#39;: 4, &#39;y&#39;: 5, &#39;z&#39;: 6}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140295269583856
-140295269583856
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140550821544432
+140550821544432
 </pre></div>
 </div>
 </div>
@@ -1328,8 +1384,8 @@ kwargs {&#39;x&#39;: 4, &#39;y&#39;: 5, &#39;z&#39;: 6}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140295269583856
-140295269583856
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140550821544432
+140550821544432
 </pre></div>
 </div>
 </div>
@@ -1357,15 +1413,15 @@ kwargs {&#39;x&#39;: 4, &#39;y&#39;: 5, &#39;z&#39;: 6}
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a: hello
-id of a globally 140295269583856
+id of a globally 140550821544432
 enter function
     x: hello
-    id(x) 140295269583856
+    id(x) 140550821544432
     x: boo
-    id(x) 140295252657712
+    id(x) 140550803440240
 exit function
 a: hello
-id of a globally 140295269583856
+id of a globally 140550821544432
 </pre></div>
 </div>
 </div>
@@ -1397,15 +1453,15 @@ id of a globally 140295269583856
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a: [&#39;hello&#39;]
-id of a globally 140295273964480
+id of a globally 140550825656896
 enter function
     x: [&#39;hello&#39;]
-    id(x) 140295273964480
+    id(x) 140550825656896
     x: [&#39;hello&#39;, &#39;boo&#39;]
-    id(x) 140295273964480
+    id(x) 140550825656896
 exit function
 a: [&#39;hello&#39;, &#39;boo&#39;]
-id of a globally 140295273964480
+id of a globally 140550825656896
 </pre></div>
 </div>
 </div>
@@ -1434,15 +1490,15 @@ id of a globally 140295273964480
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a: [&#39;hello&#39;]
-id of a globally 140295274286464
+id of a globally 140550825657152
 enter function
     x: [&#39;hello&#39;]
-    id(x) 140295274286464
+    id(x) 140550825657152
     x: [&#39;hello&#39;, &#39;boo&#39;]
-    id(x) 140295274287424
+    id(x) 140550825656640
 exit function
 a: [&#39;hello&#39;]
-id of a globally 140295274286464
+id of a globally 140550825657152
 </pre></div>
 </div>
 </div>
