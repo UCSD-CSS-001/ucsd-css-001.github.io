@@ -482,6 +482,11 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#more-complex-example-of-args">
+   More complex example of *args
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#variable-number-of-keyword-arguments">
    Variable number of keyword arguments
   </a>
@@ -821,7 +826,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/var/folders/8y/scw4yk6d3g99kqbs49wp8q3r0000gn/T/ipykernel_19903/4058479434.py&quot;</span><span class="gt">, line </span><span class="mi">1</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/var/folders/8y/scw4yk6d3g99kqbs49wp8q3r0000gn/T/ipykernel_21447/4058479434.py&quot;</span><span class="gt">, line </span><span class="mi">1</span>
     <span class="n">exp</span><span class="p">(</span><span class="n">num</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
                 <span class="o">^</span>
 <span class="ne">SyntaxError</span>: positional argument follows keyword argument
@@ -928,10 +933,10 @@
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Variable          Type        Data/Info
 ---------------------------------------
-add_two_numbers   function    &lt;function add_two_numbers at 0x7fd48a06eaf0&gt;
-double_value      function    &lt;function double_value at 0x7fd48a09a040&gt;
-even_odd          function    &lt;function even_odd at 0x7fd48a09a1f0&gt;
-exp               function    &lt;function exp at 0x7fd48a09a310&gt;
+add_two_numbers   function    &lt;function add_two_numbers at 0x7fde420f4c10&gt;
+double_value      function    &lt;function double_value at 0x7fde3004a040&gt;
+even_odd          function    &lt;function even_odd at 0x7fde3004a1f0&gt;
+exp               function    &lt;function exp at 0x7fde3004a310&gt;
 my_var            list        n=3
 output            int         3
 </pre></div>
@@ -995,13 +1000,13 @@ Global variable x is unchanged: 10
 <div class="section" id="variable-number-of-positional-arguments">
 <h2>Variable number of positional arguments<a class="headerlink" href="#variable-number-of-positional-arguments" title="Permalink to this headline">¶</a></h2>
 <p>You can specify a <em>variable</em> number of positional arguments to a function with the special <code class="docutils literal notranslate"><span class="pre">*</span></code> prefix:</p>
-<p>the function definition <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">func(a,</span> <span class="pre">b,</span> <span class="pre">*vars)</span></code> will assign the first (positional) argument to a, the second to b, and all the rest will be elements of the tuple <code class="docutils literal notranslate"><span class="pre">vars</span></code>.</p>
+<p>the function definition <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">func(a,</span> <span class="pre">b,</span> <span class="pre">*args)</span></code> will assign the first (positional) argument to a, the second to b, and all the rest will be elements of the tuple <code class="docutils literal notranslate"><span class="pre">args</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">myfunction</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="o">*</span><span class="nb">vars</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">myfunction</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;vars&#39;</span><span class="p">,</span> <span class="nb">vars</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;vars&#39;</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span>
 
 <span class="n">myfunction</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 
@@ -1021,6 +1026,33 @@ vars (&#39;something else&#39;,)
 a 1
 b 2
 vars (3, 4, &#39;five!&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="more-complex-example-of-args">
+<h2>More complex example of *args<a class="headerlink" href="#more-complex-example-of-args" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">squ_nums</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
+        <span class="n">out</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+        
+    <span class="k">return</span> <span class="n">out</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">squ_nums</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">12</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[81, 100, 144]
 </pre></div>
 </div>
 </div>
@@ -1065,7 +1097,7 @@ kwargs {&#39;x&#39;: 4, &#39;y&#39;: 5, &#39;z&#39;: 6}
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">y</span><span class="o">/</span><span class="n">scw4yk6d3g99kqbs49wp8q3r0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_19903</span><span class="o">/</span><span class="mf">2915692804.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">y</span><span class="o">/</span><span class="n">scw4yk6d3g99kqbs49wp8q3r0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_21447</span><span class="o">/</span><span class="mf">2915692804.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="c1"># but notice that **kwargs does not capture positional arguments!</span>
 <span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="c1"># you have to assign by keyword</span>
 <span class="ne">---&gt; </span><span class="mi">16</span> <span class="n">myfunction</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
@@ -1084,7 +1116,7 @@ kwargs {&#39;x&#39;: 4, &#39;y&#39;: 5, &#39;z&#39;: 6}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/var/folders/8y/scw4yk6d3g99kqbs49wp8q3r0000gn/T/ipykernel_19903/2997981550.py&quot;</span><span class="gt">, line </span><span class="mi">1</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/var/folders/8y/scw4yk6d3g99kqbs49wp8q3r0000gn/T/ipykernel_21447/2997981550.py&quot;</span><span class="gt">, line </span><span class="mi">1</span>
     <span class="n">myfunction</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
                                         <span class="o">^</span>
 <span class="ne">SyntaxError</span>: positional argument follows keyword argument
@@ -1133,13 +1165,16 @@ kwargs {&#39;x&#39;: 4, &#39;y&#39;: 5, &#39;z&#39;: 6}
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">usr_info</span> <span class="o">=</span> <span class="n">define_user</span><span class="p">(</span><span class="s1">&#39;john&#39;</span><span class="p">,</span> <span class="n">bike</span><span class="o">=</span><span class="s1">&#39;aethos&#39;</span><span class="p">,</span> <span class="n">car</span><span class="o">=</span><span class="s1">&#39;tacoma&#39;</span><span class="p">,</span> <span class="n">house</span><span class="o">=</span><span class="s1">&#39;hearst castle&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">usr_info</span> <span class="o">=</span> <span class="n">define_user</span><span class="p">(</span><span class="s1">&#39;john&#39;</span><span class="p">,</span> <span class="n">bike</span><span class="o">=</span><span class="s1">&#39;aethos&#39;</span><span class="p">,</span> <span class="n">car</span><span class="o">=</span><span class="s1">&#39;tacoma&#39;</span><span class="p">,</span> <span class="n">address</span><span class="o">=</span><span class="s1">&#39;24895 Long Valley Rd&#39;</span><span class="p">)</span>
 <span class="n">usr_info</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;name&#39;: &#39;john&#39;, &#39;bike&#39;: &#39;aethos&#39;, &#39;car&#39;: &#39;tacoma&#39;, &#39;house&#39;: &#39;hearst castle&#39;}
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;name&#39;: &#39;john&#39;,
+ &#39;bike&#39;: &#39;aethos&#39;,
+ &#39;car&#39;: &#39;tacoma&#39;,
+ &#39;address&#39;: &#39;24895 Long Valley Rd&#39;}
 </pre></div>
 </div>
 </div>
@@ -1366,8 +1401,8 @@ kwargs {&#39;x&#39;: 4, &#39;y&#39;: 5, &#39;z&#39;: 6}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140550821544432
-140550821544432
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140592563552560
+140592563552560
 </pre></div>
 </div>
 </div>
@@ -1384,8 +1419,8 @@ kwargs {&#39;x&#39;: 4, &#39;y&#39;: 5, &#39;z&#39;: 6}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140550821544432
-140550821544432
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140592563552560
+140592563552560
 </pre></div>
 </div>
 </div>
@@ -1413,15 +1448,15 @@ kwargs {&#39;x&#39;: 4, &#39;y&#39;: 5, &#39;z&#39;: 6}
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a: hello
-id of a globally 140550821544432
+id of a globally 140592563552560
 enter function
     x: hello
-    id(x) 140550821544432
+    id(x) 140592563552560
     x: boo
-    id(x) 140550803440240
+    id(x) 140592546038896
 exit function
 a: hello
-id of a globally 140550821544432
+id of a globally 140592563552560
 </pre></div>
 </div>
 </div>
@@ -1453,15 +1488,15 @@ id of a globally 140550821544432
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a: [&#39;hello&#39;]
-id of a globally 140550825656896
+id of a globally 140592265055488
 enter function
     x: [&#39;hello&#39;]
-    id(x) 140550825656896
+    id(x) 140592265055488
     x: [&#39;hello&#39;, &#39;boo&#39;]
-    id(x) 140550825656896
+    id(x) 140592265055488
 exit function
 a: [&#39;hello&#39;, &#39;boo&#39;]
-id of a globally 140550825656896
+id of a globally 140592265055488
 </pre></div>
 </div>
 </div>
@@ -1490,15 +1525,15 @@ id of a globally 140550825656896
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a: [&#39;hello&#39;]
-id of a globally 140550825657152
+id of a globally 140592265055744
 enter function
     x: [&#39;hello&#39;]
-    id(x) 140550825657152
+    id(x) 140592265055744
     x: [&#39;hello&#39;, &#39;boo&#39;]
-    id(x) 140550825656640
+    id(x) 140592265046912
 exit function
 a: [&#39;hello&#39;]
-id of a globally 140550825657152
+id of a globally 140592265055744
 </pre></div>
 </div>
 </div>

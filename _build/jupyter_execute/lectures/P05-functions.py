@@ -289,16 +289,16 @@ print(f'Global variable x is unchanged: {x}')
 # 
 # You can specify a *variable* number of positional arguments to a function with the special `*` prefix:
 # 
-# the function definition `def func(a, b, *vars)` will assign the first (positional) argument to a, the second to b, and all the rest will be elements of the tuple `vars`.
+# the function definition `def func(a, b, *args)` will assign the first (positional) argument to a, the second to b, and all the rest will be elements of the tuple `args`.
 # 
 
 # In[20]:
 
 
-def myfunction(a, b, *vars):
+def myfunction(a, b, *args):
     print('a', a)
     print('b', b)
-    print('vars', vars)
+    print('vars', args)
 
 myfunction(1, 2)
 
@@ -307,12 +307,31 @@ myfunction(1, 2, 'something else')
 myfunction(1, 2, 3, 4, 'five!')
 
 
+# ## More complex example of *args
+
+# In[21]:
+
+
+def squ_nums(*args):
+    out = []
+    for i in args:
+        out.append(i**2)
+        
+    return out
+
+
+# In[22]:
+
+
+print(squ_nums(9,10,12))
+
+
 # ## Variable number of keyword arguments
 # * You can specify a *variable* number of keyword arguments to a function with the special `**` prefix:
 # * The function definition `def func(a, b, **kwargs)` will assign the first (positional) argument to a, the second to b, and all the rest will be elements of the dictionary `kwargs`.
 # * **Important**: You need to the keyword argument notation that we covered above (e.g. variable_name = value)
 
-# In[21]:
+# In[23]:
 
 
 def myfunction(a, b, **kwargs):
@@ -335,7 +354,7 @@ myfunction(1, 2, 3)
 
 # ### Note that this definition captures all the positional arguments first, then captures the remaining keyword arguments.  For this reason there may be no positional arguments after a keyword argument.
 
-# In[22]:
+# In[24]:
 
 
 myfunction(1, 2, 3, x=4, y=5, z=6, 7)
@@ -347,7 +366,7 @@ myfunction(1, 2, 3, x=4, y=5, z=6, 7)
 # * Pass all of the user input into a function that creates a dictionary with all provided information. 
 # * If you use **kwargs** then you can flexibly accomodate different amounts of info about each user. 
 
-# In[23]:
+# In[25]:
 
 
 def define_user(name, **info):
@@ -375,10 +394,10 @@ def define_user(name, **info):
     return user_info
 
 
-# In[24]:
+# In[26]:
 
 
-usr_info = define_user('john', bike='aethos', car='tacoma', house='hearst castle')
+usr_info = define_user('john', bike='aethos', car='tacoma', address='24895 Long Valley Rd')
 usr_info
 
 
@@ -386,7 +405,7 @@ usr_info
 # * Recall last week we wrote some code to find a string of text in a book and then we kept N lines of text following the target string
 # * Using functions, we can write a general purpose block of code that will take a target string and the number of lines to keep as input parameters. Now we can apply this function to any book and it will do this job for us. 
 
-# In[25]:
+# In[27]:
 
 
 def find_str(book,search_target,keep_lines):
@@ -415,7 +434,7 @@ def find_str(book,search_target,keep_lines):
 # ### Now we can call the function...
 # * And the key thing here is that this should work for **any** book or list object with strings of text as elements...i.e. it is now a general purpose function and we don't have to type that code again!
 
-# In[26]:
+# In[28]:
 
 
 # open our file for reading...
@@ -450,7 +469,7 @@ print(book_trimmed)
 # * Because you can pass in a variable number of parameters by position (`*`) or by keyword (`**`) you **could** write a function that would take just about anything as input (see below)
 # * But please don't do this - it will drive people crazy because they won't know what kind of input the function expects, and it is almost always better to have well defined functions with a specific *signature*.
 
-# In[27]:
+# In[29]:
 
 
 def myfunction(*args, **kwargs):
@@ -474,7 +493,7 @@ myfunction(1, 2, 3, x=4, y=5, z=6)
 # ### Calling functions within other functions
 # * Suppose we wrote a function called `is_odd()` which takes an input `value`,
 
-# In[28]:
+# In[30]:
 
 
 def is_odd(value):
@@ -488,7 +507,7 @@ def is_odd(value):
 
 # To use the function, we can execute `is_odd(value)`
 
-# In[29]:
+# In[31]:
 
 
 out = is_odd(6)
@@ -497,7 +516,7 @@ out
 
 # Later on, if you wanted to use that function _within another function_ you still have to pass an input to the function.
 
-# In[30]:
+# In[32]:
 
 
 def new_function(my_list):
@@ -509,7 +528,7 @@ def new_function(my_list):
     return output
 
 
-# In[31]:
+# In[33]:
 
 
 new_function([1,2,3,4])
@@ -522,7 +541,7 @@ new_function([1,2,3,4])
 # In Python you can also add type **annotations** to your function definitions.  These are not used directly by the python interpreter, but are often used by the IDE to help you write code.  This is also good practice as it makes it clear what kind of arguments your function expects and returns.
 # 
 
-# In[32]:
+# In[34]:
 
 
 def transformString(string: str) -> str:
@@ -533,7 +552,7 @@ def transformString(string: str) -> str:
 # * Variables in python are passed to functions by *assignment*.
 # * Recall that we can assign two names to the same object:
 
-# In[33]:
+# In[35]:
 
 
 a = 'hello'
@@ -548,7 +567,7 @@ print(id(b))
 
 # when we pass something to a function, we are effectively assigning a new (local) name to that same object.
 
-# In[34]:
+# In[36]:
 
 
 def func(x):
@@ -561,7 +580,7 @@ func(a)
 # This is nice, because we don't have to allocate more memory to store a *copy* of that object when we pass it into a function.  However, weird things might happen, depending on what we do to that object.
 # 
 
-# In[35]:
+# In[37]:
 
 
 def func(x):
@@ -587,7 +606,7 @@ print('id of a globally', id(a))
 # 
 # * However, some objects we can alter in place, and as a consequence, local changes will also carry over to the global variable.
 
-# In[36]:
+# In[38]:
 
 
 def func(x):
@@ -611,7 +630,7 @@ print('id of a globally', id(a))
 # 
 # If we instead changed the variable inside the function via reassignment, then those changes would stay local.  (This is a case in which `x += [a]` behaves differently from `x = x + [a]` because the `+=` operator uses an inplace method to append).
 
-# In[37]:
+# In[39]:
 
 
 def func(x):
