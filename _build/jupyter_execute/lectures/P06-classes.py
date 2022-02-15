@@ -580,6 +580,8 @@ class CleanText():
         # default 0 which will mean "keep till end of book"
         self.keep_lines = params.get('keep_lines', '')
         
+        
+    # segment text...
     def segment_text(self, text):
         
         for cnt, line in enumerate(text):
@@ -594,13 +596,15 @@ class CleanText():
         
         # slice
         if self.keep_lines:
-            text = text[start_index:start_index + keep_lines]
+            text = text[start_index:start_index + self.keep_lines]
         else: 
             # go from start to end of book
             text = text[start_index:]
             
         return text
     
+    
+    # turn to lower case 
     def clean_text(self, text):
         # join text list into a string
         text_string = ' '.join(text)
@@ -620,6 +624,7 @@ class CleanText():
         return text_string.split(' ')
 
     
+    # count the words...
     def count_words(self, text):
         
         # first clean the text...
@@ -684,11 +689,48 @@ wc = ct.count_words(text)
 print(wc)
 
 
+# In[48]:
+
+
+# importantly - this class can handle processing any text!
+with open('alice-in-wonderland.txt', 'r') as f:
+    # read the entire file...with each line 
+    # returned as a string in a list
+    # we'll call the list 'book'
+    text = f.readlines()
+
+
+# In[49]:
+
+
+# set up our object...specifying search target but not keep lines 
+# (will use the default value for that...)
+params = {'search_target':'Down the Rabbit-Hole', 'keep_lines':100}
+ct = CleanText(params)
+ct.search_target
+
+
+# In[50]:
+
+
+# segment text
+text = ct.segment_text(text)
+print(text)
+
+
+# In[51]:
+
+
+# count the words!
+wc = ct.count_words(text)
+print(wc)
+
+
 # ## Importing a class that you've defined
 # * Once you have written a class to define an object, you can import it and use it in any of your other projects without re-typing all the code or copying and pasting it into a notebook...
 # * Here we can use the writefile cell magic to write a text file with our code ( a .py file is just a text file that is associated with python code). 
 
-# In[48]:
+# In[52]:
 
 
 get_ipython().run_cell_magic('writefile', 'MyMath.py', 'class MyMath():\n    \n    def multiply(self, num1, num2):\n        return num1 * num2\n        \n    def minus(self, num1, num2):\n        return num1 - num2\n    \n    def add(self, num1, num2):\n        return num1 + num2\n    \n    def divide(self, num1, num2):\n        return num1 / num2 \n    \n    # of course we have a built-in ** operator \n    # to do this, but see how we can call another \n    # method in this class using class...\n    def square(self, num1):\n        return self.multiply(num1, num1)')
@@ -696,7 +738,7 @@ get_ipython().run_cell_magic('writefile', 'MyMath.py', 'class MyMath():\n    \n 
 
 # ### Now we can import the object and use it...
 
-# In[49]:
+# In[53]:
 
 
 # import the contents of the file...* means "everything"
