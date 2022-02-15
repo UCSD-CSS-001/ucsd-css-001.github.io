@@ -213,6 +213,7 @@ class Dog():
     sound = 'Woof'
 
     # Class methods for objects of type Dog
+    # default number of times assigned 2
     def speak(self, n_times=2):
         
         # we assigned the sound variable 
@@ -446,9 +447,7 @@ print(isinstance(MyClass, object))
 print(isinstance(my_instance, object))
 
 
-# ## More complex example with multiple methods
-# * Above we had a single method for our class `Dog`
-# * However, we can have mutliple methods (just like a list object has mutliple methods like `.sort()` and `.append()`)
+# ## More complex example
 # * Here we'll make something a little more complex and useful...this will be a `RealEstate` object that keeps track of how much money you have and whether you want to buy or sell a property. 
 #     * You start with `seed_money` dollars - this will be stored in the attribute `money` and `seed_money` will be defined when you create an instance of `RealEstate`. 
 #     * You also start with an empty dictionary named `properties` that will store the address, size (in sq ft) and cost of properties that you purchase and now own. 
@@ -466,25 +465,30 @@ print(isinstance(my_instance, object))
 class RealEstate():
     
     # Init instance attributes 
-    def __init__(self, seed_money):
+    def __init__(self, params):
         
         # initialize a dictionary to store 
         # address, size, cost of purchased properties
         self.properties = dict()
         
-        # initialize money with seed_money upon object creation
-        self.money = seed_money
+        # initialize seed_money, default is 0
+        self.money = params.get('seed_money', 0)
         
+        # initialize min_size of house, default is 1000
+        self.min_size = params.get('min_size', 1000)
+        
+        # initialize max_price, default is 500000
+        self.max_price = params.get('max_price', 500000)
+                
+            
     # purchase method to determine if  you buy, update dictionary, etc. 
-    # could also use **kwargs with a dictionary with key:value pairs for
-    # address, size, cost, but keep it simple for now
     def purchase(self, address, size, cost):
         
-        # hardcode the size and cost here...could also init these on object creation
-        # as user defined values in __init__
-        if size >= 1900 and cost <= 1000000 and self.money>=cost:
+        # see if the size is acceptable, if the cost is acceptable, and if we 
+        # have enough money...
+        if size >= self.min_size and cost <= self.max_price and self.money>=cost:
                         
-            # subtract the cost from money
+            # subtract the cost from total amount of money
             self.money -= cost
             
             # update dictionary
@@ -493,28 +497,25 @@ class RealEstate():
             self.properties['cost'] = cost
             
             print(f'You now own: {address}')
-
-            
-#             return self.properties
         
-        elif size >= 1900 and cost <= 1000000 and self.money<=cost:
+        elif size >= self.min_size and cost <= self.max_price and self.money <= cost:
             print("Sorry - nice house but you don't have enough money")
-#             return 0
         
         else:
-            print("Not interested")
-#             return 0
+            print("Not interested - too small or too much money!")
 
 
 # In[36]:
 
 
 # create an instance of RealEstate
-re = RealEstate(seed_money=3000000)
+params = {'seed_money' : 3000000, 'min_size' : 1900, 'max_price' : 1000000}
+re = RealEstate(params)
 
 # check to make sure we initialized everything correctly in __init__
 print(re.money)
 print(re.properties)
+print(re.max_price)
 
 
 # ### Now we can pass in some properties to see if we want to buy them...
@@ -560,6 +561,152 @@ re.money
 
 # now try to buy a house that meets our criteria but that we can't afford...
 re.purchase('9630 La Jolla Farms Rd, La Jolla, CA 92037', 3290, 875000)
+
+
+# ## Data analysis example
+# * recall the functions that we used for cleaning text...lets write a class that can do all of those operations for us!
+
+# In[43]:
+
+
+class CleanText():
+    
+    def __init__(self, params):
+        
+        # if search target is defined...else ''
+        self.search_target = params.get('search_target', '')
+        
+        # keep how many lines after search target? 
+        # default 0 which will mean "keep till end of book"
+        self.keep_lines = params.get('keep_lines', '')
+        
+    def segment_text(self, text):
+        
+        for cnt, line in enumerate(text):
+    
+            # test to see if the current line has search_target in it
+            if self.search_target in line:
+                # grab the line where chapter 5 starts
+                start_index = cnt
+        
+                # exit the loop by calling 'break'
+                break
+        
+        # slice
+        if self.keep_lines:
+            text = text[start_index:start_index + keep_lines]
+        else: 
+            # go from start to end of book
+            text = text[start_index:]
+            
+        return text
+    
+    def clean_text(self, text):
+        # join text list into a string
+        text_string = ' '.join(text)
+        
+        # lower case it
+        text_string = text_string.lower()
+        
+        # remove newlines
+        text_string = text_string.replace('\n', '')
+
+        # remove all unwanted characters (punctuation...)
+        for c in set(text_string):
+            if c not in ' abcdefghijklmnopqrstuvwxyz':
+                text_string = text_string.replace(c, '')
+        
+        # convert back to list...
+        return text_string.split(' ')
+
+    
+    def count_words(self, text):
+        
+        # first clean the text...
+        text = self.clean_text(text)
+        
+        # then count the words!
+        wc = {}   # or you can use dict()
+
+        # now loop over **all** words in the book
+        for w in text:
+
+            # if w is not a word (i.e. it is an empty string)
+            # then continue
+            if not w:
+                continue
+
+            # if w is a word, and its not already in our dictionary
+            # then make a new key
+            if w not in wc:
+                wc[w] = 0
+
+            # increment a counter each time the word w appears...
+            wc[w] += 1
+            
+        return wc
+
+
+# In[44]:
+
+
+# open our file for reading...
+with open('frankenstein.txt', 'r') as f:
+    # read the entire file...with each line 
+    # returned as a string in a list
+    # we'll call the list 'book'
+    text = f.readlines()
+
+
+# In[45]:
+
+
+# set up our object...specifying search target but not keep lines 
+# (will use the default value for that...)
+params = {'search_target': 'It was on a dreary night'}
+ct = CleanText(params)
+ct.search_target
+
+
+# In[46]:
+
+
+# segment text
+text = ct.segment_text(text)
+print(text)
+
+
+# In[47]:
+
+
+# count the words!
+wc = ct.count_words(text)
+print(wc)
+
+
+# ## Importing a class that you've defined
+# * Once you have written a class to define an object, you can import it and use it in any of your other projects without re-typing all the code or copying and pasting it into a notebook...
+# * Here we can use the writefile cell magic to write a text file with our code ( a .py file is just a text file that is associated with python code). 
+
+# In[48]:
+
+
+get_ipython().run_cell_magic('writefile', 'MyMath.py', 'class MyMath():\n    \n    def multiply(self, num1, num2):\n        return num1 * num2\n        \n    def minus(self, num1, num2):\n        return num1 - num2\n    \n    def add(self, num1, num2):\n        return num1 + num2\n    \n    def divide(self, num1, num2):\n        return num1 / num2 \n    \n    # of course we have a built-in ** operator \n    # to do this, but see how we can call another \n    # method in this class using class...\n    def square(self, num1):\n        return self.multiply(num1, num1)')
+
+
+# ### Now we can import the object and use it...
+
+# In[49]:
+
+
+# import the contents of the file...* means "everything"
+from MyMath import *
+
+# make our object...
+mm = MyMath()
+
+# then we can use it!
+mm.square(10)
 
 
 # 
