@@ -733,7 +733,7 @@ print(wc)
 # In[52]:
 
 
-get_ipython().run_cell_magic('writefile', 'MyMath.py', 'class MyMath():\n    \n    def multiply(self, num1, num2):\n        return num1 * num2\n        \n    def minus(self, num1, num2):\n        return num1 - num2\n    \n    def add(self, num1, num2):\n        return num1 + num2\n    \n    def divide(self, num1, num2):\n        return num1 / num2 \n    \n    # of course we have a built-in ** operator \n    # to do this, but see how we can call another \n    # method in this class using class...\n    def square(self, num1):\n        return self.multiply(num1, num1)')
+get_ipython().run_cell_magic('writefile', 'MyMath.py', 'class MyMath():\n    \n    def multiply(self, num1, num2):\n        return num1 * num2\n        \n    def minus(self, num1, num2):\n        return num1 - num2\n    \n    def add(self, num1, num2):\n        return num1 + num2\n    \n    def divide(self, num1, num2):\n        return num1 / num2 \n    \n    # of course we have a built-in ** operator \n    # to do this, but see how we can call another \n    # method in this class using self...\n    def square(self, num1):\n        return self.multiply(num1, num1)')
 
 
 # ### Now we can import the object and use it...

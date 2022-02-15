@@ -14,6 +14,6 @@ class MyMath():
     
     # of course we have a built-in ** operator 
     # to do this, but see how we can call another 
-    # method in this class using class...
+    # method in this class using self...
     def square(self, num1):
         return self.multiply(num1, num1)
