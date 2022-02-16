@@ -486,7 +486,7 @@ class RealEstate():
         
         # see if the size is acceptable, if the cost is acceptable, and if we 
         # have enough money...
-        if size >= self.min_size and cost <= self.max_price and self.money>=cost:
+        if size >= self.min_size and cost <= self.max_price and self.money >= cost:
                         
             # subtract the cost from total amount of money
             self.money -= cost
@@ -563,7 +563,7 @@ re.money
 re.purchase('9630 La Jolla Farms Rd, La Jolla, CA 92037', 3290, 875000)
 
 
-# ## Data analysis example
+# ## Text analysis example
 # * recall the functions that we used for cleaning text...lets write a class that can do all of those operations for us!
 
 # In[43]:
@@ -573,8 +573,8 @@ class CleanText():
     
     def __init__(self, params):
         
-        # if search target is defined...else ''
-        self.search_target = params.get('search_target', '')
+        # if search target is defined...else '\n'
+        self.search_target = params.get('search_target', '\n')
         
         # keep how many lines after search target? 
         # default 0 which will mean "keep till end of book"
@@ -606,6 +606,7 @@ class CleanText():
     
     # turn to lower case 
     def clean_text(self, text):
+        
         # join text list into a string
         text_string = ' '.join(text)
         
@@ -669,8 +670,9 @@ with open('frankenstein.txt', 'r') as f:
 # set up our object...specifying search target but not keep lines 
 # (will use the default value for that...)
 params = {'search_target': 'It was on a dreary night'}
+
+# make an instance of a CleanText object...
 ct = CleanText(params)
-ct.search_target
 
 
 # In[46]:
@@ -707,7 +709,6 @@ with open('alice-in-wonderland.txt', 'r') as f:
 # (will use the default value for that...)
 params = {'search_target':'Down the Rabbit-Hole', 'keep_lines':100}
 ct = CleanText(params)
-ct.search_target
 
 
 # In[50]:
