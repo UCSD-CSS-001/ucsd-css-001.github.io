@@ -39,3 +39,6 @@ parts:
       - file: lectures/P06
         sections:
           - file: lectures/P06-classes
+      - file: lectures/P07
+        sections:
+          - file: lectures/P07-Pandas
