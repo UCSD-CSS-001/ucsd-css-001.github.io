@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # P08: Plotting and Matplotlib
+# # P08: Plotting with Matplotlib
 # 
 # ## Graphs and visualization
 # 
@@ -146,22 +146,26 @@ age
 # In[9]:
 
 
-## make a bar plot
+# make a bar plot
 plt.bar(c_names, age,
            color = 'gold',
            edgecolor = 'navy')
 
-## label stuff!
-plt.xlabel('continent', fontsize = 24)
-plt.ylabel('mean life exp', fontsize = 24)
-
+# label stuff!
+plt.xlabel('continent')
+plt.ylabel('Mean Life Exp.')
+# plt.xlabel('continent', fontsize = 24)
+# plt.ylabel('Mean Life Exp.', fontsize = 24)
+plt.xticks(rotation = 45)
 plt.show()
+
+# plt.rc - go over now...
 
 
 # In[10]:
 
 
-get_ipython().run_line_magic('pinfo', 'plt.bar')
+#plt.bar?
 
 
 # ## Conventions
@@ -178,12 +182,12 @@ get_ipython().run_line_magic('pinfo', 'plt.bar')
 
 
 plt.hist(gm['lifeExp'])
-plt.xlabel('Life Exp.')
+plt.xlabel('life Exp.')
 plt.ylabel('Frequency')
 plt.show()
 
 
-# ### Make our hist look a little nicer...change num bins, color, alpha (transparency), legend, etc. 
+# ### Make our hist look a little nicer...change number of bins, color, alpha (transparency), legend, etc. 
 
 # In[12]:
 
@@ -199,7 +203,7 @@ plt.hist(gm[ gm['continent'] == 'Europe' ]['lifeExp'],
              bins=20, 
              color='red', alpha = .35)
 
-# or can specify a range...
+# or can specify a range of bin edges
 # plt.hist(gm['lifeExp'], 
 #              bins=range(20, 90, 5), 
 #              color='navy')
@@ -292,7 +296,7 @@ plt.show()
 
 year_2007 = gm[ gm['year']==2007 ]
 plt.scatter(year_2007['gdpPercap'], year_2007['lifeExp'])
-plt.xscale('log')
+# plt.xscale('log')
 plt.xlabel('gdp per capita (log scale)')
 plt.ylabel('life expectancy')
 
