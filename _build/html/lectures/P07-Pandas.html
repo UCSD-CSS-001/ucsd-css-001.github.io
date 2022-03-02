@@ -51,6 +51,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="P08 - Plotting and Matplotlib" href="P08.html" />
     <link rel="prev" title="P07: Pandas" href="P07.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -288,6 +289,23 @@
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      P07: Pandas Series and DataFrames
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="P08.html">
+   P08 - Plotting and Matplotlib
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P08-Matplotlib.html">
+     P08: Plotting and Matplotlib
     </a>
    </li>
   </ul>
@@ -2231,12 +2249,22 @@ Name: Calories, Length: 260, dtype: int64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># this will give us the first entry in the &#39;Calories&#39; column</span>
-<span class="n">mcd</span><span class="p">[</span><span class="s1">&#39;Calories&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">mcd</span><span class="p">[</span><span class="s1">&#39;Calories&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>300
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    300
+1    250
+2    370
+3    450
+4    400
+5    430
+6    460
+7    520
+8    410
+9    470
+Name: Calories, dtype: int64
 </pre></div>
 </div>
 </div>
@@ -7600,6 +7628,13 @@ Length: 260, dtype: bool
             <p class="prev-next-subtitle">previous</p>
             <p class="prev-next-title">P07: Pandas</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="P08.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">P08 - Plotting and Matplotlib</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
         

@@ -301,7 +301,7 @@ mcd.head(2)
 
 
 # this will give us the first entry in the 'Calories' column
-mcd['Calories'].iloc[0]
+mcd['Calories'].iloc[0:10]
 
 
 # In[31]:

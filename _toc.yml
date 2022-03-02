@@ -42,3 +42,6 @@ parts:
       - file: lectures/P07
         sections:
           - file: lectures/P07-Pandas
+      - file: lectures/P08
+        sections:
+          - file: lectures/P08-Matplotlib
