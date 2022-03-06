@@ -232,7 +232,7 @@ plt.show()
 
 year_summary = (gm
     .groupby('year')                            # group based on common year labels
-    .agg(life_expectancy = ('lifeExp', 'mean')) # aggregate lifeExp, compute mean
+    .agg(life_expectancy = ('lifeExp', 'mean')) # aggregate lifeExp, compute mean, assign to new column 'life_expectancy'
     .reset_index())  # reset index to default...
 
 # have a look...
@@ -267,12 +267,12 @@ plt.show()
 
 import numpy as np
 
-## filter out African countries
+# filter out African countries
 africa = gm[ gm['continent'] == 'Africa' ]
 
-## plot scatter plot of lifeExp ~ year
+# plot scatter plot of lifeExp ~ year
 
-# alpha like
+# alpha so more dots visible
 plt.scatter(africa['year'], 
             africa['lifeExp'],
             alpha = 0.1,
@@ -329,6 +329,40 @@ plt.show()
 
 # color code by continent
 # sale size by population
+
+
+# ## Errorbar example
+# * Errorbar plots allow you to show the variability associated with measurements, not just their mean value
+
+# In[18]:
+
+
+## group by year
+## calculate mean life expectancy per group
+
+year_mean = (gm
+    .groupby('year')                            # group based on common year labels
+    .agg(life_expectancy = ('lifeExp', 'mean')) # aggregate lifeExp, compute mean, assign to new column 'life_expectancy'
+    .reset_index())  # reset index to default...
+
+year_std = (gm
+    .groupby('year')                            # group based on common year labels
+    .agg(life_expectancy = ('lifeExp', 'std')) # aggregate lifeExp, compute mean, assign to new column 'life_expectancy'
+    .reset_index())  # reset index to default...
+
+
+# In[19]:
+
+
+# make the error bar plot showing mean +- standard deviation
+plt.errorbar(year_mean['year'], 
+             year_mean['life_expectancy'], 
+             yerr=year_std['life_expectancy'], c='black')
+
+plt.xlabel('Year')
+plt.ylabel('Life Expectency')
+
+plt.show()
 
 
 # ### Conventions

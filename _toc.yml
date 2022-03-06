@@ -45,3 +45,6 @@ parts:
       - file: lectures/P08
         sections:
           - file: lectures/P08-Matplotlib
+      - file: lectures/P09
+        sections:
+          - file: lectures/P09-Numpy
