@@ -1,14 +1,26 @@
-# Welcome to CSS 1
+# Spelman College + UCSD Summer Research Program
 
-This course develops computational thinking practices and skills critical for defining, describing and analyzing social science problems using a computational approach. Students will learn to program in Python in the context of computational social science problems.
+The UC San Diego Department of Psychology and the UCSD STARS program have formed a partnership with the Spelman College Psychology and Neuroscience program. 
 
-Computational Social Science is the use of **computation** to study **social phenomena**.
-This enterprise has two facets:  
-1) generating and analyzing large datasets of human behavior, and
-2) simulating or optimizing models to understand their implications and predictions in complex situations.
+The research program will run from June 19th, 2022 until August 12th, 2022 and students will participate in mentored research and other training opportunities.
 
-Although specific datasets, analysis methods, and models vary across domains of interest (including linguistics, economics, political science, psychology, sociology, cognitive science, etc.), there is considerable overlap in core skills and ideas.  At the core of these skills is computer programming: giving computers explicit instructions about how to carry out specific desired computations.  This class aims to develop this core programming skill (using Python) in the context of social science applications. 
+**Students will**
 
-## [Python is a very common language in academia and industry](https://insights.stackoverflow.com/survey/2020)
+* Gain research experience with a UC San Diego faculty member
+* Attend a GRE preparation course
+* Attend graduate school preparation work-shops
+* Present at the annual UC San Diego Summer Research Conference
+* Receive a stipend for living expenses in San Diego
+* Attend coding workshops and special seminar series run by UCSD faculty 
 
-* You may encounter Matlab and R frequently in your courses here at UCSD (or in labs that you work in), but Matlab is almost never used outside of universities and R only makes up ~5% of usage in industry - Python comes in at about 44% and is the top ranked general purpose language (i.e. not a language designed for web or database development). 
+**Applicants must**
+
+* Be 18 years of age
+* Be U.S. Citizens or Permanent Residents. 
+* AB 540 or DACA students are eligible
+* Be interested in conducting full-time research in the summer for eight weeks with no commitments such as summer school or a full/part-time job
+* Demonstrate academic aptitude and achievement
+
+**Application Deadline**
+
+February 9th, 2022, [Application link](https://grad.ucsd.edu/diversity/programs/stars/index.html)
