@@ -79,9 +79,78 @@ print(my_array)
 # NOTICE how the dims stack on top of each other! there are 5, 5x4 matrices
 
 
-# ## Data type, size, other attributes of numpy arrays...
+# ## Allocate arrays of zeros, ones or rand to reserve the memory before filling up later 
+# * Handy when you know what size you need, but you're not ready to fill it up yet...saves you from dynamically resizing the matrix during analysis, which is VERY,VERY slow (e.g. the 'append' method)
 
 # In[6]:
+
+
+# note the () around the dims because here we're specifying as a tuple...
+# default type is float64...can also pass in a list
+arr = np.zeros( (3,4) )   
+print(arr)
+arr.dtype
+
+
+# ### Init an array of ones
+# * Can use this method to init an array of any value...see next cell below
+
+# In[7]:
+
+
+# ones
+# note the 3D output below...4, 4x4 squares of floating point 1s...
+arr = np.ones( (4,4,4) )
+print(arr)
+
+
+# ### What if you want to initialize an array of 10s?
+# 
+
+# In[8]:
+
+
+arr = np.ones( (4,4,4) ) * 10
+print(arr)
+
+
+# ## Random numbers - generate all at once as opposed to looping like we did earlier in the class
+
+# In[9]:
+
+
+arr = np.random.random( (5,4) )
+print(arr)
+
+
+# ## Empty
+# * Because you're not initializing to a specific value (like zeros), can by marginally faster when allocating a large array
+# * However, this is a bit dangerous because exact values in an 'empty' array are based on current state of memory and can vary...
+# * Need to make sure that you are overwriting ALL of the values and that you remember that the values are NOT 0!!! (or 1)
+
+# In[10]:
+
+
+# and empty...not really 'empty' but initialized with varible output determined 
+# by current state of memory
+arr = np.empty( (2,2) )
+print(arr)
+
+
+# ## Fill up an array at init with any value, include NaNs! (very handy for error checking!)
+
+# In[11]:
+
+
+# an alternate way to initialize an array with arbitrary values
+# note that 'full' will guess best data type given init value
+arr = np.full( (2,2), np.nan)
+print(arr)
+
+
+# ## Data type, size, other attributes of numpy arrays...
+
+# In[12]:
 
 
 print('Dims of data:', my_array.ndim)         # number of dims
@@ -95,7 +164,7 @@ print('Total number of elements in array:', my_array.size)         # total numbe
 # * Can use lists or tuples (or any array-like input of numerical values)
 # * Can specify data type upon array creation...complex, float32, float64, int32, uint32 (unsigned int32), etc
 
-# In[7]:
+# In[13]:
 
 
 # will infer data type based on input values...here we have 1 float so the whole thing is float
@@ -108,82 +177,13 @@ float_array.dtype             # or np.dtype
 # * e.g. type casting upon array creation, as we discussed with pandas
 # * doesn't round, it truncates!
 
-# In[8]:
+# In[14]:
 
 
 int_array = np.array([1.1,7.5], dtype = 'int32')   
 int_array
 
 # truncation of floats...be careful
-
-
-# ## Allocate arrays of zeros, ones or rand to reserve the memory before filling up later 
-# * Handy when you know what size you need, but you're not ready to fill it up yet...saves you from dynamically resizing the matrix during analysis, which is VERY,VERY slow (e.g. the 'append' method)
-
-# In[9]:
-
-
-# note the () around the dims because here we're specifying as a tuple...
-# default type is float64...can also pass in a list
-arr = np.zeros( (3,4) )   
-print(arr)
-arr.dtype
-
-
-# ### Init an array of ones
-# * Can use this method to init an array of any value...see next cell below
-
-# In[10]:
-
-
-# ones
-# note the 3D output below...4, 4x4 squares of floating point 1s...
-arr = np.ones( (4,4,4) )
-print(arr)
-
-
-# ### What if you want to initialize an array of 10s?
-# 
-
-# In[11]:
-
-
-arr = np.ones( (4,4,4) ) * 10
-print(arr)
-
-
-# ## Random numbers - generate all at once as opposed to looping like we did earlier in the class
-
-# In[12]:
-
-
-arr = np.random.random( (5,4) )
-print(arr)
-
-
-# ## Empty
-# * Because you're not initializing to a specific value (like zeros), can by marginally faster when allocating a large array
-# * However, this is a bit dangerous because exact values in an 'empty' array are based on current state of memory and can vary...
-# * Need to make sure that you are overwriting ALL of the values and that you remember that the values are NOT 0!!! (or 1)
-
-# In[13]:
-
-
-# and empty...not really 'empty' but initialized with varible output determined 
-# by current state of memory
-arr = np.empty( (2,2) )
-print(arr)
-
-
-# ## Fill up an array at init with any value, include NaNs! (very handy for error checking!)
-
-# In[14]:
-
-
-# an alternate way to initialize an array with arbitrary values
-# note that 'full' will guess best data type given init value
-arr = np.full( (2,2), np.nan)
-print(arr)
 
 
 # ## Numpy Part II: Simple elementwise arithmetic operations like + and - work on corresponding elements of arrays.
@@ -193,8 +193,8 @@ print(arr)
 
 
 # set up two sets of data...
-N = 1440
-x = np.linspace(0,2*pi,N)
+N = 1000
+x = np.arange(0,N)
 y = np.sin(x)
 
 
@@ -216,9 +216,24 @@ get_ipython().run_line_magic('timeit', 'for i in range(N): sum_lst.append(x[i] +
 get_ipython().run_line_magic('timeit', 'sum_lst = x + y')
 
 
-# ## Slicing...
+# ## Unary operations implemented as methods of the ndarray class
 
 # In[18]:
+
+
+# note the method chain...
+x = np.arange(10).reshape(2,5)   # 2 x 5 matrix
+
+print(x.sum())                   # sum of all elements
+print(x.sum(axis=0))             # sum of each column (across 1st dim)
+print(x.sum(axis=1))             # sum of each row (across 2nd dim)
+print(x.sum(0))                  # don't need the axis arg, can just specify
+print(x.mean())
+
+
+# ## Slicing...
+
+# In[19]:
 
 
 # create a 1d array
@@ -236,7 +251,7 @@ print(x[1:4])
 
 # ### Step through a ndarray - similar to a list
 
-# In[19]:
+# In[20]:
 
 
 # start, stop, step interval
@@ -248,7 +263,7 @@ print(x[::-1])
 
 # ## Multidimentional array indexing, slicing etc
 
-# In[20]:
+# In[21]:
 
 
 # generate a matrix of uniformly distributed random numbers over 0:10
@@ -277,7 +292,7 @@ print('last entry: ', x[-1,-1])  # last value
 
 # ## Pull out subsets of rows and columns
 
-# In[21]:
+# In[22]:
 
 
 # generate a matrix of random numbers over 0-1
@@ -300,20 +315,6 @@ print('\n', y)
 # rows 3 - end, columns 2 - end
 y = x[2:,1:]
 print('\n', y)
-
-
-# ## Unary operations implemented as methods of the ndarray class
-
-# In[22]:
-
-
-# note the method chain...
-x = np.arange(10).reshape(2,5)   # 2 x 5 matrix
-
-print(x.sum())                   # sum of all elements
-print(x.sum(axis=0))             # sum of each column (across 1st dim)
-print(x.sum(axis=1))             # sum of each row (across 2nd dim)
-print(x.sum(0))                  # don't need the axis arg, can just specify
 
 
 # 
