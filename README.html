@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>&lt;no title&gt; &#8212; Spelman/UCSD Psychology and Neuroscience Summer Research Program</title>
+    <title>ucsd-css-001.github.io &#8212; UCSD CSS 1</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -76,10 +76,10 @@
         
       
       
-      <img src="_static/logo.svg" class="logo" alt="logo">
+      <img src="_static/logo.png" class="logo" alt="logo">
       
       
-      <h1 class="site-logo" id="site-title">Spelman/UCSD Psychology and Neuroscience Summer Research Program</h1>
+      <h1 class="site-logo" id="site-title">UCSD CSS 1</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
@@ -90,35 +90,79 @@
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="index.html">
-   Spelman College + UCSD Summer Research Program
+   Welcome to CSS 1
   </a>
  </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Spelman/UCSD Summer Research Program
+  Course (CSS 1 Winter 2022)
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="program/overview.html">
-   Spelman/UCSD Summer Research Program
+  <a class="reference internal" href="course/syllabus.html">
+   Syllabus
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="program/expectations.html">
+  <a class="reference internal" href="course/expectations.html">
    Expectations
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="program/faculty.html">
-   Participating Faculty
+  <a class="reference internal" href="course/datahub.html">
+   Datahub assignments
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="program/principles.html">
-   UCSD Principles of Community
+  <a class="reference internal" href="course/debugging.html">
+   Debugging
   </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="course/resources.html">
+   Extracurricular Resources
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Content
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="lectures/P01.html">
+   P01: Getting oriented
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="lectures/P01-css.html">
+     P01: Computational Social Science
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="lectures/P01-programming.html">
+     P01: programming concepts
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="lectures/P01-jupyter.html">
+     P01: Our environment
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="lectures/P01-python.html">
+     P01:  Python syntax, variables, types
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -177,11 +221,11 @@
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://github.com/ucsd-spelman-summer-research/"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https://github.com/UCSD-CSS-001/ucsd-css-001.github.io"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/ucsd-spelman-summer-research//issues/new?title=Issue%20on%20page%20%2FREADME.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/UCSD-CSS-001/ucsd-css-001.github.io/issues/new?title=Issue%20on%20page%20%2FREADME.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -206,7 +250,34 @@
                 <i class="fas fa-list"></i> Contents
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="simple visible nav section-nav flex-column">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#repo-structure">
+   Repo structure
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#updating">
+   Updating
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#build-and-deploy">
+   Build and deploy
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#todo">
+   TODO
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#content">
+     Content
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
             </nav>
@@ -218,7 +289,54 @@
         
               <div>
                 
-  
+  <div class="tex2jax_ignore mathjax_ignore section" id="ucsd-css-001-github-io">
+<h1><a class="reference external" href="http://ucsd-css-001.github.io">ucsd-css-001.github.io</a><a class="headerlink" href="#ucsd-css-001-github-io" title="Permalink to this headline">¶</a></h1>
+<p>This is the website for UCSD CSS (Computational Social Science) 1.</p>
+<p>This website is written as a <a class="reference external" href="https://jupyterbook.org/intro.html">jupyter book</a>.</p>
+<div class="section" id="repo-structure">
+<h2>Repo structure<a class="headerlink" href="#repo-structure" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">./</span></code> contains book <code class="docutils literal notranslate"><span class="pre">.yml</span></code> configurations, this readme, and the main landing page md.<br />
+<code class="docutils literal notranslate"><span class="pre">./course/</span></code> <code class="docutils literal notranslate"><span class="pre">.md</span></code> files pertaining to course structure.<br />
+<code class="docutils literal notranslate"><span class="pre">./lectures/</span></code> mostly <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> files with lecture content.<br />
+<code class="docutils literal notranslate"><span class="pre">./labs/</span></code> mostly <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> files for interactive labs.
+<code class="docutils literal notranslate"><span class="pre">./datasets/</span></code> various datasets we might use or refer to.<br />
+<code class="docutils literal notranslate"><span class="pre">./_build</span></code> contains the files built by jupyter-book (ignored for repo)</p>
+</div>
+<div class="section" id="updating">
+<h2>Updating<a class="headerlink" href="#updating" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>book files, and their order, are listed in <code class="docutils literal notranslate"><span class="pre">./_toc.yml</span></code></p></li>
+<li><p>Add changes to main, push.</p></li>
+</ul>
+</div>
+<div class="section" id="build-and-deploy">
+<h2>Build and deploy<a class="headerlink" href="#build-and-deploy" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Build by running  <code class="docutils literal notranslate"><span class="pre">jupyter-book</span> <span class="pre">build</span> <span class="pre">.</span></code></p></li>
+<li><p>check local copy by opening <code class="docutils literal notranslate"><span class="pre">./_build/html/index.html</span></code></p></li>
+<li><p>deploy <code class="docutils literal notranslate"><span class="pre">_build/html</span></code> directory to github pages with <code class="docutils literal notranslate"><span class="pre">ghp-import</span> <span class="pre">-n</span> <span class="pre">-p</span> <span class="pre">-f</span> <span class="pre">_build/html</span></code> to export built book to gh-pages branch.  <a class="reference external" href="https://jupyterbook.org/publish/gh-pages.html">more here</a></p></li>
+</ul>
+</div>
+<div class="section" id="todo">
+<h2>TODO<a class="headerlink" href="#todo" title="Permalink to this headline">¶</a></h2>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> fix myst substitutions <a class="reference external" href="https://myst-parser.readthedocs.io/en/latest/syntax/optional.html?highlight=substitution#substitutions-and-urls">myst</a>  or <span class="xref myst">jb</span></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> datahub login as grader?</p>
+<ul class="contains-task-list">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> pull from github</p></li>
+</ul>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> datahub login as student?</p></li>
+</ul>
+<div class="section" id="content">
+<h3>Content<a class="headerlink" href="#content" title="Permalink to this headline">¶</a></h3>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> complete datahub instructions</p></li>
+</ul>
+</div>
+</div>
+</div>
+
     <script type="text/x-thebe-config">
     {
         requestKernel: true,
@@ -252,7 +370,7 @@
     <div class="container">
       <p>
         
-          By John Serences, Spring 2022<br/>
+          By John Serences for Winter 2022 (based on initial design by Ed Vul for SS2, 2021)<br/>
         
             &copy; Copyright 2021.<br/>
       </p>

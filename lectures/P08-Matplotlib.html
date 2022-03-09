@@ -1,0 +1,1280 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>P08: Plotting with Matplotlib &#8212; UCSD CSS 1</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="P09: Numpy" href="P09.html" />
+    <link rel="prev" title="P08 - Plotting with Matplotlib" href="P08.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">UCSD CSS 1</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Welcome to CSS 1
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Course (CSS 1 Winter 2022)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/syllabus.html">
+   Syllabus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/expectations.html">
+   Expectations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/datahub.html">
+   Datahub assignments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/debugging.html">
+   Debugging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course/resources.html">
+   Extracurricular Resources
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Content
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="P01.html">
+   P01: Getting oriented
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P01-css.html">
+     P01: Computational Social Science
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P01-programming.html">
+     P01: programming concepts
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P01-jupyter.html">
+     P01: Our environment
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P01-python.html">
+     P01:  Python syntax, variables, types
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="P02.html">
+   P02: Control flow and logic
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P02-conditionals.html">
+     P02: Branching via conditional statement: if..elif..else..
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P02-loops.html">
+     P02: Loops!
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P02-while.html">
+     P02: While loops
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="P03.html">
+   P03: Sequence types
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P03-sequence.html">
+     P03: Sequence types
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="P04.html">
+   P04: Dictionaries, Sets, and File reading and writing (File I/O)
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P04-dictionaries.html">
+     P04: Dictionaries
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P04-sets.html">
+     P04: Sets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P04-files.html">
+     P04: Reading and writing files
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P04-WorkingWithTextFiles.html">
+     P04: Working with text files
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="P05.html">
+   P05 : functions
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P05-functions.html">
+     P05: Functions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="P06.html">
+   P06 : classes
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P06-classes.html">
+     P06: classes and objects
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="P07.html">
+   P07: Pandas
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P07-Pandas.html">
+     P07: Pandas Series and DataFrames
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="P08.html">
+   P08 - Plotting with Matplotlib
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     P08: Plotting with Matplotlib
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="P09.html">
+   P09: Numpy
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="P09-Numpy.html">
+     P09: Intro to NumPy
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/lectures/P08-Matplotlib.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/UCSD-CSS-001/ucsd-css-001.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/UCSD-CSS-001/ucsd-css-001.github.io/issues/new?title=Issue%20on%20page%20%2Flectures/P08-Matplotlib.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/UCSD-CSS-001/ucsd-css-001.github.io/master?urlpath=tree/lectures/P08-Matplotlib.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#graphs-and-visualization">
+   Graphs and visualization
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#choosing-plots">
+   Choosing plots
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data">
+   data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#our-data">
+   Our data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plot-population-for-each-continent-for-a-specific-year-2007">
+   Plot population for each continent for a specific year (2007)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#horizontal-bar-plots">
+     Horizontal bar plots…
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bar-chart">
+     Bar chart
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conventions">
+   Conventions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#histogram">
+     Histogram
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#make-our-hist-look-a-little-nicer-change-number-of-bins-color-alpha-transparency-legend-etc">
+     Make our hist look a little nicer…change number of bins, color, alpha (transparency), legend, etc.
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#line-plot">
+   Line plot
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#scatter-plot">
+   Scatter plot
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#varying-color-and-size">
+   Varying color and size
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#same-thing-but-color-code-by-continent-and-size-by-population">
+     Same thing, but color code by continent and size by population
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#errorbar-example">
+   Errorbar example
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Conventions
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="p08-plotting-with-matplotlib">
+<h1>P08: Plotting with Matplotlib<a class="headerlink" href="#p08-plotting-with-matplotlib" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="graphs-and-visualization">
+<h2>Graphs and visualization<a class="headerlink" href="#graphs-and-visualization" title="Permalink to this headline">¶</a></h2>
+<p>Data analysis starts with looking at data, and ends with communicating your results. Both of these are done most effectively with graphs.</p>
+<p>There are many skills associated with making graphs and visualizations:</p>
+<ol class="simple">
+<li><p>figuring out <em>what</em> to plot to answer a question.</p></li>
+<li><p>transforming data to expose the variables you want to plot</p></li>
+<li><p>choosing the right kind of plot for the data / question.</p></li>
+<li><p>instructing a computer to make the plot you want.</p></li>
+<li><p>making the plot interpretable, and appealing</p></li>
+</ol>
+</div>
+<div class="section" id="choosing-plots">
+<h2>Choosing plots<a class="headerlink" href="#choosing-plots" title="Permalink to this headline">¶</a></h2>
+<p>What are you looking for, or trying to show?</p>
+<ul class="simple">
+<li><p>the distribution of one variable.  -&gt; histogram</p></li>
+<li><p>the distribution of two variables: how two variables relate to one another  -&gt; scatter</p></li>
+<li><p>how one variable changes as a function of a categorical other variable -&gt; barplot</p></li>
+<li><p>how one variable changes as a function of another numerical variable -&gt; line plot</p></li>
+</ul>
+</div>
+<div class="section" id="data">
+<h2>data<a class="headerlink" href="#data" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Gapminder: dataset describing life expentency depending on factors like life expectancy, GDP, Region, etc.</p></li>
+<li><p><a class="reference external" href="https://github.com/UCSD-CSS-001/ucsd-css-001.github.io">link</a></p></li>
+</ul>
+<p>Standard plots:</p>
+<ul class="simple">
+<li><p>histogram -&gt; (density plot)  <code class="docutils literal notranslate"><span class="pre">hist</span></code></p></li>
+<li><p>scatter -&gt; (bubble)  <code class="docutils literal notranslate"><span class="pre">scatter</span></code></p></li>
+<li><p>line chart -&gt; (+ error bars)  <code class="docutils literal notranslate"><span class="pre">plot</span></code></p></li>
+<li><p>bar chart -&gt; (+ error bars) <code class="docutils literal notranslate"><span class="pre">bar</span></code></p></li>
+<li><p>labeling axes.  <code class="docutils literal notranslate"><span class="pre">xlabel</span></code> and <code class="docutils literal notranslate"><span class="pre">ylabel</span></code></p></li>
+</ul>
+</div>
+<div class="section" id="our-data">
+<h2>Our data<a class="headerlink" href="#our-data" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://www.gapminder.org/tools/#%24chart-type=bubbles&amp;url=v1">gapminder</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">font</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;family&#39;</span> <span class="p">:</span> <span class="s1">&#39;Arial&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;weight&#39;</span> <span class="p">:</span> <span class="s1">&#39;normal&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;size&#39;</span>   <span class="p">:</span> <span class="s1">&#39;16&#39;</span><span class="p">}</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">rc</span><span class="p">(</span><span class="s1">&#39;font&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">font</span><span class="p">)</span>  <span class="c1"># pass in the font dict as kwargs</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rc</span><span class="p">(</span><span class="s1">&#39;lines&#39;</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gm</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;gapminder.csv&#39;</span><span class="p">)</span>
+<span class="n">gm</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>country</th>
+      <th>continent</th>
+      <th>year</th>
+      <th>lifeExp</th>
+      <th>pop</th>
+      <th>gdpPercap</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>Afghanistan</td>
+      <td>Asia</td>
+      <td>1952</td>
+      <td>28.801</td>
+      <td>8425333</td>
+      <td>779.445314</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>Afghanistan</td>
+      <td>Asia</td>
+      <td>1957</td>
+      <td>30.332</td>
+      <td>9240934</td>
+      <td>820.853030</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>Afghanistan</td>
+      <td>Asia</td>
+      <td>1962</td>
+      <td>31.997</td>
+      <td>10267083</td>
+      <td>853.100710</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>Afghanistan</td>
+      <td>Asia</td>
+      <td>1967</td>
+      <td>34.020</td>
+      <td>11537966</td>
+      <td>836.197138</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>Afghanistan</td>
+      <td>Asia</td>
+      <td>1972</td>
+      <td>36.088</td>
+      <td>13079460</td>
+      <td>739.981106</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># drop &#39;Unnamed: 0&#39;</span>
+<span class="n">gm</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;gapminder.csv&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="s1">&#39;Unnamed: 0&#39;</span><span class="p">)</span>
+<span class="n">gm</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>country</th>
+      <th>continent</th>
+      <th>year</th>
+      <th>lifeExp</th>
+      <th>pop</th>
+      <th>gdpPercap</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Afghanistan</td>
+      <td>Asia</td>
+      <td>1952</td>
+      <td>28.801</td>
+      <td>8425333</td>
+      <td>779.445314</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Afghanistan</td>
+      <td>Asia</td>
+      <td>1957</td>
+      <td>30.332</td>
+      <td>9240934</td>
+      <td>820.853030</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Afghanistan</td>
+      <td>Asia</td>
+      <td>1962</td>
+      <td>31.997</td>
+      <td>10267083</td>
+      <td>853.100710</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Afghanistan</td>
+      <td>Asia</td>
+      <td>1967</td>
+      <td>34.020</td>
+      <td>11537966</td>
+      <td>836.197138</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Afghanistan</td>
+      <td>Asia</td>
+      <td>1972</td>
+      <td>36.088</td>
+      <td>13079460</td>
+      <td>739.981106</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="plot-population-for-each-continent-for-a-specific-year-2007">
+<h2>Plot population for each continent for a specific year (2007)<a class="headerlink" href="#plot-population-for-each-continent-for-a-specific-year-2007" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># grab the names of the continents</span>
+<span class="n">c_names</span> <span class="o">=</span> <span class="n">gm</span><span class="p">[</span><span class="s1">&#39;continent&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c_names</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Asia&#39; &#39;Europe&#39; &#39;Africa&#39; &#39;Americas&#39; &#39;Oceania&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">continents</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">c_names</span><span class="p">:</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="n">gm</span><span class="p">[(</span><span class="n">gm</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2007</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">gm</span><span class="p">[</span><span class="s1">&#39;continent&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">c</span><span class="p">)][</span><span class="s1">&#39;pop&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+    <span class="n">continents</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+    
+<span class="n">continents</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[115513752.33333333,
+ 19536617.633333333,
+ 17875763.307692308,
+ 35954847.36,
+ 12274973.5]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot! x-values (continent names), y-values (mean pop)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">c_names</span><span class="p">,</span> <span class="n">continents</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/P08-Matplotlib_8_0.png" src="../_images/P08-Matplotlib_8_0.png" />
+</div>
+</div>
+<div class="section" id="horizontal-bar-plots">
+<h3>Horizontal bar plots…<a class="headerlink" href="#horizontal-bar-plots" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">barh</span><span class="p">(</span><span class="n">c_names</span><span class="p">,</span> <span class="n">continents</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/P08-Matplotlib_10_0.png" src="../_images/P08-Matplotlib_10_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="bar-chart">
+<h3>Bar chart<a class="headerlink" href="#bar-chart" title="Permalink to this headline">¶</a></h3>
+<p>How does life expectancy differ by continent?</p>
+<p>{numerical variable} ~ {categorical}  -&gt; bar plot</p>
+<p>category on the x axis, number on the y axis, and we get 1 number per category.</p>
+<p>Mean life expectancy, in 2007, by continent</p>
+<ul class="simple">
+<li><p>Introduce color, edgecolor, fontsize</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">age</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">c_names</span><span class="p">:</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="n">gm</span><span class="p">[(</span><span class="n">gm</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2007</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">gm</span><span class="p">[</span><span class="s1">&#39;continent&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">c</span><span class="p">)][</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+    <span class="n">age</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+    
+<span class="n">age</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[70.72848484848484, 77.64859999999999, 54.80603846153845, 73.60812, 80.7195]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># make a bar plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">c_names</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span>
+           <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;gold&#39;</span><span class="p">,</span>
+           <span class="n">edgecolor</span> <span class="o">=</span> <span class="s1">&#39;navy&#39;</span><span class="p">)</span>
+
+<span class="c1"># label stuff!</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;continent&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Mean Life Exp.&#39;</span><span class="p">)</span>
+<span class="c1"># plt.xlabel(&#39;continent&#39;, fontsize = 24)</span>
+<span class="c1"># plt.ylabel(&#39;Mean Life Exp.&#39;, fontsize = 24)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span> <span class="o">=</span> <span class="mi">45</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># plt.rc - go over now...</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/P08-Matplotlib_13_0.png" src="../_images/P08-Matplotlib_13_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#plt.bar?</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="conventions">
+<h2>Conventions<a class="headerlink" href="#conventions" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>Learn the rules like a pro, so you can break them like an artist.</p>
+<p>– <em>Pablo Picasso</em></p>
+</div></blockquote>
+<div class="section" id="histogram">
+<h3>Histogram<a class="headerlink" href="#histogram" title="Permalink to this headline">¶</a></h3>
+<p>Show the <em>distribution</em> of a single variable, which values are more or less common?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">gm</span><span class="p">[</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;life Exp.&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Frequency&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/P08-Matplotlib_17_0.png" src="../_images/P08-Matplotlib_17_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="make-our-hist-look-a-little-nicer-change-number-of-bins-color-alpha-transparency-legend-etc">
+<h3>Make our hist look a little nicer…change number of bins, color, alpha (transparency), legend, etc.<a class="headerlink" href="#make-our-hist-look-a-little-nicer-change-number-of-bins-color-alpha-transparency-legend-etc" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">gm</span><span class="p">[</span> <span class="n">gm</span><span class="p">[</span><span class="s1">&#39;continent&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Asia&#39;</span> <span class="p">][</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">],</span> 
+             <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> 
+             <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">.35</span><span class="p">)</span>
+
+<span class="c1"># what happens if you put plt.show() here???</span>
+<span class="c1"># plt.show()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">gm</span><span class="p">[</span> <span class="n">gm</span><span class="p">[</span><span class="s1">&#39;continent&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Europe&#39;</span> <span class="p">][</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">],</span> 
+             <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> 
+             <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">.35</span><span class="p">)</span>
+
+<span class="c1"># or can specify a range of bin edges</span>
+<span class="c1"># plt.hist(gm[&#39;lifeExp&#39;], </span>
+<span class="c1">#              bins=range(20, 90, 5), </span>
+<span class="c1">#              color=&#39;navy&#39;)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;life expectancy (years)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Count&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Life expectancy distribution&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;Asia&#39;</span><span class="p">,</span> <span class="s1">&#39;Europe&#39;</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/P08-Matplotlib_19_0.png" src="../_images/P08-Matplotlib_19_0.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="line-plot">
+<h2>Line plot<a class="headerlink" href="#line-plot" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>How has average life expectancy changed from 1952 to 2007?</p></li>
+<li><p>x = number, y = number, use line plot…</p></li>
+<li><p>Mean life expectancy, by year.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## group by year</span>
+<span class="c1">## calculate mean life expectancy per group</span>
+
+<span class="n">year_summary</span> <span class="o">=</span> <span class="p">(</span><span class="n">gm</span>
+    <span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">)</span>                            <span class="c1"># group based on common year labels</span>
+    <span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">life_expectancy</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">,</span> <span class="s1">&#39;mean&#39;</span><span class="p">))</span> <span class="c1"># aggregate lifeExp, compute mean, assign to new column &#39;life_expectancy&#39;</span>
+    <span class="o">.</span><span class="n">reset_index</span><span class="p">())</span>  <span class="c1"># reset index to default...</span>
+
+<span class="c1"># have a look...</span>
+<span class="n">year_summary</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>life_expectancy</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1952</td>
+      <td>49.057620</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1957</td>
+      <td>51.507401</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1962</td>
+      <td>53.609249</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1967</td>
+      <td>55.678290</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1972</td>
+      <td>57.647386</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>1977</td>
+      <td>59.570157</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>1982</td>
+      <td>61.533197</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>1987</td>
+      <td>63.212613</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>1992</td>
+      <td>64.160338</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>1997</td>
+      <td>65.014676</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>2002</td>
+      <td>65.694923</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>2007</td>
+      <td>67.007423</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## make a line plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">year_summary</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">],</span> 
+             <span class="n">year_summary</span><span class="p">[</span><span class="s1">&#39;life_expectancy&#39;</span><span class="p">],</span>
+            <span class="s1">&#39;bo-&#39;</span><span class="p">,</span>            <span class="c1"># blue, circle markers, solid line...</span>
+            <span class="n">markersize</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span>   <span class="c1"># size of circle markers...</span>
+            <span class="n">linewidth</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="c1">## label stuff!</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;mean life expectancy (years)&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/P08-Matplotlib_22_0.png" src="../_images/P08-Matplotlib_22_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="scatter-plot">
+<h2>Scatter plot<a class="headerlink" href="#scatter-plot" title="Permalink to this headline">¶</a></h2>
+<p>How does the <em>distribution</em> of life expectancies across African countries vary by year?</p>
+<p>distribution of two number -&gt; scatterplot</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># filter out African countries</span>
+<span class="n">africa</span> <span class="o">=</span> <span class="n">gm</span><span class="p">[</span> <span class="n">gm</span><span class="p">[</span><span class="s1">&#39;continent&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Africa&#39;</span> <span class="p">]</span>
+
+<span class="c1"># plot scatter plot of lifeExp ~ year</span>
+
+<span class="c1"># alpha so more dots visible</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">africa</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">],</span> 
+            <span class="n">africa</span><span class="p">[</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">],</span>
+            <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">,</span>
+            <span class="n">s</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+
+<span class="c1"># plt.scatter(africa[&#39;year&#39;] + np.random.random(len(africa))*2-1, </span>
+<span class="c1">#             africa[&#39;lifeExp&#39;],</span>
+<span class="c1">#             s=1)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;life expectancy&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Life Expectancy for African Countries&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/P08-Matplotlib_24_0.png" src="../_images/P08-Matplotlib_24_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="varying-color-and-size">
+<h2>Varying color and size<a class="headerlink" href="#varying-color-and-size" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">year_2007</span> <span class="o">=</span> <span class="n">gm</span><span class="p">[</span> <span class="n">gm</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span><span class="o">==</span><span class="mi">2007</span> <span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">year_2007</span><span class="p">[</span><span class="s1">&#39;gdpPercap&#39;</span><span class="p">],</span> <span class="n">year_2007</span><span class="p">[</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">])</span>
+<span class="c1"># plt.xscale(&#39;log&#39;)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;gdp per capita (log scale)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;life expectancy&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/P08-Matplotlib_26_0.png" src="../_images/P08-Matplotlib_26_0.png" />
+</div>
+</div>
+<div class="section" id="same-thing-but-color-code-by-continent-and-size-by-population">
+<h3>Same thing, but color code by continent and size by population<a class="headerlink" href="#same-thing-but-color-code-by-continent-and-size-by-population" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">year_2007</span> <span class="o">=</span> <span class="n">gm</span><span class="p">[</span> <span class="n">gm</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span><span class="o">==</span><span class="mi">2007</span> <span class="p">]</span>
+
+<span class="n">colors</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Asia&#39;</span><span class="p">:</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;Europe&#39;</span> <span class="p">:</span> <span class="s1">&#39;gold&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;Americas&#39;</span> <span class="p">:</span> <span class="s1">&#39;chartreuse&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;Africa&#39;</span> <span class="p">:</span> <span class="s1">&#39;teal&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;Oceania&#39;</span> <span class="p">:</span> <span class="s1">&#39;navy&#39;</span><span class="p">}</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">year_2007</span><span class="p">[</span><span class="s1">&#39;gdpPercap&#39;</span><span class="p">],</span> 
+                <span class="n">year_2007</span><span class="p">[</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">],</span>
+                <span class="n">s</span> <span class="o">=</span> <span class="n">year_2007</span><span class="p">[</span><span class="s1">&#39;pop&#39;</span><span class="p">]</span><span class="o">/</span><span class="mf">1e6</span><span class="p">,</span>
+                <span class="n">c</span> <span class="o">=</span> <span class="n">year_2007</span><span class="p">[</span><span class="s1">&#39;continent&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">colors</span><span class="p">),</span>
+                <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">)</span>
+
+<span class="c1"># plt.xscale(&#39;log&#39;)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;gdp per capita&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;life expectancy&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># color code by continent</span>
+<span class="c1"># sale size by population</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/P08-Matplotlib_28_0.png" src="../_images/P08-Matplotlib_28_0.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="errorbar-example">
+<h2>Errorbar example<a class="headerlink" href="#errorbar-example" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Errorbar plots allow you to show the variability associated with measurements, not just their mean value</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## group by year</span>
+<span class="c1">## calculate mean life expectancy per group</span>
+
+<span class="n">year_mean</span> <span class="o">=</span> <span class="p">(</span><span class="n">gm</span>
+    <span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">)</span>                            <span class="c1"># group based on common year labels</span>
+    <span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">life_expectancy</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">,</span> <span class="s1">&#39;mean&#39;</span><span class="p">))</span> <span class="c1"># aggregate lifeExp, compute mean, assign to new column &#39;life_expectancy&#39;</span>
+    <span class="o">.</span><span class="n">reset_index</span><span class="p">())</span>  <span class="c1"># reset index to default...</span>
+
+<span class="n">year_std</span> <span class="o">=</span> <span class="p">(</span><span class="n">gm</span>
+    <span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">)</span>                            <span class="c1"># group based on common year labels</span>
+    <span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">life_expectancy</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">,</span> <span class="s1">&#39;std&#39;</span><span class="p">))</span> <span class="c1"># aggregate lifeExp, compute mean, assign to new column &#39;life_expectancy&#39;</span>
+    <span class="o">.</span><span class="n">reset_index</span><span class="p">())</span>  <span class="c1"># reset index to default...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># make the error bar plot showing mean +- standard deviation</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">year_mean</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">],</span> 
+             <span class="n">year_mean</span><span class="p">[</span><span class="s1">&#39;life_expectancy&#39;</span><span class="p">],</span> 
+             <span class="n">yerr</span><span class="o">=</span><span class="n">year_std</span><span class="p">[</span><span class="s1">&#39;life_expectancy&#39;</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Life Expectency&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/P08-Matplotlib_31_0.png" src="../_images/P08-Matplotlib_31_0.png" />
+</div>
+</div>
+<div class="section" id="id1">
+<h3>Conventions<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p><strong>Distribution of Number</strong> -&gt; histogram, with number on x, counts on y</p>
+<p><strong>Distribution of Category</strong> -&gt; histogram, with category on x, counts on y</p>
+<p><strong>Number as a function of Category</strong> -&gt; bar chart, category on x, mean number on y</p>
+<p><strong>Number as a function of Number</strong> -&gt; scatter plot (y~x) or line plot (mean(y) ~ x)</p>
+<p><strong>Number as a function of Number + Category</strong> -&gt; scatter plot or line plot with color varying by category.</p>
+<p><strong>Number as a function of Number + Number</strong> -&gt; if it doesnt matter much: bubble chart.  If it matters a lot, considering binning into categories.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./lectures"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="P08.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">P08 - Plotting with Matplotlib</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="P09.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">P09: Numpy</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By John Serences for Winter 2022 (based on initial design by Ed Vul for SS2, 2021)<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
